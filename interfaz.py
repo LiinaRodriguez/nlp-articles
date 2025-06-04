@@ -13,6 +13,7 @@ st.set_page_config(page_title="Generador de Resúmenes", page_icon="🧠", layou
 # Definir el ID del modelo en Hugging Face Hub
 MODEL_ID = "liinarodriguez/summarization"  # Modelo público en Hugging Face Hub
 
+
 # ======== Cargar modelo y tokenizer desde Hugging Face ========
 @st.cache_resource
 def load_model():
@@ -32,19 +33,19 @@ def clean_text(text):
     if not isinstance(text, str):
         return ""
     # Normaliza unicode (acentos, etc)
-    text = unicodedata.normalize('NFKC', text)
+    text = unicodedata.normalize("NFKC", text)
 
     # Reemplaza saltos de línea, tabs por espacio
-    text = re.sub(r'[\r\n\t]+', ' ', text)
+    text = re.sub(r"[\r\n\t]+", " ", text)
 
     # Elimina caracteres no imprimibles (control)
-    text = ''.join(ch for ch in text if unicodedata.category(ch)[0] != 'C')
+    text = "".join(ch for ch in text if unicodedata.category(ch)[0] != "C")
 
     # Elimina caracteres raros excepto letras, números, signos básicos y espacios
-    text = re.sub(r'[^a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ.,;:()\-\'\" ]+', ' ', text)
+    text = re.sub(r"[^a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ.,;:()\-\'\" ]+", " ", text)
 
     # Normaliza múltiples espacios a uno solo
-    text = re.sub(r'\s+', ' ', text)
+    text = re.sub(r"\s+", " ", text)
 
     # Recorta espacios al inicio y final
     text = text.strip()
@@ -61,11 +62,11 @@ def summarize(text):
 
         # Tokenización y limpieza del texto
         inputs = tokenizer(
-            text, 
+            text,
             return_tensors="pt",
             max_length=1024,
-            padding='max_length',
-            truncation=True
+            padding="max_length",
+            truncation=True,
         ).to(device)
 
         # Generación del resumen
@@ -74,12 +75,12 @@ def summarize(text):
                 inputs.input_ids,
                 attention_mask=inputs.attention_mask,
                 max_length=350,  # Como en el entrenamiento
-                num_beams=10,    # Como en el notebook
+                num_beams=10,  # Como en el notebook
                 length_penalty=1.2,
                 early_stopping=True,
-                no_repeat_ngram_size=3
+                no_repeat_ngram_size=3,
             )
-        
+
         return tokenizer.decode(summary_ids[0], skip_special_tokens=True)
 
     except Exception as e:
