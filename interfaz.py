@@ -345,11 +345,11 @@ st.markdown(
 )
 
 topics = {
-    "Topic 1: ": 22,
-    "Topic 2": 11,
-    "Topic 3": 24,
-    "Topic 4": 28,
-    "Topic 5": 25,
+    "Topic 1: Biología molecular y procesos celulares": 22,
+    "Topic 2 Biotecnología aplicada": 11,
+    "Topic 3 Inteligencia artificial en medicina": 24,
+    "Topic 4 Patología clínica e histológica": 28,
+    "Topic 5 Análisis de imágenes médicas": 25,
 }
 
 # Convertir a DataFrame para mejor visualización
