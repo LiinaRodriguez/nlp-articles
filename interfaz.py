@@ -91,7 +91,7 @@ def summarize(text):
 # ======== Cargar el modelo ==========
 with st.spinner("Cargando el modelo..."):
     model, tokenizer, device = load_model()
-    st.success("✅ Modelo cargado correctamente")
+    st.success("Modelo cargado correctamente")
 
 # ======== Interfaz Streamlit ========
 st.title(" Generador de Resúmenes con Modelo Fine-tuneado")
@@ -102,13 +102,10 @@ Puedes ingresar texto directamente, subir un archivo .txt o un archivo .csv con 
 """
 )
 
-# Mostrar el dispositivo que se está usando
-st.sidebar.info(f"💻 Usando dispositivo: {device}")
-
 # Selector de modo de entrada
 input_mode = st.radio(
     "Selecciona el modo de entrada:",
-    ["✏️ Texto directo", "📂 Archivo .txt", "📊 Archivo .csv"],
+    [ "📂 Archivo .txt"],
 )
 
 if input_mode == "✏️ Texto directo":
