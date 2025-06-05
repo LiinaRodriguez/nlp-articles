@@ -1,0 +1,19 @@
+Title: Machine Learning Applications in Veterinary Oncology: A Case Study of Mammary Tumor Classification
+
+Abstract:
+Machine learning approaches have demonstrated remarkable accuracy in classifying canine mammary tumors based on histopathological images. This study implemented a deep learning model trained on 5,000 digitized tissue samples. The convolutional neural network achieved 92.8% accuracy in distinguishing between benign and malignant tumors.
+
+Methods:
+We developed a custom convolutional neural network architecture using PyTorch, training it on a dataset of 5,000 histopathological images from verified cases. The dataset was split into training (70%), validation (15%), and test (15%) sets. Data augmentation techniques were applied to enhance model robustness.
+
+Results:
+The model achieved:
+- 92.8% overall accuracy
+- 94.3% sensitivity
+- 91.2% specificity
+- Area under ROC curve: 0.956
+
+The system significantly outperformed traditional manual assessment methods, reducing diagnosis time from hours to minutes. The model also showed promise in predicting tumor grade and identifying specific morphological features associated with aggressive behavior.
+
+Discussion:
+These results demonstrate the potential of AI-assisted diagnosis in veterinary oncology. The high accuracy and speed of the system make it a valuable tool for clinical practice, particularly in settings where specialist pathologist access is limited.
