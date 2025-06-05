@@ -359,7 +359,7 @@ df_topics = pd.DataFrame(
 
 # Gráfico interactivo
 st.subheader("Distribución de temas en la literatura")
-tab1, tab2 = st.tabs(["Gráfico de Barras", "Gráfico de Red"])
+tab1= st.tabs(["Gráfico de Barras"])
 
 with tab1:
     fig, ax = plt.subplots(figsize=(10, 6))
