@@ -98,7 +98,7 @@ st.title(" Generador de Resúmenes con Modelo Fine-tuneado")
 st.markdown(
     """
 Este modelo ha sido entrenado específicamente para generar resúmenes de textos científicos.
-Puedes ingresar texto directamente, subir un archivo .txt o un archivo .csv con múltiples textos.
+Puedes subir un archivo .txt .
 """
 )
 
