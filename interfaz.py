@@ -8,7 +8,7 @@ import os
 import unicodedata
 
 # Configuración de la página
-st.set_page_config(page_title="Generador de Resúmenes", page_icon="🧠", layout="wide")
+st.set_page_config(page_title="Generador de Resúmenes", page_icon="", layout="wide")
 
 # Definir el ID del modelo en Hugging Face Hub
 MODEL_ID = "liinarodriguez/summarization"  # Modelo público en Hugging Face Hub
