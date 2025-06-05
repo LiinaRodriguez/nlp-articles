@@ -169,7 +169,7 @@ st.markdown(
 
 # Título con diseño mejorado
 st.markdown(
-    '<div class="title-box"><h1 style="color:white; margin:0;">Storytelling Interactivo: Paula y su Investigación </h1></div>',
+    '<div class="title-box"><h1 style="color:white; margin:0;">Paula y su Investigación </h1></div>',
     unsafe_allow_html=True,
 )
 
