@@ -432,5 +432,5 @@ st.markdown(
 st.markdown("---")
 st.caption(
     "Herramienta educativa desarrollada para demostrar el poder del PLN en investigación científica. "
-    "Datos simulados con fines ilustrativos. © 2023 - Innovación en Educación Veterinaria"
+   
 )
