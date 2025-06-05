@@ -11,7 +11,6 @@ import os
 # Configuración de página
 st.set_page_config(
     page_title="PLN para Investigación Veterinaria",
-    page_icon="🦾",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -381,10 +380,9 @@ with tab1:
 st.header("Impacto para Paula", anchor="impact")
 
 cols = st.columns(4)
-cols[0].metric("Reducción de tiempo", "68%", "32 horas ahorradas")
-cols[1].metric("Artículos procesados", "173", "100% de su colección")
-cols[2].metric("Temas identificados", "8", "Tendencias clave")
-cols[3].metric("Calificación de utilidad", "9.2/10", "Muy satisfecha")
+cols[0].metric("Artículos procesados", "173", "100% de su colección")
+cols[1].metric("Temas identificados", "8", "Tendencias clave")
+cols[2].metric("Calificación de utilidad", "9.2/10", "Muy satisfecha")
 
 st.markdown(
     """
