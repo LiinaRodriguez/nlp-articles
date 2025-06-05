@@ -377,8 +377,8 @@ with tab1:
 st.header("Impacto para Paula", anchor="impact")
 
 cols = st.columns(4)
-cols[0].metric("Artículos procesados", "173", "100% de su colección")
-cols[1].metric("Temas identificados", "8", "Tendencias clave")
+cols[0].metric("Artículos procesados", "110", "100% de su colección")
+cols[1].metric("Temas identificados", "4", "Tendencias clave")
 cols[2].metric("Calificación de utilidad", "9.2/10", "Muy satisfecha")
 
 st.markdown(
