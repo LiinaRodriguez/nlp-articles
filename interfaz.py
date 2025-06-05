@@ -376,7 +376,7 @@ with tab1:
 # Sección 4: Impacto con visualización de métricas
 st.header("Impacto para Paula", anchor="impact")
 
-cols = st.columns(4)
+cols = st.columns(2)
 cols[0].metric("Artículos procesados", "110", "100% de su colección")
 cols[1].metric("Temas identificados", "5", "Tendencias clave")
 
