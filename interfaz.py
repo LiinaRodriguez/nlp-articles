@@ -345,14 +345,11 @@ st.markdown(
 )
 
 topics = {
-    "Diagnóstico por imágenes": 35,
-    "Clasificación histológica": 28,
-    "Machine Learning": 25,
-    "Biomarcadores": 18,
-    "Predicción de metástasis": 14,
-    "Terapias dirigidas": 12,
-    "Factores de riesgo": 10,
-    "Estudios genómicos": 8,
+    "Topic 1: ": 22,
+    "Topic 2": 11,
+    "Topic 3": 24,
+    "Topic 4": 28,
+    "Topic 5": 25,
 }
 
 # Convertir a DataFrame para mejor visualización
