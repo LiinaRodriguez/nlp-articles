@@ -8,7 +8,7 @@ import os
 import unicodedata
 
 # Configuración de la página
-st.set_page_config(page_title="Generador de Resúmenes", page_icon="🧠", layout="wide")
+st.set_page_config(page_title="Generador de Resúmenes", page_icon="", layout="wide")
 
 # Definir el ID del modelo en Hugging Face Hub
 MODEL_ID = "liinarodriguez/summarization"  # Modelo público en Hugging Face Hub
@@ -91,24 +91,21 @@ def summarize(text):
 # ======== Cargar el modelo ==========
 with st.spinner("Cargando el modelo..."):
     model, tokenizer, device = load_model()
-    st.success("✅ Modelo cargado correctamente")
+    st.success("Modelo cargado correctamente")
 
 # ======== Interfaz Streamlit ========
 st.title(" Generador de Resúmenes con Modelo Fine-tuneado")
 st.markdown(
     """
 Este modelo ha sido entrenado específicamente para generar resúmenes de textos científicos.
-Puedes ingresar texto directamente, subir un archivo .txt o un archivo .csv con múltiples textos.
+Puedes subir un archivo .txt .
 """
 )
-
-# Mostrar el dispositivo que se está usando
-st.sidebar.info(f"💻 Usando dispositivo: {device}")
 
 # Selector de modo de entrada
 input_mode = st.radio(
     "Selecciona el modo de entrada:",
-    ["✏️ Texto directo", "📂 Archivo .txt", "📊 Archivo .csv"],
+    [ "📂 Archivo .txt"],
 )
 
 if input_mode == "✏️ Texto directo":
