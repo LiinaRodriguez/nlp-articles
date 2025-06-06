@@ -1,0 +1,1858 @@
+ARTICLE
+OPEN
+Molecular Diagnostics
+Sodium accumulation in breast cancer predicts malignancy and
+treatment response
+Andrew D. James
+1,2, Theresa K. Leslie1, Joshua D. Kaggie3, Laura Wiggins1, Lewis Patten4, John Murphy O’Duinn5, Swen Langer6,
+Marie-Christine Labarthe7, Frank Riemer8, Gabrielle Baxter3, Mary A. McLean3, Fiona J. Gilbert3, Aneurin J. Kennerley2,5 and
+William J. Brackenbury
+1,2✉
+© The Author(s) 2022
+BACKGROUND: Breast cancer remains a leading cause of death in women and novel imaging biomarkers are urgently required.
+Here, we demonstrate the diagnostic and treatment-monitoring potential of non-invasive sodium (23Na) MRI in preclinical models
+of breast cancer.
+METHODS: Female Rag2−/−Il2rg−/−and Balb/c mice bearing orthotopic breast tumours (MDA-MB-231, EMT6 and 4T1) underwent
+MRI as part of a randomised, controlled, interventional study. Tumour biology was probed using ex vivo ﬂuorescence microscopy
+and electrophysiology.
+RESULTS: 23Na MRI revealed elevated sodium concentration ([Na+]) in tumours vs non-tumour regions. Complementary proton-
+based diffusion-weighted imaging (DWI) linked elevated tumour [Na+] to increased cellularity. Combining 23Na MRI and DWI
+measurements enabled superior classiﬁcation accuracy of tumour vs non-tumour regions compared with either parameter alone. Ex
+vivo assessment of isolated tumour slices conﬁrmed elevated intracellular [Na+] ([Na+]i); extracellular [Na+] ([Na+]e) remained
+unchanged. Treatment with speciﬁc inward Na+ conductance inhibitors (cariporide, eslicarbazepine acetate) did not affect tumour
+[Na+]. Nonetheless, effective treatment with docetaxel reduced tumour [Na+], whereas DWI measures were unchanged.
+CONCLUSIONS: Orthotopic breast cancer models exhibit elevated tumour [Na+] that is driven by aberrantly elevated [Na+]i.
+Moreover, 23Na MRI enhances the diagnostic capability of DWI and represents a novel, non-invasive biomarker of treatment
+response with superior sensitivity compared to DWI alone.
+British Journal of Cancer (2022) 127:337–349; https://doi.org/10.1038/s41416-022-01802-w
+BACKGROUND
+Metastatic breast cancer represents the leading cause of cancer-
+related death in women worldwide [1], with the triple-negative
+subtype associated with particularly poor prognosis [2]. Current
+standard care pathways involve mammography, ultrasound,
+magnetic resonance imaging (MRI) and biopsy for diagnostics
+[3]. The inclusion of additional MRI modalities in care pathways
+can
+improve
+outcomes
+via
+early
+diagnosis,
+structural
+and
+morphological assessment of tumours and monitoring of therapy
+response [4]. Additional non-invasive MRI biomarkers could
+therefore contribute a signiﬁcant clinical improvement.
+Recent MR advances have aimed to address the unmet clinical
+need for better patient stratiﬁcation. Dynamic contrast-enhanced
+(DCE) 1H MRI, metabolic imaging (PET/MR) and hyperpolarized
+pyruvate (13C labelled) approaches provide functional information
+about neoangiogenesis [4] and tumour metabolic activity [5],
+respectively. Unfortunately, these three approaches are invasive
+and often limited by safety concerns (e.g. gadolinium-based
+contrast agent accumulation) and/or requirements for complex
+equipment [6]. As such, non-invasive, proton-based diffusion-
+weighted imaging (1H DWI), which determines the local restriction
+of water within a tissue through quantiﬁcation of the apparent
+diffusion coefﬁcient (ADC), is now commonly used clinically for
+detecting malignant breast lesions [4, 7]. Low ADC values are
+correlated with malignancy and correspond with small extra-
+cellular volume fractions and high cellularity [8–10]. Furthermore,
+DWI demonstrates improved predictive value over conventional
+DCE MRI [11].
+Moving away from conventional proton-based imaging, pre-
+vious studies indicate that non-invasive
+23Na MRI of tumour
+sodium concentration ([Na+]) could be a biomarker of malignancy
+in breast cancer [8, 12, 13]. The receptivity of 23Na MRI is orders of
+magnitude lower than that of 1H MRI [14] due to the lower tissue
+concentration of Na+ vs H+ and the inherently lower gyromagnetic
+ratio. However, technological advances (increased magnetic ﬁeld
+strength, improved imaging gradients for fast-readout strategies)
+Received: 11 September 2021 Revised: 10 March 2022 Accepted: 22 March 2022
+Published online: 25 April 2022
+1Department of Biology, University of York, York, UK. 2York Biomedical Research Institute, University of York, York, UK. 3Department of Radiology & NIHR Cambridge Biomedical
+Research Centre, University of Cambridge, Cambridge, UK. 4Department of Mathematics, University of York, York, UK. 5Department of Chemistry, University of York, York, UK.
+6Bioscience Technology Facility, Department of Biology, University of York, York, UK. 7Department of Physics, University of York, York, UK. 8Mohn Medical Imaging and
+Visualization Centre, Haukeland University Hospital Bergen, Bergen, Norway. ✉email: william.brackenbury@york.ac.uk
+www.nature.com/bjc
+British Journal of Cancer
+Published on Behalf of CRUK
+1234567890();,:
+have enabled 23Na imaging within clinically reasonable timeframes
+[15]. Indeed, clinical evidence indicates that [Na+] is elevated
+within malignant lesions compared with benign lesions [8, 12, 13];
+moreover, two prospective clinical studies suggest that response to
+neoadjuvant chemotherapy correlates with a decrease in tumour
+[Na+] [12, 16]. Intriguingly, low ADC correlates with elevated total
+tissue [Na+] in malignant lesions [8], suggesting a link between
+high cell density and tumour [Na+]. As a result, 23Na MRI may have
+utility for breast cancer diagnosis, risk-stratiﬁcation and monitoring
+treatment response. However, elevated breast tumour [Na+]
+remains poorly characterised, and urgent supporting data are
+required for this approach to gain clinical footing and to
+understand the underlying pathophysiology.
+Identifying the location of tumour Na+ accumulation is critically
+important for determining its pathophysiological impact. Increases
+in total tumour [Na+] could reﬂect changes in intracellular sodium
+([Na+]i), extracellular sodium ([Na+]e), or an increase in the
+extracellular compartment volume [17]. Altered [Na+]i or [Na+]e
+would have dramatic functional implications for tumour biology;
+elevations in [Na+]e are proinﬂammatory, inhibit immune cell
+function [18], and promote resistance to chemotherapy [19],
+whereas elevations in [Na+]i (reported in cultured cancer cells
+[20, 21] and in ex vivo tumour samples [22]) could reﬂect
+alterations in processes dependent on the inward Na+ gradient
+[17, 23]. Regarding the latter, many characteristics of invasive
+tumours (e.g. cell migration, acidiﬁcation of the tumour micro-
+environment) are regulated by inward Na+ transport [20, 24]. The
+Na+ dependent Na+/H+ exchanger (NHE1) regulates tumour pH
+and metastasis [25]; NHE1 blockade with cariporide inhibits
+tumour growth [26] and sensitises cancer cells to chemotherapy
+[27]. Moreover, voltage-gated Na+ channels (VGSCs) expressed in
+breast cancer cells pass a persistent inward Na+ current, regulate
+metastatic cell behaviour
+and are inhibited
+using existing
+antiepileptic medications [20, 23, 28–31]. Determining the precise
+location and mechanism of tumour Na+ accumulation could
+therefore reveal novel druggable targets.
+In this study, we used mouse models of breast cancer to assess
+whether the effects of chemotherapy on breast tumour [Na+] are
+reproducible beyond early clinical observations [12, 16] and
+investigated whether speciﬁcally targeting Na+ conductance
+mechanisms affects tumour [Na+]. To date, these questions have
+not been addressed in preclinical in vivo models of breast cancer.
+Our results indicate that multiple orthotopic tumour models
+(MDA-MB-231, EMT6, 4T1) exhibit elevated tumour [Na+], thus
+recapitulating the clinical picture. We provide ex vivo evidence
+that the elevated tumour [Na+] reﬂects high [Na+]i rather than
+[Na+]e and show that effective treatment with the chemother-
+apeutic drug docetaxel reduces tumour [Na+] but is not reﬂected
+by MR changes in ADC. Importantly, we show that while tumour
+[Na+] has a similar predictive capacity to ADC for classifying
+malignant regions, the combination of these parameters provides
+superior prediction accuracy. These ﬁndings indicate that 23Na MRI
+has utility as a non-invasive biomarker for both malignant disease
+and treatment response, and position aberrant intracellular Na+
+handling as a critical feature of malignant breast tumours that may
+represent an important therapeutic target.
+METHODS
+Cell culture
+All cells were cultured in a humidiﬁed atmosphere of air/CO2 (95:5%) at
+37 °C and routinely tested for mycoplasma using the DAPI method. Cell
+line sources, media and supplements are described in Supplementary
+Methods.
+Orthotopic breast tumour model
+Rag2−/−Il2rg−/−(bred in-house, Balb/c background strain) or Balb/c
+(Charles River Laboratories, UK; acclimatised for 2 weeks) mice were
+housed in individually ventilated cages with enrichment (3–5 mice per
+cage) in temperature-controlled rooms with access to water and food ad
+libitum. At >6 weeks of age, female mice were anaesthetised (2%
+isoﬂurane in oxygen (2 l/min)) and 5 × 105 MDA-MB-231 (Rag2−/−Il2rg−/−),
+1 × 105 EMT6 or 1 × 105 4T1 (BALB/c) cells (suspended in Matrigel, 50% v/v
+in saline, 50 µl of volume) were injected into the left inguinal mammary fat
+pad. Animal weight, condition and tumour growth (calliper measurement)
+were monitored daily. Where possible, tumour volume was calculated from
+weekly multislice 1H scans; otherwise, tumour volumes were calculated
+from calliper measurements (modiﬁed ellipsoidal formula, volume = 1/2
+(length × width2) [32]. Mice were euthanized at <5 weeks after cell
+implantation or at 15-mm tumour diameter and tumours isolated.
+Drug treatment interventional studies
+Tumour-bearing mice were randomised (blocked by cage) to receive either
+vehicle or drug treatment from day 7 post tumour cell implantation
+(docetaxel 10 mg/kg in 1:1:20 ethanol:Tween 20:5% glucose in H2O once
+weekly i.p., total 18 mice across six cages, docetaxel n = 11, vehicle, n = 7;
+cariporide 3 mg/kg in 50:1 PBS:DMSO once daily i.p., total 10 mice across 3
+cages, cariporide n = 5, vehicle, n = 5; ESL, 175 or 200 mg/kg in 0.5%
+methylcellulose suspension once daily p.o., total 7 mice across 2 cages, ESL
+n = 4, vehicle, n = 3). No power calculation for sample sizes was performed
+as there is no prior study on which this could be based. Drug stocks were
+prepared as follows: docetaxel, ethanol (ﬁnal dilution 4% v/v); cariporide,
+DMSO (ﬁnal dilution 2%); ESL was directly suspended in the vehicle.
+MRI
+All experiments were performed on a 7T preclinical MRI system (Biospec
+70/30 USR AVANCE III, Bruker Biospin) with a 12 channel RT-shim system
+(B-S30) and preinstalled 660mT/m imaging gradient set (BGA-12s, Bruker).
+Data were captured using Paravision 6.0.1 software. Details of the MRI
+transceive coils used and all acquisition sequence settings for 23Na MRI and
+1H DWI are described in Supplementary Methods.
+All live-animal experiments were performed with a NaCl phantom (50
+mM, 1.5-ml centrifuge tube, inner diameter 8.2 mm) to enable normal-
+isation of signal between animals. Imaging was performed at 2, 3 and
+4 weeks (MDA-MB-231 xenografts) or at 7 days (4T1 and EMT6 xenografts)
+post implant. Animals without palpable tumours were excluded. Mice were
+anaesthetised (2% isoﬂurane in 2 l/min O2) and breathing monitored using
+a pressure-sensitive pad (MR-Compatible Model 1025 Monitoring and
+Gating System, SAII, NY, USA) throughout. Body temperature was
+maintained at 37 °C using a water-heated bed.
+Ex vivo SBFI ﬂuorescence imaging
+Following euthanasia (week-4 MRI timepoint), tumours were isolated and
+sliced (200 µm) in chilled phosphate-buffered saline using a 5100 MZ
+vibratome (Campden Instruments Ltd). Tumour slices were loaded with
+SBFI-AM (10 µM) in HEPES-buffered physiological saline solution (HEPES-
+PSS: 144 mM NaCl, 5.4 mM KCl, 1 mM MgCl2, 1.28 mM CaCl2, 5 mM HEPES
+and 5.6 mM glucose, pH 7.2) with 0.08% Pluronic F-127 for 2 h at 37 °C,
+then rinsed and incubated in fresh HEPES-PSS for 40 minutes. Microscopy
+equipment used for SBFI ﬂuorescence imaging is described in Supple-
+mentary Methods.
+Na+-free HEPES-PSS was prepared by replacing NaCl with equimolar N-
+methyl-D-glucamine (NMDG, 144 mM). HEPES-PSS for calibrating [Na+]i was
+prepared containing 10, 20 and 50 mM NaCl, with additional KCl added in
+place of omitted NaCl (149.4 mM NaCl + KCl, 1 mM MgCl2, 1.28 mM CaCl2,
+5 mM HEPES, 5.6 mM glucose, adjusted to pH 7.2 with KOH). Following
+baseline measurement, slices were perfused with 10 mM [Na+]e. Na+
+ionophores
+(gramicidin,
+3 µM;
+monensin,
+10 µM)
+were
+applied
+to
+equilibrate [Na+]i and [Na+]e and a Na+/K+ ATPase inhibitor (ouabain, 1
+mM) was applied to inhibit Na+ efﬂux. [Na+]e was sequentially changed to
+20 mM and 50 mM [33]. [Na+]i was calibrated in situ to control for
+differences between cells using the ﬁnal three acquisition frames for each
+perfusion phase.
+Ion-selective microelectrodes
+Methods for producing Na+ ion-selective microelectrodes and use of
+associated recording hardware are described in Supplementary Methods.
+Isolated tumours were sliced (500 µm) as described for ex vivo SBFI
+ﬂuorescence imaging and then maintained at 30 °C at an interface
+between HEPES-PSS perfusion and humidiﬁed air. Electrodes were
+calibrated with HEPES-PSS of variable [Na+] (48, 96, 144 and 192 mM, no
+A.D. James et al.
+338
+British Journal of Cancer (2022) 127:337 – 349
+replacement ion) prior to and after recording. Sensitivity (mV/mM) typically
+changed by no more than 5% over the duration of an experiment.
+Recordings were taken from the top surface of tumour slices and from
+different locations within each slice. The junction potential offset between
+the bath and calibration tube was subtracted from the recorded voltage.
+All recordings were made within 90 min of euthanasia.
+Inductively coupled plasma mass spectrometry (ICP-MS)
+Total tissue [Na+] was determined by inductively coupled plasma mass
+spectrometry (ICP-MS, 7700x, Agilent). ICP-MS analysis and quantiﬁcation
+of tissue [Na+] are described in Supplementary Methods.
+LC-MS analysis of plasma and tumour [licarbazepine]
+Tissue samples from xenograft tumours were snap-frozen and homo-
+genised in chilled 0.1 M phosphate buffer (pH 5, 1:4 w/v). Lysate
+preparation and analysis by LC-MS are described in Supplementary
+Methods.
+Tumour
+and
+plasma
+[licarbazepine]
+are
+reported
+as
+ng
+licarbazepine per mg tumour (ng/mg) and ng/µl, respectively.
+Immunohistochemistry
+Cryoprotected tumour samples (sequential overnight incubations in 4%
+paraformaldehyde, 10% sucrose, 30% sucrose) were embedded and frozen
+in optimal cutting temperature embedding compound (VWR Interna-
+tional). Samples were sectioned (12 µm, LEICA CM1950 cryostat) onto
+SuperFrost Plus™Adhesion slides (Thermo Scientiﬁc, Waltham, MA) and
+immunohistochemistry performed using a rabbit anti-Ki67 primary anti-
+body (1:500; Abcam AB15580) with an Alexa-568-conjugated goat anti-
+rabbit secondary antibody (1:500; Invitrogen). Sections were mounted in
+Prolong Gold with DAPI (Invitrogen) and scanned (Zeiss AxioScan.Z1 slide
+scanner, ×20 magniﬁcation).
+Data analysis
+MRI image processing, within the MATLAB R2019b (MathWorks, MA)
+environment, was performed blinded. Regions of interest (ROI) covering
+the tumour, phantom and contralateral non-tumour tissue were manually
+selected using geometry matched, high-resolution 1H TurboRARE struc-
+tural images (see Supplementary Methods). Per subject, mean and
+maximum 23Na signal data from these ROIs were all normalised by the
+phantom ROI (50 mM NaCl). ROI size was also used to estimate tumour
+volume. For data acquired using the
+23Na surface coil, images were
+corrected for B1 ﬁeld inhomogeneity prior to processing. Field correction
+utilised a prior 1/r2 correction based upon images from a suitable 1 M NaCl
+phantom.
+DWI data were analysed using RStudio version 1.2.5033 (RStudio Inc.,
+MA). ADC was calculated from the mean ROI signal, S, as ADC = −ln(S/S0)/
+b, where b corresponds to the calculable degree of diffusion weighting
+applied (based upon diffusion gradient timings and applied gradient
+strength—see Supplementary Methods) in s/mm2 and S0 is the signal
+intensity with b = 0 (also commonly referred to as an A0 image).
+Classiﬁcation analysis was completed in RStudio version 1.2.5033.
+Initial model classiﬁcation accuracy (maximum vs mean 23Na signal) was
+0.0
+1.0
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+0.5
+1.0
+1.5
+2.0
+2.5
+3.0
+x103
+x103
+2
+0.2
+0.0
+0.5
+1.0
+1.5
+2.0
+0.4
+0.6
+0.8
+1.0
+3
+Week
+Tumour
+P = 0.0365
+P = 0.0202
+P = 0.0379
+P = 0.0002
+P = 0.0021
+P = 0.0018
+P = 0.0104
+P<0.0001
+P = 0.0009
+P = 0.0013
+P = 0.0009
+Non-tumour
+Tumour
+Non-tumour
+Tumour
+Non-tumour
+Tumour
+Non-tumour
+Tumour
+Non-tumour
+Mean 23Na signal
+(normalised)
+Mean 23Na signal
+(normalised)
+0.0
+0.5
+1.0
+1.5
+2.0
+Mean 23Na signal
+(normalised)
+P = 0.0050
+P = 0.0295
+Tumour
+Non-tumour
+0.0
+0.5
+1.0
+1.5
+2.0
+Max 23Na signal
+(normalised)
+0.0
+0.5
+1.0
+1.5
+2.0
+Max 23Na signal
+(normalised)
+4
+2
+0.2
+0.4
+0.6
+0.8
+1.0
+3
+Week
+Max 23Na signal
+(normalised)
+4
+2
+3
+Week
+4
+2
+3
+Week
+4
+2
+a
+d
+e
+g
+f
+h
+c
+b
+i
+3
+Week
+4
+2
+3
+Week
+4
+2.0
+3.0
+1.0
+NaCl
+(50 mM)
+NaCl
+(50 mM)
+NaCl (50 mM)
+2.0
+3.0
+0
+0
+1000
+2000
+3000
+500
+1000
+1500
+23Na 3D Spiral
+23Na Volume coil (23Na 3D Spiral)
+1H TurboRARE
+Merge
+23Na 2D Cartesian
+23Na Volume coil (23Na 2D Cartesian)
+1H TurboRARE
+Merge
+23Na Surface coil (23Na 2D Cartesian - B1 corrected)
+23Na 2D Cartesian
+1H TurboRARE
+Merge
+x104
+x104
+Week 4
+Week 4
+Week 3
+Fig. 1
+23Na MRI reveals elevated [Na+] in orthotopic xenograft tumours. 23Na imaging was performed in Rag2−/−Il2rg−/−mice bearing
+orthotopic MDA-MB-231 xenograft tumours at 2, 3 and 4 weeks post implantation. Representative images are shown for MRI performed using
+a bespoke 3 cm 23Na surface coil (a, 23Na 2D gradient-echo cartesian acquisition (2D cartesian)) or a commercial dual-tuned 1H/23Na volume
+coil (b, 23Na 2D cartesian; c 23Na 3D gradient-echo spiral out acquisition (3D spiral)). Regions of interest (ROIs) are annotated (tumour, red
+region; non-tumour, blue region). Mean and maximum 23Na signals were normalised to a NaCl phantom (50 mM) to provide a concentration
+measurement. Mean and maximum 23Na signals for tumour vs non-tumour regions are shown for the 23Na surface coil (d, e, 23Na 2D cartesian,
+n = 3 mice at all timepoints) and dual-tuned 1H/23Na volume coil (f, g 23Na 2D cartesian. Week 2, n = 5; week 3, n = 6; week 4, n = 5. h, i 23Na
+3D spiral. Week 2, n = 3; week 3, n = 6; week 4, n = 6). Data represent group mean ± SEM. P-values for signiﬁcant differences between tumour
+and non-tumour at each individual timepoint calculated using an unpaired, two-tailed Student’s t test. A mixed-effects model indicated that
+the effect of time was not statistically signiﬁcant.
+A.D. James et al.
+339
+British Journal of Cancer (2022) 127:337 – 349
+determined with leave-one-out cross-validation (LOOCV). We followed
+this approach due to the limited size of the training datasets (Fig. 2e, f). A
+further independent test set (vehicle group, Fig. 4) was used to
+compare models trained on maximum 23Na signal vs ADC. Principal
+component analysis was performed using the prcomp() function
+and “factoextra” package [34]. Linear discriminant analysis (LDA) with
+LOOCV was performed using the “MASS” package [35]. The receiver-
+operating characteristic curve was determined using the “ROCR”
+package [36].
+To calibrate [Na+]e, ISME recordings from standards were ﬁtted to a non-
+linear regression (Padé (1,1) approximant), and tumour slice recordings
+were interpolated. Similarly, SBFI ﬂuorescence recordings for each
+calibration step were ﬁt to non-linear regression (n = 3 experiments,
+one-phase
+association)
+and
+resting
+[Na+]i
+(baseline
+ﬂuorescence)
+interpolated.
+Quantiﬁcation of Ki67-positive nuclei (as a percentage of nuclei count,
+DAPI) was performed using ZEN 3.2 (Zeiss, Oberkochen, Germany) and
+ImageJ 1.53c (NIH, public domain) particle count (50 pixels minimum size)
+with the Classic Watershed method applied [37].
+All statistical comparisons were performed using GraphPad Prism 9.3.1
+(GraphPad Software, San Diego, CA). Normal data distribution was
+conﬁrmed using Shapiro–Wilk tests. Statistical comparisons at each
+independent timepoint were performed with unpaired, two way Student’s
+t tests. Correlations were assessed using Pearson’s r tests. Comparisons
+between tumour models (Fig. 6) were performed using one-way ANOVA
+with post hoc Tukey test for multiple comparisons.
+0
+0
+0.5
+1.0
+Tumour
+Non-tumour
+Tumour
+Non-tumour
+0.00
+0.00
+0.25
+0.50
+0.75
+1.00
+0.25
+0.50
+–1.0
+Non-tumour
+Tumour
+–0.5
+2
+0
+1
+2
+3
+3
+Week
+Tumour
+Phantom (dH2O)
+Non-tumour
+P = 0.0050
+P<0.0001
+P<0.0001
+4
+–0.5
+0.0
+Maximum
+23Na signal
+ADC
+0.5
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+Dim1 (89.1%)
+Dim2 (10.9%)
+–0.0
+–0.5
+False positive rate
+True positive rate
+0.75
+1.00
+ADC (×10–3 mm2/s)
+1.5
+0
+0.5
+1.0
+ADC (×10–3 mm2/s)
+ADC (×10–3 mm2/s)
+ADC (×10–3 mm2/s)
+ADC
+(×10–3 mm2/s)
+ADC Map
+1H TurboRARE
+1.5
+0.0
+0.5
+1.0
+1.5
+2.0
+0.0
+0.0
+0.2
+0.4
+0.6
+0.8
+0.5
+1.0
+1.5
+2.0
+0.0
+0.5
+1.0
+1.5
+2.0
+100
+200
+Mean 23Na signal
+Max 23Na signal
+Pearson r : P > 0.05(ns)
+Pearson r : P > 0.05(ns)
+r = –0.6965 (P < 0.0001)
+r = –0.7499 (P < 0.0001)
+Model
+Max 23Na
+ADC
+Combined
+Sensitivity
+0.76
+0.71
+0.94
+0.87
+0.93
+1.00
+Specificity
+Tumour volume (mm3)
+23Na signal
+(normalised)
+Mean 23Na signal
+(normalised)
+Max 23Na signal
+(normalised)
+0
+100
+a
+b
+g
+e
+c
+d
+f
+h
+200
+300
+300
+Tumour volume (mm3)
+Fig. 2
+23Na MRI combined with and DWI improves tumour vs non-tumour classiﬁcation accuracy. a Corresponding 1H TurboRARE images
+and reconstructed ADC maps (diffusion tensor imaging, b values of 100, 300 and 700 s/mm2) were obtained from mice bearing MDA-MB-231
+xenograft tumours at 2, 3 and 4 weeks post implantation. Tumour (red), phantom (blue, 50 mM NaCl) and non-tumour (green) regions of
+interest (ROIs) are shown. b ADC in tumour, phantom and non-tumour regions at each imaging timepoint (week 2, n = 4; week 3, n = 5; week
+4, n = 6. mean ± SEM). c Tumour volume does not correlate with tumour ADC (pooled ROIs across all timepoints, n = 15). d Neither mean nor
+maximum 23Na signal (23Na 2D cartesian acquisition) from tumour ROIs correlate with tumour volume (n = 16). Both maximum (e) and mean
+(f) 23Na signal negatively correlate with ADC across all regions (tumour, red; non-tumour, blue, all timepoints pooled, n = 30). g Principal
+component analysis biplot of maximum 23Na signal and ADC (data from e) with loading vectors for maximum 23Na signal and ADC with 95%
+concentration ellipses. Receiver-operating characteristics are shown (h) for linear discriminant models trained on maximum 23Na values alone,
+ADC alone, or combination (training data from e, test data from DTX control cohort (Fig. 5, n = 32 regions from all timepoints). Classiﬁcation
+sensitivity and speciﬁcity are presented in the inset. P-values for signiﬁcant differences between groups calculated using an unpaired, two-
+tailed Student’s t test and for correlation using a Pearson r test.
+A.D. James et al.
+340
+British Journal of Cancer (2022) 127:337 – 349
+RESULTS
+23Na MRI reveals elevated tumour [Na+] in a preclinical model
+of triple-negative breast cancer
+Orthotopic MDA-MB-231 xenograft tumours represent a model of
+highly invasive, triple-negative breast cancer. Across a 4-week
+longitudinal study, 23Na MRI revealed tissue [Na+] is signiﬁcantly
+elevated within MDA-MB-231 xenografts compared with contral-
+ateral non-tumour regions (Fig. 1a–c, tumour growth shown in
+Supplementary Fig. 1a). 23Na signal was linear with [NaCl] (0–100
+mM, Supplementary Fig. 1b–e). The observation that [Na+] was
+signiﬁcantly elevated within tumours was independent of coil
+setup, readout method and TR. A 3 cm
+23Na surface coil (B1
+corrected,
+23Na 2D gradient-echo Cartesian acquisition [2D
+Cartesian], Fig. 1a) revealed signiﬁcantly elevated maximum 23Na
+signal (increased 2.5-fold at week 3, Fig. 1e) and mean 23Na signal
+(increased 0.9-fold at week 3, Fig. 1d) in tumour regions compared
+with non-tumour regions. A dual-tuned linear 1H/23Na volume coil
+(23Na 2D Cartesian, Fig. 1b) also detected a signiﬁcantly higher
+mean
+23Na signal (increased 1.3-fold at week 3, Fig. 1f) and
+maximum 23Na signal (increased 1.6-fold at week 3, Fig. 1g) in
+tumour regions compared with non-tumour regions.
+23Na 3D
+gradient-echo spiral out acquisition [3D spiral] with the dual-tuned
+volume coil (Fig. 1c) also found signiﬁcant elevations in both mean
+23Na signal (increased 0.5-fold at week 3, Fig. 1h) and maximum
+23Na signal (increased 0.8-fold at week 3, Fig. 1i) in tumour regions
+compared with non-tumour regions. Lower normalised
+23Na
+signals from 3D spiral acquisition reﬂect variable T1 relaxation
+times between phantom and tissue and a shorter acquisition
+repetition time (23Na 2D Cartesian, TR = 50 ms; 23Na 3D spiral, TR
+= 10 ms). Shorter TR times for the 3D acquisition were required to
+increase the number of scan repetitions within a set 10-min
+scanning period. Core temperature was monitored/maintained
+using pumped warm water. No subject displayed signs of
+excessive heating due to RF exposure. It is noted that in order
+to minimise T1 saturation inﬂuences, within-group comparisons
+(across the three different ROIs, phantom/tissue/tumour) use the
+MDA-MB-231
+tumours
+Air
+100% humidity
+Amplifier
+50
+80
+100
+120
+140
+160
+100
+Voltage (mV)
+[Na+]e (mM)
+0
+0.7
+0.8
+0.9
+1.0
+1.1
+0
+20
+40
+60
+80
+20
+PSS
+lonophores
+5 min
+0.1 ratio
+10 mM
+NaCl
+20 mM
+NaCl
+50 mM
+NaCl
+Non-
+tumour
+Tumour
+P = 0.0072
+40
+60
+[Na+]i (mM)
+Fluorescence (F/F0)
+Total [Na+] mmol/kg
+150
+200
+HEPES-PSS
+30 °C
+Normal
+mammary
+glands
+Introduction
+Nebuliser/
+Spray chamber
+Interface
+Quadrupole
+Electron
+multiplier
+Detection
+a
+b
+c
+d
+e
+h
+f
+g
+ICP Torch
+Ex vivo SBFI fluorescence
+Inductively-coupled plasma mass spectrometry
+Na+ ion-selective microelectrode
+Extracellular [Na+]
+Intracellular [Na+]
+Total tissue [Na+]
+Ionisation
+100 m
+Focalisation
+Separation
+Fig. 3
+[Na+]i is elevated in live xenograft tumour slices. a Following week-4 imaging, tumours were acutely isolated, divided and prepared
+for inductively coupled plasma mass spectrometry (ICP-MS, b) analysis or ex vivo measurements of [Na+]i and [Na+]e. Healthy mammary
+glands (HMGs) from naive female mice were included in ICP-MS analysis. c Total tissue [Na+] in MDA-MB-231 xenograft tumours (n = 10) and
+HMGs (n = 11). d MDA-MB-231 xenograft tumour slices (200 µm) were loaded with SBFI-AM (10 µM) and immobilised for imaging. Baseline
+SBFI ﬂuorescence was recorded during perfusion with HEPES-buffered physiological saline solution (PSS) containing 144 mM NaCl. e To
+calibrate [Na+]i for each cell in situ, perfusion was switched to 10 mM NaCl, followed by application of the ionophores (red arrow) gramicidin
+(3 µM), monensin (10 µM) and ouabain (1 mM). Tumour slices were sequentially perfused with 20 mM and 50 mM NaCl. The ﬁnal three frames
+acquired during each phase were used to determine the average ﬂuorescence for each calibration step. f [Na+]i during the baseline PSS phase
+(red point) was calibrated (n = 3 slices from two separate animals, 11–16 cells per experiment, F/F0) using non-linear regression (one-phase
+association). g Concurrently, Na+ ion-selective microelectrodes (ISMEs) calibrated with PSS of variable [Na+] (48 mM, 96 mM, 144 mM, 192 mM,
+no replacement ion) were used to measure [Na+]e (red point) in MDA-MB-231 xenograft tumour slices (500 µm, n = 6 slices from six separate
+animals, 12 recordings per slice; h). Recordings were interpolated using non-linear regression (Padé (1,1) approximant). Data represent group
+mean ± SEM.
+A.D. James et al.
+341
+British Journal of Cancer (2022) 127:337 – 349
+same coil/sequence parameters over the longitudinal growth
+measure. Signals are presented normalised to the in-plane
+phantom ROI (50 mM). Thus, while data may not be quantitative
+in terms of absolute mM concentrations, normalised changes over
+time remain a valid observation (T1 tissue times are not expected
+to vary much over 5 weeks). Results thus conﬁrm elevated tumour
+[Na+] within the MDA-MB-231 preclinical breast cancer model.
+23Na MRI improves the predictive potential of ADC for the
+classiﬁcation of malignant lesions
+Low ADC correlates with high cellularity, malignancy and elevated
+tumour [Na+] [8–10, 38]; 1H DWI is used as an adjunct imaging
+modality for assessing malignant breast lesions in the clinic [7]. To
+determine whether tumour [Na+] is similarly an important
+biomarker of malignancy, we used machine learning approaches
+to compare the predictive power of tumour [Na+] vs ADC in
+classifying tumour (MDA-MB-231 xenografts) vs non-tumour
+regions. Across all timepoints, ADC was consistently signiﬁcantly
+lower in tumour regions than in non-tumour regions (0.7-fold
+lower at week 3, Fig. 2a, b), as expected. Interestingly, tumour
+volume was not correlated with either ADC (Fig. 2c) or 23Na signal
+(Fig. 2d), indicating that both parameters were independent of
+tumour size. However, In line with clinical observations [8], ADC
+(all timepoints/regions pooled) was inversely correlated with both
+2
+3
+Week
+Vehicle
+DTX (10 mg/kg)
+Week
+a
+b
+c
+d
+e
+h
+g
+f
+Mean 23Na signal
+(normalised)
+DAPI + Ki67
+Mean 23Na signals
+1H /23Na Merge
+1H
+Max 23Na signals
+ADC
+Tumour volume
+0.0
+0.5
+1.0
+1.5
+2.0
+Vehicle
+P = 0.0443 P = 0.0479
+P = 0.0297
+P = 0.0468
+P = 0.0062
+P = 0.0225
+DTX (10 mg/kg)
+Vehicle
+Vehicle
+DTX (10 mg/kg)
+DTX
+(10 mg/kg)
+Max 23Na signal
+(normalised)
+ADC (×10–3 mm2/s)
+0.0
+0.2
+0
+0
+1000
+2000
+3000
+4000
+5000
+10
+20
+30
+40
+0
+100
+200
+300
+400
+2
+4
+6
+8
+×103
+0.4
+0.6
+0.8
+1.0
+0.5
+1.0
+1.5
+2.0
+4
+2
+3
+4
+Week
+2
+3
+4
+Week
+Vehicle DTX
+(10 mg/kg)
+Vehicle
+DTX (10 mg/kg)
+Vehicle
+DTX (10 mg/kg)
+Vehicle
+100 µm
+100 µm
+Ki67-positive nuclei (%)
+Nuclei count (DAPI)
+DTX
+(10 mg/kg)
+Tumour volume (mm3)
+2
+3
+4
+Fig. 4
+Docetaxel decreases the maximum 23Na signal detected within MDA-MB-231 xenograft tumours. Following orthotopic MDA-MB-
+231 cell implantation, Rag2−/−Il2rg−/−mice were randomised to receive either docetaxel (10 mg/kg) or vehicle i.p. once weekly.
+a Representative 1H TurboRARE and 1H/23Na 2D cartesian (merge) images for docetaxel and vehicle-treated mice at week 4 post implant;
+regions of interest (ROIs) for tumour (white dash) and NaCl phantom (50 mM, yellow dash) are annotated. Mean (b) and maximum (c) 23Na
+signals measured from tumour ROI at weeks 2, 3 and 4 post xenograft implantation (normalised to phantom to provide a concentration
+measurement. Vehicle, week 2, n = 7; week 3, n = 6; week 4, n = 7. Docetaxel, week 2, n = 9; week 3, n = 8; week 4, n = 7). d Effect of docetaxel
+on tumour ADC (Vehicle, week 2, n = 5; week 3, n = 6; week 4, n = 7. Docetaxel, week 2, n = 6; week 3, n = 8; week 4, n = 7). e Effect of
+docetaxel treatment on tumour growth rate (vehicle, n = 6 for all timepoints. Docetaxel, week 2, n = 8; week 3, n = 8; week 4, n = 5. Volume
+measured by multislice (1 mm) 1H TurboRARE imaging. f Representative images of Ki67/DAPI stained tissue tumour sections. g Ki67-positive
+nuclei (vehicle, n = 5; docetaxel, n = 7; 2–10 regions each section). h Nuclei counts (vehicle, n = 5; docetaxel, n = 6; 1–10 regions each section).
+Data represent group mean ± SEM. P-values for signiﬁcant differences between groups calculated using an unpaired, two-tailed Student’s t
+test (b–e) or an unpaired, two-tailed nested t test (g, h).
+A.D. James et al.
+342
+British Journal of Cancer (2022) 127:337 – 349
+maximum 23Na signal (r = −0.750; Fig. 2e) and mean 23Na signal
+(r = −0.697; Fig. 2f).
+To compare whether the mean or maximum
+23Na signal
+performed better at classifying tumour vs non-tumour regions, we
+used data from Fig. 2e and f to train two single-variable LDA
+models and performed LOOCV. The maximum
+23Na signal
+achieved a classiﬁcation accuracy of 92.9%, whereas the mean
+23Na signal achieved 89.3%. It was hypothesised that the reduced
+classiﬁcation accuracy of mean 23Na signals was a consequence of
+tumour heterogeneity and/or partial volume effects due to slice
+thickness used. Notably, current technology levels and 23Na-MR
+signal insensitivity necessitates the use of low-resolution imaging
+and thick imaging slices to compensate and improve SNR. The
+maximum 23Na signal was therefore carried forward for compar-
+isons with ADC. Principal component analysis of maximum 23Na
+signal and ADC reported clear separation of tumour and non-
+tumour regions (95% concentration ellipses, Fig. 2g). The distinct
+opposing direction and similar size of the associated loading
+vectors (Fig. 2g, black arrows) demonstrate that maximum 23Na
+signal and ADC are inversely correlated yet hold almost equivalent
+dominance along principal component 1, suggesting that these
+variables are equally important for explaining variance between
+the tissue groups.
+To test the comparative predictive capacity of maximum 23Na
+signal vs ADC, we trained LDA models (data from Fig. 2e) and
+classiﬁed novel data taken from an independent experimental
+cohort (docetaxel vehicle group, Fig. 4). LDA models trained on
+maximum 23Na signal alone or ADC alone achieved accuracies of
+81.2%, while the model trained on a combination of both
+parameters achieved an accuracy of 96.9%. The maximum 23Na
+2
+3
+Week
+a
+e
+f
+g
+c
+b
+d
+h
+Mean 23Na signal
+(normalised)
+1H/23Na Merge
+1H
+1H/23Na Merge
+1H
+0.0
+0
+100
+200
+300
+0.5
+1.0
+1.5
+2.0
+4
+2
+3
+Week
+Tumour volume
+Mean 23Na signals
+Mean 23Na signals
+Max 23Na signals
+Week 4
+Week 4
+Max 23Na signals
+Tumour volume
+4
+2
+3
+Week
+4
+2
+3
+Week
+Mean 23Na signal
+(normalised)
+Tumour volume (mm3)
+0
+100
+200
+300
+400
+Tumour volume (mm3)
+0
+0.5
+1.0
+1.5
+4
+Week
+Max 23Na signal
+(normalised)
+0.0
+0.5
+1.0
+1.5
+2.0
+1
+2
+3
+4
+5
+x103
+1
+2
+3
+x103
+2
+3
+4
+Week
+Max 23Na signal
+(normalised)
+0
+0.5
+1.0
+1.5
+2.0
+2
+3
+4
+Vehicle
+ESL (200 mg/kg)
+Vehicle
+ESL
+(200 mg/kg)
+Vehicle
+Cariporide
+(3 mg/kg)
+Vehicle
+ESL (200 mg/kg)
+Vehicle
+P = 0.0495
+P = 0.0096
+Cariporide (3 mg/kg)
+Vehicle
+Cariporide (3 mg/kg)
+ESL (200 mg/kg)
+Vehicle
+Cariporide (3 mg/kg)
+Vehicle
+Fig. 5
+Cariporide and eslicarbazepine acetate have no effect on tumour [Na+] in MDA-MB-231 xenografts. Rag2−/−Il2rg−/−mice bearing
+MDA-MB-231 tumours were randomised to receive either cariporide (3 mg/kg) vs vehicle i.p. once daily or eslicarbazepine acetate (ESL, 200
+mg/kg) vs vehicle p.o. once daily commencing 1 week post xenograft implantation. Representative 1H TurboRARE and 1H/23Na 2D cartesian
+(merge) images for (a) ESL vs vehicle (e) cariporide vs vehicle at week 4 post implant; regions of interest (ROIs) for tumour (white dash) and
+NaCl phantom (50 mM, yellow dash) are annotated. Mean (b, f) and maximum (c, g) 23Na signals from tumour ROIs (normalised to phantom to
+provide a concentration measurement) were measured at weeks 2, 3 and 4 post xenograft implantation (cariporide group: n = 5 per group per
+timepoint. ESL vehicle group: week 2, n = 3; week 3, n = 3; week 4, n = 4. ESL treatment group: week 2, n = 4; week 3, n = 4; week 4, n = 5). The
+tumour growth rate was measured by multislice 1H TurboRARE imaging (d, ESL. Vehicle, n = 4; treatment group, n = 5. h cariporide. Vehicle
+week 4, n = 4; all other data points n = 5). Data represent group mean ± SEM. P-values for signiﬁcant differences between groups calculated
+using an unpaired, two-tailed Student’s t test.
+A.D. James et al.
+343
+British Journal of Cancer (2022) 127:337 – 349
+signal or ADC single parameter models achieved sensitivities of
+0.76 and 0.71 and speciﬁcities of 0.87 and 0.93, respectively,
+whereas the combined parameter model achieved a sensitivity of
+0.94 and a speciﬁcity of 1.0. Moreover, the area under the ROC
+curve (AUC) for each of the models was 0.92 for 23Na, 0.95 for ADC,
+and 1 for the two parameters combined (Fig. 2h; confusion
+matrices presented in Supplementary Fig. 2). Together, these data
+indicate that the model that incorporates both parameters is
+optimal, with greater accuracy, speciﬁcity, and sensitivity for
+determining malignant lesions from non-tumour regions.
+Elevated tumour [Na+] is due to increased [Na+]i
+In agreement with 23Na MRI, inductively coupled plasma mass
+spectrometry (ICP-MS) identiﬁed signiﬁcantly higher total tissue
+[Na+] in MDA-MB-231 xenograft tumour samples (46.9 ± 5.4 mM)
+compared with healthy mammary glands from naive mice (29.7 ±
+1.9 mM, Fig. 3a −c). Identifying the compartmentalisation of this
+Na+ accumulation is critically important to determine its impact
+on tumour pathophysiology. Because low ADC in tumours
+indicates a larger intracellular volume fraction (IVF) compared
+with non-tumour regions, elevated tumour [Na+] is unlikely to
+reﬂect an increased extracellular volume fraction (EVF). We
+hypothesised that elevated tumour [Na+] instead reﬂects an
+increased [Na+]i. To test this, we used complementary ex vivo
+approaches to measure [Na+]i and [Na+]e within acutely isolated
+live MDA-MB-231 tumour slices.
+The Na+ selective dye SBFI-AM (10 µM) and in situ calibration
+(dynamic range comparable to that previously described [33]
+Fig. 3d −f) revealed that resting [Na+]i in tumour slices was 25.9 ±
+1.0 mM (n = 3 slices, 11 −16 cells per slice, two separate animals;
+Fig. 3f). This is higher than that expected in healthy mammalian
+cells (5 −15 mM) [39] and yet is in line with previous in vitro
+ﬂuorescence studies in cancer cell lines [20, 21, 40]. In contrast,
+Na+-selective microelectrodes [41] (Fig. 3g) showed that tumour
+slice [Na+]e was 157.8 ± 1.0 mM (n = 6 slices, 12 recordings per
+slice, six separate animals; Fig. 3h). This is within the expected
+serum [Na+] range for female BALBc mice [42]. These results
+indicate that elevated tumour [Na+] is due to increased [Na+]i
+while [Na+]e is unchanged.
+Detection of docetaxel treatment response by 23Na MRI in
+MDA-MB-231 xenografts
+Two prospective clinical studies with small-cohort sizes (n = 15 [12]
+and n = 5 [16] patients) found that elevated [Na+] in malignant
+breast lesions was reduced in patients responding to neoadjuvant
+chemotherapy. We sought to determine whether chemotherapy
+response can be detected using 23Na MRI in tumour-bearing mice
+using a randomised, controlled, interventional study approach.
+0.0
+MDA-
+MB-231
+(week 4)
+EMT6
+23Na Mean signal
+23Na 3D spiral
+23Na 3D spiral
+1H TurboRARE
+1H TurboRARE
+4T1
+EMT6
+23Na Max signal
+Tumour growth
+ADC
+Tumour
+Non-tumour
+Tumour
+Non-tumour
+Tumour
+Non-tumour
+Mean 23Na signal
+(normalised)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+Max 23Na signal
+(normalised)
+ADC (×10–3 mm2/s)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+4T1
+MDA-
+MB-231
+(week 4)
+a
+c
+d
+e
+f
+g
+b
+EMT6
+4T1
+MDA-
+MB-231
+(week 4)
+EMT6
+4T1
+0
+2
+4
+Days
+EMT6
+P = 0.0185
+P = 0.0056
+P = 0.0472
+P = 0.0003
+P = 0.0013
+P = 0.0017
+P<0.0001
+P<0.0001
+4T1
+6
+8
+Ki67-positive nuclei (%)
+Volume (mm3)
+0
+2
+4
+6
+0
+100
+200
+300
+400
+EMT6
+4T1
+0.5
+1.0
+1.5
+2.0
+×104
+3.0
+2.5
+2.0
+1.5
+1.0
+0.5
+0.0
+×104
+MDA-MB-231 (Week 4)
+Fig. 6
+Elevated tumour [Na+] is a common feature of preclinical models of breast cancer. Representative 23Na 3D gradient-echo spiral out
+and 1H TurboRARE images are shown for orthotopic (a) EMT6 or (b) 4T1 allograft tumours, imaged at day 7 post implantation (tumour region
+of interest (ROI), red; non-tumour ROI, blue). Mean 23Na signal (c), and maximum 23Na signal (d) within tumour and non-tumour ROIs were
+normalised to NaCl phantom (50 mM) to provide a concentration measurement; data from MDA-MB-231 tumours at week 4 post implantation
+included for statistical comparison. ADC (e) was assessed by DWI. f Tumour volume (4T1 and EMT6) was calculated using the modiﬁed
+ellipsoidal formula volume = 1/2(length × width2); dotted line denotes the average size of MDA-MB-231 tumours at 4 weeks post implantation
+(see Supplemental Fig. 1a). g Ki67-positive nuclei (%) for 4T1 and EMT6 tumour sections (both groups n = 4, 3–12 regions each section). Data
+represent group mean ± SEM (4T1, EMT6, n = 5; MDA-MB-231, n = 6). P-values for signiﬁcant differences between groups calculated using a
+one-way ANOVA with post hoc Tukey test for multiple comparisons (c, d), a Kruskal–Wallis test with post hoc Dunn’s test for multiple
+comparisons (e) or a nested t test (g).
+A.D. James et al.
+344
+British Journal of Cancer (2022) 127:337 – 349
+Mice received docetaxel (10 mg/kg i.p.) or vehicle once weekly
+from week 1 post MDA-MB-231 xenograft implantation. Docetaxel
+treatment signiﬁcantly inhibited tumour growth; at week 3,
+tumour volume within the treatment group was 32.2% of that
+within the vehicle group (Fig. 4e). Docetaxel treatment also
+signiﬁcantly reduced Ki67-positive nuclei within tumour sections
+by 52.7% (Fig. 4f, g) despite no change in nuclei count (Fig. 4h).
+Moreover, docetaxel treatment conferred a signiﬁcantly lower
+maximum
+23Na signal within tumour regions compared with
+control mice (37.8% lower at week 3, Fig. 4a, c), suggesting that
+localised changes in tumour [Na+] reﬂect clinical response.
+However, no difference was observed between docetaxel and
+control groups for either mean tumour 23Na signal (Fig. 4b) or
+isolated tissue sample [Na+] (ICP-MS, Supplementary Fig. 3). The
+difference between the maximum and mean
+23Na signals
+potentially reﬂects important intratumoural heterogeneity requir-
+ing improved MRI resolution to probe further.
+Previous studies indicate that low ADC correlates with elevated
+Ki67 expression [43]. We performed DWI to assess whether
+treatment response was reﬂected in ADC. In agreement with the
+tumour section nuclei counts, there was no difference in ADC
+between the control and docetaxel groups (Fig. 4d). These data
+indicate that the docetaxel-induced change in tumour [Na+] was
+not due to altered cellularity, suggesting that tumour [Na+] might
+provide improved treatment monitoring over ADC.
+Effect of cariporide and eslicarbazepine acetate on tumour
+[Na+]
+Many Na+ channels and transporters that utilise the inward
+electrochemical Na+ gradient are implicated in tumour progres-
+sion [17]. Thus, elevated tumour [Na+]i could reﬂect increased Na+
+transporter activity. We, therefore, investigated whether inhibition
+of either NHE1 (cariporide) or VGSCs (eslicarbazepine acetate, ESL)
+reduces elevated [Na+] within MDA-MB-231 xenograft tumours.
+ESL and its major active metabolite (S)-licarbazepine [44] inhibit
+inward Na+ current in MDA-MB-231 cells [45], and was selected
+due to its preferred use in the clinic compared to older VGSC-
+inhibiting antiepileptic medications such as phenytoin [46].
+Moreover, cariporide was administered at a dose that previously
+exhibited efﬁcacy in in vivo models of cancer [26, 27].
+ESL treatment (200 mg/kg daily p.o. from day 7 post implant) had
+no effect on the mean (Fig. 5a, b) or maximum (Fig. 5a, c) tumour
+23Na signal compared with untreated control mice. Similarly, ESL had
+no effect on tumour volume (Fig. 5d). Cariporide (3 mg/kg daily i.p.
+from day 7 post implant) also did not reduce mean or maximum
+tumour 23Na signal compared with untreated control mice; in fact,
+there was a signiﬁcant increase in mean 23Na signal at week 2 and
+maximum 23Na signal at week 3 (0.55- and 0.44-fold, respectively;
+Fig. 5e −g). Nevertheless, cariporide had no effect on tumour
+growth, in agreement with previous ﬁndings (Fig. 5h) [47]. There was
+also no effect of ESL (Supplementary Fig. 4a, b) or cariporide
+(Supplementary Fig. 4c, d) on VGSC gating or current density
+measured in ex vivo tumour slices. This was despite achieving plasma
+[licarbazepine] (1 hour post dosing: plasma, 6.5 ± 0.9 ng/µl; tumour,
+4.5 ± 0.8 ng/mg, n = 3 tumours) comparable to that showing clinical
+antiepileptic efﬁcacy [48]. Similarly, docetaxel had no effect on VGSC
+gating or current density in treated ex vivo tumour slices compared
+to controls (Supplementary Fig. 4e, f), suggesting that the docetaxel-
+induced change in tumour [Na+] is not mediated via an effect on
+VGSCs. Taken together, these data indicate that ESL and cariporide at
+the current doses elicit no detectable decrease in tumour [Na+], and
+suggest that targeting multiple Na+ transporters may be required to
+alter elevated tumour [Na+] in vivo.
+Tumour [Na+] is elevated across multiple murine models of
+breast cancer
+To conﬁrm the clinical relevance of these ﬁndings, we next
+assessed whether elevated tumour [Na+] is a common feature
+across other orthotopic murine models of breast cancer. We
+selected the EMT6 (Fig. 6a) and 4T1 (Fig. 6b) murine mammary
+carcinoma cell lines, which form solid tumours in immunocompe-
+tent BALB/c mice. These cell lines give rise to luminal A tumours
+that are weakly ER-positive, claudin-low (EMT6) and ER-negative
+and non-claudin low (4T1). Moreover, these models exhibit
+signiﬁcant
+immunogenicity
+and
+leucocytic
+inﬁltration,
+with
+EMT6-derived tumours exhibiting higher GR1 + granulocyte and
+CD3 + T-cell inﬁltration [49].
+EMT6 and 4T1 tumours grew rapidly after implantation (Fig. 6f),
+reaching a similar size at 1 week post implant to MDA-MB-231
+cells at 4 weeks post implant; no difference was observed in Ki67
+density between the two models (Fig. 6g). At 1 week post implant,
+23Na MRI revealed elevated [Na+] in both EMT6 (Fig. 6a) and 4T1
+(Fig. 6b) tumours. In 4T1 tumours, mean
+23Na signal was
+signiﬁcantly elevated compared with non-tumour regions (0.5-
+fold increase, Fig. 6c). Similarly, maximum
+23Na signal was
+signiﬁcantly elevated (onefold increase, EMT6; 1.8-fold increase,
+4T1; Fig. 6d) within tumour regions compared with non-tumour
+regions. Interestingly, 4T1 tumours exhibited signiﬁcantly higher
+mean 23Na signal compared with EMT6 or MDA-MB-231 tumours
+(0.7-fold and 0.2-fold increases, respectively; Fig. 6c). These results
+suggest that although elevated tumour [Na+] is consistent across
+multiple models of breast cancer, the absolute tumour [Na+] is
+variable, hinting at important underlying biological differences in
+tumour Na+ handling. However, in contrast to the MDA-MB-231
+model, no signiﬁcant difference was observed in ADC between
+tumour and non-tumour regions in EMT6 and 4T1 models (Fig. 6e).
+Similar to [Na+], these data suggest that tumour ADC is variable
+across these models. Importantly, however, given that elevated
+tumour [Na+] was identiﬁed by 23Na MRI in the 4T1 model but no
+difference was seen in ADC, 23Na MRI might in certain cases be
+better positioned than DWI to discern malignancy.
+DISCUSSION
+This study is the ﬁrst to demonstrate that tumour [Na+] is elevated
+relative to non-tumour regions in the orthotopic MDA-MB-231
+xenograft and 4T1 and EMT6 allograft models of breast cancer.
+Moreover, while supervised classiﬁcation algorithms trained on
+23Na MRI data achieved similar accuracy to those trained on DWI
+data (ADC) in distinguishing tumour vs non-tumour regions, a
+model trained on both parameters combined achieved superior
+classiﬁcation accuracy, suggesting that 23Na MRI holds promise as
+a novel diagnostic readout. Using a randomised, controlled study
+approach, we show that docetaxel, a clinically used antineoplastic
+drug that disrupts microtubule formation, reduces maximum
+tumour [Na+] while slowing tumour growth rate but has no effect
+on ADC. These ﬁndings suggest that 23Na MRI also has utility as a
+readout of response to chemotherapy, and may be better suited
+for this purpose than DWI. These ﬁndings broadly conﬁrm for the
+ﬁrst time in a randomised, controlled, interventional study design,
+the chemotherapy response effect reported in previous small-
+cohort clinical observational studies [12, 13]. We show in intact
+breast tumour slices that elevated tumour [Na+] reﬂects increases
+in [Na+]i, while [Na+]e is unaltered. This aberrant intracellular Na+
+handling sheds light on a previously underappreciated character-
+istic of malignant breast lesions and has considerable implications
+for pathophysiological processes linking ion homoeostasis to
+tumour cell function.
+The ﬁnding that tumour [Na+] is elevated within mouse models
+of breast cancer is consistent with previous clinical breast cancer
+studies [8, 12, 13]. Ouwerkerk et al. reported that mean total tissue
+[Na+] was ~53 mM (n = 19 patients) in malignant lesions and ~26
+mM in benign lesions (n = 3 patients) [13]. Similarly, Zaric et al.
+reported a mean total tissue [Na+] of ~69 mM in malignant lesions
+compared with ~35 mM in normal glandular tissue (n = 17
+patients) [8]. These values are broadly in agreement with our
+A.D. James et al.
+345
+British Journal of Cancer (2022) 127:337 – 349
+ICP-MS and 23Na MRI data. However, our ﬁnding that maximum
+23Na signal improves distinction of tumour vs non-tumour regions
+compared to mean 23Na signal potentially reﬂects considerable
+heterogeneity of [Na+] within tumours. Indeed, despite the limited
+spatial resolution, we observed clear variability in 23Na signal
+across the tumour regions (Figs. 1, 4, and 6). This heterogeneity
+could also explain why docetaxel treatment conferred a reduced
+maximum 23Na signal within tumours despite no difference in
+mean 23Na signal. This has broader implications for prognosis,
+since intratumoural heterogeneity is considered a key contributor
+to resistance to chemotherapy [50], and suggests a potential link
+between local changes in tumour [Na+] and cancer cell function
+that could be discerned using
+23Na MRI. The realisation of
+improved spatial speciﬁcity for 23Na MRI would enable incorpora-
+tion of tumour [Na+] heterogeneity within more complex
+analyses. Indeed, a recent study coregistering tumour section
+histology with 1H parameters (including DCE MRI and DWI) found
+that DCE MRI could distinguish distinct tumour subregions [51].
+Inclusion of (or replacement with) non-invasive 23Na readouts
+would offer an important additional dimension to such functional
+imaging methods. We note that future work should quantify 23Na
+T1 relaxation parameters to better describe absolute millimolar
+tissue concentrations from
+23Na MRI data. However, current
+technology limits and the insensitivity of 23Na MRI necessitates the
+use of short TR times to increase averages to gain SNR - especially
+when multiparametric measures (e.g. diffusion, 23Na and structural
+imaging) are required from the same animal model. Future work
+could also explore use of Tm3+ based complexes/shift reagents
+with chemical shift-based imaging to separate blood pool, intra
+and extracellular compartments of the Na+ signal [52].
+This study establishes that elevated tumour [Na+] coregisters
+with a low ADC within preclinical models of breast cancer, and
+that these parameters are inversely correlated across non-
+cancerous and malignant lesions, recapitulating previous clinical
+observations [8]. These ﬁndings suggest a functional link between
+high cellularity and Na+ accumulation in tumours, supporting the
+notion that elevated tumour [Na+] is likely due to changes within
+the intracellular compartment. Interestingly, principal component
+analysis revealed that ADC and maximum 23Na signal held almost
+equivalent importance when explaining variance across all regions
+(tumour and non-tumour). LDA models trained on either 23Na
+signal or ADC were comparable in their ability to correctly classify
+regions. However, a model trained on both variables achieved
+superior classiﬁcation accuracy. One can therefore hypothesise
+that their predictive resolutions do not completely overlap (see
+Supplementary Fig. 2) and are complementary.
+While recent recommendations have been published [53], there
+is as yet no clearly established consensus on optimal DWI
+methodology or a threshold ADC value with which to denote
+malignancy [54]. DWI sensitivity and ADC quantiﬁcation are
+inﬂuenced by differences in methodology (i.e., choice of b values,
+magnet strength) and tumour heterogeneity [55, 56], thereby
+preventing the establishment of a generalised threshold ADC value.
+Moreover, a negative correlation between ADC and high cellularity
+is not universally apparent in all cancer subtypes [38]. Taken
+together with the improved statistical discrimination of 4T1 and
+EMT6 tumours by 23Na MRI vs DWI, our classiﬁcation results suggest
+that combining DWI with 23Na MRI could improve speciﬁcity and
+predictive accuracy in the clinic, enabling superior non-invasive
+diagnostic and treatment monitoring beyond DWI alone.
+This study is the ﬁrst to report an effect of docetaxel on tumour
+[Na+] in the preclinical setting. Two small, prospective clinical
+studies in patients with breast cancer previously measured
+signiﬁcant reductions (27%, n = 15 patients [12]; 21%, n = 5
+patients [16]) in total tissue [Na+] using
+23Na MRI following
+response to neoadjuvant chemotherapy. In this study, docetaxel
+treatment conferred slower tumour
+growth and decreased
+maximum tumour 23Na signals (37.8% lower than the vehicle
+group at week 3). However, we do not currently know the
+mechanism underlying this, nor whether the decrease in tumour
+[Na+] contributes to, or is a consequence of, treatment response.
+Nonetheless, treatment with docetaxel did not decrease ADC,
+suggesting a mechanism other than altered cellularity; for
+example, decreased tumour vascularity (docetaxel is antiangio-
+genic). These data suggest that, in certain circumstances, 23Na MRI
+may be better positioned to discern treatment response than DWI.
+Beyond breast cancer, contrasting observations have been
+made in ﬁbrosarcoma and gliosarcoma models where cyclopho-
+sphamide or carmustine treatment, respectively [57, 58] led to a
+correlated increase in both 23Na signal and ADC. The authors
+concluded that
+23Na signal and ADC both report the same
+physiological event, namely decreased cellularity and increased
+EVF. This is in contrast to the present study, where tumour ADC
+was unchanged yet maximum 23Na signal decreased following
+docetaxel treatment. These conﬂicting ﬁndings suggest that
+tumour [Na+] responses differ depending on cancer type and
+choice of chemotherapeutic intervention.
+This study provides direct evidence from intact, live MDA-MB-
+231 tumour slices that elevated tumour [Na+] arises due to an
+intracellular accumulation of Na+; [Na+]i was 25.9 mM within the
+tumour slices (expected upper physiological bound for [Na+]i is
+~15 mM [39]). This is in agreement with our DWI results, which
+suggest that EVF is decreased in tumours vs non-tumour regions,
+and that elevated tumour [Na+] must therefore reﬂect an increase
+in either [Na+]i or [Na+]e. Moreover, tumour slice [Na+]e was
+within the expected physiological range for female BALB/c mouse
+serum (~157 −160 mM [42]), indicating that elevated tumour
+[Na+] is not due to changes in [Na+]e. Interestingly, our observed
+[Na+]i is similar to that recently extrapolated (~30 mM) from
+complementary 23Na and 1H DCE MRI approaches in patients with
+triple-negative breast cancer [59]. Furthermore, although at the
+limit of statistical distinction, intracellular-weighted 23Na imaging
+determined that [Na+]i is elevated in prostate tumours compared
+with adjacent healthy tissue [60]. Given the small size of MDA-MB-
+231 xenograft tumours, similar [Na+]i measurements could be
+enabled by improvements to 23Na contrast to noise ratio that are
+subsequently sacriﬁced to increase spatial resolution [61].
+Using a simpliﬁed model, the relative EVF to IVF of xenograft
+tumours can be estimated from values obtained from the present
+study.
+If
+total
+tissue
+[Na+] = (1 −EVF) × [Na+]i + EVF × [Na+]e,
+where EVF = 1 −IVF [13], EVF and IVF can be resolved for given
+values of [Na+]i, [Na+]e and total tissue [Na+]. For our tumour slice
+[Na+]i and [Na+]e values (25.9 and 157.8 mM, respectively) and the
+observed total tumour [Na+] (46.9 mM), we expect an EVF of 0.159
+and IVF of 0.841. Keeping these EVF and IVF values constant and
+rearranging the above equation for healthy mammary gland
+[Na+]i (total tissue [Na+] = 29.7 mM) with an assumed [Na+]e of
+158 mM [42] returns a value of 5.4 mM; this is within the expected
+physiological range [39]. However, this simpliﬁed model does not
+take into account changes to the EVF:IVF ratio in tumours relative
+to healthy tissue, nor the blood or ductal compartments. Using
+shift reagents, one can quantify the contribution of these
+compartments with magnetic resonance spectroscopic imaging
+[62]; however, this would be invasive and therefore of limited
+clinical use.
+An elevated [Na+]i has important implications for cancer cell
+function, as it would impact upon processes governed by Na+-
+linked channels and transporters [17]. For example, Na+/K+ ATPase
+is the predominant consumer of intracellular ATP [63], and its
+activity increases across the [Na+]i physiological range (5 −15 mM)
+[64], suggesting full activation in tumours exhibiting a [Na+]i of
+~26 mM. This has important implications for aberrant cancer
+metabolism [17], Similarly, mitochondrial Na+/Li+/Ca2+ exchanger
+activation by elevated [Na+]i (Km ~ 12 mM) [65] could alter
+mitochondrial function and bioenergetics. Processes altered by
+elevated [Na+]i could therefore represent novel therapeutic loci.
+A.D. James et al.
+346
+British Journal of Cancer (2022) 127:337 – 349
+On the other hand, the elevated [Na+]i could reﬂect increased
+Na+ channel or transporter activity [17]. For example, cancer cell
+pH and migration are regulated by the activity of NHE1 [25], and
+VGSCs aberrantly expressed in MDA-MB-231 cells pass a persistent
+inward
+Na+
+current
+and
+regulate
+metastasis
+[23,
+29–31].
+Pharmacological data suggest that functional VGSCs may also
+be present in 4T1 cells [66]; however, their expression status in
+EMT6 cells is unknown. Plasma membrane Na+ channels and
+transporters are attractive pharmacological targets as they are
+easily accessible to small-molecule inhibitors and are already
+targeted by clinically approved drugs. However, in contrast to
+docetaxel, selective inhibition of either NHE1 or VGSCs (cariporide
+or ESL, respectively) did not reduce elevated tumour [Na+] in the
+present study at clinically relevant doses. On the other hand, we
+saw no effect of docetaxel treatment on VGSC gating properties or
+peak current density in ex vivo tumour slices, despite a decrease in
+maximum tumour 23Na signal (evidence suggests taxanes can
+modulate VGSC activity in MDA-MB-231 cells [67]). Although we
+cannot rule out subtle, localised changes in [Na+] beyond the
+sensitivity of the present MRI approach, these results suggest that
+alternative
+Na+-dependent
+transporters
+are
+responsible
+for
+elevated tumour [Na+]i [17].
+In conclusion, this study highlights
+23Na MRI as a novel
+diagnostic biomarker for breast cancer diagnosis and readout of
+response to chemotherapy. In addition, we elevate the importance
+of altered [Na+]i handling in breast tumour pathophysiology, and
+identify altered tumour [Na+] as a common characteristic of
+preclinical breast cancer models. The inclusion of non-invasive
+23Na MRI in the patient care pathway may therefore represent an
+important clinical reﬁnement in the ﬁght against breast cancer.
+Supported by these results, the future development of non-
+invasive 23Na MRI with improved contrast to noise ratio [61]
+(sacriﬁced to increase spatial resolution) will further empower its
+use for diagnostics and exploring tumour heterogeneity and
+function.
+DATA AVAILABILITY
+All analysed and derivative raw data are available on request.
+REFERENCES
+1. Bray F, Ferlay J, Soerjomataram I, Siegel RL, Torre LA, Jemal A. Global cancer
+statistics 2018: GLOBOCAN estimates of incidence and mortality worldwide for 36
+cancers in 185 countries. CA Cancer J Clin. 2018;68:394–424.
+2. Bonotto M, Gerratana L, Poletto E, Driol P, Giangreco M, Russo S, et al. Measures
+of outcome in metastatic breast cancer: insights from a real-world scenario.
+Oncologist. 2014;19:608–15.
+3. Cardoso F, Kyriakides S, Ohno S, Penault-Llorca F, Poortmans P, Rubio IT, et al.
+Early breast cancer: ESMO Clinical Practice Guidelines for diagnosis, treatment
+and follow-up. Ann Oncol. 2019;30:1674.
+4. Marino MA, Helbich T, Baltzer P, Pinker-Domenig K, Multiparametric MRI. of the
+breast: a review. J Magn Reson Imaging. 2018;47:301–15.
+5. Daniels CJ, McLean MA, Schulte RF, Robb FJ, Gill AB, McGlashan N, et al. A
+comparison of quantitative methods for clinical imaging with hyperpolarized 13
+C-pyruvate [Internet]. NMR Biomed. 2016;29:387–99. https://doi.org/10.1002/
+nbm.3468.
+6. Runge VM. Dechelation (Transmetalation): consequences and safety concerns
+with the linear gadolinium-based contrast agents, in view of recent health care
+rulings by the EMA (Europe), FDA (United States), and PMDA (Japan). Invest
+Radiol. 2018;53:571–8.
+7. Partridge SC, Nissan N, Rahbar H, Kitsch AE, Sigmund EE. Diffusion-weighted
+breast MRI: clinical applications and emerging techniques. J Magn Reson Ima-
+ging. 2017;45:337–55.
+8. Zaric O, Pinker K, Zbyn S, Strasser B, Robinson S, Minarikova L, et al. Quantitative
+sodium MR imaging at 7 T: initial results and comparison with diffusion-weighted
+imaging in patients with breast tumors. Radiology. 2016;280:39–48.
+9. Guo Y, Cai Y-Q, Cai Z-L, Gao Y-G, An N-Y, Ma L, et al. Differentiation of clinically
+benign and malignant breast lesions using diffusion-weighted imaging. J Magn
+Reson Imaging. 2002;16:172–8.
+10. Surov A, Meyer HJ, Wienke A. Can apparent diffusion coefﬁcient (ADC) distinguish
+breast cancer from benign breast ﬁndings? A meta-analysis based on 13 847
+lesions. BMC Cancer. 2019;19:955.
+11. Partridge SC, DeMartini WB, Kurland BF, Eby PR, White SW, Lehman CD. Quan-
+titative diffusion-weighted imaging as an adjunct to conventional breast MRI for
+improved positive predictive value. AJR Am J Roentgenol. 2009;193:1716–22.
+12. Jacobs MA, Stearns V, Wolff AC, Macura K, Argani P, Khouri N, et al. Multi-
+parametric magnetic resonance imaging, spectroscopy and multinuclear (23Na)
+imaging monitoring of preoperative chemotherapy for locally advanced breast
+cancer [Internet]. Academic Radiol. 2010;17:1477–85. https://doi.org/10.1016/j.
+acra.2010.07.009.
+13. Ouwerkerk R, Jacobs MA, Macura KJ, Wolff AC, Stearns V, Mezban SD, et al.
+Elevated tissue sodium concentration in malignant breast lesions detected with
+non-invasive 23Na MRI. Breast Cancer Res Treat. 2007;106:151–60.
+14. Madelin G, Regatte RR. Biomedical applications of sodium MRI in vivo. J Magn
+Reson Imaging. 2013;38:511–29.
+15. Kaggie JD, Hadley JR, Badal J, Campbell JR, Park DJ, Parker DL, et al. A 3 T sodium
+and proton composite array breast coil. Magn Reson Med. 2014;71:2231–42.
+16. Jacobs MA, Ouwerkerk R, Wolff AC, Gabrielson E, Warzecha H, Jeter S, et al.
+Monitoring of neoadjuvant chemotherapy using multiparametric, 23Na sodium
+MR, and multimodality (PET/CT/MRI) imaging in locally advanced breast cancer.
+Breast Cancer Res Treat. 2011;128:119–26.
+17. Leslie TK, James AD, Zaccagna F, Grist JT, Deen S, Kennerley A, et al. Sodium
+homeostasis in the tumour microenvironment. Biochim Biophys Acta Rev Cancer.
+2019;1872:188304.
+18. Amara S, Whalen M, Tiriveedhi V. High salt induces anti-inﬂammatory MΦ2-like
+phenotype in peripheral macrophages. Biochem Biophys Rep. 2016;7:1–9.
+19. Babaer D, Amara S, Ivy M, Zhao Y, Lammers PE, Titze JM, et al. High salt induces
+P-glycoprotein mediated treatment resistance in breast cancer cells through
+store operated calcium inﬂux. Oncotarget. 2018;9:25193–205.
+20. Yang M, James AD, Suman R, Kasprowicz R, Nelson M, O’Toole PJ, et al. Voltage-
+dependent activation of Rac1 by Nav1. 5 channels promotes cell migration. J Cell
+Physiol. 2020;235:3950–72.
+21. Roger S, Rollin J, Barascu A, Besson P, Raynal P-I, Iochmann S, et al. Voltage-gated
+sodium channels potentiate the invasive capacities of human non-small-cell lung
+cancer cell lines [Internet]. Int J Biochem Cell Biol. 2007;39:774–86. https://doi.
+org/10.1016/j.biocel.2006.12.007.
+22. Cameron IL, Smith NK, Pool TB, Sparks RL. Intracellular concentration of sodium
+and other elements as related to mitogenesis and oncogenesis in vivo. Cancer
+Res. 1980;40:1493–500.
+23. Djamgoz MBA, Fraser SP, Brackenbury WJ. In vivo evidence for voltage-gated
+sodium channel expression in carcinomas and potentiation of metastasis. Cancers.
+2019;11; https://www.ncbi.nlm.nih.gov/pubmed/31661908.
+24. Brisson L, Driffort V, Benoist L, Poet M, Counillon L, Antelmi E, et al. NaV1.5 Na+
+channels allosterically regulate the NHE-1 exchanger and promote the activity of
+breast cancer cell invadopodia. J Cell Sci. 2013;126:4835–42.
+25. Stock C, Pedersen SF. Roles of pH and the Na/H exchanger NHE1 in cancer: from
+cell biology and animal models to an emerging translational perspective? Semin
+Cancer Biol. 2017;43:5–16.
+26. Gao W, Chang G, Wang J, Jin W, Wang L, Lin Y, et al. Inhibition of K562 leukemia
+angiogenesis and growth by selective Na+/H+ exchanger inhibitor cariporide
+through
+down-regulation
+of
+pro-angiogenesis
+factor
+VEGF.
+Leuk
+Res.
+2011;35:1506–11.
+27. Chen Q, Liu Y, Zhu X-L, Feng F, Yang H, Xu W. Increased NHE1 expression is
+targeted by speciﬁc inhibitor cariporide to sensitize resistant breast cancer cells
+to doxorubicin in vitro and in vivo. BMC Cancer. 2019;19:211.
+28. Fraser SP, Diss JKJ, Chioni A-M, Mycielska ME, Pan H, Yamaci RF, et al. Voltage-
+gated sodium channel expression and potentiation of human breast cancer
+metastasis. Clin Cancer Res. 2005;11:5381–9.
+29. Brackenbury WJ, Chioni A-M, Diss JKJ, Djamgoz MBA. The neonatal splice variant
+of Nav1.5 potentiates in vitro invasive behaviour of MDA-MB-231 human breast
+cancer cells [Internet]. Breast Cancer Res Treat. 2007;101:149–60. https://doi.org/
+10.1007/s10549-006-9281-1.
+30. Nelson M, Yang M, Dowle AA, Thomas JR, Brackenbury WJ. The sodium channel-
+blocking antiepileptic drug phenytoin inhibits breast tumour growth and
+metastasis. Mol Cancer. 2015;14:13.
+31. Nelson M, Yang M, Millican-Slater R, Brackenbury WJ. Nav1.5 regulates breast tumor
+growth and metastatic dissemination in vivo. Oncotarget. 2015;6:32914–29.
+32. Tomayko MM, Patrick Reynolds C. Determination of subcutaneous tumor size in
+athymic (nude) mice. Cancer Chemother Pharm. 1989;24:148–54.
+33. Rose CR, Ransom BR. Intracellular sodium homeostasis in rat hippocampal
+astrocytes. J Physiol. 1996;491:291–305.
+34. Kassambara A, Mundt F. factoextra: extract and visualize the results of multivariate
+data analyses [Internet]. 2020; https://CRAN.R-project.org/package=factoextra.
+A.D. James et al.
+347
+British Journal of Cancer (2022) 127:337 – 349
+35. Ripley B, Venables B, Bates DM, Hornik K, Gebhardt A, Firth D. MASS: support
+functions and datasets for Venables and Ripley’s MASS [Internet]. 2022; https://
+CRAN.R-project.org/package=MASS.
+36. Sing T, Sander O, Beerenwinkel N, Lengauer T, Unterthiner T, Ernst FGM. ROCR:
+Visualizing the performance of scoring classiﬁers [Internet]. 2020; https://CRAN.R-
+project.org/package=ROCR.
+37. Schneider CA, Rasband WS, Eliceiri KW. NIH Image to ImageJ: 25 years of image
+analysis. Nat Methods. 2012;9:671–5.
+38. Surov A, Meyer HJ, Wienke A. Correlation between apparent diffusion coefﬁcient
+(ADC) and cellularity is different in several tumors: a meta-analysis. Oncotarget.
+2017;8:59492–9.
+39. Iamshanova O, Mariot P, V’yacheslav Lehen’kyi, Prevarskaya N. Comparison of
+ﬂuorescence probes for intracellular sodium imaging in prostate cancer cell lines.
+Eur Biophys J. 2016;45:765–77.
+40. Campbell TM, Main MJ, Fitzgerald EM. Functional expression of the voltage-gated
+Na+-channel Nav1.7 is necessary for EGF-mediated invasion in human non-small
+cell lung cancer cells. J Cell Sci. 2013;126:4939–49.
+41. Nicholson C. Ion-selective microelectrodes and diffusion measurements as tools to
+explore the brain cell microenvironment. J Neurosci Methods. 1993;48:199–213.
+42. Sinke AP, Caputo C, Tsaih S-W, Yuan R, Ren D, Deen PMT, et al. Genetic analysis of
+mouse strains with variable serum sodium concentrations identiﬁes the Nalcn
+sodium channel as a novel player in osmoregulation. Physiol Genomics.
+2011;43:265–70.
+43. Choi SY, Chang Y-W, Park HJ, Kim HJ, Hong SS, Seo DY. Correlation of the
+apparent diffusion coefﬁciency values on diffusion-weighted imaging with
+prognostic factors for breast cancer [Internet]. Br J Radiol. 2012;85:e474–9.
+https://doi.org/10.1259/bjr/79381464.
+44. Bialer M, Soares-da-Silva P. Pharmacokinetics and drug interactions of esli-
+carbazepine acetate. Epilepsia. 2012;53:935–46.
+45. Leslie TK, Brückner L, Chawla S, Brackenbury WJ. Inhibitory effect of eslicarbazepine
+acetate and S-Licarbazepine on Na1.5 channels. Front Pharm. 2020;11:555047.
+46. Brodie MJ. Sodium channel blockers in the treatment of epilepsy. CNS Drugs.
+2017;31:527–34.
+47. Andersen AP, Flinck M, Oernbo EK, Pedersen NB, Viuff BM, Pedersen SF. Roles of
+acid-extruding ion transporters in regulation of breast cancer cell growth in a
+3-dimensional microenvironment. Mol Cancer. 2016;15:45.
+48. Almeida L, Minciu I, Nunes T, Butoianu N, Falcão A, Magureanu S-A, et al. Phar-
+macokinetics, efﬁcacy, and tolerability of eslicarbazepine acetate in children and
+adolescents with epilepsy. J Clin Pharm. 2008;48:966–77.
+49. Yang Y, Yang HH, Hu Y, Watson PH, Liu H, Geiger TR, et al. Immunocompetent
+mouse allograft models for development of therapies to target breast cancer
+metastasis. Oncotarget. 2017;8:30621–43.
+50. Swanton C. Intratumor heterogeneity: evolution through space and time. Cancer
+Res. 2012;72:4875–82.
+51. Jardim-Perassi BV, Huang S, Dominguez-Viqueira W, Poleszczuk J, Budzevich MM,
+Abdalah MA, et al. Multiparametric MRI and coregistered histology identify tumor
+habitats in breast cancer mouse models. Cancer Res. 2019;79:3952–64.
+52. Khan MH, Walsh JJ, Mihailović JM, Mishra SK, Coman D, Hyder F. Imaging the
+transmembrane and transendothelial sodium gradients in gliomas. Sci Rep.
+2021;11:6710.
+53. Baltzer P, On behalf of the EUSOBI international Breast Diffusion-Weighted
+Imaging working group, Mann RM, Lima M, Sigmund EE, Clauser P, et al.
+Diffusion-weighted imaging of the breast—a consensus and mission statement
+from the EUSOBI International Breast Diffusion-Weighted Imaging working group
+[Internet].
+Eur
+Radiol.
+2020;30:1436–50.
+https://doi.org/10.1007/s00330-019-
+06510-3.
+54. Sardanelli F, Carbonaro LA, Montemezzi S, Cavedon C, Trimboli RM. Clinical breast
+MR using MRS or DWI: who is the winner? Front Oncol. 2016;6:217.
+55. Sharma U, Sah RG, Agarwal K, Parshad R, Seenu V, Mathur SR, et al. Potential of
+diffusion-weighted imaging in the characterization of malignant, benign, and
+healthy breast tissues and molecular subtypes of breast cancer. Front Oncol.
+2016;6:126.
+56. Baxter GC, Graves MJ, Gilbert FJ, Patterson AJ. A meta-analysis of the diagnostic
+performance of diffusion MRI for breast lesion characterization. Radiology.
+2019;291:632–41.
+57. Schepkin VD, Chenevert TL, Kuszpit K, Lee KC, Meyer CR, Johnson TD, et al.
+Sodium and proton diffusion MRI as biomarkers for early therapeutic response in
+subcutaneous tumors [Internet]. Magn Reson Imaging. 2006;24:273–8. https://doi.
+org/10.1016/j.mri.2005.12.004.
+58. Babsky AM, Hekmatyar SK, Zhang H, Solomon JL, Bansal N. Application of 23Na
+MRI to monitor chemotherapeutic response in RIF-1 tumors [Internet]. Neoplasia.
+2005;7:658–66. https://doi.org/10.1593/neo.05130.
+59. Ianniello C, Moy L, Fogarty J, Schnabel F, Adams S, Axelrod D, et al. Multinuclear
+MRI to disentangle intracellular sodium concentration and extracellular volume
+fraction in breast cancer. Sci Rep. 2021;11:5156.
+60. Barrett T, Riemer F, McLean MA, Kaggie J, Robb F, Tropp JS, et al. Quantiﬁcation of
+total and intracellular sodium concentration in primary prostate cancer and
+adjacent normal prostate tissue with magnetic resonance imaging. Invest Radio.
+2018;53:450–6.
+61. Elabyad IA, Kalayciyan R, Shanbhag NC, Schad LR. First in vivo potassium-39 (39K)
+MRI at 9.4 T using conventional copper radio frequency surface coil cooled to 77
+K. IEEE Trans Biomed Eng. 2014;61:334–45.
+62. Weidensteiner C, Horn M, Fekete E, Neubauer S, von Kienlin M. Imaging of
+intracellular sodium with shift reagent aided (23)Na CSI in isolated rat hearts.
+Magn Reson Med. 2002;48:89–96.
+63. Wieser W, Krumschnabel G. Hierarchies of ATP-consuming processes: direct
+compared with indirect measurements, and comparative aspects. Biochem J.
+2001;355:389–95.
+64. Glitsch HG. Electrophysiology of the sodium-potassium-ATPase in cardiac cells.
+Physiol Rev. 2001;81:1791–826.
+65. Nita II, Hershﬁnkel M, Kantor C, Rutter GA, Lewis EC, Sekler I. Pancreatic β‐cell Na
+channels control global Ca2 signaling and oxidative metabolism by inducing Na
+and Ca2 responses that are propagated into mitochondria [Internet]. FASEB J.
+2014;28:3301–12. https://doi.org/10.1096/fj.13-248161.
+66. Freeman J, Crowley PD, Foley AG, Gallagher HC, Iwasaki M, Ma D, et al. Effect of
+perioperative lidocaine, propofol and steroids on pulmonary metastasis in a
+murine model of breast cancer surgery. Cancers. 2019;11; https://doi.org/
+10.3390/cancers11050613.
+67. Tran T-A, Gillet L, Roger S, Besson P, White E, Le Guennec J-Y. Non-anti-mitotic
+concentrations of taxol reduce breast cancer cell invasiveness. Biochem Biophys
+Res Commun. 2009;379:304–8.
+ACKNOWLEDGEMENTS
+We thank the Biorenewables Development Centre (Dunnington, York) for their
+support with the tumour sample ICP-MS analysis, and the University of York
+Bioscience Technology Facility for their support with tumour and blood plasma LC-
+MS analysis.
+AUTHOR CONTRIBUTIONS
+The project was designed by WJB, AJK and ADJ; experiments were carried out by ADJ,
+TKL, SL, MCL, AJK. 23Na coil design and setup of imaging protocols were carried out
+by AJK, JDK, FR and MAM. Data analysis was performed by ADJ, TKL, AJK, SL, LP, LW
+and JMO; the manuscript was prepared by ADJ, TKL, WJB, AJK; ADJ, TKL, WJB, AJK,
+JDK, FJG, LW, MAM and GB contributed to the interpretation of the data and critical
+revision of the paper for important intellectual content.
+FUNDING
+This work was supported by Cancer Research UK (A25922), Breast Cancer Now
+(2015NovPhD572),
+BBSRC
+(BB/S507416/1)
+and
+an
+EPSRC
+Impact
+Accelerator
+Award. FJG, JK, GB, MAM are supported by the NIHR Cambridge Biomedical Research
+Centre (BRC-1215-20014). The views expressed are those of the authors and not
+necessarily those of the NIHR or the Department of Health and Social Care.
+ETHICS APPROVAL AND CONSENT TO PARTICIPATE
+Approval for all animal procedures was granted by the University of York Animal
+Welfare and Ethical Review Body. All procedures were carried out under the authority
+of a UK Home Ofﬁce Project Licence and associated Personal Licences.
+CONSENT TO PUBLISH
+Not applicable.
+COMPETING INTERESTS
+JDK reports grants from EU2020 and GSK, outside the submitted work. FJG reports
+grants from Cancer Research UK, GE Healthcare, Hologic, personal fees from Alphabet
+Kheiron, and non-ﬁnancial support from Bracco, outside the submitted work. WJB
+reports grants from Cancer Research UK and EPSRC. AJK reports grants from Cancer
+Research UK and EPSRC. This research was supported by the NIHR Cambridge
+Biomedical Research Centre (BRC-1215-20014). The views expressed are those of the
+authors and not necessarily those of the NIHR or the Department of Health and
+Social Care.
+A.D. James et al.
+348
+British Journal of Cancer (2022) 127:337 – 349
+ADDITIONAL INFORMATION
+Supplementary information The online version contains supplementary material
+available at https://doi.org/10.1038/s41416-022-01802-w.
+Correspondence and requests for materials should be addressed to William J.
+Brackenbury.
+Reprints and permission information is available at http://www.nature.com/
+reprints
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims
+in published maps and institutional afﬁliations.
+Open Access This article is licensed under a Creative Commons
+Attribution 4.0 International License, which permits use, sharing,
+adaptation, distribution and reproduction in any medium or format, as long as you give
+appropriate credit to the original author(s) and the source, provide a link to the Creative
+Commons license, and indicate if changes were made. The images or other third party
+material in this article are included in the article’s Creative Commons license, unless
+indicated otherwise in a credit line to the material. If material is not included in the
+article’s Creative Commons license and your intended use is not permitted by statutory
+regulation or exceeds the permitted use, you will need to obtain permission directly
+from the copyright holder. To view a copy of this license, visit http://creativecommons.
+org/licenses/by/4.0/.
+© The Author(s) 2022
+A.D. James et al.
+349
+British Journal of Cancer (2022) 127:337 – 349

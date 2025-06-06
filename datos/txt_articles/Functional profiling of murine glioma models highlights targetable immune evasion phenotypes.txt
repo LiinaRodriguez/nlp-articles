@@ -1,0 +1,2281 @@
+Vol.:(0123456789)
+Acta Neuropathologica          (2024) 148:74  
+https://doi.org/10.1007/s00401-024-02831-w
+ORIGINAL PAPER
+Functional profiling of murine glioma models highlights targetable 
+immune evasion phenotypes
+Nicholas Mikolajewicz1   · Nazanin Tatari2,3,7 · Jiarun Wei1,4 · Neil Savage2,3 · Adrian Granda Farias1,4   · 
+Vassil Dimitrov1 · David Chen1 · Zsolt Zador5 · Kuheli Dasgupta1,4 · Magali Aguilera‑Uribe1,4 · Yu‑Xi Xiao1,4 · 
+Seon Yong Lee1 · Patricia Mero1 · Dillon McKenna3,5 · Chitra Venugopal3,5 · Kevin R. Brown1 · Hong Han2,3 · 
+Sheila Singh2,3,5 · Jason Moffat1,4,6 
+Received: 6 November 2024 / Revised: 10 November 2024 / Accepted: 11 November 2024 
+© The Author(s) 2024
+Abstract
+Cancer-intrinsic immune evasion mechanisms and pleiotropy are a barrier to cancer immunotherapy. This is apparent in 
+certain highly fatal cancers, including high-grade gliomas and glioblastomas (GBM). In this study, we evaluated two murine 
+syngeneic glioma models (GL261 and CT2A) as preclinical models for human GBM using functional genetic screens, 
+single-cell transcriptomics and machine learning approaches. Through CRISPR genome-wide co-culture killing screens with 
+various immune cells (cytotoxic T cells, natural killer cells, and macrophages), we identified three key cancer-intrinsic eva-
+sion mechanisms: NFκB signaling, autophagy/endosome machinery, and chromatin remodeling. Additional fitness screens 
+identified dependencies in murine gliomas that partially recapitulated those seen in human GBM (e.g., UFMylation). Our 
+single-cell analyses showed that different glioma models exhibited distinct immune infiltration patterns and recapitulated 
+key immune gene programs observed in human GBM, including hypoxia, interferon, and TNF signaling. Moreover, in vivo 
+orthotopic tumor engraftment was associated with phenotypic shifts and changes in proliferative capacity, with murine 
+tumors recapitulating the intratumoral heterogeneity observed in human GBM, exhibiting propensities for developmental- 
+and mesenchymal-like phenotypes. Notably, we observed common transcription factors and cofactors shared with human 
+GBM, including developmental (Nfia and Tcf4), mesenchymal (Prrx1 and Wwtr1), as well as cycling-associated genes 
+(Bub3, Cenpa, Bard1, Brca1, and Mis18bp1). Perturbation of these genes led to reciprocal phenotypic shifts suggesting 
+intrinsic feedback mechanisms that balance in vivo cellular states. Finally, we used a machine-learning approach to iden-
+tify two distinct immune evasion gene programs, one of which represents a clinically-relevant phenotype and delineates 
+a subpopulation of stem-like glioma cells that predict response to immune checkpoint inhibition in human patients. This 
+comprehensive characterization helps bridge the gap between murine glioma models and human GBM, providing valuable 
+insights for future therapeutic development.
+Keywords  Glioma · Glioblastoma · Murine · Human · CT2A · GL261 · scRNA-seq · Genome-wide CRISPR screen
+ *	 Sheila Singh 
+	
+ssingh@mcmaster.ca
+ *	 Jason Moffat 
+	
+jason.moffat@sickkids.ca
+1	
+Program in Genetics and Genome Biology, The Hospital 
+for Sick Children, Toronto, Canada
+2	
+Department of Biochemistry and Biomedical Sciences, 
+McMaster University, Hamilton, Canada
+3	
+Centre for Discovery in Cancer Research (CDCR), McMaster 
+University, Hamilton, Canada
+4	
+Department of Molecular Genetics, University of Toronto, 
+Toronto, Canada
+5	
+Department of Surgery, Faculty of Health Sciences, 
+McMaster University, Hamilton, Canada
+6	
+Institute for Biomedical Engineering, University of Toronto, 
+Toronto, Canada
+7	
+Present Address: Department of Biomedicine, University 
+Hospital Basel, Basel, Switzerland
+	
+Acta Neuropathologica          (2024) 148:74 
+   74  
+Page 2 of 27
+Introduction
+Pre-clinical models of cancer that recapitulate the com-
+plexity of cancer cells and their interactions with the tumor 
+microenvironment are essential for developing therapeutic 
+strategies. Current in vitro approaches, including 2D cell 
+culture and 3D organoids, fail to adequately model the 
+intricate tumor microenvironment, particularly in complex 
+organs like the brain [42]. Gliomas are the most common 
+primary brain tumor in adults and vary in severity and 
+aggressiveness with subtypes that include astrocytomas, 
+oligodendrogliomas and glioblastomas (GBMs) [33, 59]. 
+GBMs are malignant grade 4 gliomas that arise without 
+evidence of lower-grade precursors and are predomi-
+nantly made up of abnormal, highly infiltrative astrocytic 
+cells [33, 58, 59]. Drug development efforts for GBM are 
+largely impeded by substantial financial risks associated 
+with historical translational failures [101], and the lack 
+of preclinical models that recapitulate the complexity 
+and heterogeneity of the disease in patients [102]. Inten-
+tional functional discovery and drug development efforts 
+are vital for GBM given its unique therapy challenges 
+including heterogeneity, an immunosuppressive tumor 
+micro-environment, and the presence of the blood–brain 
+or blood-tumor barrier [102].
+Murine syngeneic GL261 and CT2A glioma models 
+are commonly used to study glioma biology in immuno-
+competent C57BL/6 mice [91]. Both models recapitulate 
+various hallmarks of GBMs, and their unique mutational 
+[37, 40, 45, 66, 68, 89, 107] and transcriptomic [37] pro-
+files result in distinct responses to immune checkpoint 
+inhibitors (ICI) [37, 57, 107, 112], radiation [71, 73], 
+and chemotherapy [71, 73, 116] (Table 1). Histologically, 
+both tumors have characteristic pseudopalisading necrotic 
+cores, along with extensive angiogenesis. Unlike GL261 
+tumors, CT2A tumors are known to resemble a mesenchy-
+mal phenotype that correlates with its immune-suppressive 
+tumor-immune microenvironment (TIME) and resistance 
+to immunotherapies. Given that preclinical findings in 
+GL261 and CT2A models often fail to correlate with clini-
+cal findings, it behoves us to better understand how these 
+syngeneic glioma cell lines deviate from each other and 
+from human GBM.
+In the current study, we used experimental and computa-
+tional approaches and evaluated murine glioma models using 
+genome-wide CRISPR-Cas9 screens to identify cancer-
+intrinsic immune evasion genes to cytotoxic T cells, natural 
+killer cells and macrophages, cancer gene dependencies, and 
+single-cell transcriptomics to evaluate the TIME. We also 
+compared murine glioma models using public single-cell 
+RNA-sequencing (scRNA-seq) and CRISPR data to deter-
+mine how these models recapitulate what is known about 
+Table 1   Literature review of murine glioma models evaluated in this study [47]
+*Based on protein expression; not mutated [37]
+**Based on nuclear immunohistochemical staining of p53 protein CT2A tumor mass
+TMZ, temozolomide
+Feature
+CT2A
+GL261
+Origin
+C57BL/6 mouse
+C57BL/6 mouse
+Tumorigenesis
+Methylcholanthrene-induced [99]
+Methylcholanthrene-induced [97]
+Histology
+High-grade astrocytoma [68]
+Ependymoblastoma [2]
+Microvascular proliferation, angiogenic [68, 81]
+Poorly differentiated [37]
+Pseudopalisading necrosis [68]
+Pseudopalisading necrosis [122]
+Spindled cells, fascicular tissue [37]
+Angiogenic [122]
+Transcriptional Profile
+Mesenchymal/angiogenic/WNT [37]
+Interferon signaling [37]
+Genetic alterations
+↓ PTEN/TSC2* [45, 66]
+K-Ras/Trp53 mutations [107]
+N-ras mutation [37]
+↑ C-MYC expression [107]
+Cdkn2a/b heterozygous deletion [37]
+↑ mutation load [37, 40]
+↑ mutation load [37]
+Idh1/2 wild-type [37, 89]
+Idh1/2, Trp53** wild-type [37, 68]
+Growth
+CT2A tumors are more aggressive than GL261 tumors [45]
+Immune response
+Low immunogenicity [37, 57]
+Moderate immunogenicity [37, 57, 107, 112]
+Interferon/antigen presentation deficits [37]
+↑ MHC I expression [40]
+↑ myeloid infiltration [37, 45]
+↑ microglial activation [45]
+Radiation response
+ +  +  + Radiosensitive [71, 73]
+ +  + Radiosensitive [71, 73]
+TMZ response
+TMZ resistant [71, 73]
+TMZ sensitive [71, 73, 116]
+Acta Neuropathologica          (2024) 148:74 	
+Page 3 of 27 
+   74 
+human GBM. We report on numerous relevant findings, 
+including in vitro-to-in vivo changes that are acquired upon 
+tumor engraftment, intratumoral heterogeneity, phenotypic 
+regulators, the TIME, and intrinsic mechanisms of immune 
+evasion with relevance to immunotherapy.
+Materials and methods
+Resources and data sources
+Software
+Endnote X9 (Thomson Reuters) was used to manage refer-
+ences, R (version 4.2.2) was used for data analysis, Excel 
+for Office 365 (Microsoft) was used for data storage, and 
+CorelDRAW X8 (Corel) was used for figure preparation.
+Computational resources
+Analyses were run on a desktop computer with an Intel Core 
+i9-10900L CPU (3.70 GHz, 10 cores, 20 threads) with 120 
+GB RAM running Windows 10 Pro (v21H2).
+Public data sources
+scRNA-seq data (Table S1) from Yu et al. were obtained 
+from Gene Expression Omnibus (GSE117891) [120]; Nef-
+tel et al. from GSE131928 [82]; Abdelfattah et al. from 
+GSE182109 [1]; Qazi et al. from GSE196583 [90]. Richards 
+et al. data was obtained from the Broad Institute Single-
+Cell Portal (SCP503) [92]. Spatial transcriptomics data of 
+coronal section from 8-week male C57Bl/6 mice was from 
+10 × Genomics (Adult Mouse Brain FFPE dataset). Bulk 
+RNA-seq data from the Cancer Genome Atlas (TCGA) 
+RNA-seq V2 data from the TCGA PanCancer Atlas were 
+retrieved from the National Cancer Institute (NCI) Genomic 
+Data Commons using TCGAbiolinks R package v.2.16.0; 
+Chinese Glioma Genome Atlas (CCGA) from http://​www.​
+cgga.​org.​cn/​downl​oad.​jsp [126]; Glioma Longitudinal Anal-
+ysis (GLASS) consortium from Synapse (http://​synap​se.​org/​
+glass) [4]; Zhao et al. PDL1 responder vs. non-responder 
+data from SRA (PRJNA482620) [125]; and Cloughesy et al. 
+from GEO (GSE121810) [14].
+Animal studies
+Animal studies
+Animal use and studies were performed in accordance 
+with guidelines outlined by Animal Use Protocols within 
+the Division of Comparative Medicine at the University 
+of Toronto and the McMaster University Central Animal 
+Facility. Intracranial injections were conducted in 6–8-week-
+old male C57BL/6 mice as previously described using ­106 
+cells per mouse [13]. Briefly, a small burr hole was drilled 
+2 mm behind the coronal suture and 3 mm to the right of 
+the sagittal suture. Cells suspended in 10 µL PBS were 
+injected intracranially using a Hamilton syringe (Hamilton, 
+#7635-01) into the right frontal lobes. Animals were sacri-
+ficed at humane endpoint, defined loss of 15-20% of body-
+weight from date of tumor engraftment, and a combination 
+of hunched posture, decreased response when picked up, 
+lack of grooming and loss of skin elasticity. Brains were 
+removed, and right frontal pieces were snap frozen for sci-
+RNA-seq3 processing.
+Cell lines
+CT2A and GL261 glioma cells
+CT2A cells were purchased from Millipore/Sigma-Aldrich 
+(#SCC194) and GL261 cells were purchased from DSMZ 
+(#ACC802). These lines were maintained in Dulbecco’s 
+modified Eagle’s medium (DMEM; Wisent, #319-005-en) 
+supplemented with 10% fetal bovine serum (FBS; Gibco, 
+#12483020) and 0.1% penicillin–streptomycin (Gibco, 
+#15140122). Cells were cultured at 37 °C, 5% ­CO2. Myco-
+plasma testing was routinely performed. To generate Cas9 
+knock-in CT2A and GL261 cell lines, cells were transduced 
+with Lenti-Cas9-2A-Blast (Addgene, #73310) and selected 
+with Blasticidin S HCl (Gibco, #A1113903) as previously 
+described [52]. CT2A-Ova cell lines were generated via 
+transduction with lenti-Ova, and sorted for high expression.
+NK and CTL primary cells
+Primary NK and CTL cells were isolated from OT-1 
+(C57BL/6-Tg(TcraTcrb)1100Mjb/J mice (Jackson Labora-
+tory). Spleens were harvested, minced, and strained to obtain 
+splenocytes. NK cells were then isolated through negative 
+selection using the NK Cell Isolation Kit (Miltenyi Biotec, 
+#130–115-818). NK cells were cultured in 10% RPMI with 
+1% penicillin–streptomycin, 100 ng/mL IL-2 and 55 µM 
+2-mercaptoethanol. Primary CTL cells were isolated, cul-
+tured, and activated as described previously [52]. In short, 
+OT-1 CD8 + T cells were isolated using an antibody-based 
+magnetic separation kit (Miltenyi, #130-096-543) and 
+activated and expanded with CD3/CD28 beads (Miltenyi, 
+#130-093-627).
+Myeloid cell lines
+RAW264.7 cells were purchased from MilliporeSigma, 
+BV-2 cells from AcceGen Biotech, and J774A.1 cells from 
+ATCC. RAW264.1 and J774A.1 were cultured in DMEM 
+	
+Acta Neuropathologica          (2024) 148:74 
+   74  
+Page 4 of 27
+(Wisent, #319-005-CL) supplemented with 10% FBS 
+(Gibco, #12483020). BV-2 cells were cultured in RPMI-
+1640 (Wisent, #350-000-CL) supplemented with 10% FBS. 
+Cell lines were maintained in humidified incubators at 37 °C 
+and 5% ­CO2 and were routinely tested for mycoplasma 
+contamination.
+CRISPR‑Cas9‑edited cell lines
+CRISPR-mediated gene knockouts in CT2A cell lines were 
+generated by electroporation using the Neon Transfection 
+System (Invitrogen, MPK10096) following the manu-
+facturer’s instructions. In brief, Cas9 ribonucleoproteins 
+(RNP) were prepared by combining 20 pmol single-guide 
+(sg) RNA (Synthego) consisting of 3 sgRNAs targeting the 
+same gene with 20 pmol spCas9 nuclease (IDT #1081059) 
+in 5 μL buffer R (Invitrogen) for 15 min at room tempera-
+ture. sgRNA sequences are listed in Table S2. CT2A cells 
+were lifted with trypsin (Gibco) and washed twice with 
+Dulbecco’s phosphate buffered saline (DPBS, Wisent) and 
+resuspended with buffer R. 200,000 cells were combined 
+with 20 pmol Cas9 RNP in 12 μL buffer R and electropo-
+rated at 1200 V, for 2 pulses of 30 ms with 10 μL tips. 72 h 
+after electroporation, cells were subjected to limiting dilu-
+tion and single-cell clonal expansion. Genomic DNA from 
+selected clones was extracted using the DNA Fast Extract 
+kit (Wisent, #801-200-DR) and sgRNA target regions were 
+PCR amplified with DNA 2X HS-Red Taq PCR mastermix 
+(Wisent, #801-200-DM). Primer sequences are provided 
+in Table S3. The PCR product was sequenced by Sanger 
+sequencing. Confirmation of gene knockout was performed 
+using ICE (https://​ice.​synth​ego.​com/) to identify out-of-
+frame insertion and deletion mutations. CRISPR-mediated 
+gene knockouts were also verified by western blot. Antibod-
+ies used are listed in Table S4.
+Immunoblot analysis
+To confirm gene knockouts in CT2A cells, cells were cul-
+tured to 90% confluency in 10-cm dishes. The cells were 
+washed with DPBS and lysed with RIPA buffer (Thermo 
+Scientific, #89901) supplemented with 1X protease inhibi-
+tor (Thermo Scientific, #78420) at 4 °C. Protein quantifica-
+tion was done by Pierce BCA Assay (Life Technologies, 
+#23225). Lysates were loaded on precast SDS-PAGE gels 
+(Invitrogen, NP0321PK2) and subsequently transferred onto 
+nitrocellulose membrane for detection. All primary antibod-
+ies were probed overnight at 4 °C, and membranes were 
+washed with Tris-buffered saline with Tween-20 (TBST; 
+Cell Signaling Technology, #9997) and incubated with 
+appropriate HRP-conjugated secondary antibodies for 1 h. 
+Subsequently membranes were washed with TBS-T and 
+the signal was detected with chemiluminescent substrate 
+(Thermo Scientific, #34579) on an iBright Imaging system 
+(Thermo Fisher Scientific).
+Cell proliferation assay
+Single cells were plated in a 96-well plate at a density of 
+1000 or 200 cells/200 μL per well and incubated at 37 °C 
+and 5% CO2 for 5 days. 20 μL of Presto Blue (ThermoFisher, 
+Cat.A13262), a fluorescent cell metabolism indicator, was 
+added to each well four hours prior to reading out the assy. 
+Fluorescence was measured using a FLUOstar Omega 
+Fluorescence 556 Microplate reader (BMG LABTECH) 
+with excitation and emission wavelengths of 544 nm and 
+590 nm, respectively. Readings were then analyzed using 
+Omega analysis software. Proliferation was calculated for 
+each well by subtracting the average RFI of blank wells from 
+the RFI of individual wells. Normalized RFI was plotted 
+for each well being tested as a side-by-side comparison of 
+proliferation.
+Immune‑cell killing assays
+The killing efficiency of immune cells co-cultured with 
+CT2A cells was assessed across a range of effector-to-tumor 
+ratios (E:T) and quantified as percentage killing relative to 
+untreated conditions. Twenty-four h prior to killing assay, 
+CT2A cells were incubated in 1 µM carboxyfluorescein suc-
+cinimidyl ester (CFSE) dye (37 °C × 10–20 min) and then 
+cultured in complete medium overnight. On day of killing 
+assay, CT2A cells were re-plated with immune cells at vari-
+ous E:T ratios. At 24 h endpoint, immune cells and dead 
+CT2A cells were removed by gentle PBS wash. The remain-
+ing viable and adherent CT2A cells were assessed visually 
+and by counting using a Coulter counter. For ADCP-medi-
+ated killing assays, killing efficiency was assessed by flow 
+cytometry as before [52]. CFSE and anti-CD11a were used 
+as CT2A and J774.1 cell markers, and double-positive cells 
+were interpreted as phagocytosed CT2A cells. E:T ratios that 
+achieved between 20–50% killing efficiency were selected 
+for screening conditions.
+Single‑cell transcriptomic analysis using 
+sci‑RNA‑seq3
+Sample processing, sci‑RNA‑seq3 library generation, 
+and sequencing
+Cells were harvested with 0.25% typsin-EDTA [9]. Cell pel-
+lets were immediately snap-frozen in liquid nitrogen and 
+then stored at -80 °C for sci-RNA-seq3 based single-nucleus 
+RNA-Seq processing. Samples from all genotypes were pro-
+cessed together to minimize batch effects. Nuclei extraction 
+and fixation were performed as previously described [9], 
+Acta Neuropathologica          (2024) 148:74 	
+Page 5 of 27 
+   74 
+except for the use of a modified CST lysis buffer [103] plus 
+1% of SUPERase-In RNase Inhibitor (AM2696). Nuclei 
+quality was checked with DAPI and Wheat Germ Aggluti-
+nin staining. Sci-RNA-seq3 libraries were generated as pre-
+viously described using three-level combinatorial indexing 
+[9]. The final libraries were sequenced on Illumina NovaSeq 
+as follows: read 1: 34bp, read 2: 69bp, index 1: 10bp, index 
+2: 10bp.
+Demultiplexing and read alignments
+Raw sequencing reads were first demultiplexed based on i5/
+i7 PCR barcodes. FASTQ files were then processed using 
+the sci-RNA-Seq3 pipeline [9]. After barcodes and unique 
+molecular identifiers (UMIs) were extracted from the read1 
+of FASTQ files, read alignment was performed using STAR 
+short-read aligner (v2.5.2b) with the mouse genome (mm10) 
+and Gencode vM12 gene annotations. After removing dupli-
+cate reads based on UMI, barcode, chromosome and align-
+ment position, reads were summarized into a count matrix 
+of M genes × N nuclei.
+Filtering
+Raw count matrices were loaded into a Seurat object (ver-
+sion 4.0.1) and filtered to retain cells with (i) 200–9000 
+recovered genes per cell, (ii) less than 60% mitochondrial 
+content, and (iii) unmatched rate between 0.11 and 0.27 
+(median ± 3 median absolute deviations).
+Normalization
+To normalize expression values, we adopted the mode-
+ling framework previously described and implemented in 
+sctransform (R Package, version 0.3.2) [29]. In brief, count 
+data were modeled by regularized negative binomial regres-
+sion, using sequencing depth as a model covariate to regress 
+out the influence of technical effects, and Pearson residuals 
+were used as the normalized and variance stabilized biologi-
+cal signal for downstream analysis.
+Integration
+Data from each timepoint and replicate were integrated with 
+the reciprocal PCA method (Seurat) using the top 2000 vari-
+able features.
+Dimensional reduction
+PCA was performed on the integrated dataset, and 
+the top N components that accounted for 90% of the 
+observed variance were used for UMAP embedding, 
+RunUMAP(max_components = 2, n_neighbours = 50, min_
+dist = 01, metric = cosine).
+Clustering and annotation
+To identify cellular sub-populations, we performed clus-
+tering using the Louvain algorithm implemented in Seurat 
+(resolution = 1.5). Clusters were assigned numerical iden-
+tifiers that were ranked in descending order according to 
+cluster size, such that the smallest identifier (i.e., 0) cor-
+responded to the largest cluster size, and vice versa. Clus-
+tered populations were then annotated using spatial and 
+scRNA-seq reference atlases. Using Seurat’s label transfer 
+pipeline, we identified transfer anchors for each query-refer-
+ence pair using FindTransferAnchors(normalization.
+method = ‘‘SCT’’, reference.reudction = ‘‘pca’’, dims = 1:50) 
+and then mapped the query samples onto the reference atlas 
+using MapQuery(reference.reduction = ‘‘pca’’, reduction.
+model = ‘‘umap’’). The resulting prediction scores were 
+cross-validated with cluster-specific markers obtained from 
+differential-expression analyses to inform cluster annotation.
+Differential expression analysis
+Differential expression analyses were performed using the 
+Wilcoxon [wilcoxauc(…) function, (presto R package, 
+v 1.0.0)] and co-dependency index (CDI) methods [Find-
+CDIMarkers(…) function, (scMiko R package, v. 1.0.0)] 
+[78]. Differentially expressed genes (thresholded at 5% 
+FDR) were ranked by area under receiver operating charac-
+teristic curve (AUROC) or normalized CDI (nCDI) scores 
+and the top 2–4 markers for each cell type cluster were used 
+for visualization.
+NMF gene program discovery
+For each sample, NMF was performed across multiple 
+rank parameters and gene programs that were consistently 
+resolved within and between tumors across multiple ranks 
+were retained as robust NMF programs. NMF workflow 
+parameters are summarized in Table S5. The workflow 
+described here was modified from work by Gavish and col-
+leagues [26]:
+1.	 Expression matrix preparation: For each sample, genes 
+expressed in 0.5–5% of cells were used for NMF analy-
+sis. Expression matrices were normalized and scaled 
+using the sctransform workflow (see above), and nega-
+tive values were truncated at zero to obtain a non-nega-
+tive scaled expression matrix (NSM).
+2.	 Run NMF analysis: NMF analysis was performed for 
+each NSM using nnmf(…, k = c(2,…,15), loss = “mse”, 
+rel.tol = 1e-4, max.iter = 50) (NNLM R package, v 0.4.4). 
+	
+Acta Neuropathologica          (2024) 148:74 
+   74  
+Page 6 of 27
+NMF was performed for rank parameters between 
+k = 2–15 (Table S5). For each NMF run, we defined 
+the resulting gene programs as the top 70–150 genes, 
+ordered by factor loading.
+3.	 Identify component programs: We reasoned that certain 
+NMF runs will yield non-informative decompositions, 
+and that only a subset of NMF programs will be repro-
+ducible within and between samples. To ensure within-
+sample robustness, the Jaccard similarity between 
+NMF programs was computed across all intra-sample 
+ranks, and programs with similarities exceeding 0.2–
+0.7 across more than 2 ranks were retained. Next, to 
+ensure between-sample robustness, the Jaccard similari-
+ties between the remaining NMF programs were com-
+puted between samples, and programs with similarities 
+exceeding 0.15–0.5 in at least 2 samples were retained. 
+The resulting NMF programs that passed the intra- and 
+inter-sample filtering steps were termed component pro-
+grams.
+4.	 Identify consensus programs: To obtain a non-redundant 
+set of gene programs from the component programs, a 
+Jaccard similarity matrix was computed for the remain-
+ing component programs, and hierarchically clustered 
+using Pearson correlation as the distance metric. Clus-
+tering parameters that separated the component pro-
+grams were determined by visual inspection of the 
+hierarchically clustered Jaccard similarity heatmap. For 
+each cluster, the consensus program was defined as the 
+set of genes that were represented in at least 25–50% of 
+component programs (Table S5).
+Gene set enrichment analysis
+To functionally-annotated gene sets, we performed hyper-
+geometric overrepresentation analysis using the fora(…) 
+(fgsea R package, v 1.14.0). Annotated gene sets used for 
+enrichment analyses included GO ontology (biological pro-
+cesses, cellular components, molecular function) and those 
+curated by the Bader Lab (http://​bader​lab.​org/​GeneS​ets).
+Enrichment network
+Jaccard similarity between enriched pathways was used to 
+account for gene set redundancies. Functional enrichment 
+co-similarities were visualized using emapplot(…, edge.
+params = list(min = 0.2)) (enrichplot R package, v1.18.1).
+Gene program activity
+For each gene set, cell-level gene program activities were 
+calculated using AddModuleScore(…) in Seurat. 
+Where indicated, the programs were classified as “on” 
+or “off” states by performing gaussian decomposition of 
+gene program activity values. This was implemented using 
+MClust(…, G = 1:5) (mclust R package, v 6.0.0) where 
+parameterised finite gaussian mixture models were fit to 
+a numeric vector of activity values and models were esti-
+mated by expectation–maximization algorithm initialized 
+by hierarchical model-based agglomerative clustering. For 
+each program, the optimal model was selected according to 
+Bayesian information criterion (BIC).
+Glioma‑associated transcriptomic regulators
+For each GBM scRNAseq dataset (overview of datasets in 
+Table S1), cell-level gene program activities were calcu-
+lated using (i) a curated list of GBM- and tumor-associated 
+gene panels and (ii) TF-specific target gene sets consoli-
+dated from TRRUST v2 [30] and AnimalTFDB 3.0 [34]. 
+Machine-learning-based random forest regression models 
+were then trained to identify which transcription regulators 
+were associated with each GBM subtype. This was repeated 
+across each GBM dataset, and the top transcription factors 
+that were consistently associated with a GBM subtype were 
+nominated as GBM glioma-associated transcription regula-
+tors (GTRs, 5% FDR). For each GBM transcriptomic pheno-
+type, the top regulatory transcription factors were visualized 
+in a bipartite network, where one layer of nodes represented 
+GBM-specific gene programs and the other layer of nodes 
+represented associated GTRs.
+Relative abundance analysis
+To compare the relative abundance of each cell type across 
+conditions, counts for each cell type were tallied within each 
+condition, and divided by the total number of cells profiled.
+Differential abundance analysis
+To evaluate regional differential abundances of cells in 
+UMAP space across genotypes, we adopted the Milo 
+method [16]. In brief, for each comparison between 
+the CT2A and GL261-engrafted mouse samples, cells 
+were first resampled to normalize cell counts, and then 
+a K-nearest neighbor (KNN) graph representing higher-
+dimensional relationships between single cells was con-
+structed. The KNN graph was then used to define neigh-
+borhoods of cells using the refined sampling scheme [16]. 
+Finally, the number of cells belonging to each condition 
+within each neighborhood was counted and the differential 
+abundance was computed using a negative binomial gener-
+alized linear model. The differential abundance estimates 
+for each neighborhood were visualized in UMAP space, 
+with each node representing a given neighborhood (com-
+prised of 20–80 cells each), and the color representing 
+Acta Neuropathologica          (2024) 148:74 	
+Page 7 of 27 
+   74 
+the differential abundance expressed as log fold-change 
+between GL261 and CT2A samples. Non-significant dif-
+ferentials (FDR > 0.1) were truncated at zero.
+Transcriptomic similarity
+To evaluate the relative transcriptomic similarity of various 
+human gliomas to murine gliomas, we adopted the transfer 
+learning approach implemented in Seurat [106]. Specifically, 
+murine glioma cells were mapped onto human GBM tran-
+scriptomic space by projecting the query (murine glioma 
+cells) PCA structure onto the reference (human GBM) PCA 
+structure. This enabled identification of corresponding cells 
+(i.e., anchors), thereby allowing the mapping of murine gli-
+omas cells onto the human GBM space and inference of 
+the corresponding human glioma label in murine cells. The 
+transfer scores computed using the FindTransferAn-
+chor(…, normalization.method = “SCT”, k.anchor = 5, n.
+trees = 100, npcs = 40) and TransferData(…) functions 
+in Seurat were used as surrogate measures of transcriptomic 
+similarity.
+Survival analyses
+Murine glioma programs survival associations
+The prognostic value of NMF gene programs identified in 
+murine glioma cells was assessed by performing survival 
+analyses using TCGA RNA-seq profiles of GBM patient 
+samples (N = 162). For each sample, NMF program activity 
+was calculated by ssGSEA, and survival associations were 
+assessed constructing Kaplan–Meier curves (survminer R 
+package, v 0.4.9) in which samples were stratified into 
+Low (score < 0) and High (score ≥ 0) groups, split based 
+on median score. Corresponding hazard ratios (HRs) were 
+estimated by fitting proportional hazards regression mod-
+els using the coxph(…) function (survival R package, v 
+3.4–0).
+Meta‑analysis of E1 and E2 survival associations
+Using RNA-seq data from each GBM cohort, E1 and E2 
+program activities were scored using ssGSEA. Then, E1 and 
+E2 HR were calculated using proportional hazards regres-
+sion. Meta-analytic HR estimates were estimated by fitting a 
+random effects model using the rma(…, method = “REML”) 
+function (metafor R package, v 4.0) and forest plots were 
+generated using forest.rma(…). I2, a measure of het-
+erogeneity, was quantified to estimate the percentage of total 
+variance that is attributed to interstudy variance.
+Genome‑wide CRISPR screens
+Pooled genome‑wide CRISPR screens in CT2A and GL261 
+cells
+CRISPR screens in CT2A-Cas9 and GL261-Cas9 cells were 
+performed as previously described. In brief, 1.5 × ­108 cells 
+were infected with the mTKO lentiviral library (Addgene 
+#159393) at an MOI of around 0.3. 24 h after infection, 
+culture medium was changed to puromycin-supplemented 
+medium (5 µg/mL). 72 h after infection, 1 × ­108 cells were 
+cryo-banked whereas 9 × ­107 cells were split into three repli-
+cates of 3 × ­107 cells and further passaged every 3–4 d while 
+maintaining 200-fold library representation. 3 × ­107 cells 
+were collected for genomic DNA extraction at day 0 ­(T0) 
+post-selection and at every subsequent passage until days 
+19 (T19, CT2A) or 15 (T15, GL261) post-selection. Genomic 
+DNA extraction, library preparation, and sequencing were 
+performed as described below.
+CD29‑sort screen in CT2A cells
+Infection, selection and passaging of CT2A-Cas9 cells for 
+the CD29 sort screen was performed as described above. 
+At T19, cells were stained with anti-CD29-FITC antibody 
+(20 µg/1000 µL) and FACS sorting was performed as before 
+[64]. The unsorted T19 sample was used as a reference. 
+Genomic DNA extraction, library preparation, sequencing, 
+and data processing were performed as described below.
+Genome‑wide CRISPR loss‑of‑function immune killing 
+screens
+Cas9-expressing CT2A-Ova cells were infected with the 
+mTKO lentiviral library at a multiplicity of infection of 0.3 
+and maintained at 200-fold representation for each gRNA 
+in the library. Infected cells were selected with 5 µg/mL 
+of puromycin for 48 h. After selection cells were split in 
+technical triplicates and maintained in culture for 72 h. For 
+myeloid killing screens, CT2A cells (3 × ­106) were harvested 
+and co-cultured with LPS-polarized (100 ng/mL LPS × 24 h) 
+RAW264.7 (1.5 × ­105; 0.05 E:T), J774A.1 (3 × ­105; 0.1 
+E:T), and BV-2 (6 × ­105; 0.2 E:T) myeloid cell lines for 
+24 h to achieve killing efficiencies ranging between 22.9% 
+to 44.1% (Fig. S1a). For the J774A.1 co-culture screen, an 
+additional treatment arm was included in which CT2A cells 
+were opsonized with anti-CD29 antibody (37ºC × 20 min) 
+followed by anti-Armenian Hamster IgG2b antibody 
+(37ºC × 20 min, then room temperature × 40 min) prior to 
+co-culturing with J774A.1 cells to facilitate ADCP. Anti-
+CD29 antibody was confirmed to not affect CT2A viability 
+(Fig. S1b). ADCP-dependent killing efficiency was 33.7% 
+across replicates (Fig. S1c). After 24 h of selective pressure, 
+	
+Acta Neuropathologica          (2024) 148:74 
+   74  
+Page 8 of 27
+myeloid cells were eliminated using puromycin (8 µg/
+mL × 48 h) and confirmed by CD11b staining. For CTL kill-
+ing screens, CT2A cells were co-cultured with preactivated 
+CD8 + T cells at a 0.2 E:T ratio to achieve 46.2% killing 
+efficiency (Fig. S1d, see Lawson et al. for further details 
+[52]). For NK killing screens, a 0.5 E:T ratio was used to 
+achieve 43.8% killing efficiency (Fig. S1e). Untreated CT2A 
+cells were kept in parallel as a control. Across all conditions, 
+killing efficiencies were calculated as the number of CT2A 
+cells in co-culture relative to the number of unchallenged 
+cells. Cell pellets at 200-fold library coverage were collected 
+for genomic DNA extraction at the end of screen. Genomic 
+DNA extraction, library preparation, sequencing, and data 
+processing were performed as described below.
+Genomic DNA extraction, library preparation, sequencing, 
+and data processing
+For all screens, genomic DNA was extracted using the Wiz-
+ard Genomic DNA Purification Kit (Promega, #A1120) [83]. 
+Sequencing libraries were prepared, sequenced using Illu-
+mina HiSeq2500, and processed as before [11, 52]. Bayes 
+factor (BF) scores were calculated using BAGEL for CT2A 
+and GL261 dropout screens, such that genes with a BF > 5 
+were classified as essential genes [32]. Scaled BF was calcu-
+lated as scaled BF = BF—5. For immune co-culture screens, 
+fold-changes between immune-cell-treated and untreated 
+CT2A cells were calculated using limma [94].
+Human fitness scores
+Processed CRIPSR-Cas9 genome screen data was retrieved 
+from Project Score database for 41 human GBM cell-lines 
+and 1031 human non-CNS cell lines [21, 87]. For each cell-
+line, gene-level fitness was represented as a scaled BF, which 
+corresponded to BAGEL2-derived BF subtracted by the BF 
+at the 5% FDR threshold [51]. Scaled BFs were then pooled 
+as averages for GBM and non-CNS cell lines and genes with 
+BF > 0 were classified as essential within each respective 
+group. If genes were essential in both groups, they were 
+in addition termed common essentials, and if genes were 
+essential in one group but not the other, they were termed 
+either GBM-specific or non-CNS-specific. All other genes 
+were non-essentials.
+Data visualization and statistics
+Data visualization
+Unless otherwise specified, the ggplot2 R package (v 3.3.5) 
+was used for data visualization. scRNA-seq gene expression 
+was visualized using FeaturePlot function (Seurat) or 
+DotPlot function (Seurat). Venn diagrams were generated 
+using either ssvFeatureEuler (seqsetvis R package, v 
+1.8.0) or ggVennDiagram (ggVennDiagram R package, 
+v 1.1.4).
+Statistics and reproducibility
+All pairwise comparisons were performed using the signed 
+Wilcoxon rank sum test, and p values were adjusted for 
+multiple comparisons using the Benjamini–Hochberg pro-
+cedure, as indicated. In cases where methods were compared 
+across a common set of data, paired Wilcoxon tests were 
+performed.
+Data and code availability
+R scripts used to perform the analyses are provided on GIT 
+repository (https://​github.​com/​NMiko​lajew​icz/​Mikol​ajewi​
+cz-​2024). Sci-RNA-seq3 data is available on FigShare 
+(https://​doi.​org/https://​doi.​org/​10.​6084/​m9.​figsh​are.​25685​
+523.​v2).
+Results
+Autophagy mediates cancer intrinsic pan‑immune 
+evasion
+To identify the underlying genes regulating glioma-intrinsic 
+immune evasion across a spectrum of immune cell pres-
+sures, we performed genome-scale pooled CRISPR loss-
+of-function screens in a murine glioma model using the 
+mTKO library [52]. CRISPR-mutagenized CT2A cells 
+were propagated in the presence or absence of various 
+immune cell lines [microglia; BV-2, non-phagocytic mac-
+rophages; Raw 264.7 and J774.1, phagocytic macrophages; 
+J774.1 with anti-CD29-opsonized CT2A cells, cytotoxic 
+T-lymphocytes (CTLs), or natural killer (NK) cells] (see 
+Methods for details). Following a period of co-culture (i.e., 
+selective pressure; Fig. S1), CT2A cells were subjected to 
+deep sequencing of gRNA barcodes to identify genes that 
+were enriched or depleted, i.e., genetic perturbations that 
+conferred resistance or sensitivity to immune cell killing, 
+respectively (Fig. 1a, b; Table S6).
+CT2A-intrinsic non-phagocytic myeloid-evasion genes 
+were defined as sensitizer or resister genes significant (5% 
+FDR) across at least two myeloid cell lines (BV-2, Raw 
+264.7, or J774.1). This yielded 54 sensitizer and 8 resister 
+hits (Fig. 1c, Table S6). In addition, we identified 69 sen-
+sitizers and 13 resisters involved in antibody-dependent 
+cellular phagocytosis (ADCP; J774.1 + CT2A opsonized 
+with anti-CD29). NFκB signaling (e.g., Traf2/3/6, 
+Tnfaip3, Bcl2l1, Ikbkg and Ikbkb) and autophagy (e.g., 
+Wipi2, Atg12) were shared sensitizing hits in phagocytic 
+Acta Neuropathologica          (2024) 148:74 	
+Page 9 of 27 
+   74 
+Fig. 1   Mechanisms of CT2A-intrinsic immune evasion. a Work-
+flow for mTKO genome-scale pooled CRISPR screens to identify 
+immune-evasion genes. CRISPR-mutagenized CT2A cells were prop-
+agated in the present or absence of various immune cell lines (micro-
+glia; BV-2, macrophages; Raw 264.7 and J774.1, phagocytes; J774.1 
+treated with anti-CD29, cytotoxic T-lymphocytes, or natural killer 
+cells) to apply selective pressure and CT2A cells were subjected to 
+deep sequencing to identify sgRNA that were enriched (i.e., resister 
+genes) or depleted (i.e., sensitizer genes) relative to untreated cells. 
+b Rank-ordered z-score of sgRNA enriched/depleted in mutagen-
+ized CT2A cells after exposure to immune cells. Hits at FDR < 5% 
+are highlighted in yellow (resistor genes) and blue (sensitizer genes). 
+Point size is inversely scaled by FDR. c–e STRING network analy-
+sis of myeloid c and lymphoid d sensitizer genes, and resister genes 
+(e). Clusters determined by Markov clustering. Nodes represents 
+genes, and solid and broken edges represented intra- and inter-cluster 
+connectivity, respectively. f Precision-recall (top) and ROC analysis 
+(bottom) illustrating recovery of core CTL sensitizers and resisters 
+identified by Lawson et al.[52] g Enrichment maps comparing CTL 
+resisters (yellow) and resisters (blue) between CT2A and core sets. 
+Nodes represent gene sets, and edges represent Jaccard similarities 
+between gene sets. h GSEA for select pathways in in  vivo ΔAtg12 
+CT2A tumors, compared to parental tumors, using snRNA-seq data. 
+i Survival of C57BL/6 mice orthotopically engrafted with parental 
+and ΔAtg12 CT2A cells. AUPRC, area under precision-recall curve; 
+AUROC, area under receiver operating characteristic curve; CTL, 
+cytotoxic T-lymphocytes; GSEA, gene set enrichment analysis; NK, 
+natural killer cells; STRING, Search Tool for the Retrieval of Inter-
+acting Genes/Proteins
+	
+Acta Neuropathologica          (2024) 148:74 
+   74  
+Page 10 of 27
+and non-phagocytic myeloid cells (Fig. 1c), likely due to 
+residual non-phagocytic effects in the ADCP conditions 
+(Fig. S1c). To clarify which genes were directly involved 
+in ADCP evasion, we performed a CD29 sort screen in 
+CT2A cells to identify regulators of the antibody target 
+CD29 (encoded by Itgb1, Fig. S2a-b). Among the ADCP 
+evasion genes not involved in regulating CD29 expression 
+were Apmap and Cd47, both known inhibitors of phagocy-
+tosis (Fig. S2c), and several cytoskeletal (Mbtd1, Rab11a 
+and Itgb5) and mediator complex (Cdk8) genes (Fig. S2d). 
+Gene perturbations conferring resistance to myeloid-medi-
+ated killing were sparse, but included Tnfrsf1a, indicat-
+ing the role of TNF in non-phagocytic myeloid-mediated 
+cytotoxicity (Fig. 2e).
+Acta Neuropathologica          (2024) 148:74 	
+Page 11 of 27 
+   74 
+Like the myeloid screens, lymphoid screens revealed 
+that perturbation of NFκB signaling and autophagy sensi-
+tized CT2A cells to CTL and NK killing (Fig. 1d, Fig. S3, 
+Table S6). Furthermore, components of the chromatin 
+remodeling pathway, including those seen in non-phago-
+cytic myeloid evasion (i.e., Hdac2, Eed, and Dot1l) sensi-
+tized against CTL but not NK cells. CTL and NK cells had 
+distinct resisters which reflected the unique mechanisms of 
+anti-tumor immunity by each effector cell. Perturbation of 
+GPI-anchor components (e.g., Pigu, Pigk, Dpm1, Dpm3, 
+etc.) and Raet1e, which encodes the UL16-binding protein 
+that serves as a NKG2D ligand [10], conferred resistance 
+to NK-mediated cytotoxicity. Conversely, interferon (Ifngr1 
+and Ifngr2) and TNF (Tnfrsf1a and Tnfrsf1b) were required 
+for CTL-mediated cytotoxicity (Fig. 1e).
+We previously performed CTL coculture screens across 
+six diverse syngeneic murine cancer cell models [colon; 
+CT26 and MC38, kidney; Renca, breast; 4T1 and EMT6, 
+melanoma; B16] to identify 182 core CTL evasion genes 
+[52]. In CT2A cells, we found that these core CTL sen-
+sitizers, including genes involved in NFκB signaling and 
+autophagy, were recovered with an AUROC of 0.81 and 
+AUPRC of 0.30 (Fig. 1f). In contrast to other cancer cell 
+lines, UFMylation, gene silencing, and GPI-anchored path-
+ways were not involved in CT2A CTL evasion (Fig. 1g). 
+Next, we found that core CTL resister genes were recov-
+ered in CT2A cells with an AUROC of 0.70 and AUPRC 
+of 0.13, suggesting some contextual divergence in CT2A 
+cells (Fig. 1f).
+Given that autophagy was involved in pan-immune eva-
+sion including in CT2A cells, we sought to characterize 
+the survival effect on mice engrafted intracranially with 
+CT2A cells that have been genetically engineering with 
+the autophagy pathway perturbed. Thus, clonal ΔAtg12 
+CT2A cell lines were engineered and engrafted orthotopi-
+cally (Fig. S4). Single-cell transcriptome profiling of the 
+engrafted ΔAtg12 CT2A tumors revealed significant down-
+regulation of the autophagy pathway compared to parental 
+controls (Fig. 1h). Decreased autophagy was associated with 
+significant increases in apoptotic and TNFα/NFκB signal-
+ing, but not IFNγ signaling (Fig. 1h). Indeed, this also cor-
+responded with a significant survival advantage (p < 0.01, 
+Fig. 1i). Given that Atg12 was not an essential gene, we 
+attributed this survival benefit to immune sensitization, 
+rather than intrinsic impairment of tumor growth.
+Taken together, the immune-glioma co-culture screens 
+establish NFκB signaling, autophagy/endosome machinery, 
+and chromatin remodeling as the predominant mechanisms 
+of CT2A-intrinsic immune evasion.
+Murine glioma cells partially recapitulate human 
+genetic dependencies
+In addition to identifying intrinsic immune evasion genes, we 
+also defined fitness genes in CT2A cells and another murine 
+glioma model GL261, then compared the results to similar 
+screens performed in human GBM models. Pooled loss-
+of-function genetic screens were performed in CT2A and 
+GL261 cells and essential fitness genes were identified using 
+BAGEL (Fig. 2a, b, Table S7; BF > 5 threshold) and 1392 
+genes were deemed essential by this criterion (i.e., BF > 5) in 
+both murine models, while 408 genes were GL261-specific 
+and 250 were CT2A-specific (Fig. 2c). Notably, among the 
+GL261-specific hits, Kras and Sox6 were top differential 
+fitness genes, consistent with Kras being a known GL261 
+oncogene and Sox6 being a transcriptional regulator of the 
+OPC-like GBM phenotype (Fig. 2d). Functional annotation 
+of CT2A- and GL261-specific fitness genes further revealed 
+that CT2A-specific fitness genes were enriched for processes 
+involved in cell division and epigenetic and post-transla-
+tional regulation of gene expression (e.g., RNA processing, 
+spliceosome, cell division, histone modification) whereas 
+GL261-specific genes were associated with metabolic pro-
+cesses (e.g., TCA cycle/ETC, nucleotide/flavin/cholesterol 
+biosynthesis) (Fig. 2e).
+We next evaluated the fitness landscape in human GBM 
+cells. Comparison of gene essentiality profiles from 41 
+human GBM cell lines and 1031 human non-central nerv-
+ous system (CNS) cell lines (Project Score database) identi-
+fied 1625 common essential genes and 124 GBM-specific 
+genes; notable GBM-specific human fitness genes included 
+JUN, FERTM2, FGFR1, WWTR1 and ADAR (Fig. 2f, g). 
+Of the 124 GBM-specific fitness genes identified in human 
+cell lines, 44 (35%) and 54 (44%) genes were essential in 
+CT2A and GL261 cells, respectively (Fig. 2h). However, 
+Fig. 2   Genetic dependencies in murine and human glioblastoma. a 
+Workflow for mTKO genome-scale pooled CRISPR screens to iden-
+tify fitness genes in CT2A and GL261 cells. b Distribution of gene-
+level differential logFC of sgRNAs in CT2A and GL261, stratified 
+by essentiality. Gene fitness was scored using BAGEL. c Compari-
+son of CT2A and GL261 gene-level fitness. Scatter plot shows CT2A 
+and GL261 scaled BFs. Scaled BF was calculated as BF – 5 such 
+that scaled BF > 0 represents essential genes. d Ranked differential 
+fitness between GL261 and CT2A. Y-axis for differential fitness is 
+signed ­log10(FDR) derived from difference between scaled BF scores. 
+e Enrichment map illustrating CT2A and GL261-specific dependen-
+cies. Nodes represent gene sets, and edges represent Jaccard similari-
+ties between gene sets. f Scatter plot of scaled BF scores for human 
+GBM cells and non-CNS cells. Scores were retrieved from Project 
+Score Database (see methods). g Ranked differential fitness between 
+human GBM and non-CNS cell lines. Genes were ranked by signed 
+­log10(FDR) derived from difference between scaled BF scores. h 
+Venn diagram of human (GBM and non-CNS) and murine (CT2A 
+and GL261) essential genes (scaled BF > 0). i Boxplot of scaled BFs 
+from CT2A and GL261 screens grouped by human essentiality gene 
+sets (as defined in f). j Dot plot of GBM-specific fitness genes that 
+are common to human GBM and murine gliomas. BAGEL, Bayesian 
+analysis of gene essentiality; BF, Bayes factor; CNS, central nervous 
+system; ETC, electron transport chain; logFC, log fold-change
+◂
+	
+Acta Neuropathologica          (2024) 148:74 
+   74  
+Page 12 of 27
+Acta Neuropathologica          (2024) 148:74 	
+Page 13 of 27 
+   74 
+by comparison, 51/123 (41%) and 68/123 (55%) of non-
+CNS-specific fitness genes were also essential in CT2A 
+and GL261 cells. This suggests that CT2A and GL261 have 
+unique genetic dependency profiles that resemble GBM in 
+some ways, but not others. These findings were consistent 
+across different essentiality thresholds and supported by pre-
+cision-recall analysis (Fig. 2i, Fig. S5a). Among the human 
+GBM-specific fitness genes that were recovered by GL261 
+were UFMylation-related genes, including Ufc1, Ube2g2 
+and Ufl1; these are known essential regulators of cell stress 
+in human glioma stem cells [63]. Conversely, CT2A shared 
+dependencies with human GBM cells related to epige-
+netic regulation (Dnmt1, Ttf1) and DNA damage response 
+(Brat1, Rnf8) (Fig. 2j, Fig. S5b). Together our analyses pro-
+vide insight into the genetic fitness landscape in CT2A and 
+GL261 glioma models and highlight dependencies that are 
+uniquely shared with human GBM.
+Unbiased transcriptomic profiling of murine brain 
+tumors
+To further characterize CT2A and GL261 murine glioma 
+models, each cell line was orthotopically engrafted into the 
+right frontal hemisphere of immunocompetent C57BL/6 
+mice (Fig. 3a). PBS-injected mice were included as sham 
+controls. Brain samples were collected at humane endpoint 
+for sci-RNA-seq3 profiling [67]. We profiled 159,270 single 
+cells with a median of 1786 UMI/cell and 1055 gene/cells 
+(Fig. 3b, Fig. S6). Glioma and resident brain cells were iden-
+tified using a combination of differential-expression analyses 
+(Fig. S7, Table S8) and label-transfers from reference atlases 
+(Fig. S8) [31, 51, 85, 123]. Anatomic information was also 
+assigned by means of label-transfer of the spatially-resolved 
+brain atlas (10 × Genomics, Adult Mouse Brain FFPE data-
+set; Fig. S9).
+Owing to the lack of enrichment sorting prior to sci-
+RNA-seq3 analysis, our sci-RNA-seq3 profiles represent 
+an unbiased snapshot of the intracranial milieu. This was 
+reflected by the diverse representation of cells, includ-
+ing excitatory and inhibitory neurons, oligodendrocytes, 
+astrocytes, lymphoid and myeloid cells, ependymal and 
+meningeal cells, and CT2A or GL261 glioma cells (Fig. 3b, 
+Fig. S7a, b, Fig. S8d). Inferred anatomic labels further reaf-
+firm this diversity, with cell types arising from the cortex 
+(CTX), cerebral nuclei (CNU), cerebellum (CB), hippocam-
+pus (HIP), hypothalamus (HY), thalamus (TH) and ventri-
+cles (VEN) (Fig. 3b, Fig. S9d).
+Several markers distinguished GL261 and CT2A from 
+non-malignant populations, including Hmga2, Piezo2, and 
+B2m (Fig. S7a). In designing our experiments, we had inten-
+tionally used male mice, hypothesizing that sex-specific 
+markers would discriminate the female-derived glioma lines 
+from male host cells. Contrary to expectations, we found 
+that Xist, a female-specific transcript, was only upregulated 
+in CT2A and not GL261 cells (Fig. S7a). Bnc2 and Moxd1 
+were among the most sensitive and selective CT2A and 
+GL261 markers, respectively, thereby representing gene 
+markers than can be used to differentiate tumor cells from 
+the surrounding microenvironment (Fig. S7a, b).
+Glioma cells in vitro and in vivo have distinct 
+transcriptomic signatures
+We next assessed how the in vivo environment affects murine 
+glioma biology (Fig. 4a). In vivo glioma cell engraftment 
+led to increased transcriptomic dissimilarity (Fig. S10a) and 
+decreased population purity (ROGUE score [56]; Fig. 4b) 
+compared to in vitro conditions. Differential gene expression 
+analysis revealed significant differences between in vitro 
+and in vivo conditions in both glioma lines. Tcf4, a basic 
+helix–loop–helix transcription factor that binds to specific 
+DNA regulatory sequences (CANNTG) known as Ephrussi 
+boxes (E-boxes) [114, 118], was the top up-regulated tran-
+script in in vivo GL261 and CT2A cells, whereas Vim, a 
+mesenchymal marker, was the top down-regulated transcript 
+in vivo (Fig. 4c, Fig. S10b, Table S9). These transcriptomic 
+changes were associated with a relative decrease (but not 
+complete loss) of the mesenchymal-like phenotype and 
+acquisition of oligodendrocyte progenitor-like (OPC) and 
+neural progenitor-like (NPC) phenotype in both glioma mod-
+els (Fig. 4d, e, Fig. S10c). Moreover, in vivo engraftment 
+was associated with down-regulation of cell cycle, hypoxia 
+and MYC-associated signaling (Fig. 4d, Fig. S10d–g).
+We evaluated whether the differences acquired in vivo 
+could be explained by Tcf4. We generated a clonal Tcf4 
+knockout CT2A cell line (ΔTcf4) using CRISPR-Cas9 and 
+orthotopically engrafted these ΔTcf4 cells into the right 
+frontal hemisphere of immunocompetent C57BL/6 mice. 
+Tcf4 knockout led to upregulation of mesenchymal mark-
+ers, including Col1a1, Col3a1, and Vim (Fig. 4f), and 
+pathway analyses demonstrated significant enrichment for 
+mesenchymal and MYC-related signaling (Fig. 4g). The 
+ΔTcf4-associated signature effectively mimicked the gene 
+expression profile in Tcf4-low in vitro glioma cells and was 
+significantly depleted among the genes that were upregulated 
+Fig. 3   Unbiased snRNA-seq profiling of glioma-engrafted mouse 
+brains. a Workflow of snRNA-seq profiling of murine glioma mod-
+els. CT2A and GL261 cells were expanded in  vitro and orthotopi-
+cally engrafted into the frontal right hemisphere of C57Bl/6 mice. 
+At humane end point, brain tissue was sampled and nuclei profiled 
+by sci-RNA-seq3. b UMAP of in vivo samples obtained from sham, 
+GL261- and CT2A-engrafted mice. Neuronal populations are anno-
+tated using inferred anatomic (cerebellar, cerebral nuclei, cortical, 
+hippocampal, hypothalamic and thalamic) and neurotransmitter 
+(glutaminergic, GABAergic, glycinergic, dopaminergic, cholinergic) 
+labels (see Methods). Numerical suffix corresponds to unique cluster 
+identifier for each subpopulation
+◂
+	
+Acta Neuropathologica          (2024) 148:74 
+   74  
+Page 14 of 27
+in the in vivo setting (Fig. 4h, i). Consistent with the high 
+cell cycle signature observed in Tcf4-low in vitro glioma 
+cells and previous reports [77] (Fig. 4d, Fig. S10g), ΔTcf4 
+CT2A cells proliferated significantly faster than parental 
+cells (Fig. 4j).
+Together these data demonstrated that GL261 and CT2A 
+biology are influenced by environmental factors. Specifi-
+cally, (i) in vivo glioma cells are more phenotypically het-
+erogeneous than in vitro cells, (ii) in vivo engraftment of 
+glioma cells impacts up-regulation of the NPC/OPC-like 
+phenotype, and down-regulation of the mesenchymal-like 
+phenotype, and (iii) in vitro cultures are more proliferative 
+than in vivo glioma cells. Mechanistically, we found that the 
+in vivo environment induces Tcf4 upregulation (or alleviates 
+in vitro suppression), which in turn mediates these transcrip-
+tomic changes.
+GL261 and CT2A tumors recapitulate canonical GBM 
+transcriptomic phenotypes
+The extent to which CT2A and GL261 tumors recapitulate 
+human gliomas was next examined at the transcriptomic 
+level. Using a transfer-learning-based approach (see Meth-
+ods), we found that in vivo CT2A and GL261 tumor cells 
+(Fig. 5a) had a higher degree of transcriptomic similarity 
+to human Grade 4 primary GBM tumors than Grade 1 
+(low grade glioma; LGG) and recurrent Grade 4 recur-
+rent GBMs (Fig. S11) [1, 120]. Given the resemblance 
+Fig. 4   In vitro vs. in vivo comparison of syngeneic glioma models. 
+a UMAPs of in vitro and in vivo GL261 and CT2A glioma cells. b 
+In vitro vs. in vivo population purity (i.e., homogeneity), quantified 
+by ROGUE [56] and compared by Wilcoxon test. c Differential gene 
+expression between in  vitro and in  vivo GL261 and CT2A glioma 
+cells. Log fold changes (logFCs) are compared between cell lines 
+in sectored scatter plot. d, e Differential pathway activities between 
+in vitro and in vivo GL261 and CT2A glioma cell. Differential activi-
+ties are compared between cell lines in scatter plot (d) and representa-
+tive GSEA plots are shown (e). f Volcano plot of differential expres-
+sion between in  vivo ΔTcf4 and parental CT2A cells. g Functional 
+annotation of genes upregulated in in vivo ΔTcf4 cells, by hypergeo-
+metric gene set enrichment analysis. h, i Comparison of ΔTcf4 sig-
+nature activity (h) and GSEA enrichment (i) in parental in vivo vs. 
+in vitro GL261 and CT2A cells. j Proliferation assay in parental and 
+ΔTcf4 CT2A clones. AC, astrocyte-like; GSEA, gene set enrichment 
+analysis; MES, mesenchymal-like; NES, normalized enrichment 
+score; NPC, neural progenitor-like; OPC, oligodendrocyte progenitor-
+like
+Acta Neuropathologica          (2024) 148:74 	
+Page 15 of 27 
+   74 
+to human GBM, we sought to determine whether murine 
+gliomas recapitulate canonical GBM expression programs 
+[82, 111]. We performed unsupervised gene program dis-
+covery using non-negative matrix factorization (NMF) in 
+in vivo CT2A and GL261 cells (Fig. 5b, c, Table S10) and 
+compared each program to established GBM and tumor-
+associated gene signatures (Fig. 5d). For each program 
+we compared activity levels between CT2A and GL261 
+tumors (Fig. 5e, f), and evaluated the prognostic value 
+using human survival data from The Cancer Genome Atlas 
+(TCGA) program (Fig. S12).
+Altogether, we identified 8 gene programs, G1-G8, 
+representing CT2A and GL261 intrinsic processes; three 
+were GL261-biased (G5, G7, G8), four were CT2A-
+biased (G2, G3, G4, G6) and one was non-specific (G1; 
+cell-cycle, 75 genes, e.g., Top2a) (Fig. 5c–e). G7 and G8 
+were associated with favorable survival in human glioma 
+patients. G7 (87 genes, e.g., Sox6 and Ptprz1) represented 
+Fig. 5   In vivo characterization of intrinsic GL261 and CT2A tumor 
+biology. a UMAPs of in vivo GL261 and CT2A glioma cells. b Flow-
+chart for NMF-based gene program discovery and annotation. c Heat-
+map of Jaccard similarity between component NMF programs used 
+to derive consensus NMF programs in murine glioma models. d–f 
+GL261- and CT2A-intrinsic gene programs were discovered using 
+unsupervised NMF algorithm and characterized using hypergeomet-
+ric gene set enrichment (d), gene program activity visualization on 
+UMAPs (e), and differential gene program activity between CT2A 
+and GL261 glioma cells (f). A, activity; ­H0, null hypothesis; NMF, 
+non-negative matrix factorization
+	
+Acta Neuropathologica          (2024) 148:74 
+   74  
+Page 16 of 27
+a developmental-like program whereas G8 (99 genes, e.g., 
+Met) had sparse functional annotations and was interpreted 
+to be a GL261-specific signature. G5 [100 genes, e.g., 
+Cd274 (encodes PD-L1), Irf1-2, Jak2, Tap1-2 and Stat1-
+3] was a GL261-biased inflammatory program associated 
+with unfavorable survival outcomes in human gliomas (Fig. 
+S12). Among the CT2A-biased programs, 3 of 4 were asso-
+ciated with mesenchymal processes. G4 (MES1; 88 genes, 
+e.g., Fos/Fosb, Cd44, Nfkbiz and Vim) was associated with 
+TNFα/NFκB signaling and epithelial-to-mesenchymal tran-
+sition (EMT). G6 (MES2; 88 genes, e.g., Hk2 and Mxi1) was 
+associated with glycolytic and hypoxic signaling. Finally, 
+G2 (MES3; 79 genes, e.g., Prrx1, Pdgfra/Pdgfrb, Tfgb2 
+and Col1a1) was associated with angiogenesis, EMT and 
+invasion. Among these only G4 was associated with unfa-
+vorable survival in glioma patients (Fig. S12). Finally, G3 
+(93 genes, e.g., Mast4) was a CT2A-enriched program with 
+no known functional associations, and was interpreted as 
+a CT2A-specific signature, akin to its GL261 counterpart 
+G8. CT2A-specific G3 and GL261-specific G8 likely repre-
+sent cell-line intrinsic programs with uncertain relevance to 
+human GBM biology.
+CT2A-enriched G4 and G6 programs directly mapped 
+to the mesenchymal MES1 and MES2 GBM programs 
+described by Neftel et al., whereas GL261-enriched G7 pro-
+gram mapped to Neftel’s OPC- and AC-like GBM programs 
+[82]. Differential expression and pathway analysis corrobo-
+rated these findings (Fig. S13).
+In summary, CT2A and GL261 murine models reca-
+pitulate the canonical transcriptomic phenotypes of human 
+GBM, and position GL261 and CT2A as developmental- and 
+mesenchymal-like glioma models, respectively.
+Human and murine gliomas have common 
+transcriptional regulators
+GBM is a notoriously heterogeneous and plastic tumor so 
+understanding the transcriptomic regulators that govern dif-
+ferent states may expose opportunities to bias tumors toward 
+more therapeutically vulnerable states. Having established 
+that GL261 and CT2A recapitulate canonical GBM phe-
+notypes, we sought to define the transcription regulators 
+responsible for these states. We bioinformatically identi-
+fied GBM-associated transcriptional regulators (GTRs, 
+Table S11) using a random forest machine-learning based 
+strategy implemented across seven independent human 
+GBM cohorts (N = 146 tumors, Fig. S14a). Three pheno-
+typic axes were identified encompassing developmental 
+(23 GTRs), mesenchymal (12 GTRs), and cycling-related 
+processes (22 GTRs, Fig. 6a, Fig. S14b–d). In addition to 
+Tcf4, which was identified as a developmental transcrip-
+tion factor, we selected 3 additional GTFs for experimental 
+validation, including mesenchymal Wwtr1 and Prrx1, and 
+developmental Nfia. For each candidate GTF, clonal GTR-
+perturbed CT2A lines were generated using CRISPR-Cas9 
+and engrafted into murine brains (Fig. S14e–h). At humane 
+end point, mice were sacrificed, and brain tissue was sam-
+pled and subject to sci-RNA-seq3 profiling to evaluate the 
+effect of each GTF perturbation on glioma biology (Fig. 
+S14i–l, Table S12).
+As predicted bioinformatically, perturbation of mesen-
+chymal GTRs Wwtr1 and Prrx1 resulted in developmental 
+phenotypic shifts (Fig. 6b), whereas perturbation of develop-
+mental GTRs Nfia and Tcf4 resulted in mesenchymal shifts 
+(Fig. 4g, Fig. S14i–l). GTR perturbations also resulted in the 
+differential expression of other GTRs in patterns expected 
+based on their inferred phenotypes (Fig. S14i–l). Finally, 
+Sox6, although not interrogated here, was abundantly 
+expressed in GL261—but not CT2A—thereby supporting 
+its role as a developmental GTR (Fig. S13b, c).
+Lastly, to validate the cycling-related GTRs, we ana-
+lyzed pooled loss-of-function genetic screens in CT2A and 
+GL261 cells (Fig. 2, Table S7), as well as human GBM 
+(Project Score database) [21, 87]. We reasoned that GTRs 
+implicated in the cycling-related phenotypic axis could be 
+associated with glioma fitness in vitro. Of the 22 predicted 
+cycling GTRs, 9, 8, and 11 were essential genes in CT2A, 
+GL261 and human GBM cell lines, respectively, and five 
+were essential across all models (i.e., Bub3, Cenpa, Bard1, 
+Brca1, and Mis18bp1; Fig. 6c). By contrast, developmental 
+and mesenchymal GTRs were overwhelmingly non-essential 
+for cellular fitness, except for mesenchymal Eno1 in GL261 
+and CT2A, developmental Sox2/4/6 in GL261, and mes-
+enchymal WWTR1 in human GBM lines (Fig. 4c). Among 
+these off-target hits, Eno1 and Sox2/4/6 were inferred to have 
+some cycling activity, thereby explaining their essentiality 
+(Fig. S14b, Table S11).
+These data represent a catalog of high-yield candidate 
+GTRs and showcase the utility of CT2A in modeling GTR-
+associated phenotypic shifts. Furthermore, we provide 
+experimental evidence supporting Wwtr1 and Prrx1 as mes-
+enchymal GTRs, Nfia and Tcf4 as developmental GTRs, and 
+Bub3, Cenpa, Bard1, Brca1, and Mis18bp1 as cycling GTRs.
+Myeloid recruitment and cytokine signaling 
+patterns distinguish the CT2A and GL261 tumor 
+immune microenvironments
+Human GBM is regarded as an immunosuppressive tumor, 
+and as immunotherapies emerge to address this challenge, 
+it is beneficial to understand the TIME in preclinical CT2A 
+and GL261 models that partly served as the basis for these 
+clinical trials [70, 84]. Thus, we characterized the immune 
+microenvironment in CT2A and GL261 glioma models. We 
+digitally sorted lymphoid and myeloid immune populations 
+from sham, CT2A- and GL261-engrafted mice brains, and 
+Acta Neuropathologica          (2024) 148:74 	
+Page 17 of 27 
+   74 
+Fig. 6   Glioma transcriptional 
+regulators. a Bipartite network 
+illustrating relationship between 
+GBM phenotypes (red nodes) 
+and GTR activities (blue nodes). 
+Edges represent random forest 
+regression-derived feature 
+importance scores, pooled 
+across all human GBM datasets 
+(Fig S14). b GSEA plots show-
+ing effect of Wwtr1 and Prrx1 
+perturbation in CT2A cells 
+on developmental (G7-Dev) 
+and mesenchymal (G4-MES1) 
+phenotypes. (c) GTR essential-
+ity scores (scaled BF) in CT2A, 
+GL261, and human GBMs. 
+Essential genes were defined 
+as scaled BF > 0, where scaled 
+BF = BF − 5. Bolded GTRs 
+represent cycling associated 
+GTRs that are essential across 
+all glioma models. Differences 
+(p values) between phenotypes 
+were determined by ANOVA. 
+BF, Bayes factor; Dev, develop-
+mental; GSEA, gene set enrich-
+ment analysis; GTR, glioma 
+transcriptional regulators; MES, 
+mesenchymal
+	
+Acta Neuropathologica          (2024) 148:74 
+   74  
+Page 18 of 27
+resolved 4 main types of immune cells with several distinct 
+subpopulations observed at higher clustering resolutions: 
+Macrophages (Mp; 7 subtypes), microglia (Mg; 2 subtypes), 
+dendritic cells (DC; 2 subtypes), and T cells (TC; 3 sub-
+types) (Fig. 7a, b).
+To functionally annotate the immune populations, 
+we performed NMF-based gene program discovery and 
+resolved nine murine immune programs (denoted IM1-9; 
+Fig. S15a–c; Table S13). The macrophage population was 
+the most abundant and heterogeneous, consisting of distinct 
+subpopulations involved in TNFα signaling (Mp-4 cells; 
+IM3 program), IFN signaling (Mp-9 cells; IM5 program) 
+and antigen presentation (Mp-8, Mp-9 and Mp-14 cells; 
+IM9 program) (Fig. 7a, top heatmap). There were also mac-
+rophages under hypoxic stress (Mp-4, Mp-5 and Mp-14 
+cells; IM8 program). Among dendritic cells (DC), DC-12 
+was associated with higher MHC class II-mediated antigen 
+presentation (Cd74, H2-Ab1; IM9 program) whereas DC-15 
+was more pro-inflammatory, consisting of higher TNFα 
+(IM3) and IFN (IM5) signaling. Unlike the other myeloid 
+lineages, microglial cells (P2ry12) were relatively homog-
+enous. T cells varied in processes related to cell cycle (IM6) 
+Fig. 7   Immune microenvironment in CT2A and GL261 tumors. a 
+Gene program activity (top heatmap) and marker gene expression 
+(bottom dot plot) in immune cells types. b UMAP of immune cells 
+recovered from sham, GL261, and CT2A-engrafted brains. c Com-
+parison of murine and human immune gene programs. Size of dots 
+reflect degree of enrichment of murine gene sets in human gene sets, 
+and color reflects correlation between murine and human gene pro-
+gram activities scored in murine immune population. d, e Inferred 
+cytokine activities for each immune program. Immune response 
+enrichment scores (IRES) were computed (IM_5 program shown as 
+example) (d) and scores aggregated across each cell type were used to 
+infer upstream cytokines activities (e). f Cytokine abundance in CSF 
+from glioma patients. Significance determined by t test. Data from 
+Fortuna et al. [22]. g Cell viability assays in CT2A and GL261 cells 
+treated with 5–200 ng/mL IFNγ and TNFα. Cell counts were normal-
+ized to vehicle-treated controls. Curves are loess models ± 95% con-
+fidence interval, and individual points represent independent repeat 
+experiments (n = 3/condition/cell line). Three-way ANOVA shown 
+in legend. h, i Relative abundance of immune populations in sham, 
+GL261, and CT2A-engrafted brains represented using pie chart 
+(h) and heatmap (i). j Differential abundance analysis of CT2A vs. 
+GL261 immune populations using Milo algorithm [16]. Inset: UMAP 
+of neighborhood-level differential abundance estimates. Each neigh-
+borhood is comprised of 50–100 nearest-neighbor cells, and color 
+represents differential abundance between CT2A and GL261 mod-
+els. Red-blue color scale: immune populations enriched in CT2A and 
+GL261 models, respectively. DC, dendritic cells; IH, human immune 
+gene programs; IM, murine immune gene programs; Mg, microglia; 
+Mp, macrophage; Nhood, neighborhood; TC, T-cells
+Acta Neuropathologica          (2024) 148:74 	
+Page 19 of 27 
+   74 
+and differentiation (IM1) and included a T-regulatory sub-
+population (TC-11; Ctla4).
+To determine the relevance of the TIME in GL261 and 
+CT2A gliomas to human GBM, we evaluated the TIME 
+across three human GBM cohorts [1, 82, 120]. Notably, 
+biased sampling of immune cells from human samples 
+(enrichment sorting) precluded direct compositional com-
+parison of the murine and human TIMEs. Instead, we per-
+formed unsupervised gene program discovery and annota-
+tion using digitally sorted immune cells from human GBM 
+samples and resolved ten human immune programs (denoted 
+IH1-10; Fig. S15d, e, Table S13). We found that all murine 
+immune programs were recapitulated in the human TIME 
+(Fig. 7c, Fig. S15f), suggesting that the TIME in glioma-
+engrafted mice recapitulates hallmark features of the human 
+immune response in GBM.
+To elucidate the cytokines driving these diverse immune 
+gene programs, we leveraged a scRNA-seq-derived cytokine 
+response dictionary to calculate immune response enrich-
+ment scores (IRES) for each gene program (Fig. 7d, e) [15]. 
+Select cytokines were non-specifically linked to multiple 
+immune programs, like IL1a/b in the DC-specific response 
+(IM4), T-cell differentiation (IM1), hypoxia (IM8), and 
+antigen-presentation (IM9), suggesting pleiotropic and 
+cell-type-specific cytokine responses. Conversely, other 
+programs, like the microglial-specific response, were linked 
+to multiple cytokines, including SCF, Noggin, and IL30. 
+Notably, inflammatory TNFα (IM3) and Interferon (IM5) 
+programs mapped to their cognate cytokines. Of the inferred 
+cytokines, many were significantly enriched in CSF sam-
+pled from glioma patients [22] including IFNγ (p = 0.015), 
+TNFα (p = 0.052), EGF (p = 0.082), IL1b (p = 0.022), but not 
+IL1a (p = 0.84), thereby linking the extracellular presence 
+of select cytokines to the downstream responses observed 
+in the TIME.
+Earlier we reported distinct inflammatory responses in 
+CT2A and GL261 tumor cells; CT2A tumors were asso-
+ciated with TNFα/NFκB signaling (G4 program) whereas 
+GL261 tumors had higher levels of IFN signaling (G7 pro-
+gram) (Fig. 5d–f). This led us to hypothesize that CT2A 
+and GL261 have distinct intrinsic sensitivities to different 
+cytokines. To test this, we performed cell viability assays 
+in CT2A and GL261 cells treated with IFNγ and TNFα 
+(Fig. 7g). GL261 cells ­(IC50IFNγ < 5 ng/mL) were > 20-fold 
+more sensitive to IFNγ than CT2A cells ­(IC50IFNγ = 120 ng/
+mL), whereas the inverse was observed in TNFα treated 
+GL261 ­(IC50TNFα = 85 ng/mL) and CT2A ­(IC50TNFα < 5 ng/
+mL) cells.
+Finally, we evaluated the composition of the TIME in 
+CT2A and GL261-engrafted mice. The relative abundance 
+of immune cells in CT2A (5.3%) and GL261 (2.1%) was 
+significantly higher than sham (1.1%) (Fig. 7h). Regardless 
+of glioma model, tumor engraftment was associated with 
+significant infiltration of pro-inflammatory (IFN-signaling) 
+macrophages (Mp-9), cycling T-cells [TC-6 and TC-11 
+(Ctla-positive T regulatory cells)], and antigen-presenting 
+(DC-12) and pro-inflammatory (DC-15) dendritic cells 
+(Fig. 7i). Comparison of CT2A and GL261 immune infil-
+trates showed that Mp-4 and Mp-8 macrophage popula-
+tions were unique to CT2A tumors, and otherwise absent 
+in sham control and GL261-engrafted mice (Fig. 7i, j). In 
+contrast, Mg-3 and to a lesser extent Mg-2 microglia were 
+over-represented in the GL261 TIME compared to CT2A. 
+T-cells and dendritic cells were equally represented in both 
+tumor models.
+To summarize, here we characterized the TIME in GL261 
+and CT2A tumors, including the active immune programs 
+and their associated cytokines, and TIME composition.
+Intrinsic immune evasion of stem‑like glioma cells
+Given the prevalent heterogeneity in GBM, we hypothesized 
+there to be intra-tumoral variation in immune evasion activ-
+ity. We performed NMF to identify evasion genes with com-
+mon patterns of expression in CT2A tumors (Fig. 8a). Of the 
+265 evasion genes identified (Fig. 1, Table S6), 114 genes 
+reproducibly clustered into two gene programs, denoted as 
+evasion phenotype E1 (57 genes) and E2 (57 genes) (Fig. 8b, 
+Table S14). E1 and E2 activities were negatively correlated 
+(r = − 0.33) and delineated two mutually exclusive glioma 
+subpopulations (Fig. 8c). Interestingly, each evasion pheno-
+type was comprised of a mixture of resister and sensitizer 
+hits (Fig. 8d), with little overlap with Lawson’s core eva-
+sion genes (Fig. 8e) [52], possibly reflecting glioma speci-
+ficity. E1 was associated with sensitizer genes implicated in 
+Toll-like receptor signaling, and resister genes implicated 
+in TGFβ/SMAD signaling and Runx1/Chromatin regula-
+tion resisters (Fig. 8f). Alternatively, E2 was associated 
+with sensitizer genes involved in chromatin remodeling and 
+resister genes involved in apoptosis and GPI anchor activity 
+(Fig. 8f). We also explored which glioma state each eva-
+sion phenotype was associated with. Using a curated list 
+of tumor/glioma-associated gene programs, intratumoral 
+correlations were calculated and pooled across 69 human 
+tumors from three independent human cohorts [1, 113]. This 
+revealed that the E1 and E2 phenotype activities were cor-
+related with neurodevelopmental and stem-like GBM states, 
+respectively (Fig. 8g, h).
+We next evaluated clinical correlates for each eva-
+sion phenotype. Meta-analysis of survival data from sev-
+eral human glioma cohorts (973 LGG patients across two 
+cohorts and 638 GBM patients across five cohorts) revealed 
+that high E2 activity was associated with worse survival 
+outcomes in LGG [HR (95% CI) = 4954 (577, 42,498); 
+p < 0.0001, I2 = 0%] and GBM [HR (95% CI) = 10.9 (1.7, 
+71.5); p = 0.013, I2 = 64%] (Fig. 8i). In other words, this 
+	
+Acta Neuropathologica          (2024) 148:74 
+   74  
+Page 20 of 27
+corresponded to a 50.4-month and 5.4-month survival differ-
+ence in LGG and GBM patients, respectively, when stratified 
+by E2 activity levels (Fig. 8j). E2 activity was also positively 
+associated with WHO grade gliomas in the TCGA (Fig. 8k, 
+p = 1.65 × ­10–29) and CCGA (Fig.  8l, p = 1.23 × ­10–14) 
+cohorts, and with GBM recurrence across three additional 
+cohorts profiled by scRNA-seq (Fig. 8m, p = 0.046). Unlike 
+E2, the E1 phenotype had no significant clinical correlates 
+(data not shown). Finally, we hypothesized that tumor-intrin-
+sic evasion phenotypes can be leveraged to predict response 
+to ICIs. Using RNA-seq profiles obtained from patients at 
+baseline (i.e., prior to immunotherapy) [125], we found 
+that E2 was significantly upregulated in ICI (PD-1 inhibi-
+tor) responders (Fig. 8n, p = 0.024). We benchmarked the 
+evasion phenotype signatures against other immunotherapy 
+response indices that have been proposed, including CD274 
+Fig. 8   Immune evasion phenotypes predict response to checkpoint 
+immunotherapy. a Heatmap of Jaccard similarity between component 
+NMF programs used to derive consensus NMF programs in murine 
+glioma models. b E1 (green) and E2 (red) genes. c E1 and E2 activi-
+ties visualized on UMAPs. d Distribution of sensitizers and resisters 
+across E1 and E2 phenotypes. e Venn diagrams visualizing over-
+lap between E1, E2 and core CTL genes (Lawson et al.). f Enrich-
+ment map of E1 and E2 genes. g Intratumoral correlations between 
+E1 (x-axis) and E2 (y-axis) activities and curated list of tumor and 
+GBM-associated gene sets. Stemness- (red) and neurodevelopmen-
+tal- (green) gene sets are indicated. h Activity of stemness gene sets 
+in E1- and E2-high CT2A subpopulations (boxplots) and visualized 
+as UMAPs. i Random-effects meta-analysis of E1- and E2-associated 
+hazard ratios across LGG and GBM cohorts. j Kaplan–Meier survival 
+analysis of pooled LGG and GBM cohorts, stratified by high vs. low 
+E2 activity. k, l E2 activity stratified by WHO Grade in TCGA (k) 
+and CCGA (l) cohorts. Significance determined by ANOVA. m E2 
+activity in primary vs. recurrent GBM, pooled across three independ-
+ent scRNA-seq cohorts. Significance by Wilcoxon test. n E2 activity 
+grouped by anti-PD-1 responder status. Data from Zhao et al.[125] 
+Significance by Wilcoxon test. o Volcano plot of different immune 
+indices showing differences between anti-PD-1 responders vs. non-
+responders. p Rank-ordered AUROC of different immune indices in 
+predicting anti-PD1 response in GBM patients. Logistic regression-
+based classifiers were trained, and significant models are shown 
+in red. AUROC, area under receiver operating curve; CAF, cancer-
+associated fibroblasts; CTL, cytotoxic T-lymphocyte; CYT, cytolytic 
+score; Δ, delta; ESTIMATE, Estimation of stromal and immune cells 
+in malignant tumors using expression data; HR, hazard ratio; ICM, 
+immune checkpoint modulators; IEGPI, immune escape-related gene 
+prognosis index; LGG, low grade glioma; MDSC, myeloid-derived 
+suppressor cells; RE, random effects; TIDE, tumor immune dysfunc-
+tion and exclusion
+Acta Neuropathologica          (2024) 148:74 	
+Page 21 of 27 
+   74 
+expression, interferon signature (IFNG) [38], Estimation of 
+STromal and Immune cells in Malignant Tumors (ESTI-
+MATE) [119], Tumor Immune Dysfunction and Exclusion 
+(TIDE) [38] and Immune Escape-Related Gene Prognosis 
+Index (IEGPI) [60], and found that the E2 signature outper-
+formed all, with an AUROC of 0.74 (Fig. 8o, p).
+Overall, these findings show that intrinsic immune eva-
+sion genes have distinct patterns of expression, E1 and E2. 
+E2 represents the more clinically relevant phenotype and 
+delineates a subpopulation of stem-like GBM cells that are 
+associated with worse prognosis, higher WHO grade and 
+tumor recurrence. Importantly, high E2 activity is predictive 
+of ICI response, and outperforms all other predictive indices.
+Discussion
+In the current study we evaluated data from single-cell RNA 
+sequencing and genome-wide pooled CRISPR screening 
+approaches to compare and contrast functional dependen-
+cies present in two syngeneic murine models of glioma. Not 
+surprisingly, comparison of in vitro and in vivo snRNA-seq 
+profiles demonstrated a profound influence of the in vivo 
+microenvironment on cell state, resulting in increased tumor 
+heterogeneity, downregulation of the mesenchymal state and 
+stress response, and lower proliferative capacity secondary 
+to Tcf4 upregulation. Unsupervised gene program discov-
+ery in in vivo tumor cells further revealed that CT2A and 
+GL261 cells are mesenchymal- and developmental-like 
+tumors, respectively. The gene programs in human GBM 
+and murine glioma were regulated by common GTFs, and 
+we experimentally validated several developmental (Nfia, 
+Tcf4), mesenchymal (Prrx1 and Wwtr1) and cycling-asso-
+ciated (Bub3, Cenpa, Bard1, Brca1, and Mis18bp1) GTFs 
+in CT2A glioma cells. Genome-wide CRISPR-Cas9 screens 
+revealed distinct genetic dependencies in CT2A (epigenetic 
+and post-translational regulation) and GL261 (metabolic) 
+cells and demonstrated that murine gliomas recapitulate 
+various GBM-specific genetic dependencies (e.g., UFMyla-
+tion in GL261). Moreover, the murine TIME was found to 
+be macrophage-dominant in CT2A tumors, and microglial-
+dominant in GL261 tumors. Immune-glioma co-culture 
+screens established NFκB signaling, autophagy/endosome 
+machinery, and chromatin remodeling as the predominant 
+mechanisms of CT2A-intrinsic immune evasion. Lastly, we 
+discovered that cancer intrinsic immune evasion genes have 
+heterogeneous patterns of expression. Specifically, the E2 
+evasion phenotype was associated with a stem-like GBM 
+subpopulation that was correlated with prognosis, WHO 
+grade and recurrence, and predicted response to ICI.
+Glioma cells engrafted orthotopically are subject to 
+selective in vivo pressures that include nutrient limitations, 
+hypoxia (21% oxygen in vitro versus 0.3–7.4% in vivo 
+[74]), and immune cell interactions, while in vitro cells are 
+exposed to artificial culture substrates and media. The tran-
+scriptomic changes observed upon in vivo CT2A and GL261 
+tumor engraftment revealed significant downregulation of 
+proliferation and mesenchymal programs, thereby confirm-
+ing reports by others in GL261 and 4T1 murine mammary 
+carcinoma cells [25, 35]. Notably, 13% of genes in the mes-
+enchymal signature (Neftel MES2 [82]) overlapped with 
+the in vitro stress signature [26] (including DDIT3, HSPA5 
+and HSPA9), and these were downregulated upon in vivo 
+engraftment. This raises the distinct possibility that the mes-
+enchymal state in vitro is an artifact of in vitro stress, as sug-
+gested by others [49]. However, the TCF4 gene product has 
+also been proposed as a metabolic sensor that is upregulated 
+in response to metabolic demands [7]. High glucose concen-
+trations in DMEM have been associated with epithelial-to-
+mesenchymal (EMT; e.g., Vim, Cd44) upregulation in MDA-
+MB-231 breast cancer cells [48]. Similarly, hyperglycemia 
+has induced EMT and HIF1a/hypoxia signaling in other cell 
+lines [36, 95, 108]. While this supports a model in which 
+limited in vivo glucose availability induces mesenchymal 
+downregulation in a Tcf4-dependent manner, further experi-
+mental investigations were out of the scope of the current 
+study. Instead, we found that perturbation of Tcf4, which was 
+upregulated in vivo, was able to revert many of the in vivo-
+induced changes back to an in vitro-like state, specifically 
+leading to increased cell cycle and mesenchymal-like pro-
+gram activities. TCF4:TCF12 dimer activity in a primary 
+GBM line was previously shown to inhibit cellular prolifera-
+tion and suppress POSTN expression, while TCF4 knock-
+down led to increased POSTN expression, similar to that 
+seen in our experiments [77]. Periostin, encoded by Postn, 
+promotes EMT, invasion and integrin-mediated adhesion in 
+glioma cells [76], and its negative regulation by Tcf4 may 
+in part explain the mesenchymal shift observed in vitro and 
+in Tcf4-perturbed glioma cells.
+Intratumoral heterogeneity is a hallmark feature of human 
+GBMs, and the subtypes of GBM have been exhaustively 
+characterized and include the Verhaak subtypes (classical, 
+mesenchymal, proneural and neural) [111], Neftel subtypes 
+(MES; mesenchymal, OPC; oligodendrocyte progenitor-like 
+cells, NPC; neural progenitor-like cells, and AC; astrocyte-
+like cells) [82], and Richards subtypes (developmental and 
+injury-response) [92]. Our unsupervised gene program 
+discovery revealed that CT2A and GL261 gliomas are pre-
+dominantly mesenchymal- and developmental like tumors, 
+respectfully, as suggested by others [37]. Importantly, per-
+turbation of developmental (Nfia, Tcf4) and mesenchymal 
+(Wwtr1, Prrx1) GTRs led to reciprocal phenotypic shifts. 
+Many of the GTRs predicted here have been implicated in 
+GBM by others in shaping GBM identity, including EZH2 
+[62, 124], FOXM1 [28, 54], NFIA/B [12, 27, 53, 69, 121], 
+OLIG1/2 [3, 80, 86, 93], SOX2 [5, 8, 104], SOX4 [55, 61, 
+	
+Acta Neuropathologica          (2024) 148:74 
+   74  
+Page 22 of 27
+115], SOX6 [109], SOX8 [39, 96], TCF4 [24, 77], TCF12 
+[88, 127], and ZEB1 [12, 41].
+ CT2A and GL261 engraftment resulted in significant 
+immune recruitment. Among the myeloid compartment, 
+macrophages were overrepresented in CT2A tumors whereas 
+microglia were overrepresented in GL261 tumors, thereby 
+confirming earlier reports [45, 57]. Although tumor-associ-
+ated dendritic cell infiltrates were similar in both models, 
+they were still higher than that observed in human GBM 
+[45]. CT2A cells secrete significantly higher levels of mye-
+loid chemokines (including CCL-2, CCL-5 and CCL-22) 
+than GL261s [37], possibly contributing to the differen-
+tial pattern of myeloid recruitment. Owing to the limited 
+recovery of rare cell types by sci-RNA-seq3 [18], we were 
+unable to detect NK, NKT, and B-cells, which are known 
+to be present in GL261 and CT2A TIMEs [45, 50, 72, 85]. 
+Using mass cytometry, Khalsa et al. reported no significant 
+differences in the abundance of T cell, NK, NKT or B cell 
+fractions between GL261 and CT2A tumors [45]. We also 
+observed no differences in the T cell populations infiltrating 
+the two models; however, Khan et al. showed that CT2A 
+tumors were enriched for exhausted CD8+ and regula-
+tor CD4+ T cells, whereas GL261 tumors were enriched 
+for progenitor exhausted CD8+ T cells [46]. Although the 
+TIME composition in GL261 more closely resembles human 
+GBMs than CT2A [45], the murine TIME shares key gene 
+programs that are characteristic of human GBMs, including 
+TNF, IFN, and hypoxia.
+Gene perturbations conferring resistance to immune cell 
+killing revealed common and distinct anti-tumor mecha-
+nisms in different immune populations. CTLs mediated 
+CT2A killing via TNF (Tnfrsf1a and Tnfrsf1b) and IFN 
+(Ifngr1 and Ifngr2), whereas non-phagocytic myeloid cells 
+predominantly relied on TNF (Tnfrsf1a). Notably, NK-medi-
+ated cytotoxicity was dependent on GPI anchor-mediated 
+signaling (e.g., Piga, Pigh, Pigm, etc.) and UL16-binding 
+protein (Raet1e). GPI anchors are essential for the surface 
+expression of UL16-binding proteins (i.e., ligands for the 
+activating NK cell receptor NKG2D [19]) and subsequent 
+secretion of cytolytic granzyme and perforin from NK cells 
+[75]. Although other NK screens have implicated TNF, IFN 
+or antigen-presentation in NK-mediated cytotoxicity, we 
+were unable to reproduce these findings. However, there 
+was a report that impaired TNF-mediated signaling (e.g., 
+TNFRSF10A, TNFRSF10B) conferred resistance to NK 
+killing in GPI-deficient HAP1 cells thereby suggesting that 
+GPI anchor resistance may mask the effects of other anti-
+tumor mediators [6, 44, 100]. Phagocytic myeloid evasion 
+was dependent on known phagocytosis inhibitors Cd47 and 
+Apmap [43].
+Our sci-RNA-seq3 analyses supported the abundance of 
+TNF and IFN in the TIME, albeit with noteworthy differ-
+ences between CT2A and GL261. CT2A tumors (G4-MES1 
+program) and macrophages (Mp-4 population) had higher 
+levels of TNF signaling compared to GL261. Conversely, 
+IFN signaling was similar among macrophages (Mp-9 
+population) infiltrating CT2A and GL261 tumors, but only 
+observed in GL261 tumor cells (G5-Inflammatory pro-
+gram). The attenuated IFN response in CT2A tumor cells, 
+confirmed by our IFN dose–response experiment, was due 
+to intrinsic resistance of CT2A to IFN secondary to known 
+single-copy deletions of chromosomal regions encompassing 
+type I IFN genes, and Stat2, Stat6, and Ifng [37]. However, 
+despite this reduced sensitivity, impaired IFN signaling still 
+conferred resistance to CTL killing in CT2A cells. Defects 
+in IFN response have been associated with resistance to 
+checkpoint immunotherapy [17, 20], thus positioning the 
+CT2A line as a relevant preclinical model for optimizing 
+immunotherapies.
+The autophagy-NFκB axis has previously been implicated 
+in the immune evasion of various cancers to CTLs [117]. 
+Our work expands this to encompass additional immune 
+cells, including myeloid and NK cells, thereby establishing 
+the autophagy-NFκB axis as pan-immune evasion pathway. 
+NFκB signaling deficits are known to sensitize tumor cells to 
+immune cell killing by promoting Caspase 8-mediated apop-
+tosis downstream of TNF signaling (e.g., Rnf31) [23, 52] and 
+upregulating expression of MHC1 (e.g., Tnip) [105]. Simi-
+larly, autophagy mediates tumor immune evasion through 
+multiple mechanisms, including granzyme clearance (e.g., 
+Vps4bi, Atg5) [23] and TNF resistance (e.g., Atg12) [52]. 
+Consistent with this, we showed that autophagy-deficient 
+CT2A tumors (ΔAtg12) were associated with elevated TNFα 
+and apoptotic signaling, and favorable survival outcomes.
+ Contrary to other tumors [52], we found that CTL-medi-
+ated cytotoxicity in CT2A cells was independent of MHC1 
+antigen presentation (e.g., B2m, H2-K1, Psmb9, Tap2). 
+Iorgulescu et al. reported that CT2A cells harbor multiple 
+mutations in antigen presentation machinery (e.g., Tap1 
+p.Y488C, Psmb8 p.A275P), although the defect in MHC1 
+expression could be overcome with IFNγ treatment [37]. 
+Consistent with this, we found that perturbation of Ptpn2, a 
+protein tyrosine phosphatase that negatively regulates IFNγ-
+mediated effects on antigen presentation [65], sensitized 
+CT2A cells to CTL killing. Human GBMs are among the 
+most common tumors associated with loss of MHC1 expres-
+sion (e.g., HLA, β2M), and MHC1 loss is independently 
+associated with unfavorable clinical outcomes [17]. In some 
+1p/19q intact IDH-mutant gliomas, recurrence is associ-
+ated with loss of heterozygosity in HLA genes [110]. These 
+findings position CT2A as a relevant preclinical model of 
+MHC1-deficiency in which to study immunotherapies.
+We showed that immune evasion genes were heterogene-
+ously expressed, with a subset (E2) enriched among stem-
+like GBM cells. This goes to suggest that mechanisms of 
+immune evasion can vary even within individual tumors. 
+Acta Neuropathologica          (2024) 148:74 	
+Page 23 of 27 
+   74 
+Moreover, it has been hypothesized that immunosuppressive 
+factors are enriched among stem-like tumor cells to establish 
+an immune-privileged microenvironment in which clonal 
+diversification and expansion can occur [79]. Perturba-
+tion of Sox2, a known stemness marker, sensitized CT2A 
+cells to J774- and CTL-mediated cytotoxicity (Table S6). 
+Others have also shown that glioma stem cells escape 
+immune surveillance by downregulating antigen presenta-
+tion [98]. Notable evasion mechanisms captured in the E2 
+signature included the phagocytic inhibition (Apmap), TNF 
+(Tnfrsf1a) and interferon (Ifngr2) signaling, GPI anchorage 
+(Pigt, Gpaa1, Dpm3), and NFκB signaling (Nfkb2), thereby 
+reflecting a multimodal evasion phenotype. The E2 signature 
+outperformed other immune indices in predicting response 
+to immune checkpoint inhibitors in GBM patients with a 
+competitive AUROC of 0.74. This highlights the transla-
+tional capacity of CT2A gliomas in identifying mechanisms 
+of immune evasion, with direct implications for identifying 
+patients that will response to ICI therapy.
+This study was not without limitations: (i) We were una-
+ble to recover rare cell populations using sci-RNA-seq3. 
+Furthermore, sci-RNA-seq3 experiments involving Atg12 
+and GTR-perturbed CT2A cells did not recover any immune 
+cells, thereby precluding the evaluation of the TIME in these 
+tumors. (ii) Immune co-culture screens were only performed 
+in CT2A cells. (iii) While our GTR inference was able to 
+reliably identify GBM phenotype-associated GTRs, the 
+direction of regulation at times could not always be reliably 
+inferred by our approach. For example, Tcf12 and Zeb1 were 
+predicted to promote a developmental phenotype, where in 
+fact the associations are negative [41, 88].
+Our study offers relevant insights into the biology of 
+GL261 and CT2A and serves to bridge the gap between 
+murine models and human GBM.
+Supplementary Information  The online version contains supplemen-
+tary material available at https://​doi.​org/​10.​1007/​s00401-​024-​02831-w.
+Author contributions  Conceptualization: N.M., H.H., S.S., J.M.; Meth-
+odology: N.M., J.W., H.H., V.D., N.T., J.M.; Data Acquisition: J.W., 
+N.S., A.G.F., V.D., K.D., M.A.U., Y.X., S.Y.L., N.T., C.V., H.H., V.D.; 
+Analysis and Interpretation: N.M., V.D., D.C., Z.Z., K.B., H.H., J.M.; 
+Visualization: N.M., D.C., J.M.; Drafting of Manuscript: N.M., J.M.; 
+Funding and Supervision: S.S., J.M. All authors contributed to the 
+critical revision and approval of the final manuscript.
+Funding  This research work was supported by the 2020 William Don-
+ald Nash Brain Tumor Research Fellowship awarded to N.M. and the 
+Canadian Institutes for Health Research (PJT438232 to J.M.). S.S. is 
+a Tier 1 Canada Research Chair in Human Cancer Stem Cell Biology. 
+J.M. is the GlaxoSmithKline Chair in Genetics and Genome Biology 
+at the Hospital for Sick Children.
+ Data availability  R scripts used to perform the analyses are provided 
+on GIT repository (https://​github.​com/​NMiko​lajew​icz/​Mikol​ajewi​cz-​
+2024). Sci-RNA-seq3 data is available on FigShare (https://​doi.​org/​10.​
+6084/​m9.​Figsh​are.​25685​523).
+Declarations 
+Conflict of interest  The research was conducted in the absence of any 
+commercial/financial relationships that could be construed as a conflict 
+of interest.
+Open Access  This article is licensed under a Creative Commons 
+Attribution-NonCommercial-NoDerivatives 4.0 International License, 
+which permits any non-commercial use, sharing, distribution and repro-
+duction in any medium or format, as long as you give appropriate credit 
+to the original author(s) and the source, provide a link to the Creative 
+Commons licence, and indicate if you modified the licensed material. 
+You do not have permission under this licence to share adapted material 
+derived from this article or parts of it. The images or other third party 
+material in this article are included in the article’s Creative Commons 
+licence, unless indicated otherwise in a credit line to the material. If 
+material is not included in the article’s Creative Commons licence and 
+your intended use is not permitted by statutory regulation or exceeds 
+the permitted use, you will need to obtain permission directly from 
+the copyright holder. To view a copy of this licence, visit http://crea-
+tivecommons.org/licenses/by-nc-nd/4.0/.
+References
+	 1.	 Abdelfattah N, Kumar P, Wang C, Leu JS, Flynn WF, Gao R et al 
+(2022) Single-cell analysis of human glioma and immune cells 
+identifies S100A4 as an immunotherapy target. Nat Commun 
+13:767. https://​doi.​org/​10.​1038/​s41467-​022-​28372-y
+	 2.	 Ausman JI, Shapiro WR, Rall DP (1970) Studies on the chemo-
+therapy of experimental brain tumors: development of an experi-
+mental model. Cancer Res 30:2394–2400
+	 3.	 Azzarelli B, Miravalle L, Vidal R (2004) Immunolocalization 
+of the oligodendrocyte transcription factor 1 (Olig1) in brain 
+tumors. J Neuropathol Exp Neurol 63:170–179. https://​doi.​org/​
+10.​1093/​jnen/​63.2.​170
+	 4.	 Barthel FP, Johnson KC, Varn FS, Moskalik AD, Tanner G, 
+Kocakavuk E et al (2019) Longitudinal molecular trajectories 
+of diffuse glioma in adults. Nature 576:112–120. https://​doi.​org/​
+10.​1038/​s41586-​019-​1775-1
+	 5.	 Berezovsky AD, Poisson LM, Cherba D, Webb CP, Transou AD, 
+Lemke NW et al (2014) Sox2 promotes malignancy in glioblas-
+toma by regulating plasticity and astrocytic differentiation. Neo-
+plasia 16:193–206. https://​doi.​org/​10.​1016/j.​neo.​2014.​03.​006
+	 6.	 Bernareggi D, Xie Q, Prager BC, Yun J, Cruz LS, Pham TV 
+et al (2022) CHMP2A regulates tumor sensitivity to natural killer 
+cell-mediated cytotoxicity. Nat Commun 13:1899. https://​doi.​
+org/​10.​1038/​s41467-​022-​29469-0
+	 7.	 Boj SF, van Es JH, Huch M, Li VS, Jose A, Hatzis P et al (2012) 
+Diabetes risk gene and Wnt effector Tcf7l2/TCF4 controls 
+hepatic response to perinatal and adult metabolic demand. Cell 
+151:1595–1607. https://​doi.​org/​10.​1016/j.​cell.​2012.​10.​053
+	 8.	 Bulstrode H, Johnstone E, Marques-Torrejon MA, Ferguson KM, 
+Bressan RB, Blin C et al (2017) Elevated FOXG1 and SOX2 in 
+glioblastoma enforces neural stem cell identity through transcrip-
+tional control of cell cycle and epigenetic regulators. Genes Dev 
+31:757–773. https://​doi.​org/​10.​1101/​gad.​293027.​116
+	 9.	 Cao J, Spielmann M, Qiu X, Huang X, Ibrahim DM, Hill AJ et al 
+(2019) The single-cell transcriptional landscape of mammalian 
+organogenesis. Nature 566:496–502. https://​doi.​org/​10.​1038/​
+s41586-​019-​0969-x
+	 10.	 Cao W, Xi X, Hao Z, Li W, Kong Y, Cui L et  al (2007) 
+RAET1E2, a soluble isoform of the UL16-binding protein 
+RAET1E produced by tumor cells, inhibits NKG2D-mediated 
+	
+Acta Neuropathologica          (2024) 148:74 
+   74  
+Page 24 of 27
+NK cytotoxicity. J Biol Chem 282:18922–18928. https://​doi.​org/​
+10.​1074/​jbc.​M7025​04200
+	 11.	 Chan K, Tong AHY, Brown KR, Mero P, Moffat J (2019) Pooled 
+CRISPR-based genetic screens in mammalian cells. J Vis Exp. 
+https://​doi.​org/​10.​3791/​59780
+	 12.	 Chandra A, Jahangiri A, Chen W, Nguyen AT, Yagnik G, Pereira 
+MP et al (2020) Clonal ZEB1-driven mesenchymal transition 
+promotes targetable oncologic antiangiogenic therapy resistance. 
+Cancer Res 80:1498–1511. https://​doi.​org/​10.​1158/​0008-​5472.​
+CAN-​19-​1305
+	 13.	 Chokshi CR, Savage N, Venugopal C, Singh SK (2020) A 
+patient-derived xenograft model of glioblastoma. STAR Protoc 
+1:100179. https://​doi.​org/​10.​1016/j.​xpro.​2020.​100179
+	 14.	 Cloughesy TF, Mochizuki AY, Orpilla JR, Hugo W, Lee AH, 
+Davidson TB et al (2019) Neoadjuvant anti-PD-1 immunother-
+apy promotes a survival benefit with intratumoral and systemic 
+immune responses in recurrent glioblastoma. Nat Med 25:477–
+486. https://​doi.​org/​10.​1038/​s41591-​018-​0337-7
+	 15.	 Cui A, Huang T, Li S, Ma A, Perez JL, Sander C et al (2024) 
+Dictionary of immune responses to cytokines at single-cell 
+resolution. Nature 625:377–384. https://​doi.​org/​10.​1038/​
+s41586-​023-​06816-9
+	 16.	 Dann E, Henderson NC, Teichmann SA, Morgan MD, Marioni 
+JC (2022) Differential abundance testing on single-cell data using 
+k-nearest neighbor graphs. Nat Biotechnol 40:245–253. https://​
+doi.​org/​10.​1038/​s41587-​021-​01033-z
+	 17.	 Dhatchinamoorthy K, Colbert JD, Rock KL (2021) cancer 
+immune evasion through loss of MHC class I antigen presenta-
+tion. Front Immunol 12:636568. https://​doi.​org/​10.​3389/​fimmu.​
+2021.​636568
+	 18.	 Ding J, Adiconis X, Simmons SK, Kowalczyk MS, Hession CC, 
+Marjanovic ND et al (2020) Systematic comparison of single-cell 
+and single-nucleus RNA-sequencing methods. Nat Biotechnol 
+38:737–746. https://​doi.​org/​10.​1038/​s41587-​020-​0465-8
+	 19.	 Duan S, Guo W, Xu Z, He Y, Liang C, Mo Y et al (2019) Natural 
+killer group 2D receptor and its ligands in cancer immune escape. 
+Mol Cancer 18:29. https://​doi.​org/​10.​1186/​s12943-​019-​0956-8
+	 20.	 Dubrot J, Du PP, Lane-Reticker SK, Kessler EA, Muscato AJ, 
+Mehta A et al (2022) In vivo CRISPR screens reveal the land-
+scape of immune evasion pathways across cancer. Nat Immunol 
+23:1495–1506. https://​doi.​org/​10.​1038/​s41590-​022-​01315-x
+	 21.	 Dwane L, Behan FM, Goncalves E, Lightfoot H, Yang W, van 
+der Meer D et al (2021) Project Score database: a resource for 
+investigating cancer cell dependencies and prioritizing therapeu-
+tic targets. Nucleic Acids Res 49:D1365–D1372. https://​doi.​org/​
+10.​1093/​nar/​gkaa8​82
+	 22.	 Fortuna D, Hooper DC, Roberts AL, Harshyne LA, Nagurney 
+M, Curtis MT (2018) Potential role of CSF cytokine profiles 
+in discriminating infectious from non-infectious CNS disorders. 
+PLoS ONE 13:e0205501. https://​doi.​org/​10.​1371/​journ​al.​pone.​
+02055​01
+	 23.	 Frey N, Tortola L, Egli D, Janjuha S, Rothgangl T, Marquart 
+KF et al (2022) Loss of Rnf31 and Vps4b sensitizes pancreatic 
+cancer to T cell-mediated killing. Nat Commun 13:1804. https://​
+doi.​org/​10.​1038/​s41467-​022-​29412-3
+	 24.	 Fu H, Cai J, Clevers H, Fast E, Gray S, Greenberg R et al (2009) 
+A genome-wide screen for spatially restricted expression patterns 
+identifies transcription factors that regulate glial development. 
+J Neurosci 29:11399–11408. https://​doi.​org/​10.​1523/​JNEUR​
+OSCI.​0160-​09.​2009
+	 25.	 García-Vicente L, Borja M, Tran V, Álvarez-Vázquez A, Flores-
+Hernández R, Granados A et al (2023) Single-nucleus RNA 
+sequencing provides insights into the GL261-GSC syngeneic 
+mouse model of glioblastoma. BioRxiv 8:17072. https://​doi.​org/​
+10.​1101/​2023.​10.​26.​564166
+	 26.	 Gavish A, Tyler M, Simkin D, Kovarsky D, Gonzalez Castro 
+LN, Halder D et al (2021) The transcriptional hallmarks of intra-
+tumor heterogeneity across a thousand tumors. BioRxiv. https://​
+doi.​org/​10.​1101/​2021.​12.​19.​473368
+	 27.	 Glasgow SM, Zhu W, Stolt CC, Huang TW, Chen F, LoTurco 
+JJ et al (2014) Mutual antagonism between Sox10 and NFIA 
+regulates diversification of glial lineages and glioma subtypes. 
+Nat Neurosci 17:1322–1329. https://​doi.​org/​10.​1038/​nn.​3790
+	 28.	 Gouaze-Andersson V, Gherardi MJ, Lemarie A, Gilhodes J, 
+Lubrano V, Arnauduc F et al (2018) FGFR1/FOXM1 pathway: 
+a key regulator of glioblastoma stem cells radioresistance and a 
+prognosis biomarker. Oncotarget 9:31637–31649. https://​doi.​org/​
+10.​18632/​oncot​arget.​25827
+	 29.	 Hafemeister C, Satija R (2019) Normalization and variance sta-
+bilization of single-cell RNA-seq data using regularized nega-
+tive binomial regression. Genome Biol 20:296. https://​doi.​org/​
+10.​1186/​s13059-​019-​1874-1
+	 30.	 Han H, Cho JW, Lee S, Yun A, Kim H, Bae D et al (2018) 
+TRRUST v2: an expanded reference database of human and 
+mouse transcriptional regulatory interactions. Nucleic Acids 
+Res 46:D380–D386. https://​doi.​org/​10.​1093/​nar/​gkx10​13
+	 31.	 Hao Y, Hao S, Andersen-Nissen E, Mauck WM 3rd, Zheng 
+S, Butler A et al (2021) Integrated analysis of multimodal 
+single-cell data. Cell 184(3573–3587):e3529. https://​doi.​org/​
+10.​1016/j.​cell.​2021.​04.​048
+	 32.	 Hart T, Moffat J (2016) BAGEL: a computational frame-
+work for identifying essential genes from pooled library 
+screens. BMC Bioinform 17:164. https://​doi.​org/​10.​1186/​
+s12859-​016-​1015-8
+	 33.	 Horbinski C, Berger T, Packer RJ, Wen PY (2022) Clinical impli-
+cations of the 2021 edition of the WHO classification of central 
+nervous system tumours. Nat Rev Neurol 18:515–529. https://​
+doi.​org/​10.​1038/​s41582-​022-​00679-w
+	 34.	 Hu H, Miao YR, Jia LH, Yu QY, Zhang Q, Guo AY (2019) 
+AnimalTFDB 3.0: a comprehensive resource for annotation and 
+prediction of animal transcription factors. Nucleic Acids Res 
+47:D33–D38. https://​doi.​org/​10.​1093/​nar/​gky822
+	 35.	 Hum NR, Sebastian A, Gilmore SF, He W, Martin KA, Hinckley 
+A et al (2020) Comparative molecular analysis of cancer behav-
+ior cultured in vitro, in vivo, and ex vivo. Cancers. https://​doi.​
+org/​10.​3390/​cance​rs120​30690
+	 36.	 Iacobini C, Vitale M, Pugliese G, Menini S (2021) Normalizing 
+HIF-1alpha signaling improves cellular glucose metabolism and 
+blocks the pathological pathways of hyperglycemic damage. Bio-
+medicines. https://​doi.​org/​10.​3390/​biome​dicin​es909​1139
+	 37.	 Iorgulescu JB, Ruthen N, Ahn R, Panagioti E, Gokhale PC, 
+Neagu M et al (2023) Antigen presentation deficiency, mes-
+enchymal differentiation, and resistance to immunotherapy 
+in the murine syngeneic CT2A tumor model. Front Immunol 
+14:1297932. https://​doi.​org/​10.​3389/​fimmu.​2023.​12979​32
+	 38.	 Jiang P, Gu S, Pan D, Fu J, Sahu A, Hu X et al (2018) Signatures 
+of T cell dysfunction and exclusion predict cancer immunother-
+apy response. Nat Med 24:1550–1558. https://​doi.​org/​10.​1038/​
+s41591-​018-​0136-1
+	 39.	 Jiang YW, Wang R, Zhuang YD, Chen CM (2020) Identifica-
+tion and validation of potential novel prognostic biomarkers for 
+patients with glioma based on a gene co-expression network. 
+Transl Cancer Res 9:6444–6454. https://​doi.​org/​10.​21037/​
+tcr-​20-​492
+	 40.	 Johanns TM, Ward JP, Miller CA, Wilson C, Kobayashi DK, 
+Bender D et al (2016) Endogenous neoantigen-specific CD8 
+T cells identified in two glioblastoma models using a cancer 
+immunogenomics approach. Cancer Immunol Res 4:1007–1015. 
+https://​doi.​org/​10.​1158/​2326-​6066.​CIR-​16-​0156
+	 41.	 Joseph JV, Conroy S, Tomar T, Eggens-Meijer E, Bhat K, Copray 
+S et al (2014) TGF-beta is an inducer of ZEB1-dependent 
+Acta Neuropathologica          (2024) 148:74 	
+Page 25 of 27 
+   74 
+mesenchymal transdifferentiation in glioblastoma that is associ-
+ated with tumor invasion. Cell Death Dis 5:e1443. https://​doi.​
+org/​10.​1038/​cddis.​2014.​395
+	 42.	 Jubelin C, Munoz-Garcia J, Griscom L, Cochonneau D, Ollivier 
+E, Heymann MF et al (2022) Three-dimensional in vitro culture 
+models in oncology research. Cell Biosci 12:155. https://​doi.​org/​
+10.​1186/​s13578-​022-​00887-3
+	 43.	 Kamber RA, Nishiga Y, Morton B, Banuelos AM, Barkal AA, 
+Vences-Catalan F et al (2021) Inter-cellular CRISPR screens 
+reveal regulators of cancer cell phagocytosis. Nature 597:549–
+554. https://​doi.​org/​10.​1038/​s41586-​021-​03879-4
+	 44.	 Kearney CJ, Vervoort SJ, Hogg SJ, Ramsbottom KM, Freeman 
+AJ, Lalaoui N et al (2018) Tumor immune evasion arises through 
+loss of TNF sensitivity. Sci Immunol. https://​doi.​org/​10.​1126/​
+sciim​munol.​aar34​51
+	 45.	 Khalsa JK, Cheng N, Keegan J, Chaudry A, Driver J, Bi WL et al 
+(2020) Immune phenotyping of diverse syngeneic murine brain 
+tumors identifies immunologically distinct types. Nat Commun 
+11:3912. https://​doi.​org/​10.​1038/​s41467-​020-​17704-5
+	 46.	 Khan SM, Desai R, Coxon A, Livingstone A, Dunn GP, Petti A 
+et al (2022) Impact of CD4 T cells on intratumoral CD8 T-cell 
+exhaustion and responsiveness to PD-1 blockade therapy in 
+mouse brain tumors. J Immunother Cancer. https://​doi.​org/​10.​
+1136/​jitc-​2022-​005293
+	 47.	 Kijima N, Kanemura Y (2017) Mouse models of glioblastoma. 
+In: De Vleeschouwer S (ed) Glioblastoma, City
+	 48.	 Kim SW, Kim SJ, Langley RR, Fidler IJ (2015) Modulation of 
+the cancer cell transcriptome by culture media formulations and 
+cell density. Int J Oncol 46:2067–2075. https://​doi.​org/​10.​3892/​
+ijo.​2015.​2930
+	 49.	 Kinker GS, Greenwald AC, Tal R, Orlova Z, Cuoco MS, McFar-
+land JM et al (2020) Pan-cancer single-cell RNA-seq identi-
+fies recurring programs of cellular heterogeneity. Nat Genet 
+52:1208–1218. https://​doi.​org/​10.​1038/​s41588-​020-​00726-6
+	 50.	 Kirschenbaum D, Xie K, Ingelfinger F, Katzenelenbogen Y, 
+Abadie K, Look T et al (2024) Time-resolved single-cell tran-
+scriptomics defines immune trajectories in glioblastoma. Cell 
+187(149–165):e123. https://​doi.​org/​10.​1016/j.​cell.​2023.​11.​032
+	 51.	 La Manno G, Siletti K, Furlan A, Gyllborg D, Vinsland E, Mossi 
+Albiach A et al (2021) Molecular architecture of the develop-
+ing mouse brain. Nature 596:92–96. https://​doi.​org/​10.​1038/​
+s41586-​021-​03775-x
+	 52.	 Lawson KA, Sousa CM, Zhang X, Kim E, Akthar R, Caumanns 
+JJ et al (2020) Functional genomic landscape of cancer-intrinsic 
+evasion of killing by T cells. Nature 586:120–126. https://​doi.​
+org/​10.​1038/​s41586-​020-​2746-2
+	 53.	 Lee J, Hoxha E, Song HR (2017) A novel NFIA-NFkappaB feed-
+forward loop contributes to glioblastoma cell survival. Neuro 
+Oncol 19:524–534. https://​doi.​org/​10.​1093/​neuonc/​now233
+	 54.	 Lee Y, Kim KH, Kim DG, Cho HJ, Kim Y, Rheey J et al (2015) 
+FoxM1 promotes stemness and radio-resistance of glioblastoma 
+by regulating the master stem cell regulator Sox2. PLoS One 
+10:e0137703. https://​doi.​org/​10.​1371/​journ​al.​pone.​01377​03
+	 55.	 Lin B, Madan A, Yoon JG, Fang X, Yan X, Kim TK et al (2010) 
+Massively parallel signature sequencing and bioinformatics 
+analysis identifies up-regulation of TGFBI and SOX4 in human 
+glioblastoma. PLoS One 5:e10210. https://​doi.​org/​10.​1371/​journ​
+al.​pone.​00102​10
+	 56.	 Liu B, Li C, Li Z, Wang D, Ren X, Zhang Z (2020) An 
+entropy-based metric for assessing the purity of single cell 
+populations. Nat Commun 11:3155. https://​doi.​org/​10.​1038/​
+s41467-​020-​16904-3
+	 57.	 Liu CJ, Schaettler M, Blaha DT, Bowman-Kirigin JA, Kob-
+ayashi DK, Livingstone AJ et al (2020) Treatment of an aggres-
+sive orthotopic murine glioblastoma model with combination 
+checkpoint blockade and a multivalent neoantigen vaccine. 
+Neuro Oncol 22:1276–1288. https://​doi.​org/​10.​1093/​neuonc/​
+noaa0​50
+	 58.	 Louis DN, Perry A, Reifenberger G, Von Deimling A, Figarella-
+Branger D, Cavenee WK et al (2016) The 2016 World Health 
+Organization classification of tumors of the central nervous sys-
+tem: a summary. Acta Neuropathol 131:803–820
+	 59.	 Louis DN, Perry A, Wesseling P, Brat DJ, Cree IA, Figarella-
+Branger D et al (2021) The 2021 WHO classification of tumors 
+of the central nervous system: a summary. Neuro Oncol 23:1231–
+1251. https://​doi.​org/​10.​1093/​neuonc/​noab1​06
+	 60.	 Lu H, Zheng LY, Wu LY, Chen J, Xu N, Mi SC (2022) The 
+immune escape signature predicts the prognosis and immuno-
+therapy sensitivity for pancreatic ductal adenocarcinoma. Front 
+Oncol 12:978921. https://​doi.​org/​10.​3389/​fonc.​2022.​978921
+	 61.	 Luo C, Quan Z, Zhong B, Zhang M, Zhou B, Wang S et al (2020) 
+lncRNA XIST promotes glioma proliferation and metastasis 
+through miR-133a/SOX4. Exp Ther Med 19:1641–1648. https://​
+doi.​org/​10.​3892/​etm.​2020.​8426
+	 62.	 Ma L, Lin K, Chang G, Chen Y, Yue C, Guo Q et al (2019) 
+Aberrant activation of beta-catenin signaling drives glioma 
+tumorigenesis via USP1-mediated stabilization of EZH2. 
+Cancer Res 79:72–85. https://​doi.​org/​10.​1158/​0008-​5472.​
+CAN-​18-​1304
+	 63.	 MacLeod G, Bozek DA, Rajakulendran N, Monteiro V, Ahmadi 
+M, Steinhart Z et al (2019) Genome-wide CRISPR-Cas9 screens 
+expose genetic vulnerabilities and mechanisms of temozolo-
+mide sensitivity in glioblastoma stem cells. Cell Rep 27(971–
+986):e979. https://​doi.​org/​10.​1016/j.​celrep.​2019.​03.​047
+	 64.	 Mair B, Aldridge PM, Atwal RS, Philpott D, Zhang M, Masud 
+SN et al (2019) High-throughput genome-wide phenotypic 
+screening via immunomagnetic cell sorting. Nat Biomed Eng 
+3:796–805. https://​doi.​org/​10.​1038/​s41551-​019-​0454-8
+	 65.	 Manguso RT, Pope HW, Zimmer MD, Brown FD, Yates KB, 
+Miller BC et al (2017) In vivo CRISPR screening identifies Ptpn2 
+as a cancer immunotherapy target. Nature 547:413–418. https://​
+doi.​org/​10.​1038/​natur​e23270
+	 66.	 Marsh J, Mukherjee P, Seyfried TN (2008) Akt-dependent proap-
+optotic effects of dietary restriction on late-stage management of 
+a phosphatase and tensin homologue/tuberous sclerosis complex 
+2-deficient mouse astrocytoma. Clin Cancer Res 14:7751–7762. 
+https://​doi.​org/​10.​1158/​1078-​0432.​CCR-​08-​0213
+	 67.	 Martin BK, Qiu C, Nichols E, Phung M, Green-Gladden R, Sri-
+vatsan S et al (2023) Optimized single-nucleus transcriptional 
+profiling by combinatorial indexing. Nat Protoc 18:188–207. 
+https://​doi.​org/​10.​1038/​s41596-​022-​00752-0
+	 68.	 Martinez-Murillo R, Martinez A (2007) Standardization of an 
+orthotopic mouse brain tumor model following transplantation 
+of CT-2A astrocytoma cells. Histol Histopathol 22:1309–1326. 
+https://​doi.​org/​10.​14670/​HH-​22.​1309
+	 69.	 Mathur R, Wang Q, Schupp PG, Nikolic A, Hilz S, Hong C 
+et al (2024) Glioblastoma evolution and heterogeneity from a 3D 
+whole-tumor perspective. Cell 187(446–463):e416. https://​doi.​
+org/​10.​1016/j.​cell.​2023.​12.​013
+	 70.	 McGranahan T, Therkelsen KE, Ahmad S, Nagpal S (2019) 
+Current state of immunotherapy for treatment of glioblas-
+toma. Curr Treat Options Oncol 20:24. https://​doi.​org/​10.​1007/​
+s11864-​019-​0619-4
+	 71.	 McKelvey KJ, Hudson AL, Donaghy H, Stoner SP, Wheeler HR, 
+Diakos CI et al (2022) Differential effects of radiation fractiona-
+tion regimens on glioblastoma. Radiat Oncol 17:17. https://​doi.​
+org/​10.​1186/​s13014-​022-​01990-y
+	 72.	 McKelvey KJ, Hudson AL, Prasanna Kumar R, Wilmott JS, 
+Attrill GH, Long GV et al (2020) Temporal and spatial modula-
+tion of the tumor and systemic immune response in the murine 
+	
+Acta Neuropathologica          (2024) 148:74 
+   74  
+Page 26 of 27
+Gl261 glioma model. PLoS ONE 15:e0226444. https://​doi.​org/​
+10.​1371/​journ​al.​pone.​02264​44
+	 73.	 McKelvey KJ, Wilson EB, Short S, Melcher AA, Biggs M, Dia-
+kos CI et al (2021) Glycolysis and fatty acid oxidation inhibi-
+tion improves survival in glioblastoma. Front Oncol 11:633210. 
+https://​doi.​org/​10.​3389/​fonc.​2021.​633210
+	 74.	 McKeown SR (2014) Defining normoxia, physoxia and hypoxia 
+in tumours-implications for treatment response. Br J Radiol 
+87:20130676. https://​doi.​org/​10.​1259/​bjr.​20130​676
+	 75.	 Menasche BL, Davis EM, Wang S, Ouyang Y, Li S, Yu H et al 
+(2020) PBRM1 and the glycosylphosphatidylinositol biosyn-
+thetic pathway promote tumor killing mediated by MHC-unre-
+stricted cytotoxic lymphocytes. Sci Adv. https://​doi.​org/​10.​1126/​
+sciadv.​abc32​43
+	 76.	 Mikheev AM, Mikheeva SA, Trister AD, Tokita MJ, Emerson 
+SN, Parada CA et al (2015) Periostin is a novel therapeutic tar-
+get that predicts and regulates glioma malignancy. Neuro Oncol 
+17:372–382. https://​doi.​org/​10.​1093/​neuonc/​nou161
+	 77.	 Mikheeva SA, Funk CC, Horner PJ, Rostomily RC, Mikheev AM 
+(2024) Novel TCF4:TCF12 heterodimer inhibits glioblastoma 
+growth. Mol Oncol 18:517–527. https://​doi.​org/​10.​1002/​1878-​
+0261.​13496
+	 78.	 Mikolajewicz N, Gacesa R, Aguilera-Uribe M, Brown KR, Mof-
+fat J, Han H (2022) Multi-level cellular and functional annotation 
+of single-cell transcriptomes using scPipeline. Communications 
+Biology 5:1142
+	 79.	 Miranda A, Hamilton PT, Zhang AW, Pattnaik S, Becht E, Mez-
+heyeuski A et al (2019) Cancer stemness, intratumoral heteroge-
+neity, and immune response across cancers. Proc Natl Acad Sci 
+U S A 116:9020–9029. https://​doi.​org/​10.​1073/​pnas.​18182​10116
+	 80.	 Mokhtari K, Paris S, Aguirre-Cruz L, Privat N, Criniere E, 
+Marie Y et al (2005) Olig2 expression, GFAP, p53 and 1p loss 
+analysis contribute to glioma subclassification. Neuropathol Appl 
+Neurobiol 31:62–69. https://​doi.​org/​10.​1111/j.​1365-​2990.​2004.​
+00612.x
+	 81.	 Mukherjee P, Abate LE, Seyfried TN (2004) Antiangiogenic and 
+proapoptotic effects of dietary restriction on experimental mouse 
+and human brain tumors. Clin Cancer Res 10:5622–5629. https://​
+doi.​org/​10.​1158/​1078-​0432.​CCR-​04-​0308
+	 82.	 Neftel C, Laffy J, Filbin MG, Hara T, Shore ME, Rahme GJ et al 
+(2019) An integrative model of cellular states, plasticity, and 
+genetics for glioblastoma. Cell 178(835–849):e821. https://​doi.​
+org/​10.​1016/j.​cell.​2019.​06.​024
+	 83.	 Ngo W, Wu JLY, Lin ZP, Zhang Y, Bussin B, Granda Farias A 
+et al (2022) Identifying cell receptors for the nanoparticle protein 
+corona using genome screens. Nat Chem Biol 18:1023–1031. 
+https://​doi.​org/​10.​1038/​s41589-​022-​01093-5
+	 84.	 Noffsinger B, Witter A, Sheybani N, Xiao A, Manigat L, Zhong 
+Q et al (2021) Technical choices significantly alter the adaptive 
+immune response against immunocompetent murine gliomas in 
+a model-dependent manner. J Neurooncol 154:145–157. https://​
+doi.​org/​10.​1007/​s11060-​021-​03822-7
+	 85.	 Ochocka N, Segit P, Walentynowicz KA, Wojnicki K, Cyranow-
+ski S, Swatler J et  al (2021) Single-cell RNA sequencing 
+reveals functional heterogeneity of glioma-associated brain 
+macrophages. Nat Commun 12:1151. https://​doi.​org/​10.​1038/​
+s41467-​021-​21407-w
+	 86.	 Ohnishi A, Sawa H, Tsuda M, Sawamura Y, Itoh T, Iwasaki Y 
+et al (2003) Expression of the oligodendroglial lineage-associ-
+ated markers Olig1 and Olig2 in different types of human glio-
+mas. J Neuropathol Exp Neurol 62:1052–1059. https://​doi.​org/​
+10.​1093/​jnen/​62.​10.​1052
+	 87.	 Pacini C, Dempster JM, Boyle I, Goncalves E, Najgebauer H, 
+Karakoc E et al (2021) Integrated cross-study datasets of genetic 
+dependencies in cancer. Nat Commun 12:1661. https://​doi.​org/​
+10.​1038/​s41467-​021-​21898-7
+	 88.	 Pang Y, Zhou S, Zumbo P, Betel D, Cisse B (2023) TCF12 defi-
+ciency impairs the proliferation of glioblastoma tumor cells and 
+improves survival. Cancers. https://​doi.​org/​10.​3390/​cance​rs150​
+72033
+	 89.	 Pellegatta S, Valletta L, Corbetta C, Patane M, Zucca I, Ric-
+cardi Sirtori F et al (2015) Effective immuno-targeting of the 
+IDH1 mutation R132H in a murine model of intracranial gli-
+oma. Acta Neuropathol Commun 3:4. https://​doi.​org/​10.​1186/​
+s40478-​014-​0180-0
+	 90.	 Qazi MA, Salim SK, Brown KR, Mikolajewicz N, Savage N, Han 
+H et al (2022) Characterization of the minimal residual disease 
+state reveals distinct evolutionary trajectories of human glioblas-
+toma. Cell Rep 40:111420. https://​doi.​org/​10.​1016/j.​celrep.​2022.​
+111420
+	 91.	 Ren AL, Wu JY, Lee SY, Lim M (2023) Translational models 
+in glioma immunotherapy research. Curr Oncol 30:5704–5718. 
+https://​doi.​org/​10.​3390/​curro​ncol3​00604​28
+	 92.	 Richards LM, Whitley OKN, MacLeod G, Cavalli FMG, 
+Coutinho FJ, Jaramillo JE et al (2021) Gradient of devel-
+opmental and injury response transcriptional states defines 
+functional vulnerabilities underpinning glioblastoma het-
+erogeneity. Nat Cancer 2:157–173. https://​doi.​org/​10.​1038/​
+s43018-​020-​00154-9
+	 93.	 Riemenschneider MJ, Koy TH, Reifenberger G (2004) Expres-
+sion of oligodendrocyte lineage genes in oligodendroglial and 
+astrocytic gliomas. Acta Neuropathol 107:277–282. https://​doi.​
+org/​10.​1007/​s00401-​003-​0809-8
+	 94.	 Ritchie ME, Phipson B, Wu D, Hu Y, Law CW, Shi W et al 
+(2015) limma powers differential expression analyses for RNA-
+sequencing and microarray studies. Nucleic Acids Res 43:e47. 
+https://​doi.​org/​10.​1093/​nar/​gkv007
+	 95.	 Rogalska A, Forma E, Brys M, Sliwinska A, Marczak A (2018) 
+Hyperglycemia-associated dysregulation of O-GlcNAcylation 
+and HIF1A reduces anticancer action of metformin in ovarian 
+cancer cells (SKOV-3). Int J Mol Sci. https://​doi.​org/​10.​3390/​
+ijms1​90927​50
+	 96.	 Schlierf B, Friedrich RP, Roerig P, Felsberg J, Reifenberger G, 
+Wegner M (2007) Expression of SoxE and SoxD genes in human 
+gliomas. Neuropathol Appl Neurobiol 33:621–630. https://​doi.​
+org/​10.​1111/j.​1365-​2990.​2007.​00881.x
+	 97.	 Seligman AM, Shear MJ, Alexander L (1939) Studies in carcino-
+genesis: VIII. Experimental Production of brain tumors in mice 
+with methylcholanthrene1. Am J Cancer 37:364–395. https://​doi.​
+org/​10.​1158/​ajc.​1939.​364
+	 98.	 Sese B, Iniguez-Munoz S, Ensenyat-Mendez M, Llinas-Arias P, 
+Ramis G, Orozco JIJ et al (2022) Glioblastoma embryonic-like 
+stem cells exhibit immune-evasive phenotype. Cancers. https://​
+doi.​org/​10.​3390/​cance​rs140​92070
+	 99.	 Seyfried TN, el-Abbadi M, Roy ML (1992) Ganglioside distribu-
+tion in murine neural tumors. Mol Chem Neuropathol 17:147–
+167. https://​doi.​org/​10.​1007/​BF031​59989
+	100.	 Sheffer M, Lowry E, Beelen N, Borah M, Amara SN, Mader CC 
+et al (2021) Genome-scale screens identify factors regulating 
+tumor cell responses to natural killer cells. Nat Genet 53:1196–
+1206. https://​doi.​org/​10.​1038/​s41588-​021-​00889-w
+	101.	 Siah KW, Xu Q, Tanner K, Futer O, Frishkopf JJ, Lo AW (2021) 
+Accelerating glioblastoma therapeutics via venture philanthropy. 
+Drug Discov Today 26:1744–1749. https://​doi.​org/​10.​1016/j.​
+drudis.​2021.​03.​020
+	102.	 Singh K, Hotchkiss KM, Parney IF, De Groot J, Sahebjam S, 
+Sanai N et al (2023) Correcting the drug development para-
+digm for glioblastoma requires serial tissue sampling. Nat Med 
+29:2402–2405. https://​doi.​org/​10.​1038/​s41591-​023-​02464-8
+	103.	 Slyper M, Porter CBM, Ashenberg O, Waldman J, Drokhlyan-
+sky E, Wakiro I et al (2020) A single-cell and single-nucleus 
+Acta Neuropathologica          (2024) 148:74 	
+Page 27 of 27 
+   74 
+RNA-Seq toolbox for fresh and frozen human tumors. Nat Med 
+26:792–802. https://​doi.​org/​10.​1038/​s41591-​020-​0844-1
+	104.	 Song WS, Yang YP, Huang CS, Lu KH, Liu WH, Wu WW et al 
+(2016) Sox2, a stemness gene, regulates tumor-initiating and 
+drug-resistant properties in CD133-positive glioblastoma stem 
+cells. J Chin Med Assoc 79:538–545. https://​doi.​org/​10.​1016/j.​
+jcma.​2016.​03.​010
+	105.	 Spel L, Nieuwenhuis J, Haarsma R, Stickel E, Bleijerveld OB, 
+Altelaar M et al (2018) Nedd4-binding protein 1 and TNFAIP3-
+interacting protein 1 control MHC-1 display in neuroblastoma. 
+Cancer Res 78:6621–6631. https://​doi.​org/​10.​1158/​0008-​5472.​
+CAN-​18-​0545
+	106.	 Stuart T, Butler A, Hoffman P, Hafemeister C, Papalexi E, Mauck 
+WM 3rd et al (2019) Comprehensive integration of single-cell 
+data. Cell 177(1888–1902):e1821. https://​doi.​org/​10.​1016/j.​cell.​
+2019.​05.​031
+	107.	 Szatmari T, Lumniczky K, Desaknai S, Trajcevski S, Hidvegi EJ, 
+Hamada H et al (2006) Detailed characterization of the mouse 
+glioma 261 tumor model for experimental glioblastoma therapy. 
+Cancer Sci 97:546–553. https://​doi.​org/​10.​1111/j.​1349-​7006.​
+2006.​00208.x
+	108.	 Tang L, Li H, Gou R, Cheng G, Guo Y, Fang Y et al (2014) 
+Endothelin-1 mediated high glucose-induced epithelial-mesen-
+chymal transition in renal tubular cells. Diabetes Res Clin Pract 
+104:176–182. https://​doi.​org/​10.​1016/j.​diabr​es.​2013.​12.​021
+	109.	 Ueda R, Yoshida K, Kawakami Y, Kawase T, Toda M (2004) 
+Immunohistochemical analysis of SOX6 expression in human 
+brain tumors. Brain Tumor Pathol 21:117–120. https://​doi.​org/​
+10.​1007/​BF024​82186
+	110.	 Varn FS, Johnson KC, Martinek J, Huse JT, Nasrallah MP, Wes-
+seling P et al (2022) Glioma progression is shaped by genetic 
+evolution and microenvironment interactions. Cell 185(2184–
+2199):e2116. https://​doi.​org/​10.​1016/j.​cell.​2022.​04.​038
+	111.	 Verhaak RG, Hoadley KA, Purdom E, Wang V, Qi Y, Wilkerson 
+MD et al (2010) Integrated genomic analysis identifies clinically 
+relevant subtypes of glioblastoma characterized by abnormalities 
+in PDGFRA, IDH1, EGFR, and NF1. Cancer Cell 17:98–110. 
+https://​doi.​org/​10.​1016/j.​ccr.​2009.​12.​020
+	112.	 Wainwright DA, Chang AL, Dey M, Balyasnikova IV, Kim CK, 
+Tobias A et al (2014) Durable therapeutic efficacy utilizing com-
+binatorial blockade against IDO, CTLA-4, and PD-L1 in mice 
+with brain tumors. Clin Cancer Res 20:5290–5301. https://​doi.​
+org/​10.​1158/​1078-​0432.​CCR-​14-​0514
+	113.	 Wang L, Jung J, Babikir H, Shamardani K, Jain S, Feng X 
+et al (2022) A single-cell atlas of glioblastoma evolution under 
+therapy reveals cell-intrinsic and cell-extrinsic therapeutic 
+targets. Nat Cancer 3:1534–1552. https://​doi.​org/​10.​1038/​
+s43018-​022-​00475-x
+	114.	 Wittmann MT, Katada S, Sock E, Kirchner P, Ekici AB, Wegner 
+M et al (2021) scRNA sequencing uncovers a TCF4-dependent 
+transcription factor network regulating commissure development 
+in mouse. Development. https://​doi.​org/​10.​1242/​dev.​196022
+	115.	 Wu J, Li R, Li L, Gu Y, Zhan H, Zhou C et al (2020) MYC-
+activated lncRNA HNF1A-AS1 overexpression facilitates glioma 
+progression via cooperating with miR-32-5p/SOX4 axis. Cancer 
+Med 9:6387–6398. https://​doi.​org/​10.​1002/​cam4.​3186
+	116.	 Wu S, Calero-Perez P, Arus C, Candiota AP (2020) Anti-PD-1 
+immunotherapy in preclinical GL261 glioblastoma: influence 
+of therapeutic parameters and non-invasive response biomarker 
+assessment with MRSI-based approaches. Int J Mol Sci. https://​
+doi.​org/​10.​3390/​ijms2​12287​75
+	117.	 Xia H, Green DR, Zou W (2021) Autophagy in tumour immunity 
+and therapy. Nat Rev Cancer 21:281–297
+	118.	 Yang J, Horton JR, Li J, Huang Y, Zhang X, Blumenthal RM 
+et al (2019) Structural basis for preferential binding of human 
+TCF4 to DNA containing 5-carboxylcytosine. Nucleic Acids Res 
+47:8375–8387. https://​doi.​org/​10.​1093/​nar/​gkz381
+	119.	 Yoshihara K, Shahmoradgoli M, Martinez E, Vegesna R, Kim H, 
+Torres-Garcia W et al (2013) Inferring tumour purity and stromal 
+and immune cell admixture from expression data. Nat Commun 
+4:2612. https://​doi.​org/​10.​1038/​ncomm​s3612
+	120.	 Yu K, Hu Y, Wu F, Guo Q, Qian Z, Hu W et al (2020) Survey-
+ing brain tumor heterogeneity by single-cell RNA-sequencing of 
+multi-sector biopsies. Natl Sci Rev 7:1306–1318. https://​doi.​org/​
+10.​1093/​nsr/​nwaa0​99
+	121.	 Yu X, Wang M, Zuo J, Wahafu A, Mao P, Li R et al (2019) 
+Nuclear factor I A promotes temozolomide resistance in glio-
+blastoma via activation of nuclear factor kappaB pathway. Life 
+Sci 236:116917. https://​doi.​org/​10.​1016/j.​lfs.​2019.​116917
+	122.	 Zagzag D, Amirnovin R, Greco MA, Yee H, Holash J, Wiegand 
+SJ et al (2000) Vascular apoptosis and involution in gliomas pre-
+cede neovascularization: a novel concept for glioma growth and 
+angiogenesis. Lab Invest 80:837–849. https://​doi.​org/​10.​1038/​
+labin​vest.​37800​88
+	123.	 Zeisel A, Hochgerner H, Lonnerberg P, Johnsson A, Memic F, 
+van der Zwan J et al (2018) Molecular architecture of the mouse 
+nervous system. Cell 174(999–1014):e1022. https://​doi.​org/​10.​
+1016/j.​cell.​2018.​06.​021
+	124.	 Zhang J, Chen L, Han L, Shi Z, Zhang J, Pu P et al (2015) EZH2 
+is a negative prognostic factor and exhibits pro-oncogenic activ-
+ity in glioblastoma. Cancer Lett 356:929–936. https://​doi.​org/​10.​
+1016/j.​canlet.​2014.​11.​003
+	125.	 Zhao J, Chen AX, Gartrell RD, Silverman AM, Aparicio L, Chu 
+T et al (2019) Immune and genomic correlates of response to 
+anti-PD-1 immunotherapy in glioblastoma. Nat Med 25:462–
+469. https://​doi.​org/​10.​1038/​s41591-​019-​0349-y
+	126.	 Zhao Z, Zhang KN, Wang Q, Li G, Zeng F, Zhang Y et al 
+(2021) Chinese glioma genome atlas (CGGA): a comprehen-
+sive resource with functional genomic data from Chinese glioma 
+patients. Genomics Proteomics Bioinform 19:1–12. https://​doi.​
+org/​10.​1016/j.​gpb.​2020.​10.​005
+	127.	 Zhu G, Yang S, Wang R, Lei J, Ji P, Wang J et al (2021) P53/miR-
+154 pathway regulates the epithelial-mesenchymal transition in 
+glioblastoma multiforme cells by targeting TCF12. Neuropsychi-
+atr Dis Treat 17:681–693. https://​doi.​org/​10.​2147/​NDT.​S2735​78
+Publisher's Note  Springer Nature remains neutral with regard to 
+jurisdictional claims in published maps and institutional affiliations.

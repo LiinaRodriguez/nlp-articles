@@ -1,0 +1,1375 @@
+Revolutionizing prostate cancer diagnosis: Unleashing the potential of an
+optimized deep belief network for accurate Gleason grading in
+histological images
+S. Angel Latha Mary a,*, S. Siva Subramanian b, G. Priyanka c, T. Vijayakumar d,
+Suganthi Alagumalai e
+a IT Department, SNS College of Technology, Coimbatore, India
+b Department of of BME, Rathinam Technical Campus, Coimbatore, India
+c Department of Computer Science and Business Systems, Sri Eshwar College of Engineering, Coimbatore, India
+d Department of AIDS, Dr.Mahalingam College of Engineering and Technology, Pollachi, Coimbatore, India
+e Cyber Operations, 3223 Hanover St, Palo Alto, CA, 94304, USA
+A R T I C L E I N F O
+Keywords:
+Prostate cancer
+Gleason grading
+Histological images
+Elephant herding optimization
+Hyper-parameter and Gaussian kernels
+A B S T R A C T
+PC (Prostate Cancer) is the second highest cause of death due to cancer in men globally. Proper detection and
+treatment are critical for halting or controlling the growth and spread of cancer cells within the human organism.
+However, evaluating these sorts of images is difficult and time-consuming, requiring histopathological image
+recognition as the most reliable method for treating PC because of its distinct visual characteristics. Risk eval-
+uation and treatment planning rely heavily on histological image-based Gleason grading of prostate tumors. This
+work introduces an innovative approach to histological image analysis for prostate cancer diagnosis and Gleason
+grading. The Elephant Herding Optimization-based Hyper-parameter Convolutional Deep Belief Network (CDBN-
+EHO) is presented alongside a grading network head-optimized deep belief network technique for multi-task
+prediction. Leveraging an effective Bayesian inference method, fully linked Conditional Random Field (CRF)
+techniques are utilized for segmentation, with pairwise boundary capacities determined by a linear mixture of
+Gaussian kernels. The multi-task approach aims to enhance performance by incorporating contextual informa-
+tion, leading to breakthrough results in the identification of epithelial cells and the grading of Gleason scores.
+The objective of this study is to demonstrate the effectiveness of the optimized deep belief network technique in
+improving diagnostic accuracy and efficiency for prostate cancer diagnosis and Gleason grading in histological
+images.
+1. Introduction
+In India, PC ranks among the top 10 most common malignancies.
+Men over the age of 65 are most likely to be affected by this condition.
+However, there has been an increase in the number of cases of cancer
+reported in younger men living in urban areas who are between the ages
+of 35 and 44 and between 55 and 64 in recent years. Some of the most
+significant factors that have been found to increase the risk of prostate
+cancer are becoming older, being overweight, eating an unhealthy diet,
+and having genetic changes. Cancer has a 64 % cure rate after 5 years in
+patients in India. According to the findings of a study that was carried
+out in Mumbai, patients who received PC treatment that also included
+surgery had a higher chance of surviving the disease (91 %). These
+findings demonstrate that despite the fact that therapy has the potential
+to save a life or increase the number of years a person can live, it is more
+important than ever to raise awareness about the disease and take steps
+to prevent it. Estimates of the number of people diagnosed with PC in
+India for the years 2010 and 2015 were respectively 26,120 and 28,079
+[1]. The number of new instances of this disease is expected to more
+than quadruple by the year 2020, according to the data that was gath-
+ered from cancer projections. Incidence rates of this type of cancer are
+consistently and rapidly increasing.
+Artificial Intelligence (AI) methods are computer algorithms that
+learn patterns from previously collected data in order to qualify
+* Corresponding author.
+E-mail addresses: xavierangellatha@gmail.com (S. Angel Latha Mary), siva.ace@gmail.com (S. Siva Subramanian), priyanka.gcse@sece.ac.in (G. Priyanka),
+vijayakumart@drmcet.ac.in (T. Vijayakumar), Suganthi.Alagumalai@JPMChase.com (S. Alagumalai).
+Contents lists available at ScienceDirect
+International Journal of Intelligent Networks
+journal homepage: www.keaipublishing.com/en/journals/
+international-journal-of-intelligent-networks
+https://doi.org/10.1016/j.ijin.2024.05.004
+Received 2 September 2023; Received in revised form 18 April 2024; Accepted 4 May 2024
+International Journal of Intelligent Networks 5 (2024) 241–254 
+Available online 18 May 2024 
+2666-6030/© 2024 The Authors. Published by Elsevier B.V. on behalf of KeAi Communications Co., Ltd. This is an open access article under the CC BY-NC-ND 
+license ( http://creativecommons.org/licenses/by-nc-nd/4.0/ ). 
+predictions in novel data that has not been seen. Earlier iterations of AI
+made use of what are now commonly referred to as ‘conventional’ ma-
+chine learning (ML) methodologies. These procedures were frequently
+carried out in two stages. To begin, domain experts (humans who are
+specialists in the subject area) painstakingly created features to excerpt
+numerical characteristics from the data that were particular to the task
+at hand. For instance, tumor size or form was one of the variables that
+was extracted. Second, these manually produced features were input
+into automated detection techniques in order to discover which aspects
+were helpful and how to integrate them in order to achieve the highest
+level of accuracy possible when classifying data into categories (for
+example, benign nodules versus malignant tumors). These AI methods
+can be trained to make predictions based on data they have never seen
+before, and then utilized to make predictions in novel contexts. Deep
+learning (DL) approaches were made possible by recent advances in the
+computational capability of graphics processing units, commonly
+referred to as GPUs. Because deep learning techniques eliminate the
+requirement for hand-crafted features, they can function in a completely
+computerized manner to not only detect the characteristics but also use
+them for the task that is wanted further down the line. DL techniques
+have brought about a sea change in the field of AI as a result of their
+exceptional performance, which frequently exceeds that of humans,
+notably in activities linked to image processing.
+The field of medical imaging, especially detection using automated
+assessment, which is the incorporation of imaging function architecture
+based on machine learning, has shown that it can help radiologists make
+correct diagnoses, which cuts down on diagnostic time and also
+screening costs. The USG (Ultra Sono-Grapy) technique is a sort of im-
+aging technology used in the first detection step and is based on real-
+time images. This method, however, cannot yield the best outcomes
+due to the absence of contrast between cancer and benign tissue [2].
+Despite its lack of real-time imaging capability, mpMRI (multi-
+parametric magnetic resonance imaging) tends to be more precise than
+ultrasound due to superior tissue contrast. However, in order to use it,
+extensive training is necessary [3].
+The areas of the skull and neck, cervical, and pelvic cavity can all be
+treated with brachytherapy, which is a form of radiation therapy. With
+this method, the radioactive beam is aimed directly at the area of the
+body that has been damaged. There are two different approaches to
+brachytherapy: permanent installation, which is also referred to as seed
+placement, and removal of radioactive material [4]. It has been found
+that brachytherapy, which involves the use of seeds, is more real in
+treating prostate cancer than radical prostatectomy. In a procedure
+called brachytherapy, which is used to operate on the prostate, pallets,
+which are little seeds, are positioned on the prostate cell. These pallets
+are quite small but contain radioactive materials. This highly radioactive
+substance is toxic to PC cells and destroys them. It is possible that this
+will cause destruction or even death to the strong cells that are located
+close to the prostate as a side effect.
+The results of applying DL strategies to various applications, such as
+object identification, segmentation, and classification, have been
+encouraging. These methods involve the use of convolution layers, each
+of which is able to excerpt a unique set of features from the input pho-
+tographs by using local low-level features as a starting point and
+working their way up to global high-level features. At the boundary of
+the coevolutionary neural layers, a fully linked layer transforms
+complicated features in terms of signal likelihood [5,6]. The batch
+normalization layer, which adjusts the provided input layer with zero
+means, and the unit variant with a dropout layer, which appears to be
+one of them of the normalization methods that disregard the nodes that
+are chosen in a randomly directed fashion, have each been given as
+various methods with which to enhance the output based on a DL-based
+technique. With these two layers, the output has been enhanced. How-
+ever, in order to attain convincing efficiency, the appropriate combi-
+nations and layer topologies, along with appropriate fine-tuning of the
+hyper-parameters, are required. The following architecture, which is
+illustrated in Fig. 1 and the key contribution of this work.
+• To introduce a novel CDBN-EHO and a specialized deep belief
+network technique tailored for multi-task prediction, particularly in
+the context of segmentation tasks.
+• This work also presents an advanced Bayesian inference method
+applied to fully linked CRF techniques for segmentation, where
+pairwise boundary capacities are determined using a linear mixture
+of Gaussian kernels.
+• By adopting a multi-task learning approach, the proposed techniques
+aim to enhance performance by leveraging shared contextual infor-
+mation
+across
+tasks.
+Notably,
+these
+methods
+have
+achieved
+remarkable breakthroughs in the simultaneous identification of
+epithelial cells and grading of Gleason scores.
+Overall, the combination of these techniques represents a significant
+advancement in the field of machine learning, particularly in the do-
+mains of multi-task prediction, segmentation, and grading. The
+demonstrated breakthrough results underscore the effectiveness and
+potential applicability of the proposed methodologies in various real-
+world scenarios.
+The remaining of the paper is structured as follows: the related work
+PC using DL is discussed in section 2. The proposed methodology is
+explained in section 2 and the experimental results and analysis is
+explained in section 4. The final conclusion and future work are given in
+section 5.
+Fig. 1. Architecture diagram of Proposed Methodology for PC detection.
+S. Angel Latha Mary et al.
+International Journal of Intelligent Networks 5 (2024) 241–254 
+242 
+2. Related work
+The LSTM (long short-term memory) and Residual Net (ResNet - 101)
+were used by Iqbal et al. [7], and both were trained without the use of
+any manually-created features and were then fine-tuned. Results from
+non-DL classifiers like the Gaussian Kernel, SVM (support vector ma-
+chine), kernel naive Bayes, KNN - Cosine (k-nearest neighbor-Cosine),
+decision tree (DT), and RUSBoost tree were compared to features that
+were created by humans. Non-DL techniques with GLCM features uti-
+lizing KNN-Cosine achieved the best results, with 98.01 % sensitivity,
+99.25 % specificity, 98.99 % PPV, 99.11 % NPV, 99.07 % accuracy, and
+0.998 AUC. With DL method ResNet - 101, received (100 %) Accuracy
+and AUC (1) for Kernel Naive Bayes, RUSBoost Tree, and SVM Gaussian,
+whereas DL method LSTM produces performance with specificity (100
+%), sensitivity (98.33 %), NPV (99.26 %), PPV (100 %), MCC (0.9879),
+accuracy (99.48 %), and AUC (0.9999).
+Researchers Li et al. For PC pathological images, Furthermore pre-
+sented a DL-based method for automatically determining the Gleason
+grading and segmenting the Gleason outline region. To ensure precise
+Gleason grading, Furthermore present an architecture for segmenting
+the Gleason pattern region that combines atrous spatial pyramid pooling
+with multiscale typical convolution. In addition, the prediction un-
+dergoes a post-processing approach employing conditional random
+fields. For the area covered by the Gleason pattern, the average%age of
+correct intersections over unions is 77.29 %, and the overall pixel ac-
+curacy is 89.51 %. In addition, the automatic Gleason grading yielded
+results that were on par with those obtained by human pathologists.
+Cohen’s quadratic kappa revealed an average inter-annotator agreement
+among the technique and the pathologists of 0.77. The proposed
+research demonstrates that merging various DNN (Deep Neural
+Network) architectures is an effective strategy for producing more de-
+tached and predictable Gleason grading of PC.
+Karimi et al. [9] proposed using a DL-based method of classification
+and data augmentation methods and accurate grading of PCa in histo-
+pathology images. The proposed method integrates the outputs of three
+independent CNNs (Convolutional Neural Networks) that are trained on
+progressively smaller patches. A logistic regression technique, trained
+independently of the CNNs, is then used to combine the predictions from
+the three CNNs. Then propose new data augmentation strategies and
+conduct empirical research into their influence on the classification
+accuracy to better train This algorithms. The suggested technique
+correctly identifies 92 % of malignant patches as cancerous rather than
+benign, and correctly 86 % of low-grade cancers.
+An innovative DL-based CADS was presented by Duran-Lopez et al.,
+[10]. After being patch-sampled and pre-processed with several filters,
+including a revolutionary patch-scoring method that gets rid of unim-
+portant parts of the tissue, this system can interpret whole-slide histol-
+ogy images. The consequence that using a stain-normalization technique
+on the patches to lessen color variation between scanners is also
+analyzed. Utilizing 3-fold cross-validation for training, the network
+achieves 0.999 AUC, 0.999 F1 score, and 99.98 % accuracy on a new test
+set. The average processing time for generating a heatmap of an entire
+slide is 15 s. For a binary classification job between normal and
+cancerous prostate whole-slide images, This proprietary network beats
+prevailing advanced research in terms of computational complexity at
+the patch level.
+Using a deep residual CNN, Kott et al. [11] were able to classify each
+patch on two different levels: (1) broadly (benign vs. malignant) and (2)
+specifically (benign vs. Gleason 3 vs. 4 vs. 5). Furthermore used
+five-sample cross-validation to assess the quality of This techniques.
+Hypothesis testing comparing actual technique performance with that
+expected
+by
+chance
+was
+conducted
+using
+randomization
+tests.
+Fine-grained classification of image patches as benign or malignant
+showed 91.5 % accuracy (p 0.001) using the technique (0.90 specificity,
+0.93 sensitivity, and 0.95 average precision). The requirement for
+external validation and the relatively modest size of the sample are two
+Table 1
+The research gap of existing methods with advantages and disadvantages.
+Author
+Methods
+Advantages
+Disadvantages
+Iqbal et al.
+[7],
+LSTM-
+ResNet-
+101
+Due to the contrast
+between malignant and
+benign tissue, these
+procedures can yield ideal
+results.
+It cannot detect
+prostate cancers in
+other areas.
+Li et al. [8],
+Deep
+Neural
+Network
+Reproducibility is
+restricted and can be
+applied fast in medical
+systems.
+This method had
+obtained good results,
+but it required precise
+localization of small
+image portions in order
+to extract features.
+Karimi et al.
+[9],
+CNN
+This approach could have
+reduced unpredictability
+in the production of large
+numbers of slides and
+increased their efficiency.
+However, developing
+this approach is not a
+straightforward task
+because significant
+volumes of labeled
+training data are
+necessary.
+Duran-Lopez
+et al. [10],
+CNN
+• By reducing the amount
+of data sampled during
+the generation and
+classification phases,
+this technique is able to
+speed up the learning
+and inference processes.
+• The use of a digital
+pathology image to
+enhance the CNN’s
+adaptation for
+classification tasks.
+With a CNN-based
+setup, the
+computational cost of
+anticipating an input
+image is significantly
+higher, resulting in a
+longer processing time.
+Kott et al.
+[11],
+CNN
+The sensitivity and
+specificity of this
+approach were both
+improved when applied to
+cancers.
+However, their effect is
+diminished due to
+difficulties in
+reproducing and
+validating their
+findings.
+Busby et al.
+[12],
+SNN
+Higher representation
+capacity describes this
+approach. Statistically, the
+effect of
+underperformance on
+other data was substantial.
+Results were greatly
+exaggerated, and their
+significance was
+missed.
+Ahmad et al.
+[13],
+CNN
+This technique requires a
+lot of computer power and
+a powerful graphics
+processing unit.
+• However, present
+studies cannot
+answer if a PC
+symptom arises on
+any portion of the
+body.
+• This approach
+delivers adequate
+accuracy but
+necessitates clean,
+asymmetric, and
+sizable training
+datasets.
+Swiderska-
+Chadaj
+et al. [14],
+GAN
+• This strategy has a
+greater chance of
+success.
+• The data produced by
+GANs resembles the
+original data quite
+closely and can be
+readily interpreted into
+variants.
+Continuously providing
+varied image data is
+required for testing
+purposes.
+Kumar et al.
+[15],
+VGGnet
+This technique allows for
+precise remote prediction
+at a low cost and with
+lightning-fast
+comprehension.
+High cost in carrying
+out the modifications;
+yet, the significance
+and relevance were not
+completely examined
+because of a lack of
+comprehensive.
+Chatrian
+et al. [16],
+DNN
+Highly substantial
+changes in the forecasting
+of overall survival when
+• But pathologic
+complete response
+rates were not
+(continued on next page)
+S. Angel Latha Mary et al.
+International Journal of Intelligent Networks 5 (2024) 241–254 
+243 
+limitations. Heterotopic choriocarcinoma was successfully diagnosed
+and graded using a DL-based computer vision algorithm in this study.
+According to Busby et al. Shortages in the available workforce and
+inconsistencies in histopathological evaluation. These techniques,
+which include histopathological information into complex neural net-
+works, perform exceptionally well at identifying, grading, and predict-
+ing outcomes for PC. In spite of the fact that fully autonomous PC
+diagnosis is still years away, new research indicates that AI is already
+being used as a preliminary screening tool, a companion in the form of a
+real-time interactive screen during histological analysis, and an addi-
+tional read system to identify false negative diagnoses. The persistence
+of this work is to discuss the current state of AI in PC histopathology as
+well as its potential future applications.
+Histopathologic images of lymph node sections were used by Ahmad
+et al. [13], to present a CNN-based technique for the categorization and
+diagnosis of metastatic cancer. The process of diagnosing cancer from
+histopathologic images is laborious and time-consuming for pathologists
+because a broad tissue area must be investigated, and even a single
+microscopic metastasis can be missed. Furthermore, took the required
+precautions against overfitting and improved the findings by doing the
+appropriate pre-processing and data augmentation activities. The
+method achieves excellent accuracy in cancer diagnosis through the use
+of low-dimensional representations and automated, specific feature
+extraction and classification. The experimental results for the medical
+image categorization and detection challenge demonstrate promising
+performance, with an accuracy rate of 0.94.
+Swiderska-Chadaj et al. [14] analyzed the impact of imaging devices
+and cycle-GAN-based standardization on the efficacy of algorithms and
+evaluated several DL techniques for discovering PC in whole-slide im-
+ages. Among the many networks tested in this work are U-Net, Dense-
+Net,
+and
+EfficientNet.
+As
+a
+pre-processing
+phase,
+furthermore
+investigated the cycle-GAN-based normalizing technique and the WSICS
+(whole-slide image color standardizer) technique. Furthermore, found
+an AUC of 0.92 and 0.83 for the two data sets that were treated sepa-
+rately. The AUC increases from 0.91 to 0.88 when rescanning, and from
+0.97 to 0.98 when normalizing for formatting. This system may one day
+be implemented to mechanically pre-screen prostate biopsies, relieving
+pathologists of some of their duties.
+According to Kumar et al. Using differential privacy and safe multi-
+party computation, a robust framework was proposed for cancer diag-
+nostic picture classification. Instead of doing the entire operation in the
+cloud, one can split the layers apart into two distinct modules: a single
+for feature extraction using the VGGNet module on the user side, and the
+other modules for private prediction in the cloud. Two data sets made up
+of histological images of canine mammary tumors and human breast
+cancer are used to verify the framework’s efficiency. When applied to
+the suggested technique, differential privacy preservation makes it
+secure and able to protect private information from prying eyes without
+sacrificing performance. The suggested approach efficiently strikes a
+balance between privacy and technique performance, as demonstrated
+by a battery of experiments.
+In a recent study, Chatrian et al. [16] showed how variational
+Table 1 (continued)
+Author
+Methods
+Advantages
+Disadvantages
+using this approach to
+determine the prostate
+size.
+significantly
+different.
+• Poor contrast
+between hard and
+soft tissues.
+Fig. 2. Original, benchmark, and problem-defining sample images.
+Fig. 3. Outline of the CDBN-EHO technique proposed architecture.
+S. Angel Latha Mary et al.
+International Journal of Intelligent Networks 5 (2024) 241–254 
+244 
+autoencoders and generative adversarial networks may be used together
+to generate realistic histological images that can be used to train se-
+mantic segmentation techniques. Then examine if these techniques can
+be employed to separate out groups of prostate glands that share a
+common molecular signature. If this progress continues, it will lead to
+the identification of previously unknown histology-based subgroups of
+diseases. It shows that the expression of a clinical indicator in prostate
+glands can be identified using only morphological parameters extracted
+from H&E images.
+Summary: Various studies have tackled prostate cancer diagnosis
+and Gleason grading using a range of techniques, including non-deep
+learning (DL) methods like Gaussian Kernel, SVM, and DL methods
+such as ResNet-101, LSTM, and CNNs. While non-DL techniques like
+GLCM features achieved high sensitivity and specificity, DL methods like
+LSTM demonstrated excellent performance with high accuracy and AUC
+shown in Table 1. Innovations in DL-based approaches, such as inte-
+grating CNNs and employing novel architectures, have led to significant
+advancements in automated Gleason grading and histological image
+interpretation. Despite the progress, challenges remain, including the
+need for further validation and addressing computational complexity.
+Nonetheless, AI applications show promise as screening tools and
+companions to pathologists, indicating a potential future for AI-assisted
+prostate cancer diagnosis. Traditional deep learning methods like CNNs,
+LSTM, and GAN have played crucial roles in image analysis tasks like
+classification and segmentation. However, they may fall short in fully
+leveraging contextual cues or handling multi-task prediction challenges,
+particularly in histological image analysis. Also, their computational
+complexity may hinder their efficacy, especially in addressing the in-
+tricacies of multi-task prediction, notably in histological image analysis.
+In contrast, the proposed method introduces innovative optimization
+techniques, such as EHO and hyper-parameter optimization, specifically
+tailored for multi-task prediction. Moreover, optimizing the DL archi-
+tecture for grading tasks reflects a targeted strategy for addressing the
+intricacies of Gleason grading in histological images. Through an
+emphasis on multi-task learning and task-specific optimizations, the
+proposed method aims to elevate the performance of deep learning
+models in histological image analysis, potentially enhancing diagnostic
+accuracy and aiding clinical decision-making in fields like prostate
+cancer diagnosis.
+3. Proposed work
+As a means of addressing the issue raised in the introduction, this
+part provides an in-depth analysis of the unique CDBN-EHO framework.
+Finally, furthermore present the assessment metrics that were used to
+evaluate the proposed technique and compare it to prior attempts.
+Automation of tasks such as Gleason grading through advanced deep
+learning techniques can alleviate the burden on pathologists, who
+typically face heavy workloads and time constraints. By streamlining the
+analysis process, this method allows pathologists to focus their expertise
+on more complex cases and critical decision points.
+3.1. Dataset description
+Grading histological images for Gleason scores is a challenging and
+time-consuming process that demands expertise and experience from
+pathologists. However, the development of automated methods offers a
+promising solution. These advanced techniques have the potential to
+accurately analyze histological images, providing valuable assistance to
+pathologists in their diagnostic workflow. By automating this task,
+workload can be reduced, and consistency in grading can be improved,
+ultimately benefiting both pathologists and patients. IRB number
+Pro00029960 authorizes the use of 513 images from the Pathology
+Department archives at Cedars-Sinai Medical Center as the basis for the
+proposed dataset. The 513 images are a mosaic made up of two different
+kinds of tiles. Twenty-four photos (Set A) from these individuals have
+been classified as having either stroma (ST), benign or normal glands
+(BN, scored as GG2 or lower), LG cancer (low-grade), or HG cancer
+(high-grade) [17]. The remaining 289 images come from 20 patients and
+depict various types of dense high-grade tumors, including both cribri-
+form and non-cribriform glands with Gleason grades 5 (GG5) and 4
+(GG4). Set B of these photos (included in Ref. [18]) consists entirely of
+stromal components including nerve tissue and blood arteries. Set A
+slides were scanned using a high-resolution whole-slide scanner
+SCN400F (Leica Biosystems, Buffalo Grove, IL), and Set B slides were
+scanned using the Aperio scanning system (Aperio ePathology Solutions,
+Vista, CA). Both systems used a 20× scanning objective. The final
+product was a color RGB image with an 8-bit intensity depth per color
+network and a pixel extent of 0.5 m 0.5 m. Whole Slide Images (WSIs)
+were partitioned into 1200 × 1200-pixel tiles after representative tiles
+were manually selected by a pathologist. An experienced research
+pathologist used a custom-built graphical user interface to manually
+annotate the data included in each tile. Three samples from the dataset
+utilized in this work are displayed in Fig. 2. The pathologists checked
+each other’s work and agreed on how to fix any discrepancies they found
+in the annotated image tiles. To accommodate for stain variation, all
+tiles had been normalized before further analysis. Images on the tiles
+were flipped, mirrored, and rotated before being transmitted into the
+network as a form of data augmentation. Both [17,18] make use of these
+same datasets from prior research. Please see the Supplementary Infor-
+mation for a detailed explanation of the Gleason grading system and the
+rationale for the choice to divide tissues into four groups.
+i. Network architecture
+Fig. 3 depicts the full system along with the individual parts of the
+suggested technique. For This proposed picture parser, furthermore rely
+on ResNet as the main neural network. The picture parser begins by
+creating feature maps. Two subsystems receive these feature maps as
+input. Similar to the CDBN-EHO, here used a two-stage process in the left
+Fig. 4. The entire procedure of the proposed CDBN
+S. Angel Latha Mary et al.
+International Journal of Intelligent Networks 5 (2024) 241–254 
+245 
+fork. First, a RPN (Region Proposal Network) uses the feature maps to
+propose RoIs (regions of interest). To predict the box offset, class, and
+binary mask for each RoI, a GNH (Grading Network Head) is employed
+in the second step. Furthermore, augment this with a right fork that
+provides a score for the presence of epithelial cells in the image. The
+ENH (Epithelial Network Head) designates this section. Both the ENH
+and GNH results contribute to the final forecast generated by the
+network. The prediction is then subjected to a final round of processing
+in the form of a conditional random field.
+ii. Objective function of CDBN-EHO
+The suggested CDBN-EHO technique has two main functions: to
+identify epithelial cells and to generate a segmentation mask based on
+the Gleason score. The CD (Contrastive Divergence) and PCD (Persistent
+CD) are used to learn the weight matrix and corresponding bias vectors
+of the exposed and concealed nodes. Here, the BP is combined with a
+standard gradient ascent technique to find the best possible settings for
+the weight matrices. In order to reduce certain error metrics, the opti-
+mization process takes into account the results of an additional layer
+constructed on top of the DBN following its first greedy training. Logistic
+units also known as softmax are commonly utilized in this tier.
+3.2. Convolutional deep belief network (CDBN)
+The input images are processed using a whitening technique that
+removes the correlation between neighboring intensity levels. The pro-
+cess of whiten projection involves projecting the input image into the
+eigenvectors and normalizing them so that all intensity values have a
+variance of 1. The image that has been brightened is then specified to the
+visible layer of the CDBN, where it is separated at random into tiny
+batches that overlap with each other. Mini batches break up the input
+image into manageable pieces before applying the learning algorithm to
+each one. When the data sample is not representative of the total, these
+techniques reduce the amount of noise in the analysis. By utilizing a
+hierarchical framework, the CDBN technique is able to separate the low-
+level properties from the high-level ones. The Convolutional Restricted
+Boltzmann Machines (CDBMs) are generative techniques built from
+CRBMs stacked one on top of the other. As can be seen in Fig. 4, each
+CRBN has a hidden layer (H), a visible layer (V), and a pooling layer.
+A NV × Nv array of binary units makes up the viewable layer of the
+image. There is a total of k × N2
+H hidden units since the H is composed of
+k groups (also known as “bases”), each of which is an array of binary
+units with the dimensions NH × NH. In the visible layer, there is a
+convolutional window with the dimensions NW × NW (where NW =
+NV −
+× NH + 1), which is dedicated to each individual group. A weight
+matrix, denoted by the letter W, is used to describe the symmetric re-
+lationships that exist between hidden and visible units. Here might think
+of each weight matrix as a filter if this method wanted to. In addition,
+there are k groups of units that make up the pooling layer, and inside
+each group, there are NP × NP binary units. A predetermined constant
+factor C is used by the pooling layer to reduce the size of the repre-
+sentation of the H. In order to accomplish this goal, the pooling layer
+picks the values that are the highest in the C × C windows of the con-
+cealed layer. The use of maximum pooling not only makes it possible for
+the outputs of higher layers to remain invariant to changes of a more
+minute magnitude in the input, nonetheless it also lowers the overall
+computing cost. In order to extract features from histological images of
+neuroblastoma, furthermore make use of a CDBN with three layers. The
+CDBN that has been presented has some free parameters that still need to
+be established. The first factor to consider is the total number of con-
+cealed layers. While a CDBN with less H s requires less time to train, its
+performance suffers as a result of the network’s inability to ignore low-
+level details in the input images. The performance can be improved by
+increasing the number of H s, but this can lead to overfitting, a high
+computational rate, and a slow learning time. The number of groups that
+are contained within the concealed layers is the second free parameter.
+There is no overarching principle that can be applied when selecting this
+parameter. A slower learning time and poorer performance are the
+inevitable outcomes of having more or fewer units, just as with the
+numeral of hidden levels. The numeral of tiny batches becomes the third
+unrestricted parameter. Mini batches have the potential to reduce the
+amount of computation required by the CDBN network.
+3.3. Feature encoding
+A feature encoding block is provided with the CDBN features in order
+to obtain faster performance. This block is responsible for computing
+more discriminative representations. As a method for encoding features,
+furthermore make use of the algorithm known as the bag of features
+[19]. Fig. 4 illustrates the overall structure of the bag of features. First,
+the codebook that is a collection of code words, is built. The code words
+represent the CDBN features that have been retrieved. After that, a
+histogram that displays the occurrence of the code words contained
+inside the image is used to represent the input image.
+A clustering algorithm is utilized in the process of modelling the
+codebook. In order to determine a collection of centroids in the feature
+space, each of the retrieved CDBN features is first clustered. Clustering is
+accomplished with the help of the k means method [20], which is used in
+this work. The choice of the total number of code words, often known as
+the size of the codebook, is an essential component in the process of
+building the codebook. Csurka et al. ([21]) have shown that when it
+comes to natural image classification, a bigger codebook size yields
+superior results. Despite this, Tatiana and colleagues ([22]) have shown
+that the dimensions of the codebook do not have a discernible impact on
+the precision of the medical picture classification. In order to identify the
+codebook size that is optimal for the categorization of neuroblastoma
+histology images, furthermore first examine a variety of codebook sizes
+and then select the one that performs the best. A histogram of code
+words is generated to serve as a representation of the input image when
+the feature encoding block is utilized. Finally, in order to represent the
+distinct types of neurological tumor histology images, an SVM classifier
+is trained to categorize the histograms of the information-encoded unit.
+Furthermore, utilize the Kyoto natural image dataset [23] to learn
+the first layer of the CDBN because it has a high number of low-level
+features, including edges. This is necessary because the first layer of
+the CDBN is responsible for learning the common visual information,
+such as edges. The second and third layers receive training with a
+database consisting of neuroblastic tumors. This is done by randomly
+dividing the database into three subsets: the first one is used for vali-
+dation and contains 211 photos; the second one is used for training and
+contains 623 images; and the 3rd one is used for testing and contains 209
+images. Using the validation set, furthermore determine the optimal
+values for the free parameters, and furthermore utilize the training set
+and the testing set to do the final system evaluation.
+3.4. Elephant herd optimization (EHO)
+In 2015, Wang et al. presented the EHO algorithm to the scientific
+community [24]. Elephants engage in social behavior and comprise a
+complicated hierarchy consisting of females and their young. An
+elephant group is made up of a number of different clans, each of which
+is led by a matriarch along with her calves and any other females that are
+connected to her. A family is founded by a female. EHO is concerned
+with the hypotheses that come after it. The herd of elephants can be
+broken down into subgroups known as clans, with particular elephants
+constituting each clan. There is a certain number of male elephants that
+break away from their herd to live on their own. There is a matriarch
+who serves as the leader of each clan. Within the elephant herd, the
+matriarchal group guards the most effective strategy. Each and every
+member of the elephant population belongs to one of the j clans. The
+S. Angel Latha Mary et al.
+International Journal of Intelligent Networks 5 (2024) 241–254 
+246 
+new posture of each elephant is influenced by the matriarch, ci. It is
+possible to determine the elephant j in clan ci by utilizing Eq. (1);
+xnew, ci,j = xci,j + a ×
+(
+xbest,ci −xci,j
+)
+× r
+(1)
+where xnew, ci,j denoted the new location and xci,j signified the previous
+location for elephant j within the clan ci. The matriarch ci is indicated
+by the value xbest,ci, which symbolizes the best elephant. The scaling
+factor, r ∈[0,1], is shown by the expression a ∈[0,1]. The most valuable
+elephant is determined for each clan based on Eq. (2);
+xnew, ci, j = β × xcenter,i
+(2)
+In this case, β ∈[0, 1] denotes the second constraint that directs the
+influence of the xcenter,ci,d, which is outlined in the previous sentence.
+xcenter,ci,d = 1
+nci
+×
+∑
+nci
+j=1
+xci,j,d
+(3)
+Here 1 ≤d ≤D and nci denote the numeral of elephants in clan xci,j,d
+represents the dth dimension of individual elephant xci,j,d, the center of
+clan xcenter,ci,d can be modified using the equation (eqn. (3)). When trying
+to find solutions to optimization problems, the process of separating
+could be modeled as a separation operator. In each clan, the elephants
+with the lowest value are moved to the position specified in Eq. (4),
+which is the next available spot.
+xworst,d = xmin + (xmax −
+xmin + 1) × rand
+(4)
+In this instance, the bottom and upper bands of the exploration space
+are denoted by the variables xmin and xmax, respectively. The random
+value chosen from a normal distribution is represented by rand when it
+is in the range [0,1]. The EHO algorithm was evaluated for its perfor-
+mance in a number of standard set functions as well as in medical
+diagnosis, where it demonstrated improved accuracy. In this particular
+investigation, the EHO algorithm is utilized for the purpose of DBN
+parameter optimization. The outcome of the DBN model is based on the
+weights and the biases of the layers of the network that came before it. In
+contrast to other optimization techniques, EHO does not use the in-
+dividuals who came before them in later stages of the updating process.
+EHO is a swarm-inspired method that deals with global optimization
+tasks that are considered by clan update and searching actions. EHO is
+an acronym for Enhanced Hybrid Optimization. Because EHO does not
+engage in relaxing, it is less susceptible to the effects of noise. They
+execute better in situations that are limited and optimized for them.
+Important aspects of EHO include a high convergence rate along with
+low localization error rates, all while reducing the amount of time
+needed for execution. The algorithm is capable of directly addressing
+non-convex ML issues.
+3.5. Fine tuning of DBN
+In most RBMs, the four fundamental parameters that are adjusted are
+the learning rate, the momentum weight, the hidden units, and the
+weight decay. Due to the complexity and divergence of the problem, the
+use of typical methods to compute the error function is considered an
+NP-hard task. In order to resolve this issue, metaheuristics have been put
+to use. In this work, the EHO method is applied in order to perfect the
+DBN training by adjusting the parameters in minute detail. In this case,
+the parameters that have been set are as follows: η = [0.1,0.9], n =
+[5100], α = [0.00001,0.01]. and λ = [0.1,0.9], In order to accomplish
+what needs to be done, there needs to be a fitness function that directs
+the search process to the most appropriate responses. The fitness func-
+tion that is used is referred to as mean squared error (MSE). The equa-
+tion for this function, which determines the amount of deviation that
+exists between the actual value and the target value, is provided in (5).
+Fig. 5. Flowchart of EHO
+S. Angel Latha Mary et al.
+International Journal of Intelligent Networks 5 (2024) 241–254 
+247 
+MSE = 1
+T
+∑
+N
+j=1
+∑
+D
+i=1
+(
+Dj(i) −Yj(i)
+)2
+(5)
+In most RBMs, the four fundamental parameters that are adjusted are
+the learning rate, the momentum weight, the hidden units, The EHO
+searches for a set of DBN parameters that results in the lowest possible
+MSE value. Dj(i) symbolizes the value that can be found in the jth unit of
+the DBN’s output layer at the period ‘t’, and Yj(i) indicates the jth
+feature of the chosen value. The procedure is carried out repeatedly up
+until the point where it can be stopped for good. The following are the
+steps involved in EHO’s optimization process and Fig. 5 show the
+flowchart of EHO:
+1. Initialize the population and set the EHO parameters in the appro-
+priate places.
+2. Determine the distinct fitness value of the DBN using the RMSE
+metric, taking into account both the learning rate and the total nu-
+meral of batch learning iterations. Determine the best possible per-
+son to use.
+3. Determine if the termination condition has been satisfied; if it has,
+the iteration should be finished, and the result should be produced;
+otherwise, proceed to the following step.
+4. Make necessary adjustments to each individual position. Reset the
+individuals’ values to their default values elsewhere the lower and
+upper bounds.
+5. Begin a novel iteration by modifying the ideal individual using the
+previous results.
+Algorithm 1.
+optimal parameter selection of DBN by using EHO
+iii. Fully Connected Conditional Random Field Postprocessing
+In most RBMs, the four fundamental parameters that are adjusted are
+the learning rate, the momentum weight, and the hidden units, once
+predictions were made using the suggested CDBN-EHO technique on
+each image patch, furthermore merged the individual tiles back together
+to form the original image. This stage of stitching can lead to devising
+the borders of each individual patch, as demonstrated in the last two
+rows of Fig. 2. In order to solve this issue, the proposed system utilized a
+Conditional Random Field (CRF) technique in its entirety. Krahenbuhl
+and Koltun [25] were the first to suggest using this method to efficiently
+compute picture segmentations. It exhibited the ability to both capture
+tiny edge information as well as make use of dependencies that are
+long-range. After that, Chen et al. [26] implemented this strategy into
+CNNs as an additional processing step so that they could better analyze
+images. P(I, X) =
+1
+z(I) exp(−E (I, X)) is the formula that describes a CRF
+(I, X), and it is important to note that X is defined across the entire
+picture as {x1, x2, … xN } is the total numeral of pixels, and xi is the label
+that corresponds to the pixel that is numbered i. The energy function is
+incorporated into the technique.
+E (I, X) =
+∑
+i
+θi(xi) +
+∑
+i,j
+θi
+(
+xi, xi,j
+)
+(6)
+where the first term is the unary latent and the 2nd term is the pairwise
+latent. The unary latent is demarcated as θi(xi) = −
+log P(xi), where
+P(xi) is the label obligation probability at pixel i as determined by the
+segmentation head in the GNH. The unary potential is defined as the
+difference between these two values. The pairwise potential is defined as
+the following equation:
+θi,j = μ
+(
+xi, xj
+)∑K
+m=1ω.k m(
+fi, fj
+)
+, where
+μ
+(
+xi, xj
+)
+= 1 if xi ∕= xj. Each km represents the Gaussian kernel, which is
+weighted by a learnable parameter known as m and is dependent on
+features that have been retrieved from pixels i and j and are designated
+by the letter f. In the kernels, make use of bilateral position and color
+terms, following the example given in [46].
+ω1 exp
+(
+−
+⃦⃦⃦pi−pj
+⃦⃦⃦
+2
+2σ2
+α
+−
+⃦⃦Ii −Ij
+⃦⃦2
+2σ2
+β
+)
++ ω2 exp
+(
+−
+⃦⃦⃦pi−pj
+⃦⃦⃦
+2σ2
+γ
+)
+(7)
+where p stands for the pixel’s location and I for the intensity of the
+pixel’s color. As a result, the first kernel term ensures that neighboring
+S. Angel Latha Mary et al.
+International Journal of Intelligent Networks 5 (2024) 241–254 
+248 
+pixels of a similar color are placed in the same class, whilst the second
+kernel term gets rid of small patches that are isolated from one another.
+The “scale” of the Gaussian kernels, which were determined during the
+trial using an empirical method, is controlled by the hyperparameters
+σα, σβ and σγ, respectively. In the subsequent parts of this study, for the
+sake of convenience, furthermore will refer to fully linked CRF as CRF.
+4. Experimental results and discussion
+In this part, furthermore will provide a quick overview of the pro-
+posed CDBN-EHO experiment design, then present a number of experi-
+mental data to validate the suggested design for the epithelial cell
+identification and Gleason grading operations. The consequences of the
+technique’s instance segmentation were translated into the semantic
+segmentation outcomes by selecting the instance class with the highest
+probability at each pixel location. This was done so that the new findings
+could be easily compared to the work that had been done previously.
+The suggested method is analyzed, and its performance is compared to
+that of the already established routes R–CNN [27], CNN [9], and DNN
+[8]. This section employs the conventional metrics: OPA (Overall Pixel
+Accuracy), Standard Mean Accuracy (SMA), mean Intersection Over
+Union (mIOU), in addition recall, accuracy, precision, and F-measure
+are used to evaluate the performance of segmentation findings. This
+allows us to make This suggested technique comparable with earlier
+work. The following is an explanation of how these metrics are defined.
+Assume that furthermore have the results of the segmentation known as
+s f, the ground truth label known as tl, and a pixel-wise confusion matrix
+known as Cm. Here, Cmi,j represents the number of pixels that were
+labeled as tli and were predicted to be sfj. The mIOU is defined as the
+mean of all of the individual Jaccard coefficients, which are denoted by
+the notation Ji, for each class tli. Here makes use of the definition of the
+Jaccard index in order to derive Ji from the confusion matrix Cm.
+Ji =
+TruePositive
+TruePositive + False Positive + False Negative =
+Cmi,i
+tpi + Pi −Cmi,i
+(8)
+where tpi = ∑
+j=1
+Cmi,j denotes the total numeral of pixels with label tli. Pj =
+∑
+i
+Cmi,j denotes the number of pixels predicted as f j. The mIOU is then
+specified by
+J = 1
+N
+∑
+N
+Ji
+(9)
+where N is the number of classes. The OPA is defined as
+Fig. 6. Proposed CDBN-EHO technique results among existing technique.
+S. Angel Latha Mary et al.
+International Journal of Intelligent Networks 5 (2024) 241–254 
+249 
+OPA =
+∑
+iCmi,i
+∑
+i
+∑
+j
+Cmi,i
+(10)
+The SMA is well-defined as
+SMA = 1
+N
+∑
+i
+Cmii
+∑
+jCmij
+(11)
+For the purpose of extracting features from the input pathological
+image, this section made use of a ResNet [28] in the suggested
+CDBN-EHO technique. Both the RPN and the GNH make use of a
+structure known as a feature pyramid network (FPN) [29], which in-
+volves the substitution of feature pyramids for single-scale feature maps.
+The FPN creates feature pyramids with the format {P2….P6}., as
+described in Ref. [29]. At each individual feature pyramid, here placed a
+unique scale anchor that corresponds to a potential region of interest for
+the RPN. After that, the RPN is trained with the parameters that are
+shared across all levels of the feature pyramid. Furthermore allocate
+each Region of Interest (ROI) on the input picture to the GNH network,
+which has dimensions of width wi and height ht, to the feature pyramid
+Pyk using the following formula:
+Pyk =
+⌊
+k0 + log2
+(
+̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅
+wi*ht/224
+√
+)⌋
+(12)
+If the scale of the RoI is reduced (for example, to 1/2 of 224), the
+equation eqn. (12) suggests that the data should be mapped onto a level
+with a higher resolution (for example, k = 3). The information that the
+technique needs to send into the GNH is extracted from each RoI by the
+technique using this technique, which is done on a similar scale. The
+outcomes of the projected and existing technique are illustrated in Fig. 6.
+The suggested technique yields mIOU scores of 81.32 %, SMA scores of
+89.78 %, and OPA scores of 90.40 % across all four classes. Path R–CNN
+has a performance that is considered to be above average in the
+“stroma”, “benign”, and “high-grade” classifications, among these four
+categories. In spite of this, it only receives a “low-grade” IOU score of
+71.54 %. This is because “low-grade” glands can have a wide range of
+appearances from one another. The glands that are “lowgrade” might
+vary in size and shape, although they are typically long and/or angular
+in shape. The majority of them are microglandular, however some of
+them might be anywhere from medium to enormous in size. This di-
+versity in size and shape is very clear in the second column of Fig. 6,
+where “low-grade” glands are represented by the green hue. This vari-
+ance can be plainly observed.
+Fig. 7 depicts the results obtained by the suggested technique after
+the ENH and CRF were included. It demonstrates that the ENH provides
+a significant improvement to the performance of the segmentation. This
+is primarily due to the fact that This technique settings need us to make a
+choice between the accuracy of This objectless prediction and the ac-
+curacy of This segmentation. If Furthermore want This system to have a
+high accuracy that minimizes the failure to detect possible epithelial
+regions, then Furthermore need to lower the detection threshold when
+ENH is not present because that will allow us to have high precision. This
+will provide us with a technique that is meant to forecast epithelial cells
+Fig. 7. The effectiveness of incorporating the ENH and CRF into the proposed CDBN-EHO structure.
+Table 2
+Overall performance evaluation among all cancer segmentation schemes.
+Performance metrices
+(%)
+Proposed CDBN-
+EHO
+Path
+R–CNN
+CNN
+DNN
+Accuracy
+95.86
+94.75
+92.64
+93.41
+Precision
+97.32
+96.67
+94.22
+92.60
+Recall
+97.88
+96.77
+95.19
+94.57
+F-measure
+97.95
+96.77
+95.19
+94.08
+mIOU
+81.32
+77.56
+74.22
+72.60
+SMA
+89.78
+87.58
+83.53
+82.43
+OPA
+90.40
+88.9
+87.6
+84.08
+S. Angel Latha Mary et al.
+International Journal of Intelligent Networks 5 (2024) 241–254 
+250 
+more frequently even in an image that is full of stroma; as a result, the
+performance will be drastically lowered. The first two rows of Fig. 7 are
+a good example of this phenomenon. Furthermore, can observe that the
+technique has a tendency to anticipate ROIs in vast sections of stroma by
+looking at the very last column. As a result, the proposed technique
+arrives at the conclusion that the ENH is essential to the success of
+achieving good performance in the proposed system. In the Supple-
+mentary Information, further justifications and benefits of the ENH are
+explored. As can be seen in the last two rows of Fig. 5, the results that
+have been proposed utilizing the CRF reveal that the addition of the
+approach helps remove the unnatural borders that are caused by
+stitching. The unnatural boundaries that were produced as a result of the
+stitching procedure are denoted by the red arrows in the picture (Rows 3
+and 4). After the CRF has been post-processed, furthermore see that
+these artificial borders have been erased. Additionally, the CRF con-
+tributes to a moderate improvement in mIOU.
+The total performance of the proposed CDBN-EHO in comparison to
+other current systems such as R–CNN, CNN, and DNN is displayed in
+Table 2. It is concluded that the suggested CDBN-EHO achieved great
+performance results in comparison to existing schemes due to their ca-
+pacity to process huge datasets and need less computational time. The
+performance of DBN has been boosted across the board thanks to the
+careful optimization of its parameters.
+Fig. 8 depicts the accuracy of PC segmentation achieved by the
+proposed CDBN-EHO algorithm and evaluates its performance in com-
+parison to that of other current segmentation methods such as route
+R–CNN, CNN, and DNN. Due to a reduction in the amount of computing
+time required, the accuracy of the projected technique improved along
+with the number of photos that were used. Based on the findings, it can
+be deduced that the proposed CDBN-EHO algorithm yields high accu-
+racy results of 95.86 %, whereas the accuracy yielded by other classi-
+fiers, such as R–CNN, CNN, and DNN, respectively, is 94.75 %, 92.64 %,
+and 93.41 %. The performance of DBN has improved as a result of the
+optimal prediction of parameter value.
+Fig. 9 displays the precision of PC segmentation achieved by the
+proposed CDBN-EHO algorithm, which was tested in comparison to
+other current segmentation schemes such as route R–CNN, CNN, and
+DNN. Due to a reduction in the amount of computing time required, the
+precision of the proposed strategy improved along with the number of
+photos that were used. Based on the findings, it can be deduced that the
+suggested CDBN-EHO algorithm achieves high precision results of
+97.32 %, but other classifiers, such as the R–CNN, CNN, and DNN
+techniques, only achieve precision values of 96.67 %, 94.22 %, and
+92.60 % values respectively. The study comes to the conclusion that the
+Fig. 8. PC segmentation accuracy prediction among methods.
+Fig. 9. PC segmentation precision prediction among methods.
+Fig. 10. PC segmentation recall prediction among methods.
+Fig. 11. PC segmentation F-measure prediction among methods.
+S. Angel Latha Mary et al.
+International Journal of Intelligent Networks 5 (2024) 241–254 
+251 
+CDBN-EHO research method performs better when compared to other
+methodologies.
+The PC segmentation recall of the proposed CDBN-EHO is displayed
+in Fig. 10, and it is evaluated in comparison to other existing segmen-
+tation methods such as route R–CNN, CNN, and DNN. Due to a reduction
+in the amount of computing time required, the recall of the suggested
+technique improved along with the number of photos that were used.
+Based on the findings, it can be deduced that the suggested CDBN-EHO
+method achieves high recall results of 97.88 %, but other classifiers,
+such as the R–CNN, CNN, and DNN techniques, only achieve recall
+values of 96.77 %, 95.19 %, and 94.57 % values respectively. The study
+comes to the conclusion that the CDBN-EHO research method performs
+better when compared to other methodologies.
+The PC segmentation F-measure of the proposed CDBN-EHO is dis-
+played in Fig. 11, and it is evaluated in comparison to other current
+segmentation schemes such as path R–CNN, CNN, and DNN. Due to the
+decreased amount of time spent computing, the F-measure of the sug-
+gested scheme increased along with the number of images as they were
+added. Based on the findings, one may draw the conclusion that the
+suggested CDBN-EHO algorithm achieves high F-measure results of
+97.95 %, whereas other classifiers, such as R–CNN, CNN, and DNN
+techniques, generate F-measure values of 96.77 %, 95.19 %, and 94.08
+% values respectively. It comes to the conclusion that research work is
+more successful when paired up with other methods.
+Fig. 12 depicts the PC segmentation mIOU of the proposed CDBN-
+EHO, which was then evaluated in comparison to other current seg-
+mentation schemes such as route R–CNN, CNN, and DNN. Because there
+is less time spent computing, the mIOU of the proposed approach in-
+creases in proportion to the number of photos that are being used. Based
+on the findings, it can be deduced that the proposed CDBN-EHO algo-
+rithm achieves high mIOU results of 81.32 %, whereas other classifiers,
+such as R–CNN, CNN, and DNN techniques, only achieve mIOU values of
+77.56 %, 74.22 %, and 72.60 %, respectively. The study comes to the
+conclusion that the CDBN-EHO research method performs better when
+compared to other methodologies.
+Fig. 13 depicts the PC segmentation SMA of the proposed CDBN-
+EHO, which was then evaluated in comparison to other current seg-
+mentation methods such as route R–CNN, CNN, and DNN. Due to the
+reduced amount of time spent computing, the SMA of the suggested
+approach increases together with the number of photos that are being
+used. Based on the findings, it can be deduced that the proposed CDBN-
+EHO algorithm achieves high SMA results of 89.78 %, while other
+classifiers, such as R–CNN, CNN, and DNN techniques, only achieve SMA
+values of 87.58 %, 83.53 %, and 82.43 % respectively. The study comes
+to the conclusion that the CDBN-EHO research method performs better
+when compared to other methodologies. The proposed method achieves
+high SMA through a combination of innovative methodologies, effective
+Bayesian inference, multi-task learning, optimized parameterization,
+and comprehensive evaluation. By introducing novel optimization
+techniques
+like
+EHO-based
+Hyper-parameter
+CDBN
+and
+grading
+network head-optimized DBN, the model effectively captures relevant
+features and contextual information crucial for accurate histological
+image analysis. Leveraging an extremely effective Bayesian inference
+approach for fully linked CRF techniques ensures precise segmentation,
+contributing to the overall accuracy of the model. The multi-task
+approach
+enables
+simultaneous
+consideration
+of
+multiple
+tasks,
+enhancing performance by leveraging shared contextual information
+across
+tasks.
+Additionally,
+optimized
+parameterization
+minimizes
+overfitting and algorithmic sensitivity, ensuring robust performance
+across diverse datasets and clinical scenarios. This comprehensive
+evaluation using SMA reflects the model’s reliability and effectiveness in
+Fig. 12. PC segmentation mIOU prediction among methods.
+Fig. 13. PC segmentation SMA prediction among methods.
+Fig. 14. PC segmentation OPA prediction among methods.
+S. Angel Latha Mary et al.
+International Journal of Intelligent Networks 5 (2024) 241–254 
+252 
+real-world clinical settings, particularly in tasks like prostate cancer
+diagnosis and Gleason grading.
+Fig. 14 depicts the PC segmentation OPA of the proposed CDBN-
+EHO, which was then evaluated in comparison to other existing seg-
+mentation methods such as route R–CNN, CNN, and DNN. The OPA of
+the proposed technique grew when there was less time spent computing,
+which led to an increase when the number of photos was increased.
+Based on the findings, it can be deduced that the suggested CDBN-EHO
+algorithm achieves high OPA results of 90.40 %, whereas other classi-
+fiers, such as R–CNN, CNN, and DNN algorithms, generate OPA values of
+88.9 %, 87.6 %, and 84.08 % values respectively. It comes to the
+conclusion that research work is more successful when paired up with
+other methods. The high OPA achieved by the proposed method can be
+attributed to several key factors. The model effectively delineates
+boundaries and structures within histological images through precise
+segmentation techniques. By accurately identifying pixel-level details,
+the model ensures that each pixel is correctly classified, leading to high
+pixel accuracy. The proposed method utilizes advanced DL architec-
+tures, such as CDBNs, which are optimized for pixel-level classification
+tasks. The architecture is designed to capture intricate patterns and
+features within the images, contributing to accurate pixel-wise pre-
+dictions. The evaluation of OPA provides a comprehensive assessment of
+the model’s performance at the pixel level, accounting for both true
+positive and true negative predictions. This holistic evaluation metric
+ensures that the model’s segmentation results are accurate and reliable,
+further validating its effectiveness in histological image analysis tasks.
+5. Conclusion
+In conclusion, our paper introduces the innovative CDBN-EHO
+framework alongside a grading network head-optimized deep belief
+network technique for multi-task prediction in histological image anal-
+ysis. We leverage advanced methodologies such as Bayesian inference
+for segmentation using fully linked Conditional Random Field tech-
+niques, with pairwise boundary capacities determined by a linear
+mixture of Gaussian kernels. Our approach demonstrates the potential to
+enhance performance by incorporating more contextual information
+through multi-task learning. Overall, this research contributes to
+advancing histological image analysis and lays the groundwork for the
+development of more accurate, efficient, and interpretable diagnostic
+tools for improving patient care in domains such as cancer diagnosis and
+treatment. This was the case in terms of accuracy, precision, recall, f-
+measure, 88.78 % SMA, 79.56 % mIOU, and 89.40 % OPA, to name a
+few metrics. In the future, the identification of PC systems will be
+improved by employing the feature selection and ranking phase with
+various hybrid optimization methods. This will be done in order to
+improve accuracy. In addition, granular computing will be included into
+DNNs in the near future in order to greatly rise the pace of calculation.
+Moving forward, several avenues of future work are identified. Firstly,
+we aim to further optimize our framework to mitigate algorithmic sen-
+sitivities and enhance generalization across diverse datasets and clinical
+scenarios. Additionally, efforts will be directed towards improving the
+interpretability of our models to foster greater trust among clinicians.
+The computational complexity and trade-offs of different methods for
+histopathological image analysis in prostate cancer diagnosis are crucial
+considerations. Techniques like the Elephant Herding Optimization-
+based Hyper-parameter Convolutional Deep Belief Network (CDBN-
+EHO) may offer breakthrough results but could potentially require more
+memory space and time compared to other methods like R–CNN, CNN,
+and DNN. Evaluating these trade-offs is essential for selecting the most
+suitable approach for accurate and timely diagnosis, considering the
+urgency of detecting and treating prostate cancer, the second highest
+cause of cancer-related deaths in men globally.
+CRediT authorship contribution statement
+S. Angel Latha Mary: Investigation, Methodology, Project admin-
+istration. S. Siva Subramanian: Conceptualization, Data curation,
+Formal analysis. G. Priyanka: Validation, Visualization. T. Vijayaku-
+mar: Writing – original draft, Writing – review & editing. Suganthi
+Alagumalai: Resources, Software, Supervision.
+Declaration of competing interest
+The authors declare the following financial interests/personal re-
+lationships which may be considered as potential competing interests:
+Suganthi Alagumalai is currently employed by JPMorgan Chase, where
+she serves as an Agility Lead role within the Cyber Security division.
+References
+[1] PC: The Leading Cancer in India.
+[2] S. Ghai, M.A. Haider, Multiparametric-MRI in diagnosis of PC, Indian J. Urol: IJU: j.
+Urol. Soc. India 31 (3) (2015) 194.
+[3] R. Loffroy, O. Chevallier, M. Moulin, S. Favelier, P.Y. Genson, P. Pottecher,
+L. Cormier, Current role of multiparametric magnetic resonance imaging for PC,
+Quant. Imag. Med. Surg. 5 (5) (2015) 754.
+[4] Rights, P. B. O., Chipko, C. R., Judy, G. D., Liebman, L. R., Pennington, J. D.,
+Siddiqui, O., … & Links, R. O. A. Radiation Therapy for PC.
+[5] D.A. Barron, D.R. Rowley, The reactive stroma microenvironment and PC
+progression, Endocr. Relat. Cancer 19 (6) (2012) R187–R204.
+[6] S. Iqbal, G.F. Siddiqui, A. Rehman, L. Hussain, T. Saba, U. Tariq, A.A. Abbasi, PC
+detection using DL and traditional techniques, IEEE Access 9 (2021) 27085–27100.
+[7] 1. Saqib Iqbal, Ghazanfar Farooq Siddiqui, Amjad Rehman, Lal Hussain,
+Tanzila Saba, Usman Tariq, Adeel Ahmed Abbasi, PC detection using DL and
+traditional techniques IEEE Access 9 (2021) 27085–27100.
+[8] Yuchun Li, Mengxing Huang, Yu Zhang, Jing Chen, Haixia Xu, Gang Wang,
+Wenlong Feng, Automated gleason grading and gleason pattern region
+segmentation based on DL for pathological images of PC, IEEE Access 8 (2020)
+117714–117725.
+[9] Davood Karimi, Guy Nir, Ladan Fazli, Peter C. Black, Larry Goldenberg, Septimiu
+E. Salcudean, DL-based gleason grading of PC from histopathology images—role of
+multiscale decision aggregation and data augmentation, IEEE J. Biomed Health Inf.
+24 (5) (2019) 1413–1426.
+[10] Lourdes Duran-Lopez, Juan P. Dominguez-Morales, Antonio Felix Conde-Martin,
+Saturnino Vicente-Diaz, Alejandro Linares-Barranco, PROMETEO: a CNN-based
+computer-aided diagnosis system for WSI PC detection, IEEE Access 8 (2020)
+128613–128628.
+[11] Ohad Kott, Drew Linsley, Ali Amin, Andreas Karagounis, Carleen Jeffers,
+Dragan Golijanin, Thomas Serre, Boris Gershman, Development of a DL algorithm
+for the histopathologic diagnosis and Gleason grading of PC biopsies: a pilot study,
+Eur. Urol. focus 7 (2) (2021) 347–351.
+[12] Dallin Busby, Ralph Grauer, Krunal Pandav, Akshita Khosla, Parag Jain,
+Mani Menon, G. Kenneth Haines III, Carlos Cordon-Cardo, Michael A. Gorin,
+Ashutosh K. Tewari, Applications of artificial intelligence in PC histopathology, in:
+Urologic Oncology: Seminars and Original Investigations, Elsevier, 2023.
+[13] Misbah Ahmad, Imran Ahmed, Ahmed Ouameur Messaoud, Gwanggil Jeon,
+Classification and detection of cancer in histopathologic scans of lymph node
+sections using convolutional neural network, Neural Process. Lett. (2022) 1–16.
+[14] Zaneta Swiderska-Chadaj, Thomas de Bel, Lionel Blanchet, Alexi Baidoshvili,
+Dirk Vossen, Jeroen van der Laak, Geert Litjens, Impact of rescanning and
+normalization on convolutional neural network performance in multi-center,
+whole-slide classification of PC, Sci. Rep. 10 (1) (2020) 14398.
+[15] Abhinav Kumar, Sanjay Kumar Singh, K. Lakshmanan, Sonal Saxena,
+Sameer Shrivastava, A novel cloud-assisted secure deep feature classification
+framework for cancer histopathology images, ACM Trans. Internet Technol. 21 (2)
+(2021) 1–22.
+[16] Andrea Chatrian, Korsuk Sirinukunwattana, Clare Verrill, Jens Rittscher, Towards
+the identification of histology-based subtypes in PC, in: 2019 IEEE 16th
+International Symposium on Biomedical Imaging (ISBI 2019), IEEE, 2019,
+pp. 948–952.
+[17] N. Ing, et al., Semantic segmentation for PC grading by convolutional neural
+networks, Proc. SPIE 10581 (Mar. 2018) 105811B.
+[18] A. Gertych, et al., Machine learning approaches to analyze histological images of
+tissues from radical prostatectomies, Comput. Med. Imag. Graph. 46 (Dec. 2015)
+197–208.
+[19] Stephen O’Hara, Bruce A. Draper, Introduction to the Bag of Features Paradigm for
+Image Classification and Retrieval, 2011 arXiv preprint arXiv:1101.3354.
+[20] Tapas Kanungo, David M. Mount, Nathan S. Netanyahu, Christine D. Piatko,
+Ruth Silverman, Angela Y. Wu, An efficient k-means clustering algorithm: analysis
+and implementation, IEEE Trans. Pattern Anal. Mach. Intell. 24 (7) (2002)
+881–892.
+[21] G. Csurka, C.R. Dance, L. Fan, J. Willamowski, C. Bray, Visual categorization with
+bags of keypoints, in: Workshop on Statistical Learning in Computer Vision, 2004,
+pp. 1–22.
+S. Angel Latha Mary et al.
+International Journal of Intelligent Networks 5 (2024) 241–254 
+253 
+[22] T. Tatiana, O. Francesco, C. Barbara, CLEF2007 image annotation task: an SVM-
+based cue integration approach, in: Proceedings of Image CLEF, 2007.
+[23] H. Lee, Y. Largman, P. Pham, H. Lee, P. Pham, Y. Largman, Unsupervised feature
+learning for audio classification using convolutional deep belief networks, in: 22nd
+International Conference on Neural Information Processing Systems, ACM,
+Vancouver, British Columbia, Canada, 2009, pp. 1096–1104.
+[24] M. Nayak, S. Das, U. Bhanja, M.R. Senapati, Elephant herding optimization
+technique based neural network for cancer prediction, Inform. Med. Unlocked 21
+(2020) 100445.
+[25] P. Kr¨ahenbühl, V. Koltun, Efficient inference in fully connected CRFS with
+Gaussian edge potentials, in: Proc. Adv. Neural Inf. Process.Syst., 2011,
+pp. 109–117.
+[26] L.-C. Chen, G. Papandreou, I. Kokkinos, K. Murphy, A.L. Yuille, DeepLab: semantic
+image segmentation with deep convolutional nets, atrous convolution, and fully
+connected CRFs, IEEE Trans. Pattern Anal. Mach. Intell. 40 (4) (Apr. 2017)
+834–848.
+[27] W. Li, J. Li, K.V. Sarma, K.C. Ho, S. Shen, B.S. Knudsen, C.W. Arnold, Path R-CNN
+for PC diagnosis and gleason grading of histological images, IEEE Trans. Med.
+Imag. 38 (4) (2018) 945–954.
+[28] K. He, X. Zhang, S. Ren, J. Sun, Deep residual learning for image recognition, in:
+Proc. IEEE Conf. Comput. Vis. Pattern Recognit., Jun. 2016, pp. 770–778.
+[29] T.-Y. Lin, P. Doll´ar, R. Girshick, K. He, B. Hariharan, S.J. Belongie, Feature pyramid
+networks for object detection, Proc. CVPR 1 (2) (Jul. 2017) 4.
+S. Angel Latha Mary et al.
+International Journal of Intelligent Networks 5 (2024) 241–254 
+254 

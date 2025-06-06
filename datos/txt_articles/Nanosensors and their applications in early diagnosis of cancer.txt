@@ -1,0 +1,2977 @@
+Sensing and Bio-Sensing Research 41 (2023) 100569
+Available online 27 June 2023
+2214-1804/© 2023 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-
+nc-nd/4.0/).
+Nanosensors and their applications in early diagnosis of cancer 
+Masoud Khazaei a,*, Marzieh Sadat Hosseini a, Ali Moshfegh Haghighi b, Majid Misaghi c 
+a Department of Chemical Engineering, Iran University of Science and Technology, Tehran, Iran 
+b Department of Chemical Engineering, Tarbiat Modares University, Tehran, Iran 
+c Research Institute of Petroleum Industry (RIPI), Tehran, Iran   
+A R T I C L E  I N F O   
+Keywords: 
+Nanosensors 
+Cancer 
+Early diagnosis 
+Biomarkers 
+A B S T R A C T   
+According to WHO and other key statistics, cancer is a leading cause of death worldwide, accounting for nearly 
+10 million deaths in 2020. By identifying cancer early, it is more likely to respond to treatment, resulting in a 
+better chance of survival as well as a lower cost of treatment. Early detection of cancer and avoiding delays in 
+treatment can significantly improve the lives of cancer patients. Nanomaterial-based sensors with the ability to 
+extract and identify tumor-specific biomarkers, circulating tumor cells, or extracellular vesicles secreted by the 
+tumor have the potential to diagnose cancer considerably earlier and enhance patient long-term survival. In this 
+review, we provide the application of nanosensors for the early detection of cancer and the recent techniques for 
+clinically diagnosing cancer patients’ biomarker levels. Furthermore, the presented works are compared based on 
+their sensitivity and selectivity in the detection of different kinds of cancer biomarkers.   
+1. Introduction 
+1.1. Invention and general development procedure of nanosensors 
+Nanosensors are devices that utilize nanotechnology to detect and 
+respond to specific physical, chemical, or biological stimuli at the 
+nanoscale level. The invention and development of nanosensors involve 
+a multi-step procedure, which can be summarized as follows:  
+• Conceptualization and Design: The first step is to conceptualize the 
+idea for a nanosensor and define its intended purpose and target 
+application. This involves identifying the specific analyte or stimulus 
+to be detected and determining the desired sensitivity, selectivity, 
+and operational parameters. The sensor design also considers the 
+appropriate nanomaterials, transduction mechanisms, and fabrica­
+tion techniques to achieve the desired functionality. 
+• Nanomaterial Selection: Nanosensors often incorporate nano­
+materials that exhibit unique properties at the nanoscale. These 
+materials can include nanoparticles (e.g., metal, semiconductor, or 
+carbon-based), nanowires, nanotubes, or two-dimensional materials 
+(e.g., graphene). The choice of nanomaterial depends on factors such 
+as their sensing capabilities, compatibility with the target analyte, 
+stability, and ease of fabrication. 
+• Sensing Mechanism: Nanosensors employ various sensing mecha­
+nisms to detect and transduce the target stimulus into measurable 
+signals. These mechanisms can include optical, electrical, magnetic, 
+thermal, or mechanical principles. For example, optical nanosensors 
+may rely on changes in light absorption, fluorescence, or surface 
+plasmon resonance, while electrical nanosensors may measure 
+changes in electrical conductivity or capacitance.  
+• Fabrication Techniques: Nanosensors are typically fabricated using 
+nanofabrication techniques, which allow precise control over the 
+size, shape, and composition of the nanostructures. Common fabri­
+cation techniques include top-down approaches (e.g., electron beam 
+lithography, focused ion beam milling) and bottom-up approaches 
+(e.g., chemical vapor deposition, self-assembly). These techniques 
+enable the production of nanosensors with high precision and 
+reproducibility. 
+• Surface Functionalization: Nanosensors often require surface func­
+tionalization to enhance their selectivity and sensitivity towards the 
+target analyte. Functionalization involves modifying the nano­
+sensor’s surface with specific receptors or recognition elements that 
+can interact selectively with the analyte of interest. These receptors 
+can be antibodies, enzymes, DNA sequences, or molecularly 
+imprinted polymers.  
+• Signal Transduction and Readout: Once the target stimulus interacts 
+with the nanosensor, the resulting changes in the sensor’s properties 
+* Corresponding author. 
+E-mail address: Masoud.march.1991@gmail.com (M. Khazaei).  
+Contents lists available at ScienceDirect 
+Sensing and Bio-Sensing Research 
+journal homepage: www.elsevier.com/locate/sbsr 
+https://doi.org/10.1016/j.sbsr.2023.100569 
+Received 29 January 2023; Received in revised form 14 June 2023; Accepted 26 June 2023   
+Sensing and Bio-Sensing Research 41 (2023) 100569
+2
+or signals need to be transduced and measured. This can involve 
+converting physical or chemical changes into electrical signals, op­
+tical signals, or other measurable outputs. Signal transduction 
+methods may include electrical measurements, spectroscopy, imag­
+ing techniques, or mass-sensitive detection methods. 
+• Testing and Optimization: After fabrication, the nanosensors un­
+dergo rigorous testing to evaluate their performance, sensitivity, 
+selectivity, and response time. The sensors are exposed to known 
+analytes or stimuli under controlled conditions to validate their 
+functionality. Based on the test results, iterative optimization pro­
+cesses are carried out to improve the sensor’s performance and 
+reliability. 
+• Integration and Packaging: Once the nanosensors have been devel­
+oped and optimized, they can be integrated into larger systems or 
+devices for practical applications. This may involve incorporating 
+the sensors into microfluidic platforms, wearable devices, or elec­
+tronic circuits. The packaging of nanosensors ensures their protec­
+tion, stability, and ease of use in real-world environments.  
+• Commercialization and Scaling: Successful nanosensor technologies 
+can undergo commercialization and scaling to enable mass produc­
+tion and widespread adoption. This involves manufacturing pro­
+cesses, quality control measures, and establishing supply chains to 
+meet market demands. 
+It’s important to note that the development of nanosensors is a highly 
+interdisciplinary field, involving expertise from various disciplines such 
+as nanotechnology, materials science, chemistry, physics, biology, and 
+engineering. 
+1.2. Working principle of nanosensors 
+A nanosensor can measure down to the level of single molecules. A 
+nanosensor consists of a sensor, analyte, transducer, and detector. 
+Typically, nanosensors work by tracking the electrical changes in the 
+sensor materials. By diffusing from the solution to the sensor surface, the 
+analyte reacts specifically and efficiently, resulting in a change in the 
+physicochemical properties of the transducer surface, which in turn al­
+ters the optical or electronic properties of the transducer surface, 
+causing an electrical signal which can be detected[1]. 
+1.3. Recognition elements/sensing elements 
+Nanosensors can detect several analytes and be selective, some of 
+them can detect only one type of analyte and are known as single sen­
+sors, while others can detect many types of analytes and are known as 
+multiplex sensors. A nanosensor’s recognition element reveals its 
+selectivity and specificity. Many recognition elements have been used in 
+the design of nanosensors, including antibodies, aptamers, enzymes, and 
+some functional proteins. The most common recognition elements in 
+nanosensors are aptamers and antibodies[2]. 
+1.4. Nanosensor types 
+Nanosensors can be defined and categorized by their constituent 
+materials, their detection targets, and the signals they use to transmit 
+information. Materials that are used to fabricate nanosensors are 
+including silicon nitride cantilevers, metallic/ magnetic nanoparticles, 
+nanotubes, nanochannels, and others. The detection target of nano­
+sensors can be antibodies, peptides, biological molecules, dangerous 
+inorganic analytes, aptamers, enzymes, and others[3]. 
+1.4.1. Nanosensors based on nanoparticles and nanoclusters 
+Noble metal nanoparticles have excellent size-dependent optical 
+properties that have been used to make optical nanosensors. Several 
+factors affect the spectrum of a phenomenon called localized surface 
+plasmon resonance (LSPR), including the size, shape, and material of the 
+particles and their environments. Single-molecule limit of detection for 
+large biomolecules can be obtained by LSPR nanosensors due to their 
+high sensitivity. In addition to metal nanoparticles, semiconductor 
+quantum dots have been used to build optical nanosensors based on 
+fluorescence measurements and nanoscale probes containing dyes are 
+being developed as optical sensors to detect analytes whose fluorescence 
+is quenched in contact with analyte; nanoparticle films have been used 
+for gas sensors; magnetic nanoparticles bound to biorecognition mole­
+cules (i.e. DNA, enzymes, etc.) have been used to enrich the analyte to be 
+detected[4]. 
+Nanosensors based on nanoparticles and nanoclusters offer several 
+benefits and drawbacks. Here are some of the key points to consider:  
+• Benefits:  
+1. Sensitivity: Nanoparticles and nanoclusters possess high surface-to- 
+volume ratios, which enhance their sensitivity to changes in the 
+surrounding environment. This makes them excellent candidates for 
+detecting and measuring small quantities of analytes or signals.  
+2. Selectivity: Functionalizing nanoparticles and nanoclusters with 
+specific molecules or coatings allows for high selectivity in sensing 
+particular substances or target analytes. This enables precise detec­
+tion and discrimination of various chemicals, biomarkers, or 
+pollutants.  
+3. Miniaturization: Nanosensors can be miniaturized to extremely small 
+sizes, enabling their integration into various devices and systems. 
+This feature is particularly advantageous for applications where 
+space is limited, such as wearable devices, medical implants, or 
+environmental monitoring in confined spaces.  
+4. Versatility: Nanoparticles and nanoclusters can be engineered with 
+different materials and structures, providing versatility in sensor 
+design and functionality. They can be tailored to respond to specific 
+stimuli, including light, temperature, pressure, or chemical in­
+teractions, expanding their applicability to diverse sensing scenarios. 
+5. Real-time monitoring: The small size and rapid response of nano­
+sensors make them suitable for real-time monitoring applications. 
+They can provide continuous, instantaneous data collection, allow­
+ing for immediate detection of changes or events.  
+• Drawbacks: 
+1. Signal-to-noise ratio: Nanosensors, particularly those based on in­
+dividual nanoparticles, can be susceptible to noise and interference. 
+Background signals, fluctuations, or impurities in the environment 
+can affect the accuracy and reliability of measurements, requiring 
+careful signal processing and calibration.  
+2. Stability and reproducibility: Nanoparticles and nanoclusters may 
+exhibit variations in their physicochemical properties, leading to 
+challenges in reproducibility and long-term stability of sensor per­
+formance. Manufacturing processes need to be optimized to ensure 
+consistent sensor behavior across different batches.  
+3. Cost: The production and functionalization of nanoparticles and 
+nanoclusters for sensing applications can be expensive, especially 
+when large quantities or specific materials are required. The cost 
+factor may limit their widespread adoption, particularly in resource- 
+constrained settings.  
+4. Integration challenges: Integrating nanosensors into existing systems 
+or devices can be technically complex. Ensuring compatibility, 
+power supply, and data transmission with other components or 
+electronics may present challenges that need to be addressed during 
+the design and implementation stages.  
+5. Biocompatibility and toxicity: When considering nanosensors for 
+biomedical applications, the biocompatibility and potential toxicity 
+of nanoparticles or nanoclusters must be thoroughly evaluated. The 
+interaction between the nanosensors and living systems should be 
+carefully assessed to ensure their safe and effective use. 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+3
+It’s important to note that the benefits and drawbacks can vary 
+depending on the specific application and the type of nanoparticles or 
+nanoclusters used. Ongoing research and technological advancements 
+aim to address these challenges and further enhance the capabilities of 
+nanosensors for various fields. 
+1.4.2. Nanosensors based on carbon nanotubes, nanofibers, and nanowires 
+Carbone nanotubes (CNTs) are robust and have inert structures, but 
+their electrical properties are highly sensitive to the effect of charge 
+transfer and chemical doping by various molecules. Accordingly, most 
+carbon nanotube-based sensors are field effect transistors (FET). To 
+make CNTs selective to the target analyte, functionalization of them is 
+an effective method. The molecular recognition interactions between 
+functionalized CNT and target analytes are used to develop various types 
+of sensors. For example, researchers decorated single-walled carbon 
+nanotubes (SWCNTs) with gold nanoparticles (AuNPs) to obtain nano­
+sensors[5]. They have been used to maximize gas sensor responses in 
+exhaled breath analysis for the detection of volatile organic compounds 
+(VOCs) which are biomarkers for various diseases; for example, acetone, 
+hydrogen sulfide, ammonia, and toluene can be used as biomarkers for 
+evaluating diabetes, halitosis, kidney malfunction, and lung cancer, 
+respectively[6,7]. 
+Nanosensors based on carbon nanotubes, nanofibers, and nanowires 
+offer numerous benefits in various applications. However, they also 
+have certain drawbacks that need to be considered. Let’s explore the 
+benefits and drawbacks of each type:  
+• Carbon Nanotube-based Nanosensors  
+• Benefits  
+1. High sensitivity: Carbon nanotubes possess exceptional electrical, 
+mechanical, and thermal properties, enabling high sensitivity in 
+detecting and measuring various substances, such as gases, chem­
+icals, and biomolecules.  
+2. Fast response time: Carbon nanotubes can rapidly detect changes in 
+their electrical properties when exposed to analytes, leading to quick 
+response times for nanosensors.  
+3. Small size: Carbon nanotubes are inherently nano-sized structures, 
+allowing for the fabrication of extremely small and compact sensors 
+suitable for integration into miniaturized devices.  
+4. Versatility: Carbon nanotubes can be functionalized and tailored to 
+detect specific analytes, making them versatile for a wide range of 
+sensing applications.  
+5. Durability: Carbon nanotubes are mechanically robust and can 
+withstand harsh conditions, making them suitable for sensing in 
+challenging environments.  
+• Drawbacks:  
+1. Manufacturing complexity: The fabrication of carbon nanotube- 
+based nanosensors can be complex and expensive, involving pre­
+cise manipulation and alignment of individual nanotubes.  
+2. Sensor-to-sensor variability: Carbon nanotubes can have variations 
+in their electrical properties, leading to variability in sensor perfor­
+mance, which may require additional calibration steps.  
+3. Sensitivity to environmental factors: Carbon nanotube-based sensors 
+can be sensitive to environmental factors such as temperature, hu­
+midity, and contaminants, which may affect their performance and 
+reliability.  
+• Nanofiber-based Nanosensors:  
+• Benefits:  
+1. Large surface area: Nanofibers typically have a high surface-to- 
+volume ratio, which enhances the interaction between the analyte 
+and the sensor surface, resulting in increased sensitivity.  
+2. Flexibility: Nanofibers can be fabricated into flexible and wearable 
+sensors, allowing for conformal integration onto various substrates 
+and the monitoring of physiological parameters. 
+3. Biocompatibility: Many nanofibers, such as those made from bio­
+polymers, exhibit excellent biocompatibility, making them suitable 
+for biomedical sensing applications and implantable devices.  
+4. Tunable properties: Nanofibers can be engineered with specific 
+properties, such as porosity, surface chemistry, and functionaliza­
+tion, enabling tailoring for different sensing applications.  
+• Drawbacks:  
+1. Limited electrical conductivity: Some nanofibers may have poor 
+electrical conductivity, which can restrict their use in certain appli­
+cations requiring high electrical sensitivity.  
+2. Fragility: Nanofibers can be fragile and prone to damage or breakage, 
+which may reduce the durability and robustness of the sensors.  
+3. Fabrication challenges: Producing nanofiber-based sensors with 
+uniformity and controlled alignment can be challenging, limiting 
+their large-scale production.  
+• Nanowire-based Nanosensors:  
+• Benefits:  
+1. Ultra-high sensitivity: Nanowires exhibit exceptional electrical 
+properties, allowing for ultrasensitive detection of analytes even at 
+low concentrations.  
+2. Direct transduction: Nanowires can directly convert analyte binding 
+events into electrical signals, simplifying the sensing process and 
+enabling label-free detection.  
+3. Compatibility with integrated circuits: Nanowires can be seamlessly 
+integrated with existing electronic circuitry, facilitating the devel­
+opment of integrated sensor systems and enabling multiplexed 
+sensing.  
+4. Small footprint: Nanowire-based sensors can be fabricated in arrays, 
+enabling parallel sensing and high-throughput screening of multiple 
+analytes simultaneously.  
+• Drawbacks:  
+1. Surface contamination: Nanowires can be susceptible to surface 
+contamination, which can interfere with the sensing performance 
+and require careful handling and cleaning procedures.  
+2. Fragility: Nanowires are typically very thin and delicate, making 
+them prone to mechanical damage during fabrication or operation, 
+which may affect sensor functionality.  
+3. Cost: The production of nanowire-based sensors can be costly due to 
+the specialized fabrication techniques and the use of expensive 
+materials. 
+It’s important to note that the field of nanosensors is rapidly 
+advancing, and ongoing research and development efforts aim to 
+address many of the current limitations associated with these 
+nanomaterial-based sensors. 
+1.4.3. Nanosensors based on graphene 
+Functionalized graphene, which is a type of carbon-based nano­
+material, has great potential to be used in chemical and biological sen­
+sors. Researchers have developed sensing devices with exceptionally 
+high speed, using the distinctive 2D structure of graphene oxide (GO) 
+combined with its superpermeability to water molecules (“Ultrafast 
+graphene sensor monitors your breath while you speak”). It has been 
+discovered that chemical vapors change graphene transistor noise 
+spectra, allowing scientists to detect many vapors with a single device 
+made of pristine graphene - no functionalization of the graphene surface 
+necessary (“Selective gas sensing with pristine graphene”)[8]. 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+4
+Nanosensors based on graphene offer several benefits due to the 
+unique properties of graphene. However, they also have certain draw­
+backs that need to be addressed. Let’s explore both the benefits and 
+drawbacks of nanosensors based on graphene:  
+• Benefits:  
+1. High Sensitivity: Graphene is an exceptional material known for its 
+high sensitivity to various stimuli. Graphene-based nanosensors can 
+detect even small changes in temperature, pressure, strain, or 
+chemical composition, making them highly sensitive sensors for a 
+wide range of applications.  
+2. Fast Response Time: Graphene’s thin and two-dimensional structure 
+enables rapid response to changes in the environment. Nanosensors 
+based on graphene can detect and transmit signals quickly, making 
+them suitable for real-time monitoring applications.  
+3. Wide Detection Range: Graphene-based nanosensors can detect a 
+broad spectrum of signals, including electromagnetic waves, gases, 
+chemicals, and biomolecules. This versatility makes them valuable in 
+diverse fields, such as environmental monitoring, healthcare, and 
+industrial applications. 
+4. Miniaturization: Graphene is a two-dimensional material, which al­
+lows for the development of nanoscale sensors. These nanosensors 
+can be integrated into tiny devices and systems, enabling miniatur­
+ization and integration into various platforms, including wearable 
+devices and Internet of Things (IoT) applications.  
+5. Low Power Consumption: Graphene-based nanosensors typically 
+have low power requirements due to their small size and efficient 
+signal transduction mechanisms. This low power consumption is 
+advantageous for applications that require prolonged battery life or 
+energy-efficient operation.  
+• Drawbacks:  
+1. Scalability: While graphene-based nanosensors show great promise, 
+scaling up their production and integration into practical devices can 
+be challenging. Achieving large-scale, cost-effective fabrication 
+methods while maintaining high-quality graphene is an ongoing 
+research area. 
+2. Signal-to-Noise Ratio: Graphene-based nanosensors can be suscep­
+tible to noise interference, affecting the signal-to-noise ratio and 
+potentially limiting their sensitivity. Shielding techniques and care­
+ful design considerations are necessary to mitigate this issue.  
+3. Stability and Durability: Graphene is prone to degradation under 
+certain environmental conditions, such as humidity and exposure to 
+reactive substances. Ensuring the stability and long-term durability 
+of graphene-based nanosensors remains a technical challenge.  
+4. Specificity: Graphene-based nanosensors may face challenges in 
+achieving high selectivity and specificity for target analytes. Over­
+coming cross-reactivity and interference from background signals is 
+crucial for reliable and accurate sensing.  
+5. Cost: Currently, the production of high-quality graphene at large 
+scale can be expensive, limiting the widespread adoption of 
+graphene-based nanosensors. However, ongoing research and tech­
+nological advancements are expected to address this drawback in the 
+future. 
+It’s important to note that research in graphene-based nanosensors is 
+rapidly evolving, and ongoing advancements may help address some of 
+the current drawbacks. As the field progresses, the benefits of nano­
+sensors based on graphene are expected to outweigh their limitations, 
+leading to innovative applications in various domains. 
+1.4.4. Nanosensors based on bulk nanostructured materials 
+While nanoparticles have several properties that make them useful 
+for nanosensor applications, their catalytic behavior is the most 
+important in electrochemical sensors. The design of gas diffusion elec­
+trodes can be improved through the use of platinum nanoparticles 
+supported on materials such as porous carbon or noble metals. 
+Furthermore, nanoparticles have a high surface area, making them ideal 
+for immobilizing molecules, polymers, or biomaterials to produce 
+composite materials with tailored surface properties. For instance, the 
+modification of metal nanoparticles with pre-designed receptor units 
+and assembly on surfaces could lead to improved electrochemical sen­
+sors. Proper functionalization of nanoparticles can also allows the 
+making of highly-selective and sensitive electroanalytical procedures. 
+Eventually, amplifying labels of limited stability, such as liposomes or 
+enzymes can be replaced with an equivalent or improved sensitivities 
+with stable nanoparticles[4]. 
+Nanosensors based on bulk nanostructured materials offer several 
+benefits and drawbacks. Let’s explore them:  
+• Benefits:  
+1. Enhanced Sensitivity: Bulk nanostructured materials possess a high 
+surface-to-volume ratio, which results in an increased number of 
+active sites for sensing. This higher surface area enables the detection 
+of lower concentrations of analytes, leading to improved sensitivity 
+compared to conventional sensors.  
+2. Improved Selectivity: Nanosensors based on bulk nanostructured 
+materials can exhibit enhanced selectivity by modifying the surface 
+chemistry or functionalizing the materials. This allows for specific 
+interactions with target analytes, reducing interference from other 
+substances and improving the accuracy of sensing.  
+3. Faster Response Time: The reduced size and enhanced surface area of 
+bulk nanostructured materials enable faster diffusion and interaction 
+with analytes. As a result, nanosensors based on these materials can 
+provide real-time or near real-time measurements, making them 
+suitable for rapid detection applications.  
+4. Miniaturization and Integration: Bulk nanostructured materials can 
+be fabricated into miniature sensor devices. Their small size and 
+compatibility with microfabrication techniques enable the integra­
+tion of multiple sensors onto a single chip. This miniaturization and 
+integration facilitate portability, cost-effectiveness, and the devel­
+opment of sensor arrays for multi-analyte detection.  
+5. Versatility: Bulk nanostructured materials can be engineered with a 
+wide range of properties and functionalities. By tailoring the 
+composition, structure, and surface properties, nanosensors can be 
+designed to detect various analytes, including gases, chemicals, 
+biomolecules, and even specific types of nanoparticles.  
+• Drawbacks: 
+1. Fabrication Challenges: The synthesis and fabrication of bulk nano­
+structured materials can be complex and require specialized tech­
+niques. Achieving a high degree of control over the material 
+structure and properties can be challenging, which may limit the 
+scalability and commercial viability of these sensors.  
+2. Stability and Durability: Some bulk nanostructured materials may 
+exhibit reduced stability or durability under certain conditions, such 
+as exposure to high temperatures, corrosive environments, or long- 
+term use. Ensuring the long-term stability and reliability of nano­
+sensors based on these materials can be a significant challenge.  
+3. Cost: The fabrication processes for bulk nanostructured materials can 
+be expensive and time-consuming. Additionally, the use of certain 
+rare or exotic materials in their synthesis may further increase the 
+cost of production. These factors can limit the widespread adoption 
+of nanosensors based on bulk nanostructured materials, particularly 
+in cost-sensitive applications.  
+4. Standardization and Quality Control: Due to the evolving nature of 
+bulk nanostructured materials and their fabrication techniques, 
+standardization and quality control measures can be lacking. 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+5
+Consistent performance, reliability, and reproducibility across 
+different batches or manufacturers can be a concern, hindering 
+widespread adoption in certain industries.  
+5. Potential Toxicity: While many bulk nanostructured materials have 
+been extensively studied for their safety, it is essential to consider the 
+potential toxicity of certain nanoparticles. Some nanosensors based 
+on bulk nanostructured materials may contain elements or com­
+pounds that can be harmful to humans or the environment. Proper 
+risk assessment and mitigation strategies should be implemented to 
+ensure safe usage. 
+Overall, nanosensors based on bulk nanostructured materials hold 
+significant promise for a wide range of applications, but challenges 
+related to fabrication, stability, cost, standardization, and safety need to 
+be addressed for their successful integration into various industries and 
+everyday life. 
+1.4.5. Nanosensors based on metal-organic frameworks (MOFs) 
+MOFs are organic-inorganic hybrid crystalline porous materials that 
+are composed of a regular array of positively charged metal ions sur­
+rounded by organic ‘linker’ molecules. The metal ions form nodes that 
+connect the linkers’arms to create a repeating, cage-like structure. Since 
+MOFs have hollow structures, they have an extraordinary amount of 
+internal surface area, making them ideal for gas sensing. Researchers 
+can produce materials that selectively absorb particular gases into 
+custom-made pockets within the structure by constructing the MOF from 
+various metal atoms and organic linkers[9]. 
+Nanosensors based on metal-organic frameworks (MOFs) offer 
+several benefits and drawbacks. Here are some of them:  
+• Benefits:  
+1. High surface area: MOFs have an exceptionally high surface area due 
+to their porous structure, providing a large number of active sites for 
+sensing. This high surface area allows for enhanced sensitivity and 
+detection of analytes.  
+2. Tailorable properties: MOFs can be easily synthesized with tunable 
+properties such as pore size, composition, and functionality. This 
+flexibility enables the design of nanosensors specific to a wide range 
+of target analytes, enhancing their selectivity and sensitivity.  
+3. Versatile analyte detection: MOF-based nanosensors can detect 
+various analytes including gases, ions, small molecules, and bio­
+molecules. This versatility makes them suitable for applications in 
+environmental monitoring, healthcare diagnostics, and chemical 
+sensing.  
+4. Signal amplification: MOFs can act as amplifiers by selectively 
+capturing target analytes and concentrating them in their pores. This 
+property can enhance the sensor’s signal response, improving the 
+detection limits and overall sensitivity.  
+5. Stability and recyclability: MOFs exhibit high stability, making them 
+suitable for repeated use and recycling. This characteristic is bene­
+ficial for the development of reusable nanosensors, reducing costs 
+and environmental impact.  
+• Drawbacks:  
+1. MOF degradation: Some MOFs may exhibit instability under certain 
+environmental conditions, such as exposure to high humidity or 
+extreme pH levels. This can limit their long-term functionality and 
+reliability as nanosensors. 
+2. Slow response time: The diffusion of analytes into the porous struc­
+ture of MOFs can lead to slower response times compared to other 
+sensing platforms. This characteristic may hinder their application in 
+scenarios requiring real-time or rapid detection.  
+3. Fabrication challenges: The synthesis and fabrication of MOF-based 
+nanosensors can be complex and time-consuming. Achieving 
+uniform and controlled growth of MOF films or integrating MOFs 
+onto sensor platforms can present technical challenges, potentially 
+limiting their scalability.  
+4. Interference and selectivity: While MOFs can offer high selectivity, 
+they may also exhibit interference from other molecules present in 
+the sample matrix. The design and optimization of MOFs for specific 
+analytes can be challenging, requiring careful consideration of po­
+tential interferences.  
+5. Cost considerations: Some MOF materials, particularly those based 
+on rare or expensive metals, can be costly to produce. This factor may 
+impact the scalability and commercial viability of MOF-based 
+nanosensors for certain applications. 
+It’s worth noting that research and development in the field of MOF- 
+based nanosensors are ongoing, and efforts are being made to address 
+some of the drawbacks mentioned above. Continued advancements in 
+MOF design, fabrication techniques, and integration strategies are ex­
+pected to further enhance their performance and broaden their potential 
+applications. 
+2. Applications of nanosensors in the early diagnosis of cancer 
+Nanosensor technology is being researched for its potential medical 
+applications in various areas including diagnosis, for example, antibi­
+otics, hormones, DNA, antibodies, disease markers, and others; investi­
+gating biomolecular interactions and biochemical assays including 
+nucleic acids, enzyme assays, proteins, antigen–antibodies, and drug 
+carriers; gas monitoring; and others. This review aims to provide in­
+formation on the different applications of nanosensors in the early 
+diagnosis of cancer. 
+2.1. Cancer detection 
+According to the World Cancer Report from the World Health Or­
+ganization (WHO) and other key statistics, cancer is a leading cause of 
+death worldwide, accounting for nearly 10 million deaths in 2020. In 
+2020, the following new cases of cancer were most prevalent:  
+• Breast (2.26 million cases);  
+• Lung (2.21 million cases);  
+• Colon and rectum (1.93 million cases);  
+• Prostate (1.41 million cases);  
+• Skin (non-melanoma) (1.20 million cases); and  
+• Stomach (1.09 million cases). 
+The leading causes of cancer deaths in 2020 were:  
+• Lung (1.80 million deaths);  
+• Colon and rectum (916,000 deaths);  
+• Liver (830,000 deaths);  
+• Stomach (769,000 deaths); and  
+• Breast (685,000 deaths)[10]. 
+By identifying cancer early, it is more likely to respond to treatment, 
+resulting in a better chance of survival as well as a lower cost of treat­
+ment. Early detection of cancer and avoiding delays in treatment can 
+significantly improve the lives of cancer patients[10]. 
+Implementing evidence-based strategies for early diagnosis, cancer 
+prevention, and management of patients with the disease can help to 
+reduce and control cancer. However, there is extensive knowledge about 
+the reasons for cancer, preventing, and managing the disease, and only a 
+few significant improvements have been made in curing the disease. It 
+has been proven that early detection is the only way to improve quality 
+of life and life expectancy. For this purpose, nanosensors and highly 
+sensitive nanomaterial-based devices have been developed to detect 
+circulating tumor cells (CTCs), biomarkers, or tumor-derived vesicles 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+6
+which are released comparatively early from the tumor into the blood 
+which will make a significant change in the morbidity and morality of 
+the disease[11]. 
+2.1.1. Lung cancer 
+Lung cancer is by far the leading cause of cancer-related mortality in 
+the world, making up almost 25% of all cancer deaths. A greater number 
+of people die from lung cancer each year than from prostate, breast, or 
+colon cancer combined. This situation is mainly because of the late stage 
+of diagnosis. Unfortunately, traditional screening methods such as low- 
+dose computed tomography (LDCT) and chest radiography (CXR) have 
+been indicated to be ineffective in directly detecting lung tumors before 
+spreading and become incurable. For example, the obtained images from 
+CT often display many small lung nodules and at a very early stage, it’s 
+not easy to realize which of these nodules are lung cancer and which are 
+benign. Consequently, it’s still necessary to take a biopsy from the 
+abnormal tissue to finally detect cancer which is complicated, incon­
+venient, expensive, and can lead to morbidity and even mortality 
+because of bleeding[12]. 
+2.1.1.1. The biomarkers and detection targets for Lung cancer. Lung 
+cancer is a complex disease, and several biomarkers and detection tar­
+gets have been identified to aid in its diagnosis and monitoring. Here are 
+some commonly studied biomarkers and detection targets for lung 
+cancer:  
+1. Carcinoembryonic Antigen (CEA): CEA is a glycoprotein that can be 
+elevated in the blood of individuals with lung cancer. It is used as a 
+tumor marker for various cancers, including lung cancer.  
+2. Cytokeratin Fragment 21–1 (CYFRA 21-1): CYFRA 21-1 is a soluble 
+fragment of cytokeratin 19, and its levels can be measured in blood 
+samples. Elevated levels of CYFRA 21-1 are associated with lung 
+cancer, particularly non-small cell lung cancer (NSCLC). 
+3. Neuron-Specific Enolase (NSE): NSE is an enzyme found predomi­
+nantly in neurons and neuroendocrine cells. Increased levels of NSE 
+in blood can indicate the presence of small cell lung cancer (SCLC).  
+4. Progastrin-Releasing Peptide (ProGRP): ProGRP is a precursor of 
+gastrin-releasing peptide and is found at elevated levels in the blood 
+of individuals with SCLC. It is used as a biomarker for the diagnosis 
+and monitoring of SCLC. 
+5. Epidermal Growth Factor Receptor (EGFR) Mutations: EGFR muta­
+tions are genetic alterations commonly found in lung adenocarci­
+noma. Testing for these mutations is essential for targeted therapy 
+selection, as certain EGFR inhibitors are effective against tumors 
+with specific mutations.  
+6. Anaplastic Lymphoma Kinase (ALK) Rearrangements: ALK gene 
+rearrangements occur in a subset of lung adenocarcinomas. Identi­
+fying ALK rearrangements helps in selecting patients who may 
+benefit from targeted therapies that inhibit the ALK fusion protein.  
+7. Programmed Death-Ligand 1 (PD-L1) Expression: PD-L1 is a protein 
+expressed on the surface of cancer cells. Testing for PD-L1 expression 
+helps in determining the eligibility of patients for immunotherapy 
+with immune checkpoint inhibitors like pembrolizumab or 
+nivolumab.  
+8. Circulating Tumor Cells (CTCs): CTCs are cancer cells that detach 
+from the primary tumor and enter the bloodstream. Detection and 
+characterization of CTCs can provide valuable information about the 
+presence and progression of lung cancer.  
+9. Circulating Tumor DNA (ctDNA): ctDNA refers to small fragments of 
+tumor DNA released into the bloodstream. Analysis of ctDNA allows 
+for non-invasive monitoring of genetic alterations and treatment 
+response in lung cancer patients. 
+It’s important to note that the availability and utility of specific 
+biomarkers and detection targets may vary depending on the type and 
+stage of lung cancer, as well as individual patient characteristics. 
+Healthcare professionals rely on a combination of clinical evaluation, 
+imaging tests, and laboratory analyses to diagnose and manage lung 
+cancer effectively. 
+In the last decade, researchers have worked on developing different 
+kinds of nanosensors for the early detection of lung cancer. MicroRNAs 
+(miRNAs) are highly conserved and tiny noncoding RNAs that regulate 
+gene expression at the posttranscriptional level by binding to the 3′-UTR 
+of target mRNAs. A growing body of evidence indicates that they play a 
+crucial role in various pathological processes, including human cancer. 
+Anran Gao et al.[13] used silicon nanowire field-effect (SiNW-FET) de­
+vices to develop multiplexed electrical detection of lung cancer bio­
+markers. The SiNW arrays were fabricated by an anisotropic wet etching 
+technology using self-stop limitation and integrated with poly­
+dimethylsiloxane (PDMS) chips with mass reproducible ability and low- 
+cost character. The nanosensors could sensitively and rapidly detect as 
+low as 0.1 fM lung cancer biomarker miRNA−126 and 1 fg/ml carcino 
+embryonic antigen (CEA) with good specificity. The ability of the 
+nanosensors was investigated in both ideal and clinically relevant 
+samples and they demonstrated high performance in detecting lung 
+cancer. Jesse D. Kirkpatrick et al.[14] used activity-based nanosensors 
+for the urinary detection of lung cancer in mice via noninvasive pul­
+monary protease profiling. The multiplexed nanosensors performed 
+with sensitivity up to 95% and specificity of 100% for the diagnosis of 
+localized disease in two autochthonous human lung adenocarcinoma 
+(LUAD) models representing Kras/Trp53 and Alk-mutant disease. 
+Zhuang Hao et al.[15] designed an electrolyte-gated graphene field 
+effect transistor (GFET) nanosensor using aptamer for the rapid, highly 
+sensitive, and specific detection of a lung cancer biomarker interleukin-6 
+(IL-6) with enhanced selectivity and stability. First, they examined the 
+capability of the nanosensors in measuring the IL-6 concentration and 
+whether the nanosensors could respond to the change in IL-6 concen­
+tration in <10 min. Then, they investigated the stability of the nano­
+sensors by storing the nanosensors in a 1× PBS buffer for 24 h and they 
+were still capable of fast detecting IL-6. Finally, the high specificity of 
+the nanosensors to IL-6 over non-target molecules was verified. Tumor 
+cells that split away from the primary tumor and extravasate into and 
+circulate through the bloodstream are called Circulating tumor cells 
+(CTCs). 
+Understanding the metastatic cascade of CTCs has tremendous po­
+tential for the identification of targets against cancer metastasis. Chris­
+topher M. Earhart et al.[16] developed a magnetic sifter, which is a 
+small microfluidic chip with a dense array of magnetic pores labeled 
+with magnetic nanoparticles that showed a high-efficiency detection of 
+tumor cells. 
+Hypoxia is mainly known as one of the substantial features in most 
+cancers including NSCLC. Yantao Li et al.[9] suggested O2 concentration 
+sensors monitor NSCLC excited by near-infrared (NIR) light to eliminate 
+the negative effect of UV or visible light, based on the fact that Infrared 
+light penetrates deeply into tissues, damages minimally and has a high 
+spatial resolution. They used biological metal-organic frameworks (bio- 
+MOFs) as the matrix. Then they fabricated a core/satellite nano­
+structure, where many upconversion nanoparticles (UCNPs) were 
+attached as antennas onto the surfaces of bio-MOFs including O2 in­
+dicators. These nanosensors could successfully track in vivo NSCLC le­
+sions without long-term biotoxicity. 
+Ann-Katrine Jakobsen et al. [17] used nanosensors to investigate the 
+TOP1 (Topoisomerase I) and TDP1 (Tyrosyl-DNA phosphodiesterase 1) 
+activities in cryosections from NSCLC tissue samples which were 
+collected at Aarhus University Hospital in 2011 including 24 paired 
+tissue samples (one adjacent non-tumor and one tumor sample from 
+each patient). Their results showed that both TOP1 and TDP1 were 
+upregulated in the tumor tissue compared to the adjacent non-tumor 
+tissue in NSCLC. Eisa Zarepour et al.[18] proposed a method to design 
+a terahertz Wireless NanoSensor Network (WNSN) for monitoring 
+human lung cells and they also showed that there is a temporal sweet 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+7
+spot in the respiration cycle that can be used to reduce the transmission 
+power of nanosensors. In this study, an online algorithm is proposed to 
+estimate the sweet spots and periodic channel that allows a high power 
+reduction. 
+The calpain protein is a calcium-dependent, non-lysosomal cysteine 
+protease (proteolytic enzyme) found ubiquitously in mammals and 
+many other organisms. One of the major isoforms of calpain is Calpain 2 
+(CAPN2). CAPN2 has been proposed as a tumor marker linked to 
+angiogenesis, cell proliferation, and migration in NSCLC. Seung-Hae 
+Kwon et al.[19] designed a human serum albumin-based active cal­
+pain 2-triggered nanosensor (HSA −
+CAPN2) for early detection of 
+CAPN2 in tumor tissues. The results of in vivo and in vitro experiments 
+showed that the HSA −CAPN2 could be effective too for early detection 
+and potential drug carrier to active CAPN2-enriched cancer. 
+Human exhaled breath contains >3000 VOCs, these VOCs are 
+directly or indirectly related to internal biochemical processes in the 
+body. Using electronic noses (E-noses) could be a potential way to 
+screen/analyze systemic diseases and various respiratory by studying 
+the signatures of breath. Silvano Dragonieria et al.[20] used a Cyranose 
+320 containing a nanocomposite array with 32 polymer sensors as E- 
+nose and their study demonstrated that an E-nose can discriminate pa­
+tients with lung cancer from chronic obstructive pulmonary disease 
+(COPD) patients. S. Chatterjee et al.[21] developed an E-nose by the 
+assembly of conductive polymer nanocomposite (CPC) quantum resis­
+tive sensors (QRS). The sensors developed in this study appeared to be 
+great candidates for the detection of lung cancer by VOC analysis in 
+breath with a sensitivity of 2.5 ppm, low consumption, a couple of 
+seconds response time, and a large signal-to-noise ratio (SNR ≥10). 
+Andras Bikov et al.[22] investigated the effects of expiratory flow rate, 
+breath hold, and inclusion of anatomic dead space on the exhaled levels 
+of some volatile compounds and electronic nose data. 27 patients with 
+lung cancer (60 ± 10 years) and 37 healthy subjects (44 ± 14 years) 
+participated in the study. Breath-hold, the inclusion of anatomic dead 
+spaces, and expiratory flow rate all significantly altered “breathprints” 
+in healthy individuals (p < 0.05), but not in lung cancer patients (p >
+0.05). These factors also significantly affected the discrimination ability 
+of the electronic nose in the detection of lung cancer. According to G. 
+Peng et al.[23] and Orna Barash[24] et al., gold nanoparticles (GNPs) 
+sensors can distinguish between breath VOCs of healthy individuals and 
+those from lung cancer patients. Nam-Hoon Kim et al.[25] introduced 
+highly selective and sensitive sensors using Pd-functionalized WO3 
+nanofibers (NFs). First, they synthesized WO3 NFs by electrospinning 
+method, and then Pd catalysts were loaded inside and/or outside of the 
+WO3 NFs. Catalytic Pd-loaded WO3 NFs showed a good response time in 
+a humid condition which makes them suitable to be used in exhaled 
+breath sensors to detect toluene. Consequently, the Pd-added WO3 NFs 
+are applicable for use in exhaled breath sensors for the detection of lung 
+cancer. 
+F.L. Liu et al.[26] presented a highly selective SWNTs biosensor to 
+detect both polar and nonpolar VOCs molecules. To develop this sensor, 
+pentadecane (C15H32) and tricosane (C23H48) were coated on the surface 
+of SWNTs. The prepared device was exposed to representative VOCs 
+nonpolar molecule decane and polar molecule 1,2,4-trimethylbenzene 
+which are two lung cancer biomarkers. The results showed that the 
+functionalized-SWNTs had a noticeable sensitivity towards VOCs mol­
+ecules and exhibit a higher selectivity towards polar VOCs biomarkers. 
+Nisreen Shehada et al.[27] used a modified SiNW FET to detect many 
+diseases including lung cancer, asthma, gastric cancer, and chronic 
+obstructive pulmonary disease. The best obtained sensors were exam­
+ined under real-world clinical conditions using breath samples from 374 
+patients. The results showed that the SiNW FETs could distinguish and 
+detect between almost all comparisons with >80% accuracy. Alaa 
+Gharra et al.[28] used a nanosensor-array system including layers of 
+GNPs for the detection of lung and gastric cancers. 545 breath samples 
+from 426 adult participants (158 lung cancer patients, 115 gastric 
+cancer patients, and 153 healthy volunteers) were collected at the 
+Jiangyin Hospital. 
+Applications of nanosensors in the early detection of lung cancer are 
+also summarized in Table 1. 
+In lung cancer detection, electrochemical methods can detect spe­
+cific lung cancer biomarkers in breath or blood samples, aiding in early 
+diagnosis and monitoring of treatment response. Fluorescence tech­
+niques enable targeted imaging of lung cancer cells or tumor markers, 
+assisting in precise localization and staging. Image-based methods assist 
+in analyzing lung images to detect tumors, assess their size and location, 
+and guide treatment planning. 
+2.2. Breast cancer 
+Globally, there were 2.3 million women diagnosed with breast can­
+cer in 2020 and 685,000 deaths. The number of women diagnosed with 
+breast cancer in the past five years reached 7.8 million at the end of 
+2020, making it the most prevalent cancer in the world. At the end of 
+2020, breast cancer was the most prevalent cancer in the world, with 7.8 
+million women alive and having been diagnosed in the past 5 years. 
+Globally, breast cancer causes more disability-adjusted life years 
+(DALYs) for women than any other form of cancer. In every country of 
+the world, breast cancer can occur at any age after puberty, but it is more 
+prevalent in older women. 
+2.2.1. The biomarkers and detection targets for Breast cancer 
+Breast cancer biomarkers and detection targets are important tools in 
+the diagnosis, prognosis, and treatment of breast cancer. Here are some 
+commonly used biomarkers and detection targets for breast cancer: 
+1. Estrogen Receptor (ER): ER is a hormone receptor that helps deter­
+mine whether a breast cancer tumor is hormone receptor-positive or 
+hormone receptor-negative. ER-positive tumors can be treated with 
+hormone therapies that target this receptor.  
+2. Progesterone Receptor (PR): Similar to ER, PR is a hormone receptor 
+that helps classify breast cancer tumors as hormone receptor-positive 
+or hormone receptor-negative. PR-positive tumors may respond to 
+hormone therapies.  
+3. Human Epidermal Growth Factor Receptor 2 (HER2): HER2 is a 
+protein that plays a role in cell growth and division. Overexpression 
+or amplification of HER2 is associated with aggressive breast cancer. 
+HER2-positive breast cancers can be treated with targeted therapies 
+like trastuzumab (Herceptin).  
+4. Ki-67: Ki-67 is a protein that indicates the level of cell proliferation or 
+growth. It is used as a marker to determine the growth rate of breast 
+cancer cells and is often associated with a more aggressive disease.  
+5. BRCA1 and BRCA2: BRCA1 and BRCA2 are genes that are associated 
+with an increased risk of developing breast cancer. Mutations in 
+these genes are often found in hereditary breast and ovarian cancers 
+and may influence treatment decisions.  
+6. CA 15–3 and CA 27.29: These are tumor-associated antigens that can 
+be measured in the blood. Elevated levels of these antigens may 
+indicate the presence of breast cancer and can be used for monitoring 
+disease progression or treatment response. 
+7. Circulating Tumor Cells (CTCs): CTCs are cancer cells that have de­
+tached from the primary tumor and entered the bloodstream. 
+Detection and analysis of CTCs can provide valuable information 
+about disease progression, metastasis, and treatment response.  
+8. Circulating Tumor DNA (ctDNA): ctDNA refers to fragments of tumor 
+DNA that are released into the bloodstream. Analysis of ctDNA can 
+provide information about tumor genetic mutations, treatment 
+response, and minimal residual disease.  
+9. Mammographic Density: Mammographic density refers to the 
+amount of fibrous and glandular tissue compared to fatty tissue in the 
+breast. High mammographic density is associated with an increased 
+risk of breast cancer and can be used as a risk assessment tool. 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+8
+Table 1 
+Applications of nanosensors in the early detection of lung cancer.  
+No. 
+Biomarker/Target 
+Nanomaterials/Methods 
+Sensitivity/ 
+LODa 
+Specificity 
+Reference 
+1 
+Decane, undecane, hexanal, heptanal, benzene, and TMBb 
+MTPP-AuNR nanocomposites:  
+The seed-mediated growth approach was utilised to create 
+AuNR, and solution co-blending was employed to create 
+MTPP-AuNR nanocomposites, which were then used to 
+make an optical chemical sensor.  
+NDc  
+NAd  
+Danqun Huo et al. 
+[29] 
+2 
+α-Phellandrene, Styrene, dodecane, and 
+4-methyl 
+AuNPse and SWCNTf capped with polycyclic aromatic 
+hydrocarbons  
+100%  
+95% 
+Inbar Nardi- 
+Agmon et al.[5] 
+3 
+Benzaldehyde, nonanal, decanal, tetradecane, 5-methyl- 
+tridecane, 6-methyl-5-heptane-2-one, acetophenone, 2,4- 
+bis(1,1-dimethylethyl)-phenol, 2-ethyl-1-hexanol, 1,3-bis 
+(1,1-dimethylethyl)-benzene, 1,3-dimethyl-benzene, and 
+styrene 
+AuNPs:  
+Using AuNPs, the gadget analyses volatile organic 
+compounds (VOCs) in the headspace of (subtypes of) lung 
+cancer cells.    
+96%    
+86%    
+Orna Barash et al. 
+[24] 
+4 
+Various VOCs 
+AuNPs:  
+The sensors were made up of layers of gold nanoparticles 
+(GNPs) with 13 distinct organic ligands in two different 
+forms (manual and printed), resulting in 26 different 
+sensors in each nanosensor system. 
+76–100% 
+75–100% 
+Alaa Gharra et al. 
+[28] 
+5 
+Malondialdehyde 
+Poly(dopamine)-Chitosan -AgNPs:  
+Chitosan was electrodeposited on the surface of a PDA- 
+modified glassy carbon electrode, and Ag nanoparticles 
+were deposited on the Poly(dopamine)-Chitosan. 
+1.45 μM 
+ND 
+Mohammad 
+Hasanzadeh et al. 
+[30] 
+6 
+Styrene (ethenylbenzene), 
+2.2.4.6.6-pentamethyl heptanes, 2-methyl heptanes, 
+decane, propyl benzene, 1-hexene, hepatanal, 1,4- 
+dimethyl benzene, undecane, methyl cyclopentane, 1- 
+ethyl-2-pentylcyclopropane, 
+trichlorofluoro benzene, benzene, 1-ethylethenyl 
+benzene, cyclohexane, 1-heptene, TMB, 2-methyl- 
+(isoprene)-1,3-butadiene, 3-methyl octane, 1-hexene, 3- 
+methyl nonane, hexanal, and 2,4-dimethyl heptanes 
+SWCNTs-coated with nonpolymeric organic materials:  
+Array of sensors to 
+detect lung cancer and to differentiate between the VOCs 
+found in the breath of patients with lung cancer. 
+ND 
+ND 
+Gang Peng 
+et al.2008[31] 
+7 
+Various VOCs 
+AuNPs:  
+In a humid environment, an array of AuNP-based sensors 
+quickly identified the breath of lung cancer patients from 
+the breath of healthy persons.   
+Gang Peng 
+et al.2009[23] 
+8 
+40 common VOCs that appear in>85% NSCLCs 
+AuNPs functionalized with tert-dodecanethiol, 2-ethyl­
+hexanethiol, and 
+decanethiol 
+100%/ 
+10 ± 5 ppb 
+100% 
+Orna Barash et al. 
+2009[32] 
+9 
+DNA methylation 
+Single QDg-based:  
+Using tricyclic ligation chain reaction (LCR)-mediated QD- 
+based fluorescence resonance energy transfer (FRET), we 
+developed a single QD-based nanosensor for sensitive 
+detection of DNA methylation at both CpG and non-CpG 
+sites. 
+10−11 M/ 
+1.0 aM 
+NA 
+Zi-yue Wang et al. 
+[33] 
+10 
+H2O2 
+4MPBEh-coated AuNPs:  
+H2O2-sensitive 4MPBE was used to coat the nanosensor. 
+0.49 μM 
+ND 
+Shigekuni Hosogi 
+et al.[34] 
+11 
+MicroRNA 
+QD-based:  
+A QD-based microRNA nanosensor for point mutation tests 
+employing rolling circle amplification mediated by primer 
+production. 
+50.9 aM 
+ND 
+Ya-ping Zeng 
+et al.[35] 
+12 
+Aldehydes, alcohols, ketones, nitriles, alkanes, dienes, 
+hydrocarbons, and benzene derivations  
+MCNPsi:  
+A appropriate micrometric electrical transducer was 
+coated with a chemiresistive MCNP layer. 
+ND 
+ND 
+Ulrike Tisch and 
+Hossam Haick 
+[36] 
+13 
+Mucin-1 
+Zn-Bp-MOFsj:  
+Coordination was used to create zinc-based MOFs with 
+pyridine (Zn-Bp-MOFs) to improve the ECL responses of 
+zinc meso-tetra(4-sulfonatophenyl) porphine (Zn-TP). 
+0.23 pg mL-1 
+Good 
+Li-Yan Huang 
+et al.[37] 
+14 
+MicroRNAs 
+CMOSk-compatible SiNWl-based:  
+A self-limiting anisotropic wet etching-based SiNW-FET 
+biosensor that is CMOS compatible. 
+1 zeptomole 
+High 
+Na Lu et al.[38] 
+15 
+Hypoxia 
+poly(N-vinylpyrrolidone)-conjugated iridium (III):  
+The poly(N-vinylpyrrolidone)-conjugated iridium(III) 
+High 
+High 
+Xianchuang 
+Zheng et al.[39] 
+(continued on next page) 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+9
+Yu Chen et al.[6] used a nanoscale-gated biological field effect 
+transistor for the detection of the breast cancer serum biomarker protein 
+CA15.3 down to levels of concentration <20 units/ml. They used a “top- 
+up” method to fabricate the nanoscale biosensor with complete control 
+of the geometry by lithography and standard semiconductor processing 
+techniques in a complementary metal-oxide-semiconductor (CMOS)- 
+compatible process. The nanowires were functionalized with CA15.3 
+and 3-aminopropyl- triethoxysilane (APTES) was used to silanize the 
+device. 
+The chemical energy needed to power the cell’s biochemical re­
+actions is mainly produced by a type of membrane-bound cell organelles 
+known as mitochondria. This energy is stored in adenosine triphosphate 
+(ATP) which is a small molecule. 
+Wrong functioning of mitochondria can result in many diseases, such 
+as mitochondrial encephalomyopathy, Leigh syndrome, lactic acidosis, 
+hepatopathy, stroke-like episodes, tubulopathy, and cancer. Therefore, 
+understanding the relationship between mitochondrial pH (pHm), tu­
+moral metabolism, and cancer is very important. Consuelo Ripoll et al. 
+[40] designed a nanosensor with a double modification of the quantum 
+dot (QD) surface. On the one hand, the surface of the QD surface was 
+modified with mercaptopropionic acid (MPA) which affects the photo­
+luminescence (PL) lifetime of the QDs. On the other hand, for specific 
+mitochondrial delivery, Szeto-Schiller (SS) peptides were added to the 
+surface. This nanosensor was used to correctly measure the intra­
+mitochondrial pH using fluorescence lifetime imaging microscopy 
+(FLIM) that can serve as a potential biomarker for the early detection of 
+different metabo phenotypes in breast cancer cell lines. 
+Yu-Husan Kuo et al.[41] developed a CMOS-based capacitive nano- 
+biosensor for the first time for early detection of miRNA-195, as the 
+breast cancer-specific biomarker in blood. They combined CMOS inte­
+grated circuits and an interdigitated electrode (IDE) as a nano-sensor. 
+The advantages of this nanosensor are compactness, miniaturization, 
+high specificity, and high sensitivity. Their results showed that the limit 
+of detection (LOD) could be as low as 0.617 fM proving that the nano­
+sensor had high specificityand high sensivity and could be a good option 
+for early detection of breast cancer. 
+Due to its superior temporal and spatial resolution, optical fluores­
+cence imaging is one of the most widely used methods for imaging in 
+vivo. Because it is non-invasive and real-time, this approach is a desir­
+able imaging modality for medical applications like biosensing, cancer 
+diagnostics, and medical testing. The vast majority of fluorescence 
+probes, which are necessary for optical fluorescence imaging, are visible 
+(400–700 nm). When imaging inside the body, visible light has several 
+limitations, though. The opacity of biological components including 
+hemoglobin and water increases as they absorb light within the visible 
+range. Additionally, due to the scattering of visible light caused by these 
+elements within biological tissue, the penetration depth of visible 
+fluorophores is decreased. Additionally, biological tissues exhibit self- 
+fluorescence (also known as autofluorescence) in the visible range due 
+to the presence of several luminous macromolecules that affect any 
+images that are captured. Light scattering and autofluorescence are 
+diminished by NIR light because biological components in tissue absorb 
+it less. As a result, research into developing fluorescent probes that emit 
+in the NIR has increased. NIR–I, or the first NIR optical window, in­
+cludes wavelengths between 700 and 950 nm. The second NIR optical 
+window, or NIR-II, covers the wavelength range of 1000 nm to 1700 nm. 
+The attenuation coefficient of biological elements falls even lower 
+within this range, lowering the opacity of tissue and the quantity of light 
+scattering within it. Biological tissue’s autofluorescence is likewise 
+decreased by the NIR-II wavelength range, which has better picture 
+quality and a deeper penetration depth than visible light and NIR–I. 
+Research on NIR-II fluorescence probes is currently being hampered by 
+the lack of readily available probe material and the high cost of imaging 
+equipment. 
+In the research of Mingming Luan et al.[42], a multicolor fluorescent 
+nanoprobe based on AuNPs was designed and synthesized for simulta­
+neously and visually detecting breast cancer cells’ proliferation marker 
+Ki-67 mRNA and invasion marker urokinase plasminogen activator 
+(uPA) (Fig. 1). The fluorescence responses of the nanoprobe to Ki-67 and 
+uPA targets were examined to experiment with the ability of the 
+nanoprobe to simultaneously detect the respective targets. The 
+Table 1 (continued) 
+No. 
+Biomarker/Target 
+Nanomaterials/Methods 
+Sensitivity/ 
+LODa 
+Specificity 
+Reference 
+complex (Ir-PVP) and poly(e-caprolactone)-b-poly 
+(Nvinylpyrrolidone) (PCL-PVP) were combined to produce 
+comicelles, which were then used to create the nanosensor.  
+a LOD: limit of detection. 
+b TMB: 1,2,4-trimethylbenzene. 
+c ND: not determined. 
+d NA: not applicable. 
+e AuNPs: gold nanoparticles. 
+f SWCNT: Single-walled carbon nanotubes. 
+g QD: quantum dots, MTPP:metalloporphyrin. 
+h 4MPBE: 4-mercaptophenylboronic acid pinacol ester. 
+i MCNPs: Monolayer-capped metallic nanoparticles. 
+j Zn-Bp-MOFs: Zn-based metal organic frameworks with pyridine. 
+k CMOS: complementary metal oxide semiconductor. 
+l SiNW: Silicon nanowire. 
+Fig. 1. Schematic Illustration of the Nanoprobe for Detection of Intercellular 
+Ki-67 mRNA and uPA[42]. 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+10
+fluorescence recovery and kinetic profile were observed and the 
+nanoprobe could respond rapidly to the DNA targets in 10 min and uPA 
+targets in 30 min (Fig. 2). The feasibility of the nanoprobe to detect Ki- 
+67 mRNA and uPA in vivo was evaluated with the fluorescent imaging of 
+the xenograft mouse models injected with the nanoprobe after the mice 
+were treated with curcumin and tamoxifen and the results demonstrated 
+that the nanoprobe was a convenient and reliable way to screen anti­
+tumor drugs. 
+Squaraine dyes are a class of organic dyes showing intense fluores­
+cence, typically in the red and NIR region. Squaraines typically include 
+two electron donors and an electron-accepting squaric acid in a 
+donor−acceptor−donor (D −A −D) structure. Defan Yao et al.[43] used 
+a molecular engineering strategy to develop squaraine dyes with NIR-II 
+emission. The squaraine dye SQ1 can be encapsulated as SQ1 nanoprobe 
+through facile nanoprecipitation and targeting peptide decoration, 
+which shows NIR-II/PA bimodal imaging capabilities and favorable 
+photothermal effects. NIR-II imaging in mice showed that the SQ1 
+nanoprobe was suitable for tumor-targeting and imaging angiography. 
+Furthermore, in both PA imaging and PTT of solid tumors, the SQ1 
+nanoprobe achieved excellent photothermal conversion under NIR 
+irradiation. 
+Due to the intrinsic advantages in both photothermal therapy and 
+NIR-II/PA bimodal imaging, the SQ1 nanoprobe possesses good appli­
+cation potential in the theranostics of breast cancer and lung metastasis 
+(Fig. 2). 
+Nuno Ferreira et al.[44] introduced a label-free nanosensor for the 
+early detection of breast cancer. In this study, nata de coco was used to 
+produce bacterial nanocellulose (BC) membrane, and then silver nano­
+particles were in-situ-synthesized into BC as Surface-enhanced Raman 
+spectroscopy (SERS) substrates. To examine the synthesized composites 
+as SERS substrates, R6G was used as a test molecule. Rhodamine 6G 
+(R6G) concentrations as low as 10−11 M were detected using enhance­
+ment factors of 104 to 10.5 Exosome samples from breast cancer cell 
+cultures MDA-MB-231 and MCF-10A (nontumorigenic breast epithe­
+lium) were evaluated on the synthetic substrates, and the resulting 
+Raman spectra were subjected to statistical principal component anal­
+ysis (PCA). A low-cost, green, label-free diagnosis method with prom­
+ising applicability in the clinical diagnosis of breast cancer was 
+developed by combining PCA with Raman intravariability and inter­
+variability in exosomal samples. Using real-time in situ imaging of MMP- 
+2 and uPA, Renhui et al. [45] constructed a fluorescent nanoprobe using 
+a gold‑selenium (Au–Se) bond to assess the invasive potential of breast 
+cancer cells. 
+They functionalized Au NPs with two different selenol-modified 
+short peptide chains via Au–Se bond formation. The other end of the 
+peptide chains was labeled with rhodamine B (RhB) and fluorescein 
+isothiocyanate (FITC), respectively. In the bound state, the two dyes 
+were quenched by Au NPs. In the presence of uPA and MMP-2, the 
+peptide chain labeled with RhB and the peptide chain labeled with FITC 
+could be specifically cleaved by uPA and MMP-2, respectively, trig­
+gering fluorescence recovery. Compared with the Au–S nanoprobe, the 
+Au–Se nanoprobe possessed better resistance to glutathione (GSH) 
+interference, making the imaging results more reliable. 
+Ping Zhou et al.[46] developed a two-color nanoprobe based on Au 
+NPs to screen the influence of different nutrient and oxygen conditions 
+on the invasion and migration of breast cancer cells by detecting the 
+changes in MMP-2 and RAB-22a mRNA levels in living cells. This probe 
+included Au NPs and two molecular beacons (MBs) labeled with two 
+different dye molecules. To detect RAB-22a mRNA and MMP-2 mRNA, 
+DNA1, and DNA2 were labeled with Alexa Fluor 488 (MB-RAB-22a) and 
+Cy5 (MB-MMP-2), respectively. MCF-7 and MDA-MB-231 cells (human 
+breast cancer cell lines) were incubated with different concentrations of 
+oxygen and nutrients, and then fluorescence imaging assays were used 
+to evaluate invasion and migration. 
+Leila Eskandari et al.[47] prepared DNA-functionalized AuNPs as the 
+target-specific probes, for detecting RNA of activated leukocyte cell 
+adhesion molecule (ALCAM) gene which is a detectable biomarker in the 
+tumor of patients with breast cancer. Their result showed the detection 
+of different concentraions of ALCAM target by the nanoprobes and the 
+LOD of the method corresponded to 300 fmol/mL of synthetic ALCAM 
+target which proves the method had a high sensitivity. Mohammad 
+Keshtkar et al.[48] designed a nanoprobe with conjugation of AS1411 
+aptamer on the surface of Fe3O4@Au nanoparticles using the gold–sulfur 
+chemistry for specific targeting of mouse mammary carcinoma (4 T1). 
+Thiazolyl tetrazolium (MTT) assay of 4 T1 and HFFF-PI6 cells was used 
+to assess in vitro cytotoxicity of the nanoprobe. For 4 T1 cells, at a 
+concentration of 60 μg/mL, the nanoprobe had cytotoxicity effects, at 
+concentrations from 10 to 45 μg/mL, cell toxicity was low or moderate. 
+MTT results for HFFF-PI6 cells showed that up to 60 μg/mL, the 
+nanoprobe had no cytotoxicity effects. 
+The cluster determinant 44 (CD44) antigen is a cell-surface glyco­
+protein involved in cell-cell interactions, cell adhesion, and migration. 
+In humans, CD44, which is a receptor for hyaluronic acid and can also 
+interact with other ligands, such as matrix metalloproteinases (MMPs), 
+collagens, and osteopontin, is encoded by the CD44 gene in 
+Chromosome. 
+Variations in CD44 are reported as cell surface markers for some 
+breast and prostate cancer stem cells. In breast cancer research CD44+/ 
+CD24- expression is commonly used as a marker for breast cancer stem 
+cells (CSCs) and is used to sort breast cancer cells into a population 
+Fig. 2. Nanofunctionalization and molecular engineering of squaraine dye SQ1 for NIR-II/PA bimodal imaging and photothermal ablation of metastatic breast 
+cancer[43]. 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+11
+enriched in cells with stem-like characteristics15 and has been seen as 
+an indicator of increased survival time in epithelial ovarian cancer pa­
+tients. In women with endometriosis, Endometrial cells show greater 
+expression of splice variants of CD44 and enhanced adhesion to peri­
+toneal cells. 
+Eunjung Kim et al.[49] used hyaluronic acid (HA)-based nano­
+containers containing miR-34a beacons (bHNCs) to design a smart 
+nanoprobe, which is used for the intracellular recognition of miR-34a 
+levels in metastatic breast cancer (Fig. 3). These nanocontainers 
+include 1) binding to CD44receptors, 2) internalization into an endo­
+some, 3) disassembling under pH reduction, leading to the destabiliza­
+tion of endosome membranes, and 4) finally displacement of miR-34a 
+beacons from the nanocontainer permitting them to transport into the 
+cytoplasm and bind intracellular miR-34a. Specifically, HA as a non­
+immunogenic, nontoxic, and biodegradable biopolymer with a wide 
+range of molecular weight (103 ~ 107 Da) has a high affinity for the cell 
+surface adhesion molecule CD44. Since CD44 molecule is highly avail­
+able in tumor cells with metastatic phenotype but hardly is seen in 
+healthy tissue, is used as the determinant of progression to the meta­
+static breast cancer. 
+Table 2 also provides a summary of nanosensor applications in the 
+early diagnosis of breast cancer. 
+In breast cancer, electrochemical methods can detect specific bio­
+markers in blood or tissue samples, aiding in early diagnosis and 
+monitoring of treatment response. Fluorescence techniques enable tar­
+geted imaging of breast cancer cells or tumor markers, assisting in 
+precise localization and characterization. Image-based methods assist in 
+analyzing mammograms and other breast images to detect tumors, 
+assess their size, location, and guide treatment planning. 
+2.3. Colorectal cancer 
+Colorectal cancer (CRC), also known as colon cancer, bowel cancer, 
+or rectal cancer, is the development of cancer from the colon or rectum. 
+2.3.1. The biomarkers and detection targets for Colorectal cancer 
+In the case of colorectal cancer, several biomarkers and detection 
+targets have been identified. Here are some commonly studied bio­
+markers and detection targets for colorectal cancer:  
+1. Carcinoembryonic antigen (CEA): CEA is a glycoprotein that is often 
+elevated in patients with colorectal cancer. It can be measured in the 
+blood and is used as a tumor marker to monitor disease progression 
+and response to treatment.  
+2. Fecal occult blood test (FOBT): This is a non-invasive screening test 
+that detects the presence of hidden blood in the stool, which may be 
+an indication of colorectal cancer or other gastrointestinal disorders. 
+FOBT can be used as an initial screening tool, but it is not specific to 
+colorectal cancer. 
+3. DNA-based tests: Various DNA-based tests can be used to detect ge­
+netic alterations associated with colorectal cancer. These include:  
+a. Microsatellite instability (MSI): MSI is a condition characterized 
+by the presence of alterations in the length of microsatellite DNA 
+sequences. It occurs in a subset of colorectal cancers and can be 
+detected using PCR-based tests.  
+b. DNA methylation markers: DNA methylation is an epigenetic 
+modification that can be altered in colorectal cancer. Specific 
+DNA methylation markers, such as the methylated form of the 
+SEPT9 gene, can be detected in the blood or stool samples and 
+used as a screening tool.  
+4. Immunohistochemistry (IHC): IHC involves the use of antibodies to 
+detect specific proteins in tissue samples. In colorectal cancer, IHC 
+can be used to assess the expression of proteins such as MLH1, MSH2, 
+MSH6, and PMS2, which are associated with Lynch syndrome, a 
+hereditary form of colorectal cancer.  
+5. Circulating tumor DNA (ctDNA): ctDNA refers to small fragments of 
+DNA released into the bloodstream by cancer cells. Detection and 
+analysis of ctDNA can provide information about the genetic alter­
+ations present in the tumor and can be used for monitoring disease 
+progression and treatment response. 
+Fig. 3. Schematic illustration of miR-34a beacon delivery system for targeted intracellular recognition of miR-34a based on HA-coated nanocontainers that 
+encapsulate the miR-34a beacons (bHNCs)[49]. 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+12
+Table 2 
+Applications of nanosensors in the early detection of breast cancer.  
+No. 
+Biomarker/Target 
+Nanomaterials/Methods 
+Sensitivity/LODa 
+Specificity 
+Reference 
+1 
+HER2b 
+SPRc using signal enhancement with AuNPsd 
+180 pg mL−1 
+NDe 
+Unai Eletxigerra 
+et al.[50] 
+2 
+HER2 
+SPIO-3-5MFf:  
+For HER2 imaging, multifunctional 
+superparamagnetic nanoparticles modified with 
+fluorescein-5-maleimide-labeled DARPin G3 (SPIO- 
+G3-5MF) were produced. Ankyrin repeat protein 
+(DARPin) G3 was constructed as a binding protein 
+with picomolar affinity for HER2. 
+ND 
+ND 
+Dong-Li Li et al. 
+[51] 
+3 
+EpCAM6 
+GQDsg and MoS2 nanosheets:  
+A “turn-on” fluorescence biosensor based on GQDs and 
+MoS2 nanosheets 
+450 pM 
+Good 
+Jingyu Shi et al. 
+[52] 
+4 
+HER2 
+WS2 NW/TMh:  
+The tungsten sulphide nanowire array on Ti mesh 
+(WS2 NW/TM) was used to create the biosensor. 
+0.36 ng/mL 
+1 ng/mL 
+Xiaoxi Guo et al. 
+[53] 
+5 
+MicroRNA159c 
+Ti3C2:CdS nanocomposite:  
+The fluorine-doped tin oxide (FTO) electrode’s surface 
+was first covered with Ti3C2:CdS nanocomposite. The 
+SH-miRNA were attached to the electrode surface via 
+the S–Cd bond after the chitosan was removed. 
+33 fmol.L-l 
+Good 
+Shen-Ting Liu et al. 
+[54] 
+6 
+HER2 
+AgNCsi:  
+DNA2 containing G-rich sequences and the HER2- 
+binding aptamer (HApt) served as templates for 
+AgNCs. 
+0.0904 fM 
+High 
+Manman Zhang 
+et al.[55] 
+7 
+HER2 
+MnCuInS/ZnS QDsj-loaded BSA fluorescence nano- 
+probe:  
+Near-infrared (NIR) emission from a MnCuInS/ZnS 
+QDs-encapsulated BSA nano-probe coupled to the 
+HER2 antibody. 
+ND 
+Good 
+Tianxiang Wei 
+et al.[56] 
+8 
+BRCA1 Gene 
+DNA-mediated Au −
+Au dimer based SPC-ECLk:  
+Au–Au dimer-based SPC-ECL sensor with DNA- 
+mediated surface plasmon coupling. 
+0.83 fM 
+Good 
+Qian Zhang et al. 
+[57] 
+9 
+HER2 
+DNA Ab/AuNPs:  
+Immobilizing polycytosine DNA sequence (dC20) for 
+electrochemical current generation and anti-HER2 
+antibodies using AuNPs as a supporting matrix. 
+0.5 pg mL−1 
+High 
+Xiaoqing Li et al. 
+[58] 
+10 
+MicroRNA-155 
+H1 and H2 linked to AuNPs:  
+The two hairpin DNA strands, H1 and H2, and PEG 
+were joined to the surface of AuNPs to create the 
+photoacoustic nanoprobes (Au-H1/PEG and Au-H2/ 
+PEG). 
+0.25 nM 
+Superior 
+Wenhua Cao et al. 
+[59] 
+11 
+MicroRNA-21  
+MUC1 
+ECL sensor using H1 and H2 incubated on the TiO2@Pt 
+MicroRNA-21: 0.1 fM   
+MUC1: 2.4 fg⋅mL−1 
+Remarkable 
+Yamin Nie et al. 
+[60] 
+12  
+CD44  
+MNFsl modified with AgNPs:  
+MNFs were made by self-assembling peptide probes 
+that attracted AgNPs to produce electrochemical 
+signals and offered a significant number of reaction 
+sites to enhance signals.  
+6 cells/mL  
+High  
+Yingying Tang al. 
+[61] 
+13 
+MDA-MB-231 and MCF-7 
+SERSm nanoprobes using AuNFsn modified with silica 
+and PEGo:  
+Gold nanoflowers (AuNFs), which acted as the Raman 
+signal enhancer, were coated with three bioorthogonal 
+Raman reporters having alkyne, azide, or nitrile 
+groups. 
+Down to fM concentrations 
+High 
+Jing Wang et al. 
+[62] 
+14 
+H2O2 in BT20 and 4 T1 
+PB/ZnO/COOH-MWNTp composite:  
+To improve the signal, PB was electrostatically linked 
+with an electrocatalyst composite made of refluxed 
+zinc oxide nanoparticles coupled to carboxylic acid- 
+1–21 μM 
+High 
+Raja Ram Pandey 
+et al.[63] 
+(continued on next page) 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+13
+Table 2 (continued) 
+No. 
+Biomarker/Target 
+Nanomaterials/Methods 
+Sensitivity/LODa 
+Specificity 
+Reference 
+functionalized multiwalled carbon nanotubes (ZnO/ 
+COOH-MWNTs). 
+15 
+4 T1 cells 
+A-ZGCNq NPs:  
+The NIRPL imaging is based on Cr3+/Nd3+ codoped A- 
+ZGCN nanoparticles 
+High 
+ND 
+Hanghang Liu et al. 
+[64] 
+16 
+MicroRNA-21 
+cDNAr@ PDDAs@PAAt@UCNPsu:  
+A dual dye acceptor-based LRET-based upconversion 
+luminescence (UCL) nanosensor. 
+11.2 pM 
+Excellent 
+Lin Yang et al.[65] 
+17 
+CA15–3 
+GOv-PEIw-CQDsx-AuNPs nanocomposite:  
+Ag + and dopamine were subjected to a redox reaction 
+to form the AgNPs-PDA nanocomposite. CQDs were 
+adhered to graphene oxide using polyethylenimine 
+functionalization (PEI-GO) using amide bonds. Au 
+nanoparticles were modified on CQDs-decorated PEI- 
+GO substrates. 
+0.0017 U/mL 
+Outstanding 
+Dongmiao Qin 
+et al.[66] 
+18 
+Estrogen receptor alpha (ERα) 
+AuNPs-based colorimetric aptasensor:  
+Using the aptamer-functionalized aunps’ color 
+transition property 
+to detect and measure ER. 
+0.64 ng/mL 
+ND 
+Rajesh Ahirwar and 
+Pradip Nahar[67] 
+19 
+BRCA1 
+Bi2Se3-AuNPs biosensor:  
+Bi2Se3-AuNPs and GO-AuNPs nanocomposites were 
+synthesized by in situ reduction of HAuCl4 on the 
+surface of 2D nanomaterials. 
+10−18 M 
+High 
+Yunfei Bai et al. 
+[68] 
+20 
+HER2 
+MSN–AuNCy:  
+Gold nanoclusters confined in mesoporous silica 
+nanoparticles (MSNs) offer an amplified signal system. 
+Down to 10 cells 
+Excellent 
+Mingqiang Li et al. 
+[69] 
+21 
+Protein C receptor (PROCR) 
+TAMRAz-AN33/MoS2  
+TAMRA-AN33/GO:  
+A 2D fluorogenic material made of a synthetic peptide 
+ligand and self-assembling. 
+0.76 nM   
+1.26 nM 
+Good 
+Wei-Tao Dou et al. 
+[70] 
+22 
+MicroRNA 
+QDs–AuNP:  
+A biosensor built on the strand-displacement 
+characteristic of polymerase-assisted cycles and 
+functionalization of a quantum dot and Au 
+nanoparticle combination. 
+33 aM 
+High 
+Dongli Chen et al. 
+[71] 
+23 
+MicroRNA-21 
+DNA- AuNPs nanocomposites:  
+A biosensor based on the isothermal strand- 
+displacement polymerase reaction (ISDPR) and DNA- 
+AuNPs nanocomposites bridge. 
+3.2 aM 
+Good 
+Aiping Cui et al. 
+[72] 
+24 
+MicroRNA-21 
+Graphene, polypyrrole, and AuNPs, modified onto a 
+SPCEaa:  
+An electrochemical sensor was created by modifying a 
+graphene, polypyrrole, and AuNPs nanocomposite 
+onto an SPCE. 
+0.020 fM 
+High 
+Chammari 
+Pothipor et al.[73] 
+25 
+MUC1 
+Zn-Bp-MOFsab:  
+To improve the ECL responses of zinc meso-tetra(4- 
+sulfonatophenyl) porphine (Zn-TP), Zn-Bp-MOFs were 
+synthesized through coordination. 
+0.23 pg mL−1 
+Good 
+Li-Yan Huang et al. 
+[37] 
+26 
+Megestrol acetate (MGA) 
+FAB-CeO2NPs/GCMPEac:  
+A functionalized acetylene black-CeO2NPs 
+nanohybrids modified glassy carbon microspheres 
+paste electrode (FAB-CeO2NPs/GCMPE) was used to 
+create an electrochemical sensor. 
+1.30 nM 
+Good 
+Hossieny Ibrahim 
+et al.[74] 
+27 
+Vascular endothelial growth factor 
+(VEGF) 
+AP-UCNPsad:  
+Thermal breakdown of the corresponding rare-earth 
+stearate produced UCNPs of the Type α-NaYF4:Yb3+, 
+Er3+ with a typical diameter of 6–7 nm. The oleic acid 
+on the UCNPs’ surfaces was then replaced with 
+aptamer DNA. 
+6 pM 
+95.1% 
+Jianming Lan et al. 
+[75] 
+28 
+MicroRNA 
+CNPsae:  
+The coupling use of of CNPs resulted in the 
+3.2 pM 
+Good 
+Hongfeng Li et al. 
+[76] 
+(continued on next page) 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+14
+Table 2 (continued) 
+No. 
+Biomarker/Target 
+Nanomaterials/Methods 
+Sensitivity/LODa 
+Specificity 
+Reference 
+development of a fluorescence amplified sensing 
+technique for miRNA analysis. 
+29 
+microRNA-21 
+Cu NCs as luminophore and TiO2 as coreaction 
+accelerator:  
+An ECL biosensor based on in-situ generation of Cu 
+NCs as luminophore and TiO2 as coreaction 
+accelerator. 
+19.05 aM 
+Excellent 
+Hongxia Liao et al. 
+[77] 
+30 
+MUC1 
+Colorimetric aptasensor based on trivalent peroxidase- 
+mimic DNAzyme and magnetic NPs. 
+5.08 nM in buffer and 5.60 nM in 
+10% serum system 
+High 
+Shuwen Liu et al. 
+[78] 
+31 
+MDA-MB-231 
+Photoelectrochemical antifouling immunosensor 
+using BiOBr/FeTPPCl/BiOI as matrix and PAA/ PEG as 
+hybrid antifouling interface. 
+30 cells⋅mL−1 
+Good 
+Xin Liu et al.[79] 
+32 
+HER2 
+MnO2 Nanosheets/Au NPs:  
+The dual-mode electrochemical immunosensor was 
+created to use Au@Ag NRs as double signal labels and 
+MnO2 NSs/Au NPs as substrate materials. 
+16.7 and 33.3 fg/ml through 
+differential pulse voltammetry 
+(DPV) and chronoamperometry 
+(CA) 
+High 
+Qing Ma[80] 
+33 
+MicroRNA-21 
+CDs-CHaf
+:  
+Carbon dots-chitosan nanocomposite hydrogels were 
+created by combining carbon dots synthesized from 
+different aldehyde precursors with chitosan and then 
+functionalizing them with a ssDNA probe. 
+0.03 fM 
+Good 
+Susan Mohammadi 
+et al.[81] 
+34 
+MCF-7 
+Bipolar electrode modified with AS1411 aptamer and 
+AuNPs 
+About 10 cells 
+High 
+Hasan Motaghi 
+et al.[82] 
+35 
+SKBR-3 cells 
+silica-based mesoporous material-modified electrode:  
+In situ electrosyntheses of mesoporous silica were used 
+to create a silica-based electrode. 
+20 cells/mL 
+Good 
+Hassan 
+Nasrollahpour 
+et al.[83] 
+36 
+MicroRNAs (miRNA-133a, miRNA- 
+10b, let-7b, miRNA-143, miRNA- 
+126, miRNA-1, miRNA-21, miRNA- 
+155, and miRNA-125b)   
+Silicon SERS chip:  
+AgNPs in situ grown on silicon 
+wafer (AgNPs@Si) 
+~1 aM 
+>85% 
+Sifan Meng et al. 
+[84] 
+37 
+MicroRNA-21 
+Electrochemical nano-genosensor based on 
+sandwiched AgNPs in PANIag and N-doped graphene 
+2.5 μA.cm−2/ 0.2 fM 
+High 
+Razieh Salahandish 
+et al.[85] 
+38 
+HER2 
+AntiHER2-Fe3O4 NPs laid on GCE as platform and 
+antiHER2/Hyd@AuNPs- 
+Fe3O4 NPs as label 
+2.0 × 10−5 ng/mL 
+ND 
+Mojtaba Shamsipur 
+et al.[86] 
+39 
+E-cadherin (sE-cadherin) and 
+soluble N-cadherin (sN-cadherin)  
+SERS Nanotags using AuNPs 
+sE-cadherin: 8 cells mL−1  
+sN-cadherin: 4 cells mL−1 
+Good 
+Zhen Zhang et al. 
+[87] 
+40 
+HER2 
+BSA-AuNCs-LPs-anti-HER2:  
+The extrusion process was used for producing AuNCs- 
+LPs. 
+5 cells 
+Excellent 
+Yu Tao et al.[88] 
+41 
+poly(ADP-ribose) polymerase-1 
+(PARP-1) in human breast cancer 
+cells of SK-BR-7  
+CTAB coated AuNRs:  
+An enzyme-free colorimetric technique based on 
+counterion-mediated AuNR aggregation. 
+0.006 U (0.261 ng) 
+Good 
+Shuangshuang Wu 
+et al.[89] 
+42 
+CEA 
+SPR using a Ti3C2-MXene-based sensing platform and 
+MWCNTs-PDA-AgNPs signal enhancer. 
+0.07 fM 
+Good 
+Qiong Wu et al. 
+[90] 
+43 
+BRCA1 
+CuS/Euah:  
+PEG-NH2 was coated on the Ni foam/Eu: Co3O4/CuS 
+electrode to provide an antifouling interface for high- 
+sensitivity BRCA1 detection. 
+0.38 fM 
+Great 
+Rui Xu et al.[91] 
+44 
+MCF-7 
+CNSs/P0-FAMai nanocomplex:  
+Fabrication of a fluorescence “turn off/on” aptasensor 
+for the selective detection of MCF-7 breast cancer cells 
+using carbonised glucose CNSs. 
+25 nM 
+High 
+Dandan Yang et al. 
+[92] 
+45 
+MUC1 
+Cy5-tagged S2.2-functionalized silicon nanodot 
+(SiND-S2.2-Cy5) aptasensor:  
+The aptasensor was built by covalently attaching 
+cyanine (Cy5)-tagged aptamer S2.2 to fluorescent 
+silicon nanodot (SiND). 
+1.52 nM 
+Remarkable 
+Yanan Zhang et al. 
+[93] 
+46 
+MicroRNA-21 
+L-Au NPs@ZnO luminol-functionalized Au NPs:  
+An ultrasensitive ECL biosensor was developed for the 
+detection of miRNA-21 using L-Au NPs@ZnO 
+18.6 aM 
+Superior 
+Xiaoli Zhang et al. 
+[94] 
+(continued on next page) 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+15
+Table 2 (continued) 
+No. 
+Biomarker/Target 
+Nanomaterials/Methods 
+Sensitivity/LODa 
+Specificity 
+Reference 
+nanoparticles as an ECL probe and dissolved O2 as an 
+endogenous coreactant. 
+47 
+MUC1 
+AuNPs@Cu7S4@Cu/Mn-AzoPPOP-HP2:  
+An inorganic-organic polymer hybrid mimic 
+peroxidase (AuNPs@Cu7S4@Cu/Mn-AzoPPOP) and 
+catalytic hairpin assembly (CHA) were used to provide 
+a label-free and dual-amplified electrochemical 
+bioanalysis for ultrasensitive detection of mucin 1 
+(MUC1). 
+0.72 fg/mL (DPV) and 0.82 fg/mL 
+(CA) 
+High 
+Huijuan Zhao et al. 
+[95] 
+48 
+CA15–3, CA125 and CEA 
+Ag NPs immobilized onto the microfluidic channels:  
+A microfluidic biosensor using immobilized Ag NPs on 
+the microfluidic channels to generate a SERS-active 
+substrate. 
+0.0001 U/mL 
+Excellent 
+Zhihua Zheng et al. 
+[96] 
+49 
+CA15–3 
+Enzyme-mimetic AuNCsaj:  
+AuNCs were attached on the outer layer antibody to 
+catalyse the decomposition of hydrogen peroxide used 
+to convert HAuCl4 into AuNPs. 
+7.52 × 10−14 U/mL 
+ND 
+Qian Zhao et al. 
+[97] 
+50 
+microRNA-21 and microRNA-34a 
+AuNS@Agak:  
+The “OFF-to-ON” SERS inverse Molecular Sentinel 
+(iMS) nanoprobe is being used as a homogenous assay 
+for multiplexed detection of miRNAs in a single 
+sensing platform. 
+ND 
+ND 
+Hsin-Neng Wang 
+et al.[98] 
+51 
+EpCAM 
+AgNPs-PVAal:  
+Silver nanoparticles coated with polyvinyl alcohol 
+(AgNPs-PVA) were created and employed as a 
+trapping agent in a microfluidic immunosensor based 
+on anti-EpCAM recombinant antibodies. The 
+concentration of captured EpCAM is then 
+electrochemically measured using an anti-EpCAM 
+antibody coupled with HRP. 
+0.8 pg/ml 
+High 
+Karina Bravo et al. 
+[99] 
+52 
+Let-7a and miRNA-21 
+Nucleic acid-functionalized MOF-based homogeneous 
+electrochemical 
+Let-7a: 3.6 fM  
+miRNA-21: 8.2 fM 
+High 
+Jiafu Chang et al. 
+[100] 
+53 
+mRNAsam 
+A four-color nanoprobe based on AuNPs and 
+molecular beacons 
+ND 
+ND 
+Wei Pan et al.[101] 
+54 
+CD24 
+CD24-PEGylated AuNPs:  
+To increase the stability of the Au NPs and to provide 
+bio modification sites for antibody immobilization, Au 
+NPs were synthesized and coated with PEG chains. 
+ND 
+ND 
+Mona Fazel- 
+Ghaziyani et al. 
+[102] 
+55 
+PSA and CA15.3 
+Label-free nanosensors:  
+In <20 min, two model cancer antigens were 
+specifically and quantitatively detected from a 10 ml 
+sample of whole blood. 
+0.9 pg/ml 
+Good 
+Eric Stern et al. 
+[103]  
+a LOD: Limit of Detection. 
+b HER2: Human Epidermal Growth Factor Receptor-2. 
+c SPR: Surface Plasmon Resonance. 
+d AuNPs: Gold Nanoparticles. 
+e ND: Not-determined. 
+f SPIO-3-5MF: Superparamagnetic nanoparticles modified with fluorescein-5-maleimide-labeled DARPin G3. 
+g EpCAM Epithelial cell adhesion molecule. 
+h WS2 NW/TM: Tungsten sulfide nanowire array on Ti mesh. 
+i NCs: Nanoclusters. 
+j QDs: Quantum dots. 
+k SPC-ECL: surface plasmon coupling electrochemiluminescence. 
+l MNFs: Multifunctional nanofibers. 
+m SERS: Surface-enhanced Raman scattering. 
+n AuNFs: gold nanoflowers. 
+o PEG: polyethylene glycol. 
+p PB/ZnO/COOH-MWNT: Refluxed ZnO NPs tethered to carboxylic acid functionalized multiwalled carbon nanotubes. 
+q A-ZGCN NPs Cr3+/Nd3+ codoped ZnGa2O4. 
+r LRET: luminescence resonance energy transfer, 18cDNA: Complementary DNA 
+s PDDA: poly(diallyldimethylammonium chloride). 
+t PAA: poly(acrylic acid). 
+u UCNPs: Upconversion nanoparticles. 
+v GQDs: Graphene Quantum Dots. 
+w PEI: Polyethylenimine. 
+x CQDs: Carbon Quantum Dots. 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+16
+6. Other biomarkers: Several other biomarkers are being investigated 
+for their potential role in colorectal cancer detection and monitoring. 
+These include microRNAs, long non-coding RNAs, and specific pro­
+teins like Guanylyl Cyclase C (GCC) and KRAS mutations. 
+The main methods for diagnosis of colon cancer are serological 
+markers, radiological techniques, endoscopy and biopsy. These strate­
+gies have several advantages but they are not able to achieve very early 
+diagnosis, which requires very sensitive and specific analytical methods. 
+Based on a covalently modified anti-human epithelial cell adhesion 
+molecule (EpCAM) antibody nanoparticle, Liang Tao et al. [104] created 
+a sensitive and specific sensor for colon cancer colo205 cells combining 
+fluorescence microscopy imaging and flow cytometer (FCM). They used 
+NaIO4 oxidation and the conventional glutaraldehyde methods for the 
+covalent immobilization of anti-EpCAM monoclonal antibodies onto 
+core-shell silica nanoparticles. To compare these two methods, they used 
+fluorescence microscopic imaging. Their result showed that the NaIO4 
+oxidation approach preserves antibody activity better than the glutar­
+aldehyde procedure. Their results also showed that the nanosensor could 
+increase the signal intensity obviously and distinguish three kinds of 
+target cells (colo205, sw480, and NCM460) well. 
+Kelly E. van Keulen et al.[105] reported that VOCs in breath could 
+potentially serve as a noninvasive diagnostic biomarker for the detection 
+of advanced CRC and adenomas. They collected five hundred and eleven 
+breath samples using an e-nose from adult colonoscopy patients, without 
+inflammatory bowel disease or (previous) malignancy. 
+Cytidine has been recognized as an early biomarker of colon cancer. 
+Yuan Xiang et al.[106] developed a highly sensitive Fe3O4/Au/Ag5 NPs- 
+based SERS method to determine cytidine in urine for screening colon 
+cancer risk in an early stage. First, they removed urea using the adopted 
+diazo chemical reaction because it would interfere Raman’s detection of 
+cytidine. According to their result, the lowest detectable concentration 
+of cytidine could reach 1 nM. 
+Payal Gulati et al.[107] fabricated a genosensor using vertically- 
+aligned multiwall carbon nanotubes (VA-MWCNTs)-based electrodes 
+for an early diagnosis of CRC by targeting a specific DNA sequence, 
+carcinoembryonic antigen-related cell adhesion molecule (CEACAM5) 
+which is a glycoprotein, a specific tumor marker for colorectal cancer. In 
+this study, chemical vapor deposition was used to synthesize VA- 
+MWCNTs and the nanotube patterns were transferred from solid Si/ 
+SiO2 substrate to flexible polyethylene terephthalate (PET) substrate by 
+hot compress method. They also optimized the probe binding conditions 
+and the electrode’s electrochemical condition to improve the efficiency 
+of the genosensor. To investigate the hybridization event on the elec­
+trode material, the cyclic voltammetry was obtained by changing the 
+concentration of the target DNA and the sensor showed a LOD of 920 nM 
+concentration of DNA. 
+Ayemeh Bagheri Hashkavayi et al.[108] developed electrochemical 
+aptasensor by fabricating an aptamer–cell–aptamer sandwich architec­
+ture on an SBA-15-3-aminopropyltriethoxysilane (SBA-15-pr-NH2) and 
+AuNPs modified graphite screen printed electrode (GSPE) surface for the 
+early diagnosis of CT26 cancer cells. In this study, SBA-15, a kind of 
+mesoporous silica was synthesized and functionalized with 3-aminopro­
+pyltriethoxysilane and AuNPs were electrochemically deposited on the 
+SBA-15-pr-NH2 modified GSPE surface. The results of cyclic voltam­
+metry and electrochemical impedance spectroscopy demonstrated that 
+the nanosensor could detect CT26 cells in the concentration ranges of 
+10–1.0 × 105 cells/ml and 1.0 × 105–6.0 × 106 cells/ml, respectively. 
+Mucin-1 (MUC1), an essential transmembrane glycoprotein, was 
+regarded as a promising biomarker for colon, breast, ovarian, and lung 
+cancers and can strongly hybridize with aptamer DNA (aptDNA) of 
+double-stranded DNA (dsDNA, generated by aptDNA and linked DNA (L- 
+DNA)) to rerelease free L-DNA. In a study by Li-Yan Huang et,[37] 
+altrimeric acid and 4,4-dipyridyl were used as the linking agent, to 
+chelate Zn2+ with trimeric acid to form Zn-based metal-organic frame­
+works with pyridine (Zn-Bp-MOFs), which were then aminated with 
+APTES and finally grafted with zinc meso-tetra(4-sulfonatophenyl) 
+porphine (Zn-TP) by sulfonamide bonds. This biosensor was used for 
+detetction of MUC1 and showed a broad dynamic linear range (1 pg 
+mL−1–10 ng/mL), the LOD down to 0.23 pg mL−1, excellent stability, 
+and selectivity, as well as great recovery in the diluted serum samples. 
+In colorectal cancer, electrochemical methods can detect specific 
+biomarkers in blood or fecal samples, aiding in early diagnosis and 
+monitoring of treatment response. Fluorescence techniques enable tar­
+geted imaging of colorectal cancer cells or tumor markers, assisting in 
+precise localization and staging. Image-based methods assist in 
+analyzing colonoscopy or imaging studies to detect tumors, assess their 
+size, location, and guide treatment planning. 
+2.4. Other cancers 
+Liver cancers are malign tumors that grow inside or on the surface of 
+the liver. Liver tumors are discovered by medical imaging (often by 
+accident) or present themselves symptomatically as abdominal pain, 
+abdominal mass, nausea, jaundice, or liver dysfunction. It is important 
+to distinguish liver cancers from liver metastases, which originate in 
+another organ of the body and migrate to the liver. Liang Tao et al.[109] 
+developed an ultrabright fluorescent mesoporous silica nanoparticle 
+(FMSN) combined with anti- CD112 monoclonal antibodies and with 
+anti-CD155 monoclonal antibodies by the NaIO4 oxidation method to 
+detect liver cancer SMMC-7721 and HHCC cells, respectively. A three- 
+step hydrolysis method was used to synthesize the FMSNs. Based on 
+fluorescence microscopy imaging, modified FMSNs were able to clearly 
+distinguish between CD112 and CD155 on the surface of liver cells. 
+Furthermore, in vivo imaging in mice was used to evaluate the perfor­
+mance of the modified FMSN and the results demonstrated that the 
+nanosensors could target tumor tissue in mice. 
+>238,000 patients are diagnosed with ovarian cancer worldwide, a 
+disease that is responsible for >151,000 deaths each year. In the United 
+States, this disease ranks top among gynecologic malignancies and is the 
+sixth most common cause of cancer-related deaths in females. These 
+terrible statistics are because the majority of cases are discovered at an 
+y MSN: Mesoporous silica. 
+z TAMRA Tetramethyl-rhodamine. 
+aa SPCE: screen-printed carbon electrode. 
+ab Zn-Bp-MOFs: Zn-based metal organic frameworks with pyridine. 
+ac FAB-CeO2NPs/GCMPE: functionalized acetylene black–CeO2NPs nanohybrids modified glassy carbon microspheres paste electrode. 
+ad AP-UCNPs: UCNPs modified with auxiliary probe. 
+ae CNPs: Carbon nanoparticles. 
+af CDs-CH: CDs-chitosan nanocomposite hydrogel. 
+ag PANI: Polyaniline. 
+ah CuS/Eu: Co3O4/Ni foam electrode. 
+ai CNSs/P0-FAM Carbon nanosphere-based fluorescence aptasensor. 
+aj AuNCs gold nanoclusters. 
+ak AuNS@Ag: silver-coated gold nanostars. 
+al PVA: polyvinyl alcohol. 
+am mRNA: Messenger RNA. 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+17
+advanced stage. >60% of diagnoses are at stage III or later which is 
+higher than any other form of cancer. The average 5-year survival rate 
+across all populations is only 46%. If the diagnosis occurs at stage I, 
+however, the 5-year survival rate is 92%. Current screening methods 
+include transvaginal ultrasonography and cancer antigen 125 [CA-125 
+or mucin 16 (MUC16)] serum testing. However, the U.S. Preventive 
+Services Task Force recommends against these methods because of poor 
+sensitivity, and high false-positive rates for detecting small lesions. 
+These methods neither reduce mortality nor change the patient 
+outcome. 
+Patients with high-grade serous ovarian carcinoma (HGSC) exhibit 
+poor 5-year survival rates, which may be remarkably improved by early- 
+stage diagnosis. The U.S. Food and Drug Administration–approved 
+biomarkers for HGSC, HE4 (human epididymis protein 4) and CA-125 
+(cancer antigen 125) do not generally appear at detectable levels in 
+the serum until the advanced stages of the disease. Consequently, new 
+methods are needed for early-stage detection to reduce the burden of 
+ovarian cancer. In the research of Ryan M. Williams et al.[110], a carbon 
+nanotube-based sensor to noninvasively detect the ovarian cancer 
+biomarker HE4 in vivo was prepared (Fig. 4). SWCNTs was used to 
+transduce the binding of HE4 to an immobilized antibody via modula­
+tion of the intrinsic NIR emission of the nanotubes. The nanotube- 
+antibody complexes could detect HE4 in ascites and serum from pa­
+tients with ovarian cancer. 
+Sibel Büyüktiryaki et al.[111] applied an imprinting method for the 
+detection of CA 125. Methacryloyl antipyrine terbium (III) [(MAAP)2-Tb 
+(III)] and methacryloyl antipyrine europium (III) [(MAAP)2-Eu(III)] 
+were used as new metal-chelating monomers by metal coordination. To 
+find CA 125, phosphoserine (PS) was used as a template. PS imprinted 
+CNT and Fe2O3 nanoparticles (SPN) have cavities that are selective for 
+CA 125. LOD of PS imprinted CNT nanosensor for PS and CA 125 were 
+1.77 10−10 M and 0.49 UmL−1, respectively. The feasibility of the 
+nanosensors for clinical applications has been investigated by spiked 
+human serum samples with different concentrations of CA 125 (in pH 
+7.4 PBS). 
+Prostate cancer (CaP) is the third most common type of cancer in 
+men with the age over 50 years and one of the major health concerns in 
+the world. Screening and early diagnosis methods such as prostate- 
+specific antigen (PSA) are one of the common methods to reduce the 
+mortality rate of prostate cancer, but there is a need for improved bio­
+markers that can identify aggressive disease. Zahra Akbari jonous et al. 
+[112] designed an electrochemical biosensor for the detection of PSA 
+using a sandwich-type electrode composed of anti-total PSA monoclonal 
+antibody, reduced graphene oxide/ gold nanoparticles (RGO/AuNPs), 
+and anti-free PSA antibody. The nanosensor showed excellent selectivity 
+for PSA in comparison to the other tumor markers such as CEA, BHCG, 
+CA125, Alb, and CA19–9. The LOD was 0.2 and 0.07 ng/mL for total and 
+free PSA antigen, respectively. 
+The work presented by Lingyun Xu et al.[113] developed a magneto- 
+nanosensor (MNS) based multiplex assay to measure protein and auto­
+antibody biomarkers from human serum for CaP diagnosis. They 
+selected 4 candidate autoantibodies against 4 proteins (PARK7, 
+TARDBP, TLN1, Talin 1, and CALD1) that were shown to be associated 
+with CaP and paired them with total PSA (includes both complexed and 
+uncomplexed forms) and free- PSA (uncomplexed to chaperone pro­
+teins) to develop a panel for the detection of CaP. As a class of enzymes, 
+proteases play a key role in every hallmark of cancer; their activity 
+might be used as a biomarker. Jaideep S. Dudani et al.[114] designed an 
+injectable activity-based nanosensors (ABNs) to measure protease ac­
+tivity in vitro using in vivo urinary readouts and fluorescence. They 
+applied this nanosesnor array in xenograft mouse models to classify 
+aggressive CaP. 
+Thyroid cancer incidence rates have increased rapidly worldwide in 
+the past few decades in comparison with other types of cancers. The 
+most common type of thyroid cancer is papillary thyroid carcinoma 
+(PTC) followed by follicular thyroid carcinoma (FTC). While FTC ac­
+counts for just 10%–15% of thyroid cancer cases, it is a more aggressive 
+disease than PTC and is associated with poorer long-term patient sur­
+vival, necessitating timely diagnosis and treatment. Epidermal growth 
+factor receptor (EGFR) is a cell surface tyrosine kinase receptor that is 
+responsive to extracellular growth factors, regulating key oncogenic 
+processes including survival, proliferation, migration, and metabolic 
+activity. EGFR dysregulation is a hallmark of many cancer types 
+including head, breast, neck, lung, and pancreatic cancer, and it is thus a 
+valuable biomarker that can help discriminate between malignant and 
+benign lesions. Importantly, FTC nodules exhibit increase EGFR 
+expression relative to follicular thyroid adenoma (FTA) nodules. Yang 
+Gui et al.[115] prepared a targeted affibody-Au-Tripod nanoprobe to 
+facilitate the targeted photoacoustic imaging (PAI) of epidermal EGFR- 
+positive cells and tumors in vivo in mice and yielded strong PA signals. 
+Pancreatic cancer begins in the tissues of the pancreas, an organ in 
+your abdomen behind the lower part of the stomach. In addition to 
+assisting digestion, the pancreas releases hormones that regulate blood 
+sugar level. Mingmin Wu et al.[116] designed a nanosensor for the 
+detection of trypsin as a biomarker of pancreatic diseases or pancreatic 
+cancer based on the fluorescence resonance energy transfer (FRET) be­
+tween UCNP and AuNP. A trypsin-sensitive peptide DDDDARC was used 
+to link UCNP and AuNP and form the non-fluorescent UCNP-peptide- 
+AuNP nanosensor. The nanosensor showed great selectivity and sensi­
+tivity for trypsin and its inhibitors with a LOD of 4.15 ng/mL for trypsin. 
+Other applications of nanosensors in the detection of cancer bio­
+markers are also summarized in Table 3. 
+Fig. 4. Design and in vitro characterization of optical nanosensor for HE4.[110].  
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+18
+Table 3 
+Other applications of nanosensors in the detection of cancer biomarkers.  
+No. 
+Biomarker/Target 
+Nanomaterials/Methods 
+Sensitivity/LODa 
+Specificity 
+Reference 
+1 
+MT1-MMP activityb 
+AuNRsc-ActFPd  
+The coupling of fluorescent proteolytic enzyme-specific cleavable peptides with 
+gold nanorods results in an NIR fluorogenic nanosensor based on the 
+nanoparticle surface energy transfer effect. 
+Good 
+NAe 
+Minhee Ku et al.[117] 
+2 
+Sialoglycan 
+MPBAe decorated AgNPs  
+Based on chemical recognition between phenylboronic acid and sialoglycans at 
+physiological conditions, an MPBA-based SERS nanosensor was developed to 
+analyze sialoglycan levels and dynamic expression processes of distinct cell 
+types in situ. The MPBA adorned AgNPs were used to create this nanosensor. 
+8.9 μg/mL 
+NA 
+Lijia Liang et al.[118] 
+3 
+Cancer exosomes 
+ASPf  
+A luminescent nanosensor made up of a quenchertagged aptamer 
+electrostatically complexed with an NIR ASPN. 
+0.24 μg/mL 
+NA 
+Yan Lyu et al.[119] 
+4  
+HE4, CA-125, and 
+YKL-40 
+DNA-SWCNT-based photoluminescent  
+A DNA-SWCNT-based photoluminescent sensor array was utilised to train 
+machine learning models to identify gynecologic cancer biomarkers HE4, CA- 
+125, and YKL-40 in laboratory-generated samples and patient fluids. 
+100% for HE4 and 
+CA-125  
+91% for YKL-40 
+Moderate 
+Zvi Yaari et al.[120] 
+5 
+Single-Nucleotide 
+Polymorphism 
+QD-mediated FRET  
+A QD-mediated FRET nanosensor with multipleprimer generation rolling circle 
+amplification (MPG-RCA) for sensitive SNP detection in cancer cells. 
+5.41 × 10−20 M 
+Good 
+Chen-chen Li et al.[121] 
+6 
+HepG2-MVsg 
+AAP-GFETh  
+A dual-aptamer modified RGO field-effect transistor (AAP-GFET) nanosensor 
+coated with AuNP for the label-free, selective, and sensitive quantification of 
+HepG2-MVs (HepG2-MVs). 
+84 particles/μL 
+High 
+Ding Wu et al.[122] 
+7 
+MT1-MMP Activity 
+QD-FRETi  
+A QD-FRET nanosensor for observing MT1-MMP activity at the cell membrane. 
+A bended peptide with several motifs was created to place the FRET pair near 
+enough together to facilitate energy transfer, which can then be cleaved by 
+active MT1-MMP, resulting in FRET alterations and the exposure of cell 
+penetrating sequence. 
+High 
+High 
+Eddie Y. Chung et al. 
+[123] 
+8 
+Fe3+
+RBD-GQDsj  
+A turn-on orange-red fluorescent nanosensor based on RBD-GQDs 
+functionalized with rhodamine B derivatives 
+0.02 μM 
+High 
+Ruihua Guo et al.[124] 
+9 
+GSHk 
+ACD-AuNPsl  
+Nanohybrid made of ACD-protected AuNPs. ACD directly capped AuNP by 
+anionic surface functionalization, resulting in stable aqueous AuNP dispersion. 
+6 nM 
+Very High 
+Krishnendu Das et al. 
+[125] 
+10 
+Thioredoxin 
+Reductase 
+Naphthalimide Coupled FRET  
+To monitor the activity of thioredoxin reductase, the FRET mechanism was built 
+between CDs and naphthalimide. 
+7.2 × 10−8 M 
+High 
+Jagpreet Singh Sidhu 
+et al.[126] 
+11 
+Tumor-derived 
+exosome 
+hMFEXm  
+This hMFEX nanosensor includes two critical modules: target exosome 
+separation using antibody-functionalized magnetic beads and improved 
+fluorescence measurement using supramolecular interactions of aptamer- 
+induced DNA three-way junctions with AIEgens and GO in a homogeneous 
+solution. 
+6.56 × 104 
+particles/μL 
+High 
+Bo Li, et al.[127] 
+12 
+EV-miRNAsn 
+DNA nanowire guided-catalyzed hairpin assembly  
+A nanoprobe for profiling EV-miRNAs based on DNA nanowire guided- 
+catalyzed hairpin assembly (NgCHA). 
+95.2% 
+86.7% 
+Ye Zhang et al.[128] 
+13 
+mRNA 
+Dextran-coated 
+GO nanocolloid  
+A fluorescent nanosensor for monitoring cancer-related mRNAs in live cells via 
+the Wnt/−catenin signalling pathway. 
+169 pM 
+High 
+Seong Min Ahn et al. 
+[129] 
+14 
+Leaky vasculature 
+Fluorescent Nanoprobes  
+A fluorescent nanoprobe used as a functional biomarker to detect increased 
+vascular permeability in cancer/arthritis disease models. 
+High 
+NA 
+Britto S. Sandanaraj 
+et al.[130] 
+15 
+Cyt co 
+N-doped CDp  
+A new label-free N-doped CD-based nanosensor for fluorescence activation 
+imaging of Cyt c release during cell death. 
+0.3 nM 
+High 
+Haijuan Zhang et al. 
+[131] 
+(continued on next page) 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+19
+Table 3 (continued) 
+No. 
+Biomarker/Target 
+Nanomaterials/Methods 
+Sensitivity/LODa 
+Specificity 
+Reference 
+16   
+PTMsq  
+Peptide-templated AuNP  
+A peptide-templated AuNP nanosensor for the detection of numerous 
+posttranslational modification (PTM) enzymes at the same time. 
+28 pM for 
+histone deacetylase 
+(HDAC)  
+0.8 pM for protein 
+tyrosine phosphatase 
+1B (PTP1B) 
+Good 
+Dandan Zhang et al. 
+[132] 
+17 
+Exosomes 
+MoS2–MWCNT  
+Using molybdenum disulfide-coated MWCNTs (MoS2-MWCNT) as a 
+fluorescence quenching material and an exosome protein biomarker (CD63) as a 
+target element. 
+14.8 × 105 particles 
+per mL 
+High 
+Mahnoush Tayebi et al. 
+[133] 
+18 
+GSH 
+CNPsr@MnO2–AgNPs  
+The CPs@MnO2 nanocomposite was created by capping MnO2 onto carbon 
+nanoparticles using an ultrasonic in situ redox process. AgNPs with fluorescence 
+were produced in a silver-mirror-like reaction utilizing BSA as both a template 
+and a reductant, and then electrostatically attached onto the surface of 
+CPs@MnO2 to form the CPs@MnO2-AgNP nanocomposite. 
+0.55 μM 
+High 
+Qi Wang et al.[134] 
+19 
+Fe3+
+Silicon-doped CQDs  
+In vitro and in vivo, an on-off-on fluorescent nanosensor based on CDs was 
+developed for Fe3+ detection and selective imaging of malignant cells. 
+16 nM 
+High 
+Ge Gao et al.[135] 
+20 
+Epidermal Growth 
+Factor Receptor 
+GMRs  
+A giant magnetoresistive (GMR) nanosensor-based circulating tumor DNA 
+(ctDNA) Epidermal Growth Factor Receptor (EGFR) mutational test. 
+87.5%/ 0.01% 
+100% 
+Jared C. Nesvet et al. 
+[136] 
+21 
+miR-21, miR-155 
+AuNP  
+A rapid and colorimetric nano-biosensor that does not require amplification and 
+is based on non-crosslinking Aunanoprobes. 
+1 ng/μL 
+High 
+Hamidreza Mollasalehi 
+and Elmira Shajari[137] 
+22 
+PSAt and CEAu 
+AuNPs  
+Cancer biomarkers in serum may be detected at ultralow concentrations using a 
+sandwich test that combines mechanical and optoplasmonic transduction. 
+1 × 10−16 g ml−1 
+Good 
+P. M. Kosaka et al.[138] 
+23 
+CD133 
+Anti-CD133 mAb-nano-MSNv  
+Based on the particular interaction between glioblastoma CSCs’ cell-membrane 
+marker antigen CD133 and its increased anti-CD133 monoclonal antibody 
+(mAb), a smart immunomagnetic nanosensor for molecular imaging of targeted 
+glioblastoma cancer stem cells (CSCs) has been created. 
+ND 
+ND 
+Xueqin Wang et al.[139] 
+24 
+p53 gene and PSA 
+MOFw@AuNP@GOx  
+FAM-labeled single-stranded DNA (ssDNA) was used to test the 
+MOF@AuNP@GO’s ssDNA absorption affinities and fluorescence quenching 
+abilities. Then, for the identification of the p53 gene and prostate specific 
+antigen (PSA), two unique dye-labeled ssDNA and aptamer probes were 
+created. 
+p53 gene: 0.005 nM  
+PSA: 0.01 ng/mL 
+High 
+Xiaolin Huang et al. 
+[140] 
+25 
+HE4, CA-125, and 
+YKL-40 
+DNA-SWCNT–based photoluminescent  
+A perception-based platform based on an optical nanosensor array that detects 
+numerous protein biomarkers in biofluids using machine learning techniques. 
+High 
+High 
+Zvi Yaari et al.[120] 
+26 
+AAaa and GSH 
+SiNPz/Fe3+
+A fluorescent nanosensor for imaging intracellular reducing chemicals such as 
+AA and GSH at the same time. 
+Excellent 
+High 
+Chunrong Li et al.[141] 
+27 
+Exosomes 
+Au NBPab@MnO2  
+nanosheets 
+Exosome-triggered competitive reaction and etching of gold 
+nanobipyramid@MnO2 nanosheet nanostructures (Au NBP@MnO2 NSs) are 
+the major steps in the sensing technique. 
+1.35 × 102 particles 
+μL−1 
+Good 
+Yingzhi Zhang et al. 
+[142] 
+28 
+CEA 
+TiO2 Nanotubes Functionalized Paper-Based  
+A cascaded photoactive interface made of tidy TiO2 nanotube arrays, Pt NPs, 
+and N-CDs was inserted into paper fibres, resulting in a signal-on PEC state. 
+0.48 pg mL−1 
+High 
+Li Li et al.[143] 
+29 
+H2O2 
+v-AuNWs/PDMSac  
+v-AuNWs/PDMS is a stretchable electrochemical cell-sensing platform based on 
+vertically aligned gold nanowires embedded in PDMS. 
+250 mA/cm2M−1/ 
+~12 μM 
+Good 
+Quanxia Lyu et al.[7] 
+30 
+PSA 
+TPEad-In-PSA@Au  
+A novel tetraphenylethylene (TPE) appended organic fluorogens and reveal 
+their unique Raman fingerprinting reflected by SERS upon adsorption on 
+nanoroughened gold surface as a new insight in addition to their prevalent 
+aggregation-induced emission (AIE) and aggregation-caused quenching (ACQ) 
+phenomena were discovered. 
+0.5 ng 
+ND 
+Adukkadan N. Ramya 
+et al.[144] 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+20
+3. Conclusions and future directions for nanosensors 
+This study provides a summary of recent developments in cancer 
+diagnostics using nanotechnology. The development of nanotechnology- 
+based tests for cancer diagnosis has received a lot of attention over the 
+past ten years. A variety of NP-based assays demonstrated improvements 
+in terms of selectivity and sensitivity compared to the currently avail­
+able cancer diagnostics in the clinic or provided completely new capa­
+bilities that were not possible with conventional methods. By enabling 
+early detection, these developments will increase the survival rate of 
+cancer patients. These developments could also be used to track the 
+growth of cancer and how it responds to therapy, which could aid in the 
+creation of more effective cancer treatment plans. The last ten years 
+have seen significant advancements in the field of nanotechnology- 
+based cancer diagnostics, and our knowledge of it has grown signifi­
+cantly. Nanotechnology-based cancer detection is about to enter the 
+clinic, even though only a small number of NP-based assays have pro­
+gressed to clinical trials. This is due to strong cooperation among re­
+searchers, engineers, and physicians. Nanotechnology offers excellent 
+prospects to enhance cancer diagnosis, which will ultimately increase 
+the survival rate of cancer patients because of its high sensitivity, 
+specificity, and multiplexing measuring capacity. In conclusion, the 
+expanding field of study focused on the creation of nanodevices is 
+having and will continue to have a major influence on the creation of 
+nanosensors for the early detection of cancer and the monitoring of 
+therapeutic drugs. Nanosensors have made significant advancements in 
+various fields, including healthcare, environmental monitoring, and 
+industrial applications. However, they still face several challenges that 
+limit their widespread adoption. Here are some of the main challenges 
+associated with current nanosensors and potential ways to improve 
+them:  
+• Sensitivity and Detection Limits: Enhancing the sensitivity and 
+detection limits of nanosensors is crucial for detecting low concen­
+trations of analytes. Improvements can be made by optimizing the 
+choice of materials, developing novel transduction mechanisms, and 
+exploring advanced signal amplification techniques.  
+• Selectivity and Specificity: Nanosensors often encounter challenges 
+in distinguishing between similar analytes or suppressing interfer­
+ence from the sample matrix. Incorporating highly selective recog­
+nition elements, such as specific biomolecules or functionalized 
+nanoparticles, can improve selectivity and specificity.  
+• Stability and Durability: Nanosensors should be stable and durable, 
+especially in harsh environments or during long-term use. Re­
+searchers can focus on developing robust nanomaterials, protective 
+coatings, or encapsulation strategies to enhance the stability and 
+lifespan of nanosensors.  
+• Scalability and Cost-Effectiveness: Manufacturing nanosensors on a 
+large scale with consistent performance and at a reasonable cost is a 
+challenge. Streamlining fabrication processes, exploring scalable 
+nanomaterial synthesis techniques, and leveraging economies of 
+scale can help address these challenges. 
+• Integration and Miniaturization: Integrating nanosensors into com­
+plex systems or devices, and achieving miniaturization, is essential 
+for their practical applications. Advances in microfabrication tech­
+niques and nanomaterial integration methods can facilitate the 
+seamless integration of nanosensors into various platforms.  
+• Biocompatibility and Safety: In biomedical applications, ensuring 
+the biocompatibility and safety of nanosensors is crucial. Conducting 
+comprehensive toxicity studies and utilizing biocompatible materials 
+are important steps towards addressing these concerns.  
+• Power Supply and Energy Efficiency: Nanosensors often require a 
+power source, and optimizing power supply and energy efficiency is 
+essential for their long-term operation, especially in remote or 
+implantable applications. Exploring low-power design strategies and 
+energy harvesting techniques can help mitigate power-related 
+challenges. 
+• Data Handling and Interpretation: Nanosensors generate large vol­
+umes of data, requiring efficient data handling, processing, and 
+interpretation. Developing advanced algorithms, data analytics 
+tools, and machine learning techniques can facilitate real-time 
+analysis and extraction of meaningful information from nanosensor 
+data. 
+a LOD; limit of detection. 
+b MT1-MMPs: Membrane-anchoredmembranetype1-matrixmetalloproteinases. 
+c AuNRs: gold nanorods. 
+d ActFP: activatable fluorogenicpeptide. 
+e NA: not applicable. 
+f MPBA 4-ercaptophenylboronic acid. 
+g ASP afterglow semiconducting polyelectrolyte. 
+h HepG2-MVs: Hepatocellular carcinoma-derived cancerous microvesicles. 
+i AAP-GFET AuNP-decorated dual-aptamer modified reduced graphene oxide field-effect transistor. 
+j QD-FRET: quantum-dot-based fluorescence resonance energy transfer. 
+k RBD-GQDs: Rhodamine B derivative-functionalized graphene quantum dots. 
+l GSH: Glutathione. 
+m ACD-AuNPS: anionic carbon dots protected gold nanoparticle. 
+n hMFEX: Homogenous magneto-fluorescent exosome. 
+o EV-miRNAs: Extracellular vesicle-associated miRNAs. 
+p Cyt c: cytochrome c, 17N-doped CD Nitrogen doped carbon quantum dots. 
+q PTMs Protein post-translational modifications. 
+r CNPs: carbon nanoparticles. 
+s GMR: Giant magnetoresistive. 
+t PSA: prostate specific antigen. 
+u CEA: carcinoembryonic antigen. 
+v mAb-nano-MSN: mAb-conjugated nanoscale magnetic sensor. 
+w MOF: Metal-organic frameworks. 
+x GO: graphene oxide. 
+z SiNP: silicon nanoparticles. 
+aa AA: Ascorbic acid. 
+ab Au NBP: gold nanobipyramid. 
+ac v-AuNWs/PDMS: vertically aligned gold nanowires embedded in PDMS. 
+ad TPE: tetraphenylethylene. 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+21
+• Standardization and Regulatory Frameworks: Establishing stan­
+dardized protocols and regulatory frameworks for nanosensors is 
+crucial for ensuring their reliability, reproducibility, and safety. 
+Collaborative efforts among researchers, industry, and regulatory 
+agencies can help in defining guidelines and standards for nano­
+sensor development and deployment.  
+• Real-World Integration: Bridging the gap between laboratory 
+research and real-world applications remains a challenge. Collabo­
+rations between academia, industry, and end-users can facilitate the 
+translation of nanosensor technologies into practical solutions 
+addressing specific societal needs. 
+By addressing these challenges, researchers and engineers can 
+continue to improve nanosensors, expanding their capabilities and 
+enabling their broader adoption in various fields. 
+Ethics approval and consent to participate 
+Not applicable. 
+Consent for publication 
+Consent for publication has been obtained. 
+Availability of data and materials 
+Not applicable. 
+Funding 
+Not applicable. 
+Authors’ contributions 
+Masoud Khazaei and Marzieh Sadat Hosseini wrote and reviewed 
+90% of the manuscript. Ali Moshfegh Haghighi and Majid Misaghi wrote 
+10% of the manuscript. 
+Declaration of Competing Interest 
+The authors declare that they have no competing interests. 
+Data availability 
+No data was used for the research described in the article. 
+Acknowledgements 
+Not applicable. 
+References 
+[1] S.A. John, et al., 20 - Nanosensors for plant health monitoring, in: A. Denizli, et 
+al. (Eds.), Nanosensors for Smart Agriculture, Elsevier, 2022, pp. 449–461. 
+[2] Z. Butt, et al., Chapter 21 - Next-generation self-powered nanosensors, in: 
+S. Thomas, et al. (Eds.), Nanosensors for Smart Manufacturing, Elsevier, 2021, 
+pp. 487–515. 
+[3] M. Swierczewska, et al., High-sensitivity nanosensors for biomarker detection, 
+Chem. Soc. Rev. 41 (7) (2012) 2641–2655. 
+[4] T. Adam, S.C.B. Gopinath, Nanosensors: recent perspectives on attainments and 
+future promise of downstream applications, Process Biochem. 117 (2022) 
+153–173. 
+[5] I. Nardi-Agmon, et al., Exhaled breath analysis for monitoring response to 
+treatment in advanced lung Cancer, J. Thorac. Oncol. 11 (6) (2016) 827–837. 
+[6] Y. Chen, et al., Nanoelectronic detection of breast cancer biomarker, Appl. Phys. 
+Lett. 97 (23) (2010), 233702. 
+[7] Q. Lyu, et al., Real-time and in-situ monitoring of H2O2 release from living cells 
+by a stretchable electrochemical biosensor based on vertically aligned gold 
+nanowires, Anal. Chem. 91 (21) (2019) 13521–13527. 
+[8] S. Borini, et al., Ultrafast graphene oxide humidity sensors, ACS Nano 7 (12) 
+(2013) 11166–11173. 
+[9] Y. Li, et al., Optimizing energy transfer in nanostructures enables in vivo Cancer 
+lesion tracking via near-infrared excited hypoxia imaging, Adv. Mater. 32 (14) 
+(2020) 1907718. 
+[10] Organization, W.H, Cancer, Available from: https://www.who.int/news-room/fa 
+ct-sheets/detail/cancer, 2022. 
+[11] J, F, et al., Global Cancer Observatory: Cancer Today [cited February 2021]; 
+Available from: https://gco.iarc.fr/today, 2020. 
+[12] LH, A, et al., Cancer of the lung: Non-small cell lung cancer and small cell lung 
+cancer, in: N. Je, et al. (Eds.), Abeloff’s Clinical Oncology, Elsevier, Philadelphia, 
+2020. 
+[13] A. Gao, et al., Multiplexed detection of lung cancer biomarkers in patients serum 
+with CMOS-compatible silicon nanowire arrays, Biosens. Bioelectron. 91 (2017) 
+482–488. 
+[14] J.D. Kirkpatrick, et al., Urinary detection of lung cancer in mice via noninvasive 
+pulmonary protease profiling, Sci. Transl. Med. 12 (537) (2020). 
+[15] Z. Hao, et al., Sensitive detection of lung cancer biomarkers using an aptameric 
+graphene-based nanosensor with enhanced stability, Biomed. Microdevices 21 (3) 
+(2019) 65. 
+[16] C.M. Earhart, et al., Isolation and mutational analysis of circulating tumor cells 
+from lung cancer patients with magnetic sifters and biochips, Lab Chip 14 (1) 
+(2014) 78–88. 
+[17] A.-K. Jakobsen, et al., Correlation between topoisomerase I and tyrosyl-DNA 
+phosphodiesterase 1 activities in non-small cell lung cancer tissue, Exp. Mol. 
+Pathol. 99 (1) (2015) 56–64. 
+[18] E. Zarepour, et al., Characterizing terahertz channels for monitoring human lungs 
+with wireless nanosensor networks, Nano Commun. Networks 9 (2016) 43–57. 
+[19] S.-H. Kwon, et al., Noninvasive early detection of Calpain 2-enriched non-small 
+cell lung Cancer using a human serum albumin-bounded Calpain 2 Nanosensor, 
+Bioconjug. Chem. 31 (3) (2020) 803–812. 
+[20] S. Dragonieri, et al., An electronic nose in the discrimination of patients with non- 
+small cell lung cancer and COPD, Lung Cancer 64 (2) (2009) 166–170. 
+[21] S. Chatterjee, M. Castro, J.F. Feller, An e-nose made of carbon nanotube based 
+quantum resistive sensors for the detection of eighteen polar/nonpolar VOC 
+biomarkers of lung cancer, J. Mater. Chem. B 1 (36) (2013) 4563–4575. 
+[22] A. Bikov, et al., Expiratory flow rate, breath hold and anatomic dead space 
+influence electronic nose ability to detect lung cancer, BMC Pulmonary Med. 14 
+(1) (2014) 202. 
+[23] G. Peng, et al., Diagnosing lung cancer in exhaled breath using gold 
+nanoparticles, Nat. Nanotechnol. 4 (10) (2009) 669–673. 
+[24] O. Barash, et al., Classification of lung cancer histology by gold nanoparticle 
+sensors, Nanomedicine 8 (5) (2012) 580–589. 
+[25] N.-H. Kim, et al., Highly sensitive and selective hydrogen sulfide and toluene 
+sensors using Pd functionalized WO3 nanofibers for potential diagnosis of 
+halitosis and lung cancer, Sensors Actuators B Chem. 193 (2014) 574–581. 
+[26] F.L. Liu, et al., Single-walled carbon nanotube-based biosensors for the detection 
+of volatile organic compounds of lung cancer, Phys. E: Low-dimen. Syst. 
+Nanostruct. 44 (2) (2011) 367–372. 
+[27] N. Shehada, et al., Silicon nanowire sensors enable diagnosis of patients via 
+exhaled breath, ACS Nano 10 (7) (2016) 7047–7057. 
+[28] A. Gharra, et al., Exhaled breath diagnostics of lung and gastric cancers in China 
+using nanosensors, Cancer Commun. 40 (6) (2020) 273–278. 
+[29] D. Huo, et al., A novel optical chemical sensor based AuNR-MTPP and dyes for 
+lung cancer biomarkers in exhaled breath identification, Sensors Actuators B 
+Chem. 199 (2014) 446–456. 
+[30] M. Hasanzadeh, et al., The use of chitosan as a bioactive polysaccharide in non- 
+invasive detection of malondialdehyde biomarker in human exhaled breath 
+condensate: a new platform towards diagnosis of some lung disease, Int. J. Biol. 
+Macromol. 120 (2018) 2482–2492. 
+[31] G. Peng, E. Trock, H. Haick, Detecting simulated patterns of lung cancer 
+biomarkers by random network of single-walled carbon nanotubes coated with 
+nonpolymeric organic materials, Nano Lett. 8 (11) (2008) 3631–3635. 
+[32] O. Barash, et al., Sniffing the unique “odor print” of non-small-cell lung cancer 
+with gold nanoparticles, Small 5 (22) (2009) 2618–2624. 
+[33] Z.-Y. Wang, et al., Single quantum dot-based nanosensor for sensitive detection of 
+5-methylcytosine at both CpG and non-CpG sites, Chem. Sci. 9 (5) (2018) 
+1330–1338. 
+[34] S. Hosogi, et al., Plasma membrane anchored nanosensor for quantifying 
+endogenous production of H2O2 in living cells, Biosens. Bioelectron. 179 (2021), 
+113077. 
+[35] Y.-P. Zeng, et al., A quantum dot-based microRNA nanosensor for point mutation 
+assays, Chem. Commun. 50 (54) (2014) 7160–7162. 
+[36] U. Tisch, H. Haick, Arrays of Chemisensitive Monolayer-capped Metallic 
+Nanoparticles for Diagnostic Breath Testing 26(5–6), 2010, pp. 171–179. 
+[37] L.-Y. Huang, et al., High-performance electrochemiluminescence emitter of metal 
+organic framework linked with porphyrin and its application for ultrasensitive 
+detection of biomarker mucin-1, Sensors Actuators B Chem. 344 (2021), 130300. 
+[38] N. Lu, et al., CMOS-compatible silicon nanowire field-effect transistors for 
+ultrasensitive and label-free MicroRNAs sensing, Small 10 (10) (2014) 
+2022–2028. 
+[39] X. Zheng, et al., Tracking Cancer metastasis in vivo by using an iridium-based 
+hypoxia-activated optical oxygen Nanosensor, Angew. Chem. Int. Ed. 54 (28) 
+(2015) 8094–8099. 
+[40] C. Ripoll, et al., Mitochondrial pH nanosensors for metabolic profiling of breast 
+Cancer cell lines, Int. J. Mol. Sci. 21 (10) (2020) 3731. 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+22
+[41] Y.H. Kuo, et al., A CMOS-based capacitive biosensor for detection of a breast 
+cancer MicroRNA biomarker, IEEE Open J. Nanotechnol. 1 (2020) 157–162. 
+[42] M. Luan, et al., Visualizing breast cancer cell proliferation and invasion for 
+assessing drug efficacy with a fluorescent Nanoprobe, Anal. Chem. 89 (19) (2017) 
+10601–10607. 
+[43] D. Yao, et al., Molecular engineered Squaraine nanoprobe for NIR-II/ 
+photoacoustic imaging and photothermal therapy of metastatic breast cancer, 
+ACS Appl. Mater. Interfaces 12 (4) (2020) 4276–4284. 
+[44] N. Ferreira, et al., Label-free nanosensing platform for breast cancer exosome 
+profiling, ACS Sensors 4 (8) (2019) 2073–2083. 
+[45] R. Zhan, et al., An Au–Se nanoprobe for the evaluation of the invasive potential of 
+breast cancer cells via imaging the sequential activation of uPA and MMP-2, 
+Analyst 145 (3) (2020) 1008–1013. 
+[46] P. Zhou, et al., A fluorescence nanoprobe for detecting the effect of different 
+oxygen and nutrient conditions on breast cancer cells’ migration and invasion, 
+Biomater. Sci. 9 (12) (2021) 4428–4432. 
+[47] L. Eskandari, et al., Gold nanoprobe-based method for sensing activated leukocyte 
+cell adhesion molecule (ALCAM) gene expression, as a breast cancer biomarker, 
+Artif. Cells, Nanomed. Biotechnol. 45 (2) (2017) 277–282. 
+[48] M. Keshtkar, et al., Aptamer-conjugated magnetic nanoparticles as targeted 
+magnetic resonance imaging contrast agent for breast cancer, J. Med. Signals 
+Sens. 6 (4) (2016) 243–247. 
+[49] E. Kim, et al., Consecutive targetable smart nanoprobe for molecular recognition 
+of cytoplasmic microRNA in metastatic breast cancer, ACS Nano 6 (10) (2012) 
+8525–8535. 
+[50] U. Eletxigerra, et al., Surface plasmon resonance immunosensor for ErbB2 breast 
+cancer biomarker determination in human serum and raw cancer cell lysates, 
+Anal. Chim. Acta 905 (2016) 156–162. 
+[51] D.-L. Li, et al., Multifunctional superparamagnetic nanoparticles conjugated with 
+fluorescein-labeled designed ankyrin repeat protein as an efficient HER2-targeted 
+probe in breast cancer, Biomaterials 147 (2017) 86–98. 
+[52] J. Shi, et al., A fluorescence turn-on biosensor based on graphene quantum dots 
+(GQDs) and molybdenum disulfide (MoS2) nanosheets for epithelial cell adhesion 
+molecule (EpCAM) detection, Biosens. Bioelectron. 93 (2017) 182–188. 
+[53] X. Guo, et al., Dual signal amplification photoelectrochemical biosensor for 
+highly sensitive human epidermal growth factor receptor-2 detection, Biosens. 
+Bioelectron. 139 (2019), 111312. 
+[54] S.-T. Liu, et al., Highly sensitive photoelectrochemical biosensor for 
+microRNA159c detection based on a Ti3C2:CdS nanocomposite of breast cancer, 
+Biosens. Bioelectron. 165 (2020), 112416. 
+[55] M. Zhang, et al., A fluorescent aptasensor for the femtomolar detection of 
+epidermal growth factor receptor-2 based on the proximity of G-rich sequences to 
+ag nanoclusters, Talanta 199 (2019) 238–243. 
+[56] T. Wei, et al., Bovine serum albumin encapsulation of near infrared fluorescent 
+nano-probe with low nonspecificity and cytotoxicity for imaging of HER2-positive 
+breast cancer cells, Talanta 210 (2020), 120625. 
+[57] Q. Zhang, et al., DNA-mediated au–au dimer-based surface Plasmon coupling 
+electrochemiluminescence sensor for BRCA1 gene detection, Anal. Chem. 93 (6) 
+(2021) 3308–3314. 
+[58] X. Li, et al., Polycytosine DNA electric-current-generated immunosensor for 
+electrochemical detection of human epidermal growth factor receptor 2 (HER2), 
+Anal. Chem. 90 (7) (2018) 4764–4769. 
+[59] W. Cao, et al., Visualizing miR-155 to monitor breast tumorigenesis and response 
+to chemotherapeutic drugs by a self-assembled photoacoustic nanoprobe, Anal. 
+Chem. 90 (15) (2018) 9125–9131. 
+[60] Y. Nie, et al., Versatile and ultrasensitive electrochemiluminescence biosensor for 
+biomarker detection based on nonenzymatic amplification and aptamer-triggered 
+emitter release, Anal. Chem. 91 (5) (2019) 3452–3458. 
+[61] Y. Tang, et al., Self-assembling peptide-based multifunctional nanofibers for 
+electrochemical identification of breast cancer stem-like cells, Anal. Chem. 91 
+(12) (2019) 7531–7537. 
+[62] J. Wang, et al., Multicolor cocktail for breast cancer multiplex phenotype 
+targeting and diagnosis using bioorthogonal surface-enhanced Raman scattering 
+nanoprobes, Anal. Chem. 91 (17) (2019) 11045–11054. 
+[63] R.R. Pandey, et al., A Prussian blue ZnO carbon nanotube composite for 
+chronoamperometrically assaying H2O2 in BT20 and 4T1 breast cancer cells, 
+Anal. Chem. 91 (16) (2019) 10573–10581. 
+[64] H. Liu, et al., Ultra-sensitive detection and inhibition of the metastasis of breast 
+cancer cells to adjacent lymph nodes and distant organs by using long-persistent 
+luminescence nanoparticles, Anal. Chem. 91 (23) (2019) 15064–15072. 
+[65] L. Yang, et al., Dual-acceptor-based upconversion luminescence nanosensor with 
+enhanced quenching efficiency for in situ imaging and quantification of 
+MicroRNA in living cells, ACS Appl. Mater. Interfaces 11 (42) (2019) 
+38459–38466. 
+[66] D. Qin, et al., A novel carbon quantum dots signal amplification strategy coupled 
+with Sandwich electrochemiluminescence immunosensor for the detection of 
+CA15-3 in human serum, ACS Sensors 4 (2) (2019) 504–512. 
+[67] R. Ahirwar, P. Nahar, Development of a label-free gold nanoparticle-based 
+colorimetric aptasensor for detection of human estrogen receptor alpha, Anal. 
+Bioanal. Chem. 408 (1) (2016) 327–332. 
+[68] Y. Bai, et al., Ultrasensitive colorimetric biosensor for BRCA1 mutation based on 
+multiple signal amplification strategy, Biosens. Bioelectron. 166 (2020), 112424. 
+[69] M. Li, et al., A multifunctional mesoporous silica–gold nanocluster hybrid 
+platform for selective breast cancer cell detection using a catalytic amplification- 
+based colorimetric assay, Nanoscale 11 (6) (2019) 2631–2636. 
+[70] W.-T. Dou, et al., Fluorescence imaging of a potential diagnostic biomarker for 
+breast cancer cells using a peptide-functionalized fluorogenic 2D material, Chem. 
+Commun. 55 (88) (2019) 13235–13238. 
+[71] D. Chen, et al., Ultrasensitive electroluminescence biosensor for a breast cancer 
+marker microRNA based on target cyclic regeneration and multi-labeled 
+magnetized nanoparticles, Microchim. Acta 186 (9) (2019) 628. 
+[72] A. Cui, et al., Signal-on electrogenerated chemiluminescence biosensor for 
+ultrasensitive detection of microRNA-21 based on isothermal strand-displacement 
+polymerase reaction and bridge DNA-gold nanoparticles, Biosens. Bioelectron. 
+144 (2019), 111664. 
+[73] C. Pothipor, et al., A highly sensitive electrochemical microRNA-21 biosensor 
+based on intercalating methylene blue signal amplification and a highly dispersed 
+gold nanoparticles/graphene/polypyrrole composite, Analyst 146 (8) (2021) 
+2679–2688. 
+[74] H. Ibrahim, M. Ibrahim, Y. Temerk, A novel megestrol acetate electrochemical 
+sensor based on conducting functionalized acetylene black–CeO2NPs 
+nanohybrids decorated glassy carbon microspheres, Talanta 200 (2019) 324–332. 
+[75] J. Lan, et al., Upconversion luminescence assay for the detection of the vascular 
+endothelial growth factor, a biomarker for breast cancer, Microchim. Acta 183 
+(12) (2016) 3201–3208. 
+[76] H. Li, et al., A carbon nanoparticle and DNase I-assisted amplified fluorescent 
+biosensor for miRNA analysis, Talanta 213 (2020), 120816. 
+[77] H. Liao, et al., An ultrasensitive electrochemiluminescence biosensor for 
+detection of MicroRNA by in-situ electrochemically generated copper 
+nanoclusters as luminophore and TiO2 as coreaction accelerator, Biosens. 
+Bioelectron. 114 (2018) 10–14. 
+[78] S. Liu, et al., A sensitive colorimetric aptasensor based on trivalent peroxidase- 
+mimic DNAzyme and magnetic nanoparticles, Anal. Chim. Acta 1018 (2018) 
+86–93. 
+[79] X. Liu, et al., Polyacrylic acid/polyethylene glycol hybrid antifouling interface for 
+photoelectrochemical immunosensing of MDA-MB-231 cells using BiOBr/ 
+FeTPPCl/BiOI co-sensitized composite as matrix, Sensors Actuators B Chem. 328 
+(2021), 129081. 
+[80] Q. Ma, Dual-mode electrochemical Immunosensor based on Au@Ag NRs as 
+double signal Indicator for sensitive detection of HER2, J. Electrochem. Soc. 168 
+(2) (2021), 027515. 
+[81] S. Mohammadi, S. Mohammadi, A. Salimi, A 3D hydrogel based on chitosan and 
+carbon dots for sensitive fluorescence detection of microRNA-21 in breast cancer 
+cells, Talanta 224 (2021), 121895. 
+[82] H. Motaghi, et al., Electrochemiluminescence detection of human breast cancer 
+cells using aptamer modified bipolar electrode mounted into 3D printed 
+microchannel, Biosens. Bioelectron. 118 (2018) 217–223. 
+[83] H. Nasrollahpour, et al., A highly sensitive electrochemiluminescence cytosensor 
+for detection of SKBR-3 cells as metastatic breast cancer cell line: a constructive 
+phase in early and precise diagnosis, Biosens. Bioelectron. 178 (2021), 113023. 
+[84] S. Meng, et al., Surface-enhanced Raman scattering holography chip for rapid, 
+sensitive and multiplexed detection of human breast cancer-associated 
+MicroRNAs in clinical samples, Biosens. Bioelectron. 190 (2021), 113470. 
+[85] R. Salahandish, et al., Label-free ultrasensitive detection of breast cancer miRNA- 
+21 biomarker employing electrochemical nano-genosensor based on sandwiched 
+AgNPs in PANI and N-doped graphene, Biosens. Bioelectron. 120 (2018) 
+129–136. 
+[86] M. Shamsipur, et al., A sandwich-type electrochemical immunosensor based on in 
+situ silver deposition for determination of serum level of HER2 in breast cancer 
+patients, Biosens. Bioelectron. 103 (2018) 54–61. 
+[87] Z. Zhang, et al., Tracking drug-induced Epithelial–Mesenchymal transition in 
+breast cancer by a microfluidic surface-enhanced Raman Spectroscopy 
+immunoassay, Small 16 (13) (2020) 1905614. 
+[88] Y. Tao, et al., Incorporating gold nanoclusters and target-directed liposomes as a 
+synergistic amplified colorimetric sensor for HER2-positive breast cancer cell 
+detection, Theranostics 7 (4) (2017) 899–911. 
+[89] S. Wu, et al., Counterions-mediated gold nanorods-based sensor for label-free 
+detection of poly(ADP-ribose) polymerase-1 activity and its inhibitor, Sensors 
+Actuators B Chem. 259 (2018) 565–572. 
+[90] Q. Wu, et al., A 2D transition metal carbide MXene-based SPR biosensor for 
+ultrasensitive carcinoembryonic antigen detection, Biosens. Bioelectron. 144 
+(2019), 111697. 
+[91] R. Xu, et al., Ni foam supported photocathode platform for DNA detection based 
+on antifouling interface, Sensors Actuators B Chem. 333 (2021), 129593. 
+[92] D. Yang, et al., Carbon nanosphere-based fluorescence aptasensor for targeted 
+detection of breast cancer cell MCF-7, Talanta 185 (2018) 113–117. 
+[93] Y. Zhang, et al., Silicon nanodot-based aptasensor for fluorescence turn-on 
+detection of mucin 1 and targeted cancer cell imaging, Anal. Chim. Acta 1035 
+(2018) 154–160. 
+[94] X. Zhang, et al., An ultrasensitive electrochemiluminescence biosensor for 
+MicroRNA detection based on luminol-functionalized Au NPs@ZnO 
+nanomaterials as signal probe and dissolved O2 as coreactant, Biosens. 
+Bioelectron. 135 (2019) 8–13. 
+[95] H. Zhao, et al., Label-free and dual-amplified electrochemical bioanalysis of 
+MUC1 based on an inorganic-organic polymer hybrid mimic peroxidase (AuNPs@ 
+Cu7S4@Cu/Mn-AzoPPOP) and catalytic hairpin assembly, Sensors Actuators B 
+Chem. 345 (2021), 130332. 
+[96] Z. Zheng, et al., Simultaneous and highly sensitive detection of multiple breast 
+cancer biomarkers in real samples using a SERS microfluidic chip, Talanta 188 
+(2018) 507–515. 
+M. Khazaei et al.                                                                                                                                                                                                                                
+Sensing and Bio-Sensing Research 41 (2023) 100569
+23
+[97] Q. Zhao, et al., Strategy to fabricate naked-eye readout ultrasensitive Plasmonic 
+nanosensor based on enzyme mimetic gold nanoclusters, Anal. Chem. 88 (2) 
+(2016) 1412–1418. 
+[98] H.-N. Wang, et al., Multiplexed detection of MicroRNA biomarkers using SERS- 
+based inverse molecular sentinel (iMS) nanoprobes, J. Phys. Chem. C 120 (37) 
+(2016) 21047–21055. 
+[99] K. Bravo, et al., Integrated bio-affinity nano-platform into a microfluidic 
+immunosensor based on monoclonal bispecific trifunctional antibodies for the 
+electrochemical determination of epithelial cancer biomarker, Clin. Chim. Acta 
+464 (2017) 64–71. 
+[100] J. Chang, et al., Nucleic acid-functionalized Metal–Organic framework-based 
+homogeneous electrochemical biosensor for simultaneous detection of multiple 
+tumor biomarkers, Anal. Chem. 91 (5) (2019) 3604–3610. 
+[101] W. Pan, et al., Multiplexed detection and imaging of intracellular mRNAs using a 
+four-color nanoprobe, Anal. Chem. 85 (21) (2013) 10581–10588. 
+[102] M.F. Ghaziyani, et al., Anti-CD24 bio modified PEGylated gold nanoparticles as 
+targeted computed tomography contrast agent, Adv. Pharm. Bull. 8 (4) (2018) 
+599–607. 
+[103] E. Stern, et al., Label-free biomarker detection from whole blood, Nat. 
+Nanotechnol. 5 (2) (2010) 138–142. 
+[104] L. Tao, et al., Anti-epithelial cell adhesion molecule monoclonal antibody 
+conjugated fluorescent nanoparticle biosensor for sensitive detection of colon 
+cancer cells, Biosens. Bioelectron. 35 (1) (2012) 186–192. 
+[105] K.E. van Keulen, et al., Volatile organic compounds in breath can serve as a non- 
+invasive diagnostic biomarker for the detection of advanced adenomas and 
+colorectal cancer, Aliment. Pharmacol. Ther. 51 (3) (2020) 334–346. 
+[106] Y. Xiang, et al., Surface enhanced Raman detection of the colon cancer biomarker 
+cytidine by using magnetized nanoparticles of the type Fe3O4/Au/Ag, 
+Microchim. Acta 185 (3) (2018) 195. 
+[107] P. Gulati, et al., Nano-moles detection of tumor specific biomarker DNA for 
+colorectal cancer detection using vertically aligned multi-wall carbon nanotubes 
+based flexible electrodes, Process Biochem. 90 (2020) 184–192. 
+[108] A.B. Hashkavayi, et al., Ultrasensitive electrochemical aptasensor based on 
+sandwich architecture for selective label-free detection of colorectal cancer 
+(CT26) cells, Biosens. Bioelectron. 92 (2017) 630–637. 
+[109] L. Tao, et al., Anti-CD155 and anti-CD112 monoclonal antibodies conjugated to a 
+fluorescent mesoporous silica nanosensor encapsulating rhodamine 6G and 
+fluorescein for sensitive detection of liver cancer cells, Analyst 141 (16) (2016) 
+4933–4940. 
+[110] R.M. Williams, et al., Noninvasive ovarian cancer biomarker detection via an 
+optical nanosensor implant, Sci. Adv. 4 (4) (2018) p. eaaq1090. 
+[111] S. Büyüktiryaki, et al., Phosphoserine imprinted nanosensor for detection of 
+Cancer antigen 125, Talanta 167 (2017) 172–180. 
+[112] Z. Akbari Jonous, et al., An electrochemical biosensor for prostate cancer 
+biomarker detection using graphene oxide-gold nanostructures, Eng. Life Sci. 19 
+(3) (2019) 206–216. 
+[113] L. Xu, et al., Improved detection of prostate cancer using a magneto-nanosensor 
+assay for serum circulating autoantibodies, PLoS One 14 (8) (2019), e0221051. 
+[114] J.S. Dudani, et al., Classification of prostate cancer using a protease activity 
+nanosensor library, Proc. Natl. Acad. Sci. 115 (36) (2018) 8954–8959. 
+[115] Y. Gui, et al., Photoacoustic detection of follicular thyroid carcinoma using 
+targeted Nano-au-tripods, Chin. J. Chem. Eng. 44 (2022) 1–7. 
+[116] M. Wu, et al., An ultrasensitive fluorescent nanosensor for trypsin based on 
+upconversion nanoparticles, Talanta 174 (2017) 797–802. 
+[117] M. Ku, et al., In vivo sensing of proteolytic activity with an NSET-based NIR 
+fluorogenic nanosensor, Biosens. Bioelectron. 77 (2016) 471–477. 
+[118] L. Liang, et al., Tracing sialoglycans on cell membrane via surface-enhanced 
+Raman scattering spectroscopy with a phenylboronic acid-based nanosensor in 
+molecular recognition, Biosens. Bioelectron. 94 (2017) 148–154. 
+[119] Y. Lyu, et al., Near-infrared afterglow semiconducting Nano-Polycomplexes for 
+the multiplex differentiation of cancer exosomes, Angew. Chem. Int. Ed. 58 (15) 
+(2019) 4983–4987. 
+[120] Z. Yaari, et al., Machine-perception nanosensor platform to detect cancer 
+biomarkers, bioRxiv (2021), p. 2021.04.28.441499. 
+[121] C.-C. Li, et al., Development of a single quantum dot-mediated FRET Nanosensor 
+for sensitive detection of single-nucleotide polymorphism in cancer cells, Anal. 
+Chem. 93 (43) (2021) 14568–14576. 
+[122] D. Wu, et al., Dual-aptamer modified graphene field-effect transistor Nanosensor 
+for label-free and specific detection of hepatocellular carcinoma-derived 
+microvesicles, Anal. Chem. 92 (5) (2020) 4006–4015. 
+[123] E.Y. Chung, et al., Activatable and cell-penetrable multiplex FRET Nanosensor for 
+profiling MT1-MMP activity in single cancer cells, Nano Lett. 15 (8) (2015) 
+5025–5032. 
+[124] R. Guo, et al., Rhodamine-functionalized graphene quantum dots for detection of 
+Fe3+ in cancer stem cells, ACS Appl. Mater. Interfaces 7 (43) (2015) 
+23958–23966. 
+[125] K. Das, S. Sarkar, P.K. Das, Fluorescent indicator displacement assay: 
+ultrasensitive detection of glutathione and selective cancer cell imaging, ACS 
+Appl. Mater. Interfaces 8 (39) (2016) 25691–25701. 
+[126] J.S. Sidhu, et al., Carbon dot based, naphthalimide coupled FRET pair for highly 
+selective ratiometric detection of thioredoxin reductase and cancer screening, 
+ACS Appl. Mater. Interfaces 9 (31) (2017) 25847–25856. 
+[127] B. Li, et al., Homogenous magneto-fluorescent nanosensor for tumor-derived 
+exosome isolation and analysis, ACS Sensors 5 (7) (2020) 2052–2060. 
+[128] Y. Zhang, et al., DNA nanowire guided-catalyzed hairpin assembly nanoprobe for 
+in situ profiling of circulating extracellular vesicle-associated MicroRNAs, ACS 
+Sensors 7 (4) (2022) 1075–1085. 
+[129] S.M. Ahn, S. Kang, D.-H. Min, Direct monitoring of cancer-associated mRNAs in 
+living cells to evaluate the therapeutic RNAi efficiency using fluorescent 
+nanosensor, ACS Sensors 4 (5) (2019) 1174–1179. 
+[130] B.S. Sandanaraj, et al., Fluorescent nanoprobes as a biomarker for increased 
+vascular permeability: implications in diagnosis and treatment of cancer and 
+inflammation, Bioconjug. Chem. 21 (1) (2010) 93–101. 
+[131] H. Zhang, et al., Label-free fluorescence imaging of cytochrome c in living systems 
+and anti-cancer drug screening with nitrogen doped carbon quantum dots, 
+Nanoscale 10 (11) (2018) 5342–5349. 
+[132] D. Zhang, Y.-R. Meng, C.-Y. Zhang, Peptide-templated gold nanoparticle 
+nanosensor for simultaneous detection of multiple posttranslational modification 
+enzymes, Chem. Commun. 56 (2) (2020) 213–216. 
+[133] M. Tayebi, et al., A MoS2–MWCNT based fluorometric nanosensor for exosome 
+detection and quantification, Nanoscale Adv. 1 (8) (2019) 2866–2872. 
+[134] Q. Wang, et al., Construction of CPs@MnO2–AgNPs as a multifunctional 
+nanosensor for glutathione sensing and cancer theranostics, Nanoscale 11 (40) 
+(2019) 18845–18853. 
+[135] G. Gao, et al., On-off-on fluorescent nanosensor for Fe3+ detection and cancer/ 
+normal cell differentiation via silicon-doped carbon quantum dots, Carbon 134 
+(2018) 232–243. 
+[136] J.C. Nesvet, et al., Giant magnetoresistive nanosensor analysis of circulating 
+tumor DNA epidermal growth factor receptor mutations for diagnosis and therapy 
+response monitoring, Clin. Chem. 67 (3) (2021) 534–542. 
+[137] H. Mollasalehi, E. Shajari, A colorimetric nano-biosensor for simultaneous 
+detection of prevalent cancers using unamplified cell-free ribonucleic acid 
+biomarkers, Bioorg. Chem. 107 (2021), 104605. 
+[138] P.M. Kosaka, et al., Detection of cancer biomarkers in serum using a hybrid 
+mechanical and optoplasmonic nanosensor, Nat. Nanotechnol. 9 (12) (2014) 
+1047–1053. 
+[139] X. Wang, et al., Anti-CD133 monoclonal antibody conjugated immunomagnetic 
+nanosensor for molecular imaging of targeted cancer stem cells, Sensors Actuators 
+B Chem. 255 (2018) 3447–3457. 
+[140] X. Huang, et al., “three-in-one” Nanohybrids as synergistic nanoquenchers to 
+enhance no-wash fluorescence biosensors for ratiometric detection of cancer 
+biomarkers, Theranostics 8 (13) (2018) 3461–3473. 
+[141] C. Li, et al., Cancer cell identification by facile imaging of intracellular reductive 
+substances with fluorescent nanosensor, Talanta 234 (2021), 122650. 
+[142] Y. Zhang, et al., Plasmonic colorimetric biosensor for sensitive exosome detection 
+via enzyme-induced etching of gold Nanobipyramid@MnO2 nanosheet 
+nanostructures, Anal. Chem. 92 (22) (2020) 15244–15252. 
+[143] L. Li, et al., Addressable TiO2 nanotubes functionalized paper-based Cyto-sensor 
+with Photocontrollable switch for highly-efficient evaluating surface protein 
+expressions of cancer cells, Anal. Chem. 90 (23) (2018) 13882–13890. 
+[144] A.N. Ramya, et al., New insight of Tetraphenylethylene-based Raman signatures 
+for targeted SERS nanoprobe construction toward prostate cancer cell detection, 
+ACS Appl. Mater. Interfaces 8 (16) (2016) 10220–10225. 
+M. Khazaei et al.                                                                                                                                                                                                                                

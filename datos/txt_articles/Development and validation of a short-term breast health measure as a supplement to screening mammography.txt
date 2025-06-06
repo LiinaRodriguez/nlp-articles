@@ -1,0 +1,913 @@
+Daily et al. Biomarker Research           (2022) 10:76  
+https://doi.org/10.1186/s40364-022-00420-1
+RESEARCH
+Development and validation of a short‑term 
+breast health measure as a supplement 
+to screening mammography
+Anna Daily1*, Prashanth Ravishankar1, Wanyi Wang2, Ryan Krone2, Steve Harms3 and V. Suzanne Klimberg4,5 
+Abstract 
+Background:  There is a growing body of evidence to support tears as a non-traditional biological fluid in clinical 
+laboratory testing. In addition to the simplicity of tear fluid processing, the ability to access key cancer biomarkers in 
+high concentrations quickly and inexpensively is significantly enhanced. Tear fluid is a dynamic environment rich in 
+both proteomic and genomic information, making it an ideal medium for exploring the potential for biological test-
+ing modalities.
+Methods:  All protocols involving human subjects were reviewed and approved by the University of Arkansas IRB 
+committee (13-11-289) prior to sample collection. Study enrollment was open to women ages 18 and over from 
+October 30, 2017-June 19, 2019 at The Breast Center, Fayetteville, AR and Bentonville, AR. Convenience sampling 
+was used and samples were age/sex matched, with enrollment open to individuals at any point of the breast health 
+continuum of care. Tear samples were collected using the Schirmer strip method from 847 women. Concentration of 
+selected tear proteins were evaluated using standard sandwich ELISA techniques and the resulting data, combined 
+with demographic and clinical covariates, was analyzed using logistic regression analysis to build a model for classifi-
+cation of samples.
+Results:  Logistic regression analysis produced three models, which were then evaluated on cases and controls at 
+two diagnostic thresholds and resulted in sensitivity ranging from 52 to 90% and specificity from 31 to 79%. Sensitiv-
+ity and specificity variation is dependent on the model being evaluated as well as the selected diagnostic threshold 
+providing avenues for assay optimization.
+Conclusions and relevance:  The work presented here builds on previous studies focused on biomarker identifica-
+tion in tear samples. Here we show successful early classification of samples using two proteins and minimal clinical 
+covariates.
+Keywords:  Breast cancer, Cancer biomarkers, Biomarker validation, Tear fluids, ELISA, Receiver operator characteristic 
+curves
+© The Author(s) 2022. Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which 
+permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the 
+original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line 
+to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory 
+regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this 
+licence, visit http://​creat​iveco​mmons.​org/​licen​ses/​by/4.​0/. The Creative Commons Public Domain Dedication waiver (http://​creat​iveco​
+mmons.​org/​publi​cdoma​in/​zero/1.​0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data.
+Background
+Breast cancer is the most diagnosed cancer in women 
+and accounts for up to 31% of all cancer types [1, 2]. It 
+is estimated that 43,250 deaths would be associated with 
+breast cancer in 2022 in the US [3]. The most effective 
+way to reduce mortality associated with breast cancer 
+is to increase early detection and therefore intervention 
+leading to proper treatment [4–6].
+Open Access
+*Correspondence:  anna@namidalab.com
+1 Namida Lab Inc., Fayetteville, AR, USA
+Full list of author information is available at the end of the article
+Page 2 of 9
+Daily et al. Biomarker Research           (2022) 10:76 
+The early 1980’s saw a major advancement in breast 
+cancer detection due to the implementation of screen-
+ing mammography; prior to which, most breast cancers 
+were detected by a palpable mass or breast abnormality 
+found by a physician or patient [7]. With screening mam-
+mogram, image-based detection jumped from 4% in 1977 
+to 41% in 1988 with a mortality reduction of 20% [8, 9]. 
+As the technology advanced from film to digital and now 
+to 3D, the detection rate is steady around 60% [10]. Sur-
+prisingly, with all of the advancement and promotion 
+of screening mammography, the rate of so-called inter-
+val cancers has remained unchanged with a significant 
+increase in the rate of false-positives requiring follow-up 
+[11].
+Mammography correctly detects roughly 87% of 
+patients with breast cancer (76% specificity and 87% 
+sensitivity), and this sensitivity rises with age and in 
+women with fatty breast tissue [12–14]. According to a 
+2017 study, 63.4% of diagnosed breast cancers were stage 
+0 or stage 1, and 69.6% of invasive cancers were lymph 
+node negative, based on over 400,000 diagnostic imaging 
+breast examinations performed at 92 different radiology 
+centers [15].
+Despite the obvious necessity for screening mammog-
+raphy in the reduction of mortality due to breast cancer, 
+adherence to this modality, based on age, is anywhere 
+from 31 to 70% of women [16]. Typically, compliance 
+with screening increases as women age which also cor-
+relate with an increased risk of breast cancer. However, 
+the rate of breast cancer diagnosis in women under 
+50 is steadily increasing and those diagnoses are typi-
+cally more aggressive and have higher mortality rates 
+[17]. Unfortunately, the same population has the low-
+est compliance rates with screening mammography. A 
+recent report by radiologists revealed that the mortality 
+rate of breast cancer in women aged 20–39 has stopped 
+declining since 2010 and increased by 0.5% per year [18]. 
+Screening recommendations in this age range (< 50) vary 
+and this period in women’s lives is generally when the 
+demand of career and family responsibilities are highest 
+and available time for personal care is lowest. According 
+to a 2020 study, screening mammography in women aged 
+40 to 49 years reduced mortality by approximately 25% in 
+the first 10 years when compared to waiting until 50 years 
+or older to begin screening [19].
+Another factor effecting the accuracy of mammog-
+raphy is breast density. High mammographic density 
+decreases the diagnostic accuracy of screening mammog-
+raphy by masking tumors and is a risk factor for breast 
+cancer on its own. Breast density is connected with 
+young age, pregnancy, lactation, and hormonal treatment 
+[20–22]. In the BI-RADS lexicon, there are four descrip-
+tors for breast density, (1) fatty, (2) scattered areas of 
+fibroglandular density, (3) heterogeneously dense, which 
+can obscure small masses, and (4) extremely dense, which 
+reduces mammographic sensitivity [23].
+We use tears as our biofluid source for analyzing the 
+biomarkers for breast cancer. It has been documented 
+that systemic effects exert influence on the ocular envi-
+ronment [24]. Tear fluid is a dynamic environment rich in 
+both proteomic and genomic information [25–27]. Stud-
+ies show that protein patterns in tears have the potential 
+to generate biomarkers for disease state determination 
+and could also provide new sources for treatment options 
+and monitoring [28–30]. Most promising new discover-
+ies in protein biomarkers focus on low molecular weight 
+proteins which in many cases are undetectable without 
+significant pre-processing of the samples [31]. There is a 
+growing body of evidence to support tears as a non-tradi-
+tional biological fluid [32–34]. In addition to the simplic-
+ity of tear fluid processing, the ability to access key cancer 
+biomarkers in high concentrations quickly and inexpen-
+sively is significantly enhanced.
+We had previously conducted a biomarker discovery 
+study where we reported the 3 proteins namely S100A8, 
+S100A9, and Galectin-3 binding proteins as potential 
+biomarker candidates [35]. Each of these proteins play 
+a major role in the development of breast cancer. S100 
+proteins’ role in cancer is well documented [36]. Previous 
+research groups have reported that S100A8 and S100A9 
+were elevated in serum and tissue of breast cancer 
+patients [37–40]. Additionally, the increased expression 
+of these two S100 proteins have been associated with 
+non-functional BRAC1 which play a role in metastasis by 
+binding to RAGE receptors [41]. Galectin-3 binding pro-
+teins have been shown to be a potential binding site for 
+proteins involved in metastasis and the protein’s elevated 
+levels are associated with shorter survival in patients with 
+breast carcinoma [42, 43]. In this study we validate and 
+build on our previous work [35], using a larger patient 
+population and analysis of clinical covariates. By compil-
+ing the scores of the large case-control study, we provide 
+the foundation for a “pre-screen” for women with low to 
+average lifetime risk of breast cancer without a palpable 
+mass or area of breast concern as supplement to screen-
+ing mammography.
+Methods
+Study population
+All protocols involving human subjects were reviewed 
+and approved by the University of Arkansas IRB commit-
+tee (13-11-289) prior to sample collection. The sampling 
+technique used was a purposive, non-random sampling 
+strategy to recruit women with the requisite inclusion 
+criteria. Tear fluid samples were collected from study 
+participants recruited at The Breast Center, Fayetteville, 
+Page 3 of 9
+Daily et al. Biomarker Research           (2022) 10:76 
+	
+AR and Bentonville, AR. Written informed consent was 
+obtained from all participants prior to sample collection. 
+Patients were given the opportunity to enroll if they were 
+being seen for standard yearly screening, imaging to eval-
+uate an area of breast concern, biopsy, and recently diag-
+nosed with breast cancer being evaluated for pre-surgical 
+MRI evaluation. Imaging results, from the procedure at 
+sample collection, as well as any follow-up imaging was 
+obtained through The Breast Center to assist with sample 
+classification. Details for sample classifications are dis-
+played in Table 1.
+Sample preparation and ELISA
+Tear fluid samples were collected and evaluated for 
+the expression level of S100A8, S100A9, and Galectin-
+3-Binding Protein (LG3BP) using ELISA (DuoSets ELISA 
+kits, R&D Systems (Minneapolis, MN, USA) based on 
+previously reported protocols [35].
+Statistical analysis
+R statistical software was used to apply logistic regression 
+to protein concentrations determined by ELISA for com-
+parison. Forward stepwise logistic regression was used to 
+determine diagnostic parameters for the optimal combi-
+nations of proteins of interest and subject demographic 
+characteristics. This was done to reduce the number of 
+predictors in the model to a more parsimonious set. The 
+algorithm derived from the logistic regression model 
+was then used to calculate predicted probability scores 
+for each subject. Receiver operator characteristic (ROC) 
+curves were generated using these predicted probability 
+scores against the breast cancer dependent variables and 
+the area under the curve (AUC) was computed accord-
+ingly. An AUC of 0.7 or greater was set as the standard 
+of acceptance for a panel of proteins and characteristics. 
+Sensitivity (true positive rate) and specificity (true nega-
+tive rate) scores were also calculated to assess the accu-
+racy of the test. The data preparation and analysis were 
+conducted in SPSS version 25 [44]. Crosstabulations 
+using chi-square (Pearson’s χ2) tests were performed to 
+examine the relationships between each diagnosis (sen-
+sitivity/specificity/accuracy) and three models in each 
+scenario, and a p-value < 0.05 was considered statistically 
+significant.
+Results
+Sample population
+Logistic regression models were built using a cohort data-
+set of 391 samples (Cohort 1) collected from a single site 
+from October 2017 through December 2018. As shown 
+in Table 2, age range of the entire study population was 
+22–84 years of age, with an average of 55.81 ± 12.22 yrs. 
+of age. At the conclusion of enrollment, the study pop-
+ulation consisted of 87 confirmed breast cancer cases 
+with a subtype distribution of IDC (55%), DCIS (23%), 
+ILC (5%), multiple diagnosis (5%) (i.e. DCIS/IDC, ILC/
+IDC), remaining diagnosis (13%) comprising, infiltrating 
+mammary carcinoma; infiltrating mammary duct carci-
+noma; invasive ductal carcinoma; metastatic mammary 
+carcinoma; papillary carcinoma; and invasive cribriform 
+carcinoma. Controls were divided into two groups, Nor-
+mal, taken from subjects who were not called-back for 
+additional imaging after a screening mammogram; and 
+Call-back, taken from subjects who were recalled but 
+the recall did not lead to biopsy, and they were cleared to 
+return to standard yearly screening.
+Another cohort dataset of 456 samples (Cohort 2) with 
+an average 53.48 ± 12.14 yrs. of age were collected from 
+the same single site from December 2018 through June 
+2019. The data set consisted of an additional 21 breast 
+cancer samples with a subtype distribution of IDC (67%), 
+ILC (14%), DCIS (10%), with the remaining falling into 
+the “other” category (10%). Additionally, this dataset con-
+tained 121 biopsy confirmed benign samples as well as 86 
+samples assigned BiRADS 3 with recommendation for 
+short-term follow-up. A summary of sample characteris-
+tics for the Cohort 1 and 2 can be found in Table 2.
+Table 1  Sample classifications and qualifications
+Sample Class
+BiRADS
+Imaging procedure at sample collection
+Outcome
+Normal
+1,2
+Screening MGM- no documented area of concern
+Classified as normal and a recommendation to continue 
+normal screening
+Call-back
+1,2
+Screening MGM, or diagnostic - may have documented 
+area of concern
+Call-back for further imaging that resulted in a “normal” 
+classification and a return to normal screening.
+Category 3
+3
+Screening or diagnostic - may have documented area of 
+concern
+Call-back for further imaging that resulted in a recommen-
+dation for additional follow-up.
+Benign
+4a, 4b, 4c
+Screening, Diagnostic, Biopsy - may have documented area 
+of concern
+Biopsy with final diagnosis as Benign
+Breast Cancer
+4a, 4b, 4c, 5
+Screening, Diagnostic, Biopsy, MRI - may have documented 
+area of concern
+Biopsy confirmed Breast Cancer diagnosis
+Page 4 of 9
+Daily et al. Biomarker Research           (2022) 10:76 
+Logistic regression
+Stepwise forward logistic regression analysis was used to 
+identify distinguishing covariate combinations. Due to 
+the non-normal distribution of the three protein analytes 
+(S100A8, S100A9, LG3BP), concentrations were trans-
+formed to log values for the analysis. In instances where 
+the average protein values were 0 pg/ml, effectively below 
+the lower limit of detection, the value was recoded to 
+1 pg/ml enabling the log(protein) to be taken generating a 
+0 instead of missing.
+After assessment for collinearity of the 28 covariates, 
+11 potential covariates remained for evaluation- three 
+proteins (S100A8, S100A9, LG3BP), age, BMI, HRT, fam-
+ily history of cancer, family history of breast cancer, per-
+sonal history of cancer, personal history of breast cancer, 
+and breast density. Logistic regressions were conducted 
+on the data set in three conditions; Model 1- Normal vs. 
+Breast Cancer (1); Model 2- Call-back vs. Breast Cancer 
+(2); Model 3- Normal & Call-back vs. Breast Cancer (3), 
+and the Forward Logistic Regression Algorithm formulas 
+Table 2  Demographics of patient database
+Category
+Cohort 1 (n = 391)
+Cohort 2 (n = 456)
+Combined (n = 847)
+Age, y, median (range)
+57 (22–87)
+53 (21–87)
+55 (21–87)
+Normal
+  Normal screening mammogram
+223
+145
+368
+Call-Back
+  Normal Diagnostic Mammogram
+81
+83
+164
+Cases
+  Biopsy Confirmed Breast Cancer
+87
+21
+108
+IDC
+48
+14
+62
+ILC
+4
+3
+7
+DCIS
+20
+2
+22
+Multiple
+4
+0
+4
+Other
+11
+2
+13
+Grade
+  Low
+18
+2
+20
+  Intermediate
+41
+11
+52
+  High
+26
+7
+33
+  Unknown
+2
+1
+3
+Tumor Size (cm)
+   < 1
+28
+3
+31
+  1–2
+27
+11
+38
+   > 2
+29
+7
+36
+  Multiple
+9
+2
+11
+  Primary tumor with positive node
+15
+2
+17
+  Unknown
+3
+3
+Receptor Status
+  ER−/PR-
+1
+1
+2
+  ER−/PR+
+1
+0
+1
+  ER+/PR+
+16
+2
+18
+  ER+/PR-
+3
+0
+3
+  ER−/PR−/HER2+
+3
+0
+3
+  ER+/PR+/HER2-
+47
+13
+60
+  ER+/PR−/HER2-
+4
+1
+5
+  ER+/PR+/HER2+
+8
+2
+10
+  Triple Negative
+4
+2
+6
+Benign
+121
+Category 3
+86
+Page 5 of 9
+Daily et al. Biomarker Research           (2022) 10:76 
+	
+are provided below with Y representing the scores for 
+each model,
+ 
+Validation of the models on cohort 1
+Receiver operator characteristic curves (ROC) were gen-
+erated for each model on the cohort 1 dataset and used to 
+select various diagnostic thresholds for analysis (Fig. 1). 
+For each model, two diagnostic thresholds were selected; 
+Scenario 1 utilized the Y (score) where the sum of sen-
+sitivity and specificity was maximized. For scenario 2, 
+a Y (score) was selected with preference given to 90% 
+sensitivity to evaluate the potential reduction of false 
+negatives.
+For the scenario 1 in the cohort 1 dataset, analysis of 
+Normal vs. Breast Cancer samples produced model 1 
+which incorporated S100A8, S100A9, and breast density 
+as the predictors. The overall AUC was 0.779 with a max-
+imized sensitivity of 76% and a specificity of 76% when 
+the cut-off point was set as Y > − 0.8565. These results 
+along with the positive coefficient of the three predic-
+tors indicate that S100A8, S100A9, and breast density 
+were significantly associated with a positive breast can-
+cer diagnosis. The AUC score of 0.779 further suggests an 
+acceptable factor combination to predict breast cancer.
+Analysis of Call-back vs. Breast Cancer samples pro-
+duced model 2 which incorporated S100A8, S100A9, 
+and age as the predictors. An AUC of 0.805 revealed that 
+this algorithm is a good indicator of the breast cancer 
+(1)
+Model 1 : Y = −6.64+1.04∗
+logS100A8
+
++0.811∗
+logS100A9
+
++0.62∗
+breast density
+
+(2)
+Model 2 : Y = −6.988 + 0.614∗logS100A8 + 1.081∗logS100A9 + 0.034∗age
+(3)
+Model 3 : Y = −7.244 + 0.955∗
+logS100A8
+
++ 1.047∗
+logS100A9
+
+diagnosis with a maximized sensitivity of 70% and a spec-
+ificity of 81% when the cut-off point was set as Y > 0.2018.
+Analysis of Normal & Call-back vs. Breast Cancer sam-
+ples produced a model 3 with S100A8 and S100A9 as 
+the predictors. An AUC of 0.790 suggests a fair to good 
+indicator of the breast cancer diagnosis. When the cut-off 
+value Y was set above − 0.9487, sensitivity and specificity 
+were maximized to 70 and 84% respectively.
+Evaluation of the models on the combined dataset
+Diagnostic parameters (sensitivity and specificity) for 
+scenarios 1 and 2 for models 1, 2, & 3 were evaluated 
+for the entire 847 sample data set to find the most effec-
+tive model out of all three proposed models. In each 
+case, samples were considered positive if the Y-score 
+was greater than the cut-off and below which they were 
+considered negative. Scenario 1 with Model 1 (M1 S1), a 
+Y-score of − 0.8565 resulted in a sensitivity of 61%, spe-
+cificities of 74 and 62% for Normal & Call-back respec-
+tively, and an overall accuracy of 69% (Fig. 2A and C). 
+For model 2 scenario 1 (M2 S1), a Y-score of 0.2018 was 
+used, producing a sensitivity of 64%, specificities of 69 
+and 73% for Normal & Call-back respectively, and an 
+overall accuracy of 69%. Finally, for model 3 scenario 1 
+(M3 S1) with a Y-score of − 0.9487 resulted in a sensi-
+tivity of 81% and specificities of 79 and 77% for Nor-
+mal & Call-back respectively, and an overall accuracy of 
+A
+B
+C
+Fig. 1  A Receiver Operating Characteristic (ROC) Curves comparing Normal versus Breast Cancer with an AUC of 0.779; B Call-back versus Breast 
+Cancer with an AUC of 0.805; C Normal & Call-back versus Breast Cancer with an AUC of 0.790
+Page 6 of 9
+Daily et al. Biomarker Research           (2022) 10:76 
+77%. A crosstabulation using a Pearson χ2 test was con-
+ducted and found that there was no statistically signifi-
+cant relationship between diagnosis and M1/M2/M3 for 
+sensitivity and accuracy. However, there was a statisti-
+cally significant relationship between specificity of nor-
+mal control and three models in scenario 1 (p = 0.008). 
+Model 3 resulted in highest specificity in the prediction 
+of normal population (79%) whereas model 2 had lowest 
+specificity in the prediction of normal population (69%). 
+The significant relationship was also found between the 
+three models and the specificity of call-back controls in 
+scenario 1 (p = 0.007). A greater specificity of call-back 
+controls was predicted in the model 3 (77%) as compared 
+to the model 1 (62%) (See Fig. 2A).
+A Y-score of − 1.8236 was used for Scenario 2 for 
+model 1 (M1 S2), and this resulted in a sensitivity of 
+80% and specificities of 42 and 36% for Normal & 
+Call-back respectively, and an overall accuracy of 47%. 
+Model 2 scenario 2 (M2 S2) with Y-score of − 0.828 
+produced a sensitivity of 83% and specificities of 40 and 
+41% for Normal & Call-back respectively, and an over-
+all accuracy of 48%. Model 3 scenario 2 (M3 S2) utilized 
+a Y-score of − 2.3226 resulting in a sensitivity of 86% 
+and specificities of 38 and 35% respectively for Normal 
+& Call-back respectively, and an overall accuracy of 
+44%. A Pearson χ2 test revealed no statistically signifi-
+cant relationship between diagnosis and M1/M2/M3 
+for sensitivity, specificity, and accuracy.
+All three models and scenarios were then applied to 
+our entire dataset where the participant had entered 
+the breast health continuum of care at screening mam-
+mogram to evaluate how the models would perform in 
+a pre-screening application (Fig. 2B and C). For M1 S1 
+sensitivity was 59% and specificities were 74 and 67% 
+for Normal & Call-back respectively, and an overall 
+accuracy of 71%. M2 S1 produced a sensitivity of 64% 
+and specificities of 69 and 79% for Normal & Call-back 
+respectively, and an overall accuracy of 70%. M3 S1 pro-
+duced a sensitivity of 59% and specificities of 79 and 
+79% for Normal & Call-back respectively, and an over-
+all accuracy of 76%. There was no statistically significant 
+relationship between diagnosis and M1/M2/M3 for sen-
+sitivity and accuracy. However, there was a statistically 
+significant relationship for specificity in the normal 
+A
+B
+C
+D
+Fig. 2  A Comparisons of performance threshold values from the three models (M) produced by logistic regression analysis at two different 
+scenarios (S). B Selected samples where the patient entered the continuum of care at the screening mammogram. C Accuracy rates for all screening 
+modalities versus accuracy rates for individuals who entered the continuum of care at screening mammogram only. D Finally, shown is specificity 
+for biopsy confirmed benign samples as well as samples assigned a BiRADs 3 score
+Page 7 of 9
+Daily et al. Biomarker Research           (2022) 10:76 
+	
+controls (p  = 0.008) and a trend was observed in call-
+back controls (p = 0.093). A greater specificity of Nor-
+mal population was predicted in the model 3 (79%) as 
+compared to the model 2 (69%) (See Fig. 2B).
+For the second scenario, M1 S2 resulted in a sensitivity 
+of 83% and specificities of 42 and 43% for Normal & Call-
+back respectively, and an overall accuracy of 47%. M2 S2 
+produced a sensitivity of 86% with specificities of 40 and 
+47% for Normal & Call-back respectively, and an overall 
+accuracy of 47%. M3 S2 produced a sensitivity of 90% 
+and specificities of 36 and 40% for Normal & Call-back 
+respectively, and an overall accuracy of 45%. A Pearson 
+χ2 test revealed no statistically significant relationship 
+between diagnosis and M1/M2/M3 for sensitivity, speci-
+ficity, and accuracy.
+The final set of samples in the population pool con-
+sisted of category 3 and benign to evaluate how the mod-
+els would perform in a diagnostic application (Fig. 2D). 
+M1 S1 resulted in a specificity of 68 and 55% for category 
+3 and benign respectively. M2 S1 performed better with 
+a 77% specificity for category 3 and 60% for benign; and 
+M3 S1 produced a specificity of 78% for category 3 and 
+64% for benign. For the second scenario, M1 S2 resulted 
+in a specificity of 31% for category 3 and 27% for benign. 
+M2 S2 resulted in 37% specificity for category 3 and 35% 
+for benign. Finally, M3 S2 showed a specificity of 30% for 
+category 3 and 28% for benign. There was no statistically 
+significant relationship between category 3, benign, and 
+the three models for specificity in both the scenarios.
+Discussion
+Here we provide an analysis of the potential capability 
+of tear proteins to be used in the classification of con-
+trol and breast cancer samples. In this study, we analyze 
+11 potential clinical covariates, by logistic regression to 
+develop a diagnostic algorithm for sample classification. 
+Methods for the selection of protein biomarkers included 
+in the analysis, S100A8, S100A9, and LG3BP were 
+described previously [35]. Breast cancer samples were 
+compared to two different groups- Normal & Call-back, 
+as the final diagnosis for women in both groups was “nor-
+mal” for that year, however subjects imaging path differed 
+(Table 1). Individuals in the call-back group experienced 
+an additional imaging step consisting of diagnostic mam-
+mogram and in some cases, a diagnostic ultrasound. 
+Women in this group were not recommended to have 
+an additional confirmatory imaging after the diagnostic 
+and were returned to a yearly screening cycle. The call-
+back group was analyzed separate from normal because 
+reducing false-positive call-backs from imaging is a high 
+priority in breast imaging.
+The clinical covariates included in the models were the 
+main differentiating factor as all three utilized S100A8 
+and S100A9. Model 1 incorporated breast density, model 
+2 incorporated age, while model 3 only utilized the two 
+protein concentrations. Comparison of the model perfor-
+mance against one another is essential as each model was 
+developed using specific portions of the dataset. Consid-
+eration of the covariates dictate where a model could be 
+used in the breast health continuum of care. For exam-
+ple, utilization of model 1 as pre-screening tool would 
+not be feasible as model 1 requires information about 
+tissue density category. Establishment of tissue density 
+is done after imaging and may also change through the 
+course of a woman’s lifetime. Additionally, since model 
+1 had the lowest performance after initial assessment, 
+models 2 and 3 were the focus of further application. 
+The performance of all three models on the entire data 
+set were evaluated using Pearson’s χ2 test and it revealed 
+no statistically significant relationship between diagnosis 
+and M1/M2/M3 for sensitivity, specificity, and accuracy 
+providing evidence that any of the three models could be 
+selected moving forward.
+The lower specificity values ranging between 35 and 
+45% are associated with scenario two for each model. In 
+scenario two, the clinical threshold was selected prefer-
+ential to sensitivity. Because of the dynamic relationship 
+between sensitivity and specificity, when preference is 
+given to one value the other value often decreases. Sce-
+nario 1 in each model tests the y-value where both the 
+sensitivity and specificity are at the highest. For Model 1 
+the y-value was set at − 0.8565 which provided a sensitiv-
+ity of 75.9% and specificity of 76.1%. When the y-value 
+was preferentially adjusted for higher sensitivity to 
+− 1.8236 the predicted sensitivity is now 90% and speci-
+ficity is 34%. Desired clinical outcomes play a significant 
+role in the selection of the diagnostic threshold. In think-
+ing about the implications of false negatives and false 
+positives, the first preference is to get both numbers as 
+low as possible however if the false negative rate is too 
+high then the threshold is adjusted.
+The diversity of diagnosis included in the breast can-
+cer samples allowed for investigation into the perfor-
+mance of the models by cancer subtypes, cancer grade, 
+and tumor size including a small portion of subjects 
+with node metastasis and the relevant sensitivities 
+are reported in the supplemental section. Diagnostic 
+thresholds M2 S2 and M3 S2 were used to evaluate the 
+performance (Supplemental Fig.  1). While tumor size 
+is not an indication of disease severity, it is of interest 
+when considering utility of a biological test prior to 
+screening mammography. Ideally, these models should 
+perform best in a normal breast prior to palpability of 
+a lump or identification of concern. Both models per-
+formed best in smaller tumors and lowest performance 
+was in subjects with multiple breast tumors identified 
+Page 8 of 9
+Daily et al. Biomarker Research           (2022) 10:76 
+or where metastasis to a node had occurred. We 
+observed a trend when assessing sensitivity of the 
+models by grade where low and intermediate grades of 
+cancer had better sensitivities. The performance of the 
+models for lower grade cancer is not surprising given 
+the roles of S100A8 and S100A9 in recruitment of 
+immune cells essentially prepping the tissue for tumor 
+formation [45–47].
+Utilization of screening mammography among 
+insured women in the US hovers around 60% with the 
+lowest participation of 35% in women under 45 years 
+of age [48]. While the detection rate in women under 
+40 is only 6.5%, these diagnoses are often more aggres-
+sive [49]. Screening can only be effective if utilized. It 
+is possible that a simple test offered prior to screening 
+mammography for low to average risk women could 
+increase participation in yearly screening mammogra-
+phy. While there is more development work to be done, 
+given the elegant simplicity of tear sample collection, 
+this could be an interesting medium to explore for a 
+“pre-screening” application.
+Limitations of the study include, only one clinical 
+location which limited geographic, racial, ethnic, and 
+economic distribution of subjects. In addition, evalu-
+ation of S100A8 and S100A9 has been limited to only 
+breast cancer. Future studies will incorporate additional 
+cancer subtypes. Additionally, most recent develop-
+ments have focused on employing machine learning 
+tools to develop better diagnostic algorithms and along 
+the same lines, our future work will also focus on devel-
+oping models with increased specificity by studying 
+more clinical covariates.
+Conclusions
+In this study, we used tear fluids to determine that can-
+cer biomarkers’ protein concentrations and developed 
+a model that is significantly associated with a positive 
+breast cancer diagnosis. We analyzed the protein con-
+centration from 847 individually collected tears samples 
+using logistic regression to develop and validate three 
+models for the identification of positive breast cancer 
+samples with a sensitivity as high as 90%. Our analy-
+sis suggests that models developed using tear fluid have 
+clinical validity and could be used in further development 
+of a biological assay to supplement screening mammog-
+raphy for screening adverse individuals or in areas where 
+access to screening mammography is limited.
+Abbreviations
+BI-RADS: Breast imaging reporting and data system; ROC: Receiver operating 
+characteristics; AUC​: Area under the curve; LG3BP: Galectin-3-binding protein; 
+IDC: Intraductal carcinoma; DCIS: Ductal carcinoma in situ.
+Supplementary Information
+The online version contains supplementary material available at https://​doi.​
+org/​10.​1186/​s40364-​022-​00420-1.
+Additional file 1: Fig. 1. Sensitivity of Model 2 and Model 3 according to 
+A. breast cancer subtype, B. grade, and C. tumor size.
+Acknowledgements
+Not applicable.
+Authors’ contributions
+All authors had full access to all of the data in the study and take responsibility 
+for the integrity of the data and the accuracy of the data analysis. Concept and 
+design: AD, SH, VSK. Acquisition, analysis, or interpretation of data: AD, PR, WW, 
+RK. Drafting of the manuscript: AD, VSK. Critical revision of the manuscript for 
+important intellectual content: All authors. Statistical analysis: WW, RK. Obtained 
+funding: AD. Administrative, technical, or material support: AD, PR. Supervision: 
+AD, VSK, SH. The author(s) read and approved the final manuscript.
+Funding
+Namida Lab Inc. is a privately funded company and provided funds for 
+conducting this study. The funders had no role in the design and conduct of 
+the study; collection, management, analysis, and interpretation of the data; 
+preparation, review, or approval of the manuscript; and decision to submit the 
+manuscript for publication.
+Availability of data and materials
+All data that support the findings of this study are available from the cor-
+responding authors on reasonable request.
+Declarations
+Ethics approval and consent to participate
+The study was conducted according to the guidelines of the Declaration of 
+Helsinki and approved by the Institutional Review Board of the University of 
+Arkansas (protocol #13–11-289 and December 2013). Informed consent was 
+obtained from all subjects involved in the study.
+Consent for publication
+Not applicable.
+Competing interests
+This investigation has resulted in the achievement of the following patent. Class, I. P. 
+C., and AG01N3072FI USPC. Daily et al. Methods of Detecting Cancer, US 10,451,625 
+B2, issued October 22, 2019. AD and PR are employees of Namida Lab Inc. AD is an 
+inventor on the patent and serves as the Vice President of Product Development 
+and Innovation. AD owns shares of Namida Lab Inc. PR serves as the Research and 
+Development Scientist at Namida Lab Inc. SH and VSK are on the clinical advisory 
+board of Namida Lab Inc. WW and RK have no competing interests.
+Author details
+1 Namida Lab Inc., Fayetteville, AR, USA. 2 Elite Research, LLC, Irving, TX, USA. 
+3 The Breast Center-Medical Associates of Northwest Arkansas, Fayetteville, AR, 
+USA. 4 Department of Surgery, University of Texas Medical Branch, Galveston, 
+TX, USA. 5 Breast Surgical Oncology, The University of Texas MD Anderson 
+Cancer Center, Houston, TX, USA. 
+Received: 27 June 2022   Accepted: 19 September 2022
+References
+	1.	
+Wilkinson L, Gathani T. Understanding breast cancer as a global health 
+concern. Br J Radiol. 2022;95(1130):20211033.
+	2.	
+Ryser MD, Lange J, Inoue LY, O’Meara ES, Gard C, Miglioretti DL, et al. Esti-
+mation of breast cancer overdiagnosis in a US breast screening cohort. 
+Ann Intern Med. 2022;175(4):471–8.
+Page 9 of 9
+Daily et al. Biomarker Research           (2022) 10:76 
+	
+	3.	
+Siegel RL, Miller KD, Fuchs HE, Jemal A. Cancer statistics, 2022. CA Cancer 
+J Clin. 2022.
+	4.	
+Rogoz B, Houze de l’Aulnoit A, Duhamel A, Houze de l’Aulnoit D. Thirty-
+year trends of survival and time-varying effects of prognostic factors in 
+patients with metastatic breast cancer-a single institution experience. 
+Clin Breast Cancer. 2018;18(3):246–53.
+	5.	
+Mann RM, Athanasiou A, Baltzer PA, Camps-Herrero J, Clauser P, Fall-
+enberg EM, et al. Breast cancer screening in women with extremely 
+dense breasts recommendations of the European Society of Breast 
+Imaging (EUSOBI). Eur Radiol. 2022;32:4036–45.
+	6.	
+Sun Y-S, Zhao Z, Yang Z-N, Xu F, Lu H-J, Zhu Z-Y, et al. Risk factors and 
+preventions of breast cancer. Int J Biol Sci. 2017;13(11):1387.
+	7.	
+Jatoi I, Miller AB. Why is breast-cancer mortality declining? The lancet 
+oncology. 2003;4(4):251–4.
+	8.	
+Breen N, Yabroff KR, Meissner HI. What proportion of breast cancers are 
+detected by mammography in the United States? Cancer Detect Prev. 
+2007;31(3):220–4.
+	9.	
+Vourtsis A, Berg WA. Breast density implications and supplemental 
+screening. Eur Radiol. 2019;29(4):1762–77.
+	10.	 Farber R, Houssami N, Wortley S, Jacklyn G, Marinovich ML, McGeechan K, 
+et al. Impact of full-field digital mammography versus film-screen mam-
+mography in population screening: a meta-analysis. J Natl Cancer Inst. 
+2021;113(1):16–26.
+	11.	 Irvin VL, Zhang Z, Simon MS, Chlebowski RT, Luoh S-W, Shadyab AH, et al. 
+Comparison of mortality among participants of women’s health initiative 
+trials with screening-detected breast cancers vs interval breast cancers. 
+JAMA Netw Open. 2020;3(6):e207227.
+	12.	 Siu AL. Force USPST: screening for breast cancer: U.S. preventive services task 
+force recommendation statement. Ann Intern Med. 2016;164(4):279–96.
+	13.	 Lehman CD, Arao RF, Sprague BL, Lee JM, Buist DS, Kerlikowske K, et al. 
+National performance benchmarks for modern screening digital mam-
+mography: update from the breast cancer surveillance consortium. 
+Radiology. 2017;283(1):49–58.
+	14.	 Breast Cancer Surveillance Consortium: Performance benchmarks for 
+screening mammography; clinical demographics for 1,682,504 screening 
+mammography examinations from 2007–2013. Updated 2017.
+	15.	 Sprague BL, Arao RF, Miglioretti DL, Henderson LM, Buist DS, Onega T, 
+et al. National performance benchmarks for modern diagnostic digital 
+mammography: update from the breast cancer surveillance consortium. 
+Radiology. 2017;283(1):59–69.
+	16.	 American Cancer Society. Breast cancer facts & figures 2019–2020. Am 
+Cancer Soc. 2019:1–44.
+	17.	 Cathcart-Rake EJ, Ruddy KJ, Bleyer A, Johnson RH. Breast cancer in adoles-
+cent and young adult women under the age of 40 years. JCO Oncol Pract. 
+2021;17(6):305–13.
+	18.	 Hendrick RE, Helvie MA, Monticciolo DL. Breast cancer mortality rates 
+have stopped declining in US women younger than 40 years. Radiology. 
+2021;299(1):143–9.
+	19.	 Duffy SW, Vulkan D, Cuckle H, Parmar D, Sheikh S, Smith RA, et al. Effect of 
+mammographic screening from age 40 years on breast cancer mortality 
+(UK age trial): final results of a randomised, controlled trial. Lancet Oncol. 
+2020;21(9):1165–72.
+	20.	 Pinsky RW, Helvie MA. Mammographic breast density: effect on imaging 
+and breast cancer risk. J Natl Compr Cancer Netw. 2010;8(10):1157–64 
+quiz 1165.
+	21.	 Haars G, van Noord PA, van Gils CH, Grobbee DE, Peeters PH. Measure-
+ments of breast density: no ratio for a ratio. Cancer Epidemiology and 
+Prevention Biomarkers. 2005;14(11):2634–40.
+	22.	 Buist DS, Porter PL, Lehman C, Taplin SH, White E. Factors contributing 
+to mammography failure in women aged 40-49 years. J Natl Cancer Inst. 
+2004;96(19):1432–40.
+	23.	 D’Orsi CJ, Sickles EA, Mendelson EB, Morris EA, et al. ACR BI-RADS® Atlas, 
+Breast Imaging Reporting and Data System. Reston: American College of 
+Radiology; 2013.
+	24.	 Bohm D, Keller K, Pieter J, Boehm N, Wolters D, Siggelkow W, et al. Com-
+parison of tear protein levels in breast cancer patients and healthy con-
+trols using a de novo proteomic approach. Oncol Rep. 2012;28(2):429–38.
+	25.	 Takeuchi T, Mori K, Sunayama H, Takano E, Kitayama Y, Shimizu T, et al. 
+Antibody-conjugated signaling nanocavities fabricated by dynamic 
+molding for detecting cancers using small extracellular vesicle markers 
+from tears. J Am Chem Soc. 2020;142(14):6617–24.
+	26.	 Azkargorta M, Soria J, Acera A, Iloro I, Elortza F. Human tear proteomics 
+and peptidomics in ophthalmology: toward the translation of proteomic 
+biomarkers into clinical practice. J Proteome. 2017;150:359–67.
+	27.	 Lebrecht A, Boehm D, Schmidt M, Koelbl H, Grus FH. Surface-enhanced 
+laser desorption/ionisation time-of-flight mass spectrometry to detect 
+breast cancer markers in tears and serum. Cancer Genomics Proteomics. 
+2009;6(2):75–83.
+	28.	 Zhou L, Beuerman RW. Tear analysis in ocular surface diseases. Prog Retin 
+Eye Res. 2012;31(6):527–50.
+	29.	 Zhou L, Beuerman RW. The power of tears: how tear proteomics research could 
+revolutionize the clinic. Expert review of proteomics. 2017;14(3):189–91.
+	30.	 Zhou L, Beuerman RW, Chew AP, Koh SK, Cafaro TA, Urrets-Zavalia EA, 
+et al. Quantitative analysis of N-linked glycoproteins in tear fluid of 
+climatic droplet keratopathy by glycopeptide capture and iTRAQ. J 
+Proteome Res. 2009;8(4):1992–2003.
+	31.	 Ravishankar P, Daily A. Tears as the next diagnostic biofluid: a comparative 
+study between ocular fluid and blood. Appl Sci. 2022;12(6):2884.
+	32.	 Kaufmann Y, Byrum SD, Acott AA, Siegel ER, Washam CL, Klimberg VS, 
+et al. Proteomic profiling of tear fluid as a promising non-invasive screen-
+ing test for colon cancer. Am J Surg. 2022.
+	33.	 Inubushi S, Kawaguchi H, Mizumoto S, Kunihisa T, Baba M, Kitayama Y, 
+et al. Oncogenic miRNAs identified in tear exosomes from metastatic 
+breast cancer patients. Anticancer Res. 2020;40(6):3091–6.
+	34.	 und Hohenstein-Blaul NvT, Funke S, Grus FH. Tears as a source of biomark-
+ers for ocular and systemic diseases. Exp Eye Res. 2013;117:126–37.
+	35.	 Daily A, Ravishankar P, Harms S, Klimberg VS. Using tears as a non-invasive 
+source for early detection of breast cancer. PLoS One. 2022;17(4):e0267676.
+	36.	 Allgower C, Kretz AL, von Karstedt S, Wittau M, Henne-Bruns D, Lemke J. 
+Friend or foe: S100 proteins in cancer. Cancers (Basel). 2020;12(8):2037.
+	37.	 Bergenfelz C, Gaber A, Allaoui R, Mehmeti M, Jirström K, Leanderson T, 
+et al. S100A9 expressed in ER− PgR− breast cancers induces inflamma-
+tory cytokines and is associated with an impaired overall survival. Br J 
+Cancer. 2015;113(8):1234–43.
+	38.	 McKiernan E, McDermott EW, Evoy D, Crown J, Duffy MJ. The role of S100 
+genes in breast cancer progression. Tumour Biol. 2011;32(3):441–50.
+	39.	 Parris TZ, Kovacs A, Aziz L, Hajizadeh S, Nemes S, Semaan M, et al. Additive 
+effect of the AZGP1, PIP, S100A8 and UBE2C molecular biomarkers improves 
+outcome prediction in breast carcinoma. Int J Cancer. 2014;134(7):1617–29.
+	40.	 Wang D, Liu G, Wu B, Chen L, Zeng L, Pan Y. Clinical significance of elevated 
+S100A8 expression in breast cancer patients. Front Oncol. 2018;8:496.
+	41.	 Yin C, Li H, Zhang B, Liu Y, Lu G, Lu S, et al. RAGE-binding S100A8/A9 pro-
+motes the migration and invasion of human breast cancer cells through 
+actin polymerization and epithelial–mesenchymal transition. Breast 
+Cancer Res Treat. 2013;142(2):297–309.
+	42.	 Reynolds NM, Mohammadalipour A, Hall CR, Asghari Adib A, Farnoud 
+AM, Burdick MM. Galectin-1 influences breast cancer cell adhesion to 
+e-selectin via ligand intermediaries. Cell Mol Bioeng. 2018;11(1):37–52.
+	43.	 White MJ, Roife D, Gomer RH. Galectin-3 binding protein secreted by 
+breast cancer cells inhibits monocyte-derived fibrocyte differentiation. J 
+Immunol. 2015;195(4):1858–67.
+	44.	 SPSS I: IBM Corp. Released 2017, IBM SPSS statistics for windows, version 
+25.0. Armonk: IBM Corp. In; 2017.
+	45.	 Bresnick AR, Weber DJ, Zimmer DB. S100 proteins in cancer. Nat Rev 
+Cancer. 2015;15(2):96–109.
+	46.	 Li J, Shu X, Xu J, Su SM, Chan UI, Mo L, et al. S100A9-CXCL12 activation in 
+BRCA1-mutant breast cancer promotes an immunosuppressive microen-
+vironment associated with resistance to immunotherapy. Nat Commun. 
+2022;13(1):1481.
+	47.	 Gebhardt C, Nemeth J, Angel P, Hess J. S100A8 and S100A9 in inflamma-
+tion and cancer. Biochem Pharmacol. 2006;72(11):1622–31.
+	48.	 DeSantis CE, Ma J, Gaudet MM, Newman LA, Miller KD, Goding Sauer A, 
+et al. Breast cancer statistics, 2019. CA Cancer J Clin. 2019;69(6):438–51.
+	49.	 Hu X, Myers KS, Oluyemi ET, Philip M, Azizi A, Ambinder EB. Presentation 
+and characteristics of breast cancer in young women under age 40. 
+Breast Cancer Res Treat. 2021;186(1):209–17.
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in pub-
+lished maps and institutional affiliations.

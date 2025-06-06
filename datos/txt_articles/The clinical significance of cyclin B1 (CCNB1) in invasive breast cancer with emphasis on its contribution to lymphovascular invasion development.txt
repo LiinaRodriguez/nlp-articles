@@ -1,0 +1,1501 @@
+Vol.:(0123456789)
+1 3
+Breast Cancer Research and Treatment (2023) 198:423–435 
+https://doi.org/10.1007/s10549-022-06801-2
+PRECLINICAL STUDY
+The clinical significance of cyclin B1 (CCNB1) in invasive breast 
+cancer with emphasis on its contribution to lymphovascular invasion 
+development
+Abrar I. Aljohani1,2   · Michael S. Toss1 · Andrew R. Green1 · Emad A. Rakha1,3,4
+Received: 2 April 2022 / Accepted: 3 November 2022 / Published online: 22 November 2022 
+© The Author(s) 2022
+Abstract
+Background  Lymphovascular invasion (LVI) is regulated through complex molecular mechanisms. Cyclin B1 (CCNB1) was 
+previously determined as being associated with LVI using large cohorts of breast cancer (BC) and artificial neural network 
+(ANN) technique. In this study, we aimed to assess the association between CCNB1 and LVI, other clinicopathological and 
+other LVI-related biomarkers at the molecular (RNA transcriptomic) and proteomic levels in BC.
+Methods  Two transcriptomic BC cohorts (n = 2834) were used to assess the association between the expression of CCNB1 
+at the mRNA level and clinicopathological characteristics and patient outcome. Tissue microarrays (TMAs) from a well-
+characterised BC cohort (n = 2480) with long-term outcome were also used to assess the clinical significance of CCNB1 
+protein expression using immunohistochemistry.
+Results  High CCNB1 mRNA expression was associated with aggressive tumour behaviour, including LVI, larger size, 
+higher tumour grade, high lymph nodal stage, hormonal receptor negativity, HER2 positivity and poor clinical outcome (all 
+p < 0.0001). Similarly, high CCNB1 protein expression was associated with higher tumour grade, hormonal receptor negativ-
+ity and HER2 positivity (all p < 0.0001). Additionally, there was a significant association between CCNB1- and LVI-related 
+biomarkers including N-cadherin, P-cadherin and TWIST2 at the transcriptomic and proteomic level. Multivariate analysis 
+revealed that CCNB1 was an independent predictor of shorter BC-specific survival (HR = 1.3; 95% CI 1.2–1.5; p = 0.010).
+Conclusion  CCNB1 is a key gene associated with LVI in BC and has prognostic value. More functional studies are warranted 
+to unravel the mechanistic role of CCNB1 in the development of LVI.
+Keywords  CCNB1 · Breast cancer · Progression · LVI · Prognosis
+Introduction
+The rate of breast cancer (BC)-associated mortalities 
+has significantly increased over the past two decades [1], 
+which is mainly related to metastasising disease to the 
+other vital organs. Between 12 and 20% of early-stage 
+BC patients will develop metastasis [2, 3]. The metastatic 
+cascade consists of a complex stepwise manner and fail-
+ure to complete any of these steps can stop the process 
+[4]. Lymphovascular invasion (LVI), which refers to the 
+presence of tumour emboli within the lymphatic and/or 
+vascular spaces in the peritumoural invasive area, is con-
+sidered as the initial and cornerstone step in the metastatic 
+process. Despite the propensity of invasive BC cells to 
+invade surrounding stroma, only those that can interact 
+with endothelial cells and invade the vascular wall will 
+develop LVI and complete metastatic spread [5, 6]. These 
+ *	 Emad A. Rakha 
+	
+emad.rakha@nottingham.ac.uk; Emad.rakha@nuh.nhs.uk
+1	
+Academic Unit for Translational Medical Sciences, School 
+of Medicine, Nottingham Breast Cancer Research Centre, 
+University of Nottingham Biodiscovery Institute, University 
+Park, Nottingham NG7 2RD, UK
+2	
+Department of Clinical Laboratory Sciences, College 
+of Applied Medical Sciences, Taif University, Taif 21944, 
+Saudi Arabia
+3	
+Histopathology Department, Faculty of Medicine, Menoufia 
+University, Shebeen El‑Kom, Egypt
+4	
+Department of Histopathology, Nottingham University 
+Hospital NHS Trust, City Hospital Campus, Hucknall Road, 
+Nottingham NG5 1PB, UK
+424
+	
+Breast Cancer Research and Treatment (2023) 198:423–435
+1 3
+LVI tumour emboli can migrate to distant organs, infiltrate 
+and grow at the metastatic sites resulting in nodal or dis-
+tance metastasis.
+LVI is an important prognostic factor in cancers, includ-
+ing BC [7]. At the molecular level, upregulation of certain 
+genes and downregulation of others can increase tumour 
+invasiveness, migration and the ability to penetrate vascu-
+lar walls and survive in the new environment [8–11]. As 
+the molecular mechanisms underlying LVI are complex and 
+overlap with many other related biological phenomena of 
+carcinogenesis and progress, the primary steps of LVI can 
+be explored via differential expression between LVI-negative 
+and LVI-positive BC, mainly by virtue of pathways that pro-
+mote LVI and the associated critical genes. The advances 
+and development in bioinformatic techniques and high-
+throughput molecular methods allowed identification of key 
+genes on a large scale, such as those linked with LVI [12].
+Several studies have indicated that the presence of LVI in 
+a primary tumour can determine appropriate treatment plans 
+for BC [13–15]. Therefore, it is imperative to recognise the 
+unique challenges presented by BC and find biomarkers to 
+help with better management of cancer and optimise clinical 
+outcomes for those patients.
+Cyclins are proteins that activate certain cyclin-dependent 
+kinases (CDKs) necessary for cell cycle progression [16]. 
+Cyclin B1 (CCNB1) is a member of the cyclin family and 
+a critical initiator and with quality control function in cel-
+lular division [17]. CCNB1 plays a key role in regulating 
+and complexing with CDK1 to promote transition from the 
+G2 to the mitotic phase of the cell cycle [18]. Increasing 
+evidence indicates that CCNB1 is overexpressed in a vari-
+ety of human malignancies, including colorectal, BC and 
+prostate cancer [18–20]. Inhibition of CCNB1 causes cell 
+cycle arrest in various cell lines by altering the expression 
+of G2/M cell cycle regulators [18]. CCNB1 is also involved 
+in the proliferation, migration, apoptosis, chemoresistance 
+and metastasis of tumours [21–23]. We previously identi-
+fied CCNB1 as an overexpressed gene in BC with positive 
+LVI using two large transcriptomic cohorts of BC, includ-
+ing the Molecular Taxonomy of Breast Cancer International 
+Consortium (METABRIC) [24] and The Cancer Genome 
+Atlas (TCGA) [25], using artificial neural network (ANN) 
+methodology [26]. However, the exact role of CCNB1 in 
+the development of LVI, including protein expression levels 
+and its association with LVI, the effect of other clinical and 
+pathological confounders and the crosstalk with the other 
+proliferation and LVI-related biomarkers, is still unknown. 
+As such, it was necessary to gain insight into the role it 
+plays in the development of LVI and BC outcomes in clini-
+cal settings by assessing its association with LVI at protein 
+level. This study aimed to evaluate the association between 
+CCNB1 at the transcriptomic and proteomic levels and LVI 
+status, LVI-related biomarkers and other clinicopathological 
+parameters using large well-annotated BC cohorts with long-
+term follow-up.
+Materials and methods
+Transcriptomic analysis study cohort
+Using the METABRIC (n = 1980) and TCGA (n = 854) 
+cohorts [24, 25], an assessment of the association between 
+CCNB1 mRNA expression and different variables, including 
+tumour grade, tumour size, molecular subtypes, LVI-related 
+biomarkers, and patient outcomes, was performed. The Illu-
+mina Human HT-12 v3 platforms (Illumina, Inc., San Diego, 
+USA) were used to examine the extracted mRNA from pri-
+mary tumour samples in the METABRIC. For TCGA data, 
+the required information about clinicopathological param-
+eters and RNASeqV2 data was obtained from cBioPortal 
+[27, 28]. A subset (n = 288) of the METABRIC cohort was 
+utilised to assess the correlation between mRNA and pro-
+tein expression where data on the expression level of both 
+parameters was available.
+The METABRIC and the TCGA cohorts that were used 
+in our previous study were used to evaluate the mRNA 
+expression and its association with LVI status. Most patient 
+demographics were similar in the TCGA and METABRIC 
+cohorts. However, in the METABRIC cohort, LVI status has 
+previously been evaluated for 1565 patients, including the 
+Nottingham subset from the METABRIC cohort, using his-
+tological investigation of H&E-stained paraffin-embedded 
+tissues. LVI status in Nottingham subset was determined by 
+endothelial markers through IHC staining for CD31, CD34, 
+and D2-40 [29]. However, the LVI was evaluated in the 
+TCGA by assessing histological slides stained with H&E 
+as no vascular IHC biomarkers were carried out for these 
+samples. The clinical characteristics for the METABRIC 
+and TCGA cohorts are shown in Supplementary Table 1. In 
+regard to the patients’ cohort used in this study, LVI status 
+was evaluated using both H&E-stained slides and IHC stain-
+ing markers.
+In addition, whilst in the METABRIC cohort, the over-
+all distribution of intrinsic BC subtypes was assessed via 
+prediction analysis of 50 genes using the PAM50 method, a 
+technique based on RT-qPCR, the BC subtypes of the Not-
+tingham cohort were identified using IHC profiling and the 
+Elston–Ellis mitotic score [30]. Details of the clinicopatho-
+logical factors of Nottingham cohorts are shown in Sup-
+plementary Table 2.
+CCNB1 protein expression
+Sample tissues were obtained from well-characterised BC 
+cohorts. This cohort contained 2480 primary invasive BC 
+425
+Breast Cancer Research and Treatment (2023) 198:423–435	
+1 3
+patients presented at the Nottingham City Hospital. Every 
+patient’s clinicopathological profile was available, includ-
+ing age at diagnosis, size and nodal stage of the primary 
+tumour, histological grade, LVI status and the Nottingham 
+Prognostic Index (NPI). Oestrogen receptor (ER), proges-
+terone receptor (PR) and human epidermal growth factor 2 
+(HER2) data were available for this cohort [31–34]. The BC 
+molecular subtypes, luminal A ­(ER+ /HER2−; Ki67 < 10%), 
+luminal B ­(ER+ /HER2−; Ki67⩾10%), ­HER2− enriched 
+­(HER2+ regardless of ER status) and triple-negative BC 
+(ER-, ­PR− and ­HER2−), were characterised according to 
+immunohistochemistry (IHC) profiles. Outcome data in 
+terms of BC-specific survival (BCSS), in months, were 
+available, defined as the time when the patient underwent 
+surgery to when they died from BC. Patient treatment was 
+based on the tumour features, NPI and the status of hormone 
+receptors. Patients with ­ER+ tumour and high NPI scores 
+(> 3.4) were given endocrine therapy. Those with the “good” 
+NPI scores (≤ 3.4) were not given adjuvant therapy. Chemo-
+therapy was given to premenopausal patients with moder-
+ate and poor NPI scores, whilst only hormonal therapy was 
+given to postmenopausal patients with “moderate” or “poor” 
+NPI scores. The classical treatments for patients without ER 
+expression were cyclophosphamide, fluorouracil, and metho-
+trexate. None of the patients in the study cohort received 
+neoadjuvant therapy.
+To gain more insight into the CCNB1 molecular interac-
+tions, the correlation with epithelial–mesenchymal transition 
+(EMT)-related markers, such as E-cadherin, N-cadherin, 
+P-cadherin, TGFβ1, and TWIST2 [35, 36] was investigated. 
+Supplementary Table 3 lists the cut-offs used to determine 
+the expression levels of all these biomarkers.
+Tissue microarrays and CCNB1 antibody validation 
+and immunohistochemical (IHC) staining
+The primary mouse monoclonal anti-CCNB1 antibody 
+(ab72, Abcam, UK)’s specificity was validated using western 
+blot (WB) prior to staining with the IHC. MCF-7, SK-BR-3, 
+and MB-MDA-231 (obtained from the American Type Cul-
+ture Collection, Manassas, VA, USA) BC cell line lysates 
+were used. In brief, 1:1000 and 1:15,000 primary antibody 
+ratio and secondary antibody (IRDye 700CW Donkey anti-
+mouse) ratio were applied, respectively. The visualisation of 
+the endogenous control marker was aided by the rabbit mon-
+oclonal anti-GAPDH primary antibody (1:5000) (ab181602, 
+Abcam, UK) with IRDye 800CW Donkey anti-rabbit fluo-
+rescent secondary antibody (LI-COR Biosciences). The 
+Odyssey Fc with Image Studio 4.0 (LI-COR Biosciences) 
+was used to visualise the CCNB1 band, which showed a 
+specific band at the expected molecular weight of 40 kDa 
+(Supplementary Fig. 1).
+The Grand Master® (3D HISTECH®, Budapest, Hun-
+gary) was used to prepare tissue microarrays (TMAs) from 
+invasive BC tissues [35]. Using the Novocastra Novolink™ 
+Polymer Detection Systems kit (Code: RE7280-K, Leica 
+Biosystems, Newcastle, UK), the process of staining the 
+TMAs by IHC was done on 4-μm TMA-thick sections. Anti-
+gen retrieval was performed (citrate buffer pH 6 at 1000 W 
+for 20 min using microwave energy) following the manufac-
+turers’ recommendations for this antibody. The dilution of 
+the mouse monoclonal CCNB1 was done at 1:5000 ration in 
+the Leica antibody diluent (RE AR9352, Leica Biosystems, 
+UK), which was followed by a 15-min incubation at room 
+temperature. Normal liver and tonsil tissues were used as 
+negative and positive controls, respectively (Fig. 1A, B).
+CCNB1 protein expression assessment
+TMA-stained sections were scanned into high-quality digital 
+images, and this was carried out using a NanoZoomer scan-
+ner (NanoZoomer; Hamamatsu Photonics, Welwyn Garden 
+City, UK) at × 20 magnification. The evaluation of CCNB1 
+cytoplasm expression was based on a semi-quantitative scor-
+ing by the modified histochemical score (H-score). During 
+this evaluation, the staining intensity was multiplied by the 
+positive cell percentage for every tissue. As such, a score 
+ranging from 0 to 300 was produced [37]. The negative, 
+weak, moderate and strong scores, which corresponded to a 
+score index of 0–3, respectively, were used to assess inten-
+sity. The percentage of positive cells for every intensity went 
+through a subjective assessment. The non-representative 
+cores, such as cores in invasive tumour less than 15% of the 
+core surface area and folded tissue during staining and pro-
+cessing, were not included in the scoring. IHC TMA slides 
+were scored blindly and individually performed by a trained 
+pathologist alongside the main researcher for at least 20% of 
+the whole cohort under investigation. In the occurrence of 
+a lower scoring concordance, the slides were re-scored and 
+the differences between the scores discussed by the main 
+researcher and a consultant pathologist. Excellent concord-
+ance of CCNB1 immunoscoring was observed between the 
+two scorers (ICC = 0.9). CCNB1 protein expression data 
+were not normally distributed and the cut-off for CCNB1 
+positivity was set using the median (100 H-score).
+Statistical analysis
+IBM-SPSS statistical software 24.0 (SPSS, Chicago, IL, 
+USA) was used for statistical analysis. CCNB1 mRNA and 
+CCNB1 protein expression continuous data were used to 
+evaluate the correlation with clinicopathological param-
+eters. The one-way analysis of variations (ANOVA) with 
+post hoc Turkey multiple comparison tests was used to study 
+the differences between three or more groups for parametric 
+426
+	
+Breast Cancer Research and Treatment (2023) 198:423–435
+1 3
+data. For non-parametric distribution, the ANOVA with 
+Kruskal–Wallis test was used. In the METABRIC cohort, 
+data about CCNB1 mRNA expression were normally dis-
+tributed and were categorised into low and high expres-
+sion using cut-off generated from the mean. In the TCGA 
+cohort, data about CCNB1 mRNA expression were right 
+skewed and were categorised using cut-off generated from 
+the median. The difference between the two groups was 
+evaluated using the Mann–Whitney test for non-parametric 
+distribution and the Student T test for parametric data. The 
+calculation of Spearman’s correlation coefficient was used to 
+evaluate the association between continuous variables. The 
+Kaplan–Meier curves were used to visualise the univariate 
+analysis with the log-rank test. Cox’s proportional hazard 
+regression model was developed to analyse multivariate 
+survival. A p value below 0.05 was considered as statisti-
+cally significant for all tests. The study was conducted fol-
+lowing REMARK criteria [38] (Supplementary Table 4).
+Results
+CCNB1 mRNA expression in BC
+In METABRIC cohort, high CCNB1 mRNA expression was 
+observed in 922/1980 (47%), whilst in TCGA cohort it was 
+427/854 (50%). In both cohorts, a significant association 
+was observed between high CCNB1 mRNA expression and 
+the presence of LVI (all; p < 0.0001) and other features char-
+acteristic of aggressive tumour behaviour, including large 
+Fig. 1   Cytoplasmic expression of CCNB1 protein in invasive breast 
+cancer. A Positive control of tonsil tissue stained by CCNB1, B 
+Negative control of liver stained by CCNB1, C Positive CCNB1 
+IHC expression and D Negative CCNB1 IHC expression. Magnifi-
+cation 10 ×. Scale bars = 200  μm. Inset, magnification 20 ×. Scale 
+bars = 100 μm
+427
+Breast Cancer Research and Treatment (2023) 198:423–435	
+1 3
+tumour size, high histological grade, hormonal receptor 
+negativity (all; p < 0.0001) and HER2 positivity (p < 0.0001 
+in METABRIC and p = 0.006 in TCGA). In the META-
+BRIC cohort, high expression of CCNB1 mRNA was sig-
+nificantly associated with poor NPI and high LN stage (all; 
+p < 0.0001).
+Assessment of CCNB1 mRNA in the intrinsic (PAM50) 
+subtypes showed that high expression of CCNB1 was 
+correlated with luminal B, basal like, HER2 enriched, 
+luminal A and normal-like subtypes in descending order 
+(p < 0.0001) (Table 1). There was a weak correlation 
+between CCNB1 mRNA expression and CCNB1 protein 
+expression (r = 0.136) when tested in the sub-cohort of 
+METABRIC cases (n = 288).
+Table 1   Statistical associations between CCNB1 mRNA expression and clinicopathological parameters in the METABRIC (n = 1980) and 
+TCGA (n = 854) breast carcinoma datasets
+p values in bold are statistically significant
+Parameters
+CCNB1 mRNA (METABRIC)
+CCNB1 mRNA (TCGA)
+Number (%)
+Mean rank
+p value
+Number (%)
+Mean rank
+p value
+Patient age (year)
+0.041
+0.216
+ ≤ 50
+424 (21.4)
+6.62
+231(27) 
+444.66
+ > 50
+1556 (78.6)
+6.55
+623 (73)
+421.14
+Tumour size
+ < 0.0001
+ < 0.0001
+ ≤ 2 cm
+622 (31.7)
+6.47
+239 (28)
+362.98
+ > 2 cm
+1338 (68.3)
+6.61
+615 (72)
+452.57
+Tumour grade
+ < 0.0001
+ < 0.0001
+I
+170 (9.0)
+6.20
+89 (11) 
+204.56
+II
+770 (40.6)
+6.43
+327.36
+III
+952 (50.3)
+6.77
+375 (46) 352 (43)
+546.50
+Nottingham prognostic index (NPI)
+ < 0.0001
+Not available
+Good
+680 (34.3)
+6.36
+Moderate
+1101 (55.6) 
+6.67
+Poor
+199 (10.1)
+6.77
+Lymph node stage
+0.001
+Not available
+I
+1035 (52.5) 
+6.51
+II
+622 (31.5)
+6.63
+III
+316 (16.0)
+6.66
+Lymphovascular invasion (LVI)
+ < 0.0001
+ < 0.0001
+Negative
+930 (59)
+6.53
+559 (65)
+395.47
+Positive
+635 (41)
+6.66
+295 (35)
+488.20
+Oestrogen receptor (ER)
+ < 0.0001
+ < 0.0001
+Negative
+474 (23.9)
+6.73
+185 (22)
+562.99
+Positive
+1506 (76.1)
+6.52
+639 (78)
+368.93
+Progesterone receptor (PR)
+ < 0.0001
+ < 0.0001
+Negative
+940 (47.4)
+6.65
+272 (33)
+511.06
+Positive
+1040 (52.6)
+6.51
+546 (67)
+358.91
+Human epidermal growth factor recep-
+tor 2 (HER2)
+ < 0.0001
+0.006
+Negative
+1733 (87.5) 
+6.54
+567 (81) 
+340.36
+Positive
+247 (12.5)
+6.81
+133 (19)
+393.73
+PAM50 subtypes
+ < 0.0001
+Not available
+Luminal A
+718 (36.4)
+6.28
+Luminal B
+488 (24.7)
+6.94
+HER2+ enriched
+240 (12.1)
+6.79
+Basal like
+329 (16.7)
+6.83
+Normal like
+199 (10.1)
+6.03
+428
+	
+Breast Cancer Research and Treatment (2023) 198:423–435
+1 3
+CCNB1 protein expression in BC
+CCNB1 protein expression was observed mainly in the 
+cytoplasm of invasive BC cells, with occasional cases 
+showing minimal to weak nuclear expression, which were 
+not sufficient to perform meaningful statistical analysis. 
+The cytoplasmic expression levels varied from absent to 
+strong (Fig. 1C, D). A high CCNB1 protein level (> 100 
+H-score) was observed in 1141/2480 (46%) of BC cases. A 
+high CCNB1 protein level was significantly correlated with 
+high tumour grade (including high pleomorphism scores, 
+high mitotic count scores), poor NPI, hormonal receptor 
+negativity (ER/PR) (all p < 0.0001) and HER2 positivity 
+(p = 0.011). In the IHC subtypes, high expression of CCNB1 
+was associated with ­ER−/HER2−, ­HER2+, ­ER+/HER2− high 
+proliferation subtype, followed by ­ER+/HER2− low prolif-
+eration subtype (p < 0.0001) (Table 2).
+The association between CCNB1 expression 
+and LVI‑related biomarkers
+To further evaluate the role of CCNB1 in BC and their 
+interactions with other biomarkers related to the various 
+LVI-related cascades, the METABRIC and TCGA datasets 
+were interrogated for the correlation between CCNB1 and 
+other genes involved in invasion, EMT and adhesion. Based 
+on previous publications, E-cadherin, P-cadherin, N-cad-
+herin, TWIST2 and matrix metalloproteinases (MMPs) were 
+selected [5, 35, 36, 39, 40].
+Both transcriptomic cohorts (METABRIC and TCGA) 
+showed a significant positive linear correlation between 
+CCNB1 mRNA expression and the expression of EMT-
+related genes, including N-cadherin, GSK3B, TWIST1, 
+TWIST2, ZEB1, ZEB2, NFKB1 and CTNNB1, whilst a nega-
+tive linear correlation was observed with E-cadherin. In the 
+TCGA cohort, a similar correlation was observed between 
+CCNB1 mRNA expression and the expression of P-cadherin 
+and TGFB1. In addition, in both cohorts, CCNB1 mRNA 
+expression was positively correlated with the expression of 
+MMP-related genes expression, including MMP1, MMP7, 
+MMP9, MMP12, MMP15 and MMP20. In the Nottingham 
+cohort, high CCNB1 protein level showed a negative cor-
+relation with E-cadherin and a positive correlation with 
+N-cadherin, P-cadherin and TWIST2 (Table 3).
+The association of CCNB1 expression and patient’s 
+outcome
+In the METABRIC cohort, survival analyses of CCNB1 
+mRNA showed that CCNB1 overexpression was signifi-
+cantly associated with shorter BCSS (p < 0.0001, Fig. 2A). 
+Similarly, in the TCGA cohort, high CCNB1 mRNA 
+expression was associated with shorter outcome (p = 0.010, 
+Table 2   Statistical associations between CCNB1 protein expression 
+and the clinicopathological factors in the Nottingham BC cohort 
+(n = 2480)
+Nottingham BC cohort
+Parameters
+CCNB1 protein
+Number %
+Mean rank
+p value
+Patient age (year)
+0.093
+ ≤ 50
+843 (34)
+1273.9
+ > 50
+1637 (66)
+1223.3
+Tumour size
+0.101
+ ≤ 2 cm
+1371 (55.3)
+1261.6
+ > 2 cm
+1109 (44.7)
+1214.5
+Tumour grade
+ < 0.0001
+I
+371 (20)
+371
+II
+875 (35.3)
+875
+III
+1234 (44.7)
+1234
+Mitosis
+ 
+I
+971(39)
+1114.6
+ <0.0001
+II
+498 (20.1)
+1210.4
+III
+1011 (40.9)
+1376.2
+Pleomorphism
+ < 0.0001
+I
+51 (2.1)
+1112.3
+II
+766 (30.9)
+1038.9
+III
+1663 (67)
+1337.3
+Tubular formation
+0.070
+I
+167 (8.6)
+1256.3
+II
+775 (31.3)
+1191.7
+III
+1538 (60.1)
+1263.4
+Lymphovascular invasion 
+(LVI)
+0.014
+Negative
+1703 (69)
+1264.1
+Positive
+777 (31)
+1188.8
+Lymph node stage
+0.994
+I
+1535 (61.9)
+1240.2
+II
+706 (28.5)
+1242.4
+III
+239 (9.6)
+1237
+Nottingham prognostic index 
+(NPI)
+ < 0.0001
+Good
+769 (31)
+1140.9
+Moderate
+1299 (52.4)
+1278.8
+Poor
+412 (16.6)
+1305.8
+Oestrogen receptor (ER)
+ < 0.0001
+Negative
+620 (25.1)
+1404.5
+Positive
+1848 (74.9)
+1177.5
+Progesterone receptor (PR)
+ < 0.0001
+Negative
+1046 (43)
+1281.2
+Positive
+1382 (57)
+1163.9
+Human epidermal growth fac-
+tor receptor 2 (HER2)
+0.011
+Negative
+2084 (86) 
+1197.9
+Positive
+340 (14)
+1301.8
+429
+Breast Cancer Research and Treatment (2023) 198:423–435	
+1 3
+Fig. 2B). At the protein level, there was no significant asso-
+ciation between cytoplasmic CCNB1 expression and patient 
+outcome in the univariate analysis (Supplementary Fig. 2). 
+However, when the overall expression was considered (cyto-
+plasmic and nuclear), high protein expression was associ-
+ated with shorter disease-specific survival (HR = 1.3, 95%CI 
+1.1–1.5, p = 0.002) which is consistent with the mRNA level.
+In the METABRIC cohort, multivariate Cox regression 
+analysis showed that CCNB1 mRNA predicted poor BCSS 
+survival independent of tumour size, LN stage, tumour grade 
+and LVI (HR 1.5; 95% CI 1.2–1.8; p < 0.0001). In the Not-
+tingham cohort, Cox regression analysis showed that high 
+expression of CCNB1 was a significant predictor of shorter 
+BCSS regardless of LVI status, tumour size, LN stage 
+and tumour grade (HR = 1.3; 95% CI 1.1–1.5; p = 0.010) 
+(Table 4).
+Discussion
+One of the hallmarks of human cancer is abnormal cell cycle 
+regulation [41]. Uncontrolled cell division is a necessary 
+step in the progression of cancer. Several studies have found 
+that cyclins, which orchestrate normal cell cycle, have abnor-
+mally increased expression in a variety of human malignan-
+cies [42, 43]. Cyclins are required to activate distinct CDKs 
+at different stages of the cell cycle. Amongst the several 
+cyclin/CDK complexes involved in cell cycle regulation, 
+CCNB1/cdc2 is a well-studied complex that regulates G2/M 
+phase checkpoint surveillance and is required for mitotic ini-
+tiation [44, 45]. CCNB1 is essential in checkpoint regulation, 
+as its dysregulation is an early event in carcinogenesis [46]. 
+CCNB1 has been extensively studied in many solid tumours, 
+such as lung [47], hepatic [48], and pancreatic cancers [20]. 
+We previously identified CCNB1 as a gene associated with 
+LVI status using two large transcriptomic cohorts of BC and 
+ANN methodology [26]. Briefly, the identification of the 
+p values in bold are statistically significant
+Table 2   (continued)
+Nottingham BC cohort
+Parameters
+CCNB1 protein
+Number %
+Mean rank
+p value
+Triple negative
+ < 0.0001
+No
+1995 (82.4)
+1164.3
+Yes
+426 (17.6)
+1429.9
+Immunohistochemistry 
+subtypes
+ < 0.0001
+ER+/HER2− Low proliferation
+1063 (46.4) 
+1078.8
+ER+/HER2− High proliferation 785 (34.3)
+1251.4
+Triple negative
+426 (18.6)
+1429.9
+HER2+
+147(0.7)
+1317.2
+Table 3   Correlations of 
+CCNB1 expression with mRNA 
+and protein expression of 
+the epithelial–mesenchymal 
+transition (EMT) and matrix 
+metalloproteinase (MMP) 
+related genes
+Gene names
+METABRIC cohort
+TCGA cohort
+Nottingham cohort
+Correlation value
+p value
+Correlation value
+p value
+Correlation value
+p value
+EMT-related genes
+E-cadherin
+− 0.090
+ < 0.0001 − 0.128
+ < 0.0001 − 0.091
+0.003
+N-cadherin
+0.079
+ < 0.0001 0.096
+0.005
+0.083
+0.021
+P-cadherin
+0.023
+0.311
+0.158
+ < 0.0001 0.145
+ < 0.0001
+TGFβ1
+0.014
+0.522
+0.300
+ < 0.0001 0.053
+0.163
+TWIST1
+0.153
+ < 0.0001 0.157
+ < 0.0001 Not available
+TWIST2
+0.289
+ < 0.0001 0.252
+ < 0.0001 0.079
+0.036
+ZEB1
+0.203
+ < 0.0001 0.396
+ < 0.0001 Not available
+ZEB2
+0.162
+ < 0.0001 0.259
+ < 0.0001
+NFKB1
+0.264
+ < 0.0001 0.296
+ < 0.0001
+GSK3B
+0.134
+ < 0.0001 0.122
+ < 0.0001
+CTNNB1
+0.188
+ < 0.0001 0.178
+ < 0.0001
+MMP-related genes
+MMP1
+0.300
+ < 0.0001 0.357
+ < 0.0001 Not available
+MMP7
+0.068
+0.002
+0.113
+0.001
+MMP9
+0.116
+ < 0.0001 0.124
+ < 0.0001
+MMP11
+0.035
+0.115
+0.036
+0.290
+MMP12
+0.195
+ < 0.0001 0.291
+ < 0.0001
+MMP15
+0.103
+ < 0.0001 0.070
+0.042
+MMP20
+0.064
+0.004
+0.065
+0.057
+MMP25
+0.053
+0.018
+0.022
+0.519
+430
+	
+Breast Cancer Research and Treatment (2023) 198:423–435
+1 3
+Fig. 2   Kaplan–Meier survival plots showing the association between CCNB1 mRNA expression and breast cancer-specific survival (BCSS) in 
+(A) whole cohort (METABRIC) and B whole cohort (TCGA)
+Table 4   Multivariate Cox regression for predictors of breast cancer-specific survival (BCSS) and CCNB1 mRNA expression in the METABRIC 
+and TCGA cohorts and protein expression in the Nottingham BC cohort
+p values in bold are statistically significant
+METABRIC cohort
+Parameters
+Hazard ratio (HR)
+95% confidence interval (CI)
+Significance p value
+Lower
+Upper
+CCNB1 mRNA expression
+1.514
+1.209
+1.895
+ < 0.0001
+Tumour size
+1.448
+1.104
+1.899
+0.007
+Lymph nodal stage
+1.788
+1.537
+2.080
+ < 0.0001
+Tumour grade
+1.304
+1.066
+1.595
+0.010
+Lymphovascular invasion (LVI)
+1.393
+1.100
+1.764
+0.006
+TCGA cohort
+CCNB1 mRNA expression
+1.641
+0.977
+2.758
+0.061
+Tumour size
+1.416
+0.812
+2.467
+0.220
+Lymph nodal
+1.279
+0.757
+2.158
+0.357
+Tumour grade
+1.079
+0.740
+1.573
+0.692
+Lymphovascular invasion (LVI)
+1.836
+1.118
+3.014
+0.016
+Nottingham BC cohort
+CCNB1 protein expression (cytoplasmic)
+1.300
+1.101
+1.500
+0.010
+Tumour size
+1.439
+1.217
+1.701
+ < 0.0001
+Lymph nodal stage
+1.754
+1.565
+1.965
+ < 0.0001
+Tumour grade
+1.750
+1.524
+2.009
+ < 0.0001
+Lymphovascular invasion (LVI)
+1.423
+1.200
+1.688
+ < 0.0001
+Nottingham BC cohort
+CCNB1 protein expression (cytoplasmic and nuclear)
+1.181
+1.008
+1.385
+0.040
+Tumour size
+1.4411
+1.218
+1.704
+ < 0.0001
+Lymph nodal stage
+1.752
+1.564
+1.963
+ < 0.0001
+Tumour grade
+1.693
+1.478
+1.938
+ < 0.0001
+Lymphovascular invasion (LVI)
+1.428
+1.204
+1.693
+ < 0.0001
+431
+Breast Cancer Research and Treatment (2023) 198:423–435	
+1 3
+differentially expressed gene(s) between LVI positive and 
+negative in the METABRIC [24] and the TCGA [25] BC 
+cohorts was achieved using ANNs. To identify the enriched 
+concordant biomarker set that is related to LVI, it was rec-
+ommended to perform ANN-based neutral data mining 
+on the genomic expression information obtained from the 
+datasets identified early. Therefore, this followed the execu-
+tion of the machine learning (ML) strategy grounded on the 
+ANN and incorporated with concordance analysis executed 
+in many Monte Carlo data splits [49]. This methodology 
+efficiently eliminated over-fitting and false discovery whilst 
+improving the identified biomarker generalisation. The con-
+cordant transcripts that have the least test error available 
+in many loops for every group were identified by filtering 
+the results. One of the top-ranked identified genes related 
+to LVI positivity in both TCGA and METABRIC cohorts 
+was CCNB1 [26]. However, this is the first study, to the best 
+of our knowledge investigating the association between 
+CCNB1, LVI and LVI-related biomarkers in invasive BC.
+From G0/G1 through the mid-S phase, CCNB1 is rela-
+tively undetectable in cells; it becomes apparent in the cyto-
+plasm in the late S phase. CCNB1 levels rapidly increased in 
+the perinuclear region of the cytoplasm as cells progressed 
+through the G2 phase and it then appears in the nucleus 
+during the mitotic phase [50, 51]. In this study, CCNB1 
+expression was observed in the cytoplasm in a large num-
+ber of cases, whilst only a small number of cases showed 
+nuclear staining. CCNB1 cytoplasmic localisation has been 
+previously identified in some types of cancer, including BC 
+[52]. During the late S/G2 phase of normal human cells, 
+CCNB1/cdc2 complexes accumulate in the cytoplasm and 
+must be translocated into the nucleus to initiate mitosis [53]. 
+However, when DNA is damaged, CCNB1/cdc2 complexes 
+are preserved in the cytoplasm, most likely to avoid prema-
+ture mitosis [54]. On the other hand, cytoplasmic CCNB1 
+accumulation has been demonstrated to initiate mitosis by 
+passing a p53-mediated G2/M checkpoint [55]. Cytoplasmic 
+CCNB1 expression causes abnormal cell cycle progression 
+at the G2/M checkpoint, enhancing genomic instability and 
+malignant transformation [56]. This supports the potential 
+role of the cytoplasmic expression of CCNB1 in BC.
+Tumour metastasis is a multistep process that begins 
+with the separation of cancer cells from the initial tumour 
+mass and proceeds with intravasation, extravasation and 
+the formation of new foci in a distant organ [57, 58]. The 
+siRNA knockdown approach showed significantly reduced 
+cell proliferation, colony formation and invasion when an 
+endogenous CCNB1 was disrupted in oesophageal squa-
+mous cell carcinoma (ESCC) cells. Furthermore, the find-
+ings from animal models suggest that high expression of 
+CCNB1 enhances invasive tumour growth in vivo and 
+most likely leads to lung metastasis [21]. A study found 
+that CCNB1 overexpression provided cells with a greater 
+capacity for transmigration through oesophageal carcinoma 
+endothelium cells and human lung endothelium cells, which 
+may have altered the cytoskeletal structure and promoted 
+extravasation [21]. High expression of CCNB1 resulted in 
+decreased E-cadherin expression and increased N-cadherin 
+expression, which induced EMT, an important mechanism 
+in the metastatic cascade [21, 59]. High CCNB1 levels are 
+associated with TWIST2 in ESCC, suggesting that TWIST2 
+might play a role in CCNB1-induced EMT [21]. This study 
+showed that LVI-related biomarkers, such as E-cadherin, 
+N-cadherin, P-cadherin and TWIST2, were significantly 
+associated with CCNB1 at both mRNA and protein levels, 
+which is consistent with the abovementioned findings. Fur-
+thermore, CCNB1 was correlated with MMPs biomarkers, 
+such as MMP1, MMP7 and MMP9. The production of MMP 
+extracellular matrix (ECM)-degrading enzymes increases 
+cell escape from the main tumour tissue and subsequent 
+invasion into tumour-adjacent tissues, such as epithelial cell 
+strata and eventually lymphatic vessels [60]. Although the 
+association between CCNB1 and other proliferation, migra-
+tion and invasion biomarkers ranged from weak to moderate 
+correlation, it was statistically significant which indicates 
+that these markers are contributing to the same oncogenic 
+pathway in the context of the LVI process. High expression 
+of CCNB1 results in the continuous cell cycle and division 
+of cancer cells, promoting their migration and metastasis to 
+distant sites [61, 62]. Uncontrolled cell division promoted by 
+CCNB1 could lead to gaining genetic instability and muta-
+tions that could affect other key genes for cellular migration 
+and invasion that ultimately lead to LVI. Thus blocking this 
+cascade from the early proliferative phase can stop these 
+processes. These findings demonstrate that overexpression 
+of CCNB1 may control one of the mechanisms driving LVI.
+High expression of CCNB1 mRNA in both the META-
+BRIC and TCGA cohorts showed an association with large 
+tumour size, high tumour grade, poor NPI, LN stage, LVI 
+positivity, ­ER−, ­PR− and ­HER2+. Similar findings were 
+observed at the protein level; however, high expression 
+of CCNB1 was not associated with presence of LVI at the 
+protein level in contrast to the mRNA level. Such a dispar-
+ity between mRNA and protein levels can be explained by 
+various mechanisms. Because mRNA levels primarily deter-
+mine protein levels, there will be variation between cellular 
+mRNA and protein levels if the cell is undergoing long-term 
+dynamic activities, such as continuous proliferation, which 
+refers to the steady state of the cell [63]. CCNB1 has been 
+identified as a critical target gene for promoting tumour pro-
+liferation [64]. As a result of the proliferation induced by 
+tumour cells, when CCNB1 is highly expressed in a malig-
+nant cell, the cell may not be stable in the long term, lead-
+ing to variation between mRNA and protein levels. Another 
+factor that could contribute to the difference in the signifi-
+cance between LVI and CCNB1 at the mRNA and protein 
+432
+	
+Breast Cancer Research and Treatment (2023) 198:423–435
+1 3
+level is the methodologies that are used for quantifying and 
+statistically analysing gene expression in the METABRIC 
+and TCGA cohorts, as well as the ways for determining LVI 
+in the transcriptomic and proteomic cohorts. For example, 
+in the Nottingham cases, LVI status was determined using 
+morphology and immunohistochemistry staining for D2-40 
+[29]. However, cBioPortal H&E-stained slides were utilised 
+to determine LVI status in the TCGA cohort. Although H&E 
+slides can be used to evaluate LVI, it might be difficult to 
+distinguish LVI-negative cases [65]. The weak correlation 
+between mRNA and protein levels could also explain the 
+contradictory results in LVI between protein and mRNA.
+Cross-talk between proliferation and its related markers 
+and LVI and tumour invasion has been investigated. A pub-
+lished study [66] that investigated the mRNA and protein 
+expression of other proliferation markers including Raf, 
+MEK, p-MEK, ERK, and p-ERK in BC patients found that 
+their levels were higher in the lymph node positive than in 
+the node-negative group. The lowest levels of expression 
+were noticed in normal breast tissue. The clinicopathologi-
+cal parameters, including tumour size, stage, and positive 
+lymph node number, were found to be strongly associated 
+with higher expression of Raf, MEK, p-MEK, ERK, and 
+p-ERK. Additionally, these biomarkers were associated with 
+poor outcomes [66]. Other studies which investigated prolif-
+eration-related markers in BC, including CCNB2 and Ki67, 
+demonstrated that high expression of these biomarkers was 
+associated with the features of aggressive tumour behaviour, 
+such as LVI, large tumour size, and shorter survival [26, 
+67]. These studies provided further evidence to support the 
+link between the expression of proliferation-related markers, 
+such as CCNB1 and LVI and metastasis.
+In transcriptomic cohorts, high expression of CCNB1 was 
+associated with worse outcomes which was also obvious at 
+the protein level independent on other prognostic factors, 
+including LVI status, tumour size, LN stage and tumour 
+grade. Additionally, at the protein level, survival analysis 
+with consideration of the overall CCNB1 protein expression 
+(nuclear and cytoplasmic) revealed that high overall protein 
+expression is associated with poor outcome which reflects 
+the actual mRNA expression. This highlights the potential 
+role of combined cytoplasmic and nuclear expression of 
+CCNB1 in driving LVI and poor prognosis in BC. This was 
+supported by the independent association of CCNB1 expres-
+sion with poor BCSS in multivariate analysis. These find-
+ings were consistent with numerous reports that have shown 
+inconsistent findings of the association between CCNB1 
+expression and prognosis in solid cancers [45, 47, 68]. Sev-
+eral studies using RT-PCR to analyse gene expression at 
+the RNA level discovered that CCNB1 was highly associ-
+ated with poor outcomes in solid tumours. However, the link 
+between increased CCNB1 expression at the protein level 
+and clinical prognosis in solid tumours remains unclear [45, 
+68]. These disparities indicate that more research is war-
+ranted to elucidate the underlying mechanism and function 
+of CCNB1 in tumour development and prognosis in various 
+tumour types.
+Our findings suggest that CCNB1 is a potential therapeu-
+tic target for inhibiting LVI in BC and reducing the occur-
+rence of metastatic disease. The results also suggest that 
+CCNB1 might be a useful diagnostic tool to identify patients 
+with positive LVI status in BC. The diagnostic utility of 
+CCNB1 was previously described in other malignancies, 
+including non-invasive bladder cancer and rhabdomyosar-
+coma [69, 70].
+Conclusion
+Evidence from this study demonstrated that CCNB1 is 
+important biomarker for invasive BC progression and has 
+a potential role in LVI development. The exact functional 
+and mechanistic effects of CCNB1 in LVI process require 
+further investigations including in vitro and in vivo models 
+to substantiate our findings.
+Supplementary Information  The online version contains supplemen-
+tary material available at https://​doi.​org/​10.​1007/​s10549-​022-​06801-2.
+Funding  This research was supported and funded by Taif University, 
+Kingdom of Saudi Arabia. The authors are part of the PathLAKE digi-
+tal pathology consortium. These new centres are supported by a £50-m 
+investment from the Data to Early Diagnosis and Precision Medicine 
+strand of the government’s Industrial Strategy Challenge Fund, man-
+aged and delivered by UK Research and Innovation (UKRI).
+Data availability  The authors confirm the data that have been used in 
+this work are available on reasonable request.
+Declarations 
+Conflict of interest  All authors declare that they have no conflict of 
+interest.
+Informed consent  This work obtained ethics approval to use the 
+human tissue samples by the North West–Greater Manchester Cen-
+tral Research Ethics Committee under the title; Nottingham Health 
+Science Biobank (NHSB), reference number 15/NW/0685. Informed 
+consent was obtained from all individuals prior to surgery to use their 
+tissue materials in research. This study was performed according to the 
+REMARK guidelines for tumour prognostic studies.
+Research involving human and/or animal participants  This article does 
+not contain any studies with human participants or animals performed 
+by any of the authors.
+Open Access  This article is licensed under a Creative Commons Attri-
+bution 4.0 International License, which permits use, sharing, adapta-
+tion, distribution and reproduction in any medium or format, as long 
+as you give appropriate credit to the original author(s) and the source, 
+provide a link to the Creative Commons licence, and indicate if changes 
+were made. The images or other third party material in this article are 
+included in the article's Creative Commons licence, unless indicated 
+433
+Breast Cancer Research and Treatment (2023) 198:423–435	
+1 3
+otherwise in a credit line to the material. If material is not included in 
+the article's Creative Commons licence and your intended use is not 
+permitted by statutory regulation or exceeds the permitted use, you will 
+need to obtain permission directly from the copyright holder. To view a 
+copy of this licence, visit http://​creat​iveco​mmons.​org/​licen​ses/​by/4.​0/.
+References
+	 1.	 Azamjah N, Soltan-Zadeh Y, Zayeri F (2019) Global trend of 
+breast cancer mortality rate: a 25-year study. Asian Pac J of Can-
+cer Prev. 20(7):2015–2020. https://​doi.​org/​10.​31557/​apjcp.​2019.​
+20.7.​2015
+	 2.	 Peart O (2017) Metastatic breast cancer. Radiol Technol 
+88(5):519m–539m
+	 3.	 Savci-Heijink CD, Halfwerk H, Hooijer GKJ, Horlings HM, 
+Wesseling J, van de Vijver MJ (2015) Retrospective analy-
+sis of metastatic behaviour of breast cancer subtypes. Breast 
+Cancer Res Treat 150(3):547–557. https://​doi.​org/​10.​1007/​
+s10549-​015-​3352-0
+	 4.	 Scully OJ, Bay BH, Yip G, Yu Y (2012) Breast cancer metastasis. 
+Cancer Genomics Proteomics 9(5):311–320
+	 5.	 Aleskandarany MA, Sonbul SN, Mukherjee A, Rakha EA (2015) 
+Molecular mechanisms underlying lymphovascular invasion in 
+invasive breast cancer. Pathobiology 82(3–4):113–123. https://​doi.​
+org/​10.​1159/​00043​3583
+	 6.	 Song YJ, Shin SH, Cho JS, Park MH, Yoon JH, Jegal YJ (2011) 
+The role of lymphovascular invasion as a prognostic factor in 
+patients with lymph node-positive operable invasive breast cancer. 
+J Breast cancer 14(3):198–203. https://​doi.​org/​10.​4048/​jbc.​2011.​
+14.3.​198
+	 7.	 Rakha EA, Martin S, Lee AHS, Morgan D, Pharoah PDP, Hodi 
+Z, MacMillan D, Ellis IO (2012) The prognostic significance of 
+lymphovascular invasion in invasive breast carcinoma. Cancer 
+118(15):3670–3680. https://​doi.​org/​10.​1002/​cncr.​26711
+	 8.	 Stacker SA, Williams SP, Karnezis T, Shayan R, Fox SB, Achen 
+MG (2014) Lymphangiogenesis and lymphatic vessel remodelling 
+in cancer. Nat Rev Cancer 14(3):159–172. https://​doi.​org/​10.​1038/​
+nrc36​77
+	 9.	 Lee C-C, Lin J-C, Hwang W-L, Kuo Y-J, Chen H-K, Tai S-K, Lin 
+C-C, Yang M-H (2018) Macrophage-secreted interleukin-35 regu-
+lates cancer cell plasticity to facilitate metastatic colonization. Nat 
+Commun 9(1):3763. https://​doi.​org/​10.​1038/​s41467-​018-​06268-0
+	10.	 Insua-Rodríguez J, Pein M, Hongu T, Meier J, Descot A, Lowy 
+CM, De Braekeleer E, Sinn H-P, Spaich S, Sütterlin M, Schnee-
+weiss A, Oskarsson T (2018) Stress signaling in breast cancer 
+cells induces matrix components that promote chemoresistant 
+metastasis. EMBO Mol Med 10(10):e9003. https://​doi.​org/​10.​
+15252/​emmm.​20180​9003
+	11.	 Shinde A, Wilmanski T, Chen H, Teegarden D, Wendt MK (2018) 
+Pyruvate carboxylase supports the pulmonary tropism of meta-
+static breast cancer. Breast Cancer Res 20(1):76. https://​doi.​org/​
+10.​1186/​s13058-​018-​1008-9
+	12.	 Rakha EA, El-Sayed ME, Reis-Filho JS, Ellis IO (2008) Expres-
+sion profiling technology: its contribution to our understanding 
+of breast cancer. Histopathology 52(1):67–81. https://​doi.​org/​10.​
+1111/j.​1365-​2559.​2007.​02894.x
+	13.	 Tezuka K, Onoda N, Takashima T, Takagaki K, Ishikawa T, 
+Wakasa T, Wakasa K, Hirakawa K (2007) Prognostic sig-
+nificance of lymphovascular invasion diagnosed by lymphatic 
+endothelium immunostaining in breast cancer patients. Oncol 
+Rep 17(5):997–1003
+	14.	 Gilchrist KW, Gould VE, Hirschl S, Imbriglia JE, Patchefsky 
+AS, Penner DW, Pickren J, Schwartz IS, Wheeler JE, Barnes JM, 
+Mansour EG (1982) Interobserver variation in the identification 
+of breast carcinoma in intramammary lymphatics. Hum Pathol 
+13(2):170–172. https://​doi.​org/​10.​1016/​s0046-​8177(82)​80121-4
+	15.	 He KW, Sun JJ, Liu ZB, Zhuo PY, Ma QH, Liu ZY, Yu ZY 
+(2017) Prognostic significance of lymphatic vessel invasion diag-
+nosed by D2–40 in Chinese invasive breast cancers. Medicine 
+96(44):e8490. https://​doi.​org/​10.​1097/​md.​00000​00000​008490
+	16.	 Shin JU, Lee CH, Lee KT, Lee JK, Lee KH, Kim KM, Kim KM, 
+Park SM, Rhee JC (2012) Prognostic significance of ATM and 
+cyclin B1 in pancreatic neuroendocrine tumor. Tumour Biol 
+33(5):1645–1651. https://​doi.​org/​10.​1007/​s13277-​012-​0420-5
+	17.	 Morgan DO (1995) Principles of CDK regulation. Nature 
+374(6518):131–134. https://​doi.​org/​10.​1038/​37413​1a0
+	18.	 Fang Y, Yu H, Liang X, Xu J, Cai X (2014) Chk1-induced CCNB1 
+overexpression promotes cell proliferation and tumor growth in 
+human colorectal cancer. Cancer Biol Ther 15(9):1268–1279. 
+https://​doi.​org/​10.​4161/​cbt.​29691
+	19.	 Niméus-Malmström E, Koliadi A, Ahlin C, Holmqvist M, Holm-
+berg L, Amini RM, Jirström K, Wärnberg F, Blomqvist C, Fernö 
+M, Fjällskog ML (2010) Cyclin B1 is a prognostic proliferation 
+marker with a high reproducibility in a population-based lymph 
+node negative breast cancer cohort. Intl J Cancer 127(4):961–967. 
+https://​doi.​org/​10.​1002/​ijc.​25091
+	20.	 Zhou L, Li J, Zhao YP, Cui QC, Zhou WX, Guo JC, You L, Wu 
+WM, Zhang TP (2014) The prognostic value of cyclin B1 in pan-
+creatic cancer. Med Oncol 31(9):107. https://​doi.​org/​10.​1007/​
+s12032-​014-​0107-4
+	21.	 Song Y, Zhao C, Dong L, Fu M, Xue L, Huang Z, Tong T, Zhou 
+Z, Chen A, Yang Z, Lu N, Zhan Q (2008) Overexpression of 
+cyclin B1 in human esophageal squamous cell carcinoma cells 
+induces tumor cell invasive growth and metastasis. Carcinogenesis 
+29(2):307–315. https://​doi.​org/​10.​1093/​carcin/​bgm269
+	22.	 Matthess Y, Raab M, Sanhaji M, Lavrik IN, Strebhardt K (2010) 
+Cdk1/cyclin B1 controls Fas-mediated apoptosis by regulating 
+caspase-8 activity. Mol Cell Biol 30(24):5726–5740. https://​doi.​
+org/​10.​1128/​mcb.​00731-​10
+	23.	 Gomez LA, de Las PA, Reiner T, Burnstein K, Perez-Stable C 
+(2007) Increased expression of cyclin B1 sensitizes prostate can-
+cer cells to apoptosis induced by chemotherapy. Mol Cancer Ther 
+6(5):1534–1543. https://​doi.​org/​10.​1158/​1535-​7163.​Mct-​06-​0727
+	24.	 Curtis C, Shah SP, Chin S-F, Turashvili G, Rueda OM, Dunning 
+MJ, Speed D, Lynch AG, Samarajiwa S, Yuan Y, Gräf S, Ha G, 
+Haffari G, Bashashati A, Russell R, McKinney S, Caldas C, Apa-
+ricio S, Curtis C, Shah SP, Caldas C, Aparicio S, Brenton JD, 
+Ellis I, Huntsman D, Pinder S, Purushotham A, Murphy L, Caldas 
+C, Aparicio S, Caldas C, Bardwell H, Chin S-F, Curtis C, Ding 
+Z, Gräf S, Jones L, Liu B, Lynch AG, Papatheodorou I, Sam-
+mut SJ, Wishart G, Aparicio S, Chia S, Gelmon K, Huntsman D, 
+McKinney S, Speers C, Turashvili G, Watson P, Ellis I, Blamey 
+R, Green A, Macmillan D, Rakha E, Purushotham A, Gillett C, 
+Grigoriadis A, Pinder S, de Rinaldis E, Tutt A, Murphy L, Par-
+isien M, Troup S, Caldas C, Chin S-F, Chan D, Fielding C, Maia 
+A-T, McGuire S, Osborne M, Sayalero SM, Spiteri I, Hadfield J, 
+Aparicio S, Turashvili G, Bell L, Chow K, Gale N, Huntsman D, 
+Kovalik M, Ng Y, Prentice L, Caldas C, Tavaré S, Curtis C, Dun-
+ning MJ, Gräf S, Lynch AG, Rueda OM, Russell R, Samarajiwa S, 
+Speed D, Markowetz F, Yuan Y, Brenton JD, Aparicio S, Shah SP, 
+Bashashati A, Ha G, Haffari G, McKinney S, Langerød A, Green 
+A, Provenzano E, Wishart G, Pinder S, Watson P, Markowetz F, 
+Murphy L, Ellis I, Purushotham A, Børresen-Dale A-L, Brenton 
+JD, Tavaré S, Caldas C, Aparicio S, Curtis C, Group M (2012) 
+The genomic and transcriptomic architecture of 2,000 breast 
+tumours reveals novel subgroups. Nature 486:346. https://​doi.​
+org/​10.​1038/​natur​e10983
+	25.	 Ciriello G, Gatza ML, Beck AH, Wilkerson MD, Rhie SK, Pastore 
+A, Zhang H, McLellan M, Yau C, Kandoth C, Bowlby R, Shen H, 
+434
+	
+Breast Cancer Research and Treatment (2023) 198:423–435
+1 3
+Hayat S, Fieldhouse R, Lester SC, Tse GM, Factor RE, Collins 
+LC, Allison KH, Chen YY, Jensen K, Johnson NB, Oesterreich 
+S, Mills GB, Cherniack AD, Robertson G, Benz C, Sander C, 
+Laird PW, Hoadley KA, King TA, Perou CM (2015) Compre-
+hensive molecular portraits of invasive lobular breast cancer. Cell 
+163(2):506–519. https://​doi.​org/​10.​1016/j.​cell.​2015.​09.​033
+	26.	 Aljohani AI, Toss MS, El-Sharawy KA, Mirza S, Ball GR, Green 
+AR, Rakha EA (2022) Upregulation of Cyclin B2 (CCNB2) in 
+breast cancer contributes to the development of lymphovascular 
+invasion. Am j Cancer Res 12(2):469–489
+	27.	 Cerami E, Gao J, Dogrusoz U, Gross BE, Sumer SO, Aksoy BA, 
+Jacobsen A, Byrne CJ, Heuer ML, Larsson E, Antipin Y, Reva 
+B, Goldberg AP, Sander C, Schultz N (2012) The cBio cancer 
+genomics portal: an open platform for exploring multidimensional 
+cancer genomics data. Cancer Discov 2(5):401–404. https://​doi.​
+org/​10.​1158/​2159-​8290.​CD-​12-​0095
+	28.	 Gao J, Aksoy BA, Dogrusoz U, Dresdner G, Gross B, Sumer SO, 
+Sun Y, Jacobsen A, Sinha R, Larsson E, Cerami E, Sander C, 
+Schultz N (2013) Integrative analysis of complex cancer genomics 
+and clinical profiles using the cBioPortal. Sci Signal. https://​doi.​
+org/​10.​1126/​scisi​gnal.​20040​88
+	29.	 Mohammed RA, Martin SG, Mahmmod AM, Macmillan RD, 
+Green AR, Paish EC, Ellis IO (2011) Objective assessment of 
+lymphatic and blood vascular invasion in lymph node-negative 
+breast carcinoma: findings from a large case series with long-term 
+follow-up. J Pathol 223(3):358–365. https://​doi.​org/​10.​1002/​path.​
+2810
+	30.	 Elston CW, Ellis IO (1991) Pathological prognostic factors in 
+breast cancer. I. The value of histological grade in breast cancer: 
+experience from a large study with long-term follow-up. Histo-
+pathology 19(5):403–410. https://​doi.​org/​10.​1111/j.​1365-​2559.​
+1991.​tb002​29.x
+	31.	 Abd El-Rehim DM, Pinder SE, Paish CE, Bell JA, Rampaul 
+RS, Blamey RW, Robertson JFR, Nicholson RI, Ellis IO (2004) 
+Expression and co-expression of the members of the epidermal 
+growth factor receptor (EGFR) family in invasive breast carci-
+noma. Br J Cancer 91(8):1532–1542. https://​doi.​org/​10.​1038/​sj.​
+bjc.​66021​84
+	32.	 Mahmoud SMA, Paish EC, Powe DG, Macmillan RD, Lee AHS, 
+Ellis IO, Green AR (2011) An evaluation of the clinical sig-
+nificance of FOXP3+ infiltrating cells in human breast cancer. 
+Breast Cancer Res Treat 127(1):99–108. https://​doi.​org/​10.​1007/​
+s10549-​010-​0987-8
+	33.	 Mahmoud SM, Lee AH, Paish EC, Macmillan RD, Ellis IO, Green 
+AR (2012) Tumour-infiltrating macrophages and clinical outcome 
+in breast cancer. J Clin Pathol 65(2):159–163. https://​doi.​org/​10.​
+1136/​jclin​path-​2011-​200355
+	34.	 Rakha EA, Elsheikh SE, Aleskandarany MA, Habashi HO, Green 
+AR, Powe DG, El-Sayed ME, Benhasouna A, Brunet J-S, Akslen 
+LA, Evans AJ, Blamey R, Reis-Filho JS, Foulkes WD, Ellis IO 
+(2009) Triple-negative breast cancer: distinguishing between basal 
+and nonbasal subtypes. Clin Cancer Res 15(7):2302–2310. https://​
+doi.​org/​10.​1158/​1078-​0432.​Ccr-​08-​2132
+	35.	 Abd El-Rehim DM, Ball G, Pinder SE, Rakha E, Paish C, Rob-
+ertson JFR, Macmillan D, Blamey RW, Ellis IO (2005) High-
+throughput protein expression analysis using tissue microarray 
+technology of a large well-characterised series identifies biologi-
+cally distinct classes of breast cancer confirming recent cDNA 
+expression analyses. In J Cancer 116(3):340–350. https://​doi.​org/​
+10.​1002/​ijc.​21004
+	36.	 Rakha EA, Abd El Rehim D, Pinder SE, Lewis SA, Ellis IO (2005) 
+E-cadherin expression in invasive non-lobular carcinoma of the 
+breast and its prognostic significance. Histopathology 46(6):685–
+693. https://​doi.​org/​10.​1111/j.​1365-​2559.​2005.​02156.x
+	37.	 McCarty KS Jr, McCarty KS Sr (1984) Histochemical approaches 
+to steroid receptor analyses. Semin Diagn Pathol 1(4):297–308
+	38.	 McShane LM, Altman DG, Sauerbrei W, Taube SE, Gion M, 
+Clark GM, for the Statistics Subcommittee of the NCIEWGoCD 
+(2005) REporting recommendations for tumour MARKer prog-
+nostic studies (REMARK). Br J Cancer 93(4):387–391. https://​
+doi.​org/​10.​1038/​sj.​bjc.​66026​78
+	39.	 Wu Q-W, Yang Q-M, Huang Y-F, She H-Q, Liang J, Yang Q-L, 
+Zhang Z-M (2014) Expression and clinical significance of matrix 
+metalloproteinase-9 in lymphatic invasiveness and metastasis of 
+breast cancer. PLoS ONE 9(5):e97804–e97804. https://​doi.​org/​
+10.​1371/​journ​al.​pone.​00978​04
+	40.	 Fidalgo F, Rodrigues TC, Pinilla M, Silva AG, Maciel MdS, 
+Rosenberg C, de Andrade VP, Carraro DM, Krepischi ACV 
+(2015) Lymphovascular invasion and histologic grade are associ-
+ated with specific genomic profiles in invasive carcinomas of the 
+breast. Tumour Biol 36(3):1835–1848. https://​doi.​org/​10.​1007/​
+s13277-​014-​2786-z
+	41.	 Gutschner T, Diederichs S (2012) The hallmarks of cancer: a long 
+non-coding RNA point of view. RNA Biol 9(6):703–719. https://​
+doi.​org/​10.​4161/​rna.​20481
+	42.	 Guardavaccaro D, Pagano M (2006) Stabilizers and destabilizers 
+controlling cell cycle oscillators. Mol Cell 22(1):1–4. https://​doi.​
+org/​10.​1016/j.​molcel.​2006.​03.​017
+	43.	 Deshpande A, Sicinski P, Hinds PW (2005) Cyclins and cdks in 
+development and cancer: a perspective. Oncogene 24(17):2909–
+2915. https://​doi.​org/​10.​1038/​sj.​onc.​12086​18
+	44.	 Sherr CJ (1996) Cancer cell cycles. Science 274(5293):1672–
+1677. https://​doi.​org/​10.​1126/​scien​ce.​274.​5293.​1672
+	45.	 Ye C, Wang J, Wu P, Li X, Chai Y (2017) Prognostic role of cyclin 
+B1 in solid tumors: a meta-analysis. Oncotarget 8(2):2224–2232. 
+https://​doi.​org/​10.​18632/​oncot​arget.​13653
+	46.	 Kedinger V, Meulle A, Zounib O, Bonnet ME, Gossart JB, Benoit 
+E, Messmer M, Shankaranarayanan P, Behr JP, Erbacher P, Bol-
+cato-Bellemin AL (2013) Sticky siRNAs targeting survivin and 
+cyclin B1 exert an antitumoral effect on melanoma subcutaneous 
+xenografts and lung metastases. BMC Cancer 13:338. https://​doi.​
+org/​10.​1186/​1471-​2407-​13-​338
+	47.	 Soria JC, Jang SJ, Khuri FR, Hassan K, Liu D, Hong WK, 
+Mao L (2000) Overexpression of cyclin B1 in early-stage non-
+small cell lung cancer and its clinical implication. Cancer Res 
+60(15):4000–4004
+	48.	 Weng L, Du J, Zhou Q, Cheng B, Li J, Zhang D, Ling C (2012) 
+Identification of cyclin B1 and Sec62 as biomarkers for recur-
+rence in patients with HBV-related hepatocellular carcinoma after 
+surgical resection. Mol Cancer 11:39. https://​doi.​org/​10.​1186/​
+1476-​4598-​11-​39
+	49.	 Abdel-Fatah TMA, Agarwal D, Liu DX, Russell R, Rueda OM, 
+Liu K, Xu B, Moseley PM, Green AR, Pockley AG, Rees RC, 
+Caldas C, Ellis IO, Ball GR, Chan SYT (2016) SPAG5 as a prog-
+nostic biomarker and chemotherapy sensitivity predictor in breast 
+cancer: a retrospective, integrated genomic, transcriptomic, and 
+protein analysis. Lancet Oncol 17(7):1004–1018. https://​doi.​org/​
+10.​1016/​s1470-​2045(16)​00174-1
+	50.	 Kakino S, Sasaki K, Kurose A, Ito H (1996) Intracellular localiza-
+tion of cyclin B1 during the cell cycle in glioma cells. Cytometry 
+24(1):49–54. https://​doi.​org/​10.​1002/​(sici)​1097-​0320(19960​501)​
+24:1%​3c49::​Aid-​cyto6%​3e3.0.​Co;2-d
+	51.	 Winters ZE, Hunt NC, Bradburn MJ, Royds JA, Turley H, Harris 
+AL, Norbury CJ (2001) Subcellular localisation of cyclin B, Cdc2 
+and p21(WAF1/CIP1) in breast cancer. Association with prog-
+nosis. Eur J Cancer 37(18):2405–2412. https://​doi.​org/​10.​1016/​
+s0959-​8049(01)​00327-6
+	52.	 Kawamoto H, Koizumi H, Uchikoshi T (1997) Expression of the 
+G2-M checkpoint regulators cyclin B1 and cdc2 in nonmalignant 
+and malignant human breast lesions: immunocytochemical and 
+quantitative image analyses. Am J Pathol 150(1):15–23
+435
+Breast Cancer Research and Treatment (2023) 198:423–435	
+1 3
+	53.	 Pines J, Hunter T (1991) Human cyclins A and B1 are differen-
+tially located in the cell and undergo cell cycle-dependent nuclear 
+transport. J Cell Biol 115(1):1–17. https://​doi.​org/​10.​1083/​jcb.​
+115.1.1
+	54.	 Toyoshima F, Moriguchi T, Wada A, Fukuda M, Nishida E (1998) 
+Nuclear export of cyclin B1 and its possible role in the DNA 
+damage-induced G2 checkpoint. EMBO J 17(10):2728–2735. 
+https://​doi.​org/​10.​1093/​emboj/​17.​10.​2728
+	55.	 Taylor WR, DePrimo SE, Agarwal A, Agarwal ML, Schönthal 
+AH, Katula KS, Stark GR (1999) Mechanisms of G2 arrest in 
+response to overexpression of p53. Mol Biol Cell 10(11):3607–
+3622. https://​doi.​org/​10.​1091/​mbc.​10.​11.​3607
+	56.	 Grabsch H, Lickvers K, Hansen O, Takeno S, Willers R, Stock 
+W, Gabbert HE, Mueller W (2004) Prognostic value of cyclin 
+B1 protein expression in colorectal cancer. Am J Clin Pathol 
+122(4):511–516. https://​doi.​org/​10.​1309/​54h4-​q88a-​1ubb-​wpte
+	57.	 Fidler IJ (2003) The pathogenesis of cancer metastasis: the ‘seed 
+and soil’ hypothesis revisited. Nat Rev Cancer 3(6):453–458. 
+https://​doi.​org/​10.​1038/​nrc10​98
+	58.	 Pantel K, Brakenhoff RH (2004) Dissecting the metastatic cas-
+cade. Nat Rev Cancer 4(6):448–456. https://​doi.​org/​10.​1038/​nrc13​
+70
+	59.	 Christofori G (2006) New signals from the invasive front. Nature 
+441(7092):444–450. https://​doi.​org/​10.​1038/​natur​e04872
+	60.	 Melzer C, von der Ohe J, Hass R (2017) Breast carcinoma: from 
+initial tumor cell detachment to settlement at secondary sites. Bio 
+Med Res Int 2017:8534371. https://​doi.​org/​10.​1155/​2017/​85343​
+71
+	61.	 Innocente SA, Abrahamson JL, Cogswell JP, Lee JM (1999) p53 
+regulates a G2 checkpoint through cyclin B1. Proc Natl Aca Sci 
+USA 96(5):2147–2152. https://​doi.​org/​10.​1073/​pnas.​96.5.​2147
+	62.	 Gu J, Liu X, Li J, He Y (2019) MicroRNA-144 inhibits cell pro-
+liferation, migration and invasion in human hepatocellular carci-
+noma by targeting CCNB1. Cancer Cell Int 19(1):15. https://​doi.​
+org/​10.​1186/​s12935-​019-​0729-x
+	63.	 Liu Y, Beyer A, Aebersold R (2016) On the dependency of cel-
+lular protein levels on mRNA abundance. Cell 165(3):535–550. 
+https://​doi.​org/​10.​1016/j.​cell.​2016.​03.​014
+	64.	 Li B, Zhu H-B, Song G-D, Cheng J-H, Li C-Z, Zhang Y-Z, Zhao 
+P (2019) Regulating the CCNB1 gene can affect cell proliferation 
+and apoptosis in pituitary adenomas and activate epithelial-to-
+mesenchymal transition. Oncol lets 18(5):4651–4658. https://​doi.​
+org/​10.​3892/​ol.​2019.​10847
+	65.	 Rakha EA, Abbas A, Pinto Ahumada P, ElSayed ME, Colman 
+D, Pinder SE, Ellis IO (2018) Diagnostic concordance of report-
+ing lymphovascular invasion in breast cancer. J Clin Pathol 
+71(9):802–805. https://​doi.​org/​10.​1136/​jclin​path-​2017-​204981
+	66.	 Shao GL, Wang MC, Fan XL, Zhong L, Ji SF, Sang G, Wang 
+S (2018) Correlation between Raf/MEK/ERK signaling pathway 
+and clinicopathological features and prognosis for patients with 
+breast cancer having axillary lymph node metastasis. Technol 
+Cancer Res Tret 17:1533034617754024. https://​doi.​org/​10.​1177/​
+15330​34617​754024
+	67.	 Yin Y, Zeng K, Wu M, Ding Y, Zhao M, Chen Q (2014) The 
+levels of Ki-67 positive are positively associated with lymph node 
+metastasis in invasive ductal breast cancer. Cell Biochem Biophys 
+70(2):1145–1151. https://​doi.​org/​10.​1007/​s12013-​014-​0034-1
+	68.	 Begnami MD, Fregnani JH, Nonogaki S, Soares FA (2010) 
+Evaluation of cell cycle protein expression in gastric cancer: 
+cyclin B1 expression and its prognostic implication. Hum Pathol 
+41(8):1120–1127. https://​doi.​org/​10.​1016/j.​humpa​th.​2010.​01.​007
+	69.	 Kim S-K, Roh Y-G, Park K, Kang T-H, Kim W-J, Lee J-S, Leem 
+S-H, Chu I-S (2014) Expression signature defined by FOXM1–
+CCNB1 activation predicts disease recurrence in non–muscle-
+invasive bladder cancer. Clin Cancer Res 20(12):3233–3243. 
+https://​doi.​org/​10.​1158/​1078-​0432.​Ccr-​13-​2761
+	70.	 Li Q, Zhang L, Jiang J, Zhang Y, Wang X, Zhang Q, Wang Y, 
+Liu C, Li F (2019) CDK1 and CCNB1 as potential diagnostic 
+markers of rhabdomyosarcoma: validation following bioinformat-
+ics analysis. BMC Med genomics 12(1):198. https://​doi.​org/​10.​
+1186/​s12920-​019-​0645-x
+Publisher's Note  Springer Nature remains neutral with regard to 
+jurisdictional claims in published maps and institutional affiliations.

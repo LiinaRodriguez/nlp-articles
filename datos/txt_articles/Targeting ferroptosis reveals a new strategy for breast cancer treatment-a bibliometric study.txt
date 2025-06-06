@@ -1,0 +1,1006 @@
+Vol.:(0123456789)
+ Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x
+Discover Oncology
+Research
+Targeting ferroptosis reveals a new strategy for breast cancer 
+treatment: a bibliometric study
+Junlin Liu1,2 · Rong Tang1,2 · Jie Zheng1,2 · Ke Luo1,2
+Received: 19 September 2024 / Accepted: 11 November 2024
+© The Author(s) 2024 
+ 
+OPEN
+Abstract
+Background  Studies exploring the role of ferroptosis in the pathogenesis of breast cancer have proliferated over the past 
+decade, especially in 2023, with a staggering 217 publications in related studies. However, there are still significant gaps 
+in comprehensive scientometric analysis and mapping of scientific studies, especially in terms of temporal and study 
+area tracking, principal investigators, and the emergence of new hotspots.
+Objective  This study aims to summarize the role of ferroptosis in the development of breast cancer and the latest research 
+results on the ferroptosis-targeted treatment of breast cancer and to use bibliometric methods to draw a visual map to 
+explore future research trends.
+Methods  On May 11, 2024, this study updated the research progress related to ferroptosis and breast cancer over the 
+past 11 years by retrieving data from January 1, 2014, to May 1, 2024, from the Web of Science database. In this research, 
+many scientific analysis software including VOSviewer, chorddiag R Language Pack, Scimago Graphica, Citespace 6.3.R1, 
+Cluster Profiler, enrichplot, ggplot2 R Language Pack, Cytoscape, and STRING online platform are used to make in-depth 
+scientific analysis and visualization of the measurement results.
+Results  Statistical analysis of these data showed that China accounted for 74.43% of the total publications, highlighting 
+China’s dominant role in research on the relationship between ferroptosis and breast cancer. Several research institu-
+tions, including Sun Yat-sen University, Zhejiang University, and Shanghai Jiao Tong University, have achieved impressive 
+results. Efferth, Thomas is the most prominent author in this field and has the highest number of publications in the 
+subfield of oncology. This study clearly shows that ferroptosis plays a crucial role in the development of triple-negative 
+breast cancer, hepatocellular carcinoma, glioma, leukemia, mitochondrial disease, lymphoma, bladder tumors, lung 
+adenocarcinoma, and esophageal tumors.
+Conclusion  This study provides a comprehensive bibliometric evaluation that deepens our understanding of the role of 
+ferroptosis in the pathogenesis of breast cancer and the current status of targeting ferroptosis for treating breast cancer. 
+Thus, it helps researchers in related fields explore new research directions by comprehensively extracting important 
+information and research hotspots.
+Keywords  Ferroptosis · Breast cancer · Measurement analysis · Citespace · Bibliometrics
+Junlin Liu and Rong Tang are considered the first authors.
+ *  Ke Luo, 348875965@qq.com | 1Pathology Department of Jingmen Central Hospital, Jingmen, Hubei, China. 2Pathology Department 
+of Jingmen Central Hospital affiliated to Jingchu University of Technology, Jingmen, Hubei, China.
+Vol:.(1234567890)
+Research	
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x
+Globally, breast cancer has developed into the most common tumor in women [1], which is characterized by high mor-
+bidity and mortality [2], which has a significant impact on women’s health worldwide [3]. The mortality rates of breast 
+and cervical cancer among women in transition countries are reported to be significantly higher than those in countries 
+in transition (15.0 vs. 12.8 cases per 100,000 and 12.4 vs. 5.2 cases per 100,000, respectively) [4]. Based on immunohis-
+tochemical staining results, breast cancers are classified into four types: LuminalA, LuminalB, HER2-positive, and triple-
+negative breast cancers (also known as basal cell-like). Different subtypes correspond to different treatment options. 
+Luminal A type includes estrogen receptor (ER) positive, progesterone receptor (PR) positive, and human epidermal 
+growth factor receptor 2 (HER2) negative tumors. This type of breast cancer can benefit from hormone therapy and 
+chemotherapy. Luminal B type consists of two main categories: ER-positive, HER2-negative tumors with low expression 
+of PR or high expression of Ki67, and ER-positive, HER2-positive tumors with any expression of PR and Ki67. This type 
+of breast cancer can benefit from chemotherapy, hormone therapy, and HER2-targeted therapy.HER2-positive includes 
+tumors that are ER-negative, PR-negative, and HER2-positive. This type of breast cancer can benefit from chemotherapy 
+and HER2-targeted therapy. Triple-negative breast cancer includes ER-negative, PR-negative, and HER2-negative tumors. 
+This type of breast cancer can benefit from chemotherapy. Despite the availability of surgical resection, radiotherapy, 
+hormonal therapy, and targeted therapy, the treatment of breast cancer is not as effective as it should be [5], especially 
+for triple-negative breast cancer, which lacks effective endocrine therapy and anti-HER2-targeted therapy, resulting in a 
+high rate of recurrence and a poor prognosis. Therefore, there is an urgent need to explore new options for more refined 
+therapeutic management. Due to the heterogeneity of breast cancer, the current treatment and prognosis research for 
+breast cancer is multi-directional. Some studies start from the perspective of cellular energy metabolism, exploring the 
+impact of mitochondrial dysfunction on breast cancer and the development of mitochondrial inhibitors [6]. Some stud-
+ies start from cellular glutamine metabolism, linking it with T cell-related genes to construct a prognostic staging index 
+for breast cancer patients to provide more accurate treatment [7]. Others start by regulating cellular circadian rhythms, 
+studying how circadian rhythm disorders affect breast cancer progression by changing the tumor microenvironment 
+and immune response [8].
+The concept of ferroptosis was first proposed by Dixon et al. [9] and has since become a hot research topic in many fields, 
+especially in oncology. Ferroptosis is a highly iron-dependent cell death. Unlike necrosis, apoptosis, and cellular autophagy, 
+ferroptosis is characterized by the accumulation of abnormal intracellular lipid peroxides [10]. Although the regulatory 
+mechanisms of ferroptosis have not been fully elucidated, its role in a variety of human diseases has been established, such 
+as neurodegenerative diseases [11, 12], ischemia–reperfusion injury [13], and various cancers, including breast cancer [14–23]. 
+Inhibiting or activating intracellular ferroptosis may bring unexpected therapeutic effects to various diseases. Studies have 
+shown that inducing ferroptosis in breast cancer cells can effectively inhibit tumor growth, offering hope for the develop-
+ment of novel anti-breast cancer drugs [24]. Another study found that the loss of ADAR1 induced iron death in breast cancer 
+cells by regulating the miR-335-5p/Sp1/GPX4 pathway [25]. Other studies have shown that PDK4 deficiency stimulates 
+autophagy-dependent iron death in breast cancer by activating the ASK1/JNK signaling pathway [26]. Recent studies have 
+found that Several natural or synthetic chemical drugs have shown significant anticancer effects by modulating ferroptosis 
+in breast cancer cells [27–33]. From this perspective, targeting ferroptosis may be a new prospect for anticancer therapy.
+Although many articles on “ferroptosis and breast cancer” have been published, including many classic reviews, due to 
+the influence of the author’s ideas, their reviews only show the research progress in a specific direction, which is not com-
+prehensive enough. Bibliometric analysis is an objective analysis method based on big data, which can comprehensively 
+present the research status of the entire field [34]. Visualizing the results of bibliometric analysis through software such as 
+VOSviewer and CiteSpace can present them more intuitively [35]. In addition, through retrieval, no bibliometric articles on 
+“ferroptosis and breast cancer” have been found, so it is necessary to conduct a comprehensive scientific quantitative analysis 
+and detailed summary of this field, focusing on research trends, significant institutions and researchers, hot word frequen-
+cies, associated genes, etc. Therefore, this study aims to help researchers understand this field’s historical development and 
+research hotspots and provide detailed and comprehensive resource references for senior experts and new researchers to 
+improve research efficiency.
+Vol.:(0123456789)
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x	
+Research
+1  Materials and methods
+1.1  Data sources
+WOS Database: By the search formula TS = (“Breast Neoplasm” or “Breast Tumor” or “Breast Cancer” or “Mammary Can-
+cer” or “Cancer of Breast” or “Human Mammary Carcinoma” or “Human Mammary Neoplasm” or “Breast Carcinoma”) 
+and TS = (“Iron-induced cell death” OR ferroptosis) The Web of Science Core Collection database was retrieved from 
+2014-01-01 to 2024-05-01. The inclusion criteria were 528 papers and 133 reviews related to the search, excluding 
+letters, newsletters, book reviews, etc., and 661 articles related to the topic. The data visually analyzes countries, 
+institutions, authors, journals, fields, co-citations, keywords, genes, and diseases.
+citexs big data analytics platform: Genetic and disease data are derived from the citexs platform for disease 
+visualization and analysis. (https://​www.​citexs.​com).
+Retrieval Flowchart (Fig. 1).
+1.2  Research methods
+We plotted country/region/collaboration chordal maps and co-occurrence analysis maps using VOS viewer 1.6.18 
+(Centre for Science and Technology Studies, Leiden University, The Netherlands) and the chorddiag R language 
+package. VOS viewer 1.6.18 (Centre for Science and Technology Studies, Leiden University, The Netherlands) and 
+Scimago Graphica 1.0.35 (https://​www.​graph​ica.​app/, USA) analyze co-occurrence by co-occurrence for country/
+region, institution, author, journal publication, field, gene, and disease. In the graph drawn by this software, the orb 
+and text labels represent a node, and the size of the orb represents the size of the node; different colors represent 
+different clusters; the connecting lines between nodes represent co-occurrence relationships; and the thickness of 
+the connecting line segments represents the magnitude of co-occurrence intensity. Citespace 6.3.R1 (ChaomeiChen, 
+China) software was used to visualize and analyze the institutions, literature co-citations, and keywords and to draw 
+relevant visualization maps. The TOP10 citation emergence intensity of institutions and keywords are respectively 
+made into emergence graphs; the TOP20 literature citation emergence intensity is made into emergence graphs. 
+In the literature co-citation clustering analysis graph, the parameters of CiteSpace are set as follows: time slice 
+(2016–2024), year per slice (1), and selection criteria (k = 3); in the hot word frequency clustering analysis graph, the 
+parameters of CiteSpace are set as follows: time slice (2016–2024), year per slice (1), and selection criteria (k = 26). 
+In the hotspot word frequency clustering timeline analysis plot, the parameters of CiteSpace were set as follows: 
+time slice (2016–2024), year per slice (1), and selection criteria (k = 26). Different orbs represent different co-cited 
+references, and the size of the orbs is proportional to the number of citations of the publication. The connecting 
+lines between orbs indicate co-citation relationships. The size and color of the superimposed chronology in each orb 
+indicate the number of cited literature and the corresponding period. The extracted genes were visualized for GO and 
+KEGG enrichment analyses using Clusterprofiler, enrichplot, and ggplot2R language packages. Extracted proteins 
+were analyzed and visualized by constructing PPI networks using STRING (http://​string-​db.​org) online platform 
+Cytoscape 3.8.2 (Cytoscape Consortium, USA).
+2  Results
+2.1  Analysis of annual trends in the issuance of communications
+From 2014-01-01 to 2024-05-01, the number of articles on “ferroptosis and breast cancer” was 661 (Fig. 2). No articles 
+were published in 2014 and 2015, so the subsequent analysis started in 2016. The average annual number of articles was 
+calculated to be 73.4. From 2016 to 2024, the annual number of articles showed a continuous upward trend. The highest 
+growth rate was 250% in 2017, with similar growth rates of 100% in 2020 and 2021. The annual number of publications 
+showed a continuous upward trend, with the highest growth rate of 250% in 2017 and the same growth rate of 100% 
+in 2020 and 2021. A power function y = 1.5274 × 2.7134 (R2 = 0.9896, x represents the first year, and y is the cumulative 
+number of articles) was created for the trend in a cumulative number of articles with a good fit. This indicates that the 
+Vol:.(1234567890)
+Research	
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x
+research interest in ‘ferroptosis and Breast Cancer’ is increasing yearly, and this power function can effectively character-
+ize its increasing trend.
+VOS viewer software was used to visualize and analyze the publication regions, and 661 articles on “ferroptosis and 
+breast cancer” were published in 48 countries. By setting the minimum number of articles in a country to 2, we obtained 
+the country/region co-occurrence analysis and the country/region relationship chord diagram (authors who meet the 
+above conditions were put into the diagram) for “ferroptosis and breast cancer.” In Fig. 3A, each ball represents a country, 
+Fig. 1   Retrieval Flowchart
+Vol.:(0123456789)
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x	
+Research
+and the size of the ball is proportional to the number of articles published by the country; the thickness of the lines 
+between the balls represents the strength of cooperation between different countries. In Fig. 3B, we visualized the region 
+of articles published in the study “ferroptosis and breast cancer” using the chorddiag R language package. Each outer 
+curve segment represents a country/region, and the thickness of the connecting line is proportional to the strength of 
+cooperation between countries/regions.
+Figure 3 shows that China has the most robust willingness to cooperate with other countries/regions, and its 
+cooperation with the USA is the strongest. Moreover, Cameroon and Germany are ranked second in the value of the 
+intensity of cooperation; China is the country with the most number of publications, 492, which is nearly six times as 
+many as USA, the country that is ranked second in the value of publications; Germany is ranked third in the number of 
+publications, 23; Belgium’s Belgium has the highest number of citations for a single document, reaching 399.5, followed 
+by Germany with 198.83, indicating that the research results of these countries receive a higher degree of citation, 
+which shows that these articles have a high degree of academic recognition. Table 1 shows the top 10 countries/regions 
+regarding the number of published papers.
+Eight hundred thirty institutions published 661 “ferroptosis and breast cancer” articles using VOSviewer software. 
+The minimum number of articles published by an organization was set at 3, and a clustering diagram was obtained for 
+the cooperation of the research organizations in the study of “ferroptosis and breast cancer.” Fig. 4A illustrates different 
+clusters using various colors. These clusters are based on the co-citation network between institutions. Institutions with 
+a high degree of co-citation are grouped, forming a cluster hierarchy. This hierarchy visually represents the relationships 
+between institutions. Of all the clustered institutions, Helmholtz Zentrum Munchen has the highest number of citations 
+to a single piece of literature at 1108.33, followed by the University of Pittsburgh, with both institutions categorized in 
+the yellow cluster. Institution Sun Yat-sen University, with purple clustering, has the highest number of publications, 
+with 33, followed by Zhejiang University, with green clustering, and Shanghai Jiao Tong University, with red clustering, 
+with 32 and 26 publications, respectively. We have ranked the top 15 institutions in contribution based on the number 
+of publications, as shown in Table 2.
+Figure 4B shows the top 10 institutional citation bursts from 2016-01-01 to 2024-05-01 analyzed by CiteSpace for 
+studies related to “ferroptosis and breast cancer,” which refers to the top 10 institutions with the most vigorous bursts of 
+citations in a certain period, and the red area in the figure indicates the period of citation surge for each institution. The 
+red area in the graph indicates the period in which each institution’s citation surge occurred. The graph shows that in 
+this period, Johannes Gutenberg University of Mainz had a surge in 2017–2020, with the highest burst strength of 3.11. 
+Its burst time is the longest among the top ten, indicating that the research published by this institution has a more 
+significant academic impact on the field of “ferroptosis and Breast Cancer” for a more extended period. The institutions 
+Fig. 2   Trend analysis of the volume of communications
+Vol:.(1234567890)
+Research	
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x
+with the highest citation burst intensity of 3.11 and the longest burst time in the top ten indicate that the research 
+published by this institution has a more significant academic influence on the field of “ferroptosis and breast cancer” 
+over a more extended period. Among the top ten institutions with the most substantial citation explosion, most of the 
+institutions appeared around 2020, indicating that the research in the field of “ferroptosis and breast cancer” is more 
+concentrated in this period, with a higher degree of enthusiasm.
+VOSviewer software was used to visualize and analyze authors’ publications. Four thousand four hundred fifty-
+one authors published 661 articles related to the study of “ferroptosis and breast cancer.” The minimum number of 
+articles published by each author was set to 3, and a collaborative relationship graph of the articles published by 
+authors of the study “ferroptosis and breast cancer” was obtained. As shown in Fig. 4C, circles and text labels form a 
+node, and different colors represent different clusters. The thickness of the lines between the circles represents the 
+intensity of collaboration between authors. The three authors Chen, Yongxia, Yang, Jingjing, and Zhou, Yulu tied for 
+the first place in terms of cooperation intensity; Efferth, Thomas, Kuete, Victor and Mbaveng, ArmelleT. Established 
+the closest cooperation relationship two by two, respectively; the size of the circle is positively correlated with the 
+Fig. 3   A Research region co-occurrence analysis chart. B Research region relationship chord chart
+Vol.:(0123456789)
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x	
+Research
+number of authors’ publications, and the size of the circle is positively correlated with the number of authors’ publi-
+cations. Three authors, Efferth, Thomas, Zhang, Jing, and Liu, Yang, tied for the first place in terms of the number of 
+publications, with seven publications, followed by Zhang, Jun, Li, Wentong, Kuete, Victor and Mbaveng, ArmelleT, 
+tied for the second place in terms of the number of publications, with six publications. Based on the extracted data, 
+we have created a table, as shown in Table 3.
+Figure 5A shows a two-plot overlay analysis of the journals, which shows the research location on “ferroptosis and 
+breast cancer” about the significant research disciplines. The graph is divided into two parts: the left side is the citing 
+journals, and the right is the cited journals. The graph shows that “ferroptosis and Breast Cancer” research articles are 
+mainly published in journals in Molecular Biology and immunology, and the citations are concentrated in journals in 
+Molecular Biology and genetics. Genetics. Each point on the graph represents a journal, and the curves between the left 
+Table 1   Top 10 countries/
+regions by number of 
+published papers
+Countries/Regions
+Number of publications
+Total citation frequency
+Average 
+citation 
+count
+China
+492
+12,316
+25.0325
+USA
+85
+5584
+65.6941
+Germany
+23
+4573
+198.8261
+India
+19
+198
+10.4211
+Japan
+16
+2861
+178.8125
+France
+14
+719
+51.3571
+Iran
+12
+196
+16.3333
+Australia
+10
+550
+55
+Italy
+9
+56
+6.2222
+Canada
+8
+603
+75.375
+Fig. 4   A Research institution clustering analysis chart. B Research institution citation burst TOP10. C Research author relationship analysis 
+chart
+Vol:.(1234567890)
+Research	
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x
+and right parts of the graph are citation links, the trajectories of which provide an understanding of the interdisciplinary 
+relationships in the field and a complete picture of the citation context.
+The 227 literature domain categories obtained from searching the Web of Science Core Collection database were 
+counted and visualized by VOS viewer software, and the articles related to “ferroptosis and breast cancer” were clustered 
+into five major domains. As shown in Fig. 5B, the different colored spheres represent different domain clusters. Studies 
+related to “ferroptosis and breast cancer” were mainly concentrated in Biology and medicine, which were clustered 
+in red, with Oncology having the highest frequency of 143, followed by Biochemistry&molecularbiology and 
+Pharmacology&pharmacology. Pharmacology and pharmacy subfields accounted for a higher number of articles.
+Figure 5C shows the co-citation analysis of the literature on “ferroptosis and breast cancer” from 2016-01-01 to 2024-05-
+01 analyzed by CiteSpace (the following description is limited to the inclusion of the data in the figure, and the parameters 
+of CiteSpace were set as follows: time slice (2016–2024), year per slice (1), and selection criteria (k = 3). Stacked orb size, 
+i.e., the sum of the corresponding orb sizes on the chronological line, is proportional to the number of co-citations. The 
+most co-cited document is Stockwell BR (2017), with 106 co-citations; purple represents relatively early citation, yellow 
+represents late citation, and the superimposed color means the Article has been cited in all the corresponding years. 
+In the figure, Wang WM (2019) was cited earlier and continued to be cited in the following years; the line between the 
+circles represents the co-citation of the literature, and the nodes marked in rose red are the key nodes, with the centrality 
+Table 2   Top 15 institutions in 
+terms of contribution ranking
+Institutions
+Number of publications
+Total citation frequency
+Average 
+citation 
+count
+Sun Yat Sen Univ
+33
+686
+20.7879
+Zhejiang Univ
+32
+1408
+44
+Shanghai Jiao Tong Univ
+26
+713
+27.4231
+Cent South Univ
+23
+693
+30.1304
+Chinese Acad Sci
+19
+507
+26.6842
+Fudan Univ
+18
+555
+30.8333
+Nanjing Med Univ
+18
+100
+5.5556
+Sichuan Univ
+17
+564
+33.1765
+China Pharmaceut Univ
+17
+651
+38.2941
+Harbin Med Univ
+16
+382
+23.875
+Zhengzhou Univ
+14
+315
+22.5
+Southern Med Univ
+14
+296
+21.1429
+Shandong Univ
+13
+257
+19.7692
+Tongji Univ
+12
+301
+25.0833
+Soochow Univ
+11
+247
+22.4545
+Table 3   Top 10 authors with 
+influence in this field
+Authors
+Number of publications
+Total citation frequency
+Average 
+citation 
+count
+Efferth, Thomas
+7
+634
+90.5714
+Zhang, Jing
+7
+227
+32.4286
+Liu, Yang
+7
+156
+22.2857
+Li, Wentong
+6
+370
+61.6667
+Kuete, Victor
+6
+261
+43.5
+Mbaveng, Armelle T
+6
+261
+43.5
+Zhang, Jun
+6
+137
+22.8333
+Hamai, Ahmed
+5
+473
+94.6
+Ding, Dejun
+5
+370
+74
+Yang, Bo
+5
+334
+66.8
+Vol.:(0123456789)
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x	
+Research
+greater than 0.1, among which Jiang L (2015) and Hangauer MJ (2017) are both key nodes. (Note: this data is based on 
+the above citespace parameter settings; the statistics of the literature co-citation situation are included in the figure.) 
+The specific data is shown in Table 4.
+A CiteSpace analysis of the Top 20 citation bursts from 2016-01-01 to 2024-05-01 for “ferroptosis and breast cancer” 
+was performed. A citation burst is a spike in citations to an article during a specific period, and the red area in the graph 
+indicates the period in which each Article received a spike in citations. The red area in the figure indicates the period 
+Fig. 5   A Journal double overlay chart. B Domain analysis chart. C Literature co-citation analysis chart. D Literature citation burst chart
+Table 4   The 15 most cited papers in this field
+Author
+Year
+Source
+citation count
+DOI
+Stockwell BR
+2017
+CELL
+106
+https://​doi.​org/​10.​1016/j.​cell.​2017.​09.​021
+Wang WM
+2019
+NATURE
+101
+https://​doi.​org/​10.​1038/​s41586-​019-​1170-y
+Hassannia B
+2019
+CANCER CELL
+88
+https://​doi.​org/​10.​1016/j.​ccell.​2019.​04.​002
+Chen X
+2021
+NAT REV CLIN ONCOL
+83
+https://​doi.​org/​10.​1038/​s41571-​020-​00462-0
+Sung H
+2021
+CA-CANCER J CLIN
+76
+https://​doi.​org/​10.​3322/​caac.​21660
+Jiang XJ
+2021
+NAT REV MOL CELL BIO
+73
+https://​doi.​org/​10.​1038/​s41580-​020-​00324-8
+Doll S
+2017
+NAT CHEM BIOL
+69
+https://​doi.​org/​10.​1038/​NCHEM​BIO.​2239
+Bersuker K
+2019
+NATURE
+66
+https://​doi.​org/​10.​1038/​s41586-​019-​1705-2
+Doll S
+2019
+NATURE
+62
+https://​doi.​org/​10.​1038/​s41586-​019-​1707-0
+Li J
+2020
+CELL DEATH DIS
+60
+https://​doi.​org/​10.​1038/​s41419-​020-​2298-2
+Mou YH
+2019
+J HEMATOL ONCOL
+56
+https://​doi.​org/​10.​1186/​s13045-​019-​0720-y
+Tang DL
+2021
+CELL RES
+54
+https://​doi.​org/​10.​1038/​s41422-​020-​00441-1
+Viswanathan VS
+2017
+NATURE
+46
+https://​doi.​org/​10.​1038/​natur​e23007
+Liang C
+2019
+ADV MATER
+46
+https://​doi.​org/​10.​1002/​adma.​20190​4197
+Li ZQ
+2020
+BIOMARK RES
+44
+https://​doi.​org/​10.​1186/​s40364-​020-​00230-3
+Vol:.(1234567890)
+Research	
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x
+in which the number of citations for each Article increases. Figure 5D shows that Xie Y (2016) has the highest citation 
+burst intensity of 17.02. The period of the burst is 2018–2021, which indicates that this Article has a high impact on the 
+field of “ferroptosis and breast cancer”; Jiang L (2015), Gao MH (2015), and Cao JY (2016) have the highest citation burst 
+intensity of 17.02, and the period of the burst is 2018–2021, which indicates that this Article has a high impact on the 
+field of “ferroptosis and breast cancer”; Jiang L (2015), Gao MH (2015) and Cao JY (2016) have the highest citation strength 
+of 17.02. Jiang L (2015), Gao MH (2015), and Cao JY (2016) have the longest citation emergence time, which is 4 years, 
+indicating that these papers have a more extended influence on the field of “ferroptosis and breast cancer.” In the Top 20 
+cited literature, most of the literature has a citation surge in 2020–2021, indicating that the research field of “ferroptosis 
+and breast cancer” has a high degree of enthusiasm during this period; the literature that has a citation surge in the 
+past 2 years is Doll S (2017), which indicates that this Article has a strong influence on the field of “ferroptosis and breast 
+cancer” in the past 2 years. “ferroptosis and breast cancer” research has been emphasized in the last 2 years.
+Figure 6A shows the hotspot word frequency co-occurrence analysis graph, which analyzed the hotspot word fre-
+quency clustering of “ferroptosis and breast cancer” from 2016-01-01 to 2024-05-01 by CiteSpace (the following descrip-
+tions are limited to the inclusion of the data in the graph, and the parameters of CiteSpace were set as follows: time slice 
+(2016–2024), year per slice (1), and selection criteria (k = 26). (2016–2024), year per slice (1), selection criteria (k = 26). 
+The size of the superimposed circles, i.e., the size of the corresponding circles on the chronological line is summed up, is 
+proportional to the number of co-citations, purple represents relatively early citations, yellow represents late citations, 
+and the superimposed color represents that the hot word was cited in all the corresponding years. The line between 
+the circles represents the co-citation situation of the hot words, and the nodes marked in red are the critical nodes with 
+centrality greater than 0.1. Citespace provides modularity (Q) and mean silhouette (S) values to assess the clarity of net-
+work structure and clustering. Generally, a Q value greater than 0.3 indicates a significant clustering structure, while an 
+S value above 0.5 suggests reasonable clustering. Therefore, from the upper left area of the figure, it can be known that 
+the clustering module value Q value = 0.8655 and the average silhouette value S value = 0.984, i.e., Q value of 0.8655 > 0.3 
+and S value of 0.984 > 0.5, so it is concluded that the sample keywords clustering structure is significant and clustering 
+is convincing. Figure 6A shows that these hot words are clustered into 11 classes: #0 breast cancer, #1 immune status, #2 
+tumor microenvironment, #3 triple-negative breast cancer, #4 cell death, #5 photothermal therapy, #6 lipid peroxidation, 
+#7 hydrogen sulfide, #8 reactive oxygen species, #9 combination therapy, and #10 oxidative stress.
+Figure 6B shows the top 10 keywords analyzed by CiteSpace for citation spikes from 2016-01-01 to 2024-05-01 for 
+the study “Ferroptosis and Breast Cancer,” which refers to a spike in the frequency of citations for that keyword over 
+Fig. 6   A Hot word frequency clustering analysis chart. B Hot word frequency citation burst TOP10. C Hot word frequency clustering timeline 
+analysis chart
+Vol.:(0123456789)
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x	
+Research
+a certain period, and the red area in the figure indicates the period of the citation spikes. The red area in the graph 
+indicates the period of the citation surge. The graph shows the citation explosion of these keywords by year, strength, 
+beginning, and end. The graph provides a quick understanding of the research trends and focuses on “ferroptosis and 
+Breast Cancer” over the past few years. From the figure, the keyword with the most vigorous citation emergence intensity 
+is nonapoptotic cell death, with an emergence intensity value of 1.8, and the emergence period is 2018–2019. Among 
+the top 10 keywords, ‘iron metabolism’ shows an earlier citation surge. This indicates that it received high attention in 
+the early stages of ‘ferroptosis and breast cancer’ research. In the Top 10 keywords, the citation surge of iron metabolism 
+is earlier, indicating that this research hotspot receives greater attention in “ferroptosis and breast cancer” at the early 
+stage. Keywords showing citation surges after 2022, such as ‘hepatocellular carcinoma’ and ‘prognostic model,’ highlight 
+the key research directions in this field over the past 2 years. This indicates that these hot words have been the focus of 
+the field of “ferroptosis and breast cancer” in the past 2 years.
+Figure 6C shows the timeline analysis of clustering keywords associated with “ferroptosis and breast cancer.” The size 
+of the superimposed orbs, i.e., the size of the corresponding orbs on the chronological line, is directly proportional to 
+the frequency of the keywords; the connecting lines between the keywords represent the co-occurrences; the purple 
+color represents that the keywords appeared relatively early, and the yellow color represents that the keywords appeared 
+late. The superimposed colors represent that the keywords appear in the corresponding years; the rosy red nodes are 
+the more central nodes (in the pivot position, playing a pivotal role); the keywords of the same clusters are placed on 
+the same horizontal line. The time of the first appearance of the keyword is placed at the top of the view, and the further 
+to the right, the more recent the time. Through this figure, the number of keywords in each cluster can be obtained; the 
+more keywords, the more critical the domain of the cluster; the period of keywords in each cluster can also be obtained. 
+As shown in the figure, the keywords are clustered into 11 clusters, which are #0 breast cancer, #1 immune status, #2 
+tumor microenvironment, #3 triple-negative breast cancer, #4 cell death, #5 photothermal-therapy, #6 lipid peroxidation, 
+#7 hydrogen sulfide, #8 reactive oxygen species, #9 combination therapy, #10 oxidative stress clustering in the area of 
+“ferroptosis and Breast Cancer”. The specific data is shown in Table 5.
+These themes or keywords represent current and recent years’ focus and hotspots within related research areas, 
+perhaps because of their importance in scientific research advances, therapeutic potential, or clinical applications. The 
+mapping shows which research themes are growing, which are centerpieces or pivots, and how different concepts are 
+interconnected over time. This is a macroscopic display of knowledge and research activity in the field and is helpful for 
+researchers in the field to understand overall research trends.
+VOSviewer software was used to analyze the co-occurrence of genes related to the study of “ferroptosis and breast 
+cancer,” a cluster analysis map of associated genes was formed (Fig. 7A). Citexs big data platform extracted 2701 genes 
+from 661 articles and set each gene’s minimum occurrences to 15 times to form a visualization map. Circles and labels in 
+the graph form a node, the size of the circle is positively correlated with the frequency of gene occurrence, and the thick-
+ness of the connecting line of the circle is positively correlated with the strength of the relationship between the genes; 
+Table 5   Research hotspots and keywords in this field for each year from 2017 to 2024
+Research hotspots and Keywords
+Year
+drug resistance, iron metabolism, regulated cell death, drug repurposing, antitumor immunity, artemisia annua, cystine starvation
+2017
+breast cancer, lipid peroxidation, cell death, reactive oxygen species, cancer therapy, cancer stem cells, glutathione peroxidase 4, 
+natural compounds, nonapoptotic cell death, fatty acids
+2018
+combination therapy, natural product, brain metastasis, intracellular cascade, self-assemble nanoparticles, er plus breast cancer, gsh-
+mediated metabolic vulnerability, cysteine metabolism, regulated necrosis, iron manipulating strategies
+2019
+triple-negative breast cancer, oxidative stress, cancer treatment, gene signature, drug delivery, cancer stem-like cells, Fenton reaction, 
+breast cancer cells, hydrogen sulfide, colorectal cancer
+2020
+tumor microenvironment, immune microenvironment, cancer immunotherapy, immune infiltration, overall survival, immune status, 
+prognostic signature, drug sensitivity, fatty acid metabolism, drug repositioning
+2021
+photothermal therapy, hemodynamic therapy, hepatocellular carcinoma, prognostic model, programmed cell death, traditional 
+Chinese medicine, photodynamic therapy, cancer metastasis, cell cycle, lipid metabolism
+2022
+immunogenic cell death, tumor metastasis, systems biology, synergistic effect, tumor microenvironment remodeling, therapeutic 
+target, metabolic reprogramming, redox homeostasis, so no dynamic therapy, gsh depletion
+2023
+antitumor therapy, chemodynamical therapy, cuprous ion, copper ion, carbon coating, cancer nanotechnology, copper 
+accumulation, artificial peroxidases, chemotherapy-induced senescence, biocatalysis and ultrasound
+2024
+Vol:.(1234567890)
+Research	
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x
+nodes of different colors form different clusters, and the different colors represent the clustering of genes in different 
+domains, among which, the gene with the highest research heat is classified as a blue cluster, which mainly participates 
+in weakening the toxicity of lipid peroxide and maintaining membrane This gene is mainly involved in weakening the 
+toxicity of lipid peroxides and maintaining the homeostasis of the membrane bilayer, and there is also the gene SLC7A11 
+in this cluster, which is involved in this physiological function; the most prevalent gene in the green cluster is NFE2L2, 
+which is mainly involved in intracellular antioxidant function; in the red cluster, the most prevalent gene is AKT1, which 
+is related to PI3K/AKT and the downstream apoptosis signaling pathway.
+In the GO enrichment analysis histogram, each bar represents a GO Term, the size of the bar reflects the number of 
+genes contained in this function, and the color indicates the enrichment degree of this function. The X-axis represents 
+the Gene Ratio value, which refers to the ratio of the number of genes associated with the GO Term to the total number of 
+genes in the background gene set (the whole genome of the human species to which the subject belongs to the study). 
+The X-axis represents the Gene Ratio value, and the Gene Ratio is the proportion of the number of genes associated 
+with a GO Term in the background gene set (the whole genome of the species to which the research subject belongs) 
+to the total number of genes; the more significant the Gene Ratio value on the X-axis, the more genes are associated 
+with the GO Term. If the Gene Ratio of a GO Term is significantly higher than the expected value, it may have an essential 
+biological function in the experiment.
+GO functional enrichment results are shown in Fig. 7B. This project involves biological process (BP), molecular function 
+(MF), and cell composition (CC). In BP, The gene was significantly enriched in cellular response to chemical stress, intrinsic 
+apoptotic signaling pathway, and regulation of apoptotic signaling Biological processes such as pathway. In CC, genes 
+were significantly enriched in the mitochondrial and organelle outer membranes. Regarding MF, The genes were 
+significantly enriched in Ubiquitin-like protein ligase binding, ubiquitin protein ligase binding, and RNA polymerase 
+II-specific DNA-binding transcription factor binding and other molecular functions.
+Figure 7C is a histogram of the KEGG pathway enrichment analysis. KEGG pathway enrichment analysis selects the top 
+10 signaling pathways and draws a histogram. The X-axis represents the genes significantly enriched in each pathway, 
+and the Y-axis represents different signaling pathways. The longer the column, the more genes under the entry; red 
+represents a significant pathway after enrichment; blue represents a low-significance pathway. The figure shows that the 
+“ferroptosis and breast cancer” research field is significantly related to signaling pathways such as Ferroptosis, Kaposis 
+sarcoma-associated herpesvirus infection, and Lipid and atherosclerosis.
+Through the citexs big data platform, the top 100 proteins in the Article were imported into the STRING platform (the 
+minimum number of occurrence of proteins was 18 times), and the species was “Homosapiens,” and the PPI network 
+information was set with a high confidence level (0.700). The obtained network information was imported into Cytoscape 
+Fig. 7   A Associated genes clustering analysis chart. B GO enrichment analysis bar chart. C KEGG pathway enrichment analysis histogram. D 
+PPI network construction analysis graph. E Associated Diseases clustering analysis graph
+Vol.:(0123456789)
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x	
+Research
+software, and the node degree value (degree) was calculated. Note: After importing the screened genes into the STRING 
+database, the PPI network was obtained, as shown in Fig. 7D, which contained 100 nodes, 771 edges, and an average node 
+degree value of 15.4. The node degree value (degree) was calculated using Cytoscape software. Then, the PPI network 
+graph of core proteins was constructed according to the degree of value sorted from smallest to largest. See Fig. The 
+top 10 proteins are TP53, AKT1, BCL2, EGFR, CASP3, STAT3, TNF, MYC, IL6, and CTNNB1, which may be the core proteins 
+of “ferroptosis and breast cancer”.
+The VOS viewer software was used to analyze the co-occurrence of diseases related to the study of “ferroptosis and 
+breast cancer.” Citexs big data platform extracted a total of 687 diseases from 661 articles and set the minimum number 
+of occurrences of each disease to 5 (put the diseases that meet the above conditions into the graph) to obtain a cluster 
+diagram of diseases related to the study of “ferroptosis and breast cancer.” The clustering diagram of diseases related 
+to the study of “ferroptosis and breast cancer” is shown in Fig. 7E. Circles and labels form a node, the size of the circle is 
+positively correlated with the frequency of the disease, and the thickness of the line connecting the circle is positively 
+correlated with the strength of the relationship between the diseases; nodes of different colors form different clusters, 
+and the different colors represent the different clustering of the diseases, of which the blue clusters with the highest 
+heat are the ones with the highest heat. The blue cluster is urinary bladder neoplasms; the red cluster is triple-negative 
+breast neoplasms; the green cluster is leukemia.
+3  Discussion
+This study conducted a comprehensive search in the Web of Science database to identify research articles published in 
+the last decade (2014–2024) on ferroptosis associated with breast cancer. According to the principles of scientometrics, 
+the number of published articles reflects the research heat and development of the field. To ensure the reliability and 
+accuracy of the results, screening criteria were developed, and articles that did not meet the criteria were removed. 
+According to the screening results, 661 articles related to the topic were retrieved since 2014, including 528 papers 
+and 133 reviews. The total citation frequency of these articles was 2498 from 100 institutions in 30 countries or regions. 
+This demonstrates the global solid connection in breast cancer associated with ferroptosis. The first Article in this field 
+was published in 2016, which revealed a novel mechanism that induces ferroptosis in breast cancer cells by altering 
+intracellular iron levels, which provides new ideas for therapeutic strategies in breast cancer [17].
+As can be seen from the results, there is a continuous rise in the number of research studies on breast cancer associated 
+with ferroptosis. From 2 articles in 2016 to 217 articles in 2023, it shows an increasing trend year by year (average 
+annual growth rate of 95.33%). This indicates that this research area is receiving increasing attention from the global 
+scientific community. From 2016 to 2020, the total number of annual articles was small despite the high annual growth 
+rate, indicating that the research on ferroptosis in breast cancer is still at an early stage. There is limited interest and 
+focus on the study of the role of ferroptosis in breast cancer. However, from 2021 to 2023, there is a significant change 
+in the number of publications in this field. Compared with previous years, the average annual number of publications 
+has increased significantly from 19 to 154, indicating that the scientific community’s interest and focus on exploring 
+ferroptosis as a target for breast cancer treatment is proliferating.
+China and the United States lead the way in breast cancer research related to ferroptosis, with these two countries 
+accounting for nearly three-quarters of the publications in this area. China, in particular, is dominant, with 63% of the 
+world’s publications, and the top 10 research organizations are all from China, followed by the U.S. and Germany in third 
+place. Interestingly, the most robust collaborations are between China and the United States, followed by Cameroon and 
+Germany, suggesting a synergy of efforts between these countries to promote new strategies for targeting ferroptosis in 
+breast cancer treatment. Although some collaboration exists between some countries, the strength of the collaboration 
+is not as muscular as it could be. China has a very low intensity of collaboration with other countries except for a strong 
+connection with the United States, which is also the case with the United States. In addition, there is no cooperation 
+between Germany, which ranks third in the number of articles sent, and India, which ranks fourth. Such low-intensity 
+collaborations can seriously hinder the development of the field. Therefore, extensive communication and cooperation 
+between organizations in multiple related research fields in different countries is strongly recommended to promote 
+the development of new strategies for treatments targeting ferroptosis. In addition to the close collaboration between 
+countries, the partnership between investigators is equally essential.
+Regarding the intensity of collaboration, three investigators, Chen, Yongxia, Yang, Jingjing, and Zhou, Yulu, tied first, 
+while Efferth, Thomas, Kuete, Victor, and Mbaveng, ArmelleT. They established the closest collaborations, indicating that 
+Vol:.(1234567890)
+Research	
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x
+these investigators are more active in promoting ferroptosis therapeutic strategies. I believe that by working together, we 
+can accelerate the dynamic development of this field, improving the treatment options for breast cancer and bringing 
+benefits to more patients.
+For journals, impact factors [36] and journal citation reports [37] are essential indicators to prove their influence size. 
+Among the top ten journals that published several articles in this field, the percentage of JCRQ1 is 92.6%, and only 
+one journal is JCRQ2, which shows the high quality of research results in this field. Among these journals, FRONTIERS 
+IN PHARMACOLOGY (Impact Factor = 4.4, JCRQ1) and FRONTIERS IN ONCOLOGY (Impact Factor = 3.5, JCRQ2) had the 
+highest number of articles published, which indicates that the journals have attracted much attention in targeting new 
+strategies for ferroptosis therapy. In addition, CELL (impact factor = 45.5, JCRQ1) had the highest impact factor among the 
+many published journals, indicating the journal’s great importance in the related field. Core journals are burdened with 
+publishing essential research results in the relevant field. Therefore, these journals can be recommended to researchers 
+in the field to help them quickly learn about the most cutting-edge research results and optimize their research ideas in 
+time. Hot word frequency citation emergence refers to the frequency of a keyword appearing in the citations in a certain 
+period. This mainly demonstrates the research trends and hotspots of concern in the related fields in the past few years. 
+The results show that nonapoptotic cell death is the keyword with the most vigorous citation emergence intensity in 
+recent years, and the emergence period is 2018–2019. Ye et al. [38] summarized that it is possible to treat a variety of 
+malignant tumors, including breast tumors, by inducing nonapoptotic cell death in cells. Woo et al. [39] experimentally 
+demonstrated that Corosolic Acid could induce nonapoptotic cell death in breast cancer cells. All these studies provide 
+a theoretical basis for targeting ferroptosis for the treatment of breast cancer.
+From the results of the study, it can be seen that three authors, Efferth, Thomas, Zhang, Jing, and Liu, Yang, are the 
+most active with seven publications, followed by Zhang, Jun, Li, Wentong, Kuete, Victor, and Mbaveng, ArmelleT. with 
+six publications. This indicates that their contribution to the research area of targeting ferroptosis for breast cancer 
+treatment is very significant. By analyzing the strength of collaboration among researchers, we were surprised to find 
+three authors, Efferth, Thomas, Kuete, Victor, and Mbaveng, ArmelleT. They collaborated closely, but unfortunately, four 
+authors, Zhang, Jing, Liu, Yang, Zhang, Jun, and Li, Wentong, did not collaborate. Regrettably, the four authors, Zhang, 
+Jing, Liu, Yang, Zhang, Jun, and Li, Wentong, have no cooperation. With more publications, it is hoped that the researchers 
+can strengthen their communication and cooperation with valuable results. In addition, when analyzing the citations, we 
+found that the top ten authors, with more than 62, contributed significantly to the field of “ferroptosis and breast cancer.” 
+The most frequently cited author was Stockwell BR (106 citations), followed by Wang WM (101 citations) and Hassannia B 
+(88 citations), and Stockwell BR made significant achievements in the mechanism of ferroptosis, physiological function, 
+role in tumor diseases, and ferroptosis as a target for the treatment of tumors [40, 41]. His articles summarize the most 
+cutting-edge and multifaceted research results in this field, from basic theory to practical applications, and have made 
+significant contributions to researchers. Wang WM from the University of Michigan School of Medicine, USA, whose 
+research found that immunotherapy-activated CD8T cells enhance ferroptosis in tumor cells specific lipid peroxidation, 
+and in turn, increased ferroptosis contributes to the antitumor efficacy of immunotherapy [42]. This study combines 
+tumor immunotherapy with cellular ferroptosis to explore a novel antitumor mechanism, which provides a new direction 
+for tumor treatment options. The Article by Hassannia B points out that ferroptosis is a promising therapeutic strategy, 
+especially for the treatment of cancer cells that have become resistant to anticancer drugs, and that by identifying and 
+exploiting the iron-dependence of cancer cells, as well as the mechanisms by which the induction of ferroptosis occurs, 
+the research, new drug targets, and technologies can be developed to kill tumor cells while protecting healthy cells 
+more effectively [43]. In today’s new era of precision therapy, their research provides new options for the treatment of 
+breast cancer.
+Currently, research on targeted ferroptosis therapy for breast cancer spans several disciplines. These include oncology, 
+biochemistry, molecular biology, pharmacology, cell biology, nanoscience, and technology. Most studies are published 
+in journals related to these fields. This indicates that breast cancer treatment is not only concerned by medicine alone 
+but also by the joint participation of many disciplines. This forms a complete process of fundamental theoretical research 
+(upstream)-drug and material design (midstream)-clinical application (downstream), which bridges the gap between 
+basic research and clinical application and realizes the translation of research results to clinical application, which is 
+an exciting trend. Regarding theoretical research, Feng Ye et al. conducted a comprehensive study on breast cancer 
+cell proliferation. They used various methods, including CCK8 experiments, colony formation assays, and xenograft 
+mouse models. Their research was conducted both in vitro and in vivo. The study concluded that METTL16, an essential 
+methyltransferase, is crucial in breast cancer progression. Specifically, METTL16 epigenetically enhances GPX4 expression 
+through m6A modification, inhibiting ferroptosis and promoting cancer growth [44]. Huang et al. found that FOXQ1 was 
+Vol.:(0123456789)
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x	
+Research
+overexpressed in breast cancer and was associated with poorer survival through CCK-8, colony formation, wound healing, 
+transwell, and ferroptosis-related experiments. In addition, inhibition of FOXQ1 suppressed breast cancer ferroptosis and 
+progression, suggesting that targeting FOXQ1 may be a promising strategy in breast cancer therapy [45]. In the same 
+year, another study from immunology confirmed that iron-death-dependent breast cancer cell-derived exosomes inhibit 
+breast cancer cell migration and invasion by suppressing M2 macrophage polarization, and this study provides a new 
+therapeutic strategy for breast cancer patients [46].
+The study by Wang Xiaoping et al. found that the suppressor of cytokine signaling 1 (SOCS1) inhibits the progression 
+and chemoresistance of triple-negative breast cancer (TNBC) by regulating GPX4 expression using cellular and animal 
+model experiments [47]. In 2024, more research results are available. From a bioinformatics perspective, Liang Shuang 
+et al. identified three essential ferroptosis-related genes (TXNIP, SLC2A1, and ATF3) associated with breast cancer based on 
+bioinformatics and machine learning techniques, which are closely related to breast cancer occurrence, progression, and 
+prognosis [48]. At the gene level, Li Jun et al. found that the gene POU2F2 transcriptionally activates PTPRG-AS1 and then 
+regulates ferroptosis and proliferation through miR-376c-3p/SLC7A11 to promote the development of triple-negative 
+breast cancer [49]. Meanwhile, some genes that inhibit mammary gland development by regulating ferroptosis were 
+also found. Xiaofan et al. found that the long-stranded noncoding RNA (lncRNA) LncFASA increased the susceptibility 
+of triple-negative breast cancer (TNBC) to ferroptosis, suggesting a critical role of this lncRNA in ferroptosis-mediated 
+cancer development and providing new insights into therapeutic strategies for breast cancer [50]. Another study found 
+that low prostaglandin E receptor 3 (PTGER3) gene expression protects triple-negative breast cancer cells from a critical 
+ferroptosis pathway, promoting their progression. Therefore, PTGER3 may serve as a novel and promising TNBC biomarker 
+and therapeutic target [51]. A study by Song Xiang et al. demonstrated that SR-rich splicing factor 1 (SRSF1) inhibits 
+ferroptosis and reduces cisplatin chemosensitivity in triple-negative breast cancer cells through the circSEPT9/GCH1 
+axis, providing a promising strategy for cisplatin-resistant treatment of TNBC [52].
+In addition to genes, some proteins have also been found to play a role in breast cancer development. Chen’s study 
+revealed that guanosine triphosphatase hydrolase (GTPase) activating protein 6 (ARHGAP6) inhibits breast cancer tumor 
+growth by inducing ferroptosis through RhoA/ROCK1/p38MAPK signaling and that combining ARHGAP6 with ferroptosis 
+inducers may be a promising therapeutic strategy for breast cancer treatment [53]. Another study found that thrombin 
+could induce ferroptosis in triple-negative breast cancer through the cPLA2α/ACSL4 signaling pathway, which predicts 
+the potential of the thrombin-ACSL4 axis as a promising therapeutic target for the treatment of TNBC [54]. Xue’s study 
+showed the importance of exogenous cysteine in CYTL1 low-expressing breast cancer cells and emphasized the potential 
+metabolic vulnerability to the target [55]. Another study explored tumor immunity in the treatment of breast cancer. 
+They showed that short-term acidosis induced ferroptosis in breast cancer cells through the ZFAND5/SLC3A2 signaling 
+axis, which promotes phagocytosis and ferroptosis in M1 macrophage-polarized breast cancer cells, which may be a 
+novel mechanism for breast cancer treatment [56].
+In drug research, researchers have also made many excellent results. For example, Pitavastatin induced autophagy-
+dependent ferroptosis in MDA-MB-231 cells via the mevalonate pathway [57], SBFI26-induced ferroptosis in triple-
+negative breast cancer cells via Lipid peroxidation [58], co-treatment of cucurbitacin B and erastin synergistically induced 
+ferroptosis in breast cancer cells via alteration of iron-regulated proteins and lipid peroxidation [59], β-Eudesmol inhibits 
+cell proliferation and induces ferroptosis by regulating the MAPK signaling pathway in breast cancer [60]. Peiminine 
+triggers ferroptosis by triggering Nrf2 signaling to inhibit breast cancer growth [61]. In addition to the above drugs, 
+nanomaterials have given breast cancer patients a glimpse of a cure. Ruixue Wei et al. systematically reviewed the 
+current cancer treatment strategies based on iron-based ferroptosis inducers, summarized the advantages of these 
+different ferroptosis inducers, and elucidated the prospects to provide better guidance for the development of iron-based 
+nanomaterials ferroptosis inducers [62]. Wei proposed a lysosome-targeted magnetic nano-torquer (T7-MNT) that can 
+dynamically induce a burst of endogenous Fe2+ pools in breast cancer cells, and this dynamic targeting strategy can 
+be combined with current iron-death inducers to achieve enhanced therapeutic efficacy and to stimulate the design 
+of mechanistic iron-death inducers for cancer therapeutics [63]. Chai et al. developed a multifunctional coordination 
+polymer-loaded liposome for synergistic chemotherapy of TNBC with ferroptosis activation, which provides a new 
+therapeutic strategy for treating TNBC with potential clinical applications [64]. In their study, Zhou et al. developed an 
+albumin-based nanomedicine to induce enhanced ferroptosis in triple-negative breast cancer (TNBC) by depletion of 
+glutathione (GSH) and inhibition of DHODH activity, and this work provides a practical and easy-to-accomplish strategy 
+for the treatment of TNBC with promising clinical applications [65].
+Currently, four main pathways for inducing ferroptosis have been found [9]: inducing intracellular lipid peroxidation 
+through peroxides [66], inhibiting GPX activity [67], inhibiting the Xc-system [68], and consuming reduced coenzyme Q10 
+Vol:.(1234567890)
+Research	
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x
+[69]. Most studies on the regulatory mechanism of ferroptosis in breast cancer focus on one or two of the main pathways, 
+and few studies include the above four pathways, which ignores the interaction between the entire regulatory system 
+of ferroptosis. Due to the heterogeneity of breast cancer, the regulatory mechanism of ferroptosis may be different in 
+different patients or different types of breast cancer, and it is difficult to have targeted ferroptosis drugs to treat multiple 
+types of breast cancer. In clinical practice, there are currently no specific biomarkers for diagnosing ferroptosis [67]. 
+Specific biomarkers are necessary for the clinical diagnosis of ferroptosis and crucial for the efficacy evaluation and 
+prognosis monitoring of innovative drugs targeting ferroptosis. At the same time, it is also meaningful to find ferroptosis-
+specific biomarkers that can reflect the severity of the disease. In addition, there is limited research on the use parameters 
+of ferroptosis inducers or inhibitors, such as dosage, administration time, administration method, and drug half-life. Most 
+current studies remain at the primary research stage, with cell lines and animal models as the experimental subjects, 
+and few clinical experiments, so there are few evaluations of clinical safety and efficacy, which hinders the promotion 
+and application of ferroptosis as a target for breast cancer treatment in the clinic. Comprehensive preclinical and clinical 
+trials are essential to verify the role of ferroptosis in human physiology and lay the foundation for ferroptosis as a target 
+for breast cancer treatment.
+This Article uses relatively objective and comprehensive data analysis to present the current status of research 
+in the field of “ferroptosis and breast cancer” visually. However, it must be admitted that this study still has some 
+limitations. (1) This study only collected articles written in English in the WoSCC database. Articles in other languages or 
+databases were not included in our study, which means that some valuable studies may be missed, limiting the study’s 
+comprehensiveness. In retrieving data, we found that after setting the publication language to English, the number 
+of retrieved articles did not change, and it was still 661, indicating that no articles in other languages appeared in this 
+field. (2) We retrieved papers published in the decade from 2014 to 2024 on May 11, 2024. However, the database is 
+still being updated, and some of the latest published articles may not be included. At the same time, due to the lag in 
+citation influence, the influence of some recently published high-level articles may need to be considered. (3) Although 
+the software objectively performs the entire data analysis process, there is an individual subjective bias in interpreting 
+these results.
+4  Conclusion
+This paper comprehensively combed and analyzed the literature on breast cancer and ferroptosis from 2014 to 
+2024, providing valuable reference value for researchers in this field. This paper used bibliometric methods to obtain 
+data such as annual output trends, countries/regions, research institutions/researchers, journals, subject categories, 
+references/co-citations, keywords, genes, and related diseases in this field. Inhibiting the growth of cancer cells by 
+accelerating ferroptosis of breast cancer cells is currently a hot topic and frontier of research. Drug development based 
+on nanomaterials has gradually become a new treatment strategy, bringing hope for practical clinical applications. 
+However, more and broader cooperation is needed worldwide. Our analysis results will help researchers discover new 
+perspectives, determine future research directions, and promote more profound research in this field.
+Acknowledgements  The authors thank those peoples who open source of Bibliometrix package, VOSviewer, and CiteSpace. Thank the website 
+(www.​citexs.​com)provided guidance on data extraction and analysis
+Author contributions  J.l. L. and R. T. extracted the dataset for statistical analysis and were the main contributors to writing the manuscript. J. 
+Z. and K. L. participated in interpreting the survey results of this study. K. L. reviewed and revised the article. All authors have contributed to 
+this article and approved the submitted version.
+Data availability  The raw data supporting the conclusions of this article will be made available by the authors, without undue reservation.
+Declarations 
+Competing interests  The authors declare no competing interests.
+Open Access   This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License, which 
+permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit to 
+the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You 
+do not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party 
+Vol.:(0123456789)
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x	
+Research
+material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If 
+material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds 
+the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://​creat​iveco​
+mmons.​org/​licen​ses/​by-​nc-​nd/4.​0/.
+References
+	 1.	 Li J, He D, Li S, Xiao J, Zhu Z. Ferroptosis: the emerging player in remodeling triple-negative breast cancer. Front Immunol. 2023;14:1284057.
+	 2.	 Liao M, Zhang J, Wang G, Wang L, Liu J, Ouyang L, Liu B. Small-molecule drug discovery in triple negative breast cancer: current situation 
+and future directions. J Med Chem. 2021;64(5):2382–418.
+	 3.	 Ge A, He Q, Zhao D, Li Y, Chen J, Deng Y, Xiang W, Fan H, Wu S, Li Y, Liu L, Wang Y. Mechanism of ferroptosis in breast cancer and research 
+progress of natural compounds regulating ferroptosis. J Cell Mol Med. 2024;28(1): e18044.
+	 4.	 Sung H, Ferlay J, Siegel RL, Laversanne M, Soerjomataram I, Jemal A, Bray F. Global Cancer Statistics 2020: GLOBOCAN estimates of inci-
+dence and mortality worldwide for 36 cancers in 185 countries. CA Cancer J Clin. 2021;71(3):209–49.
+	 5.	 Waks AG, Winer EP. Breast cancer treatment: a review. JAMA. 2019;321(3):288–300.
+	 6.	 Yan Y, Li S, Su L, Tang X, Chen X, Gu X, Yang G, Chi H, Huang S. Mitochondrial inhibitors: a new horizon in breast cancer therapy. Front 
+Pharmacol. 2024;15:1421905.
+	 7.	 Jiang C, Zhang S, Jiang L, Chen Z, Chen H, Huang J, Tang J, Luo X, Yang G, Liu J, Chi H. Precision unveiled: Synergistic genomic landscapes 
+in breast cancer—Integrating single-cell analysis and decoding drug toxicity for elite prognostication and tailored therapeutics. Environ 
+Toxicol. 2024;39(6):3448–72.
+	 8.	 Yan Y, Su L, Huang S, He Q, Lu J, Luo H, Xu K, Yang G, Huang S, Chi H. Circadian rhythms and breast cancer: unraveling the biological clock’s 
+role in tumor microenvironment and aging. Front Immunol. 2024;15:1444426.
+	 9.	 Dixon SJ, Lemberg KM, Lamprecht MR, Skouta R, Zaitsev EM, Gleason CE, Patel DN, Bauer AJ, Cantley AM, Yang WS, Morrison B 3rd, Stock-
+well BR. Ferroptosis: an iron-dependent form of nonapoptotic cell death. Cell. 2012;149(5):1060–72.
+	10.	 Hirschhorn T, Stockwell BR. The development of the concept of ferroptosis. Free Radic Biol Med. 2019;133:130–43.
+	11.	 Raven EP, Lu PH, Tishler TA, Heydari P, Bartzokis G. Increased iron levels and decreased tissue integrity in hippocampus of Alzheimer’s 
+disease detected in vivo with magnetic resonance imaging. J Alzheimers Dis. 2013;37(1):127–36.
+	12.	 Chen J, Marks E, Lai B, Zhang Z, Duce JA, Lam LQ, Volitakis I, Bush AI, Hersch S, Fox JH. Iron accumulates in Huntington’s disease neurons: 
+protection by deferoxamine. PLoS ONE. 2013;8(10): e77023.
+	13.	 FriedmannAngeli JP, Schneider M, Proneth B, Tyurina YY, Tyurin VA, Hammond VJ, Herbach N, Aichler M, Walch A, Eggenhofer E, Basa-
+varajappa D, Radmark O, Kobayashi S, Seibt T, Beck H, Neff F, Esposito I, Wanke R, Forster H, Yefremova O, Heinrichmeyer M, Bornkamm 
+GW, Geissler EK, Thomas SB, Stockwell BR, O’Donnell VB, Kagan VE, Schick JA, Conrad M. Inactivation of the ferroptosis regulator Gpx4 
+triggers acute renal failure in mice. Nat Cell Biol. 2014;16(12):1180–91.
+	14.	 Eling N, Reuter L, Hazin J, Hamacher-Brady A, Brady NR. Identification of artesunate as a specific activator of ferroptosis in pancreatic 
+cancer cells. Oncoscience. 2015;2(5):517–32.
+	15.	 Louandre C, Marcq I, Bouhlal H, Lachaier E, Godin C, Saidak Z, Francois C, Chatelain D, Debuysscher V, Barbare JC, Chauffert B, Galmiche 
+A. The retinoblastoma (Rb) protein regulates ferroptosis induced by sorafenib in human hepatocellular carcinoma cells. Cancer Lett. 
+2015;356(2 Pt B):971–7.
+	16.	 Hao S, Yu J, He W, Huang Q, Zhao Y, Liang B, Zhang S, Wen Z, Dong S, Rao J, Liao W, Shi M. Cysteine dioxygenase 1 mediates erastin-induced 
+ferroptosis in human gastric cancer cells. Neoplasia. 2017;19(12):1022–32.
+	17.	 Ma S, Henson ES, Chen Y, Gibson SB. Ferroptosis is induced following siramesine and lapatinib treatment of breast cancer cells. Cell Death 
+Dis. 2016;7(7): e2307.
+	18.	 Cui Y, Li Y, Xu Y, Liu X, Kang X, Zhu J, Long S, Han Y, Xue C, Sun Z, Du Y, Hu J, Pan L, Zhou F, Xu X, Li X. SLC7A11 protects luminal A breast 
+cancer cells against ferroptosis induced by CDK4/6 inhibitors. Redox Biol. 2024;76: 103304.
+	19.	 Ye S, Hu X, Sun S, Su B, Cai J, Jiang J. Oridonin promotes RSL3-induced ferroptosis in breast cancer cells by regulating the oxidative stress 
+signaling pathway JNK/Nrf2/HO-1. Eur J Pharmacol. 2024;974: 176620.
+	20.	 Dibra D, Xiong S, Moyer SM, El-Naggar AK, Qi Y, Su X, Kong EK, Korkut A, Lozano G. Mutant p53 protects triple-negative breast adenocar-
+cinomas from ferroptosis in vivo. Sci Adv. 2024;10(7):eadk1835.
+	21.	 Shahid W, Iqbal A, Iqbal I, Mehmood A, Jia H. Application of ferroptosis strategy to overcome tumor therapy resistance in breast and dif-
+ferent cancer cells. Iran J Basic Med Sci. 2024;27(9):1085–95.
+	22.	 Zhang C, Zhou Y, Chen T, Bhushan S, Sun S, Zhang P, Yang Y. Isocitrate dehydrogenase 2 regulates the proliferation of triple-negative 
+breast cancer through the ferroptosis pathway. Sci Rep. 2024;14(1):4732.
+	23.	 Fan C, Wu H, Du X, Li C, Zeng W, Qu L, Cang C. Inhibition of lysosomal TRPML1 channel eliminates breast cancer stem cells by triggering 
+ferroptosis. Cell Death Discov. 2024;10(1):256.
+	24.	 Liu Y, Hu Y, Jiang Y, Bu J, Gu X. Targeting ferroptosis, the achilles’ heel of breast cancer: a review. Front Pharmacol. 2022;13:1036140.
+	25.	 Yin C, Zhang MM, Wang GL, Deng XY, Tu Z, Jiang SS, Gao ZD, Hao M, Chen Y, Li Y, Yang SY. Loss of ADAR1 induces ferroptosis of breast 
+cancer cells. Cell Signal. 2024;121: 111258.
+	26.	 Shi W, Wang J, Chen J, Jin X, Wang Y, Yang L. Abrogating PDK4 activates autophagy-dependent ferroptosis in breast cancer via ASK1/JNK 
+pathway. J Cancer Res Clin Oncol. 2024;150(4):218.
+	27.	 Andrijauskaite K, Wargovich MJ. Role of natural products in breast cancer related symptomology: targeting chronic inflammation. Semin 
+Cancer Biol. 2022;80:370–8.
+	28.	 Yuan L, Cai Y, Zhang L, Liu S, Li P, Li X. Promoting apoptosis, a promising way to treat breast cancer with natural products: a comprehensive 
+review. Front Pharmacol. 2021;12: 801662.
+Vol:.(1234567890)
+Research	
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x
+	29.	 Luo N, Zhang K, Li X, Hu Y, Guo L. Tanshinone IIA destabilizes SLC7A11 by regulating PIAS4-mediated SUMOylation of SLC7A11 through 
+KDM1A, and promotes ferroptosis in breast cancer. J Adv Res. 2024. https://​doi.​org/​10.​1016/j.​jare.​2024.​04.​009.
+	30.	 Xie D, Jiang Y, Wang H, Zhu L, Huang S, Liu S, Zhang W, Li T. Formononetin triggers ferroptosis in triple-negative breast cancer cells 
+by regulating the mTORC1/SREBP1/SCD1 pathway. Front Pharmacol. 2024;15:1441105.
+	31.	 Huang G, Cai Y, Ren M, Zhang X, Fu Y, Cheng R, Wang Y, Miao M, Zhu L, Yan T. Salidroside sensitizes Triple-negative breast cancer to 
+ferroptosis by SCD1-mediated lipogenesis and NCOA4-mediated ferritinophagy. J Adv Res. 2024. https://​doi.​org/​10.​1016/j.​jare.​2024.​
+09.​027.
+	32.	 Yang X, Liang B, Zhang L, Zhang M, Ma M, Qing L, Yang H, Huang G, Zhao J. Ursolic acid inhibits the proliferation of triple-negative breast 
+cancer stem-like cells through NRF2-mediated ferroptosis. Oncol Rep. 2024;52(1):1–13.
+	33.	 Shang Y, Zhao M, Chen S, Chen Y, Liu X, Zhou F, Li Y, Long M, Xu K, Ding Z, Wang L. Tetrastigma hemsleyanum polysaccharide combined 
+with doxorubicin promote ferroptosis and immune function in triple-negative breast cancer. Int J Biol Macromol. 2024;275(Pt 1): 133424.
+	34.	 Liu Y, Xu Y, Cheng X, Lin Y, Jiang S, Yu H, Zhang Z, Lu L, Zhang X. Research trends and most influential clinical studies on anti-pd1/pdl1 
+immunotherapy for cancers: a bibliometric analysis. Front Immunol. 2022;13: 862084.
+	35.	 Kumar R, Rani S, Awadh MA. Exploring the application sphere of the internet of things in industry 4.0: a review, bibliometric and content 
+analysis. Sensors (Basel). 2022;22(11):4276.
+	36.	 Zimmerman J, Field J, Leusch F, Lowry GV, Wang P, Westerhoff P. Impact beyond impact factor. Environ Sci Technol. 2022;56(17):11909.
+	37.	 Atallah AN, Puga M, Amaral J. Web of Science Journal Citation Report 2020: the Brazilian contribution to the “Medicine, General & Internal” 
+category of the journal impact factor (JIF) ranking (SCI 2019). Sao Paulo Med J. 2020;138(4):271–4.
+	38.	 Ye J, Zhang R, Wu F, Zhai L, Wang K, Xiao M, Xie T, Sui X. Nonapoptotic cell death in malignant tumor cells and natural compounds. Cancer 
+Lett. 2018;420:210–27.
+	39.	 Woo SM, Seo SU, Min KJ, Im SS, Nam JO, Chang JS, Kim S, Park JW, Kwon TK. Corosolic acid induces nonapoptotic cell death through 
+generation of lipid reactive oxygen species production in human renal carcinoma caki cells. Int J Mol Sci. 2018;19(5):1309.
+	40.	 Stockwell BR, FriedmannAngeli JP, Bayir H, Bush AI, Conrad M, Dixon SJ, Fulda S, Gascon S, Hatzios SK, Kagan VE, Noel K, Jiang X, Linker-
+mann A, Murphy ME, Overholtzer M, Oyagi A, Pagnussat GC, Park J, Ran Q, Rosenfeld CS, Salnikow K, Tang D, Torti FM, Torti SV, Toyokuni S, 
+Woerpel KA, Zhang DD. Ferroptosis: a regulated cell death nexus linking metabolism, redox biology, and disease. Cell. 2017;171(2):273–85.
+	41.	 Stockwell BR. Ferroptosis turns 10: emerging mechanisms, physiological functions, and therapeutic applications. Cell. 
+2022;185(14):2401–21.
+	42.	 Wang W, Green M, Choi JE, Gijon M, Kennedy PD, Johnson JK, Liao P, Lang X, Kryczek I, Sell A, Xia H, Zhou J, Li G, Li J, Li W, Wei S, Vatan L, 
+Zhang H, Szeliga W, Gu W, Liu R, Lawrence TS, Lamb C, Tanno Y, Cieslik M, Stone E, Georgiou G, Chan TA, Chinnaiyan A, Zou W. CD8(+) T 
+cells regulate tumor ferroptosis during cancer immunotherapy. Nature. 2019;569(7755):270–4.
+	43.	 Hassannia B, Vandenabeele P, Vanden BT. Targeting ferroptosis to iron out cancer. Cancer Cell. 2019;35(6):830–49.
+	44.	 Ye F, Wu J, Zhang F. METTL16 epigenetically enhances GPX4 expression via m6A modification to promote breast cancer progression by 
+inhibiting ferroptosis. Biochem Biophys Res Commun. 2023;63:81–6.
+	45.	 Huang X, Wu J, Wang Y, Xian Z, Li J, Qiu N, Li H. FOXQ1 inhibits breast cancer ferroptosis and progression via the circ_0000643/miR-153/
+SLC7A11 axis. Exp Cell Res. 2023;431(1): 113737.
+	46.	 Yi C, Wu S, Duan Q, Liu L, Li L, Luo Y, Wang A. Ferroptosis-dependent breast cancer cell-derived exosomes inhibit migration and invasion 
+of breast cancer cells by suppressing M2 macrophage polarization. PeerJ. 2023;11: e15060.
+	47.	 Wang Y, Pang X, Liu Y, Mu G, Wang Q. SOCS1 acts as a ferroptosis driver to inhibit the progression and chemotherapy resistance of triple-
+negative breast cancer. Carcinogenesis. 2023;44(8–9):708–15.
+	48.	 Liang S, Bai YM, Zhou B. Identification of key ferroptosis genes and mechanisms associated with breast cancer using bioinformatics, 
+machine learning, and experimental validation. Aging (Albany NY). 2024;16(2):1781–95.
+	49.	 Li J, Li PT, Wu W, Ding BN, Wen YG, Cai HL, Liu SX, Hong T, Zhang JF, Zhou JD, Qian LY, Du J. POU2F2-mediated upregulation of lncRNA 
+PTPRG-AS1 inhibits ferroptosis in breast cancer via miR-376c-3p/SLC7A11 axis. Epigenomics. 2024;16(4):215–31.
+	50.	 Fan X, Liu F, Wang X, Wang Y, Chen Y, Shi C, Su X, Tan M, Yan Q, Peng J, Shao J, Xiong Y, Lin A. LncFASA promotes cancer ferroptosis via 
+modulating PRDX1 phase separation. Sci China Life Sci. 2024;67(3):488–503.
+	51.	 Wang S, Zhang Y, Zhang D, Meng J, Che N, Zhao X, Liu T. PTGER3 knockdown inhibits the vulnerability of triple-negative breast cancer to 
+ferroptosis. Cancer Sci. 2024;115(6):2067–81.
+	52.	 Song X, Wang X, Chen X, Yu Z, Zhou Y. SRSF1 inhibits ferroptosis and reduces cisplatin chemosensitivity of triple-negative breast cancer 
+cells through the circSEPT9/GCH1 axis. J Proteomics. 2024;292: 105055.
+	53.	 Chen X, Zhu J, Li X, Chen J, Zhou Z, Fan X, Liang R, Liu H, Zhu D. ARHGAP6 suppresses breast cancer tumor growth by promoting ferroptosis 
+via RhoA-ROCK1-p38 MAPK signaling. Front Biosci (Landmark Ed). 2024;29(1):6.
+	54.	 Xu S, Tuo QZ, Meng J, Wu XL, Li CL, Lei P. Thrombin induces ferroptosis in triple-negative breast cancer through the cPLA2alpha/ACSL4 
+signaling pathway. Transl Oncol. 2024;39: 101817.
+	55.	 Xue W, Yu Y, Yao Y, Zhou L, Huang Y, Wang Y, Chen Z, Wang L, Li X, Wang X, Du R, Shen Y, Xu Q. Breast cancer cells have an increased fer-
+roptosis risk induced by system x(c)(-) blockade after deliberately downregulating CYTL1 to mediate malignancy. Redox Biol. 2024;70: 
+103034.
+	56.	 Xiong H, Zhai Y, Meng Y, Wu Z, Qiu A, Cai Y, Wang G, Yang L. Acidosis activates breast cancer ferroptosis through ZFAND5/SLC3A2 signaling 
+axis and elicits M1 macrophage polarization. Cancer Lett. 2024;587: 216732.
+	57.	 Tang WJ, Xu D, Liang MX, Wo GQ, Chen WQ, Tang JH, Zhang W. Pitavastatin induces autophagy-dependent ferroptosis in MDA-MB-231 
+cells via the mevalonate pathway. Heliyon. 2024;10(5): e27084.
+	58.	 He G, Zhang Y, Feng Y, Chen T, Liu M, Zeng Y, Yin X, Qu S, Huang L, Ke Y, Liang L, Yan J, Liu W. SBFI26 induces triple-negative breast cancer 
+cells ferroptosis via lipid peroxidation. J Cell Mol Med. 2024;28(7): e18212.
+	59.	 Bakar-Ates F, Ozkan E. Cucurbitacin B and erastin co-treatment synergistically induced ferroptosis in breast cancer cells via altered iron-
+regulating proteins and lipid peroxidation. Toxicol In Vitro. 2024;94: 105732.
+	60.	 Li Z, Li J, Liu X, Liu Y, Chen H, Sun X. beta-eudesmol inhibits cell proliferation and induces ferroptosis via regulating MAPK signaling 
+pathway in breast cancer. Toxicon. 2024;237: 107529.
+Vol.:(0123456789)
+Discover Oncology          (2024) 15:679  
+| https://doi.org/10.1007/s12672-024-01569-x	
+Research
+	61.	 Yi N, Wang L, Jiang Z, Xu G, Li L, Zhang Y, Tan Y. Peiminine triggers ferroptosis to inhibit breast cancer growth through triggering Nrf2 
+signaling. Tissue Cell. 2024;87: 102323.
+	62.	 Wei R, Fu G, Li Z, Liu Y, Xue M. Engineering iron-based nanomaterials for breast cancer therapy associated with ferroptosis. Nanomedicine 
+(Lond). 2024;19(6):537–55.
+	63.	 Wei X, Li Y, Chen H, Gao R, Ning P, Wang Y, Huang W, Chen E, Fang L, Guo X, Lv C, Cheng Y. A lysosome-targeted magnetic nanotorquer 
+mechanically triggers ferroptosis for breast cancer treatment. Adv Sci (Weinh). 2024;11(9): e2302093.
+	64.	 Chai J, Hu J, Wang T, Bao X, Luan J, Wang Y. A multifunctional liposome for synergistic chemotherapy with ferroptosis activation of triple-
+negative breast cancer. Mol Pharm. 2024;21(2):781–90.
+	65.	 Zhou TJ, Zhang MM, Liu DM, Huang LL, Yu HQ, Wang Y, Xing L, Jiang HL. Glutathione depletion and dihydroorotate dehydrogenase inhibi-
+tion actuated ferroptosis-augment to surmount triple-negative breast cancer. Biomaterials. 2024;305: 122447.
+	66.	 FriedmannAngeli JP, Krysko DV, Conrad M. Ferroptosis at the crossroads of cancer-acquired drug resistance and immune evasion. Nat 
+Rev Cancer. 2019;19(7):405–14.
+	67.	 Wang X, Zhou Y, Min J, Wang F. Zooming in and out of ferroptosis in human disease. Front Med. 2023;17(2):173–206.
+	68.	 Sun S, Shen J, Jiang J, Wang F, Min J. Targeting ferroptosis opens new avenues for the development of novel therapeutics. Signal Transduct 
+Target Ther. 2023;8(1):372.
+	69.	 Cao S, Wei Y, Yue Y, Chen Y, Liao S, Li A, Liu P, Xiong A, Zeng H. Targeting ferroptosis unveils a new era for traditional Chinese medicine: a 
+scientific metrology study. Front Pharmacol. 2024;151: 366852.
+Publisher’s Note  Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.

@@ -1,0 +1,2424 @@
+REVIEW
+Deciphering molecular mechanisms of metastasis: novel insights
+into targets and therapeutics
+Bikashita Kalita1
+& Mohane Selvaraj Coumar1
+Received: 8 August 2020 /Accepted: 19 April 2021
+# Springer Nature Switzerland AG 2021
+Abstract
+Background The transition of a primary tumour to metastatic progression is driven by dynamic molecular changes, including
+genetic and epigenetic alterations. The metastatic cascade involves bidirectional interactions among extracellular and intracellular
+components leading to disintegration of cellular junctions, cytoskeleton reorganization and epithelial to mesenchymal transition.
+These events promote metastasis by reprogramming the primary cancer cell’s molecular framework, enabling them to cause local
+invasion, anchorage-independent survival, cell death and immune resistance, extravasation and colonization of distant organs.
+Metastasis follows a site-specific pattern that is still poorly understood at the molecular level. Although various drugs have been
+tested clinically across different metastatic cancer types, it has remained difficult to develop efficacious therapeutics due to
+complex molecular layers involved in metastasis as well as experimental limitations.
+Conclusions In this review, a systemic evaluation of the molecular mechanisms of metastasis is outlined and the potential
+molecular components and their status as therapeutic targets and the associated pre-clinical and clinical agents available or under
+investigations are discussed. Integrative methods like pan-cancer data analysis, which can provide clinical insights into both
+targets and treatment decisions and help in the identification of crucial components driving metastasis such as mutational profiles,
+gene signatures, associated pathways, site specificities and disease-gene phenotypes, are discussed. A multi-level data integration
+of the metastasis signatures across multiple primary and metastatic cancer types may facilitate the development of precision
+medicine and open up new opportunities for future therapies.
+Keywords Metastasis . Epithelial‐mesenchymal transition . Circulating tumour cells . Secondary tumour . Pan‐cancer analysis .
+Precision medicine
+1 Introduction
+Metastasis is a characteristic of malignant tumours driven by
+the interplay of molecular and physiological processes under-
+lying cellular growth, differentiation and survival. Cancer me-
+tastasis is accompanied by an accumulation of somatic muta-
+tions, epigenetic changes and signals arising from the tumour
+microenvironment that alter cell shape and integrity, and pro-
+mote its aggressive phenotype [1, 2]. It is a highly malicious
+condition that is initiated by a subpopulation of genetically
+unstable cells within the primary tumour mass which are com-
+pelled towards colonizing the body through dissociation from
+the tumour followed by invasion to neighbouring tissues and
+transition through the circulatory and lymphatic system to
+populate distant organs. Metastasis is the most fatal trait of a
+malignant cancer, which has presented itself as the biggest
+clinical hurdle by conferring drug-resistance and recurrence
+characteristics despite breakthroughs that have been made in
+drug discovery. It has challenged cancer treatment for many
+years and is the major cause of cancer fatality. Why tumour
+cells attain a vagrant nature is not known. However, it is not
+erroneous to note from the context of tumour progression that
+metastasis is a survival strategy adopted by cancer cells to
+escape death signals and immune surveillance. It is also a
+mechanism to retain their population despite a deficiency of
+resources and spaces induced by hypoxic conditions, nutri-
+tional depletion and mutational aberrations causing over-
+crowding of cells in the primary tumour site [3]. Metastatic
+cancer cells develop invasion and motility properties with an
+advantageous plasticity trait to switch between different
+* Mohane Selvaraj Coumar
+mohane@bicpu.edu.in
+1
+Centre for Bioinformatics, School of Life Sciences, Pondicherry
+University, Kalapet, Pondicherry 605014, India
+Cellular Oncology
+https://doi.org/10.1007/s13402-021-00611-2
+phenotypes and molecular patterns. In addition, they have the
+ability to modulate primary and secondary tumour microenvi-
+ronments by withstanding dynamic biochemical changes and
+traversing across faltering organs to form micro-metastases
+and, eventually, colonize them [4].
+In 1976, Peter Nowell proposed the clonal evolution of
+tumour cell populations. The same theory turned out to be
+evident through the advent of the next-generation single-cell
+sequencing technology showing that primary tumours do not
+comprise a population of genetically identical cells but rather
+subgroups of cells discerned by mutations and somatic varia-
+tions [5]. However, whether metastatic property arises from a
+single cell from a pool of genetically diverse subsets of cells,
+or a cluster of genetically diverse subsets of cells is not clear.
+When explored deeper for the generation of every subset of
+cancer cells based on molecular phylogenetics, gene expres-
+sion patterns and protein interactions that regulate various
+signalling pathways and mutations, the clonal evolution theo-
+ry may provide relevant information on metastasis-driving
+factors. The identification of massive metastasis causing fac-
+tors, however, remains a hurdle. Since the clinical presentation
+of metastatic traits is noted only after subsequent generations
+of tumour cell formation, studying it at the clinically observed
+stage does not allow the understanding of metastasis at its
+origin, making it a complicated process to master.
+Increasing evidence indicates that metastasis employs in-
+trinsic cell motility mechanisms like chemokine signalling,
+metabolic and immune pathways. These mechanisms are well
+studied in bone metastasis of breast and prostate cancer
+(RANKL/RANK/OPG) [6, 7]. On the other hand, the estab-
+lishment of metastatic colonies is mediated by employing phe-
+notypic switching between epithelial and mesenchymal cell
+types, similar to what is observed during embryogenesis.
+However, this is just one aspect and a much more complex
+molecular interplay is involved. Anderson et al. stated that
+irrespective of the route of migration, the subset of cells that
+colonize the secondary site is molecularly and behaviourally
+distinct from the primary tumour cells, and acquires the ability
+to localize, adapt and proliferate within a new tissue microen-
+vironment [8]. This notion opens up the scope for interrogat-
+ing the detailed biological and mechanical aspects of molecu-
+lar diversity and phenotypic heterogeneity of the many steps
+involved in the metastatic cascade.
+In 1889 Paget proposed the “Seed and Soil” hypothesis
+while investigating autopsy reports of 735 women with breast
+cancer. He observed that metastatic cells follow a specific
+affinity towards the organ to which they migrate. As breast
+cancer is, for example, commonly observed to metastasize to
+the bone, in addition to exploring how breast cancer cells
+adapt to the bone microenvironment, the question of precisely
+how the bone microenvironment contemplates the growth of
+breast cancer cells still awaits to be answered [9]. The “Seed
+and Soil” hypothesis remains one of the most promising
+blueprints for revealing the mechanisms underlying the organ
+specificity of metastasis. The physical viability, vascular sup-
+port and stromal constitution of every organ set the criteria for
+the migrating cancer cells to inhabit. Indeed, the biological
+pathways and genes associated with the establishment of the
+bone microenvironment reveal much about a cancer cell’s
+bone specificity. Moreover, the multiple steps involved in
+the metastatic process demand to decipher and trace every step
+of the cascade holistically to comprehensively understand the
+biology of tumour outgrowth and progression.
+There are two modes of targeting metastasis. One is halting
+the metastatic cascade from occurring at the primary tumour
+site and preventing dissemination to other sites. The other is to
+sabotage the already established metastatic colonies. A new
+class of drugs, referred to as migrastatics, prefers to target the
+distinct mechanisms liable for cell invasion, motility and mi-
+gration [10]. Current cancer treatments mainly focus on
+targeting the primary tumour mass and often include kinase
+inhibitors and immunotherapies. These treatment modalities
+mostly elicit cytotoxic effects on cancer cells and block im-
+mune checkpoints, respectively, but fail to explicitly attack the
+dispersal of cells, tumour circulation and dormancy. Early
+detection of metastasis is also a clinical shortcoming, which
+is mostly due to limitations in implementing acquired knowl-
+edge into metastasis diagnostics. Unfolding molecular knowl-
+edge on invasion, migration and signalling pathways involved
+in specificity and colonization will help the identification of
+druggable metastasis-related targets and enhance the therapeu-
+tic effectiveness. Amply available data linked to genetic mu-
+tations, pathway anomalies, transcriptional irregularities and
+protein structures involved in metastasis are being explored to
+understand their functional roles in cancer cell environments.
+Additionally, several inhibitors targeting these molecules are
+being studied by various methods (in vitro, in vivo and in
+silico) to understand their biological significance. In the fol-
+lowing sections we will discuss in detail the interplay of mol-
+ecules driving the metastatic cascade and their therapeutic
+status. We will also lay emphasis on insights from pan-
+cancer analyses and how multi-level data integration can
+guide metastasis treatment decision making and overcome
+the limitations of current therapies.
+2 The metastatic cascade
+The process of metastasis involves a series of dynamic steps
+occurring in parallel. The primary tumour associated with its
+tumour microenvironment comprises T cells, cancer-
+associated fibroblasts (CAFs), mesenchymal stem cells and
+tumour-associated macrophages (TAMs) embedded in a rich
+collagenous extracellular matrix. The microenvironment is
+triggered by nutrient deprivation, hypoxia, accumulation of
+mutations and transcriptional alterations. Once a cancer cell
+Kalita and Selvaraj
+attains the intrinsic metastatic genotype, it is further enhanced
+to progress by multiple intracellular and extracellular changes.
+Upon receiving the appropriate molecular signals, the cell
+starts to attain a more fibrillar and spindle-shaped motile na-
+ture with a mesenchymal phenotype, pushing through the en-
+dothelial layer and the basement membrane and generating
+paths to surrounding blood vessels for escape. This process
+is called intravasation. Some tumour cells are limited to local
+invasive properties while others are capable of distant migra-
+tion and invasion, which is deterministic for metastasis [11,
+12]. Next, the tumour cells start to flow through the blood
+system and are referred to as circulating tumour
+cells (CTCs). Subsequently, they start scanning for a compat-
+ible niche (landscape) to establish a metastatic colony (sec-
+ondary tumour) by passing through the basement membrane,
+invading the extracellular matrix and establishing a suitable
+microenvironment, a process called extravasation (Fig. 1).
+2.1 Molecular interplay in the tumour
+microenvironment leading to intravasation
+2.1.1 Remodelling the cytoskeleton
+The cytoskeleton components - actin, microtubules and inter-
+mediate filaments - are tightly associated with maintaining
+cellular shape and integrity. Metastasis requires dynamic re-
+modelling of the cytoskeleton to facilitate invasion and motil-
+ity. Cell migration is a complex biological process that begins
+with the protrusion of small actin-rich outward projected
+Fig. 1 The metastatic cascade: (1) Intravasation: The tumour cells break
+out through the basement membrane and tumour stroma to the surround-
+ing blood vessels and lymph nodes. (2) CTC: The tumour cells then enter
+the circulation system and are called circulating tumour cells; they scan
+across the body for suitable secondary niches. (3) Extravasation: Upon
+reaching the secondary organ, the tumour cells colonize by pushing
+through the capillary bed, establishing angiogenesis, and a new tumour
+microenvironment
+Deciphering molecular mechanisms of metastasis: novel insights into targets and therapeutics
+structures called filopodia, lamellipodia, invadopodia or
+podosomes (Fig. 2c). The process of actin polymerization ini-
+tiates the formation of these cellular projections. The molecu-
+lar regulators of actin remodelling and cell migration are Rho
+GTPases, RAC and CDC42, and Rho-associated protein ki-
+nase (ROCK) [13]. The initiation of invasion represents a
+composite phase of signals arising from the extracellular ma-
+trix (ECM) passed to cytoskeleton components and vice versa.
+Growth factor receptors, cytokine receptors, cadherins and
+integrins lead to downstream activation of RhoA, RAC and
+CDC42. RhoA recruits ROCK which phosphorylates LIM
+kinase, myosin light chain (MLC) and MLC phosphatase,
+thereby generating actin stress fibres and contractile force
+[14, 15]. CDC42 and CDC42-interacting protein (CIP4) lead
+to activation of Wiskott-Aldrich syndrome protein (WASP),
+N-WASP and the Arp2/3 complex to form filopodia and
+invadopodia [16]. RAC1 induces a cascade that governs the
+formation of lamellipodia and branched actin structures. There
+is another class of proteins called WAVE1 and WAVE2 that
+mediates a pathway downstream of the GTPases and leads to
+the formation of lamellipodia by association with the Arp2/3
+complex in the same way as WASP [17–20] (Fig. 3). Arp2
+also physically interacts with PIK-4, causing phosphorylation
+at the Arp2 T237/T238 activation site and mediating PIK-4
+driven cell movement [21].
+CDC42 and RAC1 activate LIMK via phosphorylation,
+and LIMK inhibits cofilin while Phospholipase C (PLC) acti-
+vates cofilin. This type of cofilin regulation is useful for
+Fig. 2 Molecular rearrangements leading to phenotypic changes during
+intravasation. a Cells undergo EMT by switching off the gene encoding
+E-cadherin, CDH1 and other junctional proteins, and upregulating the
+expression of N-cadherin causing a shift to a mesenchymal phenotype
+with enhanced motility. b Cell-matrix remodelling is mediated by
+integrins, DDR-2, TAM, CAF, LOX and MMPs to reorganize a stiffer
+tumour stroma and generate paths for escape to nearby tissues. c Rapid
+polymerization of actin filaments in the cytoskeleton results in leading
+edges, called lamellipodia and filopodia, to generate contractile force and
+push the cells through the different migration modes
+Kalita and Selvaraj
+initiating actin depolymerization causing an increase in actin
+filaments, so that they can be recycled for another round of
+polymerization to form cell protrusions in response to chemo-
+taxis [22, 23]. Amyloid precursor-like protein 2 (APLP2) is
+involved in pancreatic cancer cell migration and invasion. It
+interacts with cytoskeleton components through the mamma-
+lian homolog of the Drosophila Enabled gene (Mena or Enah),
+which directs actin arrangement [24, 25]. Actin remodelling
+also ensures escape from immune recognition. A group inva-
+sion of cancer cells is often observed in cancer caused by
+epithelial cells such as e.g. in breast cancer, melanoma and
+colorectal cancer. In this type of cell migration, the cell-cell
+junctions remain intact. A cumulative cellular polarity and
+cytoskeletal reassembly maintain the cell’s response to trajec-
+tory force, after which degradation of the basement membrane
+takes place. The leading cell in this type of migration exhibits
+a mesenchymal phenotype. It establishes sharp extended
+edges by Rho-mediated actin polymerization forming the
+invadosomes and filopodia, whereas the rest of the cells in
+the mass still maintain their epithelial connections. A major
+connection between the ECM and the cytoskeleton is
+established through a structure called Focal adhesion
+(FA) made up of bundles of F-actin tethered to myosin. It
+mediates several extracellular stimuli and can perceive me-
+chanical forces experienced by a migrating cell.
+Syndecans constitute another class of transmembrane re-
+ceptors that can interact with various growth factors to even-
+tually activate the PI3K pathway and RhoA to modulate cell
+motility. Syndecan-1 is expressed in head and neck cancer,
+ovarian cancer and breast cancer, and syndecan‐4 is expressed
+in breast cancer. It interacts with growth factor receptors
+(GFRs; EGFR, IGF‐IR, HER2) and integrins (α3β1, α6β4,
+ανβ3, ανβ5, α5β1). It is crucial for mediating cellular func-
+tions such as proliferation, adhesion, angiogenesis and surviv-
+al [26, 27]. Integrins (α1β1, α2β1, α10β1, α11β1),
+representing a class of cell surface receptors, bind to specific
+Fig. 3 Molecular mechanism of metastasis. Interplay between several factors in the tumour microenvironment responsible for causing stromal
+disintegration, cytoskeleton reorganization and cell migration, along with pathways regulating cellular growth and proliferation, are depicted
+Deciphering molecular mechanisms of metastasis: novel insights into targets and therapeutics
+motifs in a wide range of collagens and transduce bidirectional
+signals. Binding of collagen I, III, IV, IX, XIII and XVI to
+integrin α1β1 and collagen I, III, IV, V and XI to integrin
+α2β1 leads to activation of focal adhesion kinases
+(FAK) followed by downstream activation of ERK, which
+induces phosphorylation of the myosin light chain (MLC)
+by myosin light chain kinase (MLCK) leading to F-actin stress
+fibre formation and cytoskeleton reorganization [28, 29].
+Additionally, it activates PI3K, RAS and AKT signalling,
+leading to cellular proliferation, transcription, apoptosis and
+metastasis [28]. As collagens bind to the extracellular domains
+of integrins, cytosolic proteins like Talin and Kindlin are re-
+cruited to the cytoplasmic tail of integrins, which directs in-
+teractions between actin in the cytoskeleton and integrins in
+the membrane leading to the trading of proteins associated
+with cell-cell junctions and cell-matrix junctions called
+Vinculin, Paxillin and FAK [30] (Fig. 3). These molecular
+events again highlight activation of GTPases (RhoA, RAC
+and CDC42), modulating cytoskeletal activity [31]. FAK ac-
+tivation is also key to actomyosin contractility and invasion of
+cells in collagen 3D matrices. Suppression of FAK
+reduces transforming growth factor-β (TGF-β)-mediated tu-
+mour cell migration and invasion [32].
+2.1.2 Transforming the extracellular matrix
+Tumour cells are embedded in a dense network of extracellu-
+lar matrix made up of collagen, laminin, fibronectin, elastin
+and glycoproteins (hyaluronan and proteoglycans). These
+molecules are proteolytically degraded and remodelled during
+metastasis by enzymes like hepsin, cathepsin, heparanase and
+matrix metalloproteinases (MMPs) [33]. Collagen, a major
+component of the extracellular matrix known for tissue sup-
+port and structural stability, is degraded by MMPs during
+metastasis. A major class of MMPs, encompassing MMP-1,
+MMP-8 and MMP-13 are referred to as collagenases, is in-
+volved in proteolytic cleavage of a group of collagens
+(Collagen-I, II, III, VII, VIII, X) and laminins, which induces
+remodelling of the ECM during induction of the metastatic
+cascade [34]. MMPs in the tumour microenvironment serve
+as predictive biomarkers of tumour progression and metasta-
+sis. Another enzyme called lysyl oxidase (LOX) mediates
+cross-linking of fibrillar collagen with fibronectin and elastin
+and induces tumour stroma stiffening through proteolytic
+cleavage. This creates a path that regulates a directional
+movement of tumour cells through the tumour stroma to
+extravasate to the nearest vasculature. LOX is an impor-
+tant contributor to tumour invasion, migration and stro-
+ma coordination [35, 36] (Fig. 2).
+Discoidin domain receptor 1 (DDR1), a membrane-bound
+receptor tyrosine kinase associated with communication with
+the stroma, is highly involved in remodelling the ECM.
+Collagens, upon binding with DDR1, activate the extracellular
+regulated kinase PI3K, as well as NOTCH and STAT3. This
+promotes reactivation of dormant cancer cells at metastatic
+sites and further downstream by inducing cell division and
+migration, respectively [37]. DDR1 has been reported to be
+an essential contributing factor to breast cancer metastasis
+[38]. Interaction between cancer cells and their new stromal
+environment is a critical factor determining metastatic fate.
+Vascular adhesion molecule 1 (VCAM1) is expressed in
+breast cancer and interacts with integrins (α4β1) and
+tumour-associated macrophages (TAMs) to activate the
+PI3K pathway, thereby promoting cancer cell survival, growth
+and angiogenesis [39, 40]. It is regarded as a potential thera-
+peutic target of metastasis.
+The interstitial spaces of cancerous tissues contain an array
+of cells, including cancer-associated fibroblasts (CAFs) which
+often represent dysregulated fibroblasts or myofibroblasts,
+tumour-associated macrophages
+(TAMs) and tumour-
+associated neutrophils (TANs) [41, 42]. A desmoplastic con-
+dition of a tumour activates CAFs. It is a condition of contin-
+uously receiving inflammatory signals from interleukins (ILs),
+TGF-β, hypoxia and reactive oxygen species (ROS), which
+leads to changes in the ECM and disturbs homeostasis. CAFs
+actively produce collagen and proteases that remodel the
+ECM. TAMs accumulate in abundance in the tumour micro-
+environmental edges. It is evident that TAMs are linked with
+TGF-β signalling and confer immune resistance and epithelial
+to mesenchymal transition (EMT) properties [43]. Vascular
+endothelial growth factor A (VEGFA) expressing macro-
+phages confer intravasation properties to tumour cells through
+vascular permeability. TAMs reduce CD8+ T cell cytotoxic
+effects by expressing inhibitors like PDL-1, B7-H4 and
+indoleamine-2,3-dioxygenase [44]. The decreasing level of
+CD8+ T cells and natural killer (NK) cells increases breast
+cancer metastasis without affecting primary tumour growth.
+It produces a higher number of proteolytic enzymes such as
+MMPs (MMP-2, MMP-7, and MMP-9), cathepsins that me-
+diate ECM degradation and cell-ECM biochemical interac-
+tions. TAMs produce a metastatically important protein called
+SPARC that regulates ECM decomposition and produces a
+traction force by allowing interactions between fibronectin
+and vitronectin. This eventually pulls the cancer cells through
+the stroma to the nearest vasculature. They are also associated
+with chemoresistance [45–48]. Together, TAMs, tumour cells
+and endothelial cells have been referred to as tumour micro-
+environment of metastasis (TMEM) and found to be associat-
+ed with a poor breast cancer prognosis [49].
+Chemokine signalling is one of the most important factors
+carrying tumour cells across to their metastatic sites. CCR7
+released from breast tumour cells signals its migration and
+metastasis through a CCL19 or CCL21 stimulus [50].
+CXCR5 and CXCL13 support bone metastases in prostate
+cancer. In several tumours, CXCR4 expression allows tumour
+cells to metastasize into organs secreting high levels of
+Kalita and Selvaraj
+CXCL12. It is also specifically associated with the metastasis
+of cancer cells to lymph nodes, lung and bone. Lung metasta-
+sis in breast cancer is associated with metastasis-associated
+macrophages (MAMs). Various cytokines and chemokines
+have been reported to regulate the recruitment of MAMs to
+the lungs. In prostate cancer, CXCR6-CXCL16 interactions
+lead to Ezrin and integrin activation, causing leading-edge
+extension through FAK/PI3K/PKC, thereby increasing cyto-
+skeletal dynamics and invasion [51].
+2.1.3 Loss of cell adherence and EMT
+For a cancer cell to migrate to distant organs, it should dissociate
+itself from the mass of clumped cells in a tumour microenviron-
+ment consisting of a rich ECM network of collagen and dense
+blood supply. One way by which a cancer cell accomplishes this
+is by undergoing a biochemically driven phenotypic shift called
+EMT. Cells make contact with each other through tight junctions,
+adherens junctions, desmosomes and gap junctions. EMT affects
+these structures due to loss of cadherin, causing decreased con-
+tacts, loose associations and attainment of migratory properties
+resulting in anchorage-independent survival. E-cadherin binds to
+beta-catenin, alpha-catenin and p120-catenin in these junctions,
+mediates intracellular signalling and establishes a tight integration
+of intercellular junctions as well as a firm link with the ECM [52].
+However, upon the advent of EMT, E-cadherin expression is lost
+and mesenchymal markers such as N-cadherin and vimentin are
+expressed [53, 54]. EMT is activated by several redundantly
+occurring biochemical pathways, but the most proficient one
+noted so far is the TGF-β signalling pathway (Fig. 2a).
+Binding of TGF-β to the tetrameric type II TGF-β receptor
+leads to phosphorylation of the type-I TGF-β receptor, which
+phosphorylates the C-termini of a downstream protein complex,
+SMAD. The receptor activates SMAD2 after which SMAD3 re-
+cruits SMAD4. This SMAD complex translocates to the nucleus
+where it, in conjunction with other transcription factors such as
+TWIST, SNAIL and ZEB, regulates EMT. SNAIL1 and
+SNAIL2, also known as SLUG, are the major regulators of
+EMT during cancer progression [55]. They represses expression
+of the gene encoding E-cadherin, CDH-1, by binding to its E-box
+through a ZINC finger domain. Upon binding to the E-cadherin
+gene promoter, SNAIL1 recruits Polycomb repressive complex-
+2 (PRC-2), which mediates histone modification, mainly methyl-
+ation and acetylation, thereby silencing the CDH1 gene. While
+downregulating the epithelial gene signature, SNAIL upregulates
+mesenchymal genes such as those encoding Fibronectin and N-
+cadherin. TWIST, a basic helix-loop-helix transcription factor, is
+also involved in downregulating E-cadherin expression. HIF1α,
+under hypoxic conditions, induces TWIST expression and thereby
+EMT. Another class of transcription factors that mediates EMT is
+ZEB. Activation of ZEB is often brought about through SNAIL
+[55]. TWIST interacts with SNAIL which leads to ZEB expres-
+sion (Fig. 3). ZEB expression has been found to be high in breast
+and lung cancer. It represses the E-cadherin gene by binding to the
+carboxyl-terminal binding protein (CTBP) co-repressor [56].
+Additionally, EMT may be induced by several other signalling
+molecules such as PI3K, PDGF, FGF and HGF. EMT is a revers-
+ible process. When a cancer cell undergoes EMT and detaches
+from the tumour mass, it travels across the body to other organs
+and establishes a secondary tumour by undergoing mesenchymal
+to epithelial transition (MET). During MET, previous cellular
+events are reversed in order to establish secondary tumours.
+EMT mostly facilitates cell invasion. It is a common feature ex-
+hibited by fibroblasts and stem cells during wound healing and is
+commonly observed in glioblastoma and melanoma.
+Amoeboid cell invasion has been described as the fastest mi-
+gration pattern with a velocity of up to 20 mm/min. This type of
+migration mostly develops after treatment of cancer cells with
+integrin-blocking antibodies or protease inhibitors. Blocking β1
+integrin in cancer cells results in loss of cell-cell adhesion, after
+which the cells transit from a collective to an amoeboid mode.
+Collapsin response mediator protein-1 (CRMP1) has been found
+to attribute to a reduced transition of the epithelial to mesenchy-
+mal phenotype and to stabilized F-actin in an in vitro prostate
+cancer model by associating with SNAIL and WAVE1, respec-
+tively [57]. Disruptor of telomeric silencing 1 like
+(DOT1L) interacts with the c-Myc-p300 complex and causes
+methylation and acetylation of histone H3 at lysine residue 79
+(H3K79). This, in turn, leads to the upregulation of SNAIL,
+ZEB1 and ZEB2, and induces cancer stem cell (CSC) properties
+in breast cancer cells and metastasis initiation. Gain of epithelial
+markers and loss of mesenchymal markers has been observed
+when psammaplin A analog (PsA-3091) was used to inhibit the
+DOT1L protein [58, 59]. A recent study has suggested that there
+may be a single switch between EMT and MET. YAP, Wilms
+Tumour-1-YAP (WT1-YAP) and YAP-TRIO-Merlin were
+found to cause loose cell adhesion and to downregulate E-
+cadherin, and to regulate Rho GTPases involved in cytoskeleton
+arrangement and migration, respectively. At the same time, WT1
+is known as a regulator of MET [60]. Currently, there are several
+ongoing clinical trials (Table 1) evaluating whether EMT and its
+associated molecular characteristics can be used as a diagnostic
+biomarker for cancer progression, metastasis and treatment
+response.
+2.2 Circulating tumour cells (CTCs)
+Cells detached from the primary tumour mass that enter into
+blood vessels and travel along the body through the circulato-
+ry system are called circulating tumour cells (CTCs). They are
+a hallmark of metastatic progression and may be used for
+diagnostic purposes [61]. CTCs have been shown to express
+EPCAM (epithelial cell adhesion molecule), a biomarker of
+distant metastasis and tumour recurrence [62]. Several
+Deciphering molecular mechanisms of metastasis: novel insights into targets and therapeutics
+techniques are employed at the clinical level to detect metas-
+tasis, including X-ray, radiography, computed tomography
+scan (CT scan), nuclear imaging including PET and SPECT,
+magnetic resonance imaging (MRI), lymphadenectomy and
+lymphangiogram. However, these techniques show accuracy
+only in detecting local metastases that most commonly present
+themselves by spreading across nearby lymph nodes. CTCs
+provide a scope for metastasis diagnosis using a simple non-
+invasive technique, i.e., isolation from blood. Techniques are
+emerging to accurately detect cancer by isolating CTCs and
+circulating tumour DNA (CtDNA) from blood, the so-called
+“Liquid biopsy” approach, which is readily feasible for down-
+stream ‘omics’ analyses serving the purpose of understanding
+cancer biology and clinical interpretation [63].
+In the bloodstream, cancer cells are exposed to adverse con-
+ditions like oxidative stress, immune attack, shear forces, anoikis,
+and lack of growth factors and cytokines. Thus, many CTCs are
+likely to die. However, growing evidence suggests that tumour
+cells may associate with platelets to withstand varying degrees of
+oxidative stress and to undergo reversible biochemical modifica-
+tions to withstand the adverse conditions and to shield them-
+selves from shear forces. The association between CTCs and
+platelets allows the secretion of platelet granules that provide
+resistance to apoptosis. Platelets release TGF-β and induce the
+TGF-β pathway, which helps CTCs to maintain mesenchymal
+characteristics [64]. CTCs associated with platelets facilitate ex-
+travasation by allowing the cells to arrest in the capillary bed.
+HER2/EGFR/HPSE/NOTCH represent gene signatures identi-
+fied in CTCs of breast cancer patients that potentially metastasize
+to the brain [65]. CTCs expressing CD44 and CD47 in breast
+cancer patients serve as markers of the metastasis-initiating pop-
+ulation of CTCs [66]. CTCs may also withstand death signals by
+producing various anti-apoptotic factors such as BCL-2.
+Clusters of CTCs, called circulating tumour micro-emboli
+(CTM), are assumed to be the harbingers of metastasis. Cell
+enrichment analysis has provided insight into the genomic and
+transcriptomic profiles of CTCs, thereby opening up the scope to
+understand relationships between primary and secondary tu-
+mours. CTCs provide clinical utility like target discovery, patient
+monitoring, drug responses and screening. The immune system
+plays a dual role in cancer [61]. In the early stages of tumour
+development, the immune system kills and rejects cancer cells.
+However, after initiation of the metastatic cascade, the immune
+system plays an immunosuppressive role. CTCs adopt numerous
+complex mechanisms to escape from immune attack. They read-
+ily recruit macrophages and NK cells by secreting cytokines and
+chemokines, such as IL-6 and IL-8, and undergo genetic alter-
+ations to lower their immunogenicity [67].
+2.3 Extravasation
+The final stage of metastasis is called extravasation or also
+referred to as colonization. Metastatic cells begin colonizing
+Table 1
+Clinical trials evaluating EMT as a biomarker of cancer progression and metastasis
+Clinical trial number
+Study goal
+Start date and status
+NCT04021394
+Dynamic Influence of the Epithelial-to-mesenchymal Transition (EMT) on Circulating
+Tumour Cell (CTC) Generation, Phenotype, and Disease Progression in Prostate Cancer
+Started: June 5, 2019, Ongoing
+NCT04323813
+High Levels of EMT-TFs for the Diagnosis of Colorectal Cancer (CRC)
+Started: September 1, 2017, Ongoing
+NCT04137406
+Role of SIRT1 in the regulation of EMT in Breast Cancer Lymph Nodes Metastasis for Luminal A Subtype
+Started: January 1, 2019, Ongoing
+NCT04323917
+Detection of High Expression Levels of EMT-TFs mRNAs in Patients with Pancreatic Cancer and Their Diagnostic Potential
+Started: November 2, 2017, Ongoing
+NCT03381326
+Biomarkers Study: Circulating Tumour Cells (CTC), Free DNA, Stem Cells, and EMT Related Antigens as
+Biomarkers of Activity of Cabazitaxel in Castration-resistant Prostate Cancer (CRPC): a Proof of Concept.
+Started: December 15, 2014, Ongoing
+NCT03509779
+EMT, Reactivation of Embryonic Transcription Factors and Alteration
+of the miR Signaling Network as Prognostic and Predictive Markers in Lung Cancer
+Started: October 20, 2014, Ongoing
+Kalita and Selvaraj
+at distant sites way before they actually arrive at the desired
+location. They do so by forming a pre-metastatic
+niche (PMN). Tumour cells shed vesicles or exosomes that
+are involved in establishing the PMN. PMNs have been found
+to be very organ-specific. In case of the liver, for example,
+tissue inhibitors of metallopeptidase (TIMP1), stromal cell-
+derived factor-1 (SDF1) and macrophage inhibitory factor
+(MIF) serve as PMN biomarkers, whereas bone morphogenet-
+ic protein (BMP), WNT, fibroblast growth factor (FGF) and
+insulin-like growth factor (IGF1) serve as bone PMN bio-
+markers. The PMN recruits CTCs and creates a home for
+metastatic cells by altering and modifying its microenviron-
+ment [68]. The extravasated cells must adapt well to the mi-
+croenvironment of the newly encountered organ to be able to
+colonize it. Various molecular factors as well as the biological
+topography of the secondary organ microenvironment affect
+local tumour cell growth. Mesenchymal to epithelial transition
+(MET) is one factor associated with colonization of the second
+site. Significant effectors of MET include c-Met, Frizzled-7,
+Frizzled-2 and FGFR2b [69, 70]. Although primary tu-
+mours have a certain specificity towards the site of me-
+tastasis (organotropism), it is ultimately defined by the
+primary tumour type, the secondary site microenviron-
+ment and the preferred biological interactions between
+them [71].
+3 Site specificity of metastasis and its clinical
+management
+The dynamic process of metastasis with its multiple interde-
+pendent as well as independent biological mechanisms and
+organotropic properties demands a distinct treatment strategy
+for each type of metastasis. So far, metastasis is mainly man-
+aged by medicines, without reaching ultimate cure. Tracking
+metastatic progression at the systemic level is a big hurdle, as
+major experiments are being carried out in murine models with
+a relatively short life span. In humans, however, secondary
+metastatic tumours are encountered even after more than two
+years. Recent 3D culture systems are equipped to study static
+primary tumour parameters, but cannot replicate dynamic
+events leading to distant metastasis. Although in vivo models
+may provide a better scope to investigate these processes, it still
+needs to be determined which experimental techniques and
+in vivo models accurately reflect the actual clinical situation.
+There are also several challenges associated with designing
+clinical trials for metastasis and for deciding the endpoint.
+Current anti-metastatic drugs mostly target the cell migration
+and colonization phenomena. Hence, they do not yield a clas-
+sical clinical outcome like complete response (CR) or partial
+response (PR). Therefore, stable disease is the commonly used
+criterion to measure outcome. Most trials dealing with metas-
+tasis rely on surrogate endpoints.
+A well curated resource called MetMap (metastasis map)
+launched by the Broad Institute enables real time revelation of
+organ-specific patterns of metastasis. The investigators
+injected a pool of barcoded cell lines into immunocompro-
+mised mice after which the ability to metastasize was studied
+by bioluminescence imaging. This method was performed
+across 500 cell lines across 21 types of solid tumours,
+Quantification of barcoded breast cancer cells in brain metas-
+tases using RNA-sequencing revealed interesting specific sig-
+natures such as expression of PI3K and ERBB2, which en-
+ables breast cancer cells to metastasize to the brain and other
+organs for comparative purposes [72]. On a pre-clinical ac-
+count of metastasis, several compounds have been validated
+through detailed experimental studies carried out in vitro and
+in vivo, but they are yet to be implemented in rationally de-
+signed clinical trials and authentication through it in order to
+be incorporated in standard of care (SOC) therapeutic proto-
+cols for metastatic cancer [73]. Clinical reports of breast can-
+cer cohorts suggest that there is no linear relation between
+tumour size, lymph node status and distant metastases. This
+essentially evokes a question for the conventional practice of
+tumour - nearby nodes - metastasis (TNM) staging, that as the
+tumour enlarges it is more prone to invasion/metastasis [74].
+In fact, a tumour may already have metastasized by the time it
+is diagnosed. The major initiating contributions of the ECM,
+cytoskeleton modulating factors and angiogenic drivers in the
+metastatic cascade has placed them in the frontline of potential
+targets. In addition, there are strategies in practice to directly
+target CTCs as well. However, since the number of detectable
+CTCs may be low, the use of kinase and immune checkpoint
+inhibitors is considered as an efficient strategy in medical
+oncology. Although several inhibitors have already passed
+FDA approval to be used in trials for recently discovered
+targets, so far the outcomes of trials specifically for mitigating
+metastasis are still hazy. Figure 4 provides information on
+various tumours and their metastatic sites and highlights the
+drugs available for the respective metastatic conditions.
+3.1 Brain metastasis
+Common cancers that metastasize to the brain are lung, breast
+and kidney cancer. Access to the brain through the vascular
+system is tightly regulated by the blood-brain barrier (BBB).
+In metastatic colonization to the brain, the BBB is squandered,
+allowing the cancer cells to interact with the brain parenchyma
+and with glial cells to colonize it. Associations of transport
+systems with the BBB mediates selective transport of mole-
+cules. Due to this barrier, the application of conventional
+drugs for e.g. lung cancer and melanoma brain metastases
+have shown very little pharmacodynamic effects due to their
+low penetration [75]. HR−/HER2+ (HER2-enriched) breast
+cancer has a relatively high chance of forming brain metasta-
+ses, which is at least partly due to its molecular features
+Deciphering molecular mechanisms of metastasis: novel insights into targets and therapeutics
+including the expression of L1CAM, COX-2, IL-8, CK-5,
+CXCR4, VEGF and CD44 [71]. Melanoma to brain metasta-
+sis is led by activation of STAT3, which dysregulates the
+expression of bFGF, VEGF and MMP-2 [76]. A number of
+microRNAs regulating crucial metastasis-associated genes
+across several lung cancer types to brain metastasis has been
+found to be dysregulated, such as downregulated miR-768-3p,
+miR-95-3p and miR-146a, and upregulated miR-378, miR-
+197 and miRNA-184 [77]. Combination therapy of
+carmustine with methotrexate or radiation therapy has been
+found to be effective in managing breast cancer to brain me-
+tastasis [78, 79].
+A small scale clinical trial on the combination of
+dacarbazine (BOLD) and intermittent Granulocyte-colony
+stimulating factor (G-CSF) revealed that a majority of patients
+reached complete response (CR) for stage 4 melanoma to
+brain metastasis [80]. The DNA repair enzyme MGMT
+(O[6]-methylguanine-DNA methyltransferase) causes tumour
+cell resistance to alkylating agent-induced damage.
+Temozolomide (TMZ) and lomustine (CCNU) are the two
+most used alkylating agents to treat glioblastoma and brain
+metastasis. A phase III study was conducted with the combi-
+nation of TMZ and CCNU, and TMZ alone in patients with
+glioblastoma, and a better overall survival rate was observed
+[81, 82]. Recently, clinical trials have been initiated to study
+BRAF inhibitors in combination with ipilimumab, and the
+epidermal growth factor receptor 2 (EGFR2) inhibitor
+lapatinib for melanoma to brain and breast to brain metastasis
+[83] (Fig. 4).
+3.2 Bone metastasis
+Tumours that metastasize to bone may provide insight into
+reciprocal molecular adaptations that occur between cancer
+cells and the host stroma. The most common cancers that
+metastasize to the bone are breast and prostate cancer.
+Metastasis in the bone microenvironment is regulated through
+osteoclastic or osteoblastic mechanisms. Breast cancer metas-
+tasis to bone is induced by hyperactivation of bone-resorbing
+osteoclasts, which clinically present with painful fractures.
+Fig. 4 Representation of the site-specific metastasis of different types of
+primary tumours and the drugs available for each of the metastatic cancer
+types. The images within the grey boxes represent the major metastasis
+sites. The green nodes represent the primary malignant tumours, and the
+grey coloured rectangles represent the therapeutic drugs available. Green
+lines represent drugs available for the particular cancer treatment, and
+pink lines show the primary tumour’s major metastatic sites
+Kalita and Selvaraj
+Osteolytic breast cancer cells inhibit osteoblastic pathways
+like the BMP and Wnt pathways, and overexpress
+osteoclast-inducing factors such as Parathyroid hormone-
+related protein (PTHrP), IL-8, IL-11, CTGF and RUNX2.
+They also secrete a protease that cleaves Receptor activator
+of nuclear factor kappa-Β ligand (RANKL) into an active
+form, thereby activating osteoclast activity. On the other hand,
+prostate cancer cells secrete a high amount of osteoprotegerin,
+a RANKL inhibitor that prevents osteolytic reactions.
+Prostate cancer metastasizes to the bone by stimulating
+osteoblasts, which leads to increased bone density and, even-
+tually, bone marrow displacement [84, 85]. Forkhead box
+F2 (FOXF2) functions as the major transcription factor for
+conferring bone colonizing properties to breast cancer cells
+(osteomimicry) by activating BMP and SMAD1 signalling
+and expressing bone differentiation-associated genes [86].
+Bisphosphonates are the standard of care for bone lesions.
+Clodronate (clodronate disodium, Bonefos) is a non-
+nitrogen-containing bisphosphonate used in breast to bone
+metastasis and blocks bone resorption and osteoclast activity
+[87]. The administration of another bisphosphonate,
+pamidronic acid, to breast cancer to bone metastasis patients
+showed reduced levels of platelet endothelial cell adhesion
+molecule-1 (PECAM-1) and angiogenesis factors [88].
+Administration of ibandronate and zoledronic acid has
+been the most common practice for skeletal event manage-
+ment in breast cancer, multiple myeloma and prostate cancer
+patients [89, 90], whereas Samarium Sm 153 Lexidronam
+(Quadramet) may provide relief from pain associated with
+bone metastasis from prostate cancer [91]. Denosumab is a
+monoclonal antibody directed against RANKL that prevents
+bone resorption and has shown to be effective against bone
+metastasis [92]. It provides metastasis-free and disease-free
+survival in cases of prostate cancer and breast cancer to bone
+metastasis. A small molecule inhibitor of RANKL,
+AS2676293, has been found to markedly inhibit the metasta-
+sis of human breast cancer MDA-MB-231-5a-D-Luc2
+cells to the bone and to reduce RANKL-mediated tu-
+mour migration of B16F10 melanoma cells to the bone
+in a mouse model [93] (Fig. 4).
+3.3 Lung metastasis
+Metastasis to lungs is relatively common as the lungs provide
+a large surface for tumour cell growth and survival. It starts at
+the small pulmonary arterioles where the cells burst through
+the endothelial cells and the underlying basement membrane.
+Metastatic extravasation can be halted for a while by
+inhibiting the expression of the cytoskeletal anchoring protein
+Erzinin in osteosarcoma cells that metastasize to lungs [94].
+Extraordinary lung metastasis cases detected from renal cell
+carcinoma after 37 years of nephrectomy have been reported,
+suggesting an extremely dormant metastatic phase, yet
+intangible to scientific understanding [95]. A diverse array
+of gene signatures has been found, like those associated with
+breast cancer stem cells (BCSCs) that regulate breast cancer
+metastasis to the lungs, and other factors like interactions be-
+tween CXCL12 and CXCR4, and interactions among α4β1
+integrin and VCAM1 [96]. Also upregulation of miR-374a,
+miR-18a, miR-115 and miR-9, and downregulation of miR-
+22, miR-26a, miR-320a and miR-302a along with the expres-
+sion of metastasis enhancing factors such as secreted protein,
+acidic, cysteine-rich/osteonectin (SPARC) and colony-
+stimulating factor 1 (CSF-1) have been associated with breast
+to lung metastasis [97].
+The genes observed to be affected in lung metastasis are
+distinct from those observed in bone metastasis. This under-
+scores the distinct architecture, as well as genomic and meta-
+bolic profiles of the secondary site mediating organ specificity
+and demanding new therapeutic targets [98]. Alectinib and
+Ceritinib are the most widely used drugs for ALK-positive
+metastatic non-small cell lung cancer (NSCLC) and its metas-
+tasis to the brain [99]. Atezolizumab, a PD-L1 inhibitor com-
+bined with kinase and angiogenesis inhibitors, is currently
+being studied in several clinical trials for brain or CNS metas-
+tasis and first-line therapy treatment of metastatic non-
+squamous NSCLC and cisplatin-ineligible urothelial carcino-
+ma [100, 101]. Experimental results suggest that
+Atezolizumab exerts its inhibitory effects on metastasis by
+downregulating cell invasion and EMT-associated genes
+CXCR4, METTL7A, ICAM3, LPPR3, S100A8, SUSD3,
+HVCN1, MMP9, MMP19, GLIPR1L2, N4BP2L1, CDHR2,
+IL11RA, CSRP2, FOXQ1, KLF8, FGF11, CLDN1 and
+CLDN24, and upregulating the KISS1 metastasis suppressor
+gene in MDA-MB-231 cells [102].
+Clinical trial evidence shows that the PD-1 inhibitors
+Nivolumab and Pembrolizumab have become important
+players in the treatment of metastatic lung and renal cell car-
+cinomas and melanomas. They enable the inhibition of these
+cells to from a tumour microenvironment and help to maintain
+immune system-mediated cancer cell killing. The emergence
+of the anti-angiogenic drugs as being anti-metastatic resulted
+in the development of several vascular endothelial growth
+factor (VEGF) inhibitors. Bevacizumab, as an example, has
+potentially minimized the problem of metastasis in clinical
+settings. It has shown beneficial results for non-squamous
+NSCLC with brain metastasis as concluded after multiple clin-
+ical trials. Bevacizumab in combination with Paclitaxel/
+Fluorouracil/Leucovorin/Oxaliplatin has shown efficient
+anti-metastatic activity in breast and colorectal cancer cases
+[103] (Fig. 4).
+3.4 Liver metastasis
+Supplied by both systemic and portal circulation, the liver is
+the metastatic destiny of most gastrointestinal cancers. The
+Deciphering molecular mechanisms of metastasis: novel insights into targets and therapeutics
+discontinuous lining of the endothelial cells in the liver makes
+it highly porous, allowing entrapment of CTCs. Other primary
+tumours like breast, melanoma and lung cancer metastasize to
+the liver through systemic vasculature. In colorectal cancer,
+increased serum levels of HSP60 and IGFBP‑2 are indicative
+of liver metastasis [104]. Increased LOX mRNA and LOX
+nuclear localization in CRC tumour tissues are associated with
+liver metastasis. The tyrosine-phosphatases PRL-3 and
+PIAS2, a protein inhibitor of activated STAT2, are significant
+biomarkers for CRC to liver metastasis. Claudin-2 is associ-
+ated with breast to liver metastasis by inducing c-Met (specific
+tyrosine kinase receptor), allowing matrix and adhesion re-
+modelling. IL-6, IL-8 and TNFA are specific drivers of pros-
+tate to liver metastasis [105].
+Floxuridine (FUDR), targeting thymidylate synthase, is the
+most commonly administered drug in the case of gastrointestinal
+metastasis to the liver [106]. Also, new strategies are being de-
+veloped for treating metastatic conditions. In particular TGF-β
+has attained interest due to its known role in cancer metastasis.
+Next to its involvement in EMT and cell proliferation, TGF-β is
+involved in mediating cell dormancy and autophagy, biological
+processes that are closely associated with tumour progression
+and metastasis. In clinical trials, the small molecule inhibitor of
+TGF-β type I receptor (ALK5) Galunisertib, combined with
+Gemcitabine, has shown potential anti-tumour/anti-metastatic ef-
+fects in pancreatic cancer [107]. An improved anti-tumour activ-
+ity was seen in a phase I clinical trial that was carried out in
+patients with advanced solid tumours with M7824
+(MSB0011359C), a bifunctional fusion protein composed of a
+mAb directed against programmed death-ligand 1 (PD-L1) fused
+to TGF-β [107, 108]. The study showed better efficacy and
+safety than administration of PD-L1or TGF-β inhibitors alone
+in advanced solid tumours. Palbociclib is a recently approved
+CDK4/CDK6 inhibitor employed to treat HR-positive, HER2-
+negative advanced or metastatic breast cancer (Fig. 4). CDK4
+and CDK6 play prime roles in the transition of G1 to S phase
+during cell division. Palbociclib arrests cells in the G1 phase of
+the cell cycle and, thereby, prohibits their entry into the S phase.
+It inhibits phosphorylation of CDK4/6 kinase by ATP, causing
+hypo-phosphorylation of pRb thereby suppressing activation of
+several transcription factors required for cell cycle progression. It
+has recently been implemented in clinical trials for cancers with
+metastatic potential to brain and bone [109]. A drug targeting the
+perinuclear compartment called Metarrestin is currently under
+investigation and shows potency to suppress metastasis in a pan-
+creatic cancer xenograft model [110, 111].
+4 Targeting metastasis: insights from pre‐
+clinical investigations
+The composite protein-protein interaction networks associat-
+ed with the various metastasis-associated genes illustrate their
+complex modes of action and the difficulty to identify suitable
+targets (Fig. 5). Efforts that are put in pre-clinical metastasis
+studies do not reciprocate in the clinical end, resulting in a gap
+between pre-clinical output and clinical implementation. The
+emerging approach of systems biology in understanding me-
+tastasis using integrated data across different levels of tumour
+biology holds promise in interpreting the multidimensionality
+of the metastatic cascade by touching upon its genetic and
+physiological conditions from the single cell up to the clinical
+state. The quest for metastasis targets and therapeutics may be
+fulfilled by an integrated network of computational and ex-
+perimental models scaled up to a clinical understanding. In the
+context of drug discovery, several target complexes and their
+inhibitors are available, but a holistic understanding is still a
+requisite. Several proteins known to be involved in metastasis
+interact with each other, but how exactly their dynamics, in-
+teractions and functionalities change after drug administration
+and how this affects the metastatic cascade warrants further
+understanding [112].
+EMT is one characteristic associated with metastasis and sev-
+eral transcription factors are involved in carrying out metastasis-
+related EMT. Dysregulated EMT-inducing transcription factors
+may form a unique class of drug targets that mediate the epithelial
+to mesenchymal switch. TWIST, an EMT-inducing transcription
+factor, appears to be a potential target in reversing EMT and,
+hence, metastasis. Harmine, a harmala alkaloid, has been found
+to inhibit multiple properties of TWIST1 and to potentially show
+marked anti-tumour activity in oncogene-driven NSCLC, includ-
+ing EGFR, KRAS and MET mutant NSCLC [113]. Another
+important transcription factor driving EMT is SNAIL. CoIII-
+Ebox has been found to proficiently inhibit SNAIL activity in
+SKBR3 and MCF7 breast cancer cells by inhibiting the decrease
+in epithelial markers such as E-cadherin and cytokeratin and by
+inhibiting the increase in mesenchymal markers such as
+Fibronectin and MMP-9. It could also effectively delay a gain
+in invasive phenotype [114]. ZEB1, yet another transcription
+factor, may upon inhibition reverse paclitaxel resistance in ovar-
+ian carcinoma cells and reduce their metastatic properties [115].
+Drug repurposing revealed an EMT inhibitory effect by
+downregulating miR-21 expression when MCF7 breast cancer
+cells were treated with propofol [116]. Also, many potential
+MEK inhibitors have been investigated. One of the most wide-
+ly studied is selumetinib (AZD6244; ARRY-142,886;
+AstraZeneca), a highly selective allosteric inhibitor of
+MEK1/2. Upon administering selumetinib to TNBC cells in
+a xenograft mouse model, EMT was reversed, as indicated by
+a reduced mesenchymal phenotype with stem cell-like char-
+acteristics and a CD44+/CD24−expression pattern, to an epi-
+thelial phenotype and reduced lung metastasis [117]. In anoth-
+er study, combinatorial treatment with a Src inhibitor
+(AZD0530) and a MEK1/2 inhibitor (AZD6244) in a breast
+cancer model induced apoptosis in a large fraction of the dor-
+mant cells and delayed metastatic outgrowth [118]. Recently,
+Kalita and Selvaraj
+it has become evident that miRNAs may play important roles
+in regulating cancer progression and metastasis. In renal cell
+carcinoma, miR-193b has been found to inhibit growth and
+metastasis by decreasing insulin-like growth factor 1 receptor
+(IGF1R) expression, providing new insight on targeting me-
+tastasis [119].
+Multiple efforts on developing small molecules and anti-
+bodies as inhibitors of TGF-β have been flourishing recently
+and studied well across various cancer cell lines. All of it
+supports the very idea of reduced cell proliferation and inva-
+sion, indicating that TGF-β may serve as one of the potential
+targets of metastasis and supporting the reason that it is in-
+volved in mediating several downstream reactions of cell mo-
+tility and invasion. LY2109761, a small molecule kinase in-
+hibitor selective for TGF-β RI/II (TGF-β receptors I/II), has
+been found to suppress the metastasis of pancreatic cancer to
+the liver and other abdominal sites in a murine model [120]. A
+highly metastatic type of human breast cancer, MDA-MB-
+435, has shown reduced metastasis to lung and bone when
+treated with [3-(pyridine-2yl)-4-(4-quinonyl)]-1 H pyrazole,
+an ATP-competitive inhibitor of the TGF-β receptor I kinase
+[121]. SD-208, another TGF-β inhibitor, reduced primary tu-
+mour growth as well as metastasis in syngeneic R3T or 4T1
+mammary carcinoma-bearing mice [122]. An anti-TGF-β an-
+tibody has also been shown to be effective and to prevent bone
+loss and bone metastasis of breast cancer in mice [123]. Novel
+ALK5 inhibitors, EW-7203 and EW-7195, have been found
+to inhibit TGF-β induced Smad signalling, EMT and breast
+tumour metastasis to the lung in another mouse model [124,
+125]. TGF-β inhibition has shown impressive anti-metastatic
+effects across a multitude of cancer types. It underscores ex-
+tending TGF-β as a valid target in clinical trials and in mon-
+itoring metastatic profiles. Several natural products such as
+Biemamides A-E, a group of marine natural products, and
+ZL170 have also been found to inhibit the TGF-β pathway,
+and several plant-based compounds have come a long way to
+treat cancer and manage metastasis by modulating EMT [126,
+127]. A subtle metabolic regulation is observed in EMT and
+some metabolism inhibiting drugs have shown EMT
+inhibiting features. For example Simvastatin, targeting
+Fig. 5 Protein-protein interaction network among metastasis-associated factors and inhibitors marked with their respective protein data bank IDs
+Deciphering molecular mechanisms of metastasis: novel insights into targets and therapeutics
+HMG-CoA, is FDA approved for hypolipidemia and is cur-
+rently under clinical trial for brain metastasis and small cell
+lung cancer [128].
+Also, major emphasis has been put on designing potential
+anti-metastatic agents by inhibiting the action of chemokines.
+It has been discovered that the stromal cell-derived factor 1
+(SDF-1)-CXCR4 axis plays a critical role in determining the
+metastatic destination of tumour cells. AMD3100, a small
+molecule inhibitor has been found to effectively block the
+SDF-1/CXCR4 axis and to significantly slow down lung to
+brain metastasis [129]. It also blocks EMT and liver and lung
+metastasis in prostate cancer [130]. SB225002, a pharmaco-
+logical inhibitor of chemokine (C-X-C motif) receptor 2
+(CXCR2) in combination with sorafenib when introduced in
+an in vivo model of ovarian cancer exhibited stabilization of
+tumour progression [131].
+Based on the redundant nature of the various signalling
+pathways converging towards initiating the metastatic cas-
+cade, it has been suggested that target selection should be
+made on the most downstream effectors that cannot be
+bypassed to swamp the trouble of developing drug resistance
+[10]. In this context, cells migrate through the development of
+actin-rich extensions, invadopodia and lamellipodia, which is
+mainly enabled by cytoskeletal component remodelling, acto-
+myosin contractility and actin polymerization. The major sig-
+nalling molecule that activates these phenomena is the Rho-
+associated protein kinase (ROCK). Therefore, several inhibi-
+tors have been passed through various experimental models to
+check their impact on decreasing metastasis and cell invasion.
+Fasudil is one of the ROCK inhibitors that has shown marked
+reductions in breast cancer cell migration and invasion prop-
+erties. It also reduces the contractility and invasion potential of
+cancer stem cells, those with metastatic potential [132, 133].
+Another ROCK inhibitor (Y27632) also showed a reduced
+bone metastasis of breast cancer in a mouse model [134,
+135]. Netarsudil, Ripasudil and Fostamitinib are among the
+already FDA approved ROCK inhibitors, but they are yet to
+be validated in the context of metastasis. Silencing of the gene
+encoding Cofilin induces invasion in carcinoma cells.
+Decreasing levels of PRPF4B, UD31 and BPTF cause down-
+regulation of genes involved in focal adhesion and ECM-
+interaction pathways. PRPF4B has been found to be an essen-
+tial component for TNBC metastasis formation in vivo, turn-
+ing it in a candidate for drug development [136]. FAK is
+activated in several types of cancer and involved in activating
+an intracellular adaptor protein called Paxillin for cytoskeletal
+rearrangement during metastasis. Several of its inhibitors have
+been designed as pyrimidine-based (NVP-TAE-226, PF-
+573,228, PF-562,271 and GSK2256098) or pyridine-based
+(VS-6063, VS-4718, and VS-5095) inhibitors and checked
+across several cancers in pre-clinical models [137, 138]. The
+crystal structure of FAK revealed that it can bind to methane-
+sulfonamide diaminopyrimidine inhibitor, and bis-anilino
+pyrimidine inhibitor (PDB ID: 3BZ3 and 4D58), providing a
+potential blueprint to trace key inhibitory residues and their
+functional impacts in metastasis.
+A vast number of inhibitors has been developed against
+MMPs by focusing on extracellular matrix (ECM) disintegra-
+tion during the initiation phase of metastasis. MMP-2, -9 and -
+14 also enable extravasation by degrading blood capillary
+basal lamina [9]. An effective decrease in MMP activity and
+metastasis in the lung was observed when SD-7300, an oral
+inhibitor of MMP-2, -9 and -13, was administered in an ag-
+gressive mammary carcinoma 4T1 mouse model [139].
+Liposome-based delivery of a MMP inhibitor, marimastat, to
+the tumour microenvironment of breast cancer showed a re-
+duction in metastatic lung nodules and in angiogenesis [140].
+Another MMP inhibitor, SB-3CT, has been found to selec-
+tively inhibit prostate cancer to bone metastasis [141]. WRG-
+28, an extracellular small molecule inhibitor of DDR, inhibits
+the receptor-ligand interaction in an allosteric manner. It does
+so by disrupting DDR receptor clustering. A potential reduc-
+tion in breast cancer cell invasion and migration to the lung
+was observed. However, it did not inhibit the growth of the
+primary tumour and, hence, adding it as adjuvant therapy in
+clinical practice may serve as a potential anti-metastatic regi-
+men [142]. An anti-fibrosis drug called silibinin induced de-
+creased LOX mRNA levels and inhibition of NSCLC cell
+migration [143]. LOX2, another member of the LOX family,
+is known for its role in solid tumour progression. PXS-S1A
+has been found to show dual inhibition of LOX2 and LOX,
+whereas PXS-S2A acts as a highly selective LOX2 inhibitor.
+These compounds show reduced cell migration and invasion
+when administered to the MDA-MB-231 triple-negative hu-
+man breast cancer model. They also show decreased angio-
+genesis and CAF activation [144]. Administration of the LOX
+inhibitor beta-aminopropionitrile (BAPN) to MDA-MB-231-
+Luc2 injected mice showed that the activity of LOX is re-
+quired during the phase of metastasis initiation, as treatment
+started the day before or at the same day of tumour cell injec-
+tion elicited a more prominent decrease in metastasis foci
+[145]. Integrins are attractive targets due to their role in medi-
+ation of cell migration and angiogenesis. Cilengitide, a small
+molecule inhibitor of integrins αvβ3, αvβ5 and α5β1 has
+been under the clinical investigation for sarcoma, glioma, mel-
+anoma and lung cancer [146–149] and has been found to
+reduce breast cancer metastasis in in vivo mouse models.
+Next to the advent of small molecule inhibitors, the thera-
+peutic strategy for metastasis has recently turned into the di-
+rection of generating antibodies directed against metastasis-
+associated proteins. Several antibodies have already been test-
+ed in preclinical models and have shown potential anti-
+metastatic properties (Table 2). It has also turned to targeting
+small RNA molecules as they have emerged as core compo-
+nents acting as oncogenes, tumour suppressors and metastatic
+switchers. In a breast cancer model in mice, miR-96/miR-182
+Kalita and Selvaraj
+has been found to downregulate the level of paladin, thereby
+reducing migration and invasion properties. This microRNA-
+based therapy was successfully established by supplementing
+a hydrogel embedded gold-nanoparticle-based delivery sys-
+tem that provided specific and sustained microRNA release
+into the breast cancer mouse model, abated the metastatic
+properties and caused tumour shrinkage. MicroRNA-based
+therapies have been combined with chemotherapeutic drugs
+such as cisplatin, and proven to have anti-metastatic potential
+[150]. Expression knockdown of miR-21 suppressed the
+growth, invasion and metastatic properties of breast cancer
+cells [151], whereas a miR-655-3p mimic, when administered
+with oxaliplatin in a colorectal cancer model, reduced the oc-
+currence of liver metastases [152]. Administration of an anti-
+miR-214, R97/R98, to melanoma and breast cancer cells elic-
+ited reduced levels of trans-endothelial migration [153].
+5 Precision medicine as solution
+for metastasis treatment?
+The design of targeted approaches has many shortcomings
+for diseases like metastasis. How to understand the dy-
+namic and simultaneously occurring processes of cancer
+cells leading to metastasis? How to recruit a large pool
+of diverse biological data and identify common metastasis-
+gene associations for developing therapies? How can it
+reveal the state, stage and specificity of metastasis and/or
+facilitate its diagnosis? Precision medicine is based on
+unfolding the raw components of metastatic conditions in
+tumours. It basically assesses the variability in genes, tran-
+scripts, metabolites, non-coding counterparts, disease bio-
+markers, epigenomic marks, environmental factors and
+lifestyle. It requires a holistic way of multilevel data inte-
+gration to understand each component and its influence or
+autonomy on the other. These criteria, if holistically trans-
+lated into clinical components, may provide a scope for a
+better evaluation of patient cohorts with respect to disease
+susceptibility, treatment response and prognosis.
+The stages before actual metastasis can be classified into
+a pre-metastatic niche phase, a microvascular phase, a pre-
+angiogenic phase, an angiogenic phase and a growth phase.
+Each of these phases show a unique genotypic profile.
+Therapeutic exploration of pan-cancer studies of each of
+these phases and of CTCs may offer serious clues for a
+precision medicine approach for metastasis treatment.
+Some preliminary studies have already found such clues. It
+has been found, for example, that the dopamine agonist
+apomorphine can restrict brain metastasis formation from
+lung cancer by targeting the pre-metastasis-associated genes
+KIF16B, SEPW1 and TESK2 [162, 163]. However, insights
+at the genome-wide level may offer more large-scale hints.
+In this light, we discuss breast cancer and the progress that
+Table 2
+Antibodies in pre-clinical stages with anti-metastatic effects
+Antibody
+Target
+Anti-metastatic effect
+38 M and 64R mAb
+LYVE-1
+Suppresses the migration of HEK293F cells in vitro by inhibiting lymph-angiogenesis [154]
+Anti-AXL antibody 20G7-D9
+AXL
+Inhibits EMT, tumour growth and metastasis in TNBC cell xenograft and Patient-derived xenograft (PDX)
+[155]
+Tocilizumab (anti-IL-6 receptor
+antibody)
+IL-6 and CCL5 signalling
+Reduces tumour growth and thoracic metastasis of TNBC [156]
+Anti-MACRO mAb
+Pattern recognition scavenger
+receptor (MACRO) a subtype of TAM
+Inhibits metastasis in breast cancer, colon cancer and melanoma models [157]
+211−12 and 211−14
+A disintegrin and metalloproteinase
+28 (ADAM28)
+Anti-metastatic effect seen in PC-9 cells [158]
+chLpMab-7
+Podoplanin (hPDPN)
+Suppress metastasis of hPDPN expressing tumours via ADCC and CDC in LN319
+(glioblastoma cell line) and PC-10 (lung cancer cell line) [159]
+6B12 antibody
+S100A4 Protein
+Reduces attraction of T cells to the pre-metastatic niche in CSML100 cell line [160].
+Anti-TGF-β antibody
+TGF-β
+Reduces breast metastasis to bone [161]
+Deciphering molecular mechanisms of metastasis: novel insights into targets and therapeutics
+has been made in understanding metastasis. Breast tumours
+are extremely heterogeneous. The intra-tumoral heterogene-
+ity is reflected by the variability of genetic mutations and
+mutations induced by chemotherapies. On the other side,
+various types of cells and molecular subtypes occurring in
+the tumour microenvironment and during tumour progres-
+sion and metastasis reflect the inter-tumoral heterogeneity
+[164]. Due to this heterogeneity different patients respond
+differently to the same treatment. Implementation of molec-
+ular profiling and genomic subtyping in triple negative
+breast cancer (TNBC) clinical trials was used to evaluate
+the efficacy of targets under an umbrella trial and can be
+considered a potential future trial design for precision med-
+icine [165]. Breast cancer has been classified into several
+types, including ER positive, triple negative and HER2 pos-
+itive. The commonly prevailing treatment modalities include
+chemotherapy, hormone therapy, immunotherapy and nano-
+particle therapies. Genomic data acquisition has evolved
+from single gene mutation studies to genome wide associa-
+tion studies (GWAS) and next generation sequencing (NGS)
+studies. These high throughput technologies and emerging
+big data analysis tools are pushing us towards the clinical
+setting of tailored precision/personalized medicine and slow-
+ly leaving the paradigm of “one model fits all”.
+GWAS started accumulating big data through collabora-
+tive projects across different countries and ethnic groups.
+The Breast Cancer Association Consortium (BCAC) and
+the Asia Breast Cancer Consortium were built to assess as-
+sociations of common genetic variations with breast cancer.
+GWAS still poses a challenge in uncovering rare variants
+and to this problem NGS has enabled sequencing millions
+of DNA fragments. Many of the studies consistently found
+BRCA1 and BRCA2 mutations to confer a moderate to high
+risk of breast cancer, whereas rare mutations are found in
+TP53, ATM, RAD51C, MSH2, MSH6, PMS2, MRE11A,
+RAD50, NBS1, CDH1, BARD1, NBN, BRIP1, MUTYH,
+MLH1 and CDKN2A. Several other frequently mutated
+genes in breast cancer are PIK3CA, TP53, GATA3,
+PTEN, AKT1, CDH1, ARID1B, CASP8, BRCA1, RB1,
+MLL3, MAP3K1, MAP3K13, NCOR1, SMARCD1,
+CDKN1B, TBX3, RUNX1, CBFB, AFF2, PIK3R1,
+PTPN22, PTPRD, NF1, SF3B1 and CCND3. Copy number
+alterations in the PIK3CA, ERBB2, TP53, MAP2K4,
+MLL3, CDKN2A, PTEN and RB1 genes have also been
+observed [166]. Parallel and comparative analyses across
+tumour genetic, phenotypic, metabolic, epigenetic and
+transcriptomic profiles may offer insights into the genetic
+signatures determining site specificity of metastasis to cer-
+tain organs, stages of metastasis, mutational and methylation
+profiles, non-coding RNA mutations and disease associa-
+tions, novel signalling pathways and networks, drug-
+disease-gene networks, novel biomarkers, targets and, ulti-
+mately, treatment decisions.
+5.1 Insights from pan‐cancer metastasis studies
+Recent pan-cancer studies have enabled a deeper, comprehen-
+sive and integrative analysis of primary tumour gene and met-
+astatic tumour gene architectures across several cancer types.
+It facilitates the identification of cancer drivers and mutation
+hotspots and infers the importance of all types of variants
+including large-scale genomic rearrangements (via fusions
+and copy number alterations) which are commonly found in
+many key oncogenes. In case of lung adenocarcinoma, a com-
+parative whole exome sequencing of both primary and meta-
+static tumour tissues of stage IV from four patients with chest
+wall metastasis was performed. It turned out that with the
+enormous heterogeneity within individual samples, metastatic
+events occurred simultaneously with those of primary tumour
+progression. After a global comparison across primary and
+metastatic samples, TAS2R31 and UMODL1 were identified
+as genes that may drive metastatic lung adenocarcinoma
+[167]. Pan-cancer analysis of the numerous complex process-
+es in the tumour microenvironment regulated by matrisome
+genes revealed mutational landscapes of several genes across
+several clinical samples of different cancer types. This throws
+light onto novel cancer therapeutic aspect for targeting the
+cancer ECM matrisome. It turns out that copy number alter-
+ation and mutations of matrisome genes are more frequent
+than those in the rest of the genome and that the mutated genes
+have a greater functional impact on ECM proteins such as
+collagens and proteoglycans. The mutational burdens of
+matrisome genes like COL6A1 and MUC5B are associated
+with overall survival. Among the most mutated matrisome
+genes across 14 cancer types are MUC16, FLG and
+HMCN1 [168].
+The benefit of pan-cancer studies is that they provide an
+overall detailed insight into the commonalities and differ-
+ences, which in case of understanding metastasis from a ther-
+apeutic perspective, is of utmost importance. Two recent stud-
+ies on whole genome pan-cancer analysis of solid tumours and
+pan-cancer analysis across the cancer genome atlas (TCGA)
+has shown the mutational loads on each tumour type due to
+single nucleotide variants, multiple nucleotide variants, indels,
+structural variants, copy number alterations and mutational
+hotspots. This kind of information may be crucial in assessing
+the stages of propagation of metastasis. For example, a signif-
+icantly mutated gene from metastatic breast cancer, ZFPM1, a
+zinc finger transcription factor without previous links to can-
+cer, was identified this way. Similarly, FHIT and DMD were
+found to be deleted across 4 to 5 % of the samples and report-
+ed to cause localized genomic instability. In the latter study,
+different molecular signatures for metastasis across different
+cancer types were observed suggesting distinct molecular
+pathways leading to metastasis in different cancer types. In
+contrast, other studies revealed common metastasis causing
+genes across different cancer types. Also, significantly
+Kalita and Selvaraj
+different expression patterns of DNA methylation genes,
+miRNAs and protein coding genes were observed in primary
+versus metastatic samples. For example, AGER, LRP2 and
+PIGR were found to be highly expressed in metastatic samples
+of esophageal carcinoma (ESCA), sarcoma (SARC) and skin
+cutaneous melanoma (SKCM) compared to their respective
+primary tumour samples. This information derived from large
+datasets highlights molecular patterns of metastatic progres-
+sion guided by common genes versus distinct genes and can
+be correlated with the pathological stages of metastasis and
+quantified to delineate the time of progression from the pri-
+mary tumour state [169, 170].
+The pan-cancer studies have also been expanded towards
+investigation of protein expression data across cancer types
+acquired from the The Cancer Proteome Atlas (TCPA) and
+led to the identification of differentially expressed proteins in
+different cancer types. These studies have clinical potential
+through the identification of patients for treatment monitoring,
+cancer stage determination and personalised therapy prescrip-
+tion. Pan-cancer studies of whole proteomes of primary and
+metastatic samples across different cancer types hold promise
+for identifying potential biomarkers. As yet, however, the
+prime limitation is the availability of enough protein expres-
+sion data [171].
+A newly evolving field in precision medicine is radio-ge-
+nomics. Through this approach, voluminous data are extracted
+from digital images and, together with the amalgamation of
+genomic, transcriptomic, epigenomic and metabolomic data
+integration, it allows to quantitatively stratify a patient’s dis-
+ease condition. It has the potential to generate image bio-
+markers and to correlate them with the underlying genotypic
+and phenotypic state of the tumour and its metastases [172].
+With respect to treatment, it may help to stratify patient groups
+to be radiosensitive or radio-resistant based on correlations of
+gene signatures and radiosensitivity indexes. A pan-cancer
+genomic signature revealed 10 gene signatures associated
+with intrinsic radiosensitivity (AR, cJun, STAT1, PKC,
+RelA, cABL, SUMO1, CDK1, HDAC1 and IRF1). These
+10 genes are associated with cell cycle progression, DNA
+damage response, histone deacetylation, proliferation and
+Fig. 6 Multilevel data integration
+for comprehensively
+understanding metastasis and
+developing precision medicine
+Deciphering molecular mechanisms of metastasis: novel insights into targets and therapeutics
+apoptosis. These results were used to create a radiosensitivity
+index (RSI), whereby a lower RSI correlates with a higher
+radiosensitivity [173, 174].
+6 Conclusions and perspectives
+Despite fundamental and translational research in the field of
+metastasis, it has been difficult to combat. Fundamental sci-
+entific evidence suggests that metastatic cells use native mi-
+gration mechanisms such as chemokine-mediated signalling,
+growth factor-mediated signalling and well-studied mecha-
+nisms of organogenesis such as EMT, to attain the properties
+of migration, invasion, survival and growth. There are also
+molecular mechanisms underlying site-specific distant metas-
+tasis as, for example, RANKL-mediated bone metastasis. It is
+worthy to note that several levels of biochemical changes,
+molecular changes, metabolic changes and physiological fac-
+tors may drive this process, signifying its demand to be un-
+derstood in a holistic manner. The dynamic nature of the met-
+astatic cascade is the reason why developing precision medi-
+cine for this phenomenon remains a predicament. Metastases
+originate from a primary tumour but may pass through several
+years of latency (dormant state), micro-metastasis or macro-
+metastasis before actual colonization and secondary tumour
+formation occurs. This phenomenon is a major drawback in
+replicating metastasis in in vitro or in vivo models.
+Additionally, animal models generally have a shorter lifespan
+compared to humans. Some patients may, however, show me-
+tastasis at early stages of tumour detection.
+Various genes, proteins and signalling pathways related to
+different aspects of metastasis have been widely studied. Some
+of them have been discussed in this review. This information
+facilitates the selection of metastasis-specific targets, but in a
+reductionist way, which only helps to halt or reduce the extent
+of metastasis. However, a more holistic approach entailing in-
+tegration of several layers of metastatic data versus primary
+tumour data across different cancer types may aid, not only in
+identifying novel targets or biomarkers, but also in understand-
+ing the complete tumour and metastatic landscapes across dif-
+ferent cancer types including the commonalities and differ-
+ences between them. Such an integrated approaches may also
+help in identifying molecular markers determining site speci-
+ficity and metastatic stage, as well as mutational landscapes and
+hotspots which can be implemented in the clinical stratification
+of patients according to genotypic, transcriptomic and epige-
+netic profiles and classifying them for precision treatment. It
+can also be used for treatment monitoring.
+Profiling of migration, adhesion and invasion in enhanced
+experimental models in vivo and in vitro that represent real
+metastatic scenarios like xenograft models, genetically
+engineered models, 3D organoids or microfluidic-on-chip
+models can aid in understanding the basic biochemistry of
+metastatic transformation and its characteristics. Some im-
+portant revelations of these techniques have been discussed
+above in relation to molecular pathways and targets during
+the metastasis cascade. Integration of such information with
+3D imaging and real time metastasis tracing using biolumi-
+nescence may provide a basic metastatic framework.
+However, there are limitations to these models as they still
+fail to represent the actual metastatic scenario in humans.
+Single cell RNA-sequencing and protein expression analyses
+of primary and metastatic lesions across different cancer
+types can shed light on tumour heterogeneity and interac-
+tome profiles, including their role in various molecular and
+functional aspects. Incorporation of mega-metastasis integra-
+tive analyses of genome, proteome, transcriptome, exome,
+secretome, epigenome, metabolome, non-coding RNA and
+drug-ligand interaction data using deep learning across sev-
+eral primary and metastatic tumour types by employing pan-
+cancer studies, GWAS, differentially expressed gene (DEG)
+studies, expression quantitative trait locus (eQTL) studies,
+computer-assisted drug development (CADD) studies and
+their integration with imaging (radio-genomics), protein
+and drug structural data (structural bioinformatics), gene,
+protein and non-coding RNA interaction networks as well
+as drug-related pathways may aid in the identification of
+global metastatic gene expression signatures and mutational
+profiles which will help in finding metastatic biomarkers,
+targets and therapies (Fig. 6). In-depth profiling of RNA-
+sequencing and pan-cancer data from every step of the met-
+astatic cascade including the tumour secretome, microbiome
+as well as the microenvironment of primary and secondary
+tumours, CTCs and studying ctDNA characteristics may be
+helpful. Essentially, polytherapy and adjuvant therapies can
+be employed, but only until scientific enrichment helps to
+explore the several layers involved in metastasis and its
+main causes. As yet, it is a highly complex phenomenon
+that demands drug cocktails. Precision medicine can help
+us to pick the unambiguous combinations for patient-
+tailored approaches.
+Acknowledgements BK is supported by a doctoral fellowship provided
+by Pondicherry University, India. The authors acknowledge the Centre
+for Bioinformatics, Pondicherry University, India for providing the com-
+putational facility.
+Declarations
+Ethics approval
+Not applicable.
+Conflict of interest
+The authors declare that there is no conflict of interest.
+Kalita and Selvaraj
+References
+1.
+A. Chatterjee, E.J. Rodger, M.R. Eccles, Epigenetic drivers of
+tumourigenesis and cancer metastasis. Semin. Cancer Biol. 51,
+149–159 (2018). https://doi.org/10.1016/j.semcancer.2017.08.
+004
+2.
+D.F. Quail, J.A. Joyce, Microenvironmental regulation of tumor
+progression and metastasis. Nat. Med. 19, 1423–1437 (2013).
+https://doi.org/10.1038/nm.3394
+3.
+D.R. Welch, D.R. Hurst, Defining the hallmarks of metastasis.
+Cancer Res. 79, 3011–3027 (2019). https://doi.org/10.1158/
+0008-5472.can-19-0458
+4.
+M. Teeuwssen, R. Fodde, Cell heterogeneity and phenotypic plas-
+ticity in metastasis formation: The case of colon cancer. Cancers
+11, 1368 (2019). https://doi.org/10.3390/cancers11091368
+5.
+D.A. Lawson, K. Kessenbrock, R.T. Davis, N. Pervolarakis, Z.
+Werb, Tumour heterogeneity and metastasis at single-cell resolu-
+tion. Nat. Cell Biol. 20, 1349–1360 (2018). https://doi.org/10.
+1038/s41556-018-0236-7
+6.
+L.J. Brylka, T. Schinke, Chemokines in physiological and patho-
+logical bone remodeling. Front. Immunol. 10, 2182 (2019).
+https://doi.org/10.3389/fimmu.2019.02182
+7.
+A.C. Obenauf, J. Massagué, Surviving at a distance: Organ-
+specific metastasis. Trends Cancer 1, 76–91 (2015). https://doi.
+org/10.1016/j.trecan.2015.07.009
+8.
+R.L. Anderson, T. Balasas, J. Callaghan, R.C. Coombes, J. Evans,
+J.A. Hall, S. Kinrade, D. Jones, P.S. Jones, R. Jones, J.F. Marshall,
+M.B. Panico, J.A. Shaw, P.S. Steeg, M. Sullivan, W. Tong, A.D.
+Westwell, J.W.A. Ritchie, Cancer Research UK and Cancer
+Therapeutics CRC Australia Metastasis Working Group, A frame-
+work for the development of effective anti-metastatic agents. Nat.
+Rev. Clin. Oncol. 16, 185–204 (2019). https://doi.org/10.1038/
+s41571-018-0134-8
+9.
+S. Paget, The distribution of secondary growths in cancer of the
+breast. Lancet. 133, 571–573 (1989). https://doi.org/10.1016/
+S0140-6736(00)49915-0
+10.
+A. Gandalovičová, D. Rosel, M. Fernandes, P. Veselý, P.
+Heneberg, V. Čermák, L. Petruželka, S. Kumar, V. Sanz-
+Moreno, J. Brábek, Migrastatics-anti-metastatic and anti-
+invasion drugs: Promises and challenges. Trends Cancer Res. 3,
+391–406 (2017). https://doi.org/10.1016/j.trecan.2017.04.008
+11.
+A.W. Lambert, D.R. Pattabiraman, R.A. Weinberg, Emerging bi-
+ological principles of metastasis. Cell 168, 670–691 (2017).
+https://doi.org/10.1016/j.cell.2016.11.037
+12.
+S. Valastyan, R.A. Weinberg, Tumor metastasis: molecular in-
+sights and evolving paradigms. Cell 147, 275–292 (2011).
+https://doi.org/10.1016/j.cell.2011.09.024
+13.
+I. Rodriguez-Hernandez, G. Cantelli, F. Bruce, V. Sanz-Moreno,
+Rho, ROCK and actomyosin contractility in metastasis as drug
+targets. F1000Res. 5, 783 (2016). https://doi.org/10.12688/
+f1000research.7909.1
+14.
+T. Alkasalias, A. Alexeyenko, K. Hennig, F. Danielsson, R.J.
+Lebbink, M. Fielden, S.P. Turunen, K. Lehti, V. Kashuba, H.S.
+Madapura, B. Bozoky, E. Lundberg, M. Balland, H. Guvén, G.
+Klein, A.K.B. Gad, T. Pavlova, RhoA knockout fibroblasts lose
+tumor-inhibitory capacity in vitro and promote tumor growth
+in vivo, Proc. Natl. Acad. Sci. U. S. A. 114, E1413–E1421
+(2017). https://doi.org/10.1073/pnas.1621161114
+15.
+M. Morgan-Fisher, U.M. Wewer, A. Yoneda, Regulation of
+ROCK activity in cancer. J. Histochem. Cytochem. 61, 185–198
+(2013). https://doi.org/10.1369/0022155412470834
+16.
+D.-F. Meng, P. Xie, L.-X. Peng, R. Sun, D.-H. Luo, Q.-Y. Chen,
+X. Lv, L. Wang, M.-Y. Chen, H.-Q. Mai, L. Guo, X. Guo, L.-S.
+Zheng, L. Cao, J.-P. Yang, M.-Y. Wang, Y. Mei, Y.-Y. Qiang, Z.-
+M. Zhang, J.-P. Yun, B.-J. Huang, C.-N. Qian, Erratum to:
+CDC42-interacting protein 4 promotes metastasis of nasopharyn-
+geal carcinoma by mediating invadopodia formation and activat-
+ing EGFR signaling. J. Exp. Clin. Cancer Res. 36, 33 (2017).
+https://doi.org/10.1186/s13046-017-0503-7
+17.
+S. Jansen, R. Gosens, T. Wieland, M. Schmidt, Paving the Rho in
+cancer metastasis: Rho GTPases and beyond. Pharmacol. Ther.
+183, 1–21 (2018). https://doi.org/10.1016/j.pharmthera.2017.09.
+002
+18.
+C.X. Sun, M.A.O. Magalhães, M. Glogauer, Rac1 and Rac2 dif-
+ferentially regulate actin free barbed end formation downstream of
+the fMLP receptor. J. Cell Biol. 179, 239–245 (2007). https://doi.
+org/10.1083/jcb.200705122
+19.
+M. Schaks, H. Döring, F. Kage, A. Steffen, T. Klünemann, W.
+Blankenfeldt, T. Stradal, K. Rottner, RhoG and Cdc42 can con-
+tribute to Rac-dependent lamellipodia formation through WAVE
+regulatory complex-binding. Small GTPases 2, 122–132 (2021).
+https://doi.org/10.1080/21541248.2019.1657755
+20.
+B. Frugtniet, W.G. Jiang, T.A. Martin, Role of the WASP and
+WAVE family proteins in breast cancer invasion and metastasis.
+Breast Cancer 7, 99–109 (2015). https://doi.org/10.2147/BCTT.
+S59006
+21.
+K. Kazazian, C. Go, H. Wu, O. Brashavitskaya, R. Xu, J.W.
+Dennis, A.-C. Gingras, C.J. Swallow, Plk4 promotes cancer inva-
+sion and metastasis through Arp2/3 complex regulation of the
+actin cytoskeleton. Cancer Res. 77, 434–447 (2017). https://doi.
+org/10.1158/0008-5472.CAN-16-2060
+22.
+G. Mouneimne, V. DesMarais, M. Sidani, E. Scemes, W. Wang,
+X. Song, R. Eddy, J. Condeelis, Spatial and temporal control of
+cofilin activity is required for directional sensing during chemo-
+taxis. Curr. Biol. 16, 2193–2205 (2006). https://doi.org/10.1016/j.
+cub.2006.09.016
+23.
+C.M. Fife, J.A. McCarroll, M. Kavallaris, Movers and shakers:
+cell cytoskeleton in cancer metastasis. Br. J. Pharmacol. 171,
+5507–5523 (2014). https://doi.org/10.1111/bph.12704
+24.
+F. Gertler, J. Condeelis, Metastasis: tumor cells becoming
+MENAcing. Trends Cell Biol. 21, 81–90 (2011). https://doi.org/
+10.1016/j.tcb.2010.10.001
+25.
+P. Pandey, S. Rachagani, S. Das, P. Seshacharyulu, Y. Sheinin, N.
+Naslavsky, Z. Pan, B.L. Smith, H.L. Peters, P. Radhakrishnan,
+N.R. McKenna, S.S.P. Giridharan, D. Haridas, S. Kaur, M.A.
+Hollingsworth, R.G. MacDonald, J.L. Meza, S. Caplan, S.K.
+Batra, J.C. Solheim, Amyloid precursor-like protein 2 (APLP2)
+affects the actin cytoskeleton and increases pancreatic cancer
+growth and metastasis. Oncotarget 6, 2064–2075 (2015). https://
+doi.org/10.18632/oncotarget.2990
+26.
+N.A. Afratis, D. Nikitovic, H.A.B. Multhaupt, A.D. Theocharis,
+J.R. Couchman, N.K. Karamanos, Syndecans – key regulators of
+cell signaling and biological functions. FEBS J. 284, 27–41
+(2017). https://doi.org/10.1111/febs.13940
+27.
+S. Gopal, H.A.B. Multhaupt, R. Pocock, J.R. Couchman, Cell-
+extracellular matrix and cell-cell adhesion are linked by
+syndecan-4. Matrix Biol. 60–61, 57–69 (2017). https://doi.org/
+10.1016/j.matbio.2016.10.006
+28.
+Y.-L. Tai, L.-C. Chen, T.-L. Shen, Emerging roles of focal adhe-
+sion kinase in cancer. Biomed. Res. Int. 2015, 690690 (2015).
+https://doi.org/10.1155/2015/690690
+29.
+R. Peláez, A. Pariente, Á Pérez-Sala, I.M. Larrayoz, Integrins:
+Moonlighting proteins in invadosome formation. Cancers 11,
+615 (2019). https://doi.org/10.3390/cancers11050615
+30.
+A.M. López-Colomé, I. Lee-Rivera, R. Benavides-Hidalgo, E.
+López, Paxillin: a crossroad in pathological cell migration. J
+Hematol Oncol 10, 50 (2017). https://doi.org/10.1186/s13045-
+017-0418-y
+31.
+P. Moreno-Layseca, C.H. Streuli, Signalling pathways linking
+integrins with cell cycle progression. Matrix Biol. 34, 144–153
+(2014). https://doi.org/10.1016/j.matbio.2013.10.011
+Deciphering molecular mechanisms of metastasis: novel insights into targets and therapeutics
+32.
+D.-B. Kong, F. Chen, N. Sima, Focal adhesion kinases crucially
+regulate TGFβ-induced migration and invasion of bladder cancer
+cells via Src kinase and E-cadherin. Onco. Targets Ther. 10,
+1783–1792 (2017). https://doi.org/10.2147/ott.s122463
+33.
+J.N. Skhinas, T.R. Cox, The interplay between extracellular ma-
+trix remodelling and kinase signalling in cancer progression and
+metastasis. Cell Adh. Migr. 12, 529–537 (2018). https://doi.org/
+10.1080/19336918.2017.1405208
+34.
+G. Gonzalez-Avila, B. Sommer, D.A. Mendoza-Posada, C.
+Ramos, A.A. Garcia-Hernandez, R. Falfan-Valencia,
+Corrigendum to “Matrix metalloproteinases participation in the
+metastatic process and their diagnostic and therapeutic applica-
+tions in cancer”. Crit. Rev. Oncol. Hematol. 137, 57–83, Crit.
+Rev. Oncol. Hematol. 138, 172 (2019). https://doi.org/10.1016/j.
+critrevonc.2019.04.017
+35.
+Q. Xiao, G. Ge, Lysyl oxidase, extracellular matrix remodeling
+and cancer metastasis. Cancer Microenviron. 5, 261–273 (2012).
+https://doi.org/10.1007/s12307-012-0105-z
+36.
+B. Fogelgren, N. Polgár, K.M. Szauter, Z. Ujfaludi, R. Laczkó,
+K.S.K. Fong, K. Csiszar, Cellular fibronectin binds to lysyl oxi-
+dase with high affinity and is critical for its proteolytic activation.
+J. Biol. Chem. 280, 24690–24697 (2005). https://doi.org/10.1074/
+jbc.M412979200
+37.
+M. Gadiya, G. Chakraborty, Signaling by discoidin domain recep-
+tor 1 in cancer metastasis. Cell Adh. Migr. 12, 315–323 (2018).
+https://doi.org/10.1080/19336918.2018.1520556
+38.
+C.A.S. Corsa, A. Brenot, W.R. Grither, S. Van Hove, A.J. Loza,
+K. Zhang, S.M. Ponik, Y. Liu, D.G. DeNardo, K.W. Eliceiri, P.J.
+Keely, G.D. Longmore, The action of discoidin domain receptor 2
+in basal tumor cells and stromal cancer-associated fibroblasts is
+critical for breast cancer metastasis. Cell Rep. 15, 2510–2523
+(2016). https://doi.org/10.1016/j.celrep.2016.05.033
+39.
+Q. Chen, J. Massagué, Molecular pathways: VCAM-1 as a poten-
+tial therapeutic target in metastasis, Clin. Cancer Res. 18, 5520–
+5525 (2012). https://doi.org/10.1158/1078-0432.CCR-11-2904
+40.
+R. Sharma, R. Sharma, T.P. Khaket, C. Dutta, B. Chakraborty,
+T.K. Mukherjee, Breast cancer metastasis: Putative therapeutic
+role of vascular cell adhesion molecule-1. Cell. Oncol. 40, 199–
+208 (2017). https://doi.org/10.1007/s13402-017-0324-x
+41.
+T. Liu, C. Han, S. Wang, P. Fang, Z. Ma, L. Xu, R. Yin, Cancer-
+associated fibroblasts: an emerging target of anti-cancer immuno-
+therapy. J. Hematol. Oncol. 12, 86 (2019). https://doi.org/10.1186/
+s13045-019-0770-1
+42.
+J. Kim, J.-S. Bae, Tumor-associated macrophages and neutrophils
+in tumor microenvironment. Mediat. Inflamm. 2016, 6058147
+(2016). https://doi.org/10.1155/2016/6058147
+43.
+A. Gratchev, TGF-β signalling in tumour associated macro-
+phages. Immunobiology 222, 75–81 (2017). https://doi.org/10.
+1016/j.imbio.2015.11.016
+44.
+A. Mantovani, F. Marchesi, A. Malesci, L. Laghi, P. Allavena,
+Tumour-associated macrophages as treatment targets in oncology.
+Nat. Rev. Clin. Oncol. 14, 399–416 (2017). https://doi.org/10.
+1038/nrclinonc.2016.217
+45.
+I. Jang, K.A. Beningo, Integrins, CAFs and mechanical forces in
+the progression of cancer. Cancers 11, 721 (2019). https://doi.org/
+10.3390/cancers11050721
+46.
+L.V. Ireland, A. Mielgo, Macrophages and fibroblasts, key players
+in cancer chemoresistance. Front. Cell. Dev. Biol. 6, 131 (2018).
+https://doi.org/10.3389/fcell.2018.00131
+47.
+Y. Lin, J. Xu, H. Lan, Tumor-associated macrophages in tumor
+metastasis: biological roles and clinical therapeutic applications. J.
+Hematol. Oncol. 12, 76 (2019). https://doi.org/10.1186/s13045-
+019-0760-3
+48.
+C. Bonnans, J. Chou, Z. Werb, Remodelling the extracellular ma-
+trix in development and disease. Nat. Rev. Mol. Cell Biol. 15,
+786–801 (2014). https://doi.org/10.1038/nrm3904
+49.
+B.D. Robinson, G.L. Sica, Y.-F. Liu, T.E. Rohan, F.B. Gertler,
+J.S. Condeelis, J.G. Jones, Tumor microenvironment of metastasis
+in human breast carcinoma: a potential prognostic marker linked
+to hematogenous dissemination. Clin. Cancer Res. 15, 2433–2441
+(2009). https://doi.org/10.1158/1078-0432.CCR-08-2179
+50.
+B. Rizeq, M.I. Malki, The role of CCL21/CCR7 chemokine axis
+in breast cancer progression. Cancers 12, 1036 (2020). https://doi.
+org/10.3390/cancers12041036
+51.
+R. Singh, N. Kapur, H. Mir, N. Singh, J.W. Lillard Jr., S. Singh,
+CXCR6-CXCL16 axis promotes prostate cancer by mediating cy-
+toskeleton rearrangement via Ezrin activation and αvβ3 integrin
+clustering. Oncotarget 7, 7343–7353 (2016). https://doi.org/10.
+18632/oncotarget.6944
+52.
+R.B. Troyanovsky, J. Klingelhöfer, S.M. Troyanovsky, α-Catenin
+contributes to the strength of E-cadherin-p120 interactions. Mol.
+Biol. Cell 22, 4247–4255 (2011). https://doi.org/10.1091/mbc.
+E11-03-0250
+53.
+N.A. Gloushankova, S.N. Rubtsova, I.Y. Zhitnyak, Cadherin-
+mediated cell-cell interactions in normal and cancer cells. Tissue
+Barriers 5, e1356900 (2017). https://doi.org/10.1080/21688370.
+2017.1356900
+54.
+V. Gkretsi, T. Stylianopoulos, Cell adhesion and matrix stiffness:
+Coordinating cancer cell invasion and metastasis. Front. Oncol. 8,
+145 (2018). https://doi.org/10.3389/fonc.2018.00145
+55.
+S. Lamouille, J. Xu, R. Derynck, Molecular mechanisms of
+epithelial–mesenchymal transition. Nat. Rev. Mol. Cell. Biol.
+15, 178–196 (2014). https://doi.org/10.1038/nrm3758
+56.
+M. Grooteclaes, Q. Deveraux, J. Hildebrand, Q. Zhang, R.H.
+Goodman, S.M. Frisch, C-terminal-binding protein corepresses
+epithelial and proapoptotic gene expression programs. Proc.
+Natl. Acad. Sci. U. S. A. 100, 4568–4573 (2003). https://doi.
+org/10.1073/pnas.0830998100
+57.
+G. Cai, D. Wu, Z. Wang, Z. Xu, K.-B. Wong, C.-F. Ng, F.L.
+Chan, S. Yu, Collapsin response mediator protein-1 (CRMP1)
+acts as an invasion and metastasis suppressor of prostate cancer
+via its suppression of epithelial–mesenchymal transition and re-
+modeling of actin cytoskeleton organization. Oncogene 36, 546–
+558 (2017). https://doi.org/10.1038/onc.2016.227
+58.
+W.S. Byun, W.K. Kim, H.J. Han, H.-J. Chung, K. Jang, H.S. Kim,
+S. Kim, D. Kim, E.S. Bae, S. Park, J. Lee, H.-G. Park, S.K. Lee,
+Targeting histone methyltransferase DOT1L by a novel
+psammaplin A analog inhibits growth and metastasis of triple-
+negative breast cancer. Mol. Ther. Oncolytics 15, 140–152
+(2019). https://doi.org/10.1016/j.omto.2019.09.005
+59.
+M.-H. Cho, J.-H. Park, H.-J. Choi, M.-K. Park, H.-Y. Won, Y.-J.
+Park, C.H. Lee, S.-H. Oh, Y.-S. Song, H.S. Kim, Y.-H. Oh, J.-Y.
+Lee, G. Kong, DOT1L cooperates with the c-Myc-p300 complex
+to epigenetically derepress CDH1 transcription factors in breast
+cancer progression. Nat. Commun. 6, 7821 (2015). https://doi.org/
+10.1038/ncomms8821
+60.
+J. Park, D.-H. Kim, S.R. Shah, H.-N. Kim, P. Kshitiz, A. Kim, A.
+Quiñones-Hinojosa, Levchenko, Switch-like enhancement of
+epithelial-mesenchymal transition by YAP through feedback reg-
+ulation of WT1 and Rho-family GTPases. Nat. Commun. 10,
+2797 (2019). https://doi.org/10.1038/s41467-019-10729-5
+61.
+P. Potdar, N. Lotey, Role of circulating tumor cells in future diag-
+nosis and therapy of cancer. J. Cancer Metast. Treat. 1, 44 (2015).
+https://doi.org/10.4103/2394-4722.158803
+62.
+C. Agnoletto, L. Minotti, L. Brulle-Soumare, L. Pasquali, M.
+Galasso, F. Corrà, F. Baldassari, J.-G. Judde, S. Cairo, S.
+Volinia, Heterogeneous expression of EPCAM in human circulat-
+ing tumour cells from patient-derived xenografts. Biomark Res. 6,
+31 (2018). https://doi.org/10.1186/s40364-018-0145-8
+63.
+J.C.M. Wan, C. Massie, J. Garcia-Corbacho, F. Mouliere, J.D.
+Brenton, C. Caldas, S. Pacey, R. Baird, N. Rosenfeld, Liquid
+biopsies come of age: towards implementation of circulating
+Kalita and Selvaraj
+tumour DNA. Nat. Rev. Cancer 17, 223–238 (2017). https://doi.
+org/10.1038/nrc.2017.7
+64.
+X.-L. Lou, J. Sun, S.-Q. Gong, X.-F. Yu, R. Gong, H. Deng,
+Interaction between circulating cancer cells and platelets: clinical
+implication. Chin. J. Cancer Res. 27, 450–460 (2015). https://doi.
+org/10.3978/j.issn.1000-9604.2015.04.10
+65.
+L. Zhang, L.D. Ridgway, M.D. Wetzel, J. Ngo, W. Yin, D.
+Kumar, J.C. Goodman, M.D. Groves, D. Marchetti, The identifi-
+cation and characterization of breast cancer CTCs competent for
+brain metastasis. Sci. Transl. Med. 5, 180ra48 (2013). https://doi.
+org/10.1126/scitranslmed.3005109
+66.
+H. Wang, N.H. Stoecklein, P.P. Lin, O. Gires, Circulating and
+disseminated tumor cells: diagnostic tools and therapeutic targets
+in motion. Oncotarget 8, 1884–1912 (2017). https://doi.org/10.
+18632/oncotarget.12242
+67.
+W.-C. Wang, X.-F. Zhang, J. Peng, X.-F. Li, A.-L. Wang, Y.-Q.
+Bie, L.-H. Shi, M.-B. Lin, X.-F. Zhang, Survival mechanisms and
+influence factors of circulating tumor cells. Biomed. Res. Int.
+2018, 6304701 (2018). https://doi.org/10.1155/2018/6304701
+68.
+H. Peinado, H. Zhang, I.R. Matei, B. Costa-Silva, A. Hoshino, G.
+Rodrigues, B. Psaila, R.N. Kaplan, J.F. Bromberg, Y. Kang, M.J.
+Bissell, T.R. Cox, A.J. Giaccia, J.T. Erler, S. Hiratsuka, C.M.
+Ghajar, D. Lyden, Pre-metastatic niches: organ-specific homes
+for metastases. Nat. Rev. Cancer 17, 302–317 (2017). https://doi.
+org/10.1038/nrc.2017.6
+69.
+C.-M. Zeng, Z. Chen, L. Fu, Frizzled receptors as potential ther-
+apeutic targets in human cancers. Int. J. Mol. Sci. 19, 1543 (2018).
+https://doi.org/10.3390/ijms19051543
+70.
+Y. Zhang, M. Xia, K. Jin, S. Wang, H. Wei, C. Fan, Y. Wu, X. Li,
+X. Li, G. Li, Z. Zeng, W. Xiong, Function of the c-Met receptor
+tyrosine kinase in carcinogenesis and associated therapeutic op-
+portunities. Mol. Cancer 17, 45 (2018). https://doi.org/10.1186/
+s12943-018-0796-y
+71.
+W. Chen, A.D. Hoffmann, H. Liu, X. Liu, Organotropism: new
+insights into molecular mechanisms of breast cancer metastasis.
+NPJ Precis. Oncol. 2, 4 (2018). https://doi.org/10.1038/s41698-
+018-0047-0
+72.
+X. Jin, Z. Demere, K. Nair, A. Ali, G.B. Ferraro, T. Natoli, A.
+Deik, L. Petronio, A.A. Tang, C. Zhu, L. Wang, D. Rosenberg, V.
+Mangena, J. Roth, K. Chung, R.K. Jain, C.B. Clish, M.G. Vander
+Heiden, T.R. Golub, A metastasis map of human cancer cell lines.
+Nature 588, 331–336 (2020). https://doi.org/10.1038/s41586-020-
+2969-2
+73.
+P.S. Steeg, Targeting metastasis. Nat. Rev. Cancer 16, 201–218
+(2016). https://doi.org/10.1038/nrc.2016.25
+74.
+V. Sopik, S.A. Narod, The relationship between tumour size, nod-
+al status and distant metastases: on the origins of breast cancer.
+Breast Cancer Res. Treat. 170, 647–656 (2018). https://doi.org/10.
+1007/s10549-018-4796-9
+75.
+M. Kim, S.H. Kizilbash, J.K. Laramy, G. Gampa, K.E. Parrish,
+J.N. Sarkaria, W.F. Elmquist, Barriers to effective drug treatment
+for brain metastases: A multifactorial problem in the delivery of
+precision medicine. Pharm. Res. 35, 177 (2018). https://doi.org/
+10.1007/s11095-018-2455-9
+76.
+T.-X. Xie, F.-J. Huang, K.D. Aldape, S.-H. Kang, M. Liu, J.E.
+Gershenwald, K. Xie, R. Sawaya, S. Huang, Activation of stat3 in
+human melanoma promotes brain metastasis. Cancer Res. 66,
+3188–3196 (2006). https://doi.org/10.1158/0008-5472.CAN-05-
+2674
+77.
+M. Yousefi, T. Bahrami, A. Salmaninejad, R. Nosrati, P. Ghaffari,
+S.H. Ghaffari, Lung cancer-associated brain metastasis: Molecular
+mechanisms and therapeutic options. Cell. Oncol. 40, 419–441
+(2017). https://doi.org/10.1007/s13402-017-0345-5
+78.
+W. Jacot, M.-C. Gerlotto-Borne, S. Thezenas, S. Pouderoux, S.
+Poujol, M. About, G. Romieu, Carmustine and methotrexate in
+combination after whole brain radiation therapy in breast cancer
+patients presenting with brain metastases: a retrospective study.
+BMC Cancer 10, 257 (2010). https://doi.org/10.1186/1471-
+2407-10-257
+79.
+M.G. Ewend, S. Brem, M. Gilbert, R. Goodkin, P.L. Penar, M.
+Varia, S. Cush, L.A. Carey, Treatment of single brain metastasis
+with resection, intracavity carmustine polymer wafers, and radia-
+tion therapy is safe and provides excellent local control. Clin.
+Cancer Res. 13, 3637–3641 (2007). https://doi.org/10.1158/
+1078-0432.CCR-06-2095
+80.
+U. Bottoni, P. Bonaccorsi, V. Devirgiliis, V. Panasiti, R.G.
+Borroni, G. Trasimeni, R. Clerico, S. Calvieri, Complete remis-
+sion of brain metastases in three patients with stage IV melanoma
+treated with BOLD and G-CSF. Jpn. J. Clin. Oncol. 35, 507–513
+(2005). https://doi.org/10.1093/jjco/hyi141
+81.
+U. Herrlinger, T. Tzaridis, F. Mack, J.P. Steinbach, U. Schlegel,
+M. Sabel, P. Hau, R.-D. Kortmann, D. Krex, O. Grauer, R.
+Goldbrunner, O. Schnell, O. Bähr, M. Uhl, C. Seidel, G.
+Tabatabai, T. Kowalski, F. Ringel, F. Schmidt-Graf, B.
+Suchorska, S. Brehmer, A. Weyerbrock, M. Renovanz, L.
+Bullinger, N. Galldiks, P. Vajkoczy, M. Misch, H. Vatter, M.
+Stuplich, N. Schäfer, S. Kebir, J. Weller, C. Schaub, W.
+Stummer, J.-C. Tonn, M. Simon, V.C. Keil, M. Nelles, H.
+Urbach, M. Coenen, W. Wick, M. Weller, R. Fimmers, M.
+Schmid, E. Hattingen, T. Pietsch, C. Coch, M. Glas,
+Neurooncology Working Group of the German Cancer Society,
+Lomustine-temozolomide combination therapy versus standard
+temozolomide therapy in patients with newly diagnosed glioblas-
+toma with methylated MGMT promoter (CeTeG/NOA-09): a
+randomised, open-label, phase 3 trial. Lancet 393, 678–688
+(2019). https://doi.org/10.1016/S0140-6736(18)31791-4
+82.
+L. Abrey, Temozolomide for treating brain metastases. Sem.
+Oncol. 28, 34–42 (2001). https://doi.org/10.1016/s0093-
+7754(01)90069-7
+83.
+M. Preusser, A.S. Berghoff, D. Schadendorf, N.U. Lin, R. Stupp,
+Brain metastasis: opportunity for drug development? Curr. Opin.
+Neurol. 25, 786–794 (2012). https://doi.org/10.1097/WCO.
+0b013e328359320d
+84.
+M. Esposito, T. Guise, Y. Kang, The biology of bone metastasis.
+Cold Spring Harb. Perspect. Med. 8, a031252 (2018). https://doi.
+org/10.1101/cshperspect.a031252
+85.
+L.A. Kingsley, P.G.J. Fournier, J.M. Chirgwin, T.A. Guise,
+Molecular biology of bone metastasis. Mol. Cancer Ther. 6,
+2609–2617 (2007). https://doi.org/10.1158/1535-7163.MCT-07-
+0234
+86.
+S. Wang, G.-X. Li, C.-C. Tan, R. He, L.-J. Kang, J.-T. Lu, X.-Q.
+Li, Q.-S. Wang, P.-F. Liu, Q.-L. Zhai, Y.-M. Feng, FOXF2 repro-
+grams breast cancer cells into bone metastasis seeds. Nat.
+Commun. 10, 2707 (2019). https://doi.org/10.1038/s41467-019-
+10379-7
+87.
+T.M. Dando, L.R. Wiseman, Clodronate: a review of its use in the
+prevention of bone metastases and the management of skeletal
+complications associated with bone metastases in patients with
+breast cancer. Drugs Aging 21, 949–962 (2004). https://doi.org/
+10.2165/00002512-200421140-00005
+88.
+Z. Wang, L. Lei, X.-J. Cai, L.Y. Chen, M. Yuan, G. Yang, P.
+Huang, X. Wang, A preliminary study of pamidronic acid down-
+regulation of angiogenic factors IGF-1/PECAM-1 expression in
+circulating level in bone metastatic breast cancer patients. Onco.
+Targets. Ther. 9, 3147–3152 (2016). https://doi.org/10.2147/OTT.
+S103624
+89.
+B. Devitt, S.-A. McLachlan, Use of ibandronate in the prevention
+of skeletal events in metastatic breast cancer. Ther. Clin. Risk
+Manag. 4, 453–458 (2008). https://doi.org/10.2147/tcrm.s1966
+90.
+P.-H. Chiang, H.-C. Wang, Y.-L. Lai, S.-C. Chen, W. Yen-Hwa,
+C.-K. Kok, Y.-C. Ou, J.-S. Huang, T.-C. Huang, T.-Y. Chao,
+Zoledronic acid treatment for cancerous bone metastases: a phase
+Deciphering molecular mechanisms of metastasis: novel insights into targets and therapeutics
+IV study in Taiwan. J. Cancer Res. Ther. 9, 653–659 (2013).
+https://doi.org/10.4103/0973-1482.126471
+91.
+O. Sartor, Overview of samarium sm 153 lexidronam in the treat-
+ment of painful metastatic bone disease. Rev. Urol. 6 (Suppl 10),
+S3–S12 (2004). https://www.ncbi.nlm.nih.gov/pubmed/
+16985930. Accessed 23 Apr 2021
+92.
+W.C. Dougall, I. Holen, E. González Suárez, Targeting RANKL
+in metastasis. Bonekey Rep. 3, 519 (2014). https://doi.org/10.
+1038/bonekey.2014.14
+93.
+Y. Nakai, K. Okamoto, A. Terashima, S. Ehata, J. Nishida, T.
+Imamura, T. Ono, H. Takayanagi, Efficacy of an orally active
+small-molecule inhibitor of RANKL in bone metastasis. Bone
+Res. 7, 1 (2019). https://doi.org/10.1038/s41413-018-0036-5
+94.
+C. Khanna, X. Wan, S. Bose, R. Cassaday, O. Olomu, A.
+Mendoza, C. Yeung, R. Gorlick, S.M. Hewitt, L.J. Helman, The
+membrane-cytoskeleton linker ezrin is necessary for osteosarco-
+ma metastasis. Nat. Med. 10, 182–186 (2004). https://doi.org/10.
+1038/nm982
+95.
+A. Tamburrini, A. Majorino, S. Duggan, S. Jogai, A. Alzetani, A
+record-breaking lung metastasis from renal cell carcinoma 37
+years after nephrectomy. J. Surg. Case Rep. 2017, rjx205
+(2017). https://doi.org/10.1093/jscr/rjx205
+96.
+L. Jin, B. Han, E. Siegel, Y. Cui, A. Giuliano, X. Cui, Breast
+cancer lung metastasis: Molecular biology and therapeutic impli-
+cations. Cancer Biol. Ther. 19, 858–868 (2018). https://doi.org/10.
+1080/15384047.2018.1456599
+97.
+M. Yousefi, R. Nosrati, A. Salmaninejad, S. Dehghani, A.
+Shahryari, A. Saberi, Organ-specific metastasis of breast cancer:
+molecular and cellular mechanisms underlying lung metastasis.
+Cell. Oncol. 41, 123–140 (2018). https://doi.org/10.1007/
+s13402-018-0376-6
+98.
+G.P. Gupta, J. Massagué, Cancer metastasis: building a frame-
+work. Cell 127, 679–695 (2006). https://doi.org/10.1016/j.cell.
+2006.11.001
+99.
+P. Tomasini, J. Egea, M. Souquet-Bressand, L. Greillier, F.
+Barlesi, Alectinib in the treatment of ALK-positive metastatic
+non-small cell lung cancer: clinical trial evidence and experience
+with a focus on brain metastases, Ther. Adv. Respir. Dis. 13,
+1753466619831906 (2019). https://doi.org/10.1177/
+1753466619831906
+100.
+M.A. Socinski, R.M. Jotte, F. Cappuzzo, F. Orlandi, D.
+Stroyakovskiy, N. Nogami, D. Rodríguez-Abreu, D. Moro-
+Sibilot, C.A. Thomas, F. Barlesi, G. Finley, C. Kelsch, A. Lee,
+S. Coleman, Y. Deng, Y. Shen, M. Kowanetz, A. Lopez-Chavez,
+A. Sandler, M. Reck, IMpower150 Study Group, Atezolizumab
+for first-line treatment of metastatic nonsquamous NSCLC. N.
+Engl. J. Med. 378, 2288–2301 (2018). https://doi.org/10.1056/
+NEJMoa1716948
+101.
+A.V. Balar, M.D. Galsky, J.E. Rosenberg, T. Powles, D.P.
+Petrylak, J. Bellmunt, Y. Loriot, A. Necchi, J. Hoffman-Censits,
+J.L. Perez-Gracia, N.A. Dawson, M.S. van der Heijden, R.
+Dreicer, S. Srinivas, M.M. Retz, R.W. Joseph, A. Drakaki, U.N.
+Vaishampayan, S.S. Sridhar, D.I. Quinn, I. Durán, D.R. Shaffer,
+B.J. Eigl, P.D. Grivas, E.Y. Yu, S. Li, E.E. Kadel III, Z. Boyd, R.
+Bourgon, P.S. Hegde, S. Mariathasan, A. Thåström, O.O.
+Abidoye, G.D. Fine, D.F. Bajorin, IMvigor210 Study Group,
+Atezolizumab as first-line treatment in cisplatin-ineligible patients
+with locally advanced and metastatic urothelial carcinoma: a sin-
+gle-arm, multicentre, phase 2 trial. Lancet 389, 67–76 (2017).
+https://doi.org/10.1016/S0140-6736(16)32455-2
+102.
+R. Saleh, R.Z. Taha, V. Sasidharan Nair, N.M. Alajez, E. Elkord,
+PD-L1 Blockade by atezolizumab downregulates signaling path-
+ways associated with tumor growth, metastasis, and hypoxia in
+human triple negative breast cancer. Cancers 11, (2019). https://
+doi.org/10.3390/cancers11081050
+103.
+J. Ma, D.J. Waxman, Combination of antiangiogenesis with che-
+motherapy for more effective cancer treatment. Mol. Cancer Ther.
+7, 3670–3684 (2008). https://doi.org/10.1158/1535-7163.mct-08-
+0715
+104.
+M. Vocka, D. Langer, V. Fryba, J. Petrtyl, T. Hanus, M.
+Kalousova, T. Zima, L. Petruzelka, Novel serum markers
+HSP60, CHI3L1, and IGFBP-2 in metastatic colorectal cancer.
+Oncol. Lett. 18, 6284–6292 (2019). https://doi.org/10.3892/ol.
+2019.10925
+105.
+O. Golubnitschaja, K.C. Sridhar, Liver metastatic disease: new
+concepts and biomarker panels to improve individual outcomes.
+Clin. Exp. Metastasis 33, 743–755 (2016). https://doi.org/10.
+1007/s10585-016-9816-8
+106.
+D.G. Power, N.E. Kemeny, The role of floxuridine in metastatic
+liver disease. Mol. Cancer Ther. 8, 1015–1025 (2009). https://doi.
+org/10.1158/1535-7163.MCT-08-0709
+107.
+D. Melisi, R. Garcia-Carbonero, T. Macarulla, D. Pezet, G.
+Deplanque, M. Fuchs, J. Trojan, H. Oettle, M. Kozloff, A.
+Cleverly, C. Smith, S.T. Estrem, I. Gueorguieva, M.M.F. Lahn,
+A. Blunt, K.A. Benhadji, J. Tabernero, Galunisertib plus
+gemcitabine vs. gemcitabine for first-line treatment of patients
+with unresectable pancreatic cancer. Br. J. Cancer 119, 1208–
+1214 (2018). https://doi.org/10.1038/s41416-018-0246-z
+108.
+J. Strauss, C.R. Heery, J. Schlom, R.A. Madan, L. Cao, Z. Kang,
+E. Lamping, J.L. Marté, R.N. Donahue, I. Grenga, L. Cordes, O.
+Christensen, L. Mahnke, C. Helwig, J.L. Gulley, Phase I Trial of
+M7824 (MSB0011359C), a bifunctional fusion protein targeting
+PD-L1 and TGFβ, in advanced solid tumors. Clin. Cancer Res.
+24, 1287–1295 (2018). https://doi.org/10.1158/1078-0432.CCR-
+17-2653
+109.
+M. Elbaz, M. Ehab, Profile of palbociclib in the treatment of met-
+astatic breast cancer. Breast Cancer Target Ther. 8, 83–91 (2016).
+https://doi.org/10.2147/bctt.s83146
+110.
+K.J. Frankowski, C. Wang, S. Patnaik, F.J. Schoenen, N. Southall,
+D. Li, Y. Teper, W. Sun, I. Kandela, D. Hu, C. Dextras, Z. Knotts,
+Y. Bian, J. Norton, S. Titus, M.A. Lewandowska, Y. Wen, K.I.
+Farley, L.M. Griner, J. Sultan, Z. Meng, M. Zhou, T. Vilimas, A.S.
+Powers, S. Kozlov, K. Nagashima, H.S. Quadri, M. Fang, C.
+Long, O. Khanolkar, W. Chen, J. Kang, H. Huang, E. Chow, E.
+Goldberg, C. Feldman, R. Xi, H.R. Kim, G. Sahagian, S.J.
+Baserga, A. Mazar, M. Ferrer, W. Zheng, A. Shilatifard, J.
+Aubé, U. Rudloff, J.J. Marugan, S. Huang, Metarrestin, a
+perinucleolar compartment inhibitor, effectively suppresses me-
+tastasis. Sci. Transl. Med. 10, 441 (2018). https://doi.org/10.
+1126/scitranslmed.aap8307
+111.
+L. Malorni, G. Curigliano, A.M. Minisini, S. Cinieri, C.A.
+Tondini, K. D’Hollander, G. Arpino, A. Bernardo, A.
+Martignetti, C. Criscitiello, F. Puglisi, M. Pestrin, G. Sanna, E.
+Moretti, E. Risi, C. Biagioni, A. McCartney, L. Boni, M. Buyse, I.
+Migliaccio, L. Biganzoli, A. Di Leo, Palbociclib as single agent or
+in combination with the endocrine therapy received before disease
+progression for estrogen receptor-positive, HER2-negative meta-
+static breast cancer: TREnd trial. Ann. Oncol. 29, 1748–1754
+(2018). https://doi.org/10.1093/annonc/mdy214
+112.
+Y. Suhail, M.P. Cain, K. Vanaja, P.A. Kurywchak, A. Levchenko,
+R. Kalluri, Kshitiz, Systems biology of cancer metastasis. Cell
+Systems 9, 109–127 (2019). https://doi.org/10.1016/j.cels.2019.
+07.003
+113.
+Z.A. Yochum, J. Cades, L. Mazzacurati, N.M. Neumann, S.K.
+Khetarpal, S. Chatterjee, H. Wang, M.A. Attar, E.H.-B. Huang,
+S.N. Chatley, K. Nugent, A. Somasundaram, J.A. Engh, A.J.
+Ewald, Y.-J. Cho, C.M. Rudin, P.T. Tran, T.F. Burns, A first-in-
+class TWIST1 inhibitor with activity in oncogene-driven lung
+cancer, Mol. Cancer Res. 15, 1764–1776 (2017). https://doi.org/
+10.1158/1541-7786.MCR-17-0298
+Kalita and Selvaraj
+114.
+L.F. Vistain, N. Yamamoto, R. Rathore, P. Cha, T.J. Meade,
+Targeted inhibition of snail activity in breast cancer cells by using
+a Co(III)-Ebox conjugate. Chem. Biochem. 16, 2065–2072
+(2015). https://doi.org/10.1002/cbic.201500289
+115.
+J. Sakata, F. Utsumi, S. Suzuki, K. Niimi, E. Yamamoto, K.
+Shibata, T. Senga, F. Kikkawa, H. Kajiyama, Inhibition of
+ZEB1 leads to inversion of metastatic characteristics and restora-
+tion of paclitaxel sensitivity of chronic chemoresistant ovarian
+carcinoma cells. Oncotarget 8, 99482–99494 (2017). https://doi.
+org/10.18632/oncotarget.20107
+116.
+Q. Du, X. Zhang, X. Zhang, M. Wei, H. Xu, S. Wang, Propofol
+inhibits proliferation and epithelial-mesenchymal transition of
+MCF-7 cells by suppressing miR-21 expression, Artif. Cells
+Nanomed. Biotechnol. 47, 1265–1271 (2019). https://doi.org/10.
+1080/21691401.2019.1594000
+117.
+C. Bartholomeusz, X. Xie, M.K. Pitner, K. Kondo, A. Dadbin, J.
+Lee, H. Saso, P.D. Smith, K.N. Dalby, N.T. Ueno, MEK inhibitor
+Selumetinib (AZD6244; ARRY-142886) prevents lung metastasis
+in a triple-negative breast cancer xenograft model. Mol. Cancer
+Therap. 14, 2773–2781 (2015). https://doi.org/10.1158/1535-
+7163.mct-15-0243
+118.
+L.H. El Touny, A. Vieira, A. Mendoza, C. Khanna, M.J.
+Hoenerhoff, J.E. Green, Combined SFK/MEK inhibition prevents
+metastatic outgrowth of dormant tumor cells. J. Clin. Invest. 124,
+156–168 (2014). https://doi.org/10.1172/JCI70259
+119.
+J. Chen, T. Deng, X. Li, W. Cai, MiR-193b inhibits the growth
+and metastasis of renal cell carcinoma by targeting IGF1R, Artif.
+Cells Nanomed. Biotechnol. 47, 2058–2064 (2019). https://doi.
+org/10.1080/21691401.2019.1620251
+120.
+D. Melisi, S. Ishiyama, G.M. Sclabas, J.B. Fleming, Q. Xia, G.
+Tortora, J.L. Abbruzzese, P.J. Chiao, LY2109761, a novel
+transforming growth factor beta receptor type I and type II dual
+inhibitor, as a therapeutic approach to suppressing pancreatic can-
+cer metastasis. Mol. Cancer Ther. 7, 829–840 (2008). https://doi.
+org/10.1158/1535-7163.MCT-07-0337
+121.
+A. Bandyopadhyay, J.K. Agyin, L. Wang, Y. Tang, X. Lei, B.M.
+Story, J.E. Cornell, B.H. Pollock, G.R. Mundy, L.-Z. Sun,
+Inhibition of pulmonary and skeletal metastasis by a transforming
+growth factor-β type I receptor kinase inhibitor. Cancer Res. 66,
+6714–6721 (2006). https://doi.org/10.1158/0008-5472.can-05-
+3565
+122.
+R. Ge, V. Rajeev, P. Ray, E. Lattime, S. Rittling, S. Medicherla, A.
+Protter, A. Murphy, J. Chakravarty, S. Dugar, G. Schreiner, N.
+Barnard, M. Reiss, Inhibition of growth and metastasis of mouse
+mammary carcinoma by selective inhibitor of transforming
+growth factor-beta type I receptor kinase in vivo, Clin. Cancer
+Res. 12, 4315–4330 (2006). https://doi.org/10.1158/1078-0432.
+CCR-06-0162
+123.
+S. Biswas, J.S. Nyman, J. Alvarez, A. Chakrabarti, A. Ayres, J.
+Sterling, J. Edwards, T. Rana, R. Johnson, D.S. Perrien, S.
+Lonning, Y. Shyr, L.M. Matrisian, G.R. Mundy, Anti-
+transforming growth factor ß antibody treatment rescues bone loss
+and prevents breast cancer metastasis to bone. PLoS One 6,
+e27090 (2011). https://doi.org/10.1371/journal.pone.0027090
+124.
+C.-Y. Park, D.-K. Kim, Y.Y. Sheen, EW-7203, a novel small
+molecule inhibitor of transforming growth factor-β (TGF-β) type
+I receptor/activin receptor-like kinase-5, blocks TGF-β1-mediated
+epithelial-to-mesenchymal transition in mammary epithelial cells.
+Cancer Sci. 102, 1889–1896 (2011). https://doi.org/10.1111/j.
+1349-7006.2011.02014.x
+125.
+C.-Y. Park, J.-Y. Son, C.H. Jin, J.-S. Nam, D.-K. Kim, Y.Y.
+Sheen, EW-7195, a novel inhibitor of ALK5 kinase inhibits
+EMT and breast cancer metastasis to lung. Eur. J. Cancer 47,
+2642–2653 (2011). https://doi.org/10.1016/j.ejca.2011.07.007
+126.
+F. Zhang, D.R. Braun, G.E. Ananiev, F. Michael Hoffmann, I.-W.
+Tsai, S.R. Rajski, T.S. Bugni, Biemamides A–E, inhibitors of the
+TGF-β pathway that block the epithelial to mesenchymal transi-
+tion. Org. Lett. 20, 5529–5532 (2018). https://doi.org/10.1021/
+acs.orglett.8b01871
+127.
+L. Di, L.-J. Liu, Y.-M. Yan, R. Fu, Y. Li, Y. Xu, Y.-X. Cheng, Z.-
+Q. Wu, Discovery of a natural small-molecule compound that
+suppresses tumor EMT, stemness and metastasis by inhibiting
+TGFβ/BMP signaling in triple-negative breast cancer. J. Exp.
+Clin. Cancer Res. 38, 134 (2019). https://doi.org/10.1186/
+s13046-019-1130-2
+128.
+V. Ramesh, T. Brabletz, P. Ceppi, Targeting EMT in cancer with
+repurposed metabolic inhibitors. Trends Cancer Res. 6, 942–950
+(2020). https://doi.org/10.1016/j.trecan.2020.06.005
+129.
+H. Li, Y. Chen, N. Xu, M. Yu, X. Tu, Z. Chen, M. Lin, B. Xie, J.
+Fu, L. Han, AMD3100 inhibits brain-specific metastasis in lung
+cancer via suppressing the SDF-1/CXCR4 axis and protecting
+blood-brain barrier. Am. J. Transl. Res. 9, 5259–5274
+(2017). https://www.ncbi.nlm.nih.gov/pubmed/29312481.
+Accessed 23 Apr 2021
+130.
+W.-B. Zhu, Z.-F. Zhao, X. Zhou, AMD3100 inhibits epithelial-
+mesenchymal transition, cell invasion, and metastasis in the liver
+and the lung through blocking the SDF-1α/CXCR4 signaling
+pathway in prostate cancer. J. Cell. Physiol. 234, 11746–11759
+(2019). https://doi.org/10.1002/jcp.27831
+131.
+B. Devapatla, A. Sharma, S. Woo, CXCR2 inhibition combined
+with Sorafenib improved antitumor and antiangiogenic response
+in preclinical models of ovarian cancer. PLoS One 10, e0139237
+(2015). https://doi.org/10.1371/journal.pone.0139237
+132.
+X. Yang, J. Di, Y. Zhang, S. Zhang, J. Lu, J. Liu, W. Shi, The
+Rho-kinase inhibitor inhibits proliferation and metastasis of small
+cell lung cancer. Biomed. Pharmacother. 66, 221–227 (2012).
+https://doi.org/10.1016/j.biopha.2011.11.011
+133.
+H. Ying, S.L. Biroc, W.-W. Li, B. Alicke, J.-A. Xuan, R. Pagila,
+Y. Ohashi, T. Okada, Y. Kamata, H. Dinter, The Rho kinase
+inhibitor fasudil inhibits tumor progression in human and rat tu-
+mor models. Mol. Cancer Ther. 5, 2158–2164 (2006). https://doi.
+org/10.1158/1535-7163.MCT-05-0440
+134.
+T.F. Borin, A.S. Arbab, G.B. Gelaleti, L.C. Ferreira, M.G.
+Moschetta, B.V. Jardim-Perassi, A.S.M. Iskander, N.R.S.
+Varma, A. Shankar, V.B. Coimbra, V.A. Fabri, J.G. de Oliveira,
+D.A.P. de CZuccari, Melatonin decreases breast cancer metastasis
+by modulating Rho-associated kinase protein-1 expression. J.
+Pineal Res. 60, 3–15 (2016). https://doi.org/10.1111/jpi.12270
+135.
+S. Liu, R.H. Goldstein, E.M. Scepansky, M. Rosenblatt, Inhibition
+of rho-associated kinase signaling prevents breast cancer metasta-
+sis to human bone. Cancer Res. 69, 8742–8751 (2009). https://doi.
+org/10.1158/0008-5472.CAN-09-1541
+136.
+E. Koedoot, M. Fokkelman, V.-M. Rogkoti, M. Smid, I. van de
+Sandt, H. de Bont, C. Pont, J.E. Klip, S. Wink, M.A.
+Timmermans, E.A.C. Wiemer, P. Stoilov, J.A. Foekens, S.E. Le
+Dévédec, J.W.M. Martens, B. van de Water, Uncovering the sig-
+naling landscape controlling breast cancer cell migration identifies
+novel metastasis driver genes. Nat. Commun. 10, 2983 (2019).
+https://doi.org/10.1038/s41467-019-11020-3
+137.
+R. Kanteti, S.K. Batra, F.E. Lennon, R. Salgia, FAK and paxillin,
+two potential targets in pancreatic cancer. Oncotarget 7, 31586–
+31601 (2016). https://doi.org/10.18632/oncotarget.8040
+138.
+B.Y. Lee, P. Timpson, L.G. Horvath, R.J. Daly, FAK signaling in
+human cancer as a target for therapeutics. Pharmacol. Therapeut.
+146, 132–149 (2015). https://doi.org/10.1016/j.pharmthera.2014.
+10.001
+139.
+A. Winer, M. Janosky, B. Harrison, J. Zhong, D. Moussai, P.
+Siyah, N. Schatz-Siemers, J. Zeng, S. Adams, P. Mignatti,
+Inhibition of breast cancer metastasis by presurgical treatment
+with an oral matrix metalloproteinase inhibitor: A preclinical
+proof-of-principle study. Mol. Cancer Ther. 15, 2370–2377
+(2016). https://doi.org/10.1158/1535-7163.MCT-16-0194
+Deciphering molecular mechanisms of metastasis: novel insights into targets and therapeutics
+140.
+Y. Lyu, Q. Xiao, L. Yin, L. Yang, W. He, Potent delivery of an
+MMP inhibitor to the tumor microenvironment with
+thermosensitive liposomes for the suppression of metastasis and
+angiogenesis, Signal Transduct. Target Ther. 4, 26 (2019). https://
+doi.org/10.1038/s41392-019-0054-9
+141.
+R.D. Bonfil, A. Sabbota, S. Nabha, M.M. Bernardo, Z. Dong, H.
+Meng, H. Yamamoto, S.R. Chinni, I.T. Lim, M. Chang, L.C.
+Filetti, S. Mobashery, M.L. Cher, R. Fridman, Inhibition of human
+prostate cancer growth, osteolysis and angiogenesis in a bone
+metastasis model by a novel mechanism-based selective gelatinase
+inhibitor. Int. J. Cancer. 118, 2721–2726 (2006). https://doi.org/
+10.1002/ijc.21645
+142.
+W.R. Grither, G.D. Longmore, Inhibition of tumor–
+microenvironment interaction and tumor invasion by small-
+molecule allosteric inhibitor of DDR2 extracellular domain.
+Proc. Natl. Acad. Sci. U. S. A. 115, E7786–E7794 (2018).
+https://doi.org/10.1073/pnas.1805020115
+143.
+X. Hou, H. Du, X. Quan, L. Shi, Q. Zhang, Y. Wu, Y. Liu, J. Xiao,
+Y. Li, L. Lu, X. Ai, M. Zhan, S. Yuan, L. Sun, Silibinin inhibits
+NSCLC metastasis by targeting the EGFR/LOX pathway. Front.
+Pharmacol. 9, 21 (2018). https://doi.org/10.3389/fphar.2018.
+00021
+144.
+J. Chang, M.C. Lucas, L.E. Leonte, M. Garcia-Montolio, L.B.
+Singh, A.D. Findlay, M. Deodhar, J.S. Foot, W. Jarolimek, P.
+Timpson, J.T. Erler, T.R. Cox, Pre-clinical evaluation of small
+molecule LOXL2 inhibitors in breast cancer. Oncotarget 8,
+26066–26078 (2017). https://doi.org/10.18632/oncotarget.15257
+145.
+A. Bondareva, C.M. Downey, F. Ayres, W. Liu, S.K. Boyd, B.
+Hallgrimsson, F.R. Jirik, The lysyl oxidase inhibitor, β-
+aminopropionitrile, diminishes the metastatic colonization poten-
+tial of circulating breast cancer cells. PLoS One 4, e5620 (2009).
+https://doi.org/10.1371/journal.pone.0005620
+146.
+T.L.M. Ten Hagen, A.L.B. Seynhaeve, G.A. de Wiel-
+Ambagtsheer, E.A. de Bruijn, S.T. van Tiel, C. Ruegg, M.
+Meyring, M. Grell, S.L. Goodman, A.M.M. Eggermont, The
+αVβ3/αVβ5 integrin inhibitor cilengitide augments tumor re-
+sponse to melphalan isolated limb perfusion in a sarcoma model.
+Int. J. Cancer. 132, 2694–2704 (2013). https://doi.org/10.1002/
+ijc.27940
+147.
+K.B. Kim, V. Prieto, R.W. Joseph, A.H. Diwan, G.E. Gallick,
+N.E. Papadopoulos, A.Y. Bedikian, L.H. Camacho, P. Hwu,
+C.S. Ng, W. Wei, M.M. Johnson, S.M. Wittemer, A. Vardeleon,
+A. Reckeweg, A.D. Colevas, A randomized phase II study of
+cilengitide (EMD 121974) in patients with metastatic melanoma.
+Melanoma Res. 22, 294–301 (2012). https://doi.org/10.1097/
+CMR.0b013e32835312e4
+148.
+J. Vansteenkiste, F. Barlesi, C.F. Waller, J. Bennouna, C. Gridelli,
+E. Goekkurt, D. Verhoeven, A. Szczesna, M. Feurer, J.
+Milanowski, P. Germonpre, H. Lena, D. Atanackovic, M.
+Krzakowski, C. Hicking, J. Straub, M. Picard, W. Schuette, K.
+O’Byrne, Cilengitide combined with cetuximab and platinum-
+based chemotherapy as first-line treatment in advanced non-
+small-cell lung cancer (NSCLC) patients: results of an open-label,
+randomized, controlled phase II study (CERTO). Ann. Oncol. 26,
+1734–1740 (2015). https://doi.org/10.1093/annonc/mdv219
+149.
+C. Scaringi, G. Minniti, P. Caporello, R.M. Enrici, Integrin inhib-
+itor cilengitide for the treatment of glioblastoma: a brief overview
+of current clinical results. Anticancer Res. 32, 4213–4223
+(2012). https://ar.iiarjournals.org/content/32/10/4213.long
+150.
+A. Gilam, J. Conde, D. Weissglas-Volkov, N. Oliva, E. Friedman,
+N. Artzi, N. Shomron, Local microRNA delivery targets Palladin
+and prevents metastatic breast cancer. Nat. Commun. 7, 12868
+(2016). https://doi.org/10.1038/ncomms12868
+151.
+L.-X. Yan, Y.-H. Liu, J.-W. Xiang, Q.-N. Wu, L.-B. Xu, X.-L.
+Luo, X.-L. Zhu, C. Liu, F.-P. Xu, D.-L. Luo, P. Mei, J. Xu, K.-P.
+Zhang, J. Chen, PIK3R1 targeting by miR-21 suppresses tumor
+cell migration and invasion by reducing PI3K/AKT signaling and
+reversing EMT, and predicts clinical outcome of breast cancer. Int.
+J. Oncol. 48, 471–484 (2016). https://doi.org/10.3892/ijo.2015.
+3287
+152.
+G. Oshima, N. Guo, C. He, M.E. Stack, C. Poon, A. Uppal, S.C.
+Wightman, A. Parekh, K.B. Skowron, M.C. Posner, W. Lin, N.N.
+Khodarev, R.R. Weichselbaum, In vivo delivery and therapeutic
+effects of a microRNA on colorectal liver metastases. Mol. Ther.
+25, 1588–1595 (2017). https://doi.org/10.1016/j.ymthe.2017.04.
+005
+153.
+D. Dettori, F. Orso, E. Penna, D. Baruffaldi, S. Brundu, F. Maione,
+E. Turco, E. Giraudo, D. Taverna, Therapeutic silencing of miR-
+214 inhibits tumor progression in multiple mouse models. Mol.
+Ther. 26, 2008–2018 (2018). https://doi.org/10.1016/j.ymthe.
+2018.05.020
+154.
+Y. Hara, R. Torii, S. Ueda, E. Kurimoto, E. Ueda, H. Okura, Y.
+Tatano, H. Yagi, Y. Ohno, T. Tanaka, K. Masuko, T. Masuko,
+Inhibition of tumor formation and metastasis by a monoclonal
+antibody against lymphatic vessel endothelial hyaluronan receptor
+1. Cancer Sci. 109, 3171–3182 (2018). https://doi.org/10.1111/
+cas.13755
+155.
+W. Leconet, M. Chentouf, S. du Manoir, C. Chevalier, A. Sirvent,
+I. Aït-Arsa, M. Busson, M. Jarlier, N. Radosevic-Robin, C.
+Theillet, D. Chalbos, J.-M. Pasquet, A. Pèlegrin, C. Larbouret,
+B. Robert, Therapeutic activity of anti-AXL antibody against
+triple-negative breast cancer patient-derived xenografts and metas-
+tasis, Clin. Cancer Res. 23, 2806–2816 (2017). https://doi.org/10.
+1158/1078-0432.CCR-16-1316
+156.
+K. Jin, N.B. Pandey, A.S. Popel, Simultaneous blockade of IL-6
+and CCL5 signaling for synergistic inhibition of triple-negative
+breast cancer growth and metastasis. Breast Cancer Res. 20, 54
+(2018). https://doi.org/10.1186/s13058-018-0981-3
+157.
+A.-M. Georgoudaki, K.E. Prokopec, V.F. Boura, E. Hellqvist, S.
+Sohn, J. Östling, R. Dahan, R.A. Harris, M. Rantalainen, D.
+Klevebring, M. Sund, S.E. Brage, J. Fuxe, C. Rolny, F. Li, J.V.
+Ravetch, M.C.I. Karlsson, Reprogramming tumor-associated
+macrophages by antibody targeting inhibits cancer progression
+and metastasis. Cell Rep. 15, 2000–2011 (2016). https://doi.org/
+10.1016/j.celrep.2016.04.084
+158.
+S. Mochizuki, M. Shimoda, H. Abe, Y. Miyamae, J. Kuramoto, N.
+Aramaki-Hattori, K. Ishii, H. Ueno, A. Miyakoshi, K. Kojoh, Y.
+Okada, Selective inhibition of ADAM28 suppresses lung carcino-
+ma cell growth and metastasis. Mol. Cancer Ther. 17, 2427–2438
+(2018). https://doi.org/10.1158/1535-7163.MCT-17-1198
+159.
+Y. Kato, A. Kunita, S. Abe, S. Ogasawara, Y. Fujii, H. Oki, M.
+Fukayama, Y. Nishioka, M.K. Kaneko, The chimeric antibody
+chLpMab-7 targeting human podoplanin suppresses pulmonary
+metastasis via ADCC and CDC rather than via its neutralizing
+activity. Oncotarget 6, 36003–36018 (2015). https://doi.org/10.
+18632/oncotarget.5339
+160.
+J. Klingelhöfer, B. Grum-Schwensen, M.K. Beck, R.S.P.
+Knudsen, M. Grigorian, E. Lukanidin, N. Ambartsumian, Anti-
+S100A4 antibody suppresses metastasis formation by blocking
+stroma cell invasion. Neoplasia 14, 1260–1268 (2012). https://
+doi.org/10.1593/neo.121554
+161.
+A. Chiechi, D.L. Waning, K.R. Stayrook, J.T. Buijs, T.A. Guise,
+K.S. Mohammad, Role of TGF- in breast cancer bone metastases.
+Adv. Biosci. Biotechnol. 4, 15–30 (2013). https://doi.org/10.4236/
+abb.2013.410A4003
+162.
+S. Milette, J.K. Sicklick, A.M. Lowy, P. Brodt, Molecular path-
+ways: targeting the microenvironment of liver metastases. Clin.
+Cancer Res. 23, 6390–6399 (2017). https://doi.org/10.1158/
+1078-0432.CCR-15-1636
+163.
+M. Singh, C. Venugopal, T. Tokar, N. McFarlane, M.K.
+Subapanditha, M. Qazi, D. Bakhshinyan, P. Vora, N.K. Murty,
+I. Jurisica, S.K. Singh, Therapeutic targeting of the premetastatic
+Kalita and Selvaraj
+stage in human lung-to-brain metastasis. Cancer Res. 78, 5124–
+5134 (2018). https://doi.org/10.1158/0008-5472.CAN-18-1022
+164.
+A. Bettaieb, C. Paul, S. Plenchette, J. Shan, L. Chouchane, F.
+Ghiringhelli, Precision medicine in breast cancer: reality or uto-
+pia? J. Transl. Med. 15, 139 (2017). https://doi.org/10.1186/
+s12967-017-1239-z
+165.
+Y.-Z. Jiang, Y. Liu, Y. Xiao, X. Hu, L. Jiang, W.-J. Zuo, D. Ma, J.
+Ding, X. Zhu, J. Zou, C. Verschraegen, D.G. Stover, V.
+Kaklamani, Z.-H. Wang, Z.-M. Shao, Molecular subtyping and
+genomic profiling expand precision medicine in refractory meta-
+static triple-negative breast cancer: the FUTURE trial. Cell Res.
+31, 178–186 (2020). https://doi.org/10.1038/s41422-020-0375-9
+166.
+J. Verigos, A. Magklara, Revealing the complexity of breast can-
+cer by next generation sequencing. Cancers 7, 2183–2200 (2015).
+https://doi.org/10.3390/cancers7040885
+167.
+Q. Tan, J. Cui, J. Huang, Z. Ding, H. Lin, X. Niu, Z. Li, G. Wang,
+Q. Luo, S. Lu, Genomic alteration during metastasis of lung ade-
+nocarcinoma. Cell. Physiol. Biochem. 38, 469–486 (2016). https://
+doi.org/10.1159/000438644
+168.
+V. Izzi, M.N. Davis, A. Naba, Pan-cancer analysis of the genomic
+alterations and mutations of the matrisome. Cancers 12, 2046
+(2020). https://doi.org/10.3390/cancers12082046
+169.
+F. Chen, Y. Zhang, S. Varambally, C.J. Creighton, Molecular
+correlates of metastasis by systematic pan- cancer analysis across
+The Cancer Genome Atlas, Mol. Cancer Res. 17, 476–487 (2019).
+https://doi.org/10.1158/1541-7786.MCR-18-0601
+170.
+P. Priestley, J. Baber, M.P. Lolkema, N. Steeghs, E. de Bruijn, C.
+Shale, K. Duyvesteyn, S. Haidari, A. van Hoeck, W. Onstenk, P.
+Roepman, M. Voda, H.J. Bloemendal, V.C.G. Tjan-Heijnen,
+C.M.L. van Herpen, M. Labots, P.O. Witteveen, E.F. Smit, S.
+Sleijfer, E.E. Voest, E. Cuppen, Pan-cancer whole-genome anal-
+yses of metastatic solid tumours. Nature 575, 210–216 (2019).
+https://doi.org/10.1038/s41586-019-1689-y
+171.
+S. Mishra, C.D. Kaddi, M.D. Wang, Pan-cancer analysis for
+studying cancer stage using protein and gene expression data.
+Conf. Proc. IEEE Eng. Med. Biol. Soc. 2016, 2440–2443
+(2016). https://doi.org/10.1109/EMBC.2016.7591223
+172.
+K. Pinker, J. Chin, A.N. Melsaether, E.A. Morris, L. Moy,
+Precision medicine and radiogenomics in breast cancer: New ap-
+proaches toward diagnosis and treatment. Radiology 287, 732–
+747 (2018). https://doi.org/10.1148/radiol.2018172171
+173.
+S.A. Eschrich, J. Pramana, H. Zhang, H. Zhao, D. Boulware, J.-H.
+Lee, G. Bloom, C. Rocha-Lima, S. Kelley, D.P. Calvin, T.J.
+Yeatman, A.C. Begg, J.F. Torres-Roca, A gene expression model
+of intrinsic tumor radiosensitivity: prediction of response and
+prognosis after chemoradiation. Int. J. Radiat. Oncol. Biol. Phys.
+75, 489–496 (2009). https://doi.org/10.1016/j.ijrobp.2009.06.014
+174.
+J. Meehan, M. Gray, C. Martínez-Pérez, C. Kay, L.Y. Pang, J.A.
+Fraser, A.V. Poole, I.H. Kunkler, S.P. Langdon, D. Argyle, A.K.
+Turnbull, Precision medicine and the role of biomarkers of radio-
+therapy response in breastcCancer. Front. Oncol. 10, 628 (2020).
+https://doi.org/10.3389/fonc.2020.00628
+Publisher’s note Springer Nature remains neutral with regard to jurisdic-
+tional claims in published maps and institutional affiliations.
+Deciphering molecular mechanisms of metastasis: novel insights into targets and therapeutics

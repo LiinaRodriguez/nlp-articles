@@ -1,0 +1,983 @@
+Multimedia Tools and Applications
+https://doi.org/10.1007/s11042-021-10539-2
+1176: ARTIFICIAL INTELLIGENCE AND DEEP LEARNING FOR BIOMEDICAL
+APPLICATIONS
+Detection of mitotic cells in breast cancer
+histopathological images using deep versus
+handcrafted features
+I. Onur Sigirci1 · Abdulkadir Albayrak2 · Gokhan Bilgin3
+Received: 29 February 2020 / Revised: 17 November 2020 / Accepted: 13 January 2021 /
+© The Author(s), under exclusive licence to Springer Science+Business Media, LLC part of Springer Nature 2021
+Abstract
+One of the most important processes in the diagnosis of breast cancer, which is the leading
+mortality rate in women, is the detection of the mitosis stage at the cellular level. In litera-
+ture, many studies have been proposed on the computer-aided diagnosis (CAD) system for
+detecting mitotic cells in breast cancer histopathological images. In this study, comparative
+evaluation of conventional and deep learning based feature extraction methods for automatic
+detection of mitosis in histopathological images are focused. While various handcrafted
+features are extracted with textural/spatial, statistical and shape-based methods in conven-
+tional approach, the convolutional neural network structure proposed on the deep learning
+approach aims to create an architecture that extracts the features of small cellular structures
+such as mitotic cells. Mitosis detection/counting is an important process that helps us assess
+how aggressive or malignant the cancer’s spread is. In the proposed study, approximately
+180,000 non-mitotic and 748 mitotic cells are extracted for the evaluations. It is obvious
+that the classification stage cannot be performed properly due to the imbalanced numbers of
+mitotic and non-mitotic cells extracted from histopathological images. Hence, the random
+under-sampling boosting (RUSBoost) method is exploited to overcome this problem. The
+proposed framework is tested on mitosis detection in breast cancer histopathological images
+dataset provided from the International Conference on Pattern Recognition (ICPR) 2014
+contest. In the results obtained with the deep learning approach, 79.42% recall, 96.78%
+precision and 86.97% F-measure values are achieved more successfully than handcrafted
+methods. A client/server-based framework has also been developed as a secondary deci-
+sion support system for use by pathologists in hospitals. Thus, it is aimed that pathologists
+will be able to detect mitotic cells in various histopathological images more easily through
+necessary interfaces.
+Keywords Digital histopathology · Mitosis detection · Deep learning ·
+Convolutional neural networks · Image spatial statistics · Imbalanced data
+ Gokhan Bilgin
+gbilgin@yildiz.edu.tr
+Extended author information available on the last page of the article.
+Multimedia Tools and Applications
+1 Introduction
+Breast cancer is the most common cancer type among women according to statistics released
+by World Health Organization (WHO). It is also the second leading cancer type causing
+mortality in women [45]. Cancer awareness, fertility and breastfeeding are some of the
+responsible factors for breast cancer [9]. For example, the incidence of cancer in developed
+countries is higher than in developing countries; because fertility and breastfeeding are less
+common in developed countries than developing countries. In contrast, women in devel-
+oped countries are more aware of cancer risk than women in developing countries. It is clear
+that awareness is also an advantage for early detection of breast cancer [13, 38]. In conclu-
+sion, early detection of breast cancer plays an important role in the treatment and recovery
+stages.
+Clinical and pathological diagnostic approaches are the most common methods used
+by experts to diagnose breast cancer. Generally, the presence of tumor structures is deter-
+mined by examining the tissue samples taken from the patients by pathological methods.
+In this study, presence of mitosis, which is a sub-category of tumor detection, is investi-
+gated in histopathological imaging. In these images, tissue samples used in pathological
+operations are examined according on predefined criteria determined by the cancer grad-
+ing system [1, 15]. These fundamental criteria are defined according to the following
+characteristics:
+–
+Nuclear Pleomorphism
+–
+Tubular Formation
+–
+Mitosis detection
+This study focuses on the detection of mitosis using deep versus handcrafted features in
+high resolution breast cancer histopathological images. The detection framework identified
+in the study aims to assist pathologists in examining mitotic figures in images. Because the
+process of identifying mitotic figures is a very difficult and time-consuming task for pathol-
+ogists. Although images are taken from high-resolution scanners, it is challenging to make
+an exact decision as to whether the suspect cell is mitotic or not. Moreover, miscalculation
+of the number of mitotic cells in certain regions may lead to misdiagnosis. Therefore, a sec-
+ond reader/diagnostic aid system, which is good at visualization and achieves high accuracy,
+is essential to assist experts in pathology.
+In recent years, many studies have been done to develop reliable, robust and automated
+computer-aided diagnosis (CAD) systems for mitosis detection. The general initial phase
+in previous studies is the separation of nuclei/foreground objects from background objects
+(stroma, blood cells, cytoplasm and adipose tissues, etc.). To ensure a better separation
+of cellular and non-cellular structures, the histopathological image should not contain too
+much noise that could distort the foreground and background objects.
+Filtering and thresholding are common methods for noise reduction and there are many
+studies in the literature on noise reduction in high resolution histopathological images [24,
+31, 44]. In threshold-based approaches, the boundary of cellular structures is better pre-
+served than filtering-based methods. In this way, the discriminative features can be extracted
+without damaging the subsequent stages, detection, segmentation or classification. As a
+result, it can be said that preprocessing steps are very important for feature extraction
+and image segmentation steps from the perspective of pattern recognition and machine
+learning.
+Multimedia Tools and Applications
+After noise reduction stage, the segmentation process is performed before the feature
+extraction phase which has a crucial importance for an accurate classification. In the lit-
+erature, there are many studies that use segmentation for detection of cellular structures
+[17, 21]. For instance, in [19], a cell nuclei detection and segmentation algorithm is pro-
+posed for neuroblastoma by using the morphological top-hat by reconstruction method.
+In [20], histopathological tissue segmentation is proposed using fuzzy spatial clustering,
+vector-based multiphase level set active contours and nuclei detection using an iterative
+kernel voting scheme. As a post-processing phase, unnecessary or improperly classified
+non-cellular structures may be segmented as cellular fragments in final segmentation
+map. To eliminate these parts, mathematical morphological operations can be applied to
+obtain a better segmented image. In [12], morphological mathematical opening and clos-
+ing operations are performed to fill up holes after segmentation. In [7], mathematical
+dilation and erosion operations are performed to improve the quality of the segmentation
+results.
+Following to segmentation stage, feature extraction phase and classification of cellular
+structures are performed after identifying the cellular structures obtained in segmentation
+phase. Feature extraction algorithms used in the image processing differ depending on the
+properties of the image such as texture and shape. There are several published studies on
+feature extraction algorithms that focus on texture or shape information in histopathologi-
+cal images [14, 37, 50, 51]. Because such algorithms focus on one aspect of the image, they
+may fail with different types of images. As an example of a problem-specific solution, an
+algorithm that extracts shape-based features may not be able to extract different features in
+the image that contain texture information. Recently, deep learning algorithms that can be
+adapted to all kinds of image features and characteristics have been developed. Discrimi-
+natory features can be extracted from raw image data using deep learning-based algorithms
+as well as conventional extraction methods. However, deep learning-based algorithms give
+much more successful results in segmentation and classification problems where conven-
+tional methods are insufficient [2, 4, 5, 23, 36, 40, 52]. In biomedical image analysis, deep
+learning-based algorithms are also successfully used in the evaluation of histopathological,
+computed tomography (CT), magnetic resonance (MR) and ultrasound (US) imaging [6,
+30, 32, 47, 48]. Convolutional neural networks, a fundamental architecture in deep learn-
+ing, have also been proposed for the detection of mitosis in breast cancer histopathological
+images [8]. In [46], a hierarchical learning workflow is recommended for automated mitosis
+detection in breast cancer. In that study, an initial training set is used to learn the segmen-
+tation of candidate cells and these candidate cells are classified as mitotic or non-mitotic
+using object shape and tissue properties.
+As stated in [27, 28], many mitosis detection systems may fail to classify mitotic and
+non-mitotic cells due to the imbalanced data. In [26], a training set consisting of a balanced
+mix of mitotic and non-mitotic cells is selected to prevent degradation of classification
+accuracy. In [25], data consistency is achieved by using the synthetic minority over sam-
+pling technique (SMOTE) by increasing the number of mitotic samples in the training
+dataset.
+In this study, we aim to compare the performance of the handcrafted feature extrac-
+tion algorithms and deep learning based feature extraction method. Hence, textural, shape
+and statistical based conventional handcrafted methods are employed besides deep learning
+based method. In the deep learning-based approach proposed specifically for this study, an
+appropriate architecture was created by focusing on the detection of small cellular structures
+such as mitotic cells. With the framework created in the study, feature extraction methods
+with different qualities based on both conventional and deep learning are presented as input
+Multimedia Tools and Applications
+to the specified steps. In the first step, a 9 × 9 median filter is applied to the images to
+reduce the random noise and to preserve the boundary of cells for an efficient segmenta-
+tion. Median filter size was selected empirically after different trials made specifically for
+histopathological images. Then, the k-means clustering algorithm is basically applied to
+segment cellular and non-cellular structures in an image. After segmentation step, morpho-
+logical operations are performed to eliminate the irrelevant parts of cellular structures that
+actually belong to background structures in the images. Both mitotic and non-mitotic cellu-
+lar structures are surrounded by a window to create image patches (as a region of interest)
+from where features are extracted. Afterwards, conventional handcrafted and deep learning-
+based feature extraction methods to be used on these patches are employed for comparisons.
+To improve the data consistence of the dataset, a robust class imbalance handling algo-
+rithm namely random under-sampling boosting (RUSBoost) which is an improved version
+of SMOTE technique is utilized.
+The paper is organized as follows. Section 2 describes conventional handcrafted and deep
+learning based approaches for feature extraction. The proposed computer aided diagnosis
+framework is explained in detail In Section 3 and the findings of experimental studies are
+described in Section 4. Application software created to facilitate the workload of patholo-
+gists working on histopathology is introduced in Section 5. In the final sections of the paper,
+conclusions and discussions parts are presented in Section 6 and in Section 7 respectively.
+2 Methods
+2.1 Conventional handcrafted feature extraction algorithms
+The detection of a particular object can be very challenging in many image processing and
+pattern recognition applications, depending on the discriminative features extracted from
+the object. Applying shape-based and texture-based algorithms are common way to extract
+certain distinctive features. Shape-based algorithms can help detect objects if discriminative
+features relate to shape information. On the other hand, texture-based algorithms are related
+to spatial relationships of pixels in a particular image. However, textural features are more
+reliable than the shape features in histopathological images in mitosis detection. Some sam-
+ples about mitotic and non-mitotic cells are given in Fig. 1 for visual evaluation of shape
+and texture differences.
+Remarkable and important techniques found in the biomedical literature (ie, completed
+local binary patterns, histogram of directed gradients, gray level coexistence matrices, local
+phase quantization and segmentation-based fractal tissue analysis) and some specific local
+statistical features are presented in comparison with the proposed method. This section aims
+to introduce the methods used for comparison.
+2.1.1 Completed local binary patterns (CLBP)
+Local binary pattern (LBP) is a texture descriptor algorithm that examines the adjacency of
+neighbor pixels and finds the patterns by using produced histogram [33]. The calculation of
+the histogram for a pixel is defined as:
+LBPP,D =
+P−1
+p=0 t
+
+gp −gc
+
+2p
+t(x) =
+ 1 x ≥0
+0 x < 0
+(1)
+Multimedia Tools and Applications
+Fig. 1 Samples of a mitotic and b non-mitotic cells
+where gc represents the gray-scale value of the center pixel and gp represents the gray-scale
+values of adjacent pixels. The value of P is the total neighbor pixels and D is the distance
+between the center pixel and the adjacent pixels. In this study, the R value is accepted as
+one. So, there are 8 neighbors of the related center pixel. The threshold function of t controls
+whether the value of the neighbor pixel is less than the value of the center pixel or not. Then,
+a histogram is obtained according to the LBP results. The formula of the histogram for an
+input image with M × N dimension is created as follows (The value of K shows the largest
+value that can be obtained in LBP, where k ∈[0, K]):
+H(k) =
+M
+i=1
+N
+j=1f
+
+LBPP,D (i, j) , k
+
+f (x, y) =
+ 1 if x = y
+0 Otherwise
+(2)
+Multimedia Tools and Applications
+Fig. 2 Pixels which have value greater than or equal to the threshold is represented with filled circle and
+pink background, the other pixels which have smaller value are represented with empty circle and green
+background. Each of figure represented above show the possible situation when 0-transition or 2-transition a
+Dot b Dot/Line c Line d Edge e Corner
+The number of (0 −to −1) and (1 −to −0) transition (U) is described as:
+U(LBPP,D) = |t (gP−1 −gc) −t (g0 −gc)| +
+p=1
+
+P−1
+t(gp −gc) −t(gp−1 −gc)
+
+(3)
+The LBP algorithm is performed in a circular structure in the computation of U. Two
+transitions (1−to−0 or 0−to−1) or no transition code are used for the binary representation
+of uniformly distributed LBP pattern (U ≤2). This is shown by LBP u2
+P,D notation. Sample
+transitions are represented in Fig. 2 according to the notation. In this study, due to the
+definition of P value as eight, the number of values that provides U ≤2 becomes 58. The
+number of transitions more than 2 are assumed to be noise and they are added to the index
+of 59 in the histogram.
+The distance of each neighbor pixel to the center has also a crucial role in completed
+local binary pattern (CLBP) as well as obtaining the histogram by LBP. The similarity of
+the center pixel to the neighbor pixels is also determined by the computed distance. Figure 3
+represents an example of computed value from a pixel by using CLBP.
+Similar to LBP, a 1 × 59 vector of values is created in CLBP when the value of P is 8
+and the value of R is 1. A 1 × 59 vector also created to represents the distance of neighbor
+pixels to the center pixels. Totally, there is a size of 1 × 118 feature vector for each image
+patch to be used in classification step.
+Fig. 3 a An example of 3 × 3 pixel area, b LBP code, c absolute values of distances to the central pixel
+Multimedia Tools and Applications
+2.1.2 Histogram of oriented gradients (HOG)
+Shape information is one of the main significant feature between mitotic and non-mitotic
+cells. In general, mitotic cells have a convex or concave shape while non-mitotic cells have
+an elliptic shape. HOG is shape-based feature extraction algorithm proposed by Dalal and
+Triggs for pedestrian detection [11]. The first research about HOG was on human detection
+in images but it is used for the purpose of object detection in many image processing and
+computer vision studies [16, 42]. HOG basically takes into account the gradients of edges to
+obtain discriminative features. An edge detection algorithm (such as Sobel, Canny) is imple-
+mented in vertical and horizontal directions of an image before calculating the gradients for
+all pixels. The vertical and horizontal edge detection formula can be shown as:
+Ix = I × Sx,
+Iy = I × Sy
+(4)
+where Sx and Sy represent the gradient masks that are applied vertically and horizontally to
+image. By using Ix and Iy, the gradients and their magnitude values are calculated as:
+|G| =
+
+I 2x + I 2y
+(5)
+where G is the gradients calculated for each pixel and θ is the magnitude of that gradient.
+Θ = arctan(G)
+(6)
+2.1.3 Gray level co-occurrence matrices (GLCM)
+GLCM is a texture descriptor algorithm that is proposed by Robert Haralick [22]. This
+algorithm focuses on spatial relationship of neighbor pixels with each other. It basically
+calculates the adjacency of a pixel i to another pixel j in a given image. An example input
+image patch is shown in Fig. 4a for the computation of gray level co-occurrence matrix.
+Figure 4b represents the adjacency matrix of the given input image represented in Fig. 4a.
+The value written to the first row and first column of Fig. 4b represents in the number of 0
+followed by 0 in the given input image. Since there is only one 0 followed by 0, the value
+Fig. 4 a An example of a given matrix and b the computation of GLCM for the corresponding matrix
+depending on 0◦
+Multimedia Tools and Applications
+should be 1. After then, this process continues for every row and column numbers which
+constitute all the values in the GLCM.
+2.1.4 Local phase quantization (LPQ)
+LPQ firstly proposed for texture classification as a local texture descriptor in [34]. LPQ
+descriptor is based on quantized phase of discrete Fourier transform (DFT) computed locally
+in a window for every image patches. The algorithm uses the local phase information to
+characterize the underlying image texture. Mainly, the blurring effect produced by motion
+or imaging equipment can be handled by this algorithm.
+2.1.5 Segmentation-based fractal texture analysis (SFTA)
+SFTA is a texture based feature extraction algorithm proposed by Costa et al. for content
+based image retrieval task in [10]. SFTA consists of two parts: (i) decomposition of the
+gray-scale image to a set of binary images and (ii) calculation of fractal dimensions, mean
+gray-level, and size for each resulting binary image. In decomposition phase, a new algo-
+rithm called as two-threshold binary decomposition (TTBD) is proposed in [10]. TTBD
+takes the gray-scale image as input and returns multiple binary images. At the first part of
+TTBD, a set of thresholding values is calculated by using the Otsu thresholding method
+[35], which uses the distribution information of the gray level image. The number of images
+is determined by the number of thresholds. To segment the object accurately or to extract
+the region information successfully, the gray-level value of the specified area must be in
+the middle part of the histogram. So that, a two level thresholding algorithm can be applied
+to the image. Another point that should be realized is that an object can not be segmented
+successfully with a single threshold value. After applying the TTBD to the input image,
+the feature vector is constructed by calculating the fractal dimension of the size, mean gray
+level and boundaries of the input image.
+2.1.6 Statistical based feature extraction algorithm
+In this method, the statistical based discriminative features are tried to be extracted for
+mitosis detection purpose. In slides, coordinate information (top left, top right, bottom left,
+and bottom right) of the segmented cellular structures are stored for evaluation. Then, those
+mitotic and non-mitotic cellular structures are surrounded by a window to get image patches
+(as a region of interest) where features are extracted.
+Blob analysis is a fundamental technique used in computer vision and image processing
+in a particular region. This particular region has certain properties that are considered con-
+stant or approximately constant. Therefore, it can be assumed that all pixels in a blob are
+similar. Basically, blob analysis is used to identify the connected components and extract
+statistical information about the selected connected components. Blob analysis facilitates to
+provide complementary information about regions. In this part of the study, blob analysis is
+applied to the image patches of cellular structures. There are also some noisy components
+which have a few number of pixels assumed as cellular structure in segmentation step. These
+noisy parts are eliminated to save only real cellular image patches for feature extraction. In
+Fig. 5, sample image representations of blob analysis for mitotic and non-mitotic cellular
+structures. The blob analysis is performed on the binary format of the given image patches.
+The yellow bounding box shows the border information of the image patch found by blob
+analysis.
+Multimedia Tools and Applications
+Fig. 5 Two image sample representation of blob analysis for a mitotic cell b non-mitotic cell
+In blob analysis, width, height, minimum area, maximum area, axis lengths, orientation,
+perimeter and extent (i.e., dividing the areas of the blobs by the area of their bounding
+boxes) information can be extracted from image patches. Besides that, some other statistical
+information can also be extracted from image patches for obtaining discriminative features.
+Some statistics are employed by arranging image patches in a vector format as follows
+(where n describes the number of elements and xi describes each element in the vector):
+•
+Mean: It is the division of sum of all elements in the vector to the number of elements in
+the vector
+
+μ =
+n
+i=1xi
+
+/n
+
+. In this step, the mean of each bands (red, green, blue)
+of an image patch is calculated and hereby, three features are extracted eventually.
+•
+Standard Deviation: It is the measure of the dispersion/distribution of the vector from
+its mean
+	
+σ =
+
+(1/n)n
+i=1 (xi −μ)2
+
+.
+•
+Skewness: It is the measure of non-symmetricity of the data collected around the mean
+
+E (x −μ)3/σ 3
+, where E denotes the expected value. If the value of the skewness,
+–
+Skewness> 0 →it is called as right skewed distribution.
+–
+Skewness< 0 →it is called as left skewed distribution.
+–
+Skewness= 0 →it shows mean = median, the distribution is symmetrical
+around the mean.
+•
+Kurtosis: It is the measure of the height and sharpness of the peak in data distribution
+
+E (x −μ)4/σ 4
+, where E denotes the expected value.
+2.2 Deep learning based approach for feature extraction
+Convolutional neural network (CNN) is a neural network based deep learning algorithm
+proposed by Le Cun & Bengian (1995) [29]. Deep learning is a machine learning algorithm
+that is proposed as an alternative method to the conventional classification and also feature
+extraction methods. The main advantage of deep learning is that it is adaptable to the given
+input raw data to extract the most distinguishable features. Convolutional layers, activation
+functions, pooling layers, fully connected layer and softmax layer (also called classification
+layer) are the layers that can be included in CNN architecture.
+Multimedia Tools and Applications
+Convolutional layer: The image obtained from the input layer is convolved with gener-
+alized filters (like filter bank) size of k × k to extract the first order features such as edge or
+texture information of the image. The output of the convolution is called activation maps.
+The strong representation of the given image could be determined with activation maps. The
+output activation maps obtained from the first convolutional layer are the same with number
+of filters. The size of the activation maps differs depending on the padding size.
+Activation function: Rectified Linear Unit (ReLU) performs a threshold operation for
+each element in the activation maps to pass to the next layer. If the element is less than
+a threshold value, then the elements’ value is set to zero. The activated elements could be
+defined as the representative features of the image. The nonlinearity is introduced in this
+layer.
+Pooling layer: The summary of the previous two layers (convolutional and ReLU func-
+tion) are shown by this layer. The result maps obtained from convolutional layer and
+activated with ReLU function are then summarized by taking average or maximum of each
+neighborhood pixels in the specific size defined.
+Fully-connected layer: This layer is the last and most important layer that takes the data
+from the flattening process and the learning process through the neural network.
+Softmax layer: In the final layer of CNNs, the use of softmax layered units for multi-class
+classification is quite common.
+In the feature extraction step, it is important to know that the cell structure undergoes a
+series of steps during the cell division process. During cell division, the chromosomes are
+pulled and move towards the spindle poles, the nucleus is almost destroyed, and the cells
+resemble a convex or concave structure. This makes it possible for a cell to be textually, sta-
+tistically and morphologically different from a normal undivided cell. Therefore, statistical,
+Fig. 6 The CNN architecture implemented in the proposed study
+Multimedia Tools and Applications
+textual and shape-based analysis of mitosis detection is of great importance. In our study,
+all image patches of cellular structures obtained from histopathological slides are used in
+the feature extraction stage.
+The network designed in this study is shown in Fig. 6. The symbols I, C, R, M, FC,
+D and S are the image input layer, convolutional layer, activation function, max-pooling
+layer, fully-connected layer and softmax classification layer. In the input layer, the image
+is converted by subtracting the mean of the image from the pixel values in the training set
+to reduce the overfitting. Low level features are extracted in the first convolution layers of
+CNN architectures and has crucial importance in image patches with small sizes. So, it is
+preferred to use 5×5 filter size in the first convolution layers since it contains more textural
+information than 3×3 filter size. To create feature maps, two convolution layers with kernel
+size of 5 × 5 with one stride and without padding are applied to the images in the dataset.
+The number of convolution filters at the first two layers are 64 and 128 respectively.
+The third layer applied to each image has rectified linear units (ReLU), which perform a
+simple thresholding operation where an input value less than zero will be set to zero and an
+input value greater than zero will be activated for the next layers to be processed for further
+analysis. The activation function is followed by max-pooling, which divides the input image
+into rectangular regions with equal sizes, and outputs the maximum of each region. The
+max-pooling layer used after ReLU has a kernel size of 2×2. After max pooling layer, other
+two convolutional layers with a filter size of 3 × 3 are applied to each image with stride of
+1 and without padding. This time the number of filters convoluted on the activation maps
+are set to 192 and 256, respectively. The convolutional layers are followed by a activation
+function and a max-pooling layer used after ReLU with a kernel size of 2 × 2. At this stage,
+fully connected layer and softmax layer are not used for further analysis. The extracted
+feature vectors obtained before the fully connected layer are classified with the RUSBoost
+algorithm for fair comparison with the other feature extraction algorithms. The dimensions
+of the feature vectors are reduced to 256 by calculating the eigenvalues considered to be
+the best representative. The sum of the first n eigenvalues is divided by the sum of all
+eigenvalues and the number that provides 95% is selected as the feature vector size.
+3 The proposed CAD based mitosis detection approach
+The aim of this study is to develop an effective and robust framework for detecting mitotic
+cells in histopathological images. The steps of the proposed method are described in this
+section and the explanatory flowchart is presented in Fig. 7.
+The main purpose of our study is to detect mitosis from breast cancer histopathologi-
+cal images, which is one of the important criteria in breast cancer grading. In this study,
+histopathological images of breast cancer shared in the mitosis detection contest organized
+by the International Pattern Recognition Conference (ICPR) in 2014 are examined [41].
+This contest in question actually consists of two parts: nuclear atypia score and mitosis
+detection. Histopathological images stained with Hematoxylin and Eosin (H&E) dyes were
+scanned by Aperio Scanscope XT ve Hamamatsu Nanozoomer 2.0-HT scanners. In the
+experiments, Aperio Scanscope XT histopathological images are used to detect mitosis at
+×40 magnification. Some examples of images are shown in Fig. 8.
+Information about the number of images in the dataset and the mitotic cells included in
+these images are given in Table 1. The dataset contains 749 mitotic cells in a total of 1200
+high resolution histopathological images.
+Multimedia Tools and Applications
+Fig. 7 The general structure of the pipeline followed for the framework
+3.1 Preprocessing stage
+Preprocessing is one of the most important stages of image processing, which is applied
+to improve certain features in images or remove undesired distortions. Preprocessing in
+histopathological images is an important step used to obtain more distinctive features. In
+particular, the boundaries of cellular structures should be preserved and properly determined
+during the preprocessing stage. In the preprocessing step of the proposed work, studies
+related to noise reduction by median filtering, pre-segmentation and proper selection of
+cellular structures are made.
+Noise may occur when scanning high resolution histopathological images randomly. For
+better segmentation, noise should be removed as much as possible while preserving borders
+of cellular structures. Therefore, a median filter in size of 9 × 9 is applied to each band of
+Fig. 8 Example images selected from the dataset
+Multimedia Tools and Applications
+Table 1 Information table for the number of images in each folder and the total number of mitotic cells in
+each folder for the unspecified patient
+Folder
+#Images
+#Mitotic cells
+A03
+96
+135
+A04
+128
+264
+A05
+112
+151
+A07
+64
+39
+A10
+80
+25
+A11
+128
+20
+A12
+144
+2
+A14
+160
+33
+A15
+96
+25
+A17
+80
+34
+A18
+112
+21
+Total
+1200
+749
+The total number of images and mitotic cells used in the data set are highlighted in bold
+histopathological images. The Fig. 9 presents a zoomed-in sample cellular structure image
+patch and a filtered version of the same cell for visual assessment of the noise reduction.
+After filtering to remove noise, cellular parts of the image should be revealed so that the
+nuclei are easily separated from background structures such as blood, stroma and adipose
+tissues.
+3.2 Segmentation stage
+For segmentation step, well-known k-means algorithm is applied on the filtered image
+patches. For the best value, after several experimental trials from 3 to 9 cluster centers (k),
+Fig. 9 a A zoomed-in sample cell image patch taken from dataset and b median filtered version of the same
+cell
+Multimedia Tools and Applications
+Fig. 10 a Original sample image and segmentation maps obtained by k-means algorithm for b k = 7, c
+k = 8, d k = 9 cluster centers
+the k parameter is selected as 8 for segmentation. To select the best value for mitosis detec-
+tion, after several experimental trials from 3 to 9 cluster centers (k), the parameter k is
+selected as 8 for segmentation..
+In the example given in Fig. 10a, represents an original sample image to be clustered;
+b, c and d show the cellular structures in images obtained with 7, 8 and 9 cluster centers.
+When the k is chosen lower than eight clusters, the resulting cell nuclei borders are larger
+than the original borders. If the k parameter is chosen greater than eight clusters, obtained
+cell nuclei borders are narrower than the original borders.
+The cellular structures have relatively low intensity values in histopathological images
+compared to other parts. Therefore, some small irrelevant particles which are segmented
+as cellular structure due to their low intensity values similar to the nuclei parts should be
+eliminated in the postprocessing of the segmentation. In Fig. 11, a zoomed segmented part
+around the cellular structure and extracted cellular part of interest are shown as an example.
+3.3 Obtaining image patches of cellular structures
+At this stage, it is proposed to form up different types of distinctive features to detect mitotic
+cells. Initially, the coordinate information (top left, top right, bottom left and bottom right) of
+the cellular structures segmented from the histopathological images in the dataset is stored
+Multimedia Tools and Applications
+Fig. 11 a A zoomed segmented part around cellular structure and b extracted cellular part of interest
+for evaluation. These stored mitotic and non-mitotic cellular structures are then framed by
+a window to create image patches (as a region of interest) from which the features are
+extracted.
+3.4 The feature extraction stage
+The detailed flowchart of the feature extraction step applied in this study is presented in
+Fig. 12. The cellular image patch dataset is created after pre-processing and segmenta-
+tion stages which applied to the whole images obtained from the main dataset used in
+this study. All of cellular image patches are split into training and test data using a 5-
+fold cross validation. Each cellular image patch is given as input data to the shape, texture
+and statistical-based feature extraction algorithms and CNN based deep feature extraction
+model. In Fig. 12, the reason for adding “training” to the CNN algorithm in the feature
+extraction stage is that the CNN algorithm needs training data for deeper analysis. After the
+training of CNN model for each fold, the feature vectors are obtained both for the train and
+test image patches.
+The CNN-based approach used in this study requires training, while other feature extrac-
+tion algorithms do not require a training phase to obtain feature vectors. In this context, the
+Fig. 12 Detailed flow of feature extraction stage of the proposed framework
+Multimedia Tools and Applications
+proposed CNN approach can be considered as a fourth category in the feature extraction
+phase, except for shape, texture and statistical based methods. Feature vectors obtained to
+distinguish mitotic cells from non-mitotic cells are then subjected to a two-class classifi-
+cation in the classification stage. The results obtained from the different feature extraction
+methods are presented comparatively in Section 4.
+3.5 Classiﬁcation of imbalanced data via RUSBoost
+The imbalanced data can be defined as data in which one or more classes have more
+instances than the others, i.e. the sample distribution is unbalanced. In this case, test samples
+of small classes are misclassified more often than prevalent classes. There are several stud-
+ies in the literature to solve imbalanced data classification such as SMOTEboost (Synthetic
+Minority Over-sampling TEchnique) [3], DataBoost-IM approach [18], subset filtering
+based method [39] and RUSBoost (Random Under-Sampling Boosting) which is a boosting
+based algorithm proposed by C. Seiffert et al. to avoid the misclassification of imbalanced
+data [43].
+Rusboost algorithm has been developed on SMOTEBoost algorithm which is another
+algorithm used for imbalanced data.
+In addition to being simpler and faster than SMOTEboost, RusBoost provides better
+results in binary classifications, but cannot achieve similar performance in binary classifica-
+tions in multiclass classifications [49]. Therefore, in this study, RUSBoost method is chosen
+as a simple and fast model to deal with imbalanced number of mitotic and non-mitotic cells.
+Random under-sampling basically removes samples arbitrarily from larger classes until it
+provides the desired balance between the classes. Naturally, removing the samples from the
+large class causes loss of information about that class. However, this handicap can then be
+addressed by boosting algorithm to produce new samples from existing ones.
+Let each of x1, x2, . . . , xm are samples of S dataset with m number of samples and
+y1, y2, . . . , ym correspond to class labels of the related samples. In our study, y can take
+two values as mitotic and and non-mitotic. The processing steps of RUSBoost algorithm are
+given in Algorithm 1. In algoritm steps, the WeakLearner represents a weak learner algo-
+rithm, T shows the number of iteration, ht; represents the hypothesis used at tth stage of
+WeakLearner’s training and Dt(i) describes the weight used at tth step for ith sample.
+Multimedia Tools and Applications
+In the first step of the algorithm, each sample is started with weights of 1/m. In the sec-
+ond step, weak hypotheses are trained T times iteratively. Random under-sampling (RUS)
+removes majority class instances. For example, if the desired class ratio is 50 : 50, major-
+ity class instances are randomly removed until the numbers of majority and minority class
+instances are equal. The S′
+t can be described as the result temporary dataset after RUS. The
+S′
+t will have the new D′
+t weight distribution. The S′
+t and D′
+t are given to the basic weak
+learner which creates the weak hypothesis. The error ϵt is calculated according to S training
+dataset and Dt weight distribution. The weight update parameter α = ϵt/(1 −ϵt) is calcu-
+lated. Then, the Dt+1 weight distribution is updated and normalized for the next iteration.
+After T iteration, the result is returned as the weighted vote of T weak hypotheses.
+3.6 Classiﬁcation stage
+In this stage of the study, the feature vectors obtained from spatial feature extraction algo-
+rithms are utilized for classification. Approximately 180,000 non-mitotic and 749 mitotic
+cells were extracted from 1200 images cropped from ten whole slides. The accuracy of the
+proposed study is evaluated by using 5-fold cross-validation strategy. Classification is per-
+formed using the RUSBoost method, a robust and fast algorithm, especially for unbalanced
+two-class datasets.
+4 Results
+4.1 Dataset description
+The dataset used in experiments is released at the International Conference on Pattern
+Recognition Conference (ICPR) with the MITOS-ATYPIA-14 contest [41]. The contest
+consists of two parts: Detection of mitosis, and evaluation of nuclear atypia score. The
+dataset images are breast cancer histopathological images which are stained with hema-
+toxylin and eosin (H&E) dyes and scanned by Aperio Scanscope XT and Hamamatsu
+Nanozoomer 2.0-HT slide scanners. For this study, we mainly focus on mitotic cell detection
+in these high resolution histopathological images.
+The training dataset is consist of frames at ×40 magnification level extracted from ten
+slides of breast cancer samples. Each frame is an RGB image corresponding to a sample
+surface of approximately 379 × 338 μm pixel size in TIFF format. The slides were scanned
+by Aperio scanner at size of 1539 × 1376 pixels with a resolution of 0.2455 μm/pixel.
+Mitotic cell annotations were provided by two senior pathologists and three junior patholo-
+gists of Pitie-Salpetriere Hospital and of Institut Curie, Paris France [41]. Histopathological
+images, magnified ×40 and including mitotic formations, are evaluated by two different
+pathologists. The pathologists have annotated mitotic formations as true mitosis, probably a
+mitosis, or not a mitosis. In case of disagreement between the pathologists, a third patholo-
+gist identified the diagnosis and the cellular formation was marked as mitotic or non-mitotic
+by majority.
+4.2 Evaluation of methods
+The results of several textural, statistical and shape-based feature extraction methods are
+compared with the proposed CNN method. The number of true positives (TP), false posi-
+tives (FP), false negatives (FN) and true negatives (TN) are obtained and precision, recall
+Multimedia Tools and Applications
+and F-measure metrics are used to evaluate the mitosis detection of each method. These
+metrics used for comparison can be described as follows:
+–
+TP: Mitotic cells correctly identified as mitotic.
+–
+FP: Non-mitotic cells incorrectly identified as mitotic.
+–
+FN: Mitotic people incorrectly identified as non-mitotic.
+–
+TN: Non-mitosis cells correctly identified as non-mitotic.
+–
+Precision: The fraction of retrieved instances that are relevant:
+P =
+T P
+T P + FP
+(7)
+–
+Recall: The fraction of relevant instances that are retrieved:
+R =
+T P
+T P + FN
+(8)
+–
+F-Measure= Harmonic mean of the precision and recall:
+F-Measure = 2 × P × R
+P + R
+(9)
+Cellular image patches obtained in segmentation stage are used as input to the each fea-
+ture extraction method. The classification results are represented in Table 2. Each row in the
+table shows the applied feature extraction method. For each method, precision, recall and
+F-measure values are shown in the first, second, and third columns, respectively. Accord-
+ing to the Table 2 obtained from the classification results, the proposed method has the
+highest precision and F-measure values and the second highest recall value after statistics-
+based method among all feature extraction methods. Although the SFTA algorithm is the
+most successful among conventional feature extraction methods (except CNN based pro-
+posed method) in precision, approximately 8.55% of non-mitotic cells are misclassified
+after resampling with RUSBoost algorithm. The proposed CNN based algorithm produces
+the most accurate result in the classification of both mitotic and non-mitotic cells. The
+confusion matrices of all seven methods are given in Table 3 for comparison purposes.
+The accuracy of the proposed study is evaluated by using 5-fold cross-validation strategy.
+The CNN architecture is built as described in Section 2.2 and the network is trained by
+stochastic gradient descent (SGD) with learning rate of 0.01, momentum value of 0.6 and
+the epoch size of 100.
+Table 2 Precision, recall, and F-measure values of each feature extraction algorithm
+Precision
+Recall
+F-Measure
+CLBP
+0.857797
+0.746439
+0.798253
+HOG
+0.843037
+0.726496
+0.780439
+Haralick
+0.807412
+0.720798
+0.761650
+LPQ
+0.818678
+0.695157
+0.751878
+SFTA
+0.898879
+0.760684
+0.824028
+Statistics
+0.875803
+0.806268
+0.839598
+CNN-based approach
+0.967821
+0.794203
+0.869701
+Multimedia Tools and Applications
+Table 3 Confusion matrices of RUSBoost classifier for each feature extraction algorithms (NM: Non-Mitotic
+Cells, M: Mitotic Cells)
+Predicted (%)
+NM
+M
+Actual(%)
+CLBP
+NM
+87.6258
+12.3742
+M
+25.3561
+74.6439
+HOG
+NM
+86.4735
+13.5265
+M
+27.3504
+72.6496
+Haralick
+NM
+82.8072
+17.1928
+M
+27.9202
+72.0798
+LPQ
+NM
+84.6036
+15.3964
+M
+30.4843
+69.5157
+SFTA
+NM
+91.4426
+8.5574
+M
+23.9316
+76.0684
+Statistics
+NM
+88.5663
+11.4337
+M
+19.3732
+80.6268
+CNN-based approach
+NM
+96.7821
+3.2179
+M
+20.5797
+79.4203
+Fig. 13 A sample screenshot from DigiPath computer aided diagnosis software. Thanks to the developed pro-
+gram, different preprocessing, segmentation, feature extraction, dimensionality reduction and classification
+methods can be used in the detection of mitotic cells in histopathological images
+Multimedia Tools and Applications
+5 Application software
+In order to facilitate the workload of pathologists working on histopathology data, a soft-
+ware called DigiPath has been developed with a graphical user interface containing the
+methods mentioned in the Section 2 section. The utility software uses python libraries as
+backend and C# programming language as frontend. An example screenshoot of DigiPath
+software is presented in Fig. 13. The “File” menu specified in the menustrip of the GUI can
+be used to perform simple operations such as opening a single image or list of images in
+a folder, “saving” or “save as” file, and closing the program. In addition, menus have been
+created in the menustrip for basic image processing and pattern recognition steps, including
+pre-processing, segmentation, feature extraction, dimensionality reduction and classifica-
+tion. Several submenus, which indicate the name of the algorithm under the relevant menu,
+can be arranged according to the required parameters for each selected algorithm.
+6 Conclusions
+Morphological changes of cellular structures cause significant and distinctive differences
+between mitotic and non-mitotic cells in histopathological images. In the mitotic stage,
+the nuclear membrane disappears and chromatin strands move towards the center position
+of the cell. However, non-mitotic cells are mostly elliptical structures and also have ellip-
+tical nuclei. These morphological changes in mitotic cells also make a difference on the
+density values of the related pixels. For these reasons, statistical, shape based and textural
+descriptors can be utilized to classify mitotic and non-mitotic cells. In addition to conven-
+tional algorithms, deep learning based algorithms are also used for feature extraction in
+recent years. In this study, a CNN based deep learning is employed in a comparative way
+with the handcrafted methods and the results are presented in the experimental studies.
+The implemented methods are tested on mitosis detection in the breast cancer histological
+image dataset provided for the International Pattern Recognition Conference (ICPR) 2014
+contest. For the given dataset, approximately 180,000 non-mitotic and 748 mitotic cells are
+extracted from 1200 images cropped from 10 histopathological whole slides. The proposed
+deep learning based approach achieved 96.78% precision, 79.42% recall and 86.97% F-
+measure values. According to the results, the proposed method has the highest precision and
+F-measure values; the second highest recall value after statistical based method among all
+feature extraction methods.
+Within the scope of the study, an application software called DigiPath has been developed
+with a graphical user interface containing the methods discussed in this article. In this way, it
+is aimed to facilitate the workload and analyze the test images more easily for the detection
+of mitosis in histopathological images.
+7 Discussion and future work
+In the proposed system, it was focused on the detection of mitosis in high resolution
+histopathological images. Since morphological changes in mitotic cells make a difference
+on the textural intensity values of the related pixels, spatial examination of the tissue helps
+to achieve distinctive features. For this reason, GLCM, LBP and SFTA algorithms are used
+as prominent spatial/textural feature extraction algorithms. In addition to these methods,
+statistical features such as mean, standard deviation, skewness and kurtosis are employed as
+Multimedia Tools and Applications
+statistical based feature extraction approach to obtain the characteristics of mitotic cells. In
+addition to these statistical features, the extent, concavity and convexity based shape infor-
+mation features are appended to the feature vector to determine the shape changes of mitotic
+cells using the blob analysis approach. The classification results show that deep learning-
+based feature extraction is superior to others in determining mitotic structures. The main
+advantage of deep learning is that it is adaptable to the input raw data to obtain the most
+distinctive features. However, feature extraction algorithms, other than deep learning, are
+problem-specific algorithms. One reason that deep learning has been on the rise in recent
+years is the developments in graphics processing units (GPU) technology. In general, the
+deep learning training phase takes a lot of time to learn data, but using GPUs makes this pro-
+cess faster than CPUs. In the proposed study, since the image patches of cellular structures
+have small sizes of of 32 × 32 pixels, two convolutional layers are used one after another.
+Applying only a single convolutional layer may not be sufficient to extract distinctive fea-
+tures because the use of the maximum pooling layer will reduce the size of the image in
+the next layer. Instead, more discriminatory features are extracted by using two successive
+convolutional layers, and then the size of the activation maps is reduced.
+Many classification algorithms are not robust in classifying imbalanced data such as
+mitosis detection dataset containing 180,000 non-mitotic cells and 749 mitotic cells. The
+precision value may be high but the recall value is so crucial especially in histopathological
+images. As a solution to this problem, RUSBoost basically removes samples arbitrarily from
+larger classes until they achieve the desired balance between classes. Naturally, removing
+the samples from the large class causes loss of information about this class. However, this
+handicap can be handled later by boosting the algorithm to produce new samples from the
+existing ones. In future studies, we plan to concentrate on the robustness of deep learning
+algorithms in imbalanced datasets.
+Acknowledgements This work was supported by Yildiz Technical University, Scientific Research Projects
+Coordination Department, Project Number: 2014-04-01-KAP01.
+We also thank to organizers of Mitosis-Atypia-2014 contest and providers of dataset released in
+International Conference of Pattern Recognition, ICPR’14.
+References
+1. Bloom H, Richardson W (1957) Histological grading and prognosis in breast cancer: A study of 1409
+cases of which 359 have been followed for 15 years. Br J Cancer 11(3):359–377
+2. Chan TH, Jia K, Gao S, Lu J, Zeng Z, Ma Y (2015) Pcanet: A simple deep learning baseline for image
+classification? IEEE Trans Image Process 24(12):5017–5032
+3. Chawla NV, Lazarevic A, Hall LO, Bowyer KW (2003) Smoteboost: Improving prediction of the minor-
+ity class in boosting. In: European conference on principles of data mining and knowledge discovery in
+databases, PKDD’03. Springer, pp. 107–119
+4. Chen Y, Lin Z, Zhao X, Wang G, Gu Y (2014) Deep learning-based classification of hyperspectral data.
+IEEE J Sel Top Appl Earth Obs Remote Sens 7(6):2094–2107
+5. Chen LC, Papandreou G, Kokkinos I, Murphy K, Yuille AL (2016) Deeplab: Semantic image segmen-
+tation with deep convolutional nets, atrous convolution, and fully connected crfs. arXiv:1606.00915
+6. Cheng JZ, Ni D, Chou YH, Qin J, Tiu CM, Chang YC, Huang CS, Shen D, Chen CM (2016)
+Computer-aided diagnosis with deep learning architecture: applications to breast lesions in us images
+and pulmonary nodules in ct scans. Sci Rep 6:1–13
+7. Cheng J, Veronika M, Rajapakse JC (2010) Identifying cells in histopathological images. In: Recogniz-
+ing patterns in signals, speech, images and videos. Springer, pp. 244–252
+8. Ciresan DC, Giusti A, Gambardella LM, Schmidhuber J (2013) Mitosis detection in breast cancer his-
+tology images with deep neural networks. In: International conference on medical image computing and
+computer-assisted intervention, MICCAI’13. Springer, pp. 411–418
+Multimedia Tools and Applications
+9. Collaborative Group on Hormonal Factors in Breast Cancer et al (2002) Breast cancer and breastfeeding:
+collaborative reanalysis of individual data from 47 epidemiological studies in 30 countries, including 50
+302 women with breast cancer and 96 973 women without the disease. Lancet 360(9328):187–195
+10. Costa AF, Humpire-Mamani G, Traina AJM (2012) An efficient algorithm for fractal analysis of
+textures. In: 25th IEEE SIBGRAPI conference on graphics, patterns and images, pp 39–46
+11. Dalal N, Triggs B (2005) Histograms of oriented gradients for human detection. In: IEEE computer
+society conference on computer vision and pattern recognition, CVPR’05, vol. 1, pp 886–893
+12. Dalle JR, Leow WK, Racoceanu D, Tutac AE, Putti TC (2008) Automatic breast cancer grading of
+histopathological images. In: 30th IEEE annual international conference of the engineering in medicine
+and biology society, EMBC’08, pp 3052–3055
+13. De Angelis R, Sant M, Coleman MP, Francisci S, Baili P, Pierannunzio D, Trama A, Visser O, Brenner
+H, Ardanaz E et al (2014) Cancer survival in europe 1999–2007 by country and age: results of eurocare-
+5—a population-based study. Lancet Oncol 15(1):23–34
+14. Dundar MM, Badve S, Bilgin G, Raykar V, Jain R, Sertel O, Gurcan MN (2011) Computerized
+classification of intraductal breast lesions using histopathological images. IEEE Trans Biomed Eng
+58(7):1977–1984
+15. Elston CW, Ellis IO (1991) Pathological prognostic factors in breast cancer. i. the value of histolog-
+ical grade in breast cancer: experience from a large study with long-term follow-up. Histopathology
+19(5):403–410
+16. Felzenszwalb PF, Girshick R, McAllester D, Ramanan D (2010) Object detection with discriminatively
+trained part-based models. IEEE Trans Pattern Anal Mach Intell 32(9):1627–1645
+17. Genc¸tav A., Aksoy S, ¨Onder S (2012) Unsupervised segmentation and classification of cervical cell
+images. Pattern Recognit 45(12):4151–4168
+18. Guo H, Viktor HL (2004) Learning from imbalanced data sets with boosting and data generation: the
+databoost-im approach. ACM SIGKDD Explor Newsl 6(1):30–39
+19. Gurcan MN, Pan T, Shimada H, Saltz J (2006) Image analysis for neuroblastoma classification: Seg-
+mentation of cell nuclei. In: 28th Annual international conference of the IEEE engineering in medicine
+and biology society, EMBC’06, pp 4844–4847
+20. Hafiane A, Bunyak F, Palaniappan K (2008) Clustering initiated multiphase active contours and
+robust separation of nuclei groups for tissue segmentation. In: 19th International conference on pattern
+recognition, ICPR’08, pp 1–4
+21. Hagwood C, Bernal J, Halter M, Elliott J (2012) Evaluation of segmentation algorithms on cell
+populations using cdf curves. IEEE Trans Med Imaging 31(2):380–390
+22. Haralick RM, Shanmugam K (1973) Textural features for image classification. IEEE Trans Sys Man
+Cybern 6:610–621
+23. He K, Zhang X, Ren S, Sun J (2016) Deep residual learning for image recognition. In: Proceedings of
+the IEEE conference on computer vision and pattern recognition, pp 770–778
+24. Irshad H, Jalali S, Roux L, Racoceanu D, Hwee LJ, Le Naour G, Capron F (2013) Automated mitosis
+detection using texture, SIFT features and HMAX biologically inspired approach. J Pathol Inform, vol 4
+(Suppl)
+25. Irshad H, Roux L, Racoceanu D (2013) Multi-channels statistical and morphological features based
+mitosis detection in breast cancer histopathology. In: 35th IEEE annual international conference of the
+engineering in medicine and biology society, EMBC’13, pp 6091–6094
+26. Khan AM, El-Daly H, Rajpoot NM (2012) A gamma-gaussian mixture model for detection of
+mitotic cells in breast cancer histopathology images. In: 21st IEEE international conference on pattern
+recognition, ICPR’12, pp 149–152
+27. Krawczyk B, Jelen L, Krzyzak A, Fevens T (2012) Oversampling methods for classification of
+imbalanced breast cancer malignancy data. In: Comput. Vis. and Graph., Springer, pp 483–490
+28. Krawczyk B, Jelen L, Krzyzak A, Fevens T (2014) One-class classification decomposition for imbal-
+anced classification of breast cancer malignancy data. In: Artificial intelligence and soft computing,
+pp 539–550
+29. LeCun Y, Bengio Y et al (1995) Convolutional networks for images, speech, and time series. Handb
+Brain Theory Neural Netw 3361(10):1995
+30. Litjens G, S´anchez CI, Timofeeva N, Hermsen M, Nagtegaal I, Kovacs I, Hulsbergen-Van De Kaa C,
+Bult P, Van Ginneken B, Van Der Laak J (2016) Deep learning as a tool for increased accuracy and
+efficiency of histopathological diagnosis. Sci Rep 6:26286
+31. Liu AA, Li K, Kanade T (2010) Mitosis sequence detection using hidden conditional random fields. In:
+IEEE international symposium on biomedical imaging: From Nano to Macro, ISBI’10, pp 580–583
+32. M Naqi S, Sharif M (2017) Recent developments in computer aided diagnosis for lung nodule detection
+from ct images: A review. Curr Med Imaging Rev 13(1):3–19
+Multimedia Tools and Applications
+33. Ojala T, Pietikainen M, Maenpaa T (2002) Multiresolution gray-scale and rotation invariant texture
+classification with local binary patterns. IEEE Trans Pattern Anal Mach Intell 24(7):971–987
+34. Ojansivu V, Heikkila J (2008) Blur insensitive texture classification using local phase quantization. In:
+Image and signal Process. Springer, pp. 236–243
+35. Otsu N (1979) A threshold selection method from gray-level histograms. IEEE Trans Syst Man Cybern
+9(1):62–66
+36. Ouyang W, Wang X (2013) Joint deep learning for pedestrian detection. In: Proceedings of the IEEE
+international conference on computer vision, ICCV’13, ppp 2056–2063
+37. Paul A, Dey A, Mukherjee DP, Sivaswamy J, Tourani V (2015) Regenerative random forest with auto-
+matic feature selection to detect mitosis in histopathological breast cancer images. In: International
+conference on medical image computing and computer-assisted intervention MICCAI’15, Springer,
+pp 94–102
+38. Porter P (2008) Westernizing women’s risks? breast cancer in lower-income countries. N Engl J Med
+358(3):213–216
+39. Rao KN, Rao TV, Laksmi R (2012) A novel class imbalance learning method using subset filtering. Int
+J Sci Eng Res 3:95–103
+40. Ren S, He K, Girshick R, Sun J (2015) Faster r-cnn: Towards real-time object detection with region
+proposal networks. In: Advances in neural information processing systems, pp 91–99
+41. Roux L, Racoceanu D, Capron F, Calvo J, Attieh E, Le Naour G, Gloaguen A (2012) Mitos & Atypia
+detection of mitosis and evaluation of nuclear atypia score in breast cancer histological images. http://
+mitos-atypia-14.grand-challenge.org. Online; Accessed 2018-01-15
+42. Rybski PE, Huber D, Morris DD, Hoffman R (2010) Visual classification of coarse vehicle orientation
+using histogram of oriented gradients features. In: IEEE intelligent vehicles symposium, IV’10, pp 921–
+928
+43. Seiffert C, Khoshgoftaar TM, Van Hulse J, Napolitano A (2010) Rusboost: A hybrid approach to
+alleviating class imbalance. IEEE Trans Syst Man Cybern A Sys Hum 40(1):185–197
+44. Sertel O, Catalyurek UV, Shimada H, Guican M (2009) Computer-aided prognosis of neuroblastoma:
+Detection of mitosis and karyorrhexis cells in digitized histological images. In: 31st IEEE annual
+international conference of the engineering in medicine and biology society, EMBC’09, pp 1433–1436
+45. Siegel RL, Miller KD, Jemal A (2016) Cancer statistics, 2016. CA: A Cancer J Clin 66(1):7–30
+46. Sommer C, Fiaschi L, Hamprecht F, Gerlich DW et al (2012) Learning-based mitotic cell detection
+in histopathological images. In: 21st IEEE international conference on pattern recognition, ICPR’12,
+pp 2306–2309
+47. Suzani A, Rasoulian A, Seitel A, Fels S, Rohling RN, Abolmaesumi P (2015) Deep learning for auto-
+matic localization, identification, and segmentation of vertebral bodies in volumetric mr images. In: SPIE
+medical imaging, International society for optics and photonics, pp 941514–941514
+48. Todoroki Y, Han XH, Iwamoto Y, Lin L, Hu H, Chen Y (2017) Detection of liver tumor candidates
+from ct images using deep convolutional neural networks. In: International conference on innovation in
+medicine and healthcare, Springer, pp 140–145
+49. Van Hulse J, Khoshgoftaar TM, Napolitano A (2007) Experimental perspectives on learning from
+imbalanced data. In: Proceedings of the 24th international conference on machine learning, pp 935–942
+50. Wan S, Huang X, Lee HC, Fujimoto JG, Zhou C (2015) Spoke-lbp and ring-lbp: New texture fea-
+tures for tissue classification. In: IEEE 12th international symposium on biomedical imaging, ISBI’15,
+pp 195–199
+51. Wan T, Liu X, Chen J, Qin Z (2014) Wavelet-based statistical features for distinguishing mitotic and non-
+mitotic cells in breast cancer histopathology. In: IEEE international conference on image processing,
+ICIP’14, pp 2290–2294
+52. Zhan T, Chen Y, Hong X, Lu Z, Chen Y (2017) Brain tumor segmentation using deep belief networks and
+pathological knowledge. CNS Neurol Disord Drug Targets (Formerly Curr Drug Targets-CNS Neurol
+Disorde) 16(2):129–136
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps
+and institutional affiliations.
+Multimedia Tools and Applications
+Aﬃliations
+I. Onur Sigirci1 · Abdulkadir Albayrak2 · Gokhan Bilgin3
+1
+Department of Computer Engineering, YTU, 34220 Istanbul, Turkey and SIMPLAB in YTU, 34220
+Istanbul, Turkey
+2
+Department of Computer Engineering, Dicle University, 21280 Diyarbakir, Turkey and SIMPLAB in
+YTU, 34220 Istanbul, Turkey
+3
+Department of Computer Engineering, Yildiz Technical University (YTU), 34220 Istanbul,
+Turkey and Signal and Image Processing Lab. (SIMPLAB) in YTU, 34220 Istanbul, Turkey

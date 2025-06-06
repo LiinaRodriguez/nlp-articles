@@ -1,0 +1,1155 @@
+Tumor Microenvironment in Breast Cancer Theme Issue
+MINI-REVIEW
+Tumor Microenvironment and the Role of
+Artiﬁcial Intelligence in Breast Cancer Detection
+and Prognosis
+Kathryn Malherbe
+From the Department Radiography, Faculty Health Sciences, University of Pretoria, Pretoria, South Africa
+Accepted for publication
+January 28, 2021.
+Address correspondence to
+Kathryn Malherbe, Department
+Radiography, Faculty Health
+Sciences, University of Pretoria,
+1 Bophelo Rd., Pretoria, South
+Africa. E-mail: kathryn.
+malherbe@up.ac.za.
+A critical knowledge gap has been noted in breast cancer detection, prognosis, and evaluation between
+tumor microenvironment and associated neoplasm. Artiﬁcial intelligence (AI) has multiple subsets or
+methods for data extraction and evaluation, including artiﬁcial neural networking, which allows
+computational foundations, similar to neurons, to make connections and new neural pathways during
+data set training. Deep machine learning and AI hold great potential to accurately assess tumor
+microenvironment models employing vast data management techniques. Despite the signiﬁcant po-
+tential AI holds, there is still much debate surrounding the appropriate and ethical curation of medical
+data from picture archiving and communication systems. AI output’s clinical signiﬁcance depends on its
+human predecessor’s data training sets. Integration between biomarkers, risk factors, and imaging data
+will allow the best predictor models for patient-based outcomes. (Am J Pathol
+2021, -: 1e10;
+https://doi.org/10.1016/j.ajpath.2021.01.014)
+The tumor microenvironment (TME) or surrounding stroma
+contains various vital components such as immune cells and
+extracellular matrix (ECM), which act against antitumor
+immune cells.1e6 This leads to tumor progression, and ul-
+timately, metastasis.7e10 The stromal environment contains
+many interesting signaling pathways and molecular struc-
+tures related to prognostic outcomes of breast cancer.9 The
+genetic alterations of cancer cells related to signaling path-
+ways control both the processes of tumorigenesis and pro-
+gression. These alterations are due to overexpression of
+oncogenic mutations such as growth factor receptor tyrosine
+kinases and nuclear receptors such as estrogen receptors
+(ERs). Due to the above complexities related to cancer
+signaling networks, the efforts to produce anticancer drugs
+are challenging because of inordinate signaling pathways
+translating to pathway reactivation. However, individual
+pathways, such as Ras-ERK, are strongly related to cancer
+mutations and promise targeted therapies in the future.11
+The latest studies are now focusing on the TME as a
+critical
+element
+for
+determining
+tumor
+development,
+progression, and treatment response.5,8,12,13
+In the same research interest, artiﬁcial intelligence (AI)
+has multiple subsets or methods for data extraction and
+evaluation.
+One
+such
+method
+is
+artiﬁcial
+neural
+networking,5,12,14e16 which allows computational founda-
+tions, similar to neurons, to make connections and new
+neural pathways during data set training (Figure 1). One
+such method used for quantitative biology is massive
+parallel reporter assay, which assesses DNA.4 This allows
+biologists the ability to predict molecular and gene in-
+teractions. The mechanistic framework of gene regulation
+allows the possibility of new therapies to be devel-
+oped.2,7,8,13 There is a lack of congruence between bi-
+ologists and artiﬁcial neural networking (ANN) systems; the
+latest custom ANNs allow mathematical assumptions of
+common biological concepts so that the output reﬂects how
+a biologist would interpret results.6,12,14e16
+The ﬁrst attempt at computerizing medical images17
+occurred during the 1960s, which is, to date, an important
+Tumor Microenvironment in Breast Cancer Theme Issue
+Disclosures: None declared.
+Copyright ª 2021 American Society for Investigative Pathology. Published by Elsevier Inc. All rights reserved.
+https://doi.org/10.1016/j.ajpath.2021.01.014
+ajp.amjpathol.org
+The American Journal of Pathology, Vol. -, No. -, - 2021
+REV 5.6.0 DTD  AJPA3520_proof  11 May 2021  11:57 am  EO: AJPA-D-20-00464
+research
+topic
+in
+medical
+imaging,
+with
+recent
+research delving into the AI era for the medical ﬁeld.18e20
+Computer-aided detection (CAD) serves as a diagnostic aid
+to support the physician’s role by using noninvasive and ac-
+curate computer systems.17 CAD incorporates quantitative
+analysis of images during the diagnostic process, proven from
+previous studies to increase the sensitivity of diagnosis by
+21.2% and reduce the false-negative rate of diagnostic
+screening by 77%. Despite these ﬁgures, automated detection
+software is not widely used during breast screening.21 A
+prospective study using CAD software during diagnosis has
+shown a 74% increase in cancer detection.21 Certain technical
+advances in breast imagingdsuch as harmonic tissue imag-
+ing, compound imaging, and an extended ﬁeld of viewdhave
+made its use integral during a breast cancer diagnosis. Stan-
+dardized CAD techniques used in conjunction with ultra-
+sound reduce the interobserver variation.20
+The detection rate of invasive cancers measuring <1 cm
+increases with the use of CAD systems. It can reduce false-
+negative rates from 31% to 19%,22,23 in conjunction with
+dedicated breast imagers. The system assigns various sensi-
+tivity and speciﬁcity rates to cancers based on the lesion type.
+The sensitivity for malignant calciﬁcations is 86% to 99%
+with CAD, with only 57% marked as amorphous calciﬁca-
+tions.24 The sensitivity for masses is estimated at 43% to
+85%.25 Further research is required to recognize suspicious
+asymmetries as they develop over time during serial imaging
+follow-up and to assess the medico-legal implication of
+retained CAD-marked image information. A more extensive
+explanation of the various AI subtypes is discussed below.
+ANN is the process of nonlinear mapping between set
+inputs and outputs. It achieves physical performance using
+dense processing elements similar to biological neurons.
+The ANN can learn and generalize from the examples given.
+Success is measured if complex linear functions govern the
+relationship between variables. Evolutionary computing
+consists of a collection of algorithms based on population
+evolution toward the solution of a problem. It is subdivided
+into genetic algorithms and genetic programming, as well as
+evolutionary algorithms. Using select features for classiﬁ-
+cation of mammogram calciﬁcations is a measure of
+success.4,10,26e28
+Overall, the best approach is to combine these three main
+methods, for example, using a fuzzy logic system to design
+ANN evolutionary computing in automatic training and
+generating ANN architecture. Feature extraction can reduce
+an image to a small set of parameters called features
+(Figure 1). The quality of a feature depends on its
+contribution to detection, cancer classiﬁcation, and the
+preprocessing steps and classiﬁcation methods.17,27,29
+The quality of features cannot be categorized because the
+quality of a feature depends on its contribution to detection,
+classiﬁcation, prognosis, and features dependent on its
+preprocessing steps and the classiﬁcation measures. There
+are various types of features, such as geometric, which refer
+to factors such as size and shape. The boundary is the
+starting point of extracting an object using AI. Various
+boundary methods are used, such as binary sets, which
+refers to the sets of pixels in a grayscale image, and edge
+detection, which deﬁnes an object by its edges. Other geo-
+metric features include area, volume, contrast, counting
+pixels inside an object boundary, and perimeters, as well as
+shape (no single shape descriptor can be used on its own to
+deﬁne an object).15,16,28,30e32
+A computation method of predictive models through
+algorithms is referred to as machine learning (ML). As more
+Multiple input 
+nodes
+Hidden layer
+Output 
+layer
+Image 
+acquisition
+Noise filtering
+Data 
+processing
+Deep
+neural networks 
+have 
+hundreds of layers
+Nodes receive products 
+of prior layer notes, a 
+summation is done, and 
+then an activation 
+function is applied, 
+producing the output 
+layer value
+Values are multiplied 
+by weights and 
+connected to next 
+layer
+Segmentation 
+methods
+print & web 4C=FPO
+Figure 1
+Illustration of mechanistic framework model.
+Malherbe
+2
+ajp.amjpathol.org - The American Journal of Pathology
+REV 5.6.0 DTD  AJPA3520_proof  11 May 2021  11:57 am  EO: AJPA-D-20-00464
+data are applied to the training data set, accuracy and
+predictability are optimized. Over the years, advances in
+algorithms and ML have allowed deep learning in recent
+studies. This has a similar output as the human brain’s
+neural architecture, with neural nets responding to multiple
+data set training cycles using statistical frameworks. This
+learning method is ideal for image classiﬁcation in radiology
+and pathology with above-average accuracy compared with
+human reader outputs.3,6,28,33e35
+The Tumor Microenvironment
+The breast cancer microenvironment can be subdivided into
+three main subsets: local, regional, and distant. Each of
+these proposed subsets contains cellular contents such as
+ﬁbroblasts, leukocytes, ECM, cytokines, growth factors, and
+hormones,7 described in detail below as the various cell type
+subsets related to breast cancer diagnosis and prognosis.
+As Dvorak36 stated, tumors are much more than wounds that
+do not heal. Tumor cells undergo signiﬁcant changes causing
+release from regulatory signals, promoting proliferation and
+invasion. The most crucial factor thereof is the overexpression
+of vascular endothelial growth factor ( ), allowing surrounding
+stroma to be incorporated in its progression process.
+The use of AI technology to improve diagnostic detection
+rates and remote disease monitoring can reduce the overall
+time required for overall patient treatment planning. Anti-
+VEGF agents and AI-generated prognoses have been
+studied
+using
+vision
+loss, which
+could
+promote
+the
+prevention of vision loss before its occurrence.37
+The angiogenesis process includes a complex interplay
+between tumor, endothelial, and stromal cells, promoting
+tumor growth. A study in 2006 found a novel method of
+assessing angiogenesis employing chick embryo and its
+chorioallantoic membrane. An automated image analysis
+method was developed to quantify the microvessel density
+and growth potential in images. This shows the potential to
+be used for tumor growth detection in breast cancer
+imaging,6,8,14,36,38; however, it lacks efﬁcacy for extensive
+tumor series analysis of TME. Other methods proposed for
+TME composition analysis are Gene Set Enrichment Anal-
+ysis (San Diego), xCell (California), and TIminer (Russia),
+which allows immunogenic analysis and quantiﬁcation of
+the immune inﬁltrate.5,8,9,13,16,39,40
+Gene Set Enrichment Analysis41 is a computational
+method able to deﬁne concordant differences between two
+biological states as a statistical output (Figure 2).41 xCell42 is
+a novel signature-based method used for 64 immune and
+stromal cell types. Utilizing in silico analyses and cross-
+comparison to cytometry immunophenotyping, xCell shows
+excellent promise when compared with other methods.42
+TIminer43
+is
+a
+computational
+pipeline
+used
+for
+the
+assessment of tumor-to-immune cell interactions based on
+sequencing data.
+Anther computational method44 in 2016 reported a
+Microenvironment Cell Populations-counter that analyzes
+the transcriptomic markers in single-cell populations, but
+this method is robust compared with other used samples.8
+The discussion below states the current body of knowl-
+edge and attributes of each factor/cell/protein related to
+breast cancer and the TME, followed by the latest
+technology and insights related to AI and deep ML.
+Fibroblasts and Tumor Progression
+The vast majority of cells within the TME are ﬁbroblasts
+and secrete various soluble factors modulating tumor
+stroma, growth, and invasion properties. Recent studies
+have found that cancer-associated ﬁbroblasts have unique
+protein expression proﬁles making them unique in their
+identiﬁcation
+properties.
+A
+bidirectional
+signaling
+pathway9 has also been suggested between these unique
+ﬁbroblasts and their adjacent cancer cells, suggesting a
+possible inﬂuence in the transcription of breast cancer cell
+proﬁles. This was also afﬁrmed by Orimo et al,38 who
+found that cancer-associated ﬁbroblasts enhance tumor
+angiogenesis.
+These individual cells originate either from bone marrow,
+normal ﬁbroblasts, or epithelialemesenchymal transition.7
+The microcellular environment is maintained by ﬁbro-
+blasts using remodeling of the ECM.9,36 Fibroblasts, asso-
+ciated with carcinoma, have unique characteristics that
+promote tumor progression, presenting as either heteroge-
+neous or myoﬁbroblasts with ﬁbroblast activation protein.
+The potential of carcinoma-associated ﬁbroblasts promoting
+tumor growth uses secreted stromal-derived factor-1, acting
+as
+a
+paracrine
+activator
+that
+increases
+tumor
+cell
+proliferation through CXCR4.38
+An interesting ﬁnding was a coculture of ﬁbroblasts in
+healthy breast tissue educating ﬁbroblasts to secrete HGF to
+promote tumor progression activities.
+The main question that arises from these studies is from
+what are these cancer-associated ﬁbroblasts derived? One
+hypothesis is that healthy ﬁbroblasts undergo phenotype
+modiﬁcation from constant aberrant signaling from adjacent
+tumor cells.45
+Dendritic Cells and the Role of Estrogen Receptors
+Dendritic cells (DCs) play an essential role in prohibiting
+neoplastic cell growth by presenting antigens to CD4þ and
+CD8þ and T cells. 7e10,13,14,36,38,39 The maturation process of
+DCs depends on their local microenvironment, which de-
+termines their tolerance of immunosuppression of localized
+neoplastic invasion. Studies show that DCs surrounding
+tumor-associated stroma are unable to stimulate antitumor
+immunity. These so-called tumor-associated DCs produce
+proangiogenic factors, enhancing endothelial cell migration,
+and causing tumor progression.6,8,14,36,38
+DCs have multiple roles in essential processes such as
+immunity, autoimmunity, and differentiation of T cells. They
+are mainly activated by a stress response or pathogen-induced
+Artiﬁcial Intelligence and Breast Cancer
+The American Journal of Pathology - ajp.amjpathol.org
+3
+REV 5.6.0 DTD  AJPA3520_proof  11 May 2021  11:57 am  EO: AJPA-D-20-00464
+damage, which causes the secretion of cytokines, stimulates
+T lymphocytes, and leads to an immune response. ERs play a
+crucial role in DC function.7e10 Binding of DC ligand to ERs
+triggers migration processes. Recent studies have shown that
+treatment of E2 alongside mature DCs and T cells can stim-
+ulate T-cell proliferation.6,13
+Fibroblasts, DCs, and AI
+Fibroblasts play a role in mortality prediction of idiopathic
+pulmonary ﬁbrosis. The use of AI to quantify prognostic
+histologic features was studied, and interstitial mononuclear
+inﬂammation and intra-alveolar macrophages were shown to
+be novel biomarkers in detecting idiopathic pulmonary
+ﬁbrosis.46 A group of researchers at Osaka University used
+microscopic images to develop an AI-based system to iden-
+tify various cancer cells. A convolutional neural network was
+trained with 8000 images of cells obtained with a phase
+contrast microscope. Following the data set training process,
+additional 2000 images were tested to distinguish mouse
+cancer cells from human cells and radioresistant cells from
+radiosensitive ones. This study holds much promise in
+developing a universal system to identify and distinguish
+between all variants of cancer cells.47
+Another research group, based at Tufts Medical Center in
+Boston, developed multiple AI tools to detect and tract
+dendritic cells. An AI algorithm was developed using
+in vivo confocal microscopy analysis of the human cornea,
+typically done manually, making it a time-consuming
+process. The use of such AI models for analysis ensures
+high accuracy and reduced objectivity associated with
+human analysis.48
+Macrophages, Lymphocytes, and the Role of ERs
+Macrophages associated with tumor cells display unique
+phenotypes, and promote tumor growth, angiogenesis, and
+tissue remodeling.4,5,7e10,12e16,36
+The immune response includes a key role of macrophages
+to
+promote
+T-cell
+recruitment
+and
+activation.
+Their
+Gene Set 
+Database
+Molecular Profiling 
+Data
+Enriched Data Sets
+print & web 4C=FPO
+Figure 2
+A method of gene expression signature proﬁling.
+Malherbe
+4
+ajp.amjpathol.org - The American Journal of Pathology
+REV 5.6.0 DTD  AJPA3520_proof  11 May 2021  11:57 am  EO: AJPA-D-20-00464
+activation alongside that of T and B cells is due to the
+release of cytokines and chemokines.7,14,39 Despite their
+functional role in tumor defense, they are active in the TME,
+and lead to tumor progression and immunosuppression. ER
+is present in macrophage precursor cells during various
+stages of its differentiation, and E2 treatment changes
+macrophage behavior.2e10,12,14e16,38,39
+Lymphocytes
+have
+been
+key
+in
+the
+recent
+TME
+research.16 Lymphocytes are mostly T cells, CD4þ helper
+cells, Treg with CD4þ, and CD8þ cells.
+Treg cells in the TME block its normal antitumor function
+and suppress other immune cells such as CD8þ T cells.
+Tregs also produce a large number of receptor activator of
+nuclear
+factor-kb
+ligands
+(RANKL),4e10,12e16,33,36,38,39
+which
+promote
+metastasis
+and
+RANK-expressing
+neoplastic cells. A high concentration of Treg cells is
+associated
+with advanced-type
+breast
+cancer. This
+is
+postulated to occur due to neoplastic cells recruiting Treg
+using prostaglandin E2 secretion, suppressing effector cells,
+and
+producing
+an
+immunosuppressive
+microenvironment.4,7,9,15,36
+Macrophages, Lymphocytes, and AI
+ML can distinguish various cell and tissue types in a biopsy
+specimen based on a training set of ground truth examples.
+A research study in 2018 made use of ML algorithms as a
+method to identify macrophages from digital scans of non-
+small cell lung carcinoma tissue slides. The study compared
+pathologist output to the ML algorithm, which held
+improved accuracy compared with humanereader inter-
+vention and output.49
+A working group collaboration with the Massive Analysis
+and Quality Control Consortium works on ML algorithms to
+characterize tumor-inﬁltrating lymphocytes. Such methods
+are expected to enhance the validity of prognostic prediction
+methods in pathology. Besides the clinically evident
+improved prediction rates, ML also permits changes to the
+current feature set used for analysis, thus improving accu-
+racy and interpretation of current standard methods.50
+ECM, Mast Cells, and Neutrophils
+The main proteins within the complex ECM are collagen
+(structural), ﬁbronectin (glycoproteins), and chondroitin
+sulfate (proteoglycans). Recent studies have shown that
+ECM9 is more versatile than initially thought, acting as a
+critical player in cell growth, proliferation, and migration. In
+cancer, ECM is typically disorganized in appearance,
+causing abnormal feedback regulatory mechanisms. This is
+mainly due to ECM metabolism being altered by cancer-
+associated ﬁbroblasts and immune cells.5,8,9,13,16,39 One of
+the main proteins within ECM, namely collagen, promotes
+cancer cell invasion using collagen IV degradation. ECM
+also promotes the passage of cytokines and growth factors,
+enabling intercellular communication. The alteration in
+protein activity seen in cancer is associated with patient
+outcomes.
+Mast cells (MCs) form part of the immune system asso-
+ciated with parasitic infections. Depending on the type of
+inﬂammatory stimulus, MCs release various inﬂammatory
+mediators.
+Mucosal
+MCs
+produce
+tryptase,
+whereas
+connective tissue MCs secrete tryptase, chymase, and car-
+boxypeptidases. All of these enzymes, along with IL-8,
+transforming growth factor-b, and tumor necrosis factor-a,
+have a strong association with angiogenesis and MMP
+modulation of various breast cancer phenotypes.5,14,15
+ERa is present in the MCs. E2 treatment in rat MC
+models leads to a release of histamine. This is exciting
+because histamine release plays a role in breast cancer
+promotion through its H3R and H4R receptors.6,13
+Neutrophils are a fundamental component of the immune
+response, acting as a ﬁrst-line defense mechanism against
+infection by employing phagocytosis. Neutrophils work
+alongside other immune-ﬁghting cells such as macrophages
+and DCs.5,8,9,13,16,39
+Neutrophils have nuclear receptors, and E2 and ER
+binding helps regulate neutrophil survival and function.
+Several serine proteases are secreted by neutrophils, such as
+neutrophil elastase (NE), proteinase 3, and cathepsin G,
+essential for infectious agent elimination and inﬂammation
+modulation.7,36
+MCs, ECM, Neutrophils, and AI
+One of the critical elements of MC granules is histamine,
+because it has been shown to promote tumor cell prolif-
+eration and growth of mammary carcinomas through H2
+receptors.51 Histamine hypersensitivity in response to a
+local inﬂammatory response in a ML functional genomic
+networks study questions its underlying molecular and
+genetic traits, and the promotion of the prognostic indi-
+cator role of ML in tumor progression.52 MCs have been
+the most misunderstood cell type during breast cancer
+proliferation and immune response since their discovery
+140 years ago, making them a key focus of future research
+endeavors.53
+Advances in three-dimensional cell tissue engineering
+have led to the development of cancer-on-a-chip platforms,
+which improve the analytic outputs of TME models, espe-
+cially for discovering the role of the ECM during tumor
+progression. These chip platforms integrate AI for improved
+drug-screening models.54,55
+Microscopy has reached the age of digitization with
+outputs such as CellaVision (Lund, Sweden), which
+classiﬁes degenerated lymphocytes and web-like rem-
+nants. These remnants are hypothesized to be neutrophil
+extracellular traps. AI platforms are being developed to
+rapidly detect neutrophil extracellular traps on blood
+smears.56
+The use of computational models to screen endocrine-
+active compounds holds much promise as a cost-effective
+Artiﬁcial Intelligence and Breast Cancer
+The American Journal of Pathology - ajp.amjpathol.org
+5
+REV 5.6.0 DTD  AJPA3520_proof  11 May 2021  11:57 am  EO: AJPA-D-20-00464
+alternate method. An ML algorithm was applied to over
+7500 compounds related to nuclear ER (ERa and ERb)
+activity. The model’s performance was evaluated using
+receiver-operated characteristic curve values obtained from
+ﬁvefold cross-validation procedures, with values ranging
+from 0.56 to 0.86.6,35
+The following sections elaborate on the surrounding en-
+vironments related to breast cancer and TME. Each section
+discusses the current trends and research, and the latest AI
+technology being developed.
+Breast Cancer and Local Microenvironment
+Normal mammary gland development relies on appro-
+priate cross talk between epithelial and stromal cells,
+inhibiting abnormal cell growth and neoplasm formation.
+Myoepithelial cells are known for their tumor suppression
+capabilities as they produce a base membrane barrier
+around luminal epithelial cells. The loss of such myoe-
+pithelial cells promotes the transition of in situ carcinoma
+to invasive type carcinoma.4,7,8,10,38 Two models have
+been suggested to explain this carcinoma invasion. The
+escape model suggests genetic changes of tumor epithelial
+cells, allowing the invasion to adjacent ducts. The release
+model suggests that the TME disrupts the basement
+membrane, allowing tumor cells to spread into the stroma
+(Figure 3). Figure 3 describes the concept of escaped
+immune cells during the transition from in situ to invasive
+carcinoma. Both of these models prove the importance of
+both
+epithelial
+and
+stromal
+components
+in
+tumor
+progression.39
+AI and the Local Microenvironment
+In the last decade, many approaches have been used to
+quantify the noncancerous cell populations from acquired
+tumor
+samples,
+using
+computational
+algorithms
+with
+different statistical frameworks and data sets. The two most
+common
+algorithms
+used
+for
+TME
+estimation
+are
+regression-based deconvolution algorithms and gene-set
+enrichment methods. The algorithms are dependent on
+preacquired knowledge of the data sets for accurate
+measurement, a statistical framework, and a predetermined
+signature for each cell type. The regression-based decon-
+volution algorithm determines the gene expression proﬁle
+ratio in the total tumor expression proﬁle. Gene set
+enrichment assigns scores to the various cell types as a
+function of its expression in each gene set.57
+A recent study at the University of Eastern Finland6
+developed an AI model capable of predicting breast can-
+cer risk based on demographic risk factors and genetic
+variants. The method used for the AI model is a gradient
+tree with adaptive iterative searching methods. The gene
+interaction
+map
+includes
+ESR1
+and
+FGFR1
+genes,2,4e9,13e16,36,38,58 linked to ER subtype breast cancer.
+Because cancer incidence is a multifactorial process, the use
+of AI in predicting breast cancer risk through this novel
+method
+holds
+much
+promise
+for
+future
+disease
+incidence.6,12,15
+Breast Cancer and the Metastatic Microenvironment
+During the complex metastasis process, tumor cells either
+have a dormant state or an active state of forming micro-
+metastases. During the primary tumor recruitment, the
+cytokines select associated bone-marrow cells to incur a
+premetastatic process before tumor mobilization. Fibroblasts
+and cancer cells travel alongside one another during the
+metastatic process. Breast cancer cells promote RANKL
+through
+active
+secretion
+of
+cytokines
+and
+growth
+factors.4,6,7,9,13,36,38 This activates osteoclast formation and
+bone resorption. RANKL has more recently been noted in
+the formation of lung metastases, thus providing a hypoth-
+esis of speciﬁc immune cells partaking in metastases
+formation.
+Malignant disease remains the foundation of tumor pro-
+gression, whereas the TME facilitates the invasion ability of
+Neutrophils 
+Activated CD8+ cells
+T cells 
+Myoepithelial cells 
+Cancer cells 
+Basemembrane
+A
+C
+B
+print & web 4C=FPO
+Figure 3
+Illustration of escape model from in situ to invasive carcinoma. A: In situ carcinoma and the immune environment. B: Locally invasive in situ
+carcinoma. C: Invasive carcinoma causes enrichment of TREG gene sets and less activated CD8þ T cells.
+Malherbe
+6
+ajp.amjpathol.org - The American Journal of Pathology
+REV 5.6.0 DTD  AJPA3520_proof  11 May 2021  11:57 am  EO: AJPA-D-20-00464
+these cancer cells. For this reason, research currently fo-
+cuses on epithelialemesenchymal transition, where speciﬁc
+mediators allow the progression of tumor cells to invasive
+type lesions. Examples of these mediators are IL-1, IL-6,
+and IL-8, which allow tumor cell proliferation with
+epithelialemesenchymal transition, increasing their ability
+to metastasize.4,7,16,38
+A fundamental attribute to tumor progression and drug
+resistance is the TME, which implies that various ill-
+controlled cells all relate to cancer progression. This
+concept has been around since the 1880s, with the seed and
+soil concept,59 where fertile soil (the TME) and the seed
+(cancer cells) work in harmony to promote growth.
+Both intrinsic and extrinsic inﬂammatory pathways
+promote an inﬂammatory microenvironment. Tumor cells
+promote inﬂammatory mediators, which leads to the pro-
+gression of cancer within the microenvironment using
+T cells, natural killer (NK) cells, macrophages, and dendritic
+cells.36
+AI and the Metastatic Microenvironment
+Recent AI insights allow assessing molecular subtypes and
+their therapeutic response via predictive image analysis of
+breast cancer phenotypes.
+In a research study of the TCGA Breast Phenotype
+Group,5,15
+multidisciplinary
+researchers
+phenotypically
+characterized 84 solid breast tumors to gain insights into the
+underlying molecular characteristics and gene expression
+proﬁles.
+Signiﬁcant
+similarities
+were
+noted
+between
+enhancement texture (entropy) and molecular subtypes
+[normal-like, luminal A, luminal B, human epidermal
+growth factor receptor 2 (HER2)-enriched, basal-like] even
+after controlling for tumor size (P Z 0.04 for lesions 2
+cm; P Z 0.02 for lesions from 42 to 5 cm).14,15,36,39,59
+Regarding treatment outcomes, a semimanual delineation
+method of tumor volume using breast magnetic resonance
+imaging proved a high prediction anomaly for low recur-
+rence rate in patients, proving the potential for digital
+automation in its prediction outcomes.
+Breast Cancer and Inﬁltrated Immune Cell
+Microenvironment
+Signiﬁcant gene expression changes occur within myoepi-
+thelial cells, conﬁrming a change during tumor progression
+in the microenvironment. An example of overexpression of
+genes is chemokine CXCL14, and binding to CXCR4 pro-
+moting proliferation and migration of tumor cells. The result
+from this study conﬁrms previous results indicating that
+changes in the stroma and gene expression occur most
+frequently
+when
+healthy
+breast
+tissue
+transitions
+to
+DCIS.7,38,58
+Because breast cancer is a heterogeneous disease, it has
+three main phenotypes: luminal, HER2 type, and triple-
+negative
+type.
+Because
+breast
+cancer
+promotes
+an
+inﬂammatory
+microenvironment,
+immune
+ﬁltration
+is
+currently based on ER presence.7,13,33,38 There is a sub-
+stantial proportion of NK cells and neutrophils within ER-
+positive breast cancer and cytotoxic and TCD4þ cells in
+smaller amounts. The presence of eosinophils, monocytes,
+and B lymphocytes indicates a good prognosis following
+chemotherapy.5,8,39,59
+AI and Molecular Alterations of the Microenvironment
+Despite the signiﬁcant potential AI holds, there is still much
+debate surrounding the appropriate and ethical curation of
+medical data from picture archiving and communication
+systems. The clinical signiﬁcance of AI output depends on its
+human predecessor’s data training sets.
+The integration between biomarkers, risk factors, and
+imaging data will allow the best predictor models for
+patient-based outcomes.5,7,60
+State-of-the-art research has found a ML approach,
+named CytoReason (version 1.0),1 that can distinguish be-
+tween nivolumab responders and nonresponders. Because
+adipocytes are postulated to be involved in the TME, this
+study also shows evidence of their regulatory role in
+ipilimumab-resistant nivolumab patients. The study requires
+extensive research on the role of adipocytes in tumor pro-
+gression, leading to new immunotherapy methods. CytoR-
+eason1 integrates genetics, proteomics, cytometry, and
+literature with ML to help create disease models.
+A key focus on T-cell subsets related to cancer immu-
+nology and therapy is imperative because a prediction of
+such subsets could promote advances in immunology
+research. Immune Cell Abundance Identiﬁer (ImmuCellAI,
+China) allows gene set signature-based algorithms to esti-
+mate the abundance of 24 immune cell types from gene
+expression data.61 However, the method has limitations,
+such as measuring the abundance of cells being limited to
+the deviation from gene signatures. The method also does
+not include spatiotemporal attributes of the immune cells.61
+A wild-type adeno-associated virus (AAV) particle capsid
+is currently the most commonly used gene therapy method
+due to its established ability to deliver genetic material to
+organs. However, some naturally derived AAV capsids are
+deﬁcient in the essential components required for gene
+therapy. The limitations of current capsids may be overcome
+by the new machine-guided technologies to rapidly and
+systematically engineer a suite of new, improved capsids for
+widespread
+therapeutic
+use,
+which
+outperform
+AAVs
+generated by conventional random mutagenesis approaches.
+Thus the iterative machine-guided design to develop
+improved synthetic AAV capsids is a powerful tool for
+sizable broad-scale DNA synthesis.62,63
+The current and latest trends for the local, metastatic, and
+microenvironment hold much potential for the forthcoming
+years in breast cancer research and AI technology. The next
+section discusses the most recent research and trials
+from 2020.
+Artiﬁcial Intelligence and Breast Cancer
+The American Journal of Pathology - ajp.amjpathol.org
+7
+REV 5.6.0 DTD  AJPA3520_proof  11 May 2021  11:57 am  EO: AJPA-D-20-00464
+AI and Beyond
+A recent 2020 study in Italy16,34 focused on predicting the
+disease, establishing a therapeutic plan, and providing
+patient-focused follow-up sessions. In this regard, a multi-
+disciplinary approach has been encouraged during the
+development of the Multigene Signature Panels and Not-
+tingham Prognostic Index. ML allows the cross-correlation
+of prognostic indicators to determine possible markers
+related to patient outcomes. Two ML methods were
+deployed, namely ANN and Support Vector Systems
+(Figure 4), using SPSS IBM Modeler version 18.1 software
+(IBM, Chicago, IL). Their accuracy, sensitivity, and speci-
+ﬁcity were measured as 95.29% to 96%, 0.35 to 0.64, and
+0.97 to 0.99, respectively.34 The study was limited to a
+select
+study
+population
+without
+long-term
+recurrence
+following 20 years of remission in breast cancer patients.
+Breast cancer comprises a complex genetic background,
+and the intricate relationship between these cancer cells and
+surrounding stromal/immune cells is essential to ensure that
+adequate treatment methods are implemented. In vitro cell
+culture systems lack the dedicated physiological outputs
+during drug testing.8,38 Mouse models are the ideal animal
+models for assessing drug tolerance; however, they are
+limited in testing human TME. Various models have been
+proposed for TME studies, where the latest in vitro three-
+dimensional
+models
+can
+study
+both
+cellecell
+and
+cellematerial interactions parametrically.8,38
+The use of stromal-to-epithelial yield using spatial
+extraction of features is also a novel approach to assess
+disease progression. These studies allow further insights
+into the role of epithelial and stromal cells, and an alternate
+tiered approach to deep ML.4,9,10,14,16,36,38e40,44,59
+Therapists, pathologists, and clinicians primarily seek an
+improved prognosis method in breast cancer. Shimizu and
+Nakayama64 developed a complete atlas of prognostic breast
+cancer genes, a computational framework, and prediction
+score, applicable to all breast cancer subsets. The method is
+unique in its stratiﬁcation of patients at the clinical stage and
+by ER-negative subtypes.64
+Conclusions
+The use of tissue engineering65 in cancer research allows an
+accurate representation of TME in human studies.5,10,15
+Because there is currently vast recognition of TME in
+tumor progression, it is now the current therapeutic research
+focus. New strategies to normalize the surrounding stroma,
+modulation of the immune system, and antitumor activity
+enhancement are evident. The critical role of E2 and its
+signaling pathways requires additional research on the use
+of intertumoral therapy as part of an adjuvant therapy
+approach to immune response.
+Despite some limitations in mouse models, the data
+support the role of TME in the treatment of breast
+cancer.4,6,7,9,10,13,15,33,66
+The various TMEs and their latest research endeavors
+using AI and Deep machine learning show that improved
+prognostic and therapeutic methods are imperative. The role
+of unique cancer signaling pathways, targeted therapies, and
+novel diagnostic trends will boast signiﬁcant strides when
+combined with AI. The development of a comprehensive
+prognostic cancer gene mutation atlas will aid future pa-
+thologists, even more so as a multidisciplinary approach for
+developing the Multigene Signature Panels and Nottingham
+Prognostic Index. Although most studies are experimental
+and restricted to clinical trials, they hold promise of inte-
+gration in clinical practice.
+Knowledge Matching
+Input Sources
+Input Features
+Trained ML Models
+Computational Units
+Output Classification 
+Clustering
+Output Predictions
+usterin
+print & web 4C=FPO
+Figure 4
+Illustration of ML mechanistic framework. ML, machine learning.
+Malherbe
+8
+ajp.amjpathol.org - The American Journal of Pathology
+REV 5.6.0 DTD  AJPA3520_proof  11 May 2021  11:57 am  EO: AJPA-D-20-00464
+References
+1. CytoReason. Machine-learning driven ﬁndings uncover new cellular
+players in tumor microenvironment. EurekAlert, 2018. Available at:
+https://www.eurekalert.org/pub_releases/2018-10/c-mdf101618.php
+2. Cold Spring Harbor Laboratory. Finally, machine learning interprets
+gene regulation clearly. Science Daily, 2019. Available at: https://
+www.sciencedaily.com/releases/2019/12/191226134100.htm
+3. Web P: Machine learning-assisted prognostication based on genomic
+expression in the tumor microenvironment. Edited by Cision. AI
+powered analysis provides quantitative measurements of human
+interpretable features in tumor microenvironment. Boston, MA:
+PRWEB, 2020
+4. Ehteshami Bejnordi B, Mullooly M, Pfeiffer RM, Fan S, Vacek PM,
+Weaver
+DL,
+Herschorn
+S,
+Brinton
+LA,
+van
+Ginneken
+B,
+Karssemeijer
+N,
+Beck
+AH,
+Gierach
+GL,
+van
+der
+Laak
+J,
+Sherman ME: Using deep convolutional neural networks to identify
+and classify tumor-associated stroma in diagnostic breast biopsies.
+Mod Pathol 2018, 31:1502e1512
+5. Koelzer VH, Sirinukunwattana K, Rittscher J, Mertz KD: Precision
+immunoproﬁling
+by image
+analysis and artiﬁcial
+intelligence.
+Virchows Arch 2019, 474:511e522
+6. BehravanH,HartikainenJM,Tengstrom M,Kosma VM, Mannermaa A:
+Predicting breast cancer risk using interacting genetic and demographic
+factors and machine learning. Sci Rep 2020, 10:11044
+7. Allinen M, Beroukhim R, Cai L, Brennan C, Lahti-Domenici J,
+Huang H, Porter D, Hu M, Chin L, Richardson A, Schnitt S,
+Sellers WR, Polyak K: Molecular characterization of the tumor
+microenvironment in breast cancer. Cancer Cell 2004, 6:17e32
+8. Tsai MJ, Chang WA, Huang MS, Kuo PL: Tumor microenvironment:
+a new treatment target for cancer. ISRN Biochem 2014, 2014:351959
+9. Soysal SD, Tzankov A, Muenst SE: Role of the tumor microenvi-
+ronment in breast cancer. Pathobiology 2015, 82:142e152
+10. Mittal S, Stoean C, Kajdacsy-Balla A, Bhargava R: Digital
+assessment of stained breast tissue images for comprehensive tumor
+and microenvironment analysis. Front Bioeng Biotechnol 2019, 7:246
+11. Sever R, Brugge JS: Signal transduction in cancer. Cold Spring Harb
+Perspect Med 2015, 5:a006098
+12. Wang S, Yang DM, Rong R, Zhan X, Fujimoto J, Liu H, Minna J,
+Wistuba II, Xie Y, Xiao G: Artiﬁcial intelligence in lung cancer
+pathology image analysis. Cancers (Basel) 2019, 11:1673
+13. Segovia-Mendoza M, Morales-Montor J: Immune tumor microenvi-
+ronment in breast cancer and the participation of estrogen and its
+receptors in cancer physiopathology. Front Immunol 2019, 10:348
+14. Doukas CN, Maglogiannis I, Chatziioannou A, Papapetropoulos A:
+Automated angiogenesis quantiﬁcation through advanced image
+processing techniques. Conf Proc IEEE Eng Med Biol Soc 2006,
+2006:2345e2348
+15. Bi WL, Hosny A, Schabath MB, Giger ML, Birkbak NJ, Mehrtash A,
+Allison T, Arnaout O, Abbosh C, Dunn IF, Mak RH, Tamimi RM,
+Tempany CM, Swanton C, Hoffmann U, Schwartz LH, Gillies RJ,
+Huang RY, Aerts HJWL: Artiﬁcial intelligence in cancer imaging:
+clinical challenges and applications. CA Cancer J Clin 2019, 69:
+127e157
+16. Reichling C, Taieb J, Derangere V, Klopfenstein Q, Le Malicot K,
+Gornet JM, Becheur H, Fein F, Cojocarasu O, Kaminsky MC,
+Lagasse JP, Luet D, Nguyen S, Etienne PL, Gasmi M, Vanoli A,
+Perrier H, Puig PL, Emile JF, Lepage C, Ghiringhelli F: Artiﬁcial
+intelligence-guided tissue analysis combined with immune inﬁltrate
+assessment predicts stage III colon cancer outcomes in PETACC08
+study. Gut 2020, 69:681e690
+17. Chen DR, Chien CL, Kuo YF: Computer-aided assessment of tumor
+grade for breast cancer in ultrasound images. Comput Math Methods
+Med 2015, 2015:914091
+18. Castellino RA: Computer aided detection (CAD): an overview.
+Cancer Imaging 2005, 5:17e19
+19. Qiu J, Wu Q, Ding G, Xu Y, Feng S: A survey of machine learning
+for big data processing. EURASIP J Adv Signal Process 2016.
+Article number: 67 (2016)
+20. Muralidhar
+GS,
+Haygood
+TM,
+Stephens
+TW,
+Whitman
+GJ,
+Bovik AC, Markey MK: Computer-aided detection of breast cancer -
+have all bases been covered? Breast Cancer (Auckl) 2008, 2:5e9
+21. Selinko VL, Middleton LP, Dempsey PJ: Role of sonography in
+diagnosing and staging invasive lobular carcinoma. J Clin Ultrasound
+2004, 32:323e332
+22. Berg WA, Gilbreath PL: Multicentric and multifocal cancer: Whole-
+breast US in preoperative evaluation. Radiology 2000, 214:59e66
+23. Berg WA, Gutierrez L, NessAiver MS, Carter WB, Bhargavan M,
+Lewis RS, Ioffe OB: Diagnostic accuracy of mammography, clinical
+examination, US, and MR imaging in preoperative assessment of
+breast cancer. Radiology 2004, 233:830e849
+24. Hogg P, Kelly J, Mercer C (Eds): Digital Mammography: A Holistic
+Approach. Cham, Switzerland: Springer International Publishing
+Switzerland, 2015
+25. Berg WA, Leung K. Edited by Diagnostic Imaging: Breast. ed 3.
+Philadelphia, PA: Elsevier, 2019
+26. Gruszauskas NP, Drukker K, Giger ML, Sennett CA, Pesce LL:
+Performance
+of
+breast
+ultrasound
+computer-aided
+diagnosis:
+dependence on image selection. Acad Radiol 2008, 15:1234e1245
+27. Shan J, Alam SK, Garra B, Zhang Y, Ahmed T: Computer-aided
+diagnosis for breast ultrasound using computerized BI-RADS features
+and machine learning methods. Ultrasound Med Biol 2016, 42:
+980e988
+28. Acs B, Rantalainen M, Hartman J: Artiﬁcial intelligence as the next
+step towards precision pathology. J Intern Med 2020, 288:62e81
+29. Brkljacic B, Divjak E, Tomasovic-Loncaric C, Tesic V, Ivanac G:
+Shear-wave sonoelastographic features of invasive lobular breast
+cancers. Croat Med J 2016, 57:42e50
+30. Wang S, Liu J-B, Zhu Z, Eisenbrey J: Artiﬁcial intelligence in ul-
+trasound imaging: current research and applications. Adv Ultrasound
+Diagn Ther 2019, 3:53e61
+31. Jain A, Jain A, Jain S, Jain L (Eds): Artiﬁcial Intelligence Techniques
+in Breast Cancer Diagnosis and Prognosis. Singapore: World Scien-
+tiﬁc, 2019
+32. Ranschaert ER, Orozov S, Algra PR (Eds): Artiﬁcial Intelligence in
+Medical Imaging: Opportunities, Applications and Risks. Cham,
+Switzerland: Springer Nature Switzerland, 2020
+33. Abdou Y, Baird A, Dolan J, Lee S, Park S, Lee S: Machine learning-
+assisted prognostication based on genomic expression in the tumor
+microenvironment of estrogen receptor positive and HER2 negative
+breast cancer [abstract 4387]. Ann Oncol 2019, 30(Suppl 5):v55ev98
+34. Boeri C, Chiappa C, Galli F, De Berardinis V, Bardelli L, Carcano G,
+Rovera F: Machine learning techniques in breast cancer prognosis
+prediction: a primary evaluation. Cancer Med 2020, 9:3234e3243
+35. Ciallella HL, Russo DP, Aleksunes LM, Grimm FA, Zhu H:
+Predictive modeling of estrogen receptor agonism, antagonism, and
+binding activities using machine- and deep-learning approaches. Lab
+Invest 2021, 101:490e502
+36. Dvorak HF: Tumors: wounds that do not heal-redux. Cancer Immu-
+nol Res 2015, 3:1e11
+37. Adamis AP, Brittain CJ, Dandekar A, Hopkins JJ: Building on the
+success of anti-vascular endothelial growth factor therapy: a vision
+for the next decade. Eye (Lond) 2020, 34:1966e1972
+38. Orimo A, Gupta PB, Sgroi DC, Arenzana-Seisdedos F, Delaunay T,
+Naeem R, Carey VJ, Richardson AL, Weinberg RA: Stromal
+ﬁbroblasts present in invasive human breast carcinomas promote
+tumor growth and angiogenesis through elevated SDF-1/CXCL12
+secretion. Cell 2005, 121:335e348
+39. Petitprez F, Sun CM, Lacroix L, Sautes-Fridman C, de Reynies A,
+Fridman WH: Quantitative analyses of the tumor microenvironment
+composition and orientation in the era of precision medicine. Front
+Oncol 2018, 8:390
+Artiﬁcial Intelligence and Breast Cancer
+The American Journal of Pathology - ajp.amjpathol.org
+9
+REV 5.6.0 DTD  AJPA3520_proof  11 May 2021  11:57 am  EO: AJPA-D-20-00464
+40. Paeng K, Jung G, Lee S, Cho SY, Cho EY, Song SY: Pan-cancer
+analysis of tumor microenvironment using deep learning-based can-
+cer stroma and immune proﬁling in H&E images [abstract 2445]. In:
+Proceedings of the American Association for Cancer Research
+Annual Meeting 2019; 2019 Mar 29-Apr 3; Atlanta, GA. Bioinfor-
+matics Convergence Sci Syst Biol 2019, (79 Suppl):Abstract nr 2445
+41. Subramanian E, Tamayo A, Mootha VK, Mukherjee S, Ebert BL,
+Gillette MA, Paulovich A, Pomeroy SL, Golub TR, Lander ES,
+Mesirov JP: Gene set enrichment analysis: a knowledge-based
+approach for interpreting genome-wide expression proﬁles. Proc
+Natl Acad Sci U S A 2005, 102:15545e15550
+42. Aran D, Hu Z, Butte AJ: xCell: digitally portraying the tissue cellular
+heterogeneity landscape. Genome Biol 2017, 18:220
+43. Tappeiner E, Finotello F, Charoentong P, Mayer C, Rieder D,
+Trajanoski Z: TIminer: NGS data mining pipeline for cancer immu-
+nology and immunotherapy. Bioinformatics 2017, 33:3140e3141
+44. Becht E, Giraldo N, Lacroix L, Buttard B, Elarouci N, Petitprez F,
+Selves J, Laurent-Puig P, Sautès-Fridman C, Fridman WH, de
+Reyniès A: Estimating the population abundance of tissue-inﬁltrating
+immune and stromal cell populations using gene expression. Genome
+Biol 2016, 17:218
+45. Ohlund D, Elyada E, Tuveson D: Fibroblast heterogeneity in the
+cancer wound. J Exp Med 2014, 211:1503e1523
+46. Mäkelä K, Mäyränpää MI, Sihvo HK, Bergman P, Sutinen E,
+Ollila H, Kaarteenaho R, Myllärniemi M: Artiﬁcial intelligence
+identiﬁes inﬂammation and conﬁrms ﬁbroblast foci as prognostic
+tissue biomarkers in idiopathic pulmonary ﬁbrosis. Hum Pathol 2021,
+107:58e68
+47. Toratani M, Konno M, Asai A, Koseki J, Kawamoto K, Tamari K, Li Z,
+Sakai D, Kudo T, Satoh T, Sato K, Motooka D, Okuzaki D, Doki Y,
+Mori M, Ogawa K, Ishii H: A convolutional neural network uses
+microscopic images to differentiate between mouse and human cell
+lines and their radioresistant clones. Cancer Res 2018, 78:6703e6707
+48. RSIP vision Detection and segmentation of dendritic cells with deep
+learning. Tufts Medical Centre; 2015
+49. Weigel KJ, Paces W, Ergon EJ, Caldara J, McFadden K, Luengo C,
+Gianai R, Vennapusa B: Artiﬁcial intelligence assisted macrophages
+classiﬁcation in tumor biopsies [abstract 4918]. In: Proceedings of the
+American Association for Cancer Research Annual Meeting 2019;
+2019 Mar 29-Apr 3; Atlanta, GA. Cancer Res 2019, (79 Suppl):
+Abstract nr 4918
+50. McShane LM, Cavenagh MM, Lively TG, Eberhard DA, Bigbee WL,
+Williams PM, Mesirov JP, Polley MY, Kim KY, Tricoli JV,
+Taylor JM, Shuman DJ, Simon RM, Doroshow JH, Conley BA:
+Criteria for the use of omics-based predictors in clinical trials. Nature
+2013, 502:317e320
+51. Aponte-Lopez A, Fuentes-Panana EM, Cortes-Munoz D, Munoz-
+Cruz
+S:
+Mast
+cell,
+the
+neglected
+member
+of
+the
+tumor
+microenvironment: role in breast cancer. J Immunol Res 2018, 2018:
+2584243
+52. Tyler AL, Raza A, Krementsov DN, Case LK, Huang R, Ma RZ,
+Blankenhorn EP, Teuscher C, Mahoney JM: Network-based func-
+tional prediction augments genetic association to predict candidate
+genes for histamine hypersensitivity in mice. G3 (Bethesda) 2019, 9:
+4223e4233
+53. Varricchi G, Marone G: Mast cells: fascinating but still elusive after
+140 years from their discovery. Int J Mol Sci 2020, 21:464
+54. Roma-Rodrigues C, Mendes R, Baptista PV, Fernandes AR: Tar-
+geting tumor microenvironment for cancer therapy. Int J Mol Sci
+2019, 20:840
+55. Fetah
+KL,
+DiPardo
+BJ,
+Kongadzem
+E-M,
+Tomlinson
+JS,
+Elzagheid A, Elmusrati M, Khademhosseini A, Ashammakhi N:
+Cancer modeling-on-a-chip with future artiﬁcial intelligence integra-
+tion. Small 2019, 15:e1901985
+56. Ikemura K, Barouqa M, Fedorov K, Kushnir M, Billett H, Reyes-
+Gil M: Artiﬁcial intelligence to identify neutrophil extracellular traps
+in peripheral blood smears [abstract PB0642]. Res Pract Thromb
+Haemost 2020, (4 Suppl 1):314e315
+57. Jimenez-Sanchez A, Cast O, Miller ML: Comprehensive bench-
+marking and integration of tumor microenvironment cell estimation
+methods. Cancer Res 2019, 79:6238e6246
+58. Molla M, Waddell M, Page D, Shavlik J: Using machine learning
+to design and interpret gene-expression microarrays. AI Mag
+2015, 25:23
+59. Langley RR, Fidler IJ: The seed and soil hypothesis revisited–the role
+of tumor-stroma interactions in metastasis to different organs. Int J
+Cancer 2011, 128:2527e2535
+60. XTalks: Using AI and multiplex biomarker analysis for deeper in-
+sights into the tumor microenvironment e broadcast 1 [webinar].
+2019. Available at: https://xtalks.com/webinars/using-ai-multiplex-
+biomarker-analysis-for-deeper-insights-into-the-tumor-microenviron
+ment-broad-1
+61. Miao Y-R, Zhang Q, Lei Q, Luo M, Xie G-Y, Wang H, Guo A-Y:
+ImmuCellAI: a unique method for comprehensive T-cell subsets
+abundance prediction and its application in cancer immunotherapy.
+Adv Sci (Weinh) 2020, 7:1902880
+62. Church G: Dyno advances AI-powered gene therapy. Nat Biotechnol
+2020, 38:661
+63. Health Europa: Artiﬁcial intelligence has potential to transform gene
+therapy. November 2019. Available at: https://www.healtheuropa.eu/
+artiﬁcial-intelligence-has-potential-to-transform-gene-therapy/95354
+64. Shimizu H, Nakayama KI: A 23 gene-based molecular prognostic
+score precisely predicts overall survival of breast cancer patients.
+EBioMedicine 2019, 46:150e159
+65. Bahcecioglu G, Basara G, Ellis BW, Ren X, Zorlutuna P: Breast
+cancer models: engineering the tumor microenvironment. Acta
+Biomater 2020, 106:1e21
+66. Place AE, Huh SJ, Polyak K: The microenvironment in breast cancer
+progression: biology and implications for treatment. Breast Cancer
+Res 2011, 13:227
+Malherbe
+10
+ajp.amjpathol.org - The American Journal of Pathology
+REV 5.6.0 DTD  AJPA3520_proof  11 May 2021  11:57 am  EO: AJPA-D-20-00464

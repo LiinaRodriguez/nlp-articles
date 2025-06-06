@@ -1,0 +1,1384 @@
+Volume 28 Number C June 2022 pp. 100796 
+1 
+Original Research 
+Mathematical modeling of radiotherapy 
+and its impact on tumor interactions 
+with the immune system 
+Rebecca Anne Bekker a , ∗; Sungjune Kim b ; 
+Shari Pilon-Thomas c ; Heiko Enderling a , b , ∗
+a Department of Integrated Mathematical Oncology, H. Lee Moffitt Cancer Center & Research 
+Institute, Tampa, FL, USA 
+b Department of Radiation Oncology, H. Lee Moffitt Cancer Center & Research Institute, Tampa, 
+FL, USA 
+c Department of Immunology, H. Lee Moffitt Cancer Center & Research Institute, Tampa, FL, USA 
+Abstract 
+Radiotherapy is a primary therapeutic modality widely utilized with curative intent. Traditionally tumor response was hypothesized 
+to be due to high levels of cell death induced by irreparable DNA damage. However, the immunomodulatory aspect of radiation is 
+now widely accepted. As such, interest into the combination of radiotherapy and immunotherapy is increasing, the synergy of which 
+has the potential to improve tumor regression beyond that observed after either treatment alone. However, questions regarding the 
+timing (sequential vs concurrent) and dose fractionation (hyper-, standard-, or hypo-fractionation) that result in improved anti-tumor 
+immune responses, and thus potentially enhanced tumor inhibition, remain. Here we discuss the biological response to radiotherapy 
+and its immunomodulatory properties before giving an overview of pre-clinical data and clinical trials concerned with answering these 
+questions. Finally, we review published mathematical models of the impact of radiotherapy on tumor-immune interactions. Ranging 
+from considering the impact of properties of the tumor microenvironment on the induction of anti-tumor responses, to the impact of 
+choice of radiation site in the setting of metastatic disease, these models all have an underlying feature in common: the push towards 
+personalized therapy. 
+Neoplasia (2022) 28, 100796 
+Keywords: Tumor immune interactions, Radiotherapy, Immunotherapy, Mathematical model, Personalized oncology 
+Introduction 
+Mathematical modeling in oncology has a long history, with various 
+theoretical approaches being used to explore and describe biological 
+mechanisms as well as tumor growth and treatment response dynamics 
+Abbreviations: APC, antigen presenting cells; BED, biologically effective dose; CTLA-4, 
+cytotoxic T-lymphocyte-associated protein 4; DAMP, damage-associated molecular pattern; 
+GARD, genomic-adjusted radiation dose; IT, immunotherapy; LQ, linear-quadratic model; 
+OAR, organ at risk; PD-1, programmed cell death protein 1; PD-L1, programmed 
+death-ligand 1; PSI, proliferation saturation index; RSI, radiation sensitivity index; RT, 
+radiotherapy; SFRT, spatially fractionated radiotherapy; TAA, tumor associated antigen; 
+TFRT, temporally feathered radiotherapy; TIME, tumor immune microenvironment. 
+∗Corresponding authors. 
+E-mail addresses: Rebecca.Bekker@moffitt.org (R.A. Bekker), Heiko.Enderling@mof 
+fitt.org (H. Enderling). 
+Received 7 September 2021; received in revised form 27 March 2022; accepted 1 April 2022 
+©
+2022 
+The 
+Authors. 
+Published 
+by 
+Elsevier 
+Inc. 
+This 
+is 
+an 
+open 
+access 
+article 
+under 
+the 
+CC 
+BY-NC-ND 
+license 
+( http://creativecommons.org/licenses/by-nc-nd/4.0/ ) 
+https://doi.org/10.1016/j.neo.2022.100796 
+[1–7] . Mathematical oncology may hold the key to bridging experimental, 
+clinical, and data science studies; to test and generate hypotheses and 
+evaluate conceptual models for validity. In radiation oncology specifically, 
+mathematical modeling has a rich history, likely due in part to the field 
+of medical physics. Approximately 50% of cancer patients are prescribed 
+radiotherapy (RT) during their treatment course, either alone as definitive 
+therapy or in combination with surgery, chemotherapy, targeted therapy, 
+or immunotherapy. As our understanding of the complexity of tumor 
+heterogeneity grows, motivation for the tailoring of cancer therapy to 
+individual patients increases, thus driving the push towards precision 
+medicine. While the flood of new available genomic data has thus far 
+affected decisions regarding chemotherapy and certain targeted biological 
+agents, it has yet to impact radiotherapy: the selection of total dose and 
+fractionation is currently based empirically on average clinical outcome data, 
+albeit often from randomized trials. 
+Historically, the main driver of tumor response to radiotherapy was 
+thought to be cytotoxic DNA damage, however, the immunomodulatory 
+effects of radiation can no longer be ignored, leading to research into potential 
+synergy between radiotherapy and immunotherapies. While the exact 
+mechanisms and relationships between radiation dose, dose fractionation, 
+2 
+Mathematical modeling of radiotherapy 
+R.A. Bekker et al. 
+Neoplasia Vol. 28, No. C, 2022 
+and immune response have not yet been fully elucidated, ongoing preclinical 
+studies and clinical trials are investigating the combination of RT with 
+various types of immunotherapies such as vaccines, adoptive cell transfers, 
+and checkpoint inhibitors against cytotoxic T-lymphocyte-associated protein 
+4 (CTLA-4) or programmed cell death protein 1 (PD-1) or the associated 
+PD-1 ligand (PD-L1) [8–10] . These studies aim to answer important 
+questions regarding combination treatment schedules, such as optimal timing 
+(sequential vs concurrent) and dose fractionation (hyper-, standard-, or hypo- 
+fractionation) to achieve superior tumor inhibition. 
+Mathematical oncology is well positioned to assist in these investigations, 
+either by elucidating underlying biological mechanisms of radio- 
+immunotherapy synergy, or by predicting which patients may benefit 
+most from these combination treatments. Here we review published 
+pre-clinical data and clinical trials investigating these questions and 
+discuss the contribution of published mathematical models of tumor 
+immune interactions focusing on those that explicitly include radiotherapy 
+simulations. 
+The biological response to radiotherapy 
+The administration of total radiation dose as smaller fractionated doses, 
+often over many weeks, creates a therapeutic window for normal tissue to 
+recover from radiation injury. The biological effects of fractionated radiation 
+are often described by the 5 R’s, namely radiosensitivity, repair, reoxygenation, 
+reassortment, and repopulation [ 11 , 12 ]. Seminal studies in the 1980s showed 
+that different types of cells exhibit a wide range of inherent radiosensitivity 
+[13] . Indeed, significant variations in radiosensitivity between cancer types, 
+and even between tumors of the same type have recently been reported 
+[14] . Understanding tumor and patient-specific sensitivity to radiation, and 
+particularly to radiation dose fractionation, may help inform the choice of RT 
+schedule, to ultimately control the tumor whilst preventing overtreatment of 
+radiosensitive tumors. 
+Radiation causes DNA damage primarily in the form of double strand 
+breaks [15–17] . Cellular attempts to repair such damage between therapeutic 
+radiation fractions may lead to cell cycle arrest, recovery, or death, depending 
+on the degree of DNA damage induced and the cells’ capacity for repair. 
+Dysregulation of DNA repair mechanisms occurs early on in carcinogenesis 
+[18] across many cancer types. By comparison, DNA repair processes are 
+usually intact in normal cells, allowing for repair of radiation induced 
+damage in normal cells which mediates reduced radiation toxicity in normal 
+tissue [19] . The extent of DNA damage induced by radiation is strongly 
+dependent on tissue oxygenation, as radiation energy deposited in the tissue 
+creates reactive oxygen species that in turn damage DNA [20] . Consequently, 
+tumor cells in hypoxic conditions often require approximately three times 
+the radiation dose to exhibit a comparable response to tumor cells in 
+well oxygenated, normoxic conditions. Notably, the discrepant effects of 
+equivalent radiation doses in hypoxic versus normoxic conditions can be 
+quantitatively described by the oxygen enhancement ratio [21] . Several 
+factors determine oxygen availability in the tumor bed, including the varying 
+degree of functional vasculature in the tumor. Radiation-induced cell death 
+may release pressure on obstructed blood vessels in a dense tumor, thereby 
+increasing blood flow and reoxygenation of the tissue and increased sensitivity 
+to subsequent radiation fractions. 
+Furthermore, cells in different cell cycle phases exhibit differential 
+levels of radiosensitivity and capacity to initiate DNA damage repair 
+[22] . Killing of radiosensitive cells and re-oxygenation of the tumor 
+allows for cells to redistribute into cell cycle phases that confer higher 
+radiosensitivity. Simultaneously, tumors may enter phases of accelerated 
+repopulation . Historically, the repopulation of tumors after fractionated 
+doses was attributed to the gradual proliferation of surviving tumor cells 
+[ 23 , 24 ]. However, factors released by dying malignant cells have recently 
+been implicated as inducers of rapid re-growth and subsequent repopulation 
+[25] . Additionally, dying cells may also release damage associated molecular 
+patterns (DAMPs) which stimulate an immunogenic response, while other 
+forms of cell death may be immunogenically silent [26] . Furthermore, 
+tumors that quickly regenerate after radiation have been reported to exhibit 
+reduced local control under prolonged treatment plans [27] . Thus, the length 
+of radiotherapy treatment schedules may also play an important role in 
+treatment response [28] , and therein exist as a crucial factor to consider when 
+making treatment decisions. 
+The immunomodulatory effects of radiotherapy 
+Radiation kills cells either directly via induction of double stranded 
+DNA breaks, or indirectly by generating free radicals from water molecules 
+within the cell which react with DNA to cause macromolecular damage 
+[29] . The resulting DNA damage varies in lethality, depending on the 
+severity and pervasiveness of the induced DNA damage and functionality 
+of DNA damage repair pathways. However, loss or disruption of DNA 
+damage repair pathways occurs early in carcinogenesis [18] , leaving cancer 
+cells sensitive to DNA damaging agents. Following irradiation cells may 
+undergo various forms of cell death, including immunogenic cell death [26] . 
+Critically, the form of death cancer cells undergo significantly impacts their 
+induction or suppression of immune responses. Apoptotic or other forms of 
+immunogenically silent cell death hinder activation of anti-tumor immune 
+responses whereas immunostimulatory forms of cell death, most notably 
+immunogenic cell death itself, support radiation induced immune activation 
+[30] . Thus, the capacity for radiation to induce immune activation also hinges 
+on the propensity for irradiated tumor cells to undergo different forms of cell 
+death which likely occurs in a tumor type and radiation dose specific manner. 
+Notably, the context in which DNA is detected significantly impacts 
+the cellular effects. In the context of pro-inflammatory cues, exposure to 
+DNA can stimulate immune activation, whereas exposure to DNA under 
+homeostatic conditions can promote development of immunosuppressive 
+subsets to avert development of auto-immune responses. Release of additional 
+DAMPs via immunogenic cell death during irradiation including heat shock 
+proteins (HSPs), nuclear protein HMGB1, calreticulin and ATP all promote 
+the development of antitumor immune responses upon DNA exposure 
+[31–33] . 
+Cytosolic DNA-sensing via the cGAS-STING pathway among others 
+and detection of both intra- and extracellular DNA via toll ligand receptors 
+(TLRs) promotes immune activation in response to radiation induced DNA 
+damage. Detection of DNA damage within cancer cells occurs via direct 
+interaction of the cGas protein with cytosolic DNA which has leaked 
+from the nuclei or mitochondria of damaged cells. There cGas associates 
+with STING which undergoes activating phosphorylation and induction of 
+downstream signaling to induce type I interferon production and secretion 
+of inflammatory cytokines. Furthermore, cytosolic DNA can be sensed by 
+intracellular TLR receptors, most notably CpG motif recognizing TLR9 
+which stimulates subsequent activation of the NFKB transcription factors 
+upon DNA binding. Additional intracellular sensors of cytosolic DNA 
+include AIM2, which stimulates caspase 1 activation; RIG1 and DAI which 
+stimulate downstream STING activation and LRRFIP1. Notably, in the 
+context of transformed cells, activation of each intracellular DNA sensor 
+hinges on intact expression of pathway members and the sequence specific 
+motifs present in cytosolic DNA. Overall, exposure of tumor cells to cytosolic 
+DNA can result in induction of immunogenic cell death via STING- 
+pathways induced NLRP3 activation, AIM2 induced caspase activation, 
+and TLR-mediated induction of mitochondrial pore formation. Collectively 
+induction of tumor cell death in response to cytosolic DNA stimulates 
+production of immunostimulatory cytokines and release of additional 
+DAMPs [ 34 , 35 ]. 
+Similarly, tumor infiltrating immune cells can react to radiation induced 
+release of DNA via several mechanisms. Immune cells may also react to 
+Neoplasia Vol. 28, No. C, 2022 
+Mathematical modeling of radiotherapy 
+R.A. Bekker et al. 
+3 
+the release of tumor DNA into the extracellular environment or respond to 
+DNA from phagocytosed/endocytosed tumor debris [36] . In immune cells, 
+exposure to DNA triggers cell type specific responses. Exposure of immature 
+dendritic cells to DNA promotes dendritic cell maturation, secretion of 
+immunostimulatory cytokines and expression of costimulatory markers. 
+Exposure of B cells or macrophages to DNA can provoke upregulation of 
+antigen presenting functions and secretion of stimulatory cytokines [37] . 
+Exposure of T cells to tumor DNA can also promote development of anti- 
+tumor effector functions including production of type I interferon; however, 
+prolonged exposure to DNA can activate cell death pathways in T cells [38] . 
+In terms of stimulating tumor specific T cell responses, exposure to 
+DNA directs maturation of antigen presenting cells and promotes uptake of 
+antigen containing tumor debris material released from dying tumor cells 
+following irradiation. Importantly, presentation of tumor antigens alongside 
+costimulatory markers occurs after DNA-induced maturation of antigen 
+presenting cells. Additionally, DNA exposed antigen presenting cells secrete 
+chemotactic factors which promote T cell infiltration into the tumor which 
+further amplifies the anti-tumor potential of radiation induced DNA release 
+[39] . 
+Multiple pre-clinical studies have shown that radiation affects this process, 
+with some reporting immune stimulation, while others have observed 
+immune suppression. For instance, although radiation has been shown to 
+increase dendritic cell maturation [40] , it may also impair the antigen 
+presentation ability of mature dendritic cells [41] . Increases in MHCI 
+expression levels on cancer cells following radiation have also been reported 
+[42] , leading to an increase in the recognition of tumor cells by activated 
+CD8 + T-cells, although radiation has been shown to be detrimental to 
+vasculature in the tumor bed, thereby inhibiting the trafficking of immune 
+cells [43] . Furthermore, the radiation-induced increase in programmed 
+death-ligand 1 (PD-L1) expression may strengthen the immune-suppressive 
+capacity of tumor cells [44] . A thorough review of the contradictory 
+immunological consequences of radiation can be found elsewhere [ 45 , 46 ]. In 
+the face of so much evidence, a sixth ‘R’ of radiobiology, that of immunological 
+response has been postulated [47] . 
+The radiation-induced immune response can act both locally at the 
+site of irradiation, and systemically, mediating regression of distant tumors 
+[48] . Previously thought to be a rare event, with only 46 cases reported 
+during the 1969-2014 period [49] , the abscopal effect has become more 
+common, especially in pre-clinical and clinical trials of radio-immunotherapy 
+combinations [50] . However, the exact relationships between radio- 
+immunotherapy schedules and the induction of the abscopal effect remain 
+to be elucidated. Below we briefly discuss pre-clinical and clinical studies 
+investigating these matters. 
+Investigating the timing of radiation with 
+concurrent immunotherapy 
+Dovedi et al. showed survival in a murine colon carcinoma model was 
+significantly higher in mice receiving anti-PD-L1 concurrently with 2 Gy ×
+5 radiation as opposed to sequentially [51] . Investigating this result, the 
+authors observed a transient but significant increase in PD-1 expression on 
+both CD4 + T-cells and CD8 + T-cells, which was present 24 hours after 
+the last dose of radiation but not 7 days after. This suggests the existence 
+of an optimal timing for administration of this immunotherapy when in 
+combination with radiation. However, PD-1 failure may interfere with 
+subsequent radiation responses [52] . Young et al. investigated a similar timing 
+schedule in the same murine model as Dovedi et al., but in combination 
+with either an anti-CTLA-4 antibody or an anti-OX40 antibody [53] . 
+OX40 (CD134) is a co-stimulatory molecule transiently expressed on T 
+cells following activation. The antibody binds to and activates the OX40 
+receptor, inducing the proliferation of T cells [54] . Although the overall 
+survival of mice treated with the radiotherapy and anti-CTLA-4 antibody 
+combination was improved compared to those treated with monotherapies, 
+all mice treated with the inhibitor prior to irradiation had complete tumor 
+clearance. However, the same results were not seen in mice treated with 
+combinations of radiotherapy and the anti-OX40 agonist antibody; in fact, 
+administration of this immunotherapy a day after radiation resulted in the 
+highest overall survival. Similar experiments using a MMTV-PyMT model 
+did not yield the same results, indicating that the optimal timing of the 
+combination therapy may also be cancer type and immunotherapy type 
+specific. 
+The KEYNOTE 001 trial (NCT01295827), which investigated the PD- 
+1 targeted antibody pembrolizumab for treatment of non-small cell lung 
+cancer (NSCLC), found that patients who received radiotherapy prior to 
+the trial demonstrated higher overall and progression free survival compared 
+to patients who had not received any radiation [55] . In addition, NSCLC 
+patients in the PACIFIC trial (NCT02125461) treated with chemoradiation 
+(CRT) and the PD-L1 inhibitor durvalumab, showed a higher progression 
+free survival when receiving the immunotherapy within 14 days following 
+CRT, compared to patients with longer wait times until durvalumab 
+[56] . Recruitment for NCT02239900 which investigates concurrent vs 
+sequential administration of the anti-CTLA-4 antibody ipilimumab and 
+stereotactic body radiation therapy (SBRT) for both liver and lung cancers 
+has recently been completed, although results are still pending. A similar trial, 
+NCT03223155, is focused on the sequencing of ipilimumab, nivolumab and 
+SBRT for NSCLC with estimated completion in December 2022. 
+Investigating radiation dose fractionations for 
+immune activation 
+Dewan et al. investigated the immunological consequences of radio- 
+immunotherapy in a bi-lateral murine mammary adenocarcinoma model 
+[57] . Mice were randomized into cohorts receiving either no treatment to 
+the primary tumor or 20 Gy × 1 , 8 Gy × 3 , or 6 Gy × 5 on consecutive 
+days with or without an anti-CTLA-4 antibody at various times following 
+radiation. The primary tumors of mice receiving radiation alone exhibited 
+comparable responses regardless of dosing schedule. However, combination 
+therapy resulted in improved primary tumor inhibition, with complete 
+regression of the primary tumor observed in mice treated with either the 
+8 Gy × 3 or 6 Gy × 5 dose schedules. In addition, complete regression of 
+2 of 5 non-irradiated secondary tumors was reported in mice treated with the 
+8 Gy × 3 combination therapy, indicative of systemic anti-tumor immunity 
+and radiation-induced immune-mediated abscopal responses. In contrast, the 
+6 Gy × 5 combination exhibited superior responses in a murine colon 
+carcinoma model, lending further support to the notion that optimal dose 
+fractionations may be tumor type specific. 
+Vanpouille-Box et al. completed a similar investigation using radiotherapy 
+doses of 8 Gy, 30 Gy or 8 Gy × 3 and an anti-CTLA-4 antibody [58] . 
+Delayed growth of the irradiated primary tumor was observed, but only the 
+8 Gy × 3 combination treatment regimen resulted in complete regression of 
+primary tumors (6 out of 7 tumors). Although significant growth inhibition 
+of the unirradiated secondary tumors was observed in mice that received this 
+combination therapy, tumor volumes at the abscopal site were comparable 
+between all other cohorts. 
+Immunostimulatory properties effects have also been reported following 
+low dose radiation. In a preclinical study of pancreatic cancer, Klug et al. 
+observed higher levels of infiltration by tumor specific T cells following 
+radiation with 0 . 5 Gy compared to more clinically standard doses of 1 Gy, 
+2 Gy or 6 Gy. The authors compared infiltration levels of host derived CD8 + 
+T cells following priming of the tumor with either 0 . 5 Gy, 1 Gy, 2 Gy or 6 Gy
+prior to transfer of tumor specific CD8 + T cells. Priming with 1 Gy resulted 
+in the highest levels of infiltration of host derived CD8 + T cells, although 
+all treatment groups had significantly higher levels of infiltration than the 
+control group [59] . 
+4 
+Mathematical modeling of radiotherapy 
+R.A. Bekker et al. 
+Neoplasia Vol. 28, No. C, 2022 
+Multiple clinical trials have investigated optimal radiotherapy dose 
+fractionation schemes to be used in combination with immunotherapies. 
+For instance, NCT02659540 investigated the combination of ipilimumab, 
+nivolumab and RT in the setting of stage IV melanoma. Here radiation 
+was administered in either 3 Gy × 10 or 9 Gy × 3 fractions. A limited 
+number of patients completed this trial, only 4 and 2 of the 10 enrolled 
+patients enrolled in each cohort respectively, yet the results suggest that 
+treatment with the lower fractionation exhibits a higher number of partial 
+responses and a lower number of progressive disease occurrences compared 
+to the hypofractionated regimen [60] . NCT02888743 is investigating the 
+combination of monoclonal antibodies that inhibit CTLA-4 and the PD- 
+L1:PD-1 interaction and radiotherapy in high or low dose fractions, focusing 
+on colorectal cancer and non-small cell lung cancer, with an expected 
+completion date of December 2021. A similar trial, NCT03085719, is 
+actively recruiting head and neck squamous cell carcinoma patients to 
+investigate the combination of anti-PD-1 immunotherapy and three high- 
+dose RT fractions, with or without two additional low-dose fractions. Started 
+in 2015, NCT02406183 looked at ipilimumab-SBRT combination for the 
+treatment of metastatic melanoma. Here, radiotherapy was administered in 
+either 8 Gy × 3 , 10 Gy × 3 , or 12 Gy × 3 dose fractionation schemes, 
+no results have yet been posted. 
+More in-depth discussions of clinical trials investigating the combination 
+of radiotherapy and immunotherapies can be found elsewhere [8–10] . 
+While these clinical studies provide invaluable insights into selected 
+protocols, to exhaustively evaluate every possible radiation dose and dose 
+fractionation with different sequencing and timing of the various immuno- 
+therapeutics remains infeasible [61] . Integrating mathematical modeling into 
+experimental and clinical research may help analyze the complex, non-linear 
+multifactorial treatment responses [62–64] . 
+The purpose of mathematical oncology 
+Interest into mathematical oncology has increased with the growing 
+realization that the translation of in vitro and in vivo results into clinic is 
+hindered by crucial differences between humans and animal models [ 64 , 65 ]. 
+The burgeoning field of mathematical oncology may be uniquely positioned 
+to help bridge the scales from pre-clinical to clinical studies. The type of data 
+at hand and the scale of the system under consideration both inform the type 
+of mathematical model to be developed [66] . 
+Modeling of the temporal evolution of data on the population level is 
+best done using deterministic modelling methods such as ordinary differential 
+equations, or partial differential equations if also accounting for spatial 
+evolution. However, when the available data is of higher granularity and 
+the system is instead focused on interactions between or movement of 
+discrete individuals (or cells), agent-based models (ABMs) are better suited. 
+Individuals within these models follow predetermined sets of rules giving 
+rise to emergent behavior, which may vary with each simulation due to the 
+inherent stochasticity of this model type. Thus, a high number of simulations 
+is required to ensure consistency of model outcomes [67] . Conversely, the 
+behavior of deterministic systems is fully determined by initial conditions 
+and the parameter set used. 
+The extent to which the underlying biological mechanisms are reflected 
+in a mathematical model may inform its use. For instance, mechanistic 
+models, which include in-depth quantitative descriptions of a system’s 
+underlying biological processes, can be used in hypothesis generation to 
+further knowledge [68] . Alternatively, descriptive models, which may include 
+little to no biological mechanism explicitly, can be used in predictive settings 
+[ 7 , 69–71 ]. For predictive modeling, it is paramount to integrate the model 
+with experimental and clinical data [62–64] . Successful studies calibrate 
+mathematical models with relevant data, validate the model on independent 
+data sets, and test the prediction accuracy on known outcomes before making 
+predictions about novel treatment protocols [72–76] . Most challenging for 
+such interdisciplinary modeling is to match available data with the right 
+modeling approaches to test specific scientific hypotheses. Often, further 
+abstractions and simplifications have to be made to accommodate and balance 
+lack of data, biological uncertainty, and mathematical modeling complexity. 
+These can most successfully be overcome by a close dialog of interdisciplinary 
+collaborations. 
+Mathematical models that faithfully include a myriad of tumor-associated 
+cell populations, their interactions, associated biological processes, and 
+underlying mechanisms in the tumor-immune microenvironment under 
+radiotherapy and/or immunotherapies would be incredibly complex (see 
+Fig. 1 ). However, assumptions regarding the cellular populations can simplify 
+the system sans treatment to a six-compartment model: Cancer cells ( C ), 
+dying cancer cells (D) , tumor associated antigen (A), antigen presenting 
+cells (P), effector immune cells such as CD8 + T cells (E), and regulatory 
+immune cells denoted by (R). A general formulation of such a mathematical 
+model is presented below, where ˙ 
+C , ˙ 
+D , ˙ 
+A , ˙ 
+P , ˙ 
+E and ˙ 
+R denote the 
+temporal evolution of the respective population. While this formulation 
+may be a relatively faithful representation of the population level of the 
+underlying biological system, the complexity requires large amounts of data 
+for calibration, and limits the possible mathematical analysis and utility of 
+the model [77] . Development of mathematical models must be done with 
+the trade-offs between complexity and simplicity in mind. 
+Icon 
+Equation 
+˙ 
+C = 
+pr olif er ation 
+   
+f (C) 
+−
+inactivation 
+   
+g( C, E ) 
+˙ 
+D = g( C, E ) −
+r emov al 
+ 
+a D 
+˙ 
+A = 
+production 
+   
+h (D) −
+uptake & proces s ing 
+   
+j( A, P ) 
+−
+decay 
+ 
+bA 
+˙ 
+P = 
+inf lux 
+ 
+
+−
+decay 
+ 
+cP 
+˙ 
+E = 
+inf lux & r ecr uitment 
+ 
+ 
+ 
+k( E, P, A ) 
+−
+exhaustion 
+   
+m ( C, E ) −
+regulation & death 
+   
+n ( E, R ) 
+˙ 
+R = 
+inf lux & r ecr uitment 
+ 
+ 
+ 
+n ( C, D, P, E ) 
+−
+death 
+ 
+dR 
+In this system however, additional simplifying assumptions can be made, 
+resulting in a so-called predator-prey or Lotka-Volterra type mathematical 
+model [ 78 , 79 ]. This model describes the proliferation of cancer cells, influx 
+and recruitment of tumor specific effector immune cells, and the interactions 
+between these two populations. A general example of the structure of such a 
+model can be seen below. The oscillatory behavior of this system is dependent 
+on parameter values and recapitulates the immunoediting phase of the three 
+E’s as postulated by Dunn et al. [80] ( Fig. 2 ). 
+˙ 
+C = 
+proli f erati on 
+   
+f ( C ) −
+immune −me diate d de ath 
+   
+g ( C, E ) 
+−
+death 
+ 
+μC 
+˙ 
+E = 
+i n f lux & recrui tment 
+   
+k ( E , C ) 
+−
+exhaustion 
+   
+m ( C, E ) −
+death 
+ 
+d E 
+Thus, assumptions regarding the importance of subpopulations and their 
+contributions yield models of varying simplicity for the same biological 
+system. The Akaike Information Criterion (AIC) [ 81 , 82 ] is one of several 
+measures that report on a model’s ability to balance data fitting and 
+complexity, relative to others fitted to the same dataset. Comparison of 
+AIC values can be used in model selection, and hypothesis generation. 
+Neoplasia Vol. 28, No. C, 2022 
+Mathematical modeling of radiotherapy 
+R.A. Bekker et al. 
+5 
+Fig. 1. The tumor immune microenvironment (TIME), and the effects of radiation and immunotherapy thereon. A) The tumor immune microenvironment, 
+consisting of various cell types including cancer and immune subpopulations, some of which are shown. Interactions within the TIME include the uptake and 
+processing of tumor associated antigen (TAA) by professional antigen presentation cells (APC) such as dendritic cells; the influx of TAA specific activated T 
+cells, the recognition and lysis of cancer cells. Additionally, activated T cells can be regulated and suppressed by T-reg cells or tumor cells via the PD-1:PD-L1 
+axis or CTLA-4, and macrophages can phagocytose cancer cells. B-C) Interactions within the TIME can be generalized as occurring between six compartments: 
+cancer cells, doomed cancer cells, TAA, APCs, effector immune cells, and regulatory immune cells. Black arrows denote these interactions, with inhibitory 
+interactions shown as blocked arrows, and stimulatory interactions indicated by sharp arrows. Administration of (B) radiotherapy and (C) immunotherapy 
+affect these interactions in different ways, detailed reviews of which can be found elsewhere [ 45 , 151 ]. Figures created with BioRender ( www.biorender.com ). 
+6 
+Mathematical modeling of radiotherapy 
+R.A. Bekker et al. 
+Neoplasia Vol. 28, No. C, 2022 
+Fig. 2. The dynamics of a predator-prey type model of cancer-effector immune interactions. A) Model schematic. Cancer cells (C) proliferate, (curved returning 
+arrow), and die (outgoing arrow). Effector cells (E) are recruited (incoming arrow) and die (outgoing arrow). The interactions between cancer cells and effector 
+immune cells are inhibitory, denoted by the blunt arrow. Inhibition of cancer cells by effector cells recruits more immune cells (curved, returning arrow). B) 
+The phase-plane of the model in (A). The red trajectory illustrates how the two populations change with regards to each other. Starting from the bottom 
+left, the cancer cells increase in number while effector cells are recruited. Once the inhibitory effect exerted by effector cells is larger than the replacement of 
+cancer cells, the trajectory moves towards the vertical axis. At this point the effector population is unsustainable by the cancer cell population and experiences a 
+rapid decline, and the trajectory moves towards the horizontal axis. These oscillations continue indefinitely. C) Two solutions of the model in (A). Top panel, 
+this model can recapitulate the three E’s of immunoediting postulated by Dunn et al. [80] : elimination ( ε 1 ), equilibrium ( ε 2 ) and escape ( ε 3 ). Bottom panel, 
+solutions showing the explicit oscillatory behavior described in (B). 
+This is the approach Yamamoto et al. followed in their investigation of 
+the impact of the immune system on transient increases in prostate specific 
+antigen (PSA) levels in prostate cancer patients undergoing interstitial 
+brachytherapy [83] . Comparison of AIC values of two models, one with and 
+one without an immune compartment, suggests the immune compartment 
+is a necessary inclusion to explain the PSA bounces. The authors go on 
+to confirm, at least mathematically, that patients who experience this PSA 
+bounce have significantly higher mean densities of CD8 + T cells and 
+CD3 + T cells pre-treatment, although further validation of this hypothesis is 
+required. 
+Several mathematical models that predict response to radiation have 
+been developed, but the most widely used is the linear quadratic (LQ) 
+model. The underlying assumptions can be summarized as: radiation-induced 
+cellular death is due to sufficient levels of irreparable double strand DNA 
+breaks created directly by ionizing radiation, or through interactions between 
+non-lethal (single-strand) DNA breaks [84] . The LQ model, SF (d ) = 
+exp ( −αd −βd 2 ) , predicts the surviving fraction of a population following 
+a radiation dose of d Gy, where α G y −1 denotes the cellular responses 
+due mainly to ‘single-hit’ damage, and β G y −2 denotes ‘multi-hit’ damage 
+from independent radiation events [85] . Estimates for these radiosensitivity 
+parameters of various cancer types have been reported [14] and are useful 
+in the calculation of the biological effective dose (BED) [ 86 , 87 ]. BED can 
+be used to compare dose fractionation schemes, and to identify alternative 
+fractionation regimens [88] . 
+Radiobiological response models have been used in more complex models 
+of tumors undergoing treatment with radiotherapy, such as the seminal work 
+by Leder et al. [73] . Here the authors used an approach that iteratively 
+integrates theoretical and experimental methods to develop a mathematical 
+model with which to predict optimal radiotherapy schedules for platelet 
+derived growth factor (PDGF) driven glioblastoma. In this interdisciplinary 
+study, the mathematical model was calibrated with experimental data and 
+used to identify two optimal treatment schedules. The response predicted for 
+these schedules showed improved response over standard, hyper- and hypo- 
+fractionated regimens with equal total dose. These model predictions were 
+subsequently verified in a glioma murine model. 
+Proliferating cells are more radiosensitive than quiescent cells [89] , and 
+thus the proportions in which these cells appear in a tumor may influence 
+response to radiation. This is the basis of Prokopirou et al.’s proliferation 
+saturation index (PSI), which originally used a logistic-type growth model to 
+implicitly link the proliferative fraction of the tumor to radiation sensitivity 
+and response [90] . It has since been shown to be descriptive of tumor 
+data for various growth models [91] and different cancer types including 
+non-small cell lung cancer [92] and head and neck cancers (HNC) [93] . 
+PSI can specifically be used to compare predicted outcomes for various 
+treatment schedules with different BEDs, using only two data points, 
+making it useful for identifying patients who may benefit from alternative 
+radiation schedules. The PSI model is currently being validated in the 
+ongoing clinical trial NCT03656133, using patient-specific PSI to select 
+between a hyperfractionated regimen of 1 . 2 Gy doses twice daily or the 
+standard 2 Gy daily fractionation for oropharyngeal cancer patients. In 
+a recent variation of the PSI model, Zahid et al. simulated the effect of 
+radiation not by linear-quadratic cell survival but by modulation of the 
+tumor microenvironment to prospectively predict patient-specific responses 
+to radiation in head and neck cancer with high accuracy [74] . Of note, 
+the PSI model assumes that the proportion of cells that proliferate decrease 
+as the tumor approaches its carrying capacity, which in turn decreases the 
+overall tumor response to radiation. Routine radiological imaging cannot 
+give sufficient resolution into intra-tumoral composition to validate such 
+assumption. An alternative explanation for growth saturation could be a 
+balance of rapid proliferation and high cell death rates. In such scenario, the 
+tumor would remain radiosensitive even at dormancy. Different mathematical 
+models have explored these alternatives and discuss future data collection 
+suggestions to better decipher the intra-tumoral dynamics during different 
+tumor growth and dormancy phases [94–96] . 
+Neoplasia Vol. 28, No. C, 2022 
+Mathematical modeling of radiotherapy 
+R.A. Bekker et al. 
+7 
+A different application of mathematical modeling in radiation oncology 
+was demonstrated in the development of the radiation sensitivity index (RSI), 
+a linear regression model that relates the expression of ten genes to the 
+radiosensitivity of a cell line, specifically for single doses of 2 Gy [97] . First 
+proposed in 2009, this model has been validated for multiple disease sites, 
+including head and neck, rectal, and esophageal cancers [97] , breast cancer 
+[98] , and glioblastoma [99] . Building on this work, Scott et al. developed a 
+genome-based model for adjusting radiotherapy dose (GARD) [100] . This 
+model links patient specific RSI values and the LQ model to radiation 
+dose fractionation schedules to evaluate dose-fractionation schemes. This 
+model may enable personalization of treatment schedules according to patient 
+radiosensitivity or inform clinicians as to which patients would benefit from 
+receiving treatments other than radiation. GARD has been retrospectively 
+validated using lung, breast, and pancreas cancer cohorts [ 100 , 101 ]. 
+Treatment types or plans that aim to protect surrounding normal tissue are 
+also on the rise, such as temporally feathered radiotherapy (TFRT). Recently 
+proposed by Alfonso et al. [102] , this strategy consists of specific daily 
+treatment plans that result in the sequential administration of high and low 
+doses to each organ at risk (OAR). The underlying logistic-type model for the 
+recovery of normal tissue from sublethal damage takes OAR-specific recovery 
+rates into account and can easily be made patient-specific. The first stage I/IIa 
+trial, NCT03768856, using TFRT was recently completed for head and neck 
+cancer [103] . Further clinical investigation and implementation has recently 
+been rendered more clinically accessible by the publication of a step-by-step 
+technical paper on TFRT utilization [104] . 
+Mathematical models of tumor immune dynamics 
+Mathematical models of tumor-immune interactions have a long history, 
+and range in complexity. Some focus on the effect of anti-tumor effector 
+immune cells such as CD8 + T cells, natural killer cells, or classically activated 
+macrophages. These models generally have the dynamics of ecological 
+predator-prey systems, with the immune system preying on tumor cells. 
+Other models may include separate compartments for naïve T-cells [105] , 
+immunosuppressive cell types [106] and cytokines [107] . Reviews of these 
+models can be found elsewhere [108–111] . Many of the models we discuss 
+here are based on pioneering work done by Kuznetsov et al., wherein a model 
+of the interaction between cytotoxic lymphocytes and cancer cells is proposed 
+[ 112 , 113 ]. The mathematical model is a good fit to growth data of a murine 
+B-cell lymphoma (BCL 1 ) model [114] , and can predict the observed regrowth 
+in the murine model to which it was calibrated [115] . The steady states of 
+this model are descriptive of tumor immunoediting phases [ 80 , 116 ], namely 
+tumor dormancy due to a tumor-immune equilibrium and tumor escape 
+despite a strong anti-tumor immune response. 
+Trafficking of activated T-cells between metastatic sites after local therapy 
+Poleszczuk et al. modeled the activation and movement of activated 
+effector T cells within and between distinct metastases [117] following 
+an unspecified local therapy. The growth dynamics of individual sites 
+are governed by logistic growth with immune predation, as in Kuznetsov 
+et al.’s tumor regrowth model [113] . Here, the immune compartment is 
+extended to include the probability that T cells that are activated at one 
+anatomical site arrive at a tumor in a different location after extravasation 
+out of the circulatory system, dependent on the blood flow fraction to 
+the different organs and tissues . Analysis of a virtual cohort of 40 patients 
+with combinations of lung, breast, liver, and kidney metastases suggests that 
+the strength of the immune response following local therapy is a complex 
+combination of the different tumor volumes and their respective locations. 
+Thus, decisions of which metastases to target with local therapies to induce 
+systemic immune responses may be highly patient-specific. 
+Systemic consequences of local radiotherapy 
+Walker et al. extended Poleszczuk et al.’s model to explicitly consider the 
+cytotoxic and immune activating effects of radiotherapy [118] , by including 
+a subpopulation of lethally damaged tumor cells that contribute to immune 
+recruitment. The net effect of radiation on immune cells is also included. 
+The model is fit to data from a BCL 1 murine model [114] , and used to 
+investigate the systemic immune effects after local radiotherapy. Analysis 
+of model simulations suggest that the order in which metastases emerge, 
+the corresponding growth rates, as well as which site is focally irradiated 
+combine to yield systemic pro- or anti-tumor immune response. These 
+relationships and the underlying mechanisms, whilst intriguing, remain as 
+of yet experimentally unvalidated. 
+Considering instead the relationship between radiation-induced immune 
+responses, dose sizes and inter-fraction time, Serre et al. proposed the concept 
+of an immunologically effective dose (IED). This metric can be used for 
+comparing radiation dose fractionation schedules to identify those expected 
+to result in higher systemic immune responses [119] . As with most conceptual 
+models, experimental and clinical validation will be necessary before IED can 
+be translated into clinical practice. 
+Treatment schedules to protect the induced immune response 
+Sung et al. investigated the relationships between both the radiation 
+schedule length and inter-fraction time, and the recovery period of the 
+immune system of hepatocellular carcinoma patients treated with radiation 
+[120] . This model considers primary tumor cells, radiotherapy-inactivated 
+tumor cells releasing a tumor-specific antigen, metastatic cells, and circulatory 
+lymphocytes (CL). The tumor is assumed to follow exponential growth, and 
+interaction with lymphocytes occurs along the periphery. Radiation effects on 
+the tumor are modelled using the LQ model, but the higher radiosensitivity 
+of lymphocytes motivates a modification by omitting the quadratic term. 
+Thus, in this model the surviving fraction of lymphocytes after a dose d Gy is 
+given by S F L ( D L ) = e −αL ∗D L where D L denotes the dose per fraction delivered 
+to a given volume of circulating lymphocytes. The model, calibrated to 
+longitudinal CL data of 17 hepatocellular carcinoma patients, is used to 
+simulate various radiotherapy schedules. Comparisons of the recovery time 
+of CLs reveals that immune recovery time is shortest after treatments with 
+fewer total fractions. However, when treated with a fixed number of fractions, 
+schedules with shorter inter-fraction breaks are ideal for immune recovery. It is 
+conceivable that inter-fraction times are further dependent on several patient- 
+specific factors, including the tumor growth and repopulation rates as well as 
+the radiosensitivity, trafficking and extravasation of cytotoxic immune effector 
+cells, and the immunological composition of the tumor microenvironment. 
+Possible predictive biomarkers for response to radio-immunotherapy 
+Byun et al. investigated the relationship between the ratio of PD-1 and 
+PD-L1 expression levels and the tumor size pre- and post-treatment with 
+radio-immunotherapy [121] . The efficacy of both treatments is modelled 
+by exponential decay. After calibration to longitudinal data from a murine 
+mammary carcinoma model [44] , a global sensitivity analysis between the 
+parameters and tumor size throughout therapy suggests that the ratio in which 
+PD-1 and PD-L1 are expressed on effector T cells may be informative as to 
+which patients will benefit from radio-immunotherapy. 
+The relationship between vascularization of tumors and radiotherapy 
+response 
+Hatzikirou et al. proposed a tumor-immune-vasculature model, which 
+they used to investigate immune- and vasomodulatory combination therapies 
+but not RT [122] . This model assumes a radially symmetric tumor, with an 
+8 
+Mathematical modeling of radiotherapy 
+R.A. Bekker et al. 
+Neoplasia Vol. 28, No. C, 2022 
+outer vascularized proliferative layer and an inner avascular region composed 
+of a proliferative rim, a hypoxic quiescent section, and a necrotic inner core. 
+Immune cells are recruited by immunogenic signals released by tumor cells 
+and those undergoing immunogenic cell death. Tumor-immune interactions 
+initially occur along the periphery of the tumor, but immune cells rely on 
+the degree of functional vasculature to infiltrate and attack the tumor. This 
+model has subsequently been modified by Montaseri et al. [123] and Alfonso 
+et al. [124] to investigate the impact of vascularity on treatment success 
+following radiotherapy. Montaseri et al. developed a radiotherapy planning 
+framework based on the application of impulse control theory to Hatzikirou’s 
+model [123] . This approach was chosen to determine radiation schedules 
+which lead to a tumor-free state. In particular, the authors link tumor growth, 
+radiosensitivity, vascularity and hypoxia, as well as immune response to the 
+required number of fractions with a specific dose to eradicate a tumor. Once 
+calibrated to patient data, and validated, this framework could be used to 
+personalize treatment. 
+Alfonso et al. modified Hatzikirou’s model to investigate the impact of 
+vascularity on radiation response and the efficacy of radiation induced anti- 
+tumor immune responses [124] . Simulation outcomes suggest the existence 
+of a range of tumor sizes for which the efficacy of combination therapy 
+is high. Outside this range, however, tumor reduction by radiation may 
+be too small or too large to generate an immune response of sufficient 
+strength to control the tumor. Comparison of outcomes for in silico tumors 
+treated with schedules of various lengths reveal that a higher number of 
+total fractions, and thus longer schedules, may lead to progressive disease, 
+suggesting the existence of a subset of patients that may benefit from radiation 
+de-escalation. The impact of treatment breaks was investigated via simulation 
+of a standard weekday-only schedule vs. consecutive fractions without breaks. 
+Results suggest that regardless of the degree of functional vasculature and 
+simulated tumor outcome, treatment breaks lead to larger populations of 
+radiation-induced effector cells suggesting that these schedules may be ideal 
+candidates for radio-immunotherapy combinations. Further analysis reveals 
+the existence of ranges of vascularity and effector recruitment for which 
+each type of schedule would be better suited. For instance, treatments 
+with weekend breaks led to control of poor to intermediately vascularized 
+tumors, but not for those with high levels of functional vasculature. Thus, 
+patients may benefit from treatment personalization according to their tumor 
+microenvironments. However, experimental, and clinical validation of the 
+model results are necessary. 
+Investigating personalization of radio-immunotherapy to patients’ 
+immune responses 
+Sotolongo-Grau et al. proposed a simple predator-prey like model 
+describing tumor-immune interactions [125] . The effects of radiation on 
+cancer cells are included by the addition of a non-clonogenic tumor cell 
+compartment which has no contribution to tumor growth but retains the 
+ability to induce and suppress the immune response. This suppression is 
+mediated by secreted factors such as interleukins. The LQ model was used 
+to describe the effect of radiation on both the tumor and immune cell 
+populations. The authors identified parameters for which tumor growth 
+isn’t controlled by the anti-tumor immune response due tumor-mediated 
+suppression of the immune system. Analysis of a large cohort of virtual 
+patients with characteristics within this region suggests a relationship between 
+the treatment success probability, immune efficiency, and the so-called tissue 
+effects that depend on the radiosensitivity parameters of the tissue. Based 
+on this the authors suggest a method for personalization of dose according 
+to immune efficacy. However, by sampling values for the tissue effects from 
+a Gaussian distribution, rather than clinical or preclinical data, this model 
+requires rigorous validation before being used for predictions. 
+Investigating the optimal radiation dose fractionation schedules to 
+induce immune responses 
+Poleszczuk and Enderling investigated the induction of a systemic anti- 
+tumor immune response following treatment with radio-immunotherapy 
+[126] . This model considers two spatially distant tumors, of which only one 
+is irradiated, although activated T-cells are assumed to travel between the two 
+sites. Comparison of simulated post-treatment tumor volumes suggest that 
+the optimal dose fractionation scheme for the clinically relevant dose range 
+of 60 −70 Gy is 5 −6 fractions in the range of 11 −13 Gy as opposed to 
+the clinically used 2 Gy × 30 . While this model was calibrated to murine 
+data, results of recent clinical studies corroborate these findings [127] . 
+Serre et al. reports a model describing the tumor dynamics, antigen, 
+immune effector cells, primary immune response, and secondary immune 
+response [128] . Radiotherapy and two checkpoint inhibitors are included, 
+namely anti-PD-L1 and anti-CTLA-4. The model is calibrated to data from a 
+murine fibrosarcoma model and is able to describe the non-linear relationship 
+between tumor size and rejection probability observed in a preclinical study 
+[129] . 
+Chakwizira et al. adapted the model from Serre et al. to investigate the 
+synergy between radiotherapy and 1-MT (1-methyl tryptophan) [130] . This 
+immunotherapy abrogates tumor-tolerance developed by a variety of immune 
+cells by inhibiting IDO (indoleamine-2,3-dioxygenase) [131] . The immune 
+component is adapted via removal of the anti-PD-1 and anti-CTLA-4 specific 
+terms, and the assumption that the tumor is strongly immunosuppressive 
+on days without immunotherapy but has no immunosuppressive ability on 
+days that 1-MT is administered. From the lack of long-term survivors in the 
+syngeneic rat glioma model to which this mathematical model is calibrated, 
+Chakwizira et al. assume that the effect of the memory immune cells is 
+negligible, and thus omit it from the model completely. In silico simulations 
+suggest the existence of an optimal number of fractions for a range of BED 
+values, which increase the synergy between the treatments leading to increased 
+predicted survival time. However, the model requires validation before it can 
+be used in a non-hypothesis generating manner. 
+In 2020, Ahlstedt et al. investigated the effect of single- or two-fraction 
+radiotherapy in combination with 1-MT in a syngeneic rat glioma model 
+[132] . The authors adapted the model proposed by Chakwizira et al. [130] to 
+include Gompertzian tumor growth as opposed to exponential tumor growth. 
+The model yields a good visual fit to tumor area measurements, and model 
+simulations suggest that variations in inter-fraction timing may affect tumor 
+regression at day 18, with intervals of between 5 and 7 days resulting in the 
+lowest predicted tumor areas. However, statistical significance remains to be 
+further demonstrated. 
+Kosinsky et al. presented a tumor growth model [133] with detailed 
+immune components related to the cancer-immune cycle described by Chen 
+and Mellman [134] . These include tumor antigen levels, population levels 
+of mature dendritic cells, differentiated and non-differentiated T cells, and 
+an immune-suppression component related to PD-L1 expression levels. The 
+model was calibrated and validated on data from a CT26 murine colorectal 
+carcinoma model and can recapitulate observed growth dynamics of control 
+tumors and those receiving treatments, including radiation and anti-PD-L1 
+monotherapies, and combinations of these. After investigation of various 
+combination therapy characteristics including timing and dose size, the 
+authors suggest that administration of the immune checkpoint inhibitor prior 
+to, or concurrently with, radiotherapy results in superior tumor responses 
+compared to administration following radiation. 
+More recently, Alfonso et al. developed a three-dimensional, spatially 
+explicit, agent-based model to simulate radiation-induced shifts in patient- 
+specific tumor-immune ecosystem composition [135] . Combining molecular 
+and bioinformatics analysis of over 10,000 patient tissue samples across 31 
+cancer types to map the pan-cancer tumor-immune milieu with dynamic 
+Neoplasia Vol. 28, No. C, 2022 
+Mathematical modeling of radiotherapy 
+R.A. Bekker et al. 
+9 
+simulation of radiation response revealed that radiation response may be a 
+combination of the direct cytotoxic effects of radiation on cancer cells as 
+well as subsequent stimulation or inhibition of immune cell infiltrates. For 
+selected patients, radiation could potentially be drastically de-escalated while 
+other patients may need significantly larger doses to control the tumor. This 
+work further emphasizes the need to depart from average outcomes of large 
+clinical trials towards more patient-specific response analyses. 
+Optimal sequencing of radiotherapy and surgery for the induction of an 
+immune response 
+Poleszczuk et al. [136] and Alfonso et al. [137] focused on comparing 
+adjuvant and neoadjuvant radiotherapy. In a rigorous analysis of more than 
+a quarter of a million female patients in the Surveillance, Epidemiology, 
+and End Results (SEER) database with early-stage breast cancer who 
+received radiation either before or after surgery, Poleszczuk used different 
+statistical approaches including the Wilcoxon rank-sum test with normal 
+approximation to compare continuous factors, Pearson’s chi-square test to 
+compare categorical factors, Kaplan-Meier analysis, and multivariate Cox 
+proportional hazards models to estimate hazard ratios of developing second 
+primary tumors after either adjuvant or neoadjuvant radiation. Their analyses 
+showed that neoadjuvant radiotherapy may significantly improve disease-free 
+survival without reducing overall survival, especially for estrogen receptor- 
+positive patients 
+Alfonso et al. [137] extended this work by statistically analyzing additional 
+SEER data sets of adjuvant or neoadjuvant radiation of early-stage cancers, 
+including cancers of lung and bronchus, esophagus, rectum, cervix uteri, 
+corpus uteri, and breast. Data suggested improved overall survival after 
+neoadjuvant radiation for cancers with low 20-year survival rates and 
+improved disease-free survival for cancers with higher survival (breast: 
+HR = 0.64; P < .001). In addition to the statistical analyses, mechanistic 
+ordinary differential equation mathematical model simulations suggested 
+that neoadjuvant radiation could increase outcomes by creating an immune 
+memory that facilitates tumor elimination for a broader range of model 
+parameters. 
+The spatial evolution of these interaction dynamics may also be considered 
+using systems of partial differential equations. Lai and Friedman considered 
+six cell populations, four different cytokines, the levels of PD-1, PD-L1 
+and the PD-1:PD-L1 complex, and an anti-PD-L1 immunotherapy [138] . 
+Simulations suggest combination therapy with concurrent administration 
+results in higher treatment efficacies than sequential schedules. However, 
+the authors caution against drawing conclusions from this model, instead 
+encouraging its use in hypothesis generation. 
+As previously discussed, preclinical and clinical studies into the optimal 
+timing, and fractionation schedules are ongoing for various cancer sites 
+and immunotherapies. Once optimal schedules have been found, we expect 
+the focus will shift to identifying patients who would benefit from these 
+combinations, and how to truly personalize radiation treatment with and 
+without concurrent immunotherapeutics. 
+Spatially fractionated radiotherapy 
+Recently Asperud et al. [139] developed a model for tumor-immune 
+interactions following spatially fractionated radiotherapy (SFRT). In this 
+radiotherapy modality the radiation beam is fractionated, creating areas of 
+high and low dose [ 140 , 141 ]. The model was calibrated to published tumor 
+growth data for syngeneic xenograft models of breast cancer (67NR) and 
+Lewis lung carcinoma, following administration of either full tumor or half- 
+tumor irradiation with singles doses of 10 Gy or 15 Gy respectively [142] . 
+Despite acceptable model fits, predictions of 67NR tumor growth following 
+15 Gy and 20 Gy failed to recapitulate the reported regrowth of tumors. The 
+authors comment that these discrepancies may be due to the adoption of 
+parameter values from published data of various cancer models, rather than 
+parameter values specifically calibrated to the experimental data reported by 
+Markovsky et al. [142] . Another possibility is the underlying assumption of a 
+well-mixed tumor-immune model. SFRT induced cell death is concentrated 
+in the irradiated portion of the tumor, although higher than expected death 
+has been reported in the unirradiated portions, suggesting that bystander 
+effects may occur [143] . Thus, incorporation of a spatial aspect may be 
+necessary. 
+Tools that are useful in the field 
+Most of the models discussed herein consider tumor-immune interactions 
+on the cell population level, modeled by either ordinary or partial differential 
+equations. These models can be simulated and analyzed using commercial 
+software packages such as MATLAB, Mathematica, and Maple, or a variety 
+of open-source differential equation solver solutions. However, the type and 
+granularity of the available data, including multiplex-immuno-florescence 
+images from patient biopsy samples, may facilitate the use of cell-based 
+approaches, such as agent-based models, cellular automata, or hybrid models 
+[144] . Several freely available tools have been developed for these modeling 
+techniques, including NetLogo [145] , CompuCell3D [146] , PhysiCell 
+[147] , and HAL [148] . 
+Open questions 
+The combination of radiotherapy and immunotherapy has the potential 
+to induce durable responses and may be more effective than either treatment 
+individually for a subset of patients. However, the underlying mechanisms of 
+such synergy and methods with which to identify eligible patients remain to 
+be determined. Whilst a large selection of mathematical models in oncology 
+have been developed to help answer intriguing questions, a close iterative 
+dialog between mathematics, cancer biology, immunology, radiobiology, and 
+radiation oncology is necessary to advance the rapidly evolving field of radio- 
+immunology. 
+A current hot topic in the field is the induction of sustained systemic 
+anti-tumor immune responses, especially in the setting of metastatic disease. 
+Reports of such abscopal effects in clinic, which lead to either partial 
+or complete responses are increasing [ 49 , 149 ], yet they remain a rarity. 
+Thus, elucidation of the underlying mechanisms of this process and the 
+identification of responsible treatment schedules as well as time frames to 
+monitor responses may lead to improved tumor regression. The use of 
+mathematical models in this setting could shift the discussion from “do 
+abscopal effects exist” to “how can we best observe and monitor them.”
+This will pave the way for interdisciplinary identification of radiation and 
+radio-immunotherapy protocols to best harness the patient immune system 
+to achieve systemic tumor clearance. 
+However, the relatively high radiosensitivity of immune effector cells 
+motivates investigation into radiotherapy modalities with immune sparing 
+potential such as spatially fractionated radiotherapy [142] . Exploration of 
+the immunological consequences of these modalities alone, or in combination 
+with conventional external beam radiation or immunotherapies would be well 
+suited to in silico models with explicit spatial components such as agent-based 
+models or partial differential equations. Future investigations may reveal 
+immune protection in so-called immune reservoirs, opening another avenue 
+for personalization of treatment: according to the patient’s tumor immune 
+microenvironment. 
+Other exciting discoveries in the field are the extreme tissue sparing 
+benefits of irradiation at ultra-high dose rates (FLASH-RT). Recent studies 
+have shown that FLASH-RT, delivered at ≥40 Gy s −1 compared to 
+conventional dose rates of ≥0 . 01 Gy s −1 , leads to tumor growth inhibition 
+comparable to conventional RT but has higher tissue sparing effects [150] , 
+10 
+Mathematical modeling of radiotherapy 
+R.A. Bekker et al. 
+Neoplasia Vol. 28, No. C, 2022 
+and may have immune sparing potential due to the short associated on- 
+treatment times. Investigation into possible synergy between FLASH-RT 
+and immunotherapies may elucidate the protective effects and determine for 
+which patients this treatment would be most beneficial for. 
+Conclusion 
+Pioneering work in mathematical modeling has both accompanied and 
+accelerated the fields of radiation biology and radiation oncology over many 
+decades. The increasing understanding of the complex dynamic tumor- 
+immune interactions and their perturbation by radiotherapy, in combination 
+with expanding computing capabilities, has enabled mathematical oncology 
+approaches to help investigate the immunological consequences of radiation 
+– alone and in combination with novel immunotherapies. A wealth of 
+preclinical- and clinical trial data are collected while testing variations 
+of radio-immunotherapies, and mathematical modeling approaches may 
+become invaluable tools to complement available techniques to help elucidate 
+the mechanistic underpinnings of observed dynamics and responses. While 
+clearly promising, and truly exciting, we should proceed with caution. 
+Mathematical and computational models developed in isolation without 
+proper calibration and validation may not be positioned to advance the fields 
+[72] . However, iterative integration of mathematical modeling, computer 
+simulation, and quantitative data sciences, including the bourgeoning fields 
+of artificial intelligence and machine learning, in oncology in general, and 
+particularly radiation oncology, could help propel our understanding of 
+the adaptive and ever-evolving dynamics of tumor growth, tumor-immune 
+interactions, and radiation responses. This may allow for reliable prediction 
+of treatment outcomes, leading to the ultimate goal of therapy personalization 
+and optimization. 
+Funding 
+This work was supported by the National Institutes of Health 
+U01CA244100 and by support from the Florida Breast Cancer Foundation. 
+Declaration of Competing Interest 
+None. 
+CRediT authorship contribution statement 
+Rebecca Anne Bekker: Conceptualization, Investigation, Writing –
+original draft. Sungjune Kim: Writing – review & editing. Shari Pilon- 
+Thomas: Writing – review & editing. Heiko Enderling: Conceptualization, 
+Writing – review & editing, Supervision. 
+References 
+[1] Araujo RP , McElwain DL . A history of the study of solid tumour growth: the 
+contribution of mathematical modelling. Bull Math Biol 2004; 66 (5):1039–91 . 
+[2] Anderson ARA , Quaranta V . Integrative mathematical oncology. Nat Rev Cancer 
+2008; 8 :227–34 . 
+[3] Lowengrub JS , et al. Nonlinear modelling of cancer: bridging the gap between 
+cells and tumours. Nonlinearity 2009; 23 (1):R1–R91 . 
+[4] Rejniak KA , Anderson AR . Hybrid models of tumor growth. Wiley Interdiscip 
+Rev Syst Biol Med 2011; 3 (1):115–25 . 
+[5] Altrock PM , Liu LL , Michor F . The mathematics of cancer: integrating 
+quantitative models. Nat Rev Cancer 2015; 15 (12):730–45 . 
+[6] Metzcar J , et al. A review of cell-based computational modeling in cancer 
+biology. JCO Clin Cancer Inform 2019; 3 :1–13 . 
+[7] Rockne RC , et al. The 2019 mathematical oncology roadmap. Phys Biol 
+2019; 16 (4):041005 . 
+[8] Crittenden M , et al. Current clinical trials testing combinations of 
+immunotherapy and radiation. Semin Radiat Oncol 2015; 25 (1):54–64 . 
+[9] Kang J , Demaria S , Formenti S . Current clinical trials testing the combination 
+of immunotherapy with radiotherapy. J Immunother Cancer 2016; 4 :51 . 
+[10] Kabiljo J , et al. Radiotherapy as a backbone for novel concepts in cancer 
+immunotherapy. Cancers (Basel) 2019; 12 (1) . 
+[11] Withers HR . The Four R’s of Radiotherapy. Adv Rad Biol 1975; 5 :241–71 . 
+[12] Steel GG , McMillan TJ , Peacock JH . The 5Rs of radiobiology. Int J Radiat Biol 
+1989; 56 (6):1045–8 . 
+[13] Steel GG , et al. The dose-rate effect in human tumour cells. Radiother Oncol 
+1987; 9 :299–310 . 
+[14] van Leeuwen CM , et al. The alfa and beta of tumours: a review of parameters 
+of the linear-quadratic model, derived from clinical radiotherapy studies. Radiat 
+Oncol 2018; 13 (1):96 . 
+[15] Jeggo P , Löbrich M . Radiation-induced DNA damage responses. Radiat Prot 
+Dosimetry 2006; 122 (1-4):124–7 . 
+[16] Lomax ME , Folkes LK , O’Neill P . Biological consequences of radiation-induced 
+DNA damage: relevance to radiotherapy. Clin Oncol (R Coll Radiol) 
+2013; 25 (10):578–85 . 
+[17] Santivasi WL , Xia F . Ionizing Radiation-Induced DNA Damage, Response, and 
+Repair. Antioxid Redox Signaling 2014; 21 (2):251–9 . 
+[18] Torgovnick A , Schumacher B . DNA repair mechanisms in cancer development 
+and therapy. Front Genet 2015; 6 :157 . 
+[19] Hubenak JR , et al. Mechanisms of injury to normal tissue after radiotherapy: a 
+review. Plast Reconstr Surg 2014; 133 (1):49e–56e . 
+[20] Rockwell S , et al. Hypoxia and radiation therapy: past history, ongoing research, 
+and future promise. Curr Mol Med 2009; 9 (4):442–58 . 
+[21] Hill RP , et al. Hypoxia and predicting radiation response. Semin Radiat Oncol 
+2015; 25 (4):260–72 . 
+[22] Pawlik TM , Keyomarsi K . Role of cell cycle in mediating sensitivity to 
+radiotherapy. Int J Radiat Oncol Biol Phys 2004; 59 (4):928–42 . 
+[23] Hermens AF , Barendsen GW . Changes of cell proliferation characteristics 
+in a rat rhabdomyosarcoma before and after x-irradiation. Eur J Cancer 
+1969; 5 (2):173–89 . 
+[24] Stephens TC , Currie GA , Peacock JH . Repopulation of gamma-irradiated Lewis 
+lung carcinoma by malignant cells and host macrophage progenitors. Br J Cancer 
+1978; 38 (5):573–82 . 
+[25] Huang Q , et al. Caspase 3-mediated stimulation of tumor cell repopulation 
+during cancer radiotherapy. Nat Med 2011; 17 (7):860–6 . 
+[26] Sia J , et al. Molecular mechanisms of radiation-induced cancer cell death: a 
+primer. Front Cell Dev Biol 2020; 8 . 
+[27] Bentzen SM , et al. Clinical radiobiology of squamous cell carcinoma of the 
+oropharynx. Int J Radiat Biol 1991; 20 (6):1197–206 . 
+[28] Yoder AK , et al. Cancer radiotherapy: general considerations and human 
+radiobiology Locoregional Radionuclide Cancer Therapy . Wong FC, editor, 
+Cham: Springer; 2021. Editor . 
+[29] Hall EJ , Giaccia AJ . Radiobology for the Radiologist . 7 Ed. Philadelphia: Wolters 
+Kluwer Health/Lippinsott Williams & Wilkins; 2012 . 
+[30] Golden EB , Apetoh L . Radiotherapy and immunogenic cell death. Semin Radiat 
+Oncol 2015; 25 (1):11–17 . 
+[31] Galluzzi L , et al. Immunogenic cell death in cancer and infectious disease. Nat 
+Rev Immunol 2017; 17 (2):97–111 . 
+[32] Galluzzi L , et al. Consensus guidelines for the definition, detection and 
+interpretation of immunogenic cell death. J Immunother Cancer 2020; 8 (1) . 
+[33] Fucikova J , et al. Detection of immunogenic cell death and its relevance for 
+cancer therapy. Cell Death Dis 2020; 11 (11):1013 . 
+[34] Lind NA , et al. Regulation of the nucleic acid-sensing Toll-like receptors. Nat 
+Rev Immunol 2021 . 
+[35] Okude H , Ori D , Kawai T . Signaling through nucleic acid sensors and their 
+roles in inflammatory diseases. Front Immunol 2020; 11 :625833 . 
+[36] Feng M , et al. Phagocytosis checkpoints as new targets for cancer 
+immunotherapy. Nature reviews. Cancer 2019; 19 (10):568–86 . 
+Neoplasia Vol. 28, No. C, 2022 
+Mathematical modeling of radiotherapy 
+R.A. Bekker et al. 
+11 
+[37] Behboudi S , et al. The effects of DNA containing CpG motif on dendritic cells. 
+Immunology 2000; 99 (3):361–6 . 
+[38] Larkin B , et al. Cutting edge: activation of STING in T cells induces type I IFN 
+responses and cell death. J Immunol 2017; 199 (2):397–402 . 
+[39] Marciscano AE , Anandasabapathy N . The role of dendritic cells in cancer and 
+anti-tumor immunity. Semin Immunol 2021; 52 :101481 . 
+[40] Lee Y , et al. Therapeutic effects of ablative radiation on local tumor 
+require CD8 + T cells: changing strategies for cancer treatment. Blood 
+2009; 114 (3):589–95 . 
+[41] Merrick A , et al. Immunosuppressive effects of radiation on human dendritic 
+cells: reduced IL-12 production on activation and impairment of naive T-cell 
+priming. Br J Cancer 2005; 92 (8):1450–8 . 
+[42] Wan S , et al. Chemotherapeutics and radiation stimulate MHC class I expression 
+through elevated interferon-beta signaling in breast cancer cells. PLoS One 
+2012; 7 (3):e32542 . 
+[43] Song C , Payne J , Levitt S . Vascularity and blood flow in X-irradiated walker 
+carcinoma 256 of rats. Radiology 1972; 104 (3):693–7 . 
+[44] Deng L , et al. Irradiation and anti-PD-L1 treatment synergistically promote 
+antitumor immunity in mice. J Clin Invest 2014; 124 (2):687–95 . 
+[45] Arnold KM , et al. The impact of radiation on the tumor microenvironment: 
+effect of dose and fractionation schedules. Cancer Growth Metastasis 
+2018; 11 :1–17 . 
+[46] Brandmaier A , Formenti SC . The impact of radiation therapy on innate and 
+adaptive tumor immunity. Semin Radiat Oncol 2020; 30 (2):139–44 . 
+[47] Boustani, J., et al., The 6th R of radiobiology: reactivation of anti-tumor 
+immune response. Cancers (Basel), 2019. 11(6). 
+[48] Demaria S , et al. Ionizing radiation inhibition of distant untreated tumors 
+(abscopal effect) is immune mediated. Int J Radiat Oncol Biol Phys 
+2004; 58 (3):862–70 . 
+[49] Abuodeh Y , Venkat P , Kim S . Systematic review of case reports on the abscopal 
+effect. Curr Probl Cancer 2016; 40 (1):25–37 . 
+[50] Demaria S , Formenti SC . The abscopal effect 67 years later: from a side story to 
+center stage. Br J Radiol 2020; 93 (1109):20200042 . 
+[51] Dovedi SJ , et al. Acquired resistance to fractionated radiotherapy can be 
+overcome by concurrent PD-L1 blockade. Cancer Res 2014; 74 (19):5458–68 . 
+[52] Verma V , et al. PD-1 blockade in subprimed CD8 cells induces 
+dysfunctional PD-1( + )CD38(hi) cells and anti-PD-1 resistance. Nat Immunol 
+2019; 20 (9):1231–43 . 
+[53] Young KH , et al. Optimizing timing of immunotherapy improves control of 
+tumors by hypofractionated radiation therapy. PLoS One 2016; 11 (6):e0157164 . 
+[54] Croft M , et al. The significance of OX40 and OX40L to T-cell biology and 
+immune disease. Immunol Rev 2009; 229 (1):173–91 . 
+[55] Shaverdian N , et al. Previous radiotherapy and the clinical activity and toxicity 
+of pembrolizumab in the treatment of non-small-cell lung cancer: a secondary 
+analysis of the KEYNOTE-001 phase 1 trial. Lancet Oncol 2017; 18 (7):895–
+903 . 
+[56] Gray JE , et al. Three-Year Overall Survival with Durvalumab after 
+Chemoradiotherapy in Stage III NSCLC-Update from PACIFIC. J Thorac 
+Oncol 2020; 15 (2):288–93 . 
+[57] Dewan MZ , et al. Fractionated but not single-dose radiotherapy induces an 
+immune-mediated abscopal effect when combined with anti-CTLA-4 antibody. 
+Clin Cancer Res 2009; 15 (17):5379–88 . 
+[58] Vanpouille-Box 
+C , 
+et 
+al. 
+DNA 
+exonuclease 
+Trex1 
+regulates 
+radiotherapy-induced tumour immunogenicity. Nat Commun 2017; 8 :15618 . 
+[59] Klug F , et al. Low-dose irradiation programs macrophage differentiation to 
+an iNOS( + )/M1 phenotype that orchestrates effective T cell immunotherapy. 
+Cancer Cell 2013; 24 (5):589–602 . 
+[60] Pilot Study of the Safety/Efficacy of Combination Checkpoint Blockade 
++ External Beam Radiotherapy in Stage IV Melanoma. Available from: https: 
+//ClinicalTrials.gov/show/NCT02659540 . 
+[61] Michor F , Beal K . Improving cancer treatment via mathematical modeling: 
+surmounting the challenges is worth the effort. Cell 2015; 163 (5):1059–63 . 
+[62] Caudell JJ , et al. The future of personalised radiotherapy for head and neck 
+cancer. Lancet Oncol 2017; 18 (5):e266–73 . 
+[63] Enderling H , et al. Integrating mathematical modeling into the roadmap for 
+personalized adaptive radiation therapy. Trends Cancer 2019; 5 (8):467–74 . 
+[64] Aherne NJ , et al. Mathematical oncology and it’s application in non melanoma 
+skin cancer - A primer for radiation oncology professionals. Oral Oncol 
+2020; 103 :104473 . 
+[65] Hoyte L , Kaur J , Buchan AM . Lost in translation: taking neuroprotection from 
+animal models to clinical trials. Exp Neurol 2004; 188 (2):200–4 . 
+[66] Meier-Schellersheim M , Fraser IDC , Klauschen F . Multiscale modeling for 
+biologists. Wiley Interdiscip Rev Syst Biol Med 2009; 1 (1):4–14 . 
+[67] Hamis, S., S. Stratiev, and G.G. Powathil, Uncertainty and Sensitivity Analyses 
+Methods for Agent-Based Mathematical Models: An Introductory Review, in 
+The Physics of Cancer. p. 1-37. 
+[68] Byrne HM . Dissecting cancer through mathematics: from the cell to the animal 
+model. Nat Rev Cancer 2010; 10 (3):221–30 . 
+[69] Karolak A , et al. Towards personalized computational oncology: from spatial 
+models of tumour spheroids, to organoids, to tissues. J R Soc Interface 
+2018(138):15 . 
+[70] Brady-Nicholls R , et al. Prostate-specific antigen dynamics predict individual 
+responses to intermittent androgen deprivation. Nat Commun 2020; 11 (1): 
+1750 . 
+[71] Glazar DJ , et al. Tumor volume dynamics as an early biomarker for 
+patient-specific evolution of resistance and progression in recurrent high-grade 
+glioma. J Clin Med 2020; 9 (7) . 
+[72] Brady R , Enderling H . Mathematical models of cancer: when to predict novel 
+therapies, and when not to. Bull Math Biol 2019; 81 (10):3722–31 . 
+[73] Leder K , et al. Mathematical modeling of PDGF-driven glioblastoma reveals 
+optimized radiation dosing schedules. Cell 2014; 156 (3):603–16 . 
+[74] Zahid MU , et al. Forecasting Individual Patient Response to Radiotherapy in 
+Head and Neck Cancer with a Dynamic Carrying Capacity Model. Int J Radiat 
+Oncol Biol Phys 2021 . 
+[75] Paczkowski M , et al. Reciprocal interactions between tumour cell populations 
+enhance growth and reduce radiation sensitivity in prostate cancer. Commun Biol 
+2021; 4 (1):6 . 
+[76] Liu J , et al. A time-resolved experimental–mathematical model for predicting 
+the response of glioma cells to single-dose radiation therapy. Integr Biol 
+2021; 13 (7):167–83 . 
+[77] Walker R , Enderling H . From concept to clinic: Mathematically informed 
+immunotherapy. Curr Probl Cancer 2016; 40 (1):68–83 . 
+[78] Murray JD . Mathematical Biology. 3 ed. Interdisciplinary Applied Mathematics. 
+New York, NY: Springer; 2002. p. 551 . 
+[79] Wangersky PJ . Lotka-Volterra population models. Annual Rev Ecol Systemat 
+1978; 9 :189–218 . 
+[80] Dunn GP , Old LJ , Schreiber RD . The immunobiology of cancer 
+immunosurveillance and immunoediting. Immunity 2004; 21 (2):137–48 . 
+[81] Hurvich CM , Tsai CL . Regression and time series model selection in small 
+samples. Biometrika 1989; 76 (2):297–397 . 
+[82] Fang Y . Asymptotic equivalence between cross-validations and akaike 
+information criteria in mixed-effects models. J Data Sci 2011; 9 (1):15–21 . 
+[83] Yamamoto Y , et al. Tumour and immune cell dynamics explain the PSA bounce 
+after prostate cancer brachytherapy. Br J Cancer 2016; 115 (2):195–202 . 
+[84] Chadwick KH , Leenhouts HP . A molecular theory of cell survival. Phys Med 
+Biol 1973; 18 (78) . 
+[85] McMahon SJ . The linear quadratic model: usage, interpretation and challenges. 
+Phys Med Biol 2018; 64 (1):01TR01 . 
+[86] Barendsen GW . Dose fractionation, dose rate and iso-effect relationships for 
+normal tissue responses. Int J Radiat Oncol Biol Phys 1982; 8 (11):1981–97 . 
+[87] Dale RG . The application of the linear-quadratic dose-effect equation 
+to fractionated and protracted radiotherapy. Br J Radiol 1985; 58 (690): 
+515–528 . 
+[88] Jones B , et al. The role of biologically effective dose (BED) in clinical oncology. 
+Clin Oncol 2001; 3 :71–81 . 
+12 
+Mathematical modeling of radiotherapy 
+R.A. Bekker et al. 
+Neoplasia Vol. 28, No. C, 2022 
+[89] Masunaga S , Ono K . Significance of the response of quiescent cell populations 
+within solid tumors in cancer therapy. J Radiat Res (Tokyo) 2002; 43 (1):11–25 . 
+[90] Prokopiou S , et al. A proliferation saturation index to predict radiation response 
+and personalize radiotherapy fractionation. Radiat Oncol 2015; 10 :159 . 
+[91] Poleszczuk J , et al. Predicting patient-specific radiotherapy protocols based on 
+mathematical model choice for proliferation saturation index. Bull Math Biol 
+2018; 80 (5):1195–206 . 
+[92] Sunassee ED , et al. Proliferation saturation index in an adaptive Bayesian 
+approach to predict patient-specific radiotherapy responses. Int J Radiat Biol 
+2019; 95 (10):1421–6 . 
+[93] Zahid MU , et al. Proliferation saturation index to characterize response to RT 
+and evaluate altered fractionation in head and neck cancer. Appl Rad Oncol 
+2021; 18 (1):18–25 . 
+[94] Lewin, T.D., et al., Using mathematical modelling to identify data requirements 
+for increased prediction accuracy in radiotherapy. arXiv, 2022. 
+[95] Lewin TD , et al. The importance of dead material within a tumour on the 
+dynamics in response to radiotherapy. Phys Med Biol 2020; 65 (1):015007 . 
+[96] Lewin T , et al. A three phase model to investigate the effects of dead material 
+on the growth of avascular tumours. Mathematical Modell Natural Phenomena 
+2020; 15 (1) . 
+[97] Eschrich S , et al. Systems biology modeling of the radiation sensitivity network: a 
+biomarker discovery platform. Int J Radiat Oncol Biol Phys 2009; 75 (2):497–505 . 
+[98] Torres-Roca JF , et al. Integration of a radiosensitivity molecular signature into 
+the assessment of local recurrence risk in breast cancer. Int J Radiat Oncol Biol 
+Phys 2015; 93 (3):631–8 . 
+[99] Ahmed KA , et al. The radiosensitivity index predicts for overall survival in 
+glioblastoma. Oncotarget 2015; 6 (33):34414–22 . 
+[100] Scott JG , et al. A genome-based model for adjusting radiotherapy dose (GARD): 
+a retrospective, cohort-based study. Lancet Oncol 2017; 18 (2):202–11 . 
+[101] Scott JG , et al. Pan-cancer prediction of radiotherapy benefit using 
+genomic-adjusted radiation dose (GARD): a cohort-based pooled analysis. 
+Lancet Oncol 2021 . 
+[102] Lopez Alfonso JC , et al. Temporally feathered intensity-modulated radiation 
+therapy: A planning technique to reduce normal tissue toxicity. Med Phys 
+2018; 45 (7):3466–74 . 
+[103] Parsai S , et al. Feasibility of temporally feathered intensity modulated 
+radiation therapy plans: techniques to reduce normal tissue toxicity. Int J Rad 
+Oncolog y ∗Biolog y ∗Physics 2018; 102 (3) . 
+[104] Parsai S , et al. Technical Note: A step-by-step guide to Temporally Feathered 
+Radiation Therapy planning for head and neck cancer. J Appl Clin Med Phys 
+2020; 21 (7):209–15 . 
+[105] Moore H , Li NK . A mathematical model for chronic myelogenous leukemia 
+(CML) and T cell interaction. J Theor Biol 2004; 227 (4):513–23 . 
+[106] Leon K , et al. How regulatory CD25( + )CD4( + ) T cells impinge on tumor 
+immunobiology? On the existence of two alternative dynamical classes of 
+tumors. J Theor Biol 2007; 247 (1):122–37 . 
+[107] Arciero JC , Jackson TL , Kirschner DE . A mathematical model of 
+tumor-immune evasion and siRNA treatment. Discrete Continuous Dynamical 
+Syst 2004; 4 (1):39–58 . 
+[108] Eftimie R , Bramson JL , Earn DJ . Interactions between the immune system 
+and cancer: a brief review of non-spatial mathematical models. Bull Math Biol 
+2011; 73 (1):2–32 . 
+[109] Eftimie R , Gillard JJ , Cantrell DA . Mathematical models for immunology: 
+current state of the art and future research directions. Bull Math Biol 
+2016; 78 (10):2091–134 . 
+[110] Mahlbacher GE , Reihmer KC , Frieboes HB . Mathematical modeling of 
+tumor-immune cell interactions. J Theor Biol 2019; 469 :47–60 . 
+[111] Makaryan SZ , Cess CG , Finley SD . Modeling immune cell behavior across 
+scales in cancer. Wiley Interdiscip Rev Syst Biol Med 2020; 12 (4):e1484 . 
+[112] Kuznetsov V , et al. Nonlinear dyanmics of immunogenic tumors: parameter 
+estimation and global bifurcation analysis. Bull Math Biol 1994; 56 (2):295–321 . 
+[113] Kuznetsov V , Knott G . Modeling tumor regrowth and immunotherapy. Math 
+Comput Modell 2001; 33 :1275–87 . 
+[114] Siu H , et al. Tumor dormancy. I. Regression of BCL1 tumor and induction of a 
+dormant tumor state in mice chimeric at the major histocompatibility complex. 
+J Immunol 1986; 137 :1376–82 . 
+[115] Uhr JW , et al. Cancer dormancy: studies of the murine BCL1l ymphoma. 
+Cancer Res (Supp) 1991; 51 (5045s-5053s) . 
+[116] Teng MW , et al. Immune-mediated dormancy: an equilibrium with cancer. J 
+Leukoc Biol 2008; 84 (4):988–93 . 
+[117] Poleszczuk JT , et al. Abscopal benefits of localized radiotherapy depend on 
+activated T-cell trafficking and distribution between metastatic lesions. Cancer 
+Res 2016; 76 (5):1009–18 . 
+[118] Walker R , et al. Immune interconnectivity of anatomically distant tumors 
+as a potential mediator of systemic responses to local therapy. Sci Rep 
+2018; 8 (1):9474 . 
+[119] Serre R , et al. Immunologically effective dose: a practical model for 
+immuno-radiotherapy. Oncotarget 2018; 9 (61):31812–3819 . 
+[120] Sung W , et al. A tumor-immune interaction model for hepatocellular carcinoma 
+based on measured lymphocyte counts in patients undergoing radiotherapy. 
+Radiother Oncol 2020; 151 :73–81 . 
+[121] Byun JH , et al. A tumor-immune interaction model for synergistic combinations 
+of anti PD-L1 and ionizing irradiation treatment. Pharmaceutics 2020; 12 (9) . 
+[122] Hatzikirou H , et al. Cancer therapeutic potential of combinatorial immuno- 
+and vasomodulatory interventions. J R Soc Interface 2015; 12 (112) . 
+[123] Montaseri G , et al. A minimal modeling framework of radiation and immune 
+system synergy to assist radiotherapy planning. J Theor Biol 2020; 486 :110099 . 
+[124] Alfonso JCL , et al. On the immunological consequences of conventionally 
+fractionated radiotherapy. iScience 2020; 23 (3):100897 . 
+[125] Sotolongo-Grau O , et al. Immune system-tumour efficiency ratio as a new 
+oncological index for radiotherapy treatment optimization. Math Med Biol 
+2009; 26 (4):297–307 . 
+[126] Poleszczuk J , Enderling H . The optimal radiation dose to induce robust systemic 
+anti-tumor immunity. Int J Mol Sci 2018; 19 (11) . 
+[127] Golden EB , et al. Local radiotherapy and granulocyte-macrophage 
+colony-stimulating factor to generate abscopal responses in patients 
+with metastatic solid tumours: a proof-of-principle trial. Lancet Oncol 
+2015; 16 (7):795–803 . 
+[128] Serre R , et al. Mathematical modeling of cancer immunotherapy and its synergy 
+with radiotherapy. Cancer Res 2016; 76 (17):4931–40 . 
+[129] Vaage J . Influence of tumor antigen on maintenance versus depression of 
+tumor-specific immunity. Cancer Res 1973; 33 :493–503 . 
+[130] Chakwizira A , et al. Mathematical modelling of the synergistic combination 
+of radiotherapy and indoleamine-2,3-dioxygenase (IDO) inhibitory 
+immunotherapy against glioblastoma. Br J Radiol 2018; 91 (1087):20170857 . 
+[131] Miyazaki T , et al. Indoleamine 2,3-dioxygenase as a new target for malignant 
+glioma therapy. Laboratory investigation. J Neurosurg 2009; 111 (2):230–7 . 
+[132] Ahlstedt J , et al. Increased effect of two-fraction radiotherapy in 
+conjunction with IDO1 inhibition in experimental glioblastoma. PLoS 
+One 2020; 15 (5):e0233617 . 
+[133] Kosinsky Y , et al. Radiation and PD-(L)1 treatment combinations: immune 
+response and dose optimization via a predictive systems model. J Immunother 
+Cancer 2018; 6 (1):17 . 
+[134] Chen DS , Mellman I . Oncology meets immunology: the cancer-immunity 
+cycle. Immunity 2013; 39 (1):1–10 . 
+[135] Alfonso JCL , et al. Tumor-immune ecosystem dynamics define an individual 
+Radiation Immune Score to predict pan-cancer radiocurability. Neoplasia 
+2021; 23 (11):1110–22 . 
+[136] Poleszczuk J , et al. Neoadjuvant radiotherapy of early-stage breast cancer and 
+long-term disease-free survival. Breast Cancer Res 2017; 19 (1):75 . 
+[137] Alfonso JC , et al. Immunologic Consequences of Sequencing Cancer 
+Radiotherapy and Surgery. JCO Clin Cancer Inform 2019; 3 :1–16 . 
+[138] Lai X , Friedman A . Mathematical modeling of cancer treatment with radiation 
+and PD-L1 inhibitor. Science China Mathematics 2020; 63 (3):465–84 . 
+[139] Asperud J , et al. Spatially fractionated radiotherapy: tumor response modelling 
+including immunomodulation. Phys Med Biol 2021; 66 (17) . 
+Neoplasia Vol. 28, No. C, 2022 
+Mathematical modeling of radiotherapy 
+R.A. Bekker et al. 
+13 
+[140] Kohler A . Zur röntgentiefentherapie mit massendosen, 56. MMW; 1909. 
+p. 2314–16 . 
+[141] Yan W , et al. Spatially fractionated radiation therapy: history, present and the 
+future. Clin Transl Radiat Oncol 2019; 20 :30–8 . 
+[142] Markovsky E , et al. An antitumor immune response is evoked by partial-volume 
+single-dose radiation in 2 murine models. Int J Radiat Oncol Biol Phys 
+2019; 103 (3):697–708 . 
+[143] Asur RS , et al. Spatially fractionated radiation induces cytotoxicity and changes 
+in gene expression in bystander and radiation adjacent murine carcinoma cells. 
+Radiat Res 2012; 177 (6):751–65 . 
+[144] Enderling H , Hlatky L , Hanhnfeldt P . Immunoediting: evidence of the 
+multifaceted role of the immune system in self-metastatic tumor growth. 
+Theoretical Biology and Medical Modelling 2012; 9 (1) . 
+[145] Wilensky, U., NetLogo. 1999. 
+[146] Swat MH , et al. Multi-scale modeling of tissues using compuCell3D. In: 
+Asthagiri AR, Arking AP, editors. Methods in Cell Biology . Academic Press; 2012. 
+p. 325–66. Editors . 
+[147] Ghaffarizadeh A , et al. Physicell: an open source physics-based cell simulator for 
+3-D multicellular systems. PLoS Comput Biol 2018; 14 (2):e1005991 . 
+[148] Bravo R , et al. Hybrid Automata Library: A flexible platform for hybrid 
+modeling with real-time visualization. PLoS Comput Biol 2020; 16 (3):e1007635 . 
+[149] Dagoglu N , et al. Abscopal effect of radiotherapy in the immunotherapy era: 
+systematic review of reported cases. Cureus 2019; 11 (2):e4103 . 
+[150] Bourhis J , et al. Clinical translation of FLASH radiotherapy: why and how? 
+Radiother Oncol 2019; 139 :11–17 . 
+[151] da Silva JL , et al. Cancer immunotherapy: the art of targeting the tumor immune 
+microenvironment. Cancer Chemother Pharmacol 2019; 84 (2):227–40 . 

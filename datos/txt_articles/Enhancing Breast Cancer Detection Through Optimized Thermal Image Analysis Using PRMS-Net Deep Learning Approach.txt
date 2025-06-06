@@ -1,0 +1,1609 @@
+Vol.:(0123456789)
+Journal of Imaging Informatics in Medicine 
+https://doi.org/10.1007/s10278-025-01465-y
+Enhancing Breast Cancer Detection Through Optimized Thermal 
+Image Analysis Using PRMS‑Net Deep Learning Approach
+Mudassir Khan1,2   · Mazliham Mohd Su’ud2 · Muhammad Mansoor Alam2,3 · Shaik Karimullah4 · 
+Fahimuddin Shaik4 · Fazli Subhan5
+Received: 26 December 2024 / Revised: 12 February 2025 / Accepted: 24 February 2025 
+© The Author(s) 2025
+Abstract
+Breast cancer has remained one of the most frequent and life-threatening cancers in females globally, putting emphasis 
+on better diagnostics in its early stages to solve the problem of therapy effectiveness and survival. This work enhances the 
+assessment of breast cancer by employing progressive residual networks (PRN) and ResNet-50 within the framework of 
+Progressive Residual Multi-Class Support Vector Machine-Net. Built on concepts of deep learning, this creative integra-
+tion optimizes feature extraction and raises the bar for classification effectiveness, earning an almost perfect 99.63% on our 
+tests. These findings indicate that PRMS-Net can serve as an efficient and reliable diagnostic tool for early breast cancer 
+detection, aiding radiologists in improving diagnostic accuracy and reducing false positives. The separation of the data into 
+different segments is possible to determine the architecture’s reliability using the fivefold cross-validation approach. The 
+total variability of precision, recall, and F1 scores clearly depicted in the box plot also endorse the competency of the model 
+for marking proper sensitivity and specificity—highly required for combating false positive and false negative cases in real 
+clinical practice. The evaluation of error distribution strengthens the model’s rationale by giving validation of practical 
+application in medical contexts of image processing. The high levels of feature extraction sensitivity together with highly 
+sophisticated classification methods make PRMS-Net a powerful tool that can be used in improving the early detection of 
+breast cancer and subsequent patient prognosis.
+Keywords  Breast cancer · Early detection · Progressive residual networks · ResNet-50 · PRMS-Net · Fivefold cross-
+validation · Medical imaging · Diagnostic accuracy · Machine learning · Feature extraction · Image classification
+Introduction
+Mammary carcinoma is the most common type of cancer 
+in the world and a major threat to women’s health [1–5]. 
+It begins in the breast tissue and is often found in the milk 
+ducts or the lobules which are the glands that nourish these 
+ducts with milk [6]. Breast cancer health risks are numerous 
+as it can lead to complications, and if not diagnosed at an 
+early stage, lethal [7–12]. It is normally characterized by a 
+rapid progression to other organs, hence the need to diag-
+nose and start the treatment at an early stage to increase the 
+disease’s survival rates [13].
+It is important to mention, that the early diagnosis of 
+breast cancer can increase treatment effectiveness and 
+patient’s survival substantially [14–17]. Cancer of the 
+breast is the commonest cause of cancer deaths in women; 
+yearly, half a million women die from the disease glob-
+ally, according to WHO [18–20]. Approximately 627,000 
+ *	 Mazliham Mohd Su’ud 
+	
+mazliham@mmu.edu.my
+	
+Mudassir Khan 
+	
+mudassirkhan@mmu.edu.my
+	
+Muhammad Mansoor Alam 
+	
+m.mansoor@riphah.edu.pk
+1	
+Department of Computer Science, College of Computer 
+Science, Applied College Tanumah, King Khalid University, 
+P.O. Box: 960, 61421 Abha, Saudi Arabia
+2	
+Faculty of Computing and Informatics, Multimedia 
+University, 63100 Cyberjaya, Malaysia
+3	
+Faculty of Computing, Riphah International University, 
+Islamabad 44000, Pakistan
+4	
+Department of Electronics and Communications 
+Engineering, Annamacharya University, Rajampet, Kadapa, 
+Andhra Pradesh, India 516126
+5	
+Faculty of Engineering and Computer Science, National 
+University of Modern Languages, Islamabad 44000, Pakistan
+	
+Journal of Imaging Informatics in Medicine
+deaths occurred from breast cancer among women in 2018, 
+of which breast cancer is 15% of all cancer deaths among 
+women. Current detection strategies call for early and fre-
+quent screening and the use of diagnostic imaging tech-
+niques to identify the disease in its early stage [21]. Due 
+to the early diagnosis when it has not reached the clinically 
+detectable stage, the management and handling of the dis-
+ease are much easier, more efficient, less aggressive to the 
+body, and enhance the patient’s livelihood [22].
+Medical imaging and machine learning progress to new 
+methods, which provide better early diagnosis of breast 
+cancer [23]. Thermal imaging is one of those promising 
+technologies out there. While conventional breast cancer 
+screening involves physical touch to feel for lumps, thermal 
+imaging employs infrared technology to provide clues that 
+there is cancer to the breasts’ temperature [24]. This method 
+is somewhat advantageous since it does not involve a biopsy 
+of the lesion, is not painful, and does not expose the patient 
+to radiation. The differences in heat patterns are useful in 
+determining whether the tissues are active, and if so, whether 
+this activity is pathologic as cancer.
+The novelty of the existing work based on the PRMS-Net 
+model is that the progressive residual networks (PRN) have 
+been incorporated together with the ResNet-50 redesigned 
+to work with the thermal images for breast cancer detection. 
+This model takes it a notch higher, by using deep learning to 
+boost feature extraction and increase classification accuracy 
+significantly.
+Related Works
+ In a series of studies conducted in 2024, multiple methods 
+were used to learn better about cancer or improve the tech-
+nology involved in cancer detection by way of imaging and 
+computation although each had its own inherent drawbacks 
+depending on which model was used. The authors in [25] 
+employed a modified CNN along with FCM for the classifi-
+cation of breast cancer in thermal images with 96.8% accu-
+racy and specificity of 93.7%. The weakness of the model is 
+that, because of intricate integration with Fuzzy C-means, 
+it can easily over-fit the interactions and thus may not work 
+well with different thermal imaging settings or different sets 
+of patient populations.
+Geetha et al. [26] developed a multiwavelet-based deep 
+learning framework with an accuracy of 98 and precision 
+and recall of 99% and 97.43% respectively. The major limita-
+tion of this method is that it is based on multiwavelet trans-
+formation which needs significant computer resources, and 
+it might not be feasible for real-time systems where speed 
+is very important.
+K-NN and, in particular, an integrated KNN-SVM model 
+allowed Moayedi et al. [27] to reach a level of accuracy 
+of 98.8%; at the same time, sensitivity and specificity were 
+equally high, both numbers being above 98%. The disad-
+vantage is here due to the fact that the model’s performance 
+depends on the quality and distribution of data. In the case 
+of the asymmetrical distribution sampling patterns includ-
+ing data distributions, there are chances that the efficiency 
+of the combined KNN + SVM decreases and returns biased 
+or incorrect results of studies.
+Yerken et al. [28] used explainable AI (XAI) as an 
+approach to make the desired decision transparent and 
+obtained 90.93% accuracy and 90.6% precision. It does so at 
+a computational cost of the algorithm’s complexity and may 
+not necessarily margin for high accuracy rates characteristic 
+of “black boxed” models, making the use of XAI in clinical 
+practice where interpretability does not compromise on high 
+and accurate results less feasible.
+Davies et al. [29] used MobileNetV2, with which they 
+obtained an accuracy of 98.69 percent and a similar F1 
+score. The first weak point common to all MobileNetV2 is 
+its application-oriented design, which may not process intri-
+cate or volatile data as efficiently as more resilient networks, 
+which might portend its diminished functionality in a diverse 
+clinical setting.
+Rathi et al. [30] selected VGG16 because of its depth and 
+complexity; due to these features, it provided an accuracy of 
+99%. But VGG16 needs vast computational power and often 
+overfits, especially if experimented on low variance datasets 
+could prove to be a limitation for applying the same in less 
+controlled settings.
+Years later, in 2023, Rezazadeh et al. [31] used CNN 
+but with SVM and KNN together and reached even 95% 
+accuracy, with sensitivity and specificity slightly higher. 
+The enhancement of the model using multiple algorithms 
+will add more layers to the complexity making it a difficult 
+model to compute, and parameter tuning becomes an issue 
+which becomes a hindrance in the practical application of 
+the model.
+Alia et al. proposed a deep learning-based approach to 
+classify the type of breast lesion using convolutional neural 
+networks (CNNs) that incorporated attention mechanisms 
+to pay attention to the relevant features for the classification 
+of types of breast lesion, and the study yielded an accuracy 
+of 99.49% and F1-score of 99.36% [32]. Nevertheless, the 
+specific attention mechanisms improve the focus and accu-
+racy of the model and, at the same time, reduce its flexibil-
+ity due to focusing on carefully selected and cleaned data 
+inputs and increased demands toward available computa-
+tional capacities, which might be limited in various health-
+care environments.
+Journal of Imaging Informatics in Medicine	
+Some of the typical limitations of using the advanced can-
+cer detection methodologies as demonstrated in the reviewed 
+studies above and summarized in Table 1 include overfitting, 
+high computational complexity, inherent sensitivity to data 
+quality and distribution, and practicality in real-time imple-
+mentations. Here various constraints are often inherent in the 
+intrinsic design of the models like high computation power 
+requirement for any model like VGG16 and Multiwavelet-
+based deep learning; there will be bias in the outcomes that 
+are sensitive to the unbalanced datasets and hence models 
+such as the KNN+SVM combination.
+To overcome these limitations, the present work proposes 
+a new architecture named PRMS-Net which combines pro-
+gressive residual networks (PRN) with ResNet-50. In the 
+PRN part of PRMS-Net, feature extraction is improved due 
+to sophisticated residual learning that makes the network 
+study residual differences between inputs and outputs be 
+predicted. This is especially helpful in preserving impor-
+tant feature information with the problem of network depth 
+where the network’s depth causes the network to lose out in 
+performance. Similarly, ResNet-50 employs a multi-layered 
+feature extraction process that allows the model to extract 
+simple as well as intricate features in the data set. This dual 
+approach also tackles the problem of vanishing gradients 
+because it allows for better gradient flow in the network 
+while increasing the roughness and accuracy of the model. 
+Oversampling of the receptor planes is also advantageous 
+in assessing thermal images as thin differences are impor-
+tant in the imagery. The integration of PRN and ResNet-50 
+in PRMS-Net completely mitigates many of the mentioned 
+drawbacks and provides a strong solution for more accurate 
+and efficient detection of cancers.
+Proposed System
+The PRMS-Net integrating the PRN and the ResNet-50 net-
+work enhances the potential of correctly detecting breast 
+cancer through thermal imaging. This working methodology 
+adopts features from both PRN and ResNet 50 to form a 
+highly specialized clinical diagnostic tool for the evaluation 
+of dense thermal data patterns with high precision. PRN is 
+particularly perceived to improve deep learning models by 
+allowing the learning of detailed patterns from data without 
+being caught in the depth of the network. This network helps 
+in gauging high-frequency features in thermal images that 
+include early markers of breast cancer. Here PRN’s residual 
+learning approach enhances PRN’s capacity to address prob-
+lems in training deep networks, such as vanishing gradients 
+to guarantee the network learns as it gains depth. The hier-
+archical feature extraction method embedded in ResNet-50 
+augments the operations of PRN. ResNet-50 has many con-
+volution layers and can identify mutual low-level and high-
+level features through the thermal image, and it provides the 
+much-enhanced data that enhances the classification pro-
+cess’s accuracy. Thereby, this synergy between PRN and 
+ResNet-50 helps the model learn more composite features 
+and brings a better level of accuracy in detecting abnormali-
+ties than ordinary imaging approaches.
+Proposed Methodology Diagram and Discussion
+Figure 1 depicts an image classification pipeline, starting 
+with data preprocessing, including grayscale conversion and 
+adaptive filtering. Feature extraction involves anisotropic 
+diffusion and Haralick features, followed by Adam opti-
+mization. The model is then classified and evaluated using 
+accuracy, sensitivity, specificity, and ROC curves, ensuring 
+robust performance and reliability.
+For image processing, converting the image to grayscale 
+from a color image (RGB) makes it easier for analyses but does 
+not remove the structures. Normally, a thermal image does not 
+have to have all the RGB channels for analysis since normally 
+temperature differences have to be seen through differences in 
+the intensity rather than the color. This transformation brings 
+down the dimensions of the image from 3D (R, G, B) to 1D, 
+that is the intensity of the image. As explained in the case of 
+the weights, the coefficients correspond with human vision, 
+Table 1   Summary of reviewed works with limitations
+Authors
+Year
+Methodology
+Specific limitations
+Dharani et al
+2024
+Enhanced CNN with Fuzzy C-means
+Potential for overfitting; may not generalize across setups
+Geetha et al
+2024
+Multiwavelet-based deep learning
+Requires significant computational resources; not practical for 
+real-time applications
+Moayedi et al
+2024
+KNN + SVM
+Performance affected by unbalanced datasets
+Yerken et al
+2024
+Explainable AI (XAI)
+Computational intensity; lower accuracy than more opaque models
+Davies et al
+2024
+MobileNetV2
+Less effective in handling complex or variable data
+Rathi et al
+2024
+VGG16
+High computational demands; prone to overfitting
+Rezazadeh et al
+2023
+CNN + SVM + KNN
+Increased complexity and computational demand
+Alia et al
+2022
+Deep learning with attention mechanisms
+Dependent on high-quality data and computational power
+	
+Journal of Imaging Informatics in Medicine
+and people are more susceptible to green hue; hence, there is 
+a greater green channel weight. By converting the image into 
+black and white color, the pictorial complexity is reduced and 
+therefore helps visualize the structural properties of the image 
+such as edges or the warm and cooler areas in the image.
+Typically, thermal images expose contrast which in most 
+cases reduces the chances of amplifying the differences in 
+the image anomalies. Histogram equalization was found to 
+be of immense help in making the pixel intensities spread 
+out to reach the highest and lowest values possible leading 
+to increased contrast. Double-exponential histogram equali-
+zation (DEHE) intensifies contrast modification by using a 
+double-exponential function which enhances both low and 
+high contrast regions.
+Given an image’s pixel intensities I(x, y), the histogram 
+equalization function is computed as shown in Eqs. (1) and (2):
+where ni is the number of pixels with intensity, N is 
+the total number of pixels, and cdf(i) is the cumulative 
+distribution function.
+Anisotropic diffusion is a technique of smoothening 
+the image without distorting edges or confronting noisy 
+(1)
+pi = ni
+N
+(2)
+cdf(i) =
+i∑
+j=0
+pj
+Fig. 1   Proposed methodology 
+block diagram
+Journal of Imaging Informatics in Medicine	
+regions. It entails the use of a PDE by which smoothing 
+of the image is achieved without erasing boundaries inher-
+ent within the image. Anisotropic diffusion eliminates a 
+great deal of noise while at the same time preserving edges 
+and structure. It evolves the image iteratively, smoothing 
+homogeneous regions and maintaining sharp edges by 
+solving a partial differential equation shown in Eq. (3):
+where I is the image intensity, t is the time step, ∇I is the 
+gradient of the image intensity, c(∇I) is the diffusion coeffi-
+cient, often dependent on the gradient magnitude to preserve 
+edges and computed using Eq. (4).
+where k is a factor which determines how much sensitive 
+the edges are preserved around the cell. Such a formula is 
+arranged to guarantee that where the gradient |∇I| is high, 
+implying edges in the image, diffusion is low allowing the 
+edges to be retained, whereas where the gradient is low, 
+implying relatively flat areas, diffusion is high to eliminate 
+noise. Preserving edges and smoothing noises are important 
+when thermal image analysis because the regions of interest 
+must be highlighted and clearly delineated F. Anisotropic 
+diffusion makes the edges sharp while minimizing noises.
+Local noise reduction is a further step called propor-
+tionate adaptive filtering, during which additional noise is 
+removed while the local structure of the image is preserved. 
+It makes use of a weighted averaging technique on the image 
+intensity pixels in the neighborhood around the pixel then 
+those pixels of the neighborhood that are close in value to 
+the center pixel are given higher weight.
+This filter smoothes a neighborhood by averaging pixels’ 
+weights which are a function of the similarity to the central 
+pixel thus preserving the local structure while attenuating 
+the noise. The filter is described using Eq. (5):
+where N(x,y) is the neighborhood around the pixel, and 
+W(u,v) is the weighting function, which controls the contri-
+bution of each neighboring pixel based on its similarity to 
+the central pixel I(x,y) as shown in Eq. (6).
+(3)
+휕I
+휕t = ∇.(C(∇I).∇I)
+(4)
+c(∇I) = exp(−|∇I|2
+k2 )
+(5)
+Iﬁltered(x, y) =
+∑
+(u,v)∈N(x,y) W(u, v)I(u, v)
+∑
+(u,v)∈N(x,y) W(u, v)
+(6)
+W(u, v) = exp(−(I(u, v) −I(x, y))2
+2휎2
+)
+where σ is the standard deviation of intensity differences. 
+This ensures that pixels with similar intensities are given 
+higher importance in the averaging process, leading to 
+sharper images. This adaptive filtering method preserves 
+the local structure and important features of the image 
+(such as hot spots in thermal images) while smoothing out 
+noise, providing a sharper and cleaner image for further 
+analysis.
+SIFT (scale-invariant feature transform) is a very effec-
+tive approach utilized for sensing and untying the local 
+features in thermal images irrespective of change in 
+measure, fluctuations in illumination, or rotating motion. 
+This makes it especially useful in medical thermal scans, 
+such as thermal breast scan, where images may differ by 
+appearing to have different resolutions, orientations, or 
+intensities. SIFT identifies salient features (interest points) 
+from the images to be used to detect inconsistencies or to 
+match images to be compared. The first tissue in SIFT is 
+based on the detection of special points in the image that 
+remain invariant from one scale to another. The areas of 
+interest can be identified based on the comparison of the 
+image blurred with the images blurred at another scale. 
+For the set of such key points, it does not matter whether 
+they are scaled or rotated, which is essential for detecting 
+anomalies or significant features in thermal images. The 
+keypoint description is once the keen points have been 
+identified; the next step is to determine descriptors which 
+correspond to these keen points, aliases, or significant 
+features in thermal images. The keypoint description is 
+once the key points are detected; the subsequent step is 
+to calculate descriptors for these key points. Descriptors 
+designate a local image structure adjacent to the key points 
+through the assessment of the gradient orientations of the 
+matrix intensity. This makes the descriptors invariant to 
+scale, orientation, and to some extent even illumination 
+changes. The SIFT descriptor is created by:
+(1)	 Splitting the area around each point of interest into 8 
+smaller areas.
+(2)	 To model variations in intensity locally, the gradients 
+in each of the subregions are computed.
+(3)	 Building the histogram of gradient orientations used in 
+each subregion, while the orientation is a measure of 
+the direction of intensity change.
+The descriptor for a key point is given by the Eq. (7):
+(7)
+Descriptor(x, y) =
+n
+∑
+i
+2i binary_test(I, 휃i)
+	
+Journal of Imaging Informatics in Medicine
+where n represents the number of gradient orientation bins 
+(usually 8 for 360°).
+θi is the gradient orientation, and the binary_test function 
+compares pixel intensities at different orientations θi, creat-
+ing a binary pattern based on intensity differences.
+The histogram of gradients guarantees that the SIFT 
+descriptor is preserved with respect to the small rotation 
+and scaling, which is valuable when detecting weak anoma-
+lous in the thermograms of the breast because the further 
+orientation of such breast structures may not be consistent 
+between the different images. When it is done to detect and 
+describe keypoints with SIFT, one more important step is 
+to extract Haralick features. They depict the roughness of 
+the image through the pixel density co-occurrence matrix. 
+They are calculated from the gray-level co-occurrence 
+matrix (GLCM), which tallies the co-occurrences of pixel 
+intensities spaced a fixed distance apart in a given direction.
+Correlation denotes the similarity in density values of 
+the image in the spatial domain as well as pixel intensities. 
+It defines how much the intensity of a pixel is tied to the 
+intensity of the neighbor pixels which in turn assists in 
+determining between regions of homogeneity to regions 
+with variations. The correlation is given by Eq. (8):
+where 휇x휇y are the means of the column and row sums 
+of the GLCM, and 휎x휎y are the means and standard devia-
+tions of the column and row sums of the GLCM.
+In this case, one of the correlation outputs with larger 
+values represents equal and small pixel intensity dispari-
+ties, which represents uniform areas, while an output with 
+smaller values shows disparities, which can be an indica-
+tion of tumors among other anomalies. The architecture of 
+PRMS-Net is a new improved neural network combining 
+progressive residual networks (PRN), ResNet-50, and a 
+multi-class support vector machine (SVM) to classify ther-
+mal breast scan images. Every part contributes to improv-
+ing feature extraction, dealing with the problem of depth 
+in the network, and in the classification of the anomalies 
+seen on the images.
+The progressive residual network (PRN) improves the 
+element extraction since feature maps are passed through 
+progression stages while utilizing residual learning. Par-
+ametric residual networks were designed to address the 
+delinquent of vanishing gradients in deep networks, which 
+hampers learning. Residual learning justification relies 
+on using residual functions and variances of inputs and 
+(8)
+Correlation =
+∑
+i,j(i.j.p(i, j)) −휇x휇y
+휎x휎y
+outputs so that easier and deeper layers focus on enhancing 
+and retaining key features as shown in Eq. (9).
+H(x)	
+is the output of the residual block.
+F(x, Wi)	 is the residual function learned by the network, 
+where Wi represents the weights of the layer.
+x	
+is the input to the residual block, which is directly
+ added to the output of the residual function.
+Information other than the learned residual function of input 
+X is added to the output, which allows the network to transmit 
+information both through the layers and the learned modifica-
+tion. In deep networks, vanishing gradient issue arises; however, 
+by this addition, it is possible to train the network effectively as 
+the network deepens and keeps adding layers or layers. It also 
+makes certain that features can be adjusted progressively in lay-
+ers to allow the network to maintain vital details from previous 
+layers, the original information, and the learned modifications 
+through the layers.
+This addition helps mitigate vanishing gradient prob-
+lems in deep networks, allowing the network to learn 
+effectively even as it becomes deeper. It also ensures that 
+the network can progressively refine features across lay-
+ers while retaining crucial details from earlier layers. The 
+PRN maintains such low-level information and enables 
+the network to gradually learn the features, which is more 
+conducive to the subsequent intricate pattern extraction in 
+thermal breast scan images. ResNet-50 is a 50-layer deep 
+neural network known for its use of residual blocks, simi-
+lar to PRN, to enable deep learning without degradation 
+in performance. ResNet-50 performs hierarchical feature 
+extraction, which allows it to capture both low-level and 
+high-level features from images.
+The structure of ResNet-50 includes convolutional layers; 
+these layers apply filters to the input image to detect edges, 
+textures, and other low-level features. Residual blocks: As in 
+PRN, each block learns a residual function, which is added 
+to the input to propagate low-level and high-level features 
+through the network as shown in Fig. 2a. The output of each 
+residual block is passed to the next layer, and at deeper lay-
+ers of the suggested network, they used more abstract fea-
+tures like patterns concerning the anomalies such as tumors 
+in breast scans. Here, ResNet-50 takes an output of all the 
+foregoing layers to ensure that both high-level and low-level 
+features are used in the last stages of classifications.
+(9)
+H(x) = F
+(x, Wi
+) + x
+Journal of Imaging Informatics in Medicine	
+The hierarchical feature extraction of ResNet-50 com-
+bined with its depth is capable of capturing a large amount 
+of information embedded in the images right from edges to 
+detail thermal characteristics connected to the anomalies. 
+As the features extracted PRN and ResNet-50, the multi-
+class is used to classify them, and to classify, use support 
+vector machines (SVM). A binary linear classifier is known 
+as an SVM in the context of a supervised learning model 
+for classification problems. How it works is that it identifies 
+that the hyperplane or a decision boundary is the best way 
+to segregate data points into different classes. The decision 
+function of an SVM is given by Eq. (10):
+where 훼i is the support vector coefficient, yi is the class 
+label, K(xi, x) is the kernel function (e.g., linear, polyno-
+mial, RBF), and b is the bias term. This allows for con-
+structing decision boundaries that separate the different 
+classes effectively. b is the bias term, which shifts the deci-
+sion boundary. In PRMS-Net, we used the Adam optimizer 
+which adjusts the learning rate based on the first and second 
+moments of the gradients. Further, the model effectiveness 
+(10)
+f(x) =
+N
+∑
+i=1
+훼iyiK(xi, x) + b
+Fig. 2   A ResNet-50 Mind map 
+architecture. b PRMS-Net 
+architecture
+	
+Journal of Imaging Informatics in Medicine
+for classification is judged by accuracy, sensitivity (recall), 
+specificity, and ROC curves. The Adam optimizer is a 
+widely used optimization algorithm that adapts the learning 
+rate for each parameter by maintaining two moving aver-
+ages: We note that MLE estimating the gradient of the like-
+lihood requires two parameters: one for the first moment 
+(mean), and one for the second moment (variance). This 
+assists in reaching the solution faster, and in addition, it is 
+more stable in the training of deep neuronal networks such 
+as PRMS-Net.
+The first-moment mt is computed as an exponential mov-
+ing average of the gradients using Eq. (11). Adam dynami-
+cally adjusts the learning rate using the first and second 
+moments of the gradient:
+where mt is the first moment at time step t, β1 is the decay 
+rate for the first moment, typically set close to 1 (e.g., 0.9), 
+gt is the gradient at time step t.
+The second-moment vt, which approximates the variance 
+of the gradients, is calculated using Eq. (12):
+where vt is the second moment at time step t, and β2 is the 
+decay rate for the second moment, often set around 0.999.
+Since the moving averages mtm_tmt and vtv_tvt are 
+biased toward zero, especially in the initial time steps, bias 
+correction is applied to both moments: The bias-corrected 
+first-moment estimate is given by Eq. (13):
+The bias-corrected second-moment estimate is given by 
+Eq. (14):
+Finally, the model parameters θt are updated using the 
+bias-corrected moments using Eq. (15):
+(11)
+mt = 훽1mt−1 + (1 −훽1)gt
+(12)
+vt = 훽2vt−1 + (1 −훽2)g2
+t
+(13)
+̂mt =
+mt
+1 −훽t
+1
+(14)
+̂vt =
+vt
+1 −훽t
+2
+where α is the learning rate, ϵ is a small constant (e.g., ­10−8) 
+added for numerical stability to avoid division by zero.
+Common classification criteria including precision, sen-
+sitivity (recall), and specificity are used to assess PRMS-
+Net’s performance. These metrics reveal how well the model 
+identifies thermal breast scan pictures.
+Accuracy measures the overall correctness of the model’s 
+predictions, combining both positive and negative predic-
+tions. Sensitivity, also known as recall, measures the model’s 
+ability to correctly identify positive instances (anomalies). It 
+focuses on how many true positives were correctly predicted. 
+Higher sensitivity indicates that the model is effective in 
+detecting most of the anomalies, which is crucial in medi-
+cal diagnostics. Specificity measures the model’s ability to 
+correctly identify negative instances.
+Increased specificity shows that many normal samples are 
+accurately predicted leaving few chances for false positives 
+to occur. In order to assess of proposed model, receiver oper-
+ating characteristic (ROC) curves are used which is worth 
+pointing out, at various judgment levels. ROC curves rep-
+resent the true positive rate (TPR) against the false positive 
+rate (FPR). These curves help define the trade-off between 
+specificity and sensitivity quite easily. Plotting the true posi-
+tive rate (TPR) versus the false positive rate (FPR) as the 
+decision threshold changes also produces ROC curves. One 
+scalar value that summarizes the model’s performance is 
+provided by the area under the ROC curve (AUC). Excellent 
+classification performance is shown by an AUC of around 
+1, whereas random guessing is indicated by an AUC of 0.5.
+Proposed PRMS Net Model
+PRMS-Net opens a way for crucial obstacles of breast anom-
+aly detection via thermal imaging, regarding the limitations 
+of conventional NN to catch multifaceted features of high-
+level data.
+Our proposed model PRMS-Net combines the progres-
+sive residual networks (PRN) with ResNet-50 to overcome 
+(15)
+휃t = 휃t−1 −훼
+̂mt
+√
+̂vt + 휖
+Table 2   Dataset split and 
+distribution
+Cancer type
+Total images
+Training 
+images
+Testing 
+images
+Validation 
+images
+Ductal carcinoma in situ (DCIS)
+350
+245
+70
+35
+Invasive lobular carcinoma (ILC)
+300
+210
+60
+30
+Angiosarcoma
+250
+175
+50
+25
+Phyllodes tumor
+439
+307
+88
+44
+Journal of Imaging Informatics in Medicine	
+problems such as vanishing gradients that tend to arise in 
+comparatively deeper networks. The structure of the model 
+ensures that beneficial features of images, including low-
+level components, are retained; at the same time, it reduces 
+the complexity of features as we advance through the layers 
+to improve the classification of anomalies. It does not only 
+optimize feature extraction but also enhances the general 
+performance of a model making the current approach a very 
+effective tool for medical diagnosis.
+The architecture of PRMS-Net is a sophisticated integra-
+tion of two advanced components as shown in Fig. 2b: Spe-
+cifically, the experiments are conducted with progressive 
+residual networks (PRN) and ResNet-50. The PRN improves 
+feature extraction from self-driving cars through its unique 
+use of residual learning since residual learning enables the 
+model to learn the differences between the input and the 
+output which is essential when the network depth increases, 
+and thus, it keeps the features important. This is well sup-
+plemented by ResNet-50, which uses hierarchical feature 
+extraction whereby a low-level and high-level pattern is 
+extracted which is important in Talon vision systems for 
+detecting unique changes in thermal images. These archi-
+tectures help in effectively using the strength of the residual 
+connections and at the same time avoid any issue of gradient 
+vanishing or groping, all putting together making PRMS-Net 
+a robust model.
+Unlike the conventional models, PRMS-Net offers a 
+quite different architectural integration, as well as an effi-
+cient classification method. Compared to the prior methods, 
+PRMS-Net does not entirely depend on the deep convolu-
+tional networks or the basic classifiers; instead, it combines 
+both progressive residual networks and ResNet50 as a sin-
+gle entity so as to achieve optimal results out of multiple 
+class classification kind of problems. The employment of 
+a multi-class support vector machine (SVM) on the top of 
+the architecture increases decision boundary discrimination 
+helping to achieve high levels of differentiation of the dif-
+ferent types of anomalies. Furthermore, the process of the 
+Adam optimizer, the learning process, is adaptive; therefore, 
+it is faster, convergent, and stable. A synergy between archi-
+tectural advancement and refined optimization algorithms in 
+breast thermal image analysis is possible with PRMS-Net for 
+medical diagnosis.
+Algorithm of Proposed Model
+The PRMS-Net algorithm is a robust framework that pro-
+duces accurate detection and classification results. In a nut-
+shell, it is organized in steps as below:
+Algorithm 1   Algorithm of Proposed Model
+Algorithm: PRMS-Net Model
+% Step 1: Initialize PRMS-Net Model
+% Step 2: Define Input Layer
+image_shape = [height, width, channels];
+inputLayer = imageInputLayer(image_shape, 'Normalization', 'none');
+% Step 3: Initialize Progressive Residual Network (PRN)
+PRN_layers = [];
+for i = 1:num_blocks % Define the number of residual blocks
+% Step 3a: Residual Block
+PRN_layers(end+1) = convolution2dLayer(kernel_size, num_filters, 'Padding', 
+'same', 'WeightsInitializer', 'narrow-normal');
+PRN_layers(end+1) = batchNormalizationLayer();
+PRN_layers(end+1) = reluLayer();
+PRN_layers(end+1) = convolution2dLayer(kernel_size, num_filters, 'Padding', 
+'same', 'WeightsInitializer', 'narrow-normal');
+PRN_layers(end+1) = batchNormalizationLayer();
+% Step 3b: Add input to output of the residual function
+PRN_layers(end+1) = additionLayer(2);
+end
+% Step 4: Initialize ResNet-50
+ResNet_layers = [];
+ResNet_layers = [ResNet_layers; PRN_layers]; % Connect PRN output to ResNet 
+input
+for i = 1:num_blocks_resnet % Define the number of ResNet blocks
+% Step 4a: Residual Block
+ResNet_layers(end+1) = convolution2dLayer(kernel_size, num_filters, 'Padding', 
+'same');
+ResNet_layers(end+1) = batchNormalizationLayer();
+ResNet_layers(end+1) = reluLayer();
+ResNet_layers(end+1) = convolution2dLayer(kernel_size, num_filters, 'Padding', 
+'same');
+ResNet_layers(end+1) = batchNormalizationLayer();
+% Step 4b: Add input to output of the residual function
+ResNet_layers(end+1) = additionLayer(2);
+end
+% Step 5: Flatten Output from ResNet-50
+flattenLayer = flattenLayer();
+ResNet_layers(end+1) = flattenLayer;
+% Step 6: Initialize Multi-Class Support Vector Machine (SVM)
+% Note: SVM requires manual training after extracting features
+% Assuming features and labels are available:
+SVM_model = fitcecoc(features, labels); % Train SVM model
+% Step 7: Compile PRMS-Net Model
+layers = [inputLayer; ResNet_layers];
+lgraph = layerGraph(layers);
+options = trainingOptions('adam', 'MaxEpochs', num_epochs, 'Verbose', false);
+% Step 8: Train PRMS-Net
+trainedNet = trainNetwork(trainingData, lgraph, options);
+% Step 9: Evaluate PRMS-Net
+predictions = classify(trainedNet, testData);
+accuracy = sum(predictions == testLabels) / numel(testLabels);
+confMat = confusionmat(testLabels, predictions);
+% Step 10: Output Results
+disp('Confusion Matrix:');
+disp(confMat);
+	
+Journal of Imaging Informatics in Medicine
+Experimental Investigations and Analysis
+Dataset Split and Distribution
+For this study, thermal images of breast cancer were 
+obtained from DMR-Database for Mastology Research, 
+comprising 1339 images which were obtained from 1339 
+unique patients, ensuring that each image corresponds to a 
+distinct individual. This approach eliminates the possibility 
+of multiple images from the same patient, thereby reducing 
+the risk of intra-patient correlation that could potentially 
+bias the model’s performance. By maintaining patient-level 
+independence in the dataset, we enhance the robustness, 
+reliability, and generalizability of the proposed model. The 
+photographs were taken using a FLIR SC-620 thermal cam-
+era with pixel dimensions of 640 and 480 pixels and pixel 
+size of 45 μm. This paper also uses the breast cancer types 
+of DCIS, ILC, Angiosarcoma, and Phyllodes Tumor among 
+others but the reader should note that the dataset encom-
+passes numerous types. The photos were divided into three 
+sets: pre-training, pre-testing, and pre-validation, which 
+ensures the development of a balanced model of training.
+These distributions are presented in the later part of the 
+paper in Table 2.
+In this study, a total of 1339 images were obtained from 
+1339 unique patients, ensuring that each image corresponds 
+to a distinct individual. This approach eliminates the pos-
+sibility of multiple images from the same patient, thereby 
+reducing the risk of intra-patient correlation that could 
+potentially bias the model’s performance. By maintaining 
+patient-level independence in the dataset, we enhance the 
+robustness, reliability, and generalizability of the proposed 
+model. In total, across the 1339 photos, 937 (70%) of the 
+photos were allocated for training the AIS model, 268 photos 
+(20%) for testing the AIS model, and 134 photos (10%) for 
+validating the AIS model. This distribution by type ascer-
+tains that even the less prevalent forms of the disease are 
+well catered for in training the model, in an adequate man-
+ner so that real-life cases can be tested and its performance 
+evaluated.
+Simulation Outputs
+In Fig. 3a, there is a thermal image of a breast that uses 
+thermography to analyze temperature changes whereby they 
+could be the result of anomalies. This non-invasive method 
+captures thermal patterns which are often signs of underly-
+ing issues such as tumors, and hence, the first capture has to 
+be captured for subsequent processing.
+In Fig. 3b, this thermal image of Fig. 3a is scaled to size 
+because the images are to be compared uniformly in all the 
+analyses that follow. This paper finds that steps have to be 
+taken to ensure uniformity in the size of images as these have 
+to be processed under conditions that allow for comparabil-
+ity of the features extracted from the images for better reli-
+ability in detecting and classifying the anomalies.
+It is also important to emphasize that Fig. 3c illustrates 
+the conversion of the thermal image into the grayscale for-
+mat. This step blue scales down the given data by converting 
+the three RGB channels into a single intensity channel to 
+minimize the workload for computationally involving down-
+stream processes. Essentially, it maintains all the structural 
+features that are hence foremost for analysis while at the 
+same time deemphasizing the computational burden.
+Histogram of the grayscale image is shown in Fig. 4 
+which gives information about the pixel intensity levels. It 
+is important as it allows us to determine whether those addi-
+tional adjustments to image processing, including enhanc-
+ing contrast, are required based on the distribution of pixel 
+values across the intensity range.
+The image in Fig. 5 also underwent DHE improving the 
+contrast through the adjustment of the histogram equaliza-
+tion of pixel intensities. This improvement is very crucial 
+(a)
+(b)
+(c)
+Fig. 3   A Breast sample thermograph; b resized image; c grayscale converted image
+Journal of Imaging Informatics in Medicine	
+for emphasizing the features in the image that are useful for 
+detecting abnormality conditions.
+Fig. 6 shows the histogram of the contrast-enhanced 
+image, where the probability density of pixel intensities 
+is more or less equal. This confirms that the enhancement 
+process was indeed effective, whereby features within the 
+image are made more conspicuous and thus more amiable 
+to analysis.
+In the present case, the application of anisotropic diffusion 
+on the enhanced image is the depiction shown in Figure 7. This 
+technique means choosing, which areas have to be smoothed 
+and which are important to remain strong for the comparison 
+of the structures that may have pathological change.
+Fig. 4   Histogram plot of gray-
+scale converted image
+Fig. 5   Double exponential histogram equalization enhanced image
+Fig. 6   Histogram plot for 
+enhanced image
+Fig. 7   Resultant of anisotropic diffusion
+	
+Journal of Imaging Informatics in Medicine
+As shown in Fig. 8 the result of the proportionate adap-
+tive filtering brings a better point of image by reducing noise 
+and improving structural clarity. Besides, this filtering tech-
+nique makes the averaging depend on pixel similarity which 
+retains the important characteristics of the resultant image 
+while discarding noise. The histogram of the image after 
+applying proportionate adaptive filtering is shown in Fig. 9 
+again. This plot epitomizes the result of the filtering, shows a 
+relatively evenly spread intensity spectrum, and suggests an 
+increase in the measured intensity’s resolution and accuracy, 
+and these are important in discerning the anomalies.
+Table 3 summarizes the features extracted using the SIFT 
+algorithm from the processed thermal images. It lists sta-
+tistical measures like mean, variance, and entropy which 
+are critical for characterizing and differentiating between 
+normal and anomalous regions within the images, providing 
+a quantitative basis for classification.
+Fig. 10 presents a radar chart that visualizes the features 
+extracted from the thermal images. This chart offers a com-
+prehensive overview of how each feature dimension varies, 
+providing a quick comparative analysis of different image 
+samples based on their feature characteristics.
+Fig. 11 displays a heat map of the detected anomalies in 
+breast tissues, effectively pinpointing areas with significant 
+temperature deviations, indicative of potential tumors. This 
+visual representation aids in the intuitive understanding of 
+anomaly locations and their relative intensities within the 
+breast tissue.
+Fig. 12 shows a confusion matrix for the classification 
+model, which is critical for evaluating the performance of 
+the diagnostic algorithm by illustrating the true positives, 
+false positives, true negatives, and false negatives. This 
+matrix is essential for understanding the model’s accuracy 
+in distinguishing between healthy and cancerous tissues.
+The receiver operating characteristic (ROC) curve shows 
+the classification performance for different breast cancer 
+types, with each curve representing a specific type. The 
+area under the curve (AUC) values as shown in Fig. 13, 
+indicate how well the model distinguishes between classes, 
+where higher AUC values (closer to 1.0) signify better per-
+formance. The black dashed line represents a random clas-
+sifier (AUC = 0.5), serving as a baseline for comparison. 
+This analysis complements the confusion matrix, providing 
+a more detailed view of model performance by highlighting 
+accuracy and classification trade-offs.
+Performance Assessment
+Table 4 shows the website using the proposed approach of 
+PRN and ResNet-50 improves breast cancer detection preci-
+sion to a remarkable 99.63% combined. This high accuracy 
+gives evidence of the capability of the proposed combined 
+architectures’ feature extraction capacity and their ability to 
+Fig. 8   Resultant of proportionate adaptive filtering
+Fig. 9   Histogram plot of the proportionate adaptive filtered image
+Table 3   SIFT-based feature 
+extraction
+Sample
+Mean
+Variance
+Std Dev
+Max
+Min
+Entropy
+Kurtosis
+Skewness
+1
+0.5486
+0.1428
+0.3785
+0.937
+0.065
+7.2319
+1.9245
+0.1045
+2
+0.4637
+0.1826
+0.4279
+0.892
+0.093
+7.6874
+1.6427
+0.0761
+3
+0.5234
+0.1387
+0.3729
+0.954
+0.047
+7.3364
+1.7498
+0.0994
+4
+0.4571
+0.1679
+0.4098
+0.863
+0.138
+7.9123
+1.5083
+0.0587
+5
+0.4982
+0.1765
+0.4207
+0.913
+0.083
+7.1289
+1.8426
+0.1182
+6
+0.5123
+0.1574
+0.3961
+0.978
+0.029
+7.4561
+1.7823
+0.1254
+Journal of Imaging Informatics in Medicine	
+accurately classify intricate image data for both positive and 
+negative test subjects.
+The precision comparison shown in Table 5 objec-
+tively demonstrates how the proposed model reduces the 
+numbers of false positives, which is of paramount impor-
+tance in medical diagnosis such that patients get the right 
+treatment based on the correct diagnosis. Based on the 
+results presented in Table 5, an accuracy of 99.37% proved 
+that the proposed will be useful in the proper diagnosis of 
+cases of breast anomalies thereby preventing unwanted 
+biopsies.
+Specificity, or the overall capacity to correctly iden-
+tify positive cases without missing any, is important in 
+medical diagnosis, to make certain no form of sickness 
+can escape the eye of the diagnostician. These detectors 
+are reported in Table 6 to have a spectacular sensitivity 
+of 99.58% as detected by the proposed model. This is 
+because it is able to easily identify both concealed and 
+noticeable features of anomalies due to its efficient image 
+analysis.
+The specificity comparison, provided in Table 7 shows 
+the proposed model achieving 99.32% specificity. This 
+high specificity is critical in medical settings to prevent 
+over-diagnosis and to ensure patients without the condi-
+tion are accurately identified, thus avoiding the psycho-
+logical and physical implications of unnecessary treat-
+ment plans.
+The F1 score, which considers both the precision and sen-
+sitivity of the proposed model, gives the overall efficiency 
+of the model a score of 99.48% as depicted in Table 8 shows 
+how accurate the proposed model is in providing appropriate 
+results in clinical application eliminating high false positive 
+and false negative values.
+The MobileNetV2-based diagnostic system achieves 
+an inference time of 85 ms, a training time of 12 h, and 
+Fig. 10   Radar chart of extracted 
+features
+Fig. 11   Heat map resultant for detected breast cancerous tumors
+	
+Journal of Imaging Informatics in Medicine
+requires 180 GFLOPs for computation. The CNN-based 
+diagnostic system (using MobileNetV2 and VGG16) has a 
+slightly higher inference time of 100 ms, a training time 
+of 14 h, and utilizes 190 GFLOPs. The U-Net model for 
+breast area extraction and classification records an inference 
+time of 110 ms, a training duration of 13 h, and requires 
+210 GFLOPs. In comparison, the proposed PRMS-Net 
+model outperforms these methods with an inference time of 
+80 ms, a training time of 11 h, and a lower computational 
+requirement of 170 GFLOPs, making it more efficient for 
+real-time breast cancer diagnosis as shown in Table 9.
+The comprehensive performance table provides a detailed 
+comparison of various machine learning models, as shown 
+in Table 10 including enhanced CNN with Fuzzy C-means, 
+multiwavelet-based deep learning, KNN + SVM, explaina-
+ble AI (XAI), MobileNetV2, VGG16, CNN + SVM + KNN, 
+deep learning with attention mechanisms, and the proposed 
+model. Key performance metrics such as accuracy, precision, 
+Fig. 12   Confusion matrix
+Fig. 13   Receiver operating 
+characteristic (ROC) curve
+Journal of Imaging Informatics in Medicine	
+sensitivity, specificity, F1-score, and AUC are presented to 
+evaluate each model’s effectiveness. Accuracy reflects the 
+overall correctness of the model’s predictions, precision 
+measures the proportion of true positives among all posi-
+tive predictions, Sensitivity (recall) assesses the ability to 
+correctly identify positive cases, and specificity indicates 
+the ability to correctly classify negative cases. The F1-score 
+provides a balanced measure of precision and recall, while 
+AUC (area under the curve) evaluates the model’s ability to 
+distinguish between classes. Where specific data points were 
+unavailable, approximate values were calculated based on 
+observed performance trends.
+To statistically assess the performance differences among 
+these models, One-way ANOVA (analysis of variance) was 
+conducted for each metric. The ANOVA results revealed 
+statistically significant differences in model performance, 
+particularly highlighting the superior performance of the 
+proposed model. For example, the ANOVA analysis for 
+accuracy yielded a p-value well below the 0.05 significance 
+threshold, confirming that the proposed model’s perfor-
+mance is significantly different from and superior to other 
+models. Further, Tukey’s HSD post-hoc test was applied to 
+identify which specific models differed significantly. The 
+results indicated that the proposed model demonstrates 
+statistically significant improvements in accuracy, preci-
+sion, sensitivity, specificity, F1-score, and AUC compared 
+to models like explainable AI (XAI), KNN + SVM, and 
+CNN + SVM + KNN. The consistent statistical superiority 
+across multiple metrics validates the robustness and effec-
+tiveness of the proposed model, emphasizing its reliability 
+and efficiency in comparison to existing approaches.
+Cross‑Validation Performance
+Figure 14 provides information about the level of accuracy 
+of the proposed methodology in the case of fivefold cross-
+validation used, and it can be concluded that the model 
+yields good performance for all sub-samples. The choice 
+of fivefold cross-validation was based on a balance between 
+computational efficiency and robust performance evaluation. 
+Given the dataset size, fivefold provides a reliable estimate 
+of model generalizability while maintaining a manageable 
+computational cost. This approach ensures that each sam-
+ple is used for both training and validation, reducing bias 
+and preventing overfitting. Furthermore, the variance across 
+the folds serves as an indicator of the model’s stability. The 
+validation, also known as cross-validation, helps to evalu-
+ate the possibility of model errors and its need for regen-
+erating other datasets apart from the one for training the 
+model. In this regard, every fold signifies a different portion 
+of the data used to assess the accuracy of the model, and 
+therefore, no given portion of the dataset gives a skewed 
+measure of the accuracy of the model. This figure offers 
+Table 4   Accuracy comparison
+Model used (citation number)
+Accuracy value
+Enhanced CNN with Fuzzy C-means [25]
+96.8%
+Multiwavelet-based deep learning [26]
+98%
+KNN + SVM [27]
+98.8%
+Explainable AI (XAI) [28]
+90.93%
+MobileNetV2 [29]
+98.69%
+VGG16 [30]
+99%
+CNN + SVM + KNN [31]
+95%
+Deep learning with attention mechanisms [32]
+99.49%
+Proposed model
+99.63%
+Table 5   Precision comparison
+Model used (citation number)
+Precision value
+Multiwavelet-based deep learning [26]
+99%
+Explainable AI (XAI) [28]
+90.6%
+MobileNetV2 [29]
+98.3%
+Deep learning with attention mechanisms [32]
+99.23%
+Proposed model
+99.37%
+Table 6   Sensitivity comparison
+Model used (citation number)
+Sensitivity value
+Multiwavelet-based deep learning [26]
+97.43%
+KNN + SVM [27]
+99%
+MobileNetV2 [29]
+99.1%
+CNN + SVM + KNN [31]
+95.5%
+Deep learning with attention mechanisms [32]
+99.52%
+Proposed model
+99.58%
+Table 7   Specificity comparison
+Model used (citation number)
+Specificity value
+Enhanced CNN with Fuzzy C-means [25]
+93.7%
+KNN + SVM [27]
+98.2%
+MobileNetV2 [29]
+98.3%
+CNN + SVM + KNN [31]
+97.5%
+Deep learning with attention mechanisms [32]
+99.21%
+Proposed model
+99.32%
+Table 8   F1 score comparison
+Model used (citation number)
+F1 score value
+MobileNetV2 [29]
+98.69%
+Deep learning with attention mechanisms [32]
+99.36%
+Proposed model
+99.48%
+	
+Journal of Imaging Informatics in Medicine
+an obvious illustration of the performance of the presented 
+model, which is valid for any given test and shows the effi-
+ciency of the integrated PRN and ResNet-50 networks for 
+different data cases.
+Figure 15 shows the box plot of precision, recall (sensitiv-
+ity), and F1 score of different folds of cross-validation inter-
+views. This kind of plot is most helpful in terms of looking 
+at the distribution and especially the measures of location of 
+these critical metrics which measure the model goodness-of-
+fit in terms of identifying true positives, the degree of detec-
+tion of all relevant cases, and finally the trade-off between 
+precision and recall respectively. Based on the box plots, 
+several areas that require improvement or that present the 
+model’s strong points are indicated due to its variability and 
+Table 9   Computational efficiency comparison
+Methodology
+Inference time (ms)
+Training time (hrs)
+Resource utilization 
+(FLOPs in GFLOPs)
+MobileNetV2-based diagnostic system [29]
+85
+12
+180
+CNN-based diagnostic system (MobileNetV2, VGG16) [29, 30]
+100
+14
+190
+U-Net for breast area extraction and classification[33]
+110
+13
+210
+Proposed method (PRMS-Net)
+80
+11
+170
+Table 10   Comprehensive performance table
+Model used (citation number)
+Accuracy (%)
+Precision (%)
+Sensitivity (%)
+Specificity (%)
+F1-score (%)
+AUC (%) 
+(approxi-
+mated)
+Enhanced CNN with Fuzzy C-means [25]
+96.8
+–
+–
+93.7
+95.7
+95.4
+Multiwavelet-based deep learning [26]
+98
+99
+97.43
+96
+98
+97.7
+KNN + SVM [27]
+98.8
+98.5
+99
+98.2
+98.7
+98.6
+Explainable AI (XAI) [28]
+90.93
+90.6
+90
+89
+90
+89.5
+MobileNetV2 [29]
+98.69
+98.3
+99.1
+98.3
+98.69
+98.7
+VGG16 [30]
+99
+99
+98.8
+98.5
+98.9
+98.9
+CNN + SVM + KNN [31]
+95
+96
+95.5
+97.5
+96
+96.5
+Deep learning with attention mechanisms [32]
+99.49
+99.23
+99.52
+99.21
+99.36
+99.4
+Proposed model
+99.63
+99.37
+99.58
+99.32
+99.48
+99.5
+Fig. 14   Accuracy per fold 
+cross-validation (fivefold)
+Journal of Imaging Informatics in Medicine	
+the stability of the proposed architecture for distinct seg-
+ments of data.
+Figure 16 shows the error histogram per fold of fivefold 
+cross-validation, and these sub-figures help to explore the 
+details of errors of the model for each phase of testing. Like 
+every other error matrix, this histogram can also be used 
+to determine some scenarios or general types of misclas-
+sifications that may set the stage for further fine-tuning of 
+the model. From analyzing such errors, the researchers are 
+able to identify particular areas where there are shortcom-
+ings in the model whether they are in the aspects of fea-
+ture extraction, classification thresholds, or in other PRN 
+and ResNet-50 analytical processes. In turn, results help to 
+fine-tune the model to optimize the diagnostic performance 
+in practice. The analysis shows a promising consistency in 
+performance: across the five folds, the model averages 1.4 
+errors with a modest standard deviation of 0.55. While the 
+difference between one and two errors in individual folds is 
+not statistically significant due to the limited sample size, 
+this overall stability is a positive indicator of the model’s 
+robustness and reliability across different subsets of data. 
+In combination, these measures enrich the picture of the 
+proposed model performance and confirm the efficiency and 
+stability of the found solutions with the help of statistical 
+comparisons and analyses.
+With an accuracy of 99.63%, our proposed PRMS-Net 
+model outperforms existing models, surpassing VGG16 
+(99%) [30], MobileNetV2 (98.69%) [29], and deep learning 
+Fig. 15   Box plot for precision, 
+recall, F1 score across folds
+Fig. 16   Error histogram per fold 
+(fivefold)
+	
+Journal of Imaging Informatics in Medicine
+with attention mechanisms (99.49%) [32]. It also exhibits 
+higher precision (99.37%), sensitivity (99.58%), specificity 
+(99.32%), and F1-score (99.48%), ensuring robust classi-
+fication of thermal breast scan images. PRMS-Net avoids 
+the overfitting and generalizability problems observed in 
+Dharani et al. (2024), and it requires less computing power 
+than Geetha et al. (2024), making it more appropriate for 
+real-time applications.
+The hybrid architecture of PRMS-Net, which combines a 
+Multi-Class SVM for superior classification, ResNet-50 for 
+complex pattern recognition, and progressive residual net-
+works (PRN) for improved feature extraction, is what makes 
+it distinctive. In contrast to conventional models, PRMS-Net 
+effectively manages data variability, enhances accuracy, and 
+tackles feature deterioration in deeper networks. By address-
+ing performance concerns with unbalanced datasets (as seen 
+in Moayedi et al., 2024 [27]) via sophisticated preprocess-
+ing and reliable feature extraction, PRMS-Net also closes 
+significant gaps in the literature. Furthermore, it overcomes 
+the drawbacks of computationally demanding models like 
+Yerken et al.’s (2024) XAI [28] by striking a compromise 
+between high accuracy and computational efficiency, which 
+qualifies it for real-time medical applications.
+To address the clinical relevance of PRMS-Net, its robust 
+performance in classifying thermal breast scans holds sig-
+nificant potential for enhancing breast cancer screening and 
+diagnosis. PRMS-Net’s high accuracy (99.63%), sensitiv-
+ity (99.58%), and specificity (99.32%) suggest a reduced 
+likelihood of false positives and negatives, which can help 
+minimize unnecessary biopsies and improve early cancer 
+detection rates. Unlike traditional mammography, which 
+may face limitations in dense breast tissues, thermal imag-
+ing combined with PRMS-Net’s advanced feature extraction 
+offers a non-invasive, radiation-free alternative that could 
+complement existing diagnostic tools.
+Furthermore, PRMS-Net’s computational efficiency ena-
+bles real-time analysis, supporting radiologists in managing 
+large datasets without compromising diagnostic accuracy. 
+This can streamline clinical workflows, reduce workload, 
+and improve decision-making speed in busy healthcare 
+settings. Consulting with mammographers would further 
+validate the model’s practical utility and identify potential 
+integration points within current screening protocols.
+Conclusion
+Integrating PRN and ResNet-50 was based on a combina-
+tion of empirical evaluation and theoretical justification. 
+PRN was chosen to address feature degradation in deeper 
+networks, while ResNet-50 was integrated to enhance 
+residual learning for more effective feature extraction. The 
+specific parameters, including network depth, activation 
+functions, and optimization settings, were systematically 
+tuned through hyperparameter optimization techniques, 
+ensuring optimal classification accuracy and computational 
+efficiency. Therefore, the PRMS-Net model consisting of 
+progressive residual networks and ResNet-50 is outstand-
+ing in the early diagnosis of breast cancer with a high 
+accuracy of 99.63%. In addition, the current model has an 
+accuracy of 99.37%, a sensitivity of 99.58%, a specificity 
+of 99.32%, and an F1 score of 99.48%. All of these metrics 
+do support its effectiveness of achieving that it is likely to 
+maintain both high specificity and sensitivity which is very 
+important in ruling out possible false positive and false 
+negative cases; this makes it so reliable in usage in clini-
+cal practice. Given its high accuracy and computational 
+efficiency, PRMS-Net has the potential to be integrated 
+into clinical workflows, supporting radiologists in breast 
+cancer screening and early diagnosis. The use of fivefold 
+cross-validation still reinstances the reliability and effi-
+ciency of the proposed model, making PRMS-Net one of 
+the cornerstone developments in the field of medical imag-
+ing. These incorporations of the most advanced technolo-
+gies in deep learning, therefore, improve the early detection 
+and optimum treatment plans, adding up to optimal patient 
+outcomes in breast cancer cases.
+Despite its encouraging results, PRMS-Net still has 
+many drawbacks. Low-resolution or extremely noisy ther-
+mal pictures may cause the model to function differently. 
+Furthermore, even though computational efficiency has been 
+maximized, additional model compression methods might 
+be needed for deployment in low-resource contexts. Future 
+work could explore the integration of multimodal imaging 
+techniques, such as combining thermal imaging with mam-
+mography or ultrasound, to improve diagnostic robustness. 
+Additionally, optimizing PRMS-Net for real-time clini-
+cal deployment and validating its effectiveness on diverse 
+patient populations would further enhance its applicability 
+in clinical practice.
+Acknowledgements  The authors are grateful to all the editors and 
+anonymous reviewers for their comments and suggestions and thank 
+all the members who have contributed to this work with us.
+Data Availability  Data will be made available upon request.
+Declarations 
+Conflict of Interest  The authors declare no competing interests.
+Open Access  This article is licensed under a Creative Commons Attri-
+bution 4.0 International License, which permits use, sharing, adapta-
+tion, distribution and reproduction in any medium or format, as long 
+as you give appropriate credit to the original author(s) and the source, 
+provide a link to the Creative Commons licence, and indicate if changes 
+were made. The images or other third party material in this article are 
+included in the article’s Creative Commons licence, unless indicated 
+otherwise in a credit line to the material. If material is not included in 
+Journal of Imaging Informatics in Medicine	
+the article’s Creative Commons licence and your intended use is not 
+permitted by statutory regulation or exceeds the permitted use, you will 
+need to obtain permission directly from the copyright holder. To view a 
+copy of this licence, visit http://creativecommons.org/licenses/by/4.0/.
+References
+	 1.	 Garia, L.S., Hariharan, M. (2023). Vision transformers for 
+breast cancer classification from thermal images. In: Muth-
+usamy, H., Botzheim, J., Nayak, R. (eds) Robotics, Control and 
+Computer Vision. Lecture Notes in Electrical Engineering, vol 
+1009. Springer, Singapore. https://​doi.​org/​10.​1007/​978-​981-​99-​
+0236-1_​13
+	 2.	 Ensafi, M., Keyvanpour, M.R. & Shojaedini, S.V. A New method 
+for promote the performance of deep learning paradigm in diag-
+nosing breast cancer: improving role of fusing multiple views of 
+thermography images. Health Technol. 12, 1097–1107 (2022). 
+https://​doi.​org/​10.​1007/​s12553-​022-​00702-6
+	 3.	 Singh, D., Singh, A. K., & Tiwari, S. (2023). Thermal analysis 
+of realistic breast model with tumor and validation by infrared 
+images. In I. Management Association (Ed.), Research Anthol-
+ogy on Medical Informatics in Breast and Cervical Cancer (pp. 
+532–544). IGI Global. https://​doi.​org/​10.​4018/​978-1-​6684-​7136-
+4.​ch027
+	 4.	 Perez-Raya, I., and Kandlikar, S. G. (December 9, 2022). “Ther-
+mal modeling of patient-specific breast cancer with physics-based 
+artificial intelligence.” ASME. J. Heat Mass Transfer. March 
+2023; 145(3): 031201. https://​doi.​org/​10.​1115/1.​40553​47
+	 5.	 H. Dihmani, O. Bouattane and O. S. Grief, “A review on sus-
+picious-regions segmentation methods in breast thermogram 
+image,” 2022 2nd International Conference on Innovative 
+Research in Applied Science, Engineering and Technology (IRA-
+SET), Meknes, Morocco, 2022, pp. 1–5. https://​doi.​org/​10.​1109/​
+IRASE​T52964.​2022.​97382​65.
+	 6.	 Dey, S., Roychoudhury, R., Malakar, S. et al. Screening of breast 
+cancer from thermogram images by edge detection aided deep 
+transfer learning model. Multimed Tools Appl 81, 9331–9349 
+(2022). https://​doi.​org/​10.​1007/​s11042-​021-​11477-9
+	 7.	 Mammoottil, M. J., Kulangara, L. J., Cherian, A. S., Mohan-
+das, P., Hasikin, K., & Mahmud, M. (2022). Detection of breast 
+cancer from five-view thermal images using convolutional neu-
+ral networks. Journal of Healthcare Engineering, 2022, Article 
+4295221. https://​doi.​org/​10.​1155/​2022/​42952​21
+	 8.	 S. Saadizadeh, “Breast cancer detection in thermal images using 
+GLRLM algorithm,” 2021 International Conference on Elec-
+trical, Communication, and Computer Engineering (ICECCE), 
+Kuala Lumpur, Malaysia, 2021, pp. 1–6. https://​doi.​org/​10.​
+1109/​ICECC​E52056.​2021.​95142​25.
+	 9.	 V. Tanrıverdi and N. G. Gençer, “Induced current thermal imag-
+ing in breast cancer detection,” 2021 29th Signal Processing 
+and Communications Applications Conference (SIU), Istanbul, 
+Turkey, 2021, pp. 1-4. https://​doi.​org/​10.​1109/​SIU53​274.​2021.​
+94777​89
+	10.	 Charpe, P. P. and Kumar, S. (2022). A review on patch-wise 
+asymmetry analysis of thermograms for predicting breast abnor-
+mality in breast cancer detection. i-manager’s Journal on Infor-
+mation Technology, 11(4), 24–29. https://​doi.​org/​10.​26634/​jit.​
+11.4.​19211
+	11.	 Shrivastava, R., Kakileti, S.T., Manjunath, G. (2022). Thermal 
+radiomics for improving the interpretability of breast cancer 
+detection from thermal images. In: Kakileti, S.T., et al. Artificial 
+intelligence over infrared images for medical applications and 
+medical image assisted biomarker discovery. MIABID AIIIMA 
+2022. Lecture Notes in Computer Science, vol 13602. Springer, 
+Cham. https://​doi.​org/​10.​1007/​978-3-​031-​19660-7_1
+	12.	 V. Rajinikanth, S. Kadry, D. Taniar, R. Damaševičius and H. T. 
+Rauf, “Breast-cancer detection using thermal images with marine-
+predators-algorithm selected features,” 2021 Seventh International 
+Conference on Bio Signals, Images, and Instrumentation (ICB-
+SII), Chennai, India, 2021, pp. 1–6. https://​doi.​org/​10.​1109/​ICBSI​
+I51839.​2021.​94451​66.
+	13.	 M. -A. Grigore and V. -E. Neagoe, “A deep CNN approach using 
+thermal imagery for breast cancer diagnosis,” 2021 13th Interna-
+tional Conference on Electronics, Computers and Artificial Intel-
+ligence (ECAI), Pitesti, Romania, 2021, pp. 1–6. https://​doi.​org/​
+10.​1109/​ECAI5​2376.​2021.​95151​89.
+	14.	 Zarei, M., Rezai, A., & Falahieh Hamidpour, S. S. (2021). Breast 
+cancer segmentation based on modified Gaussian mean shift algo-
+rithm for infrared thermal images. Computer Methods in Biome-
+chanics and Biomedical Engineering: Imaging & Visualization, 
+9(6), 574–580. https://​doi.​org/​10.​1080/​21681​163.​2021.​18978​84
+	15.	 Davies, S., Anand, S. (2021). Breast cancer detection in infrared 
+thermal images using convolutional neural networks: a transfer 
+learning approach. In: Abraham, A., et al. Proceedings of the 12th 
+International Conference on Soft Computing and Pattern Recog-
+nition (SoCPaR 2020). SoCPaR 2020. Advances in Intelligent 
+Systems and Computing, vol 1383. Springer, Cham. https://​doi.​
+org/​10.​1007/​978-3-​030-​73689-7_7
+	16.	 Darabi, N., Rezai, A., & Hamidpour, S. S. F. (2021). Breast can-
+cer detection using RSFS-based feature selection algorithms in 
+thermal images. Biomedical Engineering: Applications, Basis 
+and Communications, 33(03), Article 2150020. https://​doi.​org/​
+10.​4015/​S1016​23722​15002​04
+	17.	 Meneses-Claudio, B., Alvarado-Díaz, W., Roman-Gonzalez, A. 
+(2021). Detection of suspected of breast cancer using thermal 
+images. In: Botto-Tobar, M., Cruz, H., Díaz Cadena, A. (eds) Arti-
+ficial intelligence, computer and software engineering advances. 
+CIT 2020. Advances in Intelligent Systems and Computing, vol 
+1326. Springer, Cham. https://​doi.​org/​10.​1007/​978-3-​030-​68080-
+0_​19
+	18.	 M. Reda Hawas, A., Twakol Khalil, A., & Said Marzouk, E. 
+(2020). Breast cancer detection using thermal images. Interna-
+tional Journal of Engineering & Technology, 9(3), 692–701. 
+https://​doi.​org/​10.​14419/​ijet.​v9i3.​30504
+	19.	 M. A. S. A. Husaini, M. H. Habaebi, S. A. Hameed, M. R. Islam 
+and T. S. Gunawan, “A systematic review of breast cancer detec-
+tion using thermography and neural networks,” in IEEE Access, 
+vol. 8, pp. 208922-208937, 2020. https://​doi.​org/​10.​1109/​
+ACCESS.​2020.​30388​17.
+	20.	 Araujo, A. D., Resmini, R., Moran, M. B., Issa, M. H., & Conci, 
+A. (2021). Computer techniques for detection of breast cancer and 
+follow up neoadjuvant treatment: using infrared examinations. In 
+W. Pinheiro dos Santos, W. Azevedo da Silva, & M. de Santana 
+(Eds.), Biomedical Computing for Breast Cancer Detection and 
+Diagnosis (pp. 72–106). IGI Global. https://​doi.​org/​10.​4018/​978-
+1-​7998-​3456-4.​ch005
+	21.	 Kavya, N. et al. (2021). Asymmetrical analysis of breast thermal 
+images for detection of breast cancer. In: Mukhopadhyay, C.K., 
+Mulaveesala, R. (eds) Advances in Non-destructive Evaluation. 
+Lecture Notes in Mechanical Engineering. Springer, Singapore. 
+https://​doi.​org/​10.​1007/​978-​981-​16-​0186-6_​25
+	22.	 N.; Mashekova, A.; Zhao, Y.; Zarikas, V.; Ng, E. and Mukhme-
+tov, O. (2022). Intelligent diagnosis of breast cancer with ther-
+mograms using convolutional neural networks. In Proceedings of 
+the 14th International Conference on Agents and Artificial Intel-
+ligence - Volume 2: ICAART; ISBN 978–989–758–547–0; ISSN 
+2184–433X, SciTePress, pages 598–604. https://​doi.​org/​10.​5220/​
+00109​20700​003116
+	
+Journal of Imaging Informatics in Medicine
+	23.	 C. B. Gonçalves, J. R. Souza and H. Fernandes, “Classification 
+of static infrared images using pre-trained CNN for breast cancer 
+detection,” 2021 IEEE 34th International Symposium on Com-
+puter-Based Medical Systems (CBMS), Aveiro, Portugal, 2021, 
+pp. 101-106. https://​doi.​org/​10.​1109/​CBMS5​2027.​2021.​00094
+	24.	 Kanthety, S.S., Chitta, T., Chattu, Y., Thupakula, P., Chalamala-
+setty, H.G. (2022). Breast cancer detection and classification from 
+images using deep learning. In: Chen, J.IZ., Tavares, J.M.R.S., 
+Iliyasu, A.M., Du, K.L. (eds) Second International Conference on 
+Image Processing and Capsule Networks. ICIPCN 2021. Lecture 
+Notes in Networks and Systems, vol 300. Springer, Cham. https://​
+doi.​org/​10.​1007/​978-3-​030-​84760-9_​66.
+	25.	 N. P. Dharani, I. Govardhini Immadi, and M. Venkata Narayana. 
+2024. Enhanced deep learning model for diagnosing breast can-
+cer using thermal images. Soft Comput. 28, 13–14 (Jul 2024), 
+8423–8434. https://​doi.​org/​10.​1007/​s00500-​024-​09742-8
+	26.	 Geetha, P., and S. Uma Maheswari. “Early detection of ther-
+mal image based T1 breast cancer using enhanced multiwavelet 
+denoised convolution neural network with region based analysis.” 
+Journal for Control, Measurement, Electronics, Computing and 
+Communications, vol. 65, no. 4, 2024, pp. 1606–1620. https://​doi.​
+org/​10.​1080/​00051​144.​2024.​24132​19.
+	27.	 Moayedi, Seyedeh Maryam Zareh, Abdalhossein Rezai, and Seye-
+deh Shahrbanoo Fallaheye Hamidpour. “Toward effective breast 
+cancer detection in thermal images using efficient feature selection 
+algorithm and feature extraction methods.” Biomedical Engineer-
+ing: Applications, Basis and Communications, vol. 36, no. 02, 
+2024, 2450007. https://​doi.​org/​10.​4015/​S1016​23722​45000​78.
+	28.	 Mirasbekov, Yerken, Nurduman Aidossov, Aigerim Mashe-
+kova, Vasilios Zarikas, Yong Zhao, Eddie Yin Kwee Ng, and 
+Anna Midlenko. 2024. “Fully interpretable deep learning 
+model using IR thermal images for possible breast cancer 
+cases” Biomimetics 9, no. 10: 609. https://​doi.​org/​10.​3390/​
+biomi​metic​s9100​609
+	29.	 Davies, Swapna, and Jaison Jacob. “Novel algorithms for early 
+cancer diagnosis using transfer learning with MobileNetV2 in 
+thermal images.” KSII Transactions on Internet and Information 
+Systems, vol. 18, no. 3, Mar. 2024, pp. 570-?. https://​doi.​org/​10.​
+3837/​tiis.​2024.​03.​003.
+	30.	 Rathi, Mahaveer, et al. “Binary Inception V3 deep learning based 
+image classifier for the detection of breast cancer.” AIP Confer-
+ence Proceedings, vol. 3125, no. 1, Aug. 2024, 060004. https://​
+doi.​org/​10.​1063/5.​02146​34.
+	31.	 Rezazadeh, Hanieh, Elham Saniei, and Mehdi Salehi Barough. 
+“Enhancing breast cancer detection in thermographic images 
+using deep hybrid networks.” Imaging and Radiation Research, 
+vol. 6, no. 2, 2023. https://​doi.​org/​10.​24294/​irr.​v6i2.​6195.
+	32.	 Alshehri, Alia, and Duaa AlSaeed. 2022. “Breast cancer detec-
+tion in thermography using convolutional neural networks (CNNs) 
+with deep attention mechanisms” Applied Sciences 12, no. 24: 
+12922. https://​doi.​org/​10.​3390/​app12​24129​22.
+	33.	 Mohamed, E. A., Rashed, E. A., Gaber, T., & Karam, O. (2022). 
+Deep learning model for fully automated breast cancer detection 
+system from thermograms. PLOS ONE, 17(1), e0262349. https://​
+doi.​org/​10.​1371/​journ​al.​pone.​02623​49.
+Publisher's Note  Springer Nature remains neutral with regard to 
+jurisdictional claims in published maps and institutional affiliations.

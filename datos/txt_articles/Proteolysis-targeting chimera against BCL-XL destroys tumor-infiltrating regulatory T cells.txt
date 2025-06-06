@@ -1,0 +1,1390 @@
+ARTICLE
+Proteolysis-targeting chimera against BCL-XL
+destroys tumor-inﬁltrating regulatory T cells
+Ryan Kolb1,2,11, Umasankar De1,11, Sajid Khan
+3, Yuewan Luo1, Myung-Chul Kim1, Haijun Yu1, Chaoyan Wu1,
+Jiao Mo1, Xin Zhang3, Peiyi Zhang4, Xuan Zhang
+4, Nicholas Borcherding5, Daniel Koppel2,6, Yang-Xin Fu
+7,
+Song Guo Zheng8, Dorina Avram2,9,10, Guangrong Zheng
+2,4, Daohong Zhou
+2,3,12✉&
+Weizhou Zhang
+1,2,12✉
+Regulatory T cells (Tregs) play an important role in maintaining immune homeostasis and,
+within tumors, their upregulation is common and promotes an immunosuppressive micro-
+environment. Therapeutic strategies that can eliminate Tregs in the tumor (i.e., therapies that
+do not run the risk of affecting normal tissues), are urgently needed for the development of
+cancer immunotherapies. Here we report our discovery of B-cell lymphoma extra-large
+(BCL-XL) as a potential molecular target of tumor-inﬁltrating (TI) Tregs. We show that
+pharmacological degradation of BCL-XL using a newly developed platelet-sparing BCL-XL
+Proteolysis-targeting chimera (PROTAC) induces the apoptosis of TI-Tregs and the activation
+of TI-CD8+ T cells. Moreover, these activities result in an effective suppression of syngeneic
+tumor growth in immunocompetent, but not in immunodeﬁcient or CD8+ T cell-depleted
+mice. Notably, treatment with BCL-XL PROTAC does not cause detectable damage within
+several normal tissues or thrombocytopenia. These ﬁndings identify BCL-XL as a target in the
+elimination of TI-Tregs as a component of cancer immunotherapies, and that the BCL-XL-
+speciﬁc PROTAC has the potential to be developed as a therapeutic for cancer
+immunotherapy.
+https://doi.org/10.1038/s41467-021-21573-x
+OPEN
+1 Department of Pathology, Immunology, and Laboratory Medicine, College of Medicine, University of Florida, Gainesville, FL, USA. 2 University of Florida
+Health Cancer Center, University of Florida, Gainesville, FL, USA. 3 Department of Pharmacodynamics, College of Pharmacy, University of Florida, Gainesville,
+FL, USA. 4 Department of Medicinal Chemistry, College of Pharmacy, University of Florida, Gainesville, FL, USA. 5 Department of Pathology, University of
+Iowa, Iowa City, IA, USA. 6 Department of Chemistry, College of Liberal Art and Sciences, University of Florida, Gainesville, FL, USA. 7 Department of
+Pathology, University of Texas Southwestern Medical Center, Dallas, TX, USA. 8 Department of Internal Medicine, Ohio State University College of Medicine
+and Wexner Medical Center, Columbus, OH, USA. 9 Department of Anatomy and Cell Biology, College of Medicine, University of Florida, Gainesville, FL,
+USA. 10 Department of Immunology, Mofﬁtt Cancer Center, Tampa, FL, USA. 11These authors contributed equally: Ryan Kolb, Umasankar De. 12These authors
+jointly supervised this work: Daohong Zhou, Weizhou Zhang. ✉email: zhoudaohong@cop.uﬂ.edu; zhangw@uﬂ.edu
+NATURE COMMUNICATIONS |  (2021) 12:1281 | https://doi.org/10.1038/s41467-021-21573-x | www.nature.com/naturecommunications
+1
+1234567890():,;
+A
+growing body of evidence demonstrates that regulatory
+T cells (Tregs) play an important role in cancer pro-
+gression and that they do so by suppressing cancer-
+directed immune responses1. Tregs have been targeted for
+destruction by exploiting antibodies against and small-molecule
+inhibitors of several molecules that are highly expressed in Tregs
+—including immune checkpoint molecules, chemokine receptors,
+and metabolites2,3. To date, these strategies have had only limited
+antitumor efﬁcacy; yet they have also created signiﬁcant risk of
+autoimmunity because most of them do not differentiate Tregs in
+tumors from those in normal tissues.
+We have explored Treg targeting from a different angle,
+determining how tumor-inﬁltrating (TI) Tregs survive the
+adverse tumor-immunosuppressive microenvironment, which is
+characterized by a stress condition resulting from the low supply
+of oxygen and nutrients and a high concentration of metabolic
+waste4–6. The pro-apoptotic nature of such environments can be
+countered by anti-apoptotic proteins of the BCL-2 family, such as
+BCL-2, B-cell lymphoma extra-large (BCL-XL), or MCL-1. These
+proteins have been extensively targeted with small-molecule
+inhibitors in cancer therapies7,8, including BCL-2- and BCL-XL-
+dual inhibitor ABT263 (navitoclax)9, BCL-2 inhibitor ABT199
+(venetoclax)10, BCL-XL inhibitor A-1331852 (ref. 11), and MCL-1
+inhibitor S63845 (ref. 12). ABT199, the BCL-2 speciﬁc inhibitor,
+has been approved by the FDA for cancer therapy13. The inhi-
+bition of BCL-XL with an inhibitor, however, induces severe
+thrombocytopenia, an on-target and dose-limiting toxicity, which
+limits the use of ABT263 and other BCL-XL inhibitors as safe and
+effective anticancer drugs in clinic14,15.
+To avoid the on-target toxicity of BCL-XL inhibitors to platelets,
+we have recently reported the development of the ﬁrst-in-class
+BCL-XL degrader—a proteolysis-targeting chimera (PROTAC)
+referred to as DT2216—targets BCL-XL to the von Hippel-Lindau
+(VHL) E3 ligase for ubiquitination and subsequent proteasomal
+degradation16. Because platelets express a low level of VHL E3
+ligase, DT2216 has minimal effect on platelets but exhibits an
+improved cytotoxicity against various cancer cells that are
+dependent on BCL-XL for survival16,17. We also developed
+another similar PROTAC PZ15227 that uses cereblon (CRBN) E3
+ligase to induce BCL-XL polyubiquitination and degradation18.
+Here we show that BCL-XL is highly expressed within the TI-
+Treg population from renal cell carcinoma (RCC) and several
+other human cancers. Using the two PROTACs (DT2166
+and PZ15227) to degrade BCL-XL, we are able to deﬁne the
+critical pro-survival function of BCL-XL within TI-Tregs, which
+represents a potential method to deplete TI-Tregs for cancer
+immunotherapy.
+Results
+Proﬁling of BCL-2 family proteins in immune cells. We
+recently developed a single-cell RNA sequencing (scRNAseq)
+dataset including a total of 12,239 TI immune cells and 13,433
+peripheral blood (PB) mononuclear cells (paired PB immune cells
+from the same patients) from three human clear cell renal cell
+carcinomas (ccRCCs). A total of 22 clusters of immune cells were
+annotated for different immune cell types based on the t-dis-
+tributed stochastic neighbor embedding (tSNE) machine-learning
+algorithm (Supplementary Fig. 1a) with deﬁned T cell subtypes
+based on various markers (Supplementary Fig. 1b). In TI-Tregs
+within ccRCCs, the expression of BCL2L1 (the gene encoding
+BCL-XL) was higher than that in PB-Tregs and other T cells
+(CD4+ conventional T cells (Tconv) and CD8+ T cells) (Fig. 1a
+and Supplementary Fig. 1c, shown as Napierian log fold-change
+versus percent difference compared to PB-counterparts). The
+expression of BCL2L1 was also high in TI-Tregs in human
+hepatocellular carcinoma (HCC scRNAseq dataset GSE98638)19
+(Supplementary Fig. 1d, shown as Napierian log fold-change
+versus percent difference compared to PB-counterparts), as well
+as in mouse MC38 colon adenocarcinoma (Fig. 1b and Supple-
+mentary Table 1, here the comparison is to spleen Tregs shown as
+log2 (n + 1)-transformed data). Other BCL2 family genes such as
+PMAIP1 (NOXA) and BAX were also higher in TI-Tregs than
+other PB-Tregs cells from human ccRCC (Supplementary
+Fig. 1c); MCL1 was slightly higher in TI-Tregs than PB-Tregs in
+HCC (Supplementary Fig. 1d). The expression of genes such as
+BCL2 did not differ signiﬁcantly between TI-Tregs and other TI-
+T cells (Fig. 1a).
+An analysis of published RNAseq datasets from previous
+reports20,21 revealed that BCL2L1 levels were elevated in TI-Tregs
+across many cancer types and species in comparison to Tregs
+from normal tissues and other TI-T cell types (Supplementary
+Fig. 1e). The cancer tissues included human breast (BrCa) and
+colorectal (CRC) cancers, as well as mouse CRC cancers (CT26
+and MC38) and melanomas (B16 and BP) (Supplementary
+Fig. 1e). Tregs from normal tissues (colon, pancreas, muscle, fat)
+expressed lower levels of BCL2L1 than counterparts from spleen
+(Supplementary Fig. 1e). Using the reverse graph embedding
+approach in the Monocle 2 algorithm22, we constructed a cell
+trajectory
+of
+the
+TI-Tregs
+and
+PB-Tregs
+in
+the
+ccRCC
+(Supplementary Fig. 1f). The trajectory from PB to TI Tregs
+contained two distinct branches (Supplementary Fig. 1f) that were
+not detectable using marker genes nor revealed in our previous
+tSNE clustering analysis (Supplementary Fig. 1a). BCL2L1—but
+not BCL2—was signiﬁcantly upregulated within the branch 1
+(Cell Fate #1) TI-Tregs relative to Cell Fate #2 TI-Tregs or PB-
+Tregs (Supplementary Fig. 1g); whereas both branches expressed
+Treg markers FOXP3 and IL2RA (CD25) (Supplementary Fig. 1h).
+Other immune-suppressive molecules that are known to mediate
+Treg
+function,
+such
+as
+ENTPD1
+(gene
+encoding
+CD39)
+(Supplementary Fig. 1g), are also elevated along the Cell Fate
+#1; however, another gene that is also critical to convert ATP to
+AMP, i.e. NT5E (gene encoding CD73), is not detectable in TI-
+Tregs (Supplementary Fig. 1g). Using ﬂow cytometry of human
+cancer specimens (Supplementary Fig. 2a), we examined the
+heterogeneity of human TI-Tregs using effector/memory markers
+CD45RA and CCR7. Although PB-Tregs exhibited subpopula-
+tions of naïve (CD45RA+CCR7+), effector (EMRA, CD45RA+
+CCR7−), central memory (CM, CD45RA−CCR7+), and effector
+memory (EM, CD45RA−CCR7−), TI-Tregs only consisted of the
+EM population (Supplementary Fig. 2b), which is consistent with
+the observation from Sakaguchi laboratory who initially devel-
+oped the use of CD45RA for human Treg heterogeneity23.
+Using ﬂow cytometry, we found that the levels of BCL-XL
+protein—determined by intracellular staining of BCL-XL—were
+much higher in TI-Tregs versus PB-Tregs in both human BrCa
+(Fig. 1c, d) and ccRCC (Fig. 1e, f). BCL-XL levels were higher in
+TI-Tregs than those within PB or TI CD8+ and Tconv cells in
+human BrCa (Fig. 1d and Supplementary Fig. 3a) and ccRCC
+(Fig. 1e, f and Supplementary Fig. 3b). BCL-XL levels were also
+higher, though to a lesser extent, in conventional TI-CD4+ Tconv
+versus their PB-counterparts (Fig. 1d, f); whereas TI-CD8+ T cells
+exhibited increased BCL-XL in BrCa (Fig. 1d) but decreased level
+in ccRCC relative to PB CD8+ T cells (Fig. 1f). A similar result
+was observed in mouse Py8119 BrCa tumors (Supplementary
+Fig. 3c). BCL-XL levels were also signiﬁcantly higher in TI-Tregs
+with all human cancer specimens combined, including the nine
+BrCa and paired PBs, two ccRCC and paired PBs, and two colon
+cancer and paired PBs (Supplementary Fig. 3d). BCL-XL levels
+were similar in PB-CD8+, PB-Tconv, and PB-Treg from same
+BrCa patients (Fig. 1d and Supplementary Fig. 3d). As the major
+anti-cancer immune cell types, PB- and TI-CD8 T cells exhibited
+ARTICLE
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-021-21573-x
+2
+NATURE COMMUNICATIONS |  (2021) 12:1281 | https://doi.org/10.1038/s41467-021-21573-x | www.nature.com/naturecommunications
+different populations of effector/memory phenotypes (Supplemen-
+tary Figs. 2b and 3e, f), all of which exhibited lower expression of
+BCL-XL relative to TI-Tregs (Supplementary Fig. 3g, h). The
+selective upregulation of BCL-XL in TI-Tregs, as well as high levels
+of the pro-apoptotic BH3−only proteins NOXA (encoded by
+PMAIP1), BID and BAX (Fig. 1a), which inhibit MCL-1 and BCL-
+2 respectively, suggest that TI-Tregs may primarily depend on
+BCL-XL for survival24.
+Targeting BCL-XL for degradation in TI-Tregs. To test whether
+BCL-XL is required for the survival of TI-Tregs, we used our
+newly generated PROTACs to target BCL-XL. DT2216, the lead
+BCL-XL PROTAC, targets BCL-XL to the VHL E3 ligase for
+polyubiquitination and degradation16. DT2216 did not cause the
+platelet toxicity observed when other BCL-XL inhibitors were
+used to inhibit BCL-XL25, because of the poor expression of VHL
+in platelets. To assess the effectiveness of PROTAC-mediated
+BCL-XL degradation, we developed an ex vivo cancer slice culture
+system (Supplementary Fig. 4a). Treatment with DT2216 led to a
+signiﬁcant decrease in BCL-XL levels within TI-Tregs from
+human BrCa (Fig. 2a, b and Supplementary Fig. 4b, c) and RCC
+(Fig. 2c, d and Supplementary Fig. 4d). Whereas the treatment
+also reduced BCL-XL levels in TI-Tconv (CD4+ FOXP3−T cells)
+and TI-CD8+ T cells, this effect was more modest (Fig. 2b, d and
+Supplementary Fig. 4b–d). Similar results were observed in cul-
+tures of MC38 colon adenocarcinoma slices (Fig. 2e, f).
+To
+study
+the
+role
+of
+BCL-XL
+in
+the
+tumor
+immune
+microenvironment, we chose several cell lines with which to
+produce syngeneic tumor models (MC38 for colon adenocarci-
+noma, 4T1 and Py8119 for breast cancer, and Renca for renal
+cancer). These cell lines express various levels of VHL, CRBN,
+BCL-XL, BCL-2, and MCL-1 (Supplementary Figs. 4e and 12).
+The DT2216 (ref. 16) and PZ15227 (a second BCL-XL PROTAC
+that targets BCL-XL to the CRBN E3 ligase for polyubiquitination
+and degradation)18 treatments each resulted in dose-dependent
+reduction of BCL-XL levels (Fig. 2g and Supplementary Figs. 4f,
+13, and 14). Treatment of mice bearing tumors originated from
+MC38 and Renca cells with DT2216 resulted in reduced BCL-XL
+levels in the tumors, regardless of whether the mice were wild-
+type (WT) (Fig. 2h and Supplementary Fig. 13) or immunodeﬁ-
+cient (NOD-SCID and null for IL-2 receptor gamma (NSG))
+(Supplementary Figs. 4g and 14).
+Degradation of BCL-XL within TI-Tregs induces anti-tumor
+immunity. As we have seen efﬁcient degradation of BCL-XL by its
+PROTACs, we ﬁrst checked whether the mouse cell lines are
+sensitive to BCL-XL PROTACs. We found that in vitro treatment
+of MC38, Renca, Py8119, or 4T1 cells with DT2216 or PZ15227
+had little effect on cell survival (Supplementary Fig. 5a, b). This is
+because these cell lines also express the anti-apoptotic proteins
+BCL-2 and MCL-1 (Supplementary Fig. 4e), and thus are not
+solely dependent on BCL-XL for survival, as conﬁrmed by a BH3-
+pairing assay using inhibitors speciﬁc for BCL-2, BCL-XL, and
+MCL-1 (Supplementary Fig. 5c–f). BCL-XL deﬁciency, caused by
+either treatment with DT2216 or genetic knockout (KO), inﬂu-
+enced neither apoptosis nor colony-forming efﬁciency of cancer
+cells in vitro (Supplementary Fig. 5g–i).
+Although BCL-XL PROTACs did not kill the above cancer cells
+in vitro, DT2216 treatment resulted in signiﬁcantly reduced
+tumor growth of the tested models—including Renca (Fig. 3a),
+MC38
+(Fig.
+3b),
+and
+Py8119
+(Fig.
+3c)
+tumors
+in
+WT
+immunocompetent mice. A similar result was observed in the
+Renca model after treatment with PZ15227 (ref. 18) (Fig. 3a).
+Notably, CRISPR/Cas9-mediated KO of BCL-XL in Renca cells
+resulted
+in
+a
+much
+smaller
+reduction
+in
+tumor
+growth
+(Supplementary Figs. 6a and 15). Also, DT2216 lost its tumor-
+BID
+BIK
+BCL2
+BCL2L1
+BCL2L2
+MCL1
+BCL2A1
+BCL2L12
+BAX
+BAK1
+BOK
+BCL2L10
+BCL2L13
+BCL2L14
+BCL1L15
+BNIP2
+BAD
+BBC3
+BCL2L11
+BMF
+BNIP1
+BNIP3
+BOP1
+HRK
+PMAIP1
+anti-
+apoptotic
+pro-
+apoptotic
+BH3 only
+0
+1
+2
+>2
+-1
+CD8
+Tconv
+TI-Treg
+RCC tSNE Cluster  0    3  10  17  21 21 21
+Human ccRCC
+b
+d
+a
+Napierian Log Fold Change
+2
+4
+6
+>7
+2 3 4 5 6 1 2 3 4 5
+Spleen-Treg
+TI-Treg
+MC38 tumors
+Log2(n+1) counts
+c
+0
+20
+40
+60
+80
+100
+104
+105
+BCL-XL
+f
+e
+ccRCC
+ccRCC
+BrCa
+1
+103
+0
+20
+40
+60
+80
+100
+Normalized to Mode
+NS
+Neg
+PB
+TI
+Treg
+Tconv
+104
+105
+BCL-XL
+103
+0
+20
+40
+60
+80
+100
+0
+20
+40
+60
+80
+100
+Normalized to Mode
+Treg
+Tconv
+0
+5
+10
+15
+20
+25
+BCL-XL (MFI x 103)
+BrCa
+P < 0.0001
+Treg
+Tconv
+CD8
+P = 0.039
+P = 0.014
+Treg
+Tconv
+CD8
+4
+6
+8
+10
+12
+PB
+TI
+BCL-XL (MFI x 103)
+P = 0.0009
+P = 0.001
+P = 0.001
+NS
+Neg
+PB
+TI
+Fig. 1 BCL-XL is selectively upregulated in TI-Tregs. a Heatmap depicting the fold difference in expression of members of the BCL-2 gene family from distinct
+subsets of TI-T cells relative to T cell counterparts from peripheral bloods (PB) of paired RCC patients. TI-T cells include CD8+, conventional CD4+ (Tconv),
+and TI-Tregs. See Supplementary Fig. 1a for characterization of immune cell clusters by tSNE plot of scRNAseq data. Cross-hatching indicates no expression.
+b Heatmap depicting the expression of BCL-2 family genes in mouse MC38 colon adenocarcinoma TI-Tregs and splenic Tregs. c Representative histogram
+showing BCL-XL levels in PB- and TI-Tregs or TI-Tconv from human breast cancer (BrCa), and d median ﬂuorescence intensity (MFI) of BCL-XL staining ± s.d. in
+PB- or TI-Tregs, CD8+, and Tconv in these cancers (n = 9 biological replicates). e Representative histogram showing BCL-XL levels in PB- and TI-Tregs or TI-
+Tconv from human renal cancer and paired blood, and f MFI of BCL-XL staining ± s.d. in PB- or TI-Tregs, CD8+, and Tconv in these cancers (n = 3). Unpaired T-
+tests (d, n = 9; and f, n = 3 biological replicates, two-sided) were performed and the corresponding P values are indicated. c, e NS, non-staining; Neg, negative
+control, treated with DT-2216 to deplete BCL-XL as negative control.
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-021-21573-x
+ARTICLE
+NATURE COMMUNICATIONS |  (2021) 12:1281 | https://doi.org/10.1038/s41467-021-21573-x | www.nature.com/naturecommunications
+3
+BCL-XL
+Normalized to Mode
+Treg
+Tconv
+CD8
+0
+25
+50
+100
+DT2216 (nM)
+0
+5
+10
+15
+BCL-XL (MFI x 103)
+Treg Tconv
+CD8
+0
+25
+50
+DT2216 (nM)
+b
+BCL-XL (MFI x 103)
+0
+5
+10
+15
+Treg
+Tconv CD8
+0
+25
+50
+DT2216 (nM)
+BCL-XL (MFI x 103)
+0
+5
+10
+15
+RCC
+RCC-T cells
+d
+c
+BrCa
+BrCa-T cells
+0
+25
+50
+100
+DT2216 (nM)
+104 105
+0
+106
+0
+20
+40
+60
+80
+100
+MC38-tumor
+MC38-TI-T cells
+g
+Vehicle DT2216
+1.00±0.04
+0.61±0.13
+1.00±0.15
+0.22±0.06
+1 2 3
+1 2 3
+MC38
+Renca
+Tumors
+BCL-XL
+BCL-XL
+Actin
+Actin
+0
+12
+34
+111
+333
+1000
+3000
+DT2216 (nM)
+Cell lines
+1
+0.6 0.6 0.4 0.3 0.2 0.04
+1
+0.9 0.6 0.2 0.1
+0
+0
+h
+104
+105
+BCL-XL
+103
+0
+20
+40
+60
+80
+100
+0
+20
+40
+60
+80
+100
+Normalized to Mode
+Treg
+Tconv
+NS
+0 nM
+25 nM
+50 nM
+DT2216
+104
+105
+BCL-XL
+103
+0
+20
+40
+60
+80
+100
+0
+20
+40
+60
+80
+100
+Normalized to Mode
+Treg
+Tconv
+NS
+0 nM
+25 nM
+50 nM
+DT2216
+NS
+48 kDa
+25 kDa
+48 kDa
+25 kDa
+Fig. 2 BCL-XL PROTAC leads to efﬁcient degradation of BCL-XL in the tumor microenvironment. a–d BCL-XL levels in TI-Tregs or Tconv in ex vivo slice
+cultures of human cancer specimens, including a, b breast cancer and c, d renal cancer, following treatment with DT2216 for 48 h. Representative histograms
+showing BCL-XL levels in TI-Tregs or TI-Tconvs from human a breast cancer and c renal cancer; b, d MFI of BCL-XL in the indicated TI-T cells ± s.d. (n = 4
+biological replicates). e, f BCL-XL levels in TI-Tregs in ex vivo slice cultures from MC38 colon adenocarcinoma following treatment with the DT2216 for 48 h.
+e Representative histogram showing BCL-XL levels in TI-Tregs and f MFI of BCL-XL in the indicated T cells ± s.d. (f, n = 3 biological replicates). g BCL-XL
+expression in murine cancer cell lines including MC38 and Renca, following treatment with DT2216 (n = 2 biological replicates). h BCL-XL expression in
+murine tumors, including MC38 and Renca tumors, following in vivo treatment with DT2216 (n = 3 biological replicates, mean ± s.d.).
+c
+0
+10
+20
+30
+40
+0.0
+0.5
+1.0
+1.5
+DT2216 
+Vehicle
+P = 0.007
+MC38 - C57BL/6
+a
+10
+20
+15
+25
+5
+DT2216 
+Vehicle
+P = 0.702
+Renca - NSG
+Days 0
+10
+20
+15
+25
+5
+Tumor Volume (cm3)
+Vehicle
+DT2216 
+PZ15227
+Renca - Balb/C
+P = 0.003, DT2216 
+P = 0.006, PZ15227
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+Renca - CD8 depleted
+d
+b
+DT2216 
+Vehicle
+P < 0.0001
+0
+5
+10
+15
+20
+25
+0.0
+0.5
+1.0
+1.5
+Py8119-C57BL/6
+10
+20
+15
+25
+5
+0.0
+1.0
+2.0
+Tumor Volume (cm3)
+DT2216 
+Vehicle
+MC38 - NSG
+Days
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+e
+f
+Days
+Tumor Volume (cm3)
+Tumor Volume (cm3)
+Days
+Days
+Tumor Volume (cm3)
+5
+15
+25
+35
+0
+1
+2
+3
+DT2216+ IgG
+DT2216+ anti-CD8
+Control
+Tumor Volume (cm3)
+Days
+IgG vs. anti-CD8
+P = 0.042
+P = 0.497
+Fig. 3 Depleting the tumor microenvironment of BCL-XL reduces tumor growth in a CD8+ T cell-dependent manner. a–c Effect of treatment with
+DT2216 on tumor growth from syngeneic immunocompetent mouse models. a Renca tumor volume ± s.e.m in Balb/C mice (n = 6 biological replicates)
+treated with DT2216, PZ15227, or vehicle; b MC38 tumor volume ± s.e.m. in C57BL/6j mice (n = 10 biological replicates) treated with DT2216 or vehicle;
+and c Py8119 tumor volume ± s.e.m. in C57BL/6j female mice (n = 6 biological replicates) treated with DT2216 or vehicle. d, e Effect of treatment with
+DT2216 on tumor growth from immunodeﬁcient NSG model. d Renca (n = 6 biological replicates) or e MC38 (n = 10 biological replicates) tumor volume ±
+s.e.m in NSG mice treated with vehicle or DT2216. f Graph depicting Renca tumor volume ± s.e.m. in Balb/C mice (n = 8 biological replicates) following
+antibody-mediated depletion of CD8 (see Supplementary Fig. 6b) or control (IgG), and treated with DT2216 similarly as in a. A two-sided two-way
+ANOVA was performed for all tumor growth curves with P values for the interaction between the curves indicated.
+ARTICLE
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-021-21573-x
+4
+NATURE COMMUNICATIONS |  (2021) 12:1281 | https://doi.org/10.1038/s41467-021-21573-x | www.nature.com/naturecommunications
+inhibitory effect in the same tumor cell lines when injected into
+NSG mice, which lack T and B lymphocytes, as well as natural
+killer cells (Fig. 3d, e). Collectively, our results suggest that
+DT2216 exerts its antitumor activity via a mechanism that is
+dependent on immune cells. We found that depletion of CD8+
+T cells abrogated the DT2216-mediated tumor inhibitory effect
+(Fig. 3f and Supplementary Fig. 6b), supporting the notion that
+DT2216-mediated inhibition of tumor growth in syngeneic
+models is via CD8+ T cells.
+Degradation of BCL-XL leads to the reduction of TI-Tregs and
+activation of CD8+ T cells. To determine the extent to which
+BCL-XL depletion affects the immunosuppressive environment of
+tumors, we proﬁled lymphocytes of MC38 tumor-bearing mice in
+Fig. 3b by ﬂow cytometry (Supplementary Fig. 7a). The percen-
+tages of lymphocytes in the spleen, draining lymph node (DLN),
+and tumors were assessed in mice that had been treated once
+weekly for 3 weeks with DT2216 after tumors were palpable.
+DT2216 treatment signiﬁcantly reduced the frequency of TI-
+Tregs in both the DLN and tumors; it did so to a lesser extent in
+the spleen (Fig. 4a). To determine whether this DT2216-mediated
+Treg depletion was due to increased apoptosis, we injected MC38
+tumor-bearing mice with a ﬂuorescent probe that detects active
+caspases. A signiﬁcant increase in median ﬂuorescence intensity
+(MFI) was observed in TI-Tregs upon DT2216 treatment (Fig. 4b
+and Supplementary Fig. 7b, c), indicative of active caspases.
+DT2216 treatment did not signiﬁcantly affect the frequency of TI,
+PB, and splenic Tconv cells (Fig. 4c) or that of TI-Tconv and TI-
+CD11B+ myeloid cells in which caspases were active (Fig. 4d and
+Supplementary Fig. 7b, d, e). Splenic cells, including Treg, Tconv,
+CD8+ T, and CD11B+ myeloid cells, however, exhibited minimal
+caspase activation with or without DT2216 treatment (Supple-
+mentary Fig. 7f). CD39+ TI-Tregs—shown to have suppressive
+capacity when undergoing apoptosis26—exhibited similar levels
+of cell death after DT2216 treatment (Supplementary Fig. 7g).
+Although DT2216 had a small effect on the frequency on total
+CD8+ T cells (Fig. 4e), a signiﬁcant increase in the activation of
+these cells was indicated by the presence of granzyme B (Gzmb)+
+and perforin+ CD8+ T cells (Fig. 4f, g and Supplementary Fig. 7h)
+without signiﬁcant change of Ki-67+ proliferative cells (Fig. 4g).
+Similar increase of Gzmb+ CD8+ T cells was also seen in blood and
+DLN from tumor-bearing mice, but not spleen and other non-
+draining lymph nodes (NDLN) after DT2216 treatment (Supple-
+mentary Fig. 7i). This ﬁnding supports the notion that treatment
+with DT2216 leads to an immune active tumor microenvironment
+due to the elimination of TI-Tregs, resulting in tumor-speciﬁc CD8
+T cell activation as seen from tumor, blood, and DLNs.
+TI-Treg depletion by DT2216 was conﬁrmed in ex vivo cancer
+slice cultures generated from mouse Py8119 BrCa (Supplemen-
+tary Fig. 7j) or mouse Renca renal tumors (Supplementary
+Fig. 7k), as well as human BrCa (Fig. 4h) and CRC (Fig. 4i).
+Moreover, this immune-related tumor-inhibitory phenotype is
+speciﬁc to BCL-XL degradation, given that inhibition of BCL-2
+with BCL-2-speciﬁc inhibitor ABT-199 (ref. 10), which did not
+cause an increase in the activation of TI-CD8+ T cells
+(Supplementary Fig. 7l), did not inhibit the growth of MC38 or
+Renca tumors, even with daily administration of much higher
+doses than DT2216 (Supplementary Fig. 7m, n). The impact of
+DT2216 was minimal to the majority of myeloid cell populations
+in tumor-bearing mice, including granulocytic or monocytic
+MDSC (CD11b+Ly6G+ G-MDSC or CD11b+Ly6C+Ly6G−M-
+DLN Spleen Tumor
+0
+10
+20
+30
+P = 0.105
+P = 0.209
+P = 0.122
+DLN Spleen Tumor
+0
+10
+20
+30
+40
+a
+c
+g
+DLN Spleen Tumor
+0
+5
+10
+15
+% Live Cells
+P = 0.026
+P = 0.029
+P = 0.026
+Treg
+CD8
+% CD8 T cells
+0
+10
+20
+30
+40
+P = 0.030
+P= 0.032
+P = 0.130
+PerforinGzmb Ki-67
+Active CD8
+Vehicle
+DT2216 
+e
+DT2216 
+f
+104
+105
+Granzyme B
+Tconv
+Panels: a-e, g-i
+Tconv
+% Live Cells
+% Live Cells
+Tconv
+CD8
+0.25
+0.30
+0.35
+0.40
+0.45
+0.50
+Ratio (Treg/Teffector)
+P = 0.0003
+P = 0.0007
+Tconv
+CD8
+0.4
+0.6
+0.8
+1.0
+1.2
+Ratio (Treg/Teffector)
+P = 0.053
+P = 0.008
+b
+d
+h
+i
+Human BrCa
+Human Colon
+Panels: a-g
+       MC38 model 
+Treg
+8
+10
+12
+14
+16
+Act-Casp MFI (x103)
+8
+10
+12
+14
+16
+Act-Casp MFI (x103)
+P = 0.007
+P = 0.466
+103
+102
+NS
+Vehicle
+0
+20
+60
+40
+80
+100
+Normalized to Mode
+Active CD8
+TI-Treg
+TI-Tconv
+Fig. 4 Depleting the tumor microenvironment of BCL-XL leads to an apoptosis-induced decrease in the number of TI-Tregs. a Percentage of Tregs
+following treatment with the BCL-XL targeting PROTAC DT2216 (or vehicle) in the draining lymph nodes (DLN), spleens, and tumors from MC38 tumor-
+bearing mice. b Amount of pan-caspase labeling in TI-Tregs from MC38 tumor-bearing mice following treatment with DT2216 (or vehicle) as assessed by
+ﬂow cytometry. MFI of pan-caspase activation probe is shown. c–e Percentages of Tconv (c) and CD8+ T (e) cells following treatment with DT2216, and
+d amount of caspase labeling in TI-Tconv cells. f Representative histogram showing levels of granzyme B (Gzmb) in TI-CD8+ T cells from MC38 tumor-
+bearing mice treated with DT2216 (or vehicle). g Number of perforin+, granzyme B (Gzmb)+, or Ki-67+ TI-CD8+ T cells from MC38 tumor-bearing mice
+following treatment with DT2216 (or vehicle); a, c, e, and g: n = 5 biological replicates for DLN and tumors, n = 4 biological replicates in control, and n = 5 in
+DT2216 group for spleen; b and d: n = 4 biological replicates in control and n = 5 in DT2216 group. h, i Ratios of TI-Treg/TI-Tconv or TI-Treg/TI-CD8+
+T cells in (h, n = 3 biological replicates) human breast cancer slice sections or (i, n = 3 biological replicates) in human colon cancer slices, after ex vivo
+treatment with DT2216 (25 nM, or vehicle). Shown are the mean ± s.d. Two-sided unpaired t test was performed, with P values indicated.
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-021-21573-x
+ARTICLE
+NATURE COMMUNICATIONS |  (2021) 12:1281 | https://doi.org/10.1038/s41467-021-21573-x | www.nature.com/naturecommunications
+5
+MDSC), macrophages (F4/80+), dendritic cells (CD11c+MHCII+
+DC), or CD8+ DCs, with the exception of DC where DT02216
+treatment led to slightly decreased TI-DC population (Supple-
+mentary Fig. 8a–d).
+Treatment with DT2216 had no global effect on the overall
+levels of Treg, CD4+ Tconv, CD8+ T, NK cells, and B cells from
+various tissues within non-tumor bearing mice (Supplementary
+Fig. 9a–e), nor did we see signiﬁcant difference in CD8 T cell
+memory
+and
+effector
+sub-populations
+from
+these
+tissues
+(Supplementary Fig. 9f–i), deﬁned by CD45RA and CCR7
+(Supplementary Fig. 2a, b). There was a slight increase of thymic
+Tregs (Supplementary Fig. 9a). These ﬁndings suggest that
+DT2216 may selectively deplete TI-Treg in an individual
+tumor/mouse-dependent manner.
+Serum IgM and IgG levels were not altered by DT2216
+treatment either from normal or tumor-bearing mice after an
+extended treatment of 5 weeks (Supplementary Fig. 9j, k), as
+compared with the elevated levels from pristane-treated mice
+(Supplementary Fig. 9j, k). PB-Tregs, -Tconv, or -CD8+ T cells
+from non-tumor-bearing mice (Supplementary Fig. 9l, top), or
+total Tregs from the blood, lymph nodes, or spleens of non-
+tumor-bearing mice (Supplementary Fig. 9l, bottom) remained
+unaltered by DT2216. Histological analysis did not reveal tissue
+damage in the lung, pancreas, or intestines of Renca-tumor-
+bearing mice treated with either DT2216 or PZ15227 (Supple-
+mentary Fig. 9m), indicating that Treg depletion and CD8+ T cell
+activation are relatively speciﬁc to the tumor microenvironment
+rather than being systemic and that targeting BCL-XL by
+PROTACs is a relatively safe and effective way to treat cancer.
+However, further studies are needed to examine whether DT2216
+treatment causes any other autoimmune pathology in the organs
+such as liver, skin, and other organs as seen in Foxp3−mice27 to
+ensure the safety of DT2216 before it can be translated into the
+clinic.
+Discussion
+Our results reveal that targeting BCL-XL has the potential to
+improve cancer immunotherapy. This can be achieved pharma-
+cologically by applying PROTACs that target BCL-XL for ubi-
+quitination (and thereby for proteasome-mediated degradation)
+within the tumor microenvironment, but these PROTACs cannot
+eliminate platelets because the expression of VHL or CRBN in
+platelets is minimal16,18. Degradation of BCL-XL by PROTACs
+reduces the frequency of TI-Tregs by inducing apoptosis,
+resulting in the activation of TI-CD8+ T cells. This leads to the
+inhibition of tumor growth without signiﬁcant induction of
+serum immunoglobulins and/or detectable tissue damage from
+lung, intestine, and pancreas. Interestingly, a recent report from
+Dr. Zou group found that the apoptotic Tregs were able to induce
+a strong immune suppression via the CD39/CD73-mediated
+conversion of ATP to immunosuppressive metabolite adenosine
+in human ovarian cancers26. In the current study, we determined
+the kinetics of DT2216-induced caspase activation within TI-
+Tregs and found that caspase activation was detectable at 24 h
+after DT2216 treatment of MC38 tumor-bearing mice, but
+completely disappeared after 48 h of treatment (Supplementary
+Fig. 10a, b), supporting the rapid clearance of these apoptotic TI-
+Tregs within tumor microenvironment. Apoptotic clearance by
+monocytes/macrophages is believed to be an event starting from
+earlier stages of apoptotic induction28,29. Ly6C+ monocytes or
+tumor-associated macrophages (TAMs) are much more abundant
+populations in most cancer models and human cancers than TI-
+Tregs. The battle between the clearance of apoptotic Tregs and
+the maintenance of Treg-suppressive functions—in our case—
+clearly favors the clearance of apoptotic TI-Tregs.
+As shown in the immune checkpoint inhibitor therapies, it is
+likely that BCL-XL PROTAC-based immunotherapy will be
+effective in a subset of cancer patients. It will be important to
+identify the relevant populations, as well as cancer types that are
+susceptible to this treatment, before clinical trials with BCL-XL
+PROTACs are considered. Cancer types that are likely to be most
+susceptible to treatment with DT2216 include: (1) those in which
+TI-Tregs are critical for immune regulation and cancer progres-
+sion; and (2) those that rely on BCL-XL for survival and in which
+high BCL-XL levels and poor outcome are positively correlated.
+Cancer types that rely on TI-Tregs for their progression include
+several common ones, for example cervical, renal, ovarian, mel-
+anoma, pancreatic, gastric, and breast cancers. In these cancer
+types, DT2216 may be able to eliminate TI-Tregs and thereby
+boost immunity against cancers30. To identify cancer types that
+rely on BCL-XL for survival, we used our recently developed
+cloud-based application31 to perform a bioinformatics-based
+search of the Cancer Genome Atlas (TCGA) protein dataset. We
+found that BCL-XL levels correlated signiﬁcantly with hazard
+ratios (HR) within renal, melanoma, breast, and cervical cancers,
+as well as sarcomas and low-grade gliomas. These are cancers for
+which DT2216 treatment might lead to direct killing of cancer
+cells and/or sensitization to anti-tumor immunity (Supplemen-
+tary Fig. 11). The expression of VHL and CRBN suggests that the
+choice of E3 ligase will also be critical in selecting BCL-XL
+PROTACs. For example, VHL is frequently lost in certain cancer
+types, such as RCC; in such cases, a different E3 ligase such as
+CRBN would be more appropriate. This study provides the
+rationale and a proof-of-principle to eliminate Tregs within
+tumors by targeting and degrading an intracellular pro-survival
+factor BCL-XL. BCL-XL PROTACs may provide additional choice
+for cancer immunotherapies particularly within cancer patient
+populations that cannot be treated by the current cancer immu-
+notherapies due to low efﬁcacy or immune toxicity.
+Methods
+Human tissue collection, isolation of mononuclear cells, and sorting for
+scRNA-seq. Paired blood and primary ccRCC along with matched normal kidney
+parenchyma samples were obtained from the University of Iowa Tissue Procure-
+ment Core and GUMER repository through the Holden Comprehensive Cancer
+Center from de-identiﬁed three subjects (with an age range of 67–74 years old)
+previously provided written consent approved by the University of Iowa Institu-
+tional Review Board (IRB) under the IRB number 201304826 and conducted under
+the Declaration of Helsinki Principles. Tumor grades were histologically deter-
+mined by a pathologist. Primary tumor stages for Patient 1 and Patient 2 were
+reported as pT1b without extension, while Patient 3 was reported as pT3a with
+renal vein invasion. Other human tissues were collected under IRB protocol:
+201901677 that was approved by the University of Florida Institutional Review
+Board as non-human subject protocol, including all tissues for ex vivo culture of
+tumor slice sections. Tumor samples were dissociated into single cells via enzy-
+matic and mechanical dissociation using the Human Tumor Dissociation Kit
+(Miltenyi Biotec, Auburn, CA). CD45+ cells were isolated from single-cell sus-
+pensions using the SepMate FITC Positive Selection Kit (StemCell Technologies,
+Vancouver, Canada). Mononuclear cells were isolated from PB samples by density
+gradient using SepMate Tubes (StemCell Technologies) and Lymphoprep density
+gradient media (StemCell Technologies). CD45+ immune cells were further sorted
+on a FACS ARIA sorter (BD Biosciences, San Jose, CA) for lymphoid and myeloid
+cells and remixed at a 3:1 ratio. Cell viability was assessed by MoxiGoII counter
+(Orﬂo Technologies, Ketchum, ID) and resuspended at 1000 cells/µl with >90%
+viability.
+RNA-seq 10X Genomics library preparation, sequencing, and alignment.
+Single-cell library preparation was carried out as per the 10X Genomics Chromium
+5ʹ library and Gel Bead Kit Version 2 (10X Genomics, Pleasanton, CA). Following
+cDNA ampliﬁcation, quality control and quantiﬁcation were performed on the
+Agilent 2100 Bioanalyzer using the DNA high Sensitivity Chip (Agilent Technol-
+ogies, Santa Clara, CA). Pooled Libraries were run on separate lanes of a ﬂow cell
+using the Illumina HiSeq 4000 in the University of Iowa Genomics Division.
+Basecalls were converted to FASTQ ﬁles using the Illumina bcl2fastq software and
+aligned to human genome (GRCh38) using the CellRanger v2.2 pipeline as
+described previously32. Cells were quality checked for total expression of mito-
+chondrial reads. Cells with <200 or >5000 unique genes were ﬁltered out.
+ARTICLE
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-021-21573-x
+6
+NATURE COMMUNICATIONS |  (2021) 12:1281 | https://doi.org/10.1038/s41467-021-21573-x | www.nature.com/naturecommunications
+Single-cell RNA normalization and analysis. The single-cell RNAseq data were
+normalized by scaling the unique molecular identiﬁer (UMI) counts per cell to
+10,000 and the data were Napierian log(n + 0.1) transformed. Clustering was
+performed using the Seurat R package (V2.3.4) and the data were normalized
+across the three patients to correct for patient variability using the canonical
+correlation process33. Dimensional reduction using the top 20 calculated dimen-
+sions and resolution of 1.2 was done to generate the tSNE plot. The predicted cell
+type for each cluster was determined by examining the expression levels of a set of
+canonical markers for each cell type and by correlating the cluster mean expression
+to immune cell signatures from human primary cell atlas dataset using the SingleR
+R package V0.2.0 (ref. 34). A fold change in the expression of BCL-2 family genes
+between TI T cells and PB-T cells was determined by comparing the average
+Napierian log(n + 0.1)-transformed counts for BCL2 family member genes for each
+of the four clusters of TI cells identiﬁed as CD8+ T cells to the single-cluster PB
+cells identiﬁed as CD8+ T cells, the average Napierian log(n + 0.1)-transformed
+counts of the single cluster of TI cells identiﬁed as CD4+ T cells to each of the three
+clusters of PB cells identiﬁed as CD4 T cells, and TI cells to the PB cells in the
+cluster identiﬁed as Tregs. The fold change values were used to generate a heat map
+using GraphPad Prism Software (GraphPad Software, San Diego, CA). scRNAseq
+data for human HCC data from GSE98638 (ref. 19) underwent the same processing
+and quality control procedures. The average Napierian log(n + 0.1) expression of
+BCL2 family genes in all TI CD8+, TI CD4+, and TI Tregs were compared to their
+PB counterparts and a heatmap of the Napierian log-fold change for each gene was
+made using GraphPad Prism Software. Violin plots of the expression of genes in TI
+and PB Tregs were generated using monocle 2R Package.
+Bulk RNA sequencing and analysis. Mouse MC38 tumors were enzymatically
+and mechanically dissociated to form single-cell suspensions using the Mouse
+Tumor Dissociation Kit (Miltenyi Biotec) and mononuclear cells were isolated by
+density gradient using SepMate Tubes and Lymphoprep (StemCell Technologies).
+Single-cell suspension of splenic cells was obtained by pressing spleens from the
+same tumor bearing mice through a 40-µm nylon strainer and lysing red blood
+cells using ACK lysis buffer (150 mM NH4Cl, 10 mM KHCO3, 0.1 mM EDTA).
+Cells were then stained with mouse anti CD45-FITC (clone 30F.11; Biolegend),
+CD3-APC (clone 17A2, Biolegend), CD4 (clone GK1.5; Biolegend), CD25-PE-Cy5
+(clone PC61, Biolegend), and glucocorticoid-induced TNFR-related (GITR, clone
+DTA1; Biolegend) and Fixable, Viability Dye (FVD)-eFluor (EF) 780 (eBioscience
+from Thermo Fisher Scientiﬁc, San Diego, CA). All antibodies were used here at
+1:100 dilution for ﬂow cytometry. Live Tregs (CD4+GITR+CD25+) were sorted
+using a BD LSRFortessa SORP (BD Biosciences, San Jose, CA), into RLT buffer and
+RNA was isolated using the RNeasy Plus Micro Kit (Qiagen, Hilden, Germany).
+Ribosomal RNA was depleted using the NEBNext Ultra II rRNA depletion Kit
+(New England Biolabs, Ipswich, MA) and libraries were generated using the
+NEBNext Ultra II RNA Library Prep Kit (New England Biolabs). Libraries were
+sequenced on a NextSeq 500 1 × 75 base pairs at an approximate read depth of 30
+million reads per library. Samples were aligned with the kallisto pseudoalignment
+protocol and mm10 build for the mouse genome to produce estimated counts35.
+Counts were then processed using the sleuth R package (v0.30.0)36 aggregating
+based on gene symbol. Expression values were transformed into log2(n + 1) values.
+Chemical synthesis. DT2216 (ref. 16) and PZ15227 (ref. 18) were synthesized as
+described previously.
+Ex vivo culture of tumor slice sections. De-identiﬁed human tumor samples were
+obtained from the Clinical and Translational Science Institute Biorepository at the
+University of Florida under the IRB approved study number IRB201901677. Fresh
+human or mouse tumor samples were encased in 3% agarose and cut into 300-µm-
+thick sections using a Compresstome VF-300 OZ (Precision Instruments, Green-
+ville, NC). Sections were cultured in 12-well plates in Dulbecco’s Modiﬁed Eagle
+Medium (DMEM) supplemented with 10% fetal bovine serum (FBS), 100 U/ml
+penicillin, and 100 µg/ml streptomycin. Alternating slices were grouped and treated
+with different concentrations of DT2216 (25 nM, 50 nM, and/or 100 nM) or vehicle
+alone and cultured at 37 °C and 5% CO2 for 48 h. Tumor slice samples were
+dissociated into single cells via enzymatic and mechanical dissociation using the
+Human Tumor Dissociation Kit (Miltenyi Biotec), following with ﬂow cytometry
+to quantitate different populations of immune cells.
+Cell lines and cell culture. MC38 mouse colon carcinoma cells (Kerafast Inc.,
+Boston, MA) were maintained in DMEM supplemented with 10% FBS, 1 mM
+glutamine, 0.1 M non-essential amino acids (Thermo Fisher, Waltham, MA), 1 mM
+sodium pyruvate, 10 mM HEPES, 100 U/ml penicillin, and 100 µg/ml streptomy-
+cin. 4T1 mouse mammary carcinoma cells and Renca mouse renal carcinoma cells
+were purchased from American Type Culture Collection (ATCC) and cultured in
+RPMI medium supplemented with 10% FBS, 100 U/ml penicillin, and 100 µg/ml
+streptomycin. Py8119 mouse mammary carcinoma cells37 were obtained from Dr.
+Lesley Ellies at the University of California San Diego and cultured in DMEM
+supplemented with 10% FBS, 100 U/ml penicillin, and 100 µg/ml streptomycin. All
+cells were cultured at 37 °C and 5% CO2 in a humidiﬁed incubator.
+CRISPR/CAS9-mediated KO and viability assay. BCL-XL-KO MC38 and Renca
+cells were generated by transient transfection of Cas9 protein-guide RNA complex
+into parental cells, followed by single clone section and immunoblot to conﬁrm KO
+of BCL-XL following the instruction (Synthego). The guide RNA used for BCL-XL
+KO is 5′-AUACUUUUGUGGAACUCUAU-3′.
+Cells were plated in 96-well plates at a density of 3 × 103 to 5 × 103 cells per well
+and cultured overnight. Cells were treated with increasing concentrations of DT2216,
+PZ15227, ABT199, a BCL2 speciﬁc inhibitor10 (LC laboratories), A1155463, a BCL-XL
+speciﬁc inhibitor38 (Selleck Chemicals, Houston, TX), ABT263, a BCL-2/BCL-XL dual
+inhibitor9 (Selleck Chemicals) or S63845, a MCL-1 selective inhibitor12 (Selleck
+Chemicals) for 72 h. Cell viability was measured by tetrazolium-based MTS assay as
+described previously16. Brieﬂy, MTS reagent (Promega, Madison, WI) was
+supplemented with phenazine methosulfate (Sigma-Aldrich, St. Louis, MO) at a 20:1
+ratio and 20 µl was added to each well and incubated for 4 h at 37 °C. Absorbance was
+measured at 490 nm using a Synergy Neo2 multimode plate reader (Biotek, Winooski,
+VT) and cell viability was determined for each well. The data were expressed as the
+average percent of viable cells and ﬁtted in non-linear regression curves using Prism
+software (GraphPad Software).
+Animal studies. All animal studies were approved by the University of Florida
+Institutional Animal Care and Use Committee (IACUC) under protocol
+201810399. All animals were housed in a pathogen-free Association for Assessment
+and Accreditation of Laboratory Animal Care accredited facility at the University
+of Florida and performed in accordance with IACUC guidelines. The room tem-
+perature is 21.1–23.3 °C with an acceptable daily ﬂuctuation of 2 °C. Typically the
+room is 22.2 °C all the time. The humidity set point is 50% but can vary ±15% daily
+depending on the weather. The photoperiod is 12:12 and the light intensity range is
+15.6–25.8 FC. C57BL/6 and Balb/C mice were purchased from Charles River
+Laboratories (San Diego, CA). NOD-SCID interleukin-2 receptor gamma null
+(NSG) mice were purchased from Jackson Laboratories (Bar Harbor, ME). For all
+studies involving DT2216 or PZ15227 (ref. 16), the compounds were formulated in
+50% phosal PG, 45% miglyol 810N, and 5% polysorbate 80 and administered via
+intraperitoneal (i.p.) injection. ABT199 (LC Laboratories, Woburn, MA) was for-
+mulated in 60% phosal 50 PG, 30% PEG 400, and 10% ethanol and administered 5
+consecutive days per week by oral gavage. For studies in non-tumor bearing mice,
+6–8-week-old C57BL/6 mice were treated once weekly with DT2216 at 7.5 mg/kg
+body weight or vehicle alone. Blood samples were taken just before each treatment
+and 24 h later. For syngeneic tumor models, 1 × 105 cells (MC38 and Renca) or 500
+cells (for Py8119) were resuspended in 50% phosphate buffered saline (PBS), 50%
+Matrigel (Corning Inc., Corning, NY), and implanted into 6–8-week-old C57BL/6
+(MC38, s.c.; and Py8119, intra mammary fatpad), Balb/C (Renca, s.c.), or NSG
+mice. Tumor growth was monitored daily and measured twice weekly with calipers
+and volume was determined using the formula ½ (L × W2). Once the largest
+tumors reached 0.5 cm in diameter, mice were treated with 7.5 mg/kg body weight
+DT2216 by i.p. injection once weekly, or with 30 mg/kg body weight of PZ15227 by
+i.p. injection every 4 days. For BCL-2 inhibitor study, once the largest tumors
+reached 0.5 cm in diameter, mice were treated with 100 mg/kg ABT199 5 days per
+week by oral gavage. Mice were euthanized in accordance with IACUC protocol
+once the largest tumors reached 2 cm in diameter and tissues were collected for
+further analysis.
+For non-tumor bearing mice, 8-week-old mice were treated with 7.5 mg/kg
+body weight DT2216 by i.p. injection once weekly for upto 5 weeks when tissues
+were collected for analysis.
+Flow cytometry. Mouse tumors were excised and ~200 mg of tumor tissue was
+enzymatically and mechanically digested using the mouse Tumor Dissociation Kit
+(Miltenyi Biotec) to obtain a single-cell suspension. Human tumor samples and sec-
+tions were enzymatically and mechanically digested using the human Tumor Dis-
+sociation Kit (Miltenyi Biotec) to obtain single-cell suspension. Red blood cells were
+lysed using ACK lysis buffer and mononuclear cells were isolated by density gradient
+using SepMate Tubes (StemCell Technologies) and Lymphoprep density gradient
+media (StemCell Technologies). Mouse cells were then washed and incubated with
+combinations of the following antibodies; anti-mouse CD62L-BV785 (clone MEL-14),
+anti-mouse MHCII I-A/I-E-BB515 (Clone 2G9, BD Biosciences, 1:400), anti-mouse
+CD11B-PEdazzle (clone M1/70, 1:200), anti-mouse CD45-AF532 (clone 30F.11), anti-
+mouse CD3-APC (clone 17A2), anti-mouse CD8-BV510 (clone 53-6.7), anti-mouse
+CD4-BV605 (clone GK1.5), anti-mouse NK1.1-AF700 (clone PK136), anti-mouse
+CD69-SB436 (clone H1.2F3, eBioscience), anti-mouse CD279 (clone-PerCP-EF710,
+eBioscience Inc), anti-mouse CD366-PacBlue (clone B8.2c12), anti-mouse CD11C-PE-
+Cy7 (clone N418), anti-mouse Ly6G-FITC (clone IA8), anti-mouse Ly6C-BV711
+(clone HK1.4), anti-mouse F4/80-BV650 (clone BM8), anti-mouse CD80-BV480
+(clone 16-10A1, BD Biosciences), anti-mouse CD25-PE-Cy5 (clone PC61) plus FVD-
+eFluor-780 (eBioscience) and mouse FcR blocker (anti-mouse CD16/CD32, clone
+2.4G2, BD Biosciences). After surface staining, cells were ﬁxed and permeabilized using
+the FOXP3/Transcription Factor Staining Buffer Set (eBioscience). Cells were stained
+with a combination of the following antibodies: anti-mouse FOXP3-APC (clone FJK-
+16S, 1:50, eBioscience), anti-mouse Granzyme B-Paciﬁc Blue (clone GB11), anti-
+mouse Perforin-PE (clone S16009B), anti-mouse Ki-67-PerCP-Cy5.5 (clone 16A8),
+and anti-mouse/human BCL-XL-PE (clone S486, 1:50, Cell Signaling Technologies,
+Danvers, MA). Human cells were stained with a combination of the following
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-021-21573-x
+ARTICLE
+NATURE COMMUNICATIONS |  (2021) 12:1281 | https://doi.org/10.1038/s41467-021-21573-x | www.nature.com/naturecommunications
+7
+antibodies: anti-human CD45-BV510 (clone H130), anti-human CD3-AF700 (clone
+HIT5a), anti-human CD4-BV421 (clone OKT4), anti-human CD8-BV711 (clone
+RPA-T8), anti-human CD127-BV605 (clone A019DS), anti-human CD25-PE-Cy7
+(clone MA251) plus FVD-eFluor-780 (eBioscience) and human FcR blocking Reagent
+(StemCell Technologies). Anti-human CD45RA (clone: HI100) and anti-human
+CCR7 (clone: G043H7) were included for the effector/memory analysis for different
+populations of PB and TI T cells. Cells were washed then ﬁxed and permeabilized
+using the eBioscience FOXP3/Transcription Factor Staining Buffer Set. Cells were
+further stained with a combination of the following antibodies: anti-human FOXP3-
+FITC (clone 206D), anti-mouse/human BCL-XL-PE (clone S486, Cell Signaling
+Technologies). Flow cytometry was performed on a 3 laser Cytek Aurora Cytometer
+(Cytek Biosciences, Fremont, CA) and analyzed using FlowJo software (BD Bios-
+ciences). All antibodies are from Biolegend, unless otherwise speciﬁed. Most antibodies
+were used at 1:100 dilution for ﬂow cytometry, unless speciﬁed.
+NIR-FLIVO poly-caspase activity assay. MC38 tumor-bearing mice were treated
+with 7.5 mg/kg DT2216 or vehicle via i.p. injection; 24 h later, the mice were
+injected with 50 µl of NIR-FLIVO 690 caspase probe (ImmunoChemistry Tech-
+nologies, Bloomington, MN) via i.v. injection per the manufacturer’s suggestion.
+Tumors and spleens were harvested after 4 h. Tumors were chemically and enzy-
+matically digested using the mouse Tumor Dissociation Kit (Miltenyi Biotec) and
+mononuclear cells were isolated by density gradient using SepMate 50 tubes
+(StemCell Technologies) and lymphoprep (StemCell Technologies). Spleens were
+pressed though a 40-µm nylon strainer and red blood cells were lysed with ACK
+lysis buffer. Cells were incubated with the following antibodies: anti-mouse CD45-
+AF532 (clone 30F.11), anti-mouse CD3-APC (clone 17A2), anti-mouse CD4-
+BV605 (clone GK1.5), anti-mouse CD8 (clone MEL-14), CD11B-PE-dazzle (clone
+M1/70, 1:200), and FVD-eFluor-780. Cells were then ﬁxed and permeabilized with
+eBioscience FOXP3/Transcription Factor Staining Buffer Set, following with
+intracellular staining of anti-mouse FOXP3-EF450 (FJK-16S, eBioscience, 1:50).
+Antibodies were used at 1:100 dilution for ﬂow cytometry unless speciﬁed. Flow
+cytometry was performed on a 3 laser Cytek Aurora Cytometer (Cytek Biosciences,
+Fremont, CA) and analyzed using FlowJo software (BD Biosciences). All antibodies
+are from Biolegend, unless otherwise speciﬁed.
+Immunoblot. Cells or tumors samples were lysed with RIPA buffer (150 mM NaCl,
+5 mM EDTA, 50 mM Tris pH 8.0, 1% sodium deoxycholate, 1% NP-40, 0.5% SDS)
+supplemented with 1 mM dithiothreitol and protease inhibitors. Cell lysates were
+then separated by SDS-PAGE and analyzed by standard western blotting protocol.
+Antibodies used were anti-BCL-XL (Cell Signaling, 54H6, 1:1000), anti-MCL-1
+(Cell Signaling, D35A5, 1:1000), a nti-BCL-2 (Cell Signaling, 50E3, 1:500), and
+anti-β-actin (Cell Signaling, 1:10,000).
+Statistical methods. All graphs, unless indicated otherwise, were made and sta-
+tistical analysis done using Prism software (GraphPad Software). For comparison
+of tumor growth curves, a two-way analysis of variance (ANOVA) was performed.
+To compare the means of three or more groups, a one-way ANOVA was per-
+formed and comparisons between speciﬁc groups were done using Dunnett’s
+multiple comparison test. To compare the means of two groups, an unpaired T test
+was performed. For analysis of RNAseq expression data comparing the expression
+of genes between two groups, a two-tailed unpaired T test was performed with a
+Bonferroni correction. The precise P values were provided.
+Reporting summary. Further information on research design is available in the Nature
+Research Reporting Summary linked to this article.
+Data availability
+We included analysis from publicly available datasets including: GSE89225 (ref. 21) and
+GSE98638 (ref. 19). The single-cell RNA sequencing result for renal cancer is deposited as
+GSE121638 and for the TI-Tregs from MC38 tumor model, it is deposited as GSE150420.
+The remaining data are available within the Article, Supplementary Information, or
+available from the authors upon request.
+Code availability
+All modiﬁed codes related to SCRC analysis are deposited at: https://github.com/
+ncborcherding/BCLXL.
+Received: 6 May 2020; Accepted: 1 February 2021;
+References
+1.
+Schmidt, A., Oberle, N. & Krammer, P. H. Molecular mechanisms of treg-
+mediated T cell suppression. Front. Immunol. 3, 51 (2012).
+2.
+Ohue, Y. & Nishikawa, H. Regulatory T (Treg) cells in cancer: can Treg cells
+be a new therapeutic target? Cancer Sci. 110, 2080–2089 (2019).
+3.
+Togashi, Y., Shitara, K. & Nishikawa, H. Regulatory T cells in cancer
+immunosuppression - implications for anticancer therapy. Nat. Rev. Clin.
+Oncol. 16, 356–371 (2019).
+4.
+Cassim, S. & Pouyssegur, J. Tumor microenvironment: a metabolic player that
+shapes the immune response. Int. J. Mol. Sci. 21, 157 (2019).
+5.
+Singer, K., Cheng, W. C., Kreutz, M., Ho, P. C. & Siska, P. J. Immunometabolism
+in cancer at a glance. Dis. Model. Mech. 11, dmm034272 (2018).
+6.
+Balkwill, F. R., Capasso, M. & Hagemann, T. The tumor microenvironment at
+a glance. J. Cell Sci. 125, 5591–5596 (2012).
+7.
+Hantusch, A., Rehm, M. & Brunner, T. Counting on death - quantitative
+aspects of Bcl-2 family regulation. FEBS J. 285, 4124–4138 (2018).
+8.
+Kale, J., Osterlund, E. J. & Andrews, D. W. BCL-2 family proteins: changing
+partners in the dance towards death. Cell Death Differ. 25, 65–80 (2018).
+9.
+Tse, C. et al. ABT-263: a potent and orally bioavailable Bcl-2 family inhibitor.
+Cancer Res. 68, 3421–3428 (2008).
+10. Souers, A. J. et al. ABT-199, a potent and selective BCL-2 inhibitor, achieves
+antitumor activity while sparing platelets. Nat. Med. 19, 202–208 (2013).
+11. Leverson, J. D. et al. Exploiting selective BCL-2 family inhibitors to dissect cell
+survival dependencies and deﬁne improved strategies for cancer therapy. Sci.
+Transl. Med. 7, 279ra240 (2015).
+12. Kotschy, A. et al. The MCL1 inhibitor S63845 is tolerable and effective in
+diverse cancer models. Nature 538, 477–482 (2016).
+13. Deeks, E. D. Venetoclax: ﬁrst global approval. Drugs 76, 979–987 (2016).
+14. Mason, K. D. et al. Programmed anuclear cell death delimits platelet life span.
+Cell 128, 1173–1186 (2007).
+15. Schoenwaelder, S. M. et al. Bcl-xL-inhibitory BH3 mimetics can induce a
+transient thrombocytopathy that undermines the hemostatic function of
+platelets. Blood 118, 1663–1674 (2011).
+16. Khan, S. et al. A selective BCL-XL PROTAC degrader achieves safe and potent
+antitumor activity. Nat. Med. 25, 1938–1947 (2019).
+17. He, Y. et al. DT2216-a Bcl-xL-speciﬁc degrader is highly active against Bcl-xL-
+dependent T cell lymphomas. J. Hematol. Oncol. 13, 95 (2020).
+18. He, Y. et al. Using proteolysis-targeting chimera technology to reduce
+navitoclax platelet toxicity and improve its senolytic activity. Nat. Commun.
+11, 1996 (2020).
+19. Zheng, C. et al. Landscape of inﬁltrating T cells in liver cancer revealed by
+single-cell sequencing. Cell 169, 1342–1356.e1316 (2017).
+20. Magnuson, A. M. et al. Identiﬁcation and validation of a tumor-inﬁltrating
+Treg transcriptional signature conserved across species and tumor types. Proc.
+Natl Acad. Sci. USA 115, E10672–E10681 (2018).
+21. Plitas, G. et al. Regulatory T cells exhibit distinct features in human breast
+cancer. Immunity 45, 1122–1134 (2016).
+22. Qiu, X. et al. Reversed graph embedding resolves complex single-cell
+trajectories. Nat. Methods 14, 979–982 (2017).
+23. Miyara, M. et al. Functional delineation and differentiation dynamics of
+human CD4+ T cells expressing the FoxP3 transcription factor. Immunity 30,
+899–911 (2009).
+24. Soderquist, R. S. et al. Systematic mapping of BCL-2 gene dependencies in
+cancer reveals molecular determinants of BH3 mimetic sensitivity. Nat.
+Commun. 9, 3513 (2018).
+25. Kaefer, A. et al. Mechanism-based pharmacokinetic/pharmacodynamic meta-
+analysis of navitoclax (ABT-263) induced thrombocytopenia. Cancer
+Chemother. Pharmacol. 74, 593–602 (2014).
+26. Maj, T. et al. Oxidative stress controls regulatory T cell apoptosis and
+suppressor activity and PD-L1-blockade resistance in tumor. Nat. Immunol.
+18, 1332–1341 (2017).
+27. Kim, J. M., Rasmussen, J. P. & Rudensky, A. Y. Regulatory T cells prevent
+catastrophic autoimmunity throughout the lifespan of mice. Nat. Immunol. 8,
+191–197 (2007).
+28. Poon, I. K., Lucas, C. D., Rossi, A. G. & Ravichandran, K. S. Apoptotic cell
+clearance: basic biology and therapeutic potential. Nat. Rev. Immunol. 14,
+166–180 (2014).
+29. Elliott, M. R. et al. Nucleotides released by apoptotic cells act as a ﬁnd-me
+signal to promote phagocytic clearance. Nature 461, 282–286 (2009).
+30. Shang, B., Liu, Y., Jiang, S. J. & Liu, Y. Prognostic value of tumor-inﬁltrating
+FoxP3+ regulatory T cells in cancers: a systematic review and meta-analysis.
+Sci. Rep. 5, 15179 (2015).
+31. Borcherding, N., Bormann, N. L., Voigt, A. P. & Zhang, W. TRGAted: a web
+tool for survival analysis using protein data in the Cancer Genome Atlas.
+F1000Res. 7, 1235 (2018).
+32. Zheng, G. X. et al. Massively parallel digital transcriptional proﬁling of single
+cells. Nat. Commun. 8, 14049 (2017).
+33. Macosko, E. Z. et al. Highly parallel genome-wide expression proﬁling of
+individual cells using nanoliter droplets. Cell 161, 1202–1214 (2015).
+34. Aran, D. et al. Reference-based analysis of lung single-cell sequencing reveals a
+transitional proﬁbrotic macrophage. Nat. Immunol. 20, 163–172 (2019).
+ARTICLE
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-021-21573-x
+8
+NATURE COMMUNICATIONS |  (2021) 12:1281 | https://doi.org/10.1038/s41467-021-21573-x | www.nature.com/naturecommunications
+35. Bray, N. L., Pimentel, H., Melsted, P. & Pachter, L. Near-optimal probabilistic
+RNA-seq quantiﬁcation. Nat. Biotechnol. 34, 525–527 (2016).
+36. Pimentel, H., Bray, N. L., Puente, S., Melsted, P. & Pachter, L. Differential
+analysis of RNA-seq incorporating quantiﬁcation uncertainty. Nat. Methods
+14, 687–690 (2017).
+37. Biswas, T., Gu, X., Yang, J., Ellies, L. G. & Sun, L. Z. Attenuation of TGF-beta
+signaling supports tumor progression of a mesenchymal-like mammary tumor
+cell line in a syngeneic murine model. Cancer Lett. 346, 129–138 (2014).
+38. Tao, Z. F. et al. Discovery of a potent and selective BCL-XL inhibitor with
+in vivo activity. ACS Med. Chem. Lett. 5, 1088–1093 (2014).
+Acknowledgements
+This study was supported in part by NIH grants CA200673 (W.Z.), CA203834 (W.Z.),
+CA206255 (N.B.), CA242003 (G.Z. and D.Z), and CA219836 (D.Z.), DOD/CDMRP grant
+BC180227 (W.Z.), and an endowment from the Dr. and Mrs. James Robert Spencer Family
+Cancer Research Fund (W.Z.). We thank Dr. Haoyang Zhuang and Ms. Mingjia Li from
+University of Florida for their help in autoantibody measurement.
+Author contributions
+R.K. and U.D. performed and analyzed most of the experiments and wrote the manu-
+script; Xuan, Z., P.Z., and G.Z. designed, synthesized, and formulated the BCL-XL
+PROTACs. S.K. designed and performed the in vitro drug sensitivity assays. M.K., Y.L.,
+H.Y., J.M., D.K., and C.W. performed the in vitro experiments with cancer cell lines. N.B.
+performed the bioinformatics analysis of the scRNAseq dataset; Xin, Z. performed some
+ﬂow cytometry. D.A., Y.X.F., and S.G.Z. contributed to critical discussions, concept
+development, and manuscript editing. W.Z., D.Z., and R.K. conceived, designed, and
+supervised the study, analyzed and interpreted the data, and wrote the manuscript. All
+authors discussed the results and commented on the manuscript.
+Competing interests
+S.K., Xuan, Z., G.Z., and D.Z. are inventors of two pending patent applications for the use
+of BCL-XL PROTACs as senolytic and antitumor agents. G.Z. and D.Z. are co-founders
+of, and have equity in, Dialectic Therapeutics, which develops BCL-XL PROTACs for the
+treatment of cancer. The other authors have no competing interests.
+Additional information
+Supplementary information The online version contains supplementary material
+available at https://doi.org/10.1038/s41467-021-21573-x.
+Correspondence and requests for materials should be addressed to D.Z. or W.Z.
+Peer review information Nature Communications thanks Hiroyoshi Nishikawa, Felip A.
+Vieira Braga, Meike Vogler, and the other, anonymous reviewer(s) for their contribution
+to the peer review of this work. Peer review reports are available.
+Reprints and permission information is available at http://www.nature.com/reprints
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in
+published maps and institutional afﬁliations.
+Open Access This article is licensed under a Creative Commons
+Attribution 4.0 International License, which permits use, sharing,
+adaptation, distribution and reproduction in any medium or format, as long as you give
+appropriate credit to the original author(s) and the source, provide a link to the Creative
+Commons license, and indicate if changes were made. The images or other third party
+material in this article are included in the article’s Creative Commons license, unless
+indicated otherwise in a credit line to the material. If material is not included in the
+article’s Creative Commons license and your intended use is not permitted by statutory
+regulation or exceeds the permitted use, you will need to obtain permission directly from
+the copyright holder. To view a copy of this license, visit http://creativecommons.org/
+licenses/by/4.0/.
+© The Author(s) 2021
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-021-21573-x
+ARTICLE
+NATURE COMMUNICATIONS |  (2021) 12:1281 | https://doi.org/10.1038/s41467-021-21573-x | www.nature.com/naturecommunications
+9

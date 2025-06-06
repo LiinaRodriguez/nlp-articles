@@ -1,0 +1,661 @@
+Hagniﬁnder: Recovering magniﬁcation information of digital
+histological images using deep learning
+Hongtai Zhang a, Zaiyi Liu b,c,d, Mingli Song a,e,⁎, Cheng Lu b,c,d,⁎⁎
+a School of Computer and Cyber Sciences, Communication University of China, Beijing 100024, China
+b Department of Radiology, Guangdong Provincial People's Hospital (Guangdong Academy of Medical Sciences),Southern Medical University, Guangzhou 510080, China
+c Medical Research Institute, Guangdong Provincial People's Hospital (Guangdong Academy of Medical Sciences), Southern Medical University, Guangzhou 510080, China
+d Guangdong Provincial Key Laboratory of Artiﬁcial Intelligence in Medical Image Analysis and Application, Guangzhou 510080, China
+e State Key Laboratory of Media Convergence and Communication, Communication University of China, Beijing 100024, China
+A B S T R A C T
+A R T I C L E
+I N F O
+Keywords::
+Histology images
+Magniﬁcation prediction
+Regression model
+Deep learning
+Background and objective: Training a robust cancer diagnostic or prognostic artiﬁcial intelligent model using histology
+images requires a large number of representative cases with labels or annotations, which are difﬁcult to obtain. The
+histology snapshots available in published papers or case reports can be used to enrich the training dataset. However,
+the magniﬁcations of these invaluable snapshots are generally unknown, which limits their usage. Therefore, a robust
+magniﬁcation predictor is required for utilizing those diverse snapshot repositories consisting of different diseases.
+This paper presents a magniﬁcation prediction model named Hagniﬁnder for H&E-stained histological images.
+Methods: Hagniﬁnder is a regression model based on a modiﬁed convolutional neural network (CNN) that contains 3
+modules: Feature Extraction Module, Regression Module, and Adaptive Scaling Module (ASM). In the training phase,
+the Feature Extraction Module ﬁrst extracts the image features. Secondly, the ASM is proposed to address the learned
+feature values uneven distribution problem. Finally, the Regression Module estimates the mapping between the regu-
+larized extracted features and the magniﬁcations. We construct a new dataset for training a robust model, named
+Hagni40, consisting of 94 643 H&E-stained histology image patches at 40 different magniﬁcations of 13 types of can-
+cer based on The Cancer Genome Atlas. To verify the performance of the Hagniﬁnder, we measure the accuracy of the
+predictions by setting the maximum allowable difference values (0.5, 1, and 5) between the predicted magniﬁcation
+and the actual magniﬁcation. We compare Hagniﬁnder with state-of-the-art methods on a public dataset BreakHis
+and the Hagni40.
+Results: The Hagniﬁnder provides consistent prediction accuracy, with a mean accuracy of 98.9%, across 40 different
+magniﬁcations and 13 different cancer types when Resnet50 is used as the feature extractor. Compared with the state-
+of-the-art methods focusing on 4–5 levels of magniﬁcation classiﬁcation, the Hagniﬁnder achieves the best and most
+comparable performance in the BreakHis and Hagni40 datasets.
+Conclusions: The experimental results suggest that Hagniﬁnder can be a valuable tool for predicting the associated mag-
+niﬁcation of any given histology image.
+Introduction
+Until now, histology image examination was still the gold-standard for
+most tumor diagnosis. The traditionally used H&E staining stains the nuclei
+blue while extracellular materials pink to enhance the visibility of tissues.1,2
+Morphological features of stained tissue were examined at several different
+magniﬁcation levels to help a pathologist understand the current speci-
+men's status.3 The level of magniﬁcation, as important information of digi-
+tal pathological images, depends on the magniﬁcation of the optical
+microscope objective lens.4 More areas could be observed at low
+magniﬁcations, which facilitates ﬁnding the location of tumors, whereas,
+at high magniﬁcations, some tiny relevant features for diagnosis could be
+observed. For example, in the context of breast cancer diagnosis, a higher
+magniﬁcation at 20x could allow one to check nuclear pleomorphism. In
+contrast, a lower magniﬁcation at 5x could allow one to examine tubular
+formation.
+The advances in digital imaging technology allowed traditional tissue
+slides to be digitized with a Whole Slide Image (WSI) scanner, making the
+automated diagnosis of histopathological images achievable. However, in
+practice, most pathologists still used light microscopy to examine the tissue,
+Journal of Pathology Informatics 14 (2023) 100302
+⁎ Correspondence to: School of Computer and Cyber Sciences, Communication University of China, Beijing 100024, China.
+⁎⁎ Correspondence to: Guangdong Provincial People's Hospital, Guangdong Academy of Medical Sciences, Guangzhou 510080, China.
+E-mail addresses: songmingli@cuc.edu.cn (M. Song), lucheng@gdph.org.cn (C. Lu).
+http://dx.doi.org/10.1016/j.jpi.2023.100302
+Received 3 October 2022; Received in revised form 2 February 2023; Accepted 11 February 2023
+Available online 16 February 2023
+2153-3539/© 2023 The Authors. Published by Elsevier Inc. on behalf of Association for Pathology Informatics. This is an open access article under the CC BY-NC-ND license
+(http://creativecommons.org/licenses/by-nc-nd/4.0/).
+Contents lists available at ScienceDirect
+Journal of Pathology Informatics
+journal homepage: www.elsevier.com/locate/jpi
+and snapshots of critical ﬁeld-of-views were captured using mounted cam-
+eras for histology examination report or case study. Nevertheless, collec-
+tions of such snapshots were usually saved without magniﬁcation
+information. The loss of magniﬁcation information may hinder the full
+use of these microscopic snapshots for future research and education, espe-
+cially those containing valuable organ and disease knowledge. For exam-
+ple, one may want to create a machine learning model to learn the
+phenotype of a speciﬁc disease or to create a histologic image content re-
+trieval system, which required associated magniﬁcation information.
+Therefore, if we want to take full advantage of the valuable knowledge as-
+sociated with the snapshot images, either from a local hospital report col-
+lection, or snapshots collected from research papers, a fundamental
+premise is to predict the related magniﬁcation information accurately.
+Recently, deep learning models have been widely used in histopatholo-
+gical image tasks and have achieved satisfactory results because of their
+strong feature extraction capabilities.5–7 However, because a few large pub-
+licly available digital pathology image datasets contain magniﬁcation infor-
+mation, it is difﬁcult to train a reliable deep learning model to predict the
+magniﬁcation level of pathological images accurately. As a result, a dataset
+with a ﬁne-grained magniﬁcation level is needed to train deep learning
+models, which is also one of the main motivations of this work.
+In this paper, we constructed a new dataset, named Hagni40, consisting
+of 94 643 H&E stained histology image patches at 40 different magniﬁca-
+tions of 13 types of cancers which were created from The Cancer Genome
+Atlas (TCGA) WSIs. Furthermore, we developed a regression model based
+on a convolutional neural network (CNN) to accurately predict the magni-
+ﬁcation of a given histology image, named Histology image magniﬁcation
+ﬁnder (Hagniﬁnder). We validated the Hagniﬁnder in Hagni40 for 40
+different magniﬁcation predictions across 13 different cancers. We also val-
+idated the Hagniﬁnder in a publicly available dataset BreakHis,8 for 4-level
+magniﬁcation predictions and compared the performance with state-of-the-
+art methods.
+Literature review of related works
+This section reviews some related works on predicting magniﬁcation
+levels and summarizes their similarities and differences with Hagniﬁnder
+(Table 1).
+Eventhough we could have associated magniﬁcation levels with high
+resolution WSIs, we still want to fully utilize those typical and invaluable
+histology snapshots selected as representative cases in published papers
+or case reports. Several recent research works proposed automated models
+for histology image magniﬁcation classiﬁcation. Bayramoglu et al.9 trained
+a multi-task CNN to predict malignancy and image magniﬁcation levels si-
+multaneously. They declared that networks trained with data with multiple
+magniﬁcation levels performed better than those with a single magniﬁca-
+tion level. A lightweight multi-task CNN was proposed by Wang et al. to
+classify the magniﬁcation levels and Human epidermal growth factor recep-
+tor 2 (Her2) Scores for WSIs.10 Otálora et al.11 trained 2 CNN models, one
+trained to regress the area of pre-segmented nuclei, the other one trained
+to regress the magniﬁcation. They found that a linear combination of
+these trained models achieved superior performance, with a F1-score of
+0.912. Zaveri et al.12 trained a CNN-based approach using DenseNet12113
+to predict 5 different magniﬁcation levels and obtain 93% accuracy. A sum-
+mary of the methods mentioned above is shown in Table 1.
+From Table 1, one may observe that most previous methods formulated
+magniﬁcation prediction as a multi-class classiﬁcation problem, with 3–5
+commonly used magniﬁcation levels (such as 40x, 20x, 10x, 5x, etc.). In
+fact, histologic snapshots may be captured at a random magniﬁcation, or
+they are shrank or enlarged unintentionally to ﬁt the page layout. There-
+fore, an automated model that can accurately predict the magniﬁcation is
+desired. Otálora et al.11 constructed a regression model, but its predictive
+outputs are limited to 7 speciﬁc magniﬁcation levels.
+In order to provide a benchmarker for different models learning the
+magniﬁcation of histology images, Zaveri et al.14 have tried to organize a
+dataset name Kimia-5MAG, consisting of more than 30 000 patches at 5 dif-
+ferent magniﬁcation levels created from H&E stained WSIs of TCGA.
+Spanhol et al.8 published BreakHis dataset consisting of 7909 breast histol-
+ogy images with 4 different magniﬁcations.
+Compared with previous methods, we constructed a dataset containing
+40 different magniﬁcation levels distributed in the range of 1x–40x. This
+dataset could help us to train a reliable and generalizable model.
+Methodology
+In this study, a regression model named Hagniﬁnder based on deep
+learning is proposed to predict the magniﬁcation level of digital pathologi-
+cal images. An overview of the training and testing processes of Hagniﬁnder
+is shown in Fig. 1. Hagniﬁnder is trained using a dataset named Hagni40
+containing patches with 40 different magniﬁcations (1x–40x) in the train-
+ing phase. These patches are collected from 13 different types of solid
+tumor whole slide images, with sizes ranging from 224×224 pixels to
+496×496 pixels, and at least 60% of the area in each patch is composed
+of nuclei. In the testing phase, the performance of the Hagniﬁnder is evalu-
+ated by giving a randomly selected patch with unknown magniﬁcation, and
+the absolute value of the difference between the predicted magniﬁcation
+and the truth magniﬁcation is used as the evaluation metric.
+Model architecture
+Hagniﬁnder is composed of 3 modules: Feature Extraction Module, Re-
+gression Module, and Adaptive Scaling Module (ASM). The entire architec-
+ture of the Hagniﬁnder is shown in Fig. 2.
+Feature extraction module
+Recent studies have shown that CNNs have an excellent ability to ex-
+tract and select features,15,16 and deep CNNs can learn abstract high-level
+features from images.13 ResNet learns features by learning residual repre-
+sentations instead of direct mappings.17 Compared with ordinary CNN,
+the advantage of ResNet is that it solves the problem of deep network deg-
+radation caused by gradient disappearance or explosion.
+Regression module
+We perform regression on features extracted from pathological images
+using neural networks to ﬁnd the quantitative relationship between ex-
+tracted features and magniﬁcations.
+The histopathological images are passed through the Feature Extraction
+Module, mentioned in the last subsection, and an average pooling layer to
+obtain feature embeddings. These feature embeddings are then connected
+with 3 fully connected (FC) layers. These FC layers can increase the
+nonlinear expression ability, which can theoretically improve the learning
+Table 1
+Summary of related work.
+Methods
+Type
+Base model
+Organ site
+Magniﬁcation levels
+Bayramoglu et al.9
+Classiﬁcation
+Modiﬁed AlexNet
+Single (Breast)
+4
+Otálora et al.11
+Regression
+DenseNet-BC121
+Single (Breast)
+7
+Wang et al.10
+Classiﬁcation
+Modiﬁed AlexNet
+Single (Breast)
+3
+Zaveri et al.12
+Classiﬁcation
+DenseNet121
+Multiple
+5
+Hagniﬁnder
+Regression
+Modiﬁed ResNet50
+Multiple
+40
+H. Zhang et al.
+Journal of Pathology Informatics 14 (2023) 100302
+2
+ability of the Hagniﬁnder. The numbers of input nodes of these 3 FC are
+2048, 200, and 20, and the numbers of output nodes are 200, 20, and 1, re-
+spectively. The ﬁnal output is a decimal value that denotes the predicted
+value of the input image's magniﬁcation level.
+An activation function before the last FC is added, which aims to trans-
+form the data nonlinearly and limit the range of data (through mapping the
+input data to a certain range) to prevent data overﬂow. Tanh () was chosen
+as the activation function.
+Adaptive scaling module
+During the training procedure, it is inevitable to encounter problems re-
+lated to gradient explosion and outliers in feature embeddings, especially in
+the case of learning embedded features from images at 40 different magni-
+ﬁcations. Therefore, the performance of the model cannot be guaranteed,
+which motivates us to propose an Adaptive Scaling Module in Hagniﬁnder.
+The primary purpose of the Adaptive Scaling Module is to regularize the
+feature embedding representation before it is fed into the nonlinear activa-
+tion function. In our case, the range of the non-saturated region of the Tanh
+() function input is [−2, 2]; if the embedded feature value is far away from
+[−2, 2], the output value will be close to −1 or 1. In addition, the relative
+differences of embedded features cannot be reﬂected in the output. To
+address the issues mentioned above, the Adaptive Scaling Module makes
+the embedded feature better distributed in the non-saturated region of
+the activation function. For each batch of input data x, the following steps
+are performed:
+Step 1: Obtain the maximum absolute value, denoted as X, from the
+input data: X = max(|x|);
+Step 2: Calculate the variance σ2 of normalized data x/X.
+σ2 ¼
+∑
+n
+i¼1
+x
+X  x
+X
+
+2
+n
+:
+(1)
+Step 3: Set the expected variance bσ2 to control the distribution of the
+output data, we set it to 2.2 empirically. The output y corresponding to
+this batch of data are as follows:
+y ¼ x 
+ﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+bσ2=σ2
+q
+X
+:
+(2)
+An example is shown in Fig. 3 below. Let a vector [−1, 1, −2, 2, 300]
+represents an embedded feature vector, in which value 300 represents an
+outlier. Fig. 3 illustrates the outputs of this embedded feature vector if
+we: (1) sent this vector into Tanh function directly; (2) use normalization
+operation (i.e., Min-Max Scaling, which linearly transforms the original
+data, make the output map to the range of [0, 1], and achieve equal scaling
+of the original data) on this vector then sent to Tanh function; (3) use Adap-
+tive Scaling Module on this vector then sent to Tanh function. By comparing
+the outputs, it is observed that: (1) the absolute differences between all el-
+ements are minor if no operation has been applied to the embedded feature
+vector; (2) by using Min-Max Scaling operation, the output is heavily af-
+fected by the outlier so that the ﬁrst 4 elements are squeezed into a narrow
+value range; (3) by using the Adaptive Scaling Module, the differences be-
+tween the ﬁrst 4 elements can be quantiﬁed well while the impact of the
+outlier (the last element of the vector) is minimized.
+Fig. 1. The ﬂowchart of using the Hagniﬁnder.
+Fig. 2. The architecture of the Hagniﬁnder.
+H. Zhang et al.
+Journal of Pathology Informatics 14 (2023) 100302
+3
+Implementation details
+Hyper parameters
+Hagniﬁnder was trained with augmented data, in which the input patch
+was: (1) randomly cropped with a size of (224, 224); (2) rotated with a ran-
+dom angle between 0° and 90°; (3) ﬂipped horizontally and vertically with a
+probability of 50%. The model was compiled by the AdamW optimizer, in
+which the learning rate was set to 0.1. When the training loss did not de-
+crease after 5 consecutive epochs, the learning rate was reduced by 50%.
+After comparing and verifying through multiple experiments, the expected
+variance bσ2 in the Adaptive Scaling Module was set as 2.2.
+Training strategy
+Fig 4 shows the ﬂowchart for training Hagniﬁnder. The training phase
+consists of 2 rounds. At ﬁrst, the Hagniﬁnder is trained using the strategy
+described in Fig 4a until it converged (i.e., the training loss did not decrease
+in the last 10 epochs). Let us assume we have n batches of training patches.
+During the ﬁrst round of training, an average value of the scaling factor m is
+calculated as follows:
+m ¼
+∑
+n
+i¼1 m
+n
+,
+where
+m ¼
+ﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+bσ2=σ2
+q
+X
+:
+In the second round, shown in Fig. 4b, m is used to replace the Adaptive
+Scaling Module for training until the model converged.
+Loss function
+We chose Huber Loss as the loss function,18 which is a piecewise loss
+function used to solve regression problems. The advantage of Huber Loss
+is that it is less sensitive to outliers, so it is not easily affected by outliers.
+The deﬁnition of Huber loss is as follows:
+Lδ y, f x
+ð Þ
+ð
+Þ ¼
+1
+2 y  f x
+ð Þ
+ð
+Þ2,
+for y  f x
+ð Þ
+j
+j ≤δ
+δ ⋅
+y  f x
+ð Þ
+j
+j  1
+2 δ
+
+
+,
+otherwise:
+8
+>
+>
+<
+>
+>
+:
+(3)
+where δ is a parameter that users or experts can set. As shown in Eq. (3), if
+the prediction deviation is smaller than δ, Mean Square Error (MSE) is set as
+the loss function; whereas if the prediction deviation is larger than δ, Mean
+Absolute Error (MAE) is selected. Hubel loss ensures the robustness to ab-
+normal points and ensures the convergence speed of the model.
+Experiments and results
+Dataset construction
+The Hagni40 dataset consists of 94 643 patches, which was created by
+the following steps:
+Step 1: WSI selection: We randomly collected 128 H&E stained diagnos-
+tic WSIs, at 40x magniﬁcation, from 13 different types of cancers from the
+TCGA. We used HistoQC19 to control the quality of WSIs.
+Step 2: 40x magniﬁcation patches generation: Non-overlapped patches
+with the size of 2560×2560 pixels, 4480×4480 pixels, and 8960×8960
+pixels were cropped from all WSIs. A foreground ﬁltering was performed
+to eliminate the patches containing more than 55% background pixels.
+This yielded 2445 patches with a size of 2560×2560 pixels, 2530 patches
+of size 4480×4480 pixels, and 616 patches of size 8960×8960 at 40x mag-
+niﬁcation.
+Step 3: Multi-magniﬁcation patches generation: In this step, we per-
+formed down-sampling and cropping operations on the 40x magniﬁcation
+patches to obtain patches at different magniﬁcations, i.e., 1x–39x magniﬁ-
+cation. When generating the down-sampled patches, we limited the size of
+these patches to smaller than 500×500 pixels so that we could process the
+Fig. 3. An example demonstrates the functions of ASM. The dotted, solid, and dashed lines represent that the data is sent directly to Tanh, the data is sent to Tanh after
+normalization processing, and the data is sent to Tanh after passing through ASM, respectively.
+Fig. 4. The ﬂow chart of model training.
+H. Zhang et al.
+Journal of Pathology Informatics 14 (2023) 100302
+4
+patches in downstream analysis efﬁciently. We also applied a content ﬁlter
+to eliminate the patches that contained more than 40% of the background
+(Fig. 5).
+At the end, we obtain a high-quality dataset Hagni40, which contains
+94 643 patches at 40 different magniﬁcation levels. Fig. 6(a) illustrates
+the magniﬁcation distribution of all patches in Hagni40. There are 40 dif-
+ferent categories in our dataset that represent 40 different magniﬁcation
+levels, from 1x to 40x. Fig. 6(b) illustrates the magniﬁcation distribution
+across all cancer types.
+Evaluation metric
+In Hagni40 dataset, we randomly select 54 279 patches for training, 18
+093 patches for validation, and 18 093 patches for testing. Assume that g
+and p represent the ground truth and predicted magniﬁcation for a given
+image, respectively; d represents the absolute value of the difference be-
+tween g and p, i. e. d = |g −p|. Let N represents the error threshold we
+set (the maximum error between the predicted value and the ground
+truth we expect). When d > N, we consider the prediction of the
+Hagniﬁnder under the threshold N is incorrect, otherwise, the prediction
+is correct. Let CMLN indicates the number of images whose magniﬁcation
+predicted by Hagniﬁnder are correct under the threshold N, and WMLN in-
+dicates the number of images whose magniﬁcation predicted by
+Hagniﬁnder are incorrect under the threshold N. The overall accuracy of
+Hagniﬁnder prediction under the threshold N is deﬁned as follows:
+ACCN ¼
+CMLN
+CMLN þ WMLN
+:
+(4)
+Performance evaluation
+In this evaluation, we randomly split the data into 10 portions based on
+slide level, in which the ﬁrst 6 portions were used as training set, 2 portions
+were used as validation set, and the remaining 2 portions were used as test
+set. The Hagniﬁnder was ﬁrst trained using the training set and then vali-
+dated using the validation set, followed by test using test set. The perfor-
+mance on test set was reported in this section.
+Analysis on the performance of Hagniﬁnder
+Performance of the Hagniﬁnder with 2 different feature extractors:
+In this experiment, we compared the magniﬁcation prediction performance
+of Hagniﬁnder using Resnet18 and Resnet50 in the Feature Extraction Mod-
+ule. The results of magniﬁcation prediction were shown in Table 2, in
+which we evaluated the ACC at 3 different error thresholds (0.5, 1, and
+5). One can observed that the Hagniﬁnder with deeper convolutional layers
+for feature extraction, i.e., Resnet50, achieved better performance com-
+pared to that of Resnet18. We, therefore, locked down the Hagniﬁnder
+with Resnet50 as the feature extractor.
+Magniﬁcation prediction accuracy at different magniﬁcation
+levels: Fig. 7 shows confusion matrices for the Hagniﬁnder with
+ACC1. Fig. 8 shows the spread of predicted values for different cancer
+types at each magniﬁcation level. It can be seen in Fig. 7 that the
+Hagniﬁnder provides consistent prediction accuracy across 40 different
+magniﬁcations.
+To analyze the prediction results from different perspectives, we
+performed statistical analysis on the prediction results of the magniﬁca-
+tion levels under different cancer types, as shown in Fig. 9. In terms of
+the misprediction rate in Fig. 9, we found that the Hagniﬁnder yield sat-
+isfactory performance with misprediction rates less than 5% for all can-
+cer types, and the top 2 highest misprediction rates occurred in the
+cervical and colon cancers (4.688% and 2.745%, respectively). Fig. 10
+presented the sorted misprediction percentages for all magniﬁcations
+in colon cancer and representative patches from the top misprediction
+magniﬁcations.
+Comparison with other methods
+To compare the performance of Hagniﬁnder with other methods, we
+evaluated all methods on the Hagni40 and a public available dataset
+named BreakHis.8 The results were shown in Table 3. In BreakHis dataset,
+Hagniﬁnder outperformed the existing methods in terms of accuracy. In
+Hagni40 dataset, Hagniﬁnder provided comparable performance with
+that of the method proposed by Zaveri et al. Note that the Hagniﬁnder
+could yield 40 different magniﬁcation levels, and we limited the
+Hagniﬁnder to 4 magniﬁcation levels in order to compare the performance
+of existing methods.
+Fig. 5. Representative examples of qualiﬁed patches, which cotaining background <40% (green border); and excluded patches, which containing background >40% (red
+border).
+H. Zhang et al.
+Journal of Pathology Informatics 14 (2023) 100302
+5
+Discussion
+More and more artiﬁcial intelligent (AI) models have been constructed
+for cancer diagnosis,20 prognosis,21 and mutation prediction22 using tradi-
+tional H&E-stained histology images. Training a robust AI model requires
+many representative cases with labels or annotations, which is difﬁcult to
+obtain. Fortunately, we have open access to medical databases such as
+PubMed Central and in-house case reports. We could use the snapshots rep-
+resenting speciﬁc disease regions of interest to enrich the training data for
+Fig. 6. (a) Magniﬁcation distribution of all patches in Hagni40. (b) Patches magniﬁcation distribution across different cancer types.
+Table 2
+Magniﬁcation prediction results in the test set of Hagni40.
+Feature extractor
+ACC0.5
+ACC1
+ACC5
+Resnet18
+53.4%
+82.80%
+99.89%
+Resnet50
+88.22%
+98.89%
+100%
+H. Zhang et al.
+Journal of Pathology Informatics 14 (2023) 100302
+6
+constructing the AI model. However, these invaluable snapshots are gener-
+ally saved without magniﬁcations, limiting their usage since the magniﬁca-
+tion level provides a context to an AI model on what kind of image feature it
+is learning. Therefore, a robust magniﬁcation predictor is required for uti-
+lizing those diverse snapshot repositories consisting of different diseases.
+The Hagniﬁnder propose in this work could provide such a functionality:
+given a random snapshot with a random organ site, providing a predictive
+magniﬁcation level associated with the snapshot.
+Several existing works have proposed magniﬁcation prediction tools for
+histology images, either using a classiﬁcation or regression model.9–12
+Bayramoglu et al., Wang et al., and Otálora et al. trained CNN models for
+histology image magniﬁcation perdition only for breast cancer. Recently,
+Zaveri et al. presented a model that could predict the magniﬁcation of
+given histology with any disease sites. However, to the best of our knowl-
+edge, all existing works reported that they could predict the magniﬁcation
+of histology images up to 7 levels. Note that the snapshots presented on the
+papers or in the case reports may associate with any magniﬁcation levels.
+Therefore, the Hagniﬁnder may be a more versatile model for predicting
+magniﬁcation levels, i.e., with 40 magniﬁcations from 1x to 40x and 13 dif-
+ferent disease sites.
+In the experimental results, one may observe that the Hagniﬁnder could
+provide consistent prediction accuracy not only across 40 different magni-
+ﬁcations and also across 13 different disease sites. Even though in compar-
+ison with other existing methods designed explicitly for 4x, 10x, 20x, and
+40x magniﬁcation prediction, the Hagniﬁnder could provide superior or
+comparable performance in 2 different datasets.
+In Fig. 7, we present the confusion matrices for the Hagniﬁnder across
+40 different magniﬁcations. One may observe that the 2 magniﬁcations at
+the extreme have relatively low accuracy, i.e., 93.5% for 1x magniﬁcation
+and 92.3% for 40x magniﬁcation.
+The reason could be that they are at the boundary of the magniﬁcation-
+level range (i.e. [1, 40]), which limits the distribution range of the pre-
+dicted values. Speciﬁcally, for a patch with a true magniﬁcation level of
+20x, the prediction is correct when the predicted value is in the range of
+[19, 21], while for a patch with true magniﬁcation level of 1x or 40x, the
+predicted value is in the range of [1, 2] or [39, 40], respectively.
+In Fig. 9, one may observe that cervical cancer has the highest
+misprediction rate at 4.688%. This may be because the cervical cancer
+has the lowest number of patches (see Fig. 6(b), and the number of patches
+is 314), so the Hagniﬁnder cannot properly learn cervical histology mor-
+phological information well and therefore lead to a relatively high
+misprediction rate. In the case of colon cancer, Fig. 10(a) illustrates the
+breakdown of misprediction rate across different magniﬁcations, whereas
+Fig. 10(b) shows representative patches from the top misprediction magni-
+ﬁcations. One can observe that most of the misprediction patches are blur
+or contain just a few numbers of nuclei, which could be the reason for the
+high misprediction rate.
+Conclusion
+In this paper, we proposed Hagniﬁnder, a CNN-based regression frame-
+work to predict the magniﬁcation levels of histopathology images. The pro-
+posed model included a new module named Adaptive Scaling Module,
+which could improve prediction performance by adjusting the data distri-
+bution. Furthermore, a new dataset named Hagni40 was constructed for
+magniﬁcation classiﬁcation is introduced to train and test the Hagniﬁnder.
+The dataset contains 94 643 patches belonging to 40 different magniﬁca-
+tion levels and 13 different cancer types. To validate the performance of
+the Hagniﬁnder, we conducted experiments on Hagni40 and BreakHis
+datasets. The experimental results show that the Hagniﬁnder with Resnet50
+Fig. 7. Confusion matrices for the Hagniﬁnder.
+H. Zhang et al.
+Journal of Pathology Informatics 14 (2023) 100302
+7
+Fig. 8. Spread of predicted values at each magniﬁcation level.
+Fig. 9. Number and percentage of mispredictions for each cancer type.
+H. Zhang et al.
+Journal of Pathology Informatics 14 (2023) 100302
+8
+Fig. 10. (a) Sorted misprediction percentages for all magniﬁcations in colon cancer. (b) Representative patches from the top misprediction magniﬁcations, in which the
+predicted magniﬁcations were shown under the patches. The comparison between some patches with correct prediction shows that the misprediction is often related to
+blurry patches or patches with too few nuclei.
+H. Zhang et al.
+Journal of Pathology Informatics 14 (2023) 100302
+9
+as the feature extractor had the best performance on Hagni40 in terms of ac-
+curacy (98.9%). The proposed Hagniﬁnder provided consistent perfor-
+mance across different magniﬁcation and cancer types and was superior
+to the existing methods. The code of Hagniﬁnder is available at https://
+github.com/hacylu/Hagniﬁnder. Dataset Hagni40 will be available upon
+acceptance.
+Competing interest declaration
+Dr.’s Liu, Song, and Lu, Mr. Zhang, declare no competing ﬁnancial
+interests.
+Acknowledgments
+This work was supported by the the National Key R&D Program of
+China (No. 2021YFF1201003), National Natural Science Foundation of
+China (No. 61773352 and 82272084), Guangdong Provincial Key Labora-
+tory of Artiﬁcial Intelligence in Medical Image Analysis and Application
+(No. 2022B1212010011), High-level Hospital Construction Project
+(No. DFJHBF202105), and the Fundamental Research Funds for the Central
+Universities.
+References
+1. Veta M, Pluim JPW. Van Diest P.J., Viergever M.A. Breast cancer histopathology image
+analysis: a review. IEEE Trans Biomed Eng 2014;61(5):1400–1411.
+2. Gurcan MN, Boucheron LE, Can A, Madabhushi A, Rajpoot NM, Yener B. Histopatholo-
+gical image analysis: a review. IEEE Rev Biomed Eng 2009;2:147–171.
+3. Peikari M, Gangeh MJ, Zubovits J, Clarke G, Martel AL. Triaging diagnostically relevant
+regions from pathology whole slides of breast cancer: a texture based approach. IEEE
+Trans Med Imaging 2016;35(1):307–315.
+4. Sellaro TL, Filkins R, Hoffman C, Fine JL, Ho J, Parwani AV, et al. Relationship between
+magniﬁcation and resolution in digital pathology systems. J Pathol Informatics 2013;4.
+5. Janowczyk A, Madabhushi A. Deep learning for digital pathology image analysis: a com-
+prehensive tutorial with selected use cases. J Pathol Informatics 2016:7.
+6. Litjens G, Sánchez CI, Timofeeva N, Hermsen M, Nagtegaal I, Kovacs I, et al. Deep learn-
+ing as a tool for increased accuracy and efﬁciency of histopathological diagnosis. Scient
+Rep 2016;6:26286.
+7. Gupta V, Bhavsar A. Breast cancer histopathological image classiﬁcation: is magniﬁca-
+tion important?. Computer Vision & Pattern Recognition Workshops. IEEE; 2017.
+p. 769–776.
+8. Spanhol FA, Oliveira LS, Petitjean C, Heutte L. A dataset for breast cancer histopatholo-
+gical image classiﬁcation. IEEE Trans Biomed Eng 2016;63(7):1455–1462.
+9. Bayramoglu N, Kannala J, Heikkila J. Deep learning for magniﬁcation independent
+breast cancer histopathology image classiﬁcation. International Conference on Pattern
+Recognition. IEEE; 2017.
+10. Wang J, Ruan J, He S, Wu C, Ye G. G, Zhou J, et al. Detection of Her2 scores and magniﬁ-
+cation from whole slide images in multi-task convolutional network. International Conference
+on Pattern Recognition. 2018.
+11. Otálora S, Atzori M, Andrearczyk V, Müller H. Image magniﬁcation regression using
+DenseNet for exploiting histopathology open access content. Computational Pathology and Oph-
+thalmic Medical Image Analysis. OMIA COMPAY. Lecture Notes in Computer Science. 2018.
+12. Zaveri M, Kalra S, Babaie M, Shah S, Damskinos S, Kashani H, et al. Recognizing magniﬁ-
+cation levels in microscopic snapshots. 2020 42nd Annual International Conference of the IEEE
+Engineering in Medicine & Biology Society (EMBC), Montreal, QC, Canada. 2020:1416–
+1419.
+13. Huang G, Liu Z, Laurens V, Kilian Q. Densely Connected Convolutional Networks. IEEE
+Computer Society. 2016.
+14. Zaveri M, Hemati S, Shah S, Damskinos S, Tizhoosh HR. Kimia-5MA–a dataset for learn-
+ing the magniﬁcation in histopathology images. IEEE; 2020.
+15. Krizhevsky A, Sutskever I, Hinton G. ImageNet classiﬁcation with deep convolutional
+neural networks. Adv Neural Inform Process Syst 2012;25(2).
+16. Szegedy C, Liu W, Jia Y, Sermanet J, Reed S, Anguelov D, et al. Going Deeper with Convo-
+lutions. IEEE Computer Society. 2014.
+17. He K, Zhang X, Ren S, Sun J. Deep residual learning for image recognition. Proceedings of the
+IEEE Conference on Computer Vision and Pattern Recognition (CVPR). 2016:770–778.
+18. Huber PJ. Robust statistics. J Am Stat Assoc 2009;78(381):xvi+354.pp. + loose erra-
+tum.
+19. Janowczyk A., Zuo R., Gilmore H., Feldman M., Madabhushi A. HistoQC: an open-source
+quality control tool for digital pathology slides. Jco Clin Cancer Informatics 2019:3, 1-7.
+20. Lu C, Koyuncu C, Corredor G, Prasanna P, Leo P, Wang X, et al. Feature-driven local cell
+graph (FLocK): New computational pathology-based descriptors for prognosis of lung
+cancer and HPV status of oropharyngeal cancers. Med Image Anal 2021;68:101903.
+21. Lu C, Bera K, Wang X, Prasanna P, Xu J, Janowczyk A, et al. A prognostic model for over-
+all survival of patients with early-stage non-small cell lung cancer: a multicentre, retro-
+spective study. Lancet Digital Health 2020;2(11):e594–e606.
+22. Nicolas C, Santiago OP, Theodore S, Narula N, Snuderl M, Fenyö D, et al. Classiﬁcation
+and mutation prediction from non–small cell lung cancer histopathology images using
+deep learning. Nat Med 24 1559–1567 (2018).
+Table 3
+Performance comparison on BreakHis and Hagni40.
+Dataset
+Methods
+Magniﬁcation
+4x
+10x
+20x
+40x
+BreakHis
+Bayramoglu et al.9
+84.87%
+79.74%
+71.72%
+84.13%
+Zaveri et al.12
+97.72%
+95.51%
+95.17%
+96.56%
+Hagniﬁnder
+98.02%
+97.41%
+95.29%
+96.92%
+Hagni40
+Zaveri et al.12
+99.14%
+98.83%
+99.2%
+99.19%
+Hagniﬁnder
+100%
+99.79%
+99.25%
+93.29%
+H. Zhang et al.
+Journal of Pathology Informatics 14 (2023) 100302
+10

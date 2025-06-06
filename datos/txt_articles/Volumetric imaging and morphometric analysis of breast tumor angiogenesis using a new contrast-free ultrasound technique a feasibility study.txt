@@ -1,0 +1,1172 @@
+Gu et al. Breast Cancer Research           (2022) 24:85  
+https://doi.org/10.1186/s13058-022-01583-3
+RESEARCH
+Volumetric imaging and morphometric 
+analysis of breast tumor angiogenesis using 
+a new contrast‑free ultrasound technique: 
+a feasibility study
+Juanjuan Gu1†, Redouane Ternifi1†, Soroosh Sabeti1, Nicholas B. Larson2, Jodi M. Carter3, Robert T. Fazzio4, 
+Mostafa Fatemi1† and Azra Alizad1,4*† 
+Abstract 
+Background:  There is a strong correlation between the morphological features of new tumor vessels and malig-
+nancy. However, angiogenic heterogeneity necessitates 3D microvascular data of tumor microvessels for more reliable 
+quantification. To provide more accurate information regarding vessel morphological features and improve breast 
+lesion characterization, we introduced a quantitative 3D high-definition microvasculature imaging (q3D-HDMI) as a 
+new easily applicable and robust tool to morphologically characterize microvasculature networks in breast tumors 
+using a contrast-free ultrasound-based imaging approach.
+Methods:  In this prospective study, from January 2020 through December 2021, a newly developed q3D-HDMI 
+technique was evaluated on participants with ultrasound-identified suspicious breast lesions recommended for core 
+needle biopsy. The morphological features of breast tumor microvessels were extracted from the q3D-HDMI. Leave-
+one-out cross-validation (LOOCV) was applied to test the combined diagnostic performance of multiple morphologi-
+cal parameters of breast tumor microvessels. Receiver operating characteristic (ROC) curves were used to evaluate the 
+prediction performance of the generated pooled model.
+Results:  Ninety-three participants (mean age 52 ± 17 years, 91 women) with 93 breast lesions were studied. The 
+area under the ROC curve (AUC) generated with q3D-HDMI was 95.8% (95% CI 0.901–1.000), yielding a sensitivity of 
+91.7% and a specificity of 98.2%, that was significantly higher than the AUC generated with the q2D-HDMI (p = 0.02). 
+When compared to q2D-HDMI, the tumor microvessel morphological parameters obtained from q3D-HDMI provides 
+distinctive information that increases accuracy in differentiating breast tumors.
+Conclusions:  The proposed quantitative volumetric imaging technique augments conventional breast ultrasound 
+evaluation by increasing specificity in differentiating malignant from benign breast masses.
+© The Author(s) 2022. Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which 
+permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the 
+original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line 
+to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory 
+regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this 
+licence, visit http://​creat​iveco​mmons.​org/​licen​ses/​by/4.​0/. The Creative Commons Public Domain Dedication waiver (http://​creat​iveco​
+mmons.​org/​publi​cdoma​in/​zero/1.​0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data.
+Open Access
+†Juanjuan Gu and Redouane Ternifi: Shared first authorship
+†Mostafa Fatemi and Azra Alizad: Shared senior authorship
+*Correspondence:  Alizad.Azra@mayo.edu
+4 Department of Radiology, Mayo Clinic College of Medicine and Science, 200 
+1St Street SW, Rochester, MN 55905, USA
+Full list of author information is available at the end of the article
+Page 2 of 15
+Gu et al. Breast Cancer Research           (2022) 24:85 
+Background
+For decades, angiogenesis has been recognized as a driv-
+ing factor for rapid growth and metastasis of malignant 
+solid tumors [1]; as such neovascularization plays a 
+critical role in breast cancer growth and dissemination. 
+Importantly, the structural abnormalities of malignant 
+tumor microvessels are evident not only by high den-
+sity but also by complexity of the newly formed vessels 
+presenting with irregularity and tortuosity [2, 3]. Direct 
+assessment of vessel morphological changes as biomark-
+ers for cancer detection by imaging modalities is an 
+emerging research interest.
+Previous research has demonstrated the ability to 
+obtain microvascular features of breast tumors at super-
+resolution scales [4] although no morphometric analysis 
+was performed. A few studies have proposed ultrasound 
+imaging of tumor microvessels for differentiation of 
+breast masses without using contrast agents [5]; how-
+ever, these efforts were limited to a pixel count method 
+and visual inspection of images for the assessment of 
+vessel shapes and distribution. Recently it has been 
+demonstrated that slow blood flows can be successfully 
+decoupled from strong tissue clutter signal when highly 
+registered spatial–temporal data were processed in the 
+singular-spectrum domain [6]. This approach includes a 
+set of novel vessel enhancement processing algorithms to 
+extract small vessels and suppress unrelated structures in 
+the Power Doppler (PD) image. This approach provides 
+tissue-blood echo separation and prepares the image for 
+quantitative analysis of the microvasculature network 
+and its morphology. Noting that this method can visu-
+alize small sub-millimeter vessels, as small as 300 µm, it 
+has been termed high-definition microvasculature imag-
+ing (HDMI) [6, 7]. HDMI is primarily based on using 
+ultrafast imaging, providing a significantly higher num-
+ber of coherent imaging frames by utilizing plane-wave 
+scanning instead of the conventional focused line-by-line 
+scanning methods [6]. Quantitative analysis of microves-
+sel morphological parameters as new biomarkers is 
+described in [8]. In this work, morphological parameters 
+of 2D HDMI images of breast lesions were extracted and 
+used for lesion characterization [9]. In a more recent 
+comparative study [10], it has been shown that adding 
+the morphological parameter to those of shear wave elas-
+tography parameters improves the overall lesion charac-
+terization performance.
+The integrity of the microvasculature morphology is 
+vital for quantitative analysis [11]. As angiogenesis leads 
+to formation of chaotic and tortuous vessels in malignant 
+lesions [12], vascular information obtained from sin-
+gle imaging plane approach is incomplete [13]. Further-
+more, 2D imaging methods overlook some important 3D 
+structural features of microvessels and their connectivity, 
+leading to underestimation or overestimation of different 
+morphological parameters in a 2D plane [14, 15]. There-
+fore, 3D microvasculature imaging would be helpful for 
+overcoming these limitations as more complete micro-
+vasculature information can be obtained.
+3D microvasculature imaging for differentiation of 
+breast masses including volumetric photoacoustic imag-
+ing, [16, 17] and 3D ultrasound localization microscopy 
+[4, 11–13] are active research area; however, the latter 
+requires IV placement, contrast medium injection and is 
+costly. Efforts towards using contrast-free 3-D ultrasound 
+imaging of microvessels, taking advantage of a high frame 
+rate ultrasound technique, and providing volumetric 
+information to differentiate breast masses using a vascu-
+lar index have been reported [18]; however, morphomet-
+ric analysis was not provided in that study.
+In this work, we introduced a contrast-free quantita-
+tive three-dimensional high-definition microvasculature 
+imaging (q3D-HDMI) method to provide microvascu-
+lature morphological information within a tumor vol-
+ume. The q-HDMI methods (3D and 2D) objectively 
+classify breast tumors in benign or malignant, which 
+makes this method less  operator dependent and elimi-
+nates the observer/reader variability providing a reliable 
+clinical ultrasound imaging. Both the q2D-HDMI and 
+q3D-HDMI techniques are not FDA cleared/approved 
+and they remain investigational. We tested the hypoth-
+esis that the proposed contrast-free 3D microvasculature 
+imaging provides complete and more accurate informa-
+tion regarding vessel morphological features and outper-
+forms q2D-HDMI approach in distinguishing malignant 
+from benign breast masses.
+Materials and methods
+Participants
+This prospective study was approved by our institu-
+tional review board (IRB#: 19-003028) and was Health 
+Insurance Portability and Accountability Act-compliant. 
+Patients over 18 years old were referred by their primary 
+physician to the department of Radiology for diagnostic 
+breast imaging, including conventional ultrasound. One 
+radiologist with 20 years of experience in breast imaging 
+participated in this study. Moreover, the interpretation 
+Keywords:  Contrast-free ultrasound, 3D microvessel imaging, Breast cancer, Vessel morphological features, 
+Quantitative biomarkers
+Page 3 of 15
+Gu et al. Breast Cancer Research           (2022) 24:85 
+	
+of clinical breast imaging, BI-RADS classification using 
+grayscale ultrasound BI-RADS features as well as biopsy 
+localization have been done by six different radiologists 
+with 10–30 years of experience in breast imaging; how-
+ever, they were not part of our investigative team and did 
+not participate in data interpretation and or data analy-
+sis. Those patients with ultrasound-identified suspicious 
+breast lesions recommended for biopsies were enrolled 
+for this study. A signed written informed consent with 
+permission for publication was obtained from each 
+enrolled participant prior to the study. From January 
+2020 through December 2021, 2 males and 91 females 
+were enrolled in this study. None of the patient popula-
+tion used in this study was previously reported. Partici-
+pants’ information is summarized in Fig. 1. No selection 
+bias, such as on age, sex and mass size or presence of vas-
+cularity in breast masses was present in our study elimi-
+nating pre-test probability of malignancy. All participants 
+underwent core needle breast biopsy within an hour 
+after the q3D-HDMI studies. Therefore, all the benign 
+lesions were pathologically confirmed and did not need 
+follow-up visits. A 14-gauge cutting needle was utilized. 
+Five biopsy cores were obtained in each case. Pathology 
+results reported by an experienced breast pathologist 
+with more than 20 years’ experience served as the refer-
+ence gold standard.
+Quantitative 3D high‑definition microvasculature imaging
+Ultrasound scanning was performed by one of two 
+experienced sonographers with more than 30 and 
+15  years of clinical ultrasound scanning experience. A 
+programmable ultrasound machine, Verasonics Vantage 
+256 system (Verasonics Inc., Redmond, WA), synchro-
+nized with a mechanical servo control scanning system 
+was used for the study. A linear probe (L11-4v with cen-
+tral frequency at 6.25 MHz) was mounted on a motorized 
+mechanical translation arm. The motor controller trans-
+lated the linear array transducer along the elevational 
+direction during data acquisition (Fig. 2a). Patients were 
+asked to lie down on the back. If the lesion was located 
+at the breast outer quadrant, a pillow was put behind the 
+back with the patient face towards the side. It is known 
+that peritumoral microvasculature and its morphology 
+are important distinctive factors between malignant and 
+benign [9, 19, 20]. Accordingly, our scanning method was 
+designed to include the peritumoral vascularity. For this 
+purpose, the sonographer first located the breast mass 
+on the B-mode image and moved the probe to identify 
+mass margins in all directions. Then, depending on the 
+mass size, the sonographer repositioned the ultrasound 
+probe to a few or several millimeters outside the mass 
+margin into the normal background tissue. Starting from 
+this point, the probe was set to automatically scan the 
+breast in steps, covering the entire mass from one side to 
+the other, and stopped a few to several millimeters after 
+the mass margin has totally disappeared from the image 
+on the opposite side. The sonographer monitored the 
+whole scanning process to confirm that the whole mass 
+was scanned properly. The translation step size was kept 
+at 0.5  mm for all studies, providing a balance between 
+acquisition time and 3D image quality. At each step, 
+plane wave imaging was performed at a pulse repetition 
+Fig. 1  Flowchart for the participants enrolled in this study
+Page 4 of 15
+Gu et al. Breast Cancer Research           (2022) 24:85 
+frequency of 550  Hz and 5 compounding angles. One 
+thousand one hundred frames were acquired. The trans-
+ducer was then placed on freeze mode for 2 s to save the 
+IQ data. Next, the controller translated the transducer 
+to the next scanning plane to continue data acquisi-
+tion. Both the transverse and longitudinal orientations 
+were acquired for most of the patients. For the lesions 
+very close to the nipple, only one orientation easier for 
+mechanical arm movement was scanned. In this study, 
+the total scanning time was less than 5 min along each 
+orientation. During data acquisition, the patient was 
+instructed to remain still and breathe normally.
+3D reconstruction and quantification of vessel morphology
+For each lesion, the raw data acquired at each scanning 
+step was first processed using MATLAB (MathWorks, 
+Natick, MA) with the q2D-HDMI technique as detailed 
+in [6, 7]. Briefly, clutter filtering, background noise reduc-
+tion and a series of morphology filtering techniques 
+were applied to extract the microvessels. This process 
+resulted in a set of successive 2D B-mode images and the 
+corresponding microvessel images of lesions along the 
+scanning direction, as shown in Fig. 2b.
+The 2D images were then imported into a commercial 
+software package, Amira 3D (Thermo Fisher, Waltham, 
+MA), for 3D reconstruction [21]. Details for the 3D vol-
+ume rendering setup are shown in Appendix 1. Figure 2b 
+shows an example with the reconstructed microves-
+sel image overlaid on the dilated lesion image. Finally, 
+the 3D structure was exported as a series of 2D images 
+for extracting quantitative parameters. To include more 
+peripheral zone vascularity, each extracted 2D image 
+from 3D scanning was segmented with 2 to 5 mm dila-
+tion operation, depending on size of breast mass.
+MATLAB was used for quantitative analysis of the 
+2D images obtained from Amira 3D. The thinning algo-
+rithm as described in [7, 22] was used to extract the 
+skeleton. Figure 2c shows the 3D skeleton image exam-
+ple reconstructed using MATLAB. The skeleton image 
+was used for extracting quantitative parameters: vessel 
+density (VD), maximum vessel diameter (Dmax), mean 
+vessel diameter (Dmean), maximum Murray’s deviation 
+­(MDmax), mean Murray’s deviation ­(MDmean), maximum 
+Fig. 2  a Illustration of the 3D data acquisition process. The linear array moves along the black dotted arrow to acquire 3D data at a step size 
+of 0.5 mm. b Images acquired at each scanning step were processed and rendered to generate the 3D microvessel structure. c Quantitative 
+parameters were extracted based on the 3D structure. Finally, the quantitative parameters could be input to the statistical model for lesion 
+differentiation. HDMI = high-definition microvasculature imaging
+Page 5 of 15
+Gu et al. Breast Cancer Research           (2022) 24:85 
+	
+bifurcation angle ­(BAmax), mean bifurcation angle 
+­(BAmean), microvessel fractal dimension (mvFD), num-
+ber of branch points (NB), number of vessel segments 
+(NV), mean tortuosity (τmean) and maximum tortuosity 
+(τmax). The same parameters were also obtained for q2D-
+HDMI by analyzing the microvessel image acquired at 
+the scanning step, which corresponded to the B-mode 
+image with the largest lesion cross section. The detailed 
+list of microvessel morphological Parameters is shown in 
+Table 1.
+Statistical analysis
+Statistical analysis was conducted with RStudio (R ver-
+sion 4.0.4, Boston, MA, USA). The Wilcoxon rank sum 
+test was used to compare the quantitative parameters 
+by malignancy status. A two-sided p value less than 
+0.05 was considered statistically significant. In cases, 
+where the vessel has no branches, the values for ­BAmean, 
+­BAmax, ­MDmean and ­MDmax parameters are undefined, 
+and the quantification algorithm outputs a not a number 
+(NaN) value. Analysis with the NaN value is described 
+in Appendix 2. All quantitative parameters, including 
+the sub-parameters were combined using the multi-
+variable logistic regression analysis, and those with high 
+p values (> 0.05) were dropped from the model as the 
+addition of these parameters did  not improve the pre-
+diction accuracy. To finally test the combined diagnos-
+tic performance of multiple morphological parameters, 
+including the sub-parameters, leave-one-out cross-val-
+idation (LOOCV) was used. The LOOCV method has 
+the advantage that it can compensate for the overfit-
+ting problem due to a limited sample size [23]. Malig-
+nancy probability was calculated for each lesion, and 
+malignancyprobability = logit−1(B +
+n
+i=1 CiPi) , where 
+B and Ci are constants obtained from LOOCV, Ci is the 
+coefficient for the corresponding quantitative biomarker 
+Pi ; n is the number of quantitative biomarkers included 
+in the prediction model; logit−1(α) = 1/(1 + exp(−α)) . 
+Receiver operating characteristic (ROC) curves were 
+used to evaluate the performance of the pooled model 
+predictions generated from the LOOCV analysis, and 
+the optimal cut-point was defined as the point closest 
+to the point (0,1) on the ROC curve. The corresponding 
+95% confidence interval (CI), sensitivity, specificity, posi-
+tive predictive value (PPV) and negative predictive value 
+(NPV) were compared to evaluate the performance of 
+different models. DeLong’s test for paired observations 
+[24] was also conducted based on the area under the 
+curve (AUC) for the model performance comparison. 
+ROC curves generated with the VD, NB, τmean, mvFD, 
+­MDmax, ­MDmean, ­BAmax and ­BAmean for differentiating 
+benign from malignant lesions using q2D-HDMI and 
+q3D-HDMI were compared. For both q2D-HDMI and 
+q3D-HDMI, quantitative parameters VD, mvFD, τmax, 
+NV, NB, Dmean were included in the LOOCV model.
+Results
+q3D‑HDMI biomarkers outperformed q2D‑HDMI 
+biomarkers for breast lesion differentiation
+Of the 93 enrolled patients (mean age 52 ± 17  years, 
+ranges from 18 to 84 years, 2 men and 91 women), 93 
+breast masses were examined by q3D-HDMI imaging. 
+Table  2 summarizes the lesion information included 
+in this study. Lesion size along the largest dimen-
+sion ranged from 3 to 46  mm with a mean value of 
+14.7 ± 9.4  mm. Ultrasound guided core needle breast 
+biopsy results revealed 57 benign and 36 malignant 
+lesions. The most common benign histologic type 
+was fibroadenoma n = 24 (42.1%). Among the malig-
+nant lesions, the most common was invasive ductal 
+carcinoma (IDC), n = 28 (77.8%). The morphological 
+parameters of q3D- and q2D-HDMI for benign and 
+malignant lesions are summarized in Table 3. For both 
+the q2D-HDMI and q3D-HDMI, the values for VD, 
+Table 1  List of the quantitative microvessel morphological parameters
+Note ‒ Subscript mean and max indicate the corresponding mean and maximum value, respectively
+Biomarkers
+Definition and calculation
+NB
+Numbers of branch points: defined as any node that is connected to three or more vessel segments
+NV
+Number of vessel segments
+VD
+Vessel density: defined as the proportion of vessel area with blood flow over the total area measured
+D (mm)
+Vessel diameter (Dmean, Dmax): defined as two times of the minimum distance between the vessel 
+centerline and the vessel border
+τ
+Vessel tortuosity (τmean, τmax): Distance metric measures vascular tortuosity
+MD
+Murray’s deviation: diameter mismatch, defined as the deviation from Murray’s law, increases in the 
+vasculature network of malignant tumors
+mvFD
+Microvessel fractal dimension: A unit-less geometrical feature that is a marker of microvascular 
+complexity
+BA (°)
+Bifurcation angle: refers to the angle between two daughter vessels
+Page 6 of 15
+Gu et al. Breast Cancer Research           (2022) 24:85 
+mvFD, NV, τmax and τmean were significantly higher for 
+malignant lesions with p < 0.001. Significant differences 
+between benign and malignant lesions were found for 
+both the Dmean and Dmax obtained from q2D-HDMI 
+with p < 0.001 and p = 0.002, respectively. However, 
+no significant difference was found for Dmean or Dmax 
+obtained from q3D-HDMI with p = 0.35 and p = 0.42, 
+respectively.
+The boxplots for four representative biomarkers VD, 
+NB, τmean and mvFD obtained with q3D-HDMI and 
+q2D-HDMI are shown Fig. 3. Compared to q2D-HDMI, 
+the q3D-HDMI showed higher mean NB, τmean and 
+mvFD. Also, q3D-HDMI showed lower averaged VD 
+values for both benign and malignant lesions; this was 
+expected as the vessel density in 2D is calculated per unit 
+area, whereas in 3D it is calculated per unit volume. As 
+shown in Fig.  3, ROC curves generated with a param-
+eter obtained from q3D-HDMI demonstrated improved 
+discrimination versus those generated with the same 
+parameter obtained from q2D-HDMI. Significant differ-
+ence was found for the ROC curve for NB with the cor-
+responding DeLong test p values < 0.001.
+The conventional B-mode and Doppler ultrasound, 
+q2D- and q3D-HDMI images of two malignant lesions, 
+large (as large as 36-mm) and small (as small as 3-mm) 
+and two benign breast lesions are shown in Fig. 4 for vis-
+ual comparison. The corresponding videos of the 3D ren-
+dered microvasculature images are shown in Additional 
+files 1–4. For both the large and small malignant lesions, 
+while 2D-HDMI shows high-definition images of tumor 
+vascularity, the 3D-HDMI shows complete connectivity 
+of vascularity inside and around the breast tumor. For all 
+lesions, there are more microvessels with complete con-
+nectivity in the q3D-HDMI images. Compared to q2D-
+HDMI, the benign lesion vessels shown in q3D-HDMI 
+are more regular and straight with fewer branch points, 
+presenting less complexity when compared to those of 
+both of large and small malignant masses, indicating the 
+benignity of these breast lesions. The quantitative bio-
+markers obtained by both q3D-HDMI and q3D-HDMI 
+are detailed in the table in row below of each breast 
+lesion in Fig. 4 for comparison.
+Table 2  Summary of the lesion information
+a Atypical: atypical ductal hyperplasia cases (2) and atypical lobular hyperplasia 
+case (1)
+b Other benign changes: fat necrosis (1), duct ectasia (3), gynecomastia (1), 
+cavernous hemangioma (1), tubular adenoma, organizing abscess with 
+associated granulomatous reaction (1)
+Lesion 
+number
+Total
+93
+Female
+91
+Male
+2
+BI-RADS 3
+1
+Benign
+1
+Malignant
+0
+BI-RADS 4
+82
+Benign
+55
+Malignant
+27
+BI-RADS 5
+10
+Benign
+1
+Malignant
+9
+Benign
+57
+Fibroadenoma
+24
+Fibrocystic changes and Dense stromal fibrosis
+12
+Pseudoangiomatous stromal hyperplasia (PASH)
+3
+aAtypical
+3
+Papillomas
+4
+Radial scar
+3
+bOther benign changes
+8
+Malignant
+36
+Invasive ductal carcinoma
+28
+Ductal carcinoma in situ
+5
+Invasive mammary carcinoma with mixed ductal and lobular 
+features
+3
+Table 3  q3D HDMI and q2D HDMI parameters for benign and 
+malignant lesions
+Data are presented as mean ± SD format
+a p values are based on Wilcoxon rank sum test and a value less than .05 was 
+considered statistically significant
+HDMI = high-definition microvasculature imaging
+Benign (57)
+Malignant (36)
+p ­valuea
+3D HDMI
+ VD
+0.001 ± 0.001
+0.003 ± 0.002
+ < .001
+ Dmean (mm)
+657.6 ± 99.2
+637.5 ± 94.7
+.35
+ Dmax (mm)
+1056.8 ± 242.6
+1033.4 ± 240.5
+.62
+ mvFD
+0.932 ± 0.168
+1.221 ± 0.161
+ < .001
+ NB
+2.0 ± 4.9
+13.5 ± 21.8
+ < .001
+ NV
+7.1455 ± 11.5557
+14.4 ± 12.2
+ < .001
+ τmean
+1.2 ± 0.2
+2.0 ± 1.0
+ < .001
+ τmax
+2.0 ± 1.5
+8.6 ± 12.5
+ < .001
+2D HDMI
+ VD
+0.0031 ± 0.0042
+0.0177 ± 0.0372
+ < .001
+ Dmean (mm)
+470.2 ± 529.8
+731.4 ± 172.0
+ < .001
+ Dmax (mm)
+885.8 ± 1768.3
+1118.1 ± 302.8
+.002
+ mvFD
+0.411 ± 0.409
+0.872 ± 0.215
+ < .001
+ NB
+0.018 ± 0.135
+0.229 ± 0.490
+.003
+ NV
+1.7 ± 1.8
+3.7 ± 2.9
+ < .001
+ τmean
+1.0 ± 0.03
+1.1 ± 0.04
+ < .001
+ τmax
+1.2 ± 0.2
+1.4 ± 0.4
+ < .001
+Page 7 of 15
+Gu et al. Breast Cancer Research           (2022) 24:85 
+	
+Fig. 3  Comparison of the quantitative parameters between benign and malignant lesions obtained with q2D- and q3D-HDMI and the ROC 
+curves. Parameters of q3D-HDMI are shown in first column: a vessel density, b number of branches, c mean tortuosity, and d microvessel fractal 
+dimension. Parameters of q2D HDMI are shown in second column: e vessel density, f number of branches, g mean tortuosity, and h microvessel 
+fractal dimension. Comparison of the ROC curves between q2D HDMI and q3D HDMI generated with i vessel density, j number of vessel segments, 
+k mean tortuosity, and l microvessel fractal dimension. HDMI = high-definition microvasculature imaging
+Page 8 of 15
+Gu et al. Breast Cancer Research           (2022) 24:85 
+Fig. 4  Visual presentation of conventional B-mode and Doppler ultrasound, q2D- and q3D-HDMI images of malignant and benign breast lesions. 
+a–f Illustration of a 36 mm breast mass, invasive ductal carcinoma, Nottingham grade III, from a 55-yrs-old female. g–l Illustration of a small 3 mm 
+breast lesion, invasive ductal carcinoma Nottingham grade II, from a 40-yr-old female. m–r Illustration of a 16 mm breast lesion, benign dense 
+stromal fibrosis, from a 43-yrs-old female. s–x Illustration of a 26 mm mass due with pathology indicating benign gynecomastia from a 79-yrs-old 
+male. The first column (a, g, m, s) are the clinical B-mode images. The second column (b, h, n, t) are the corresponding 2D color Doppler images. 
+The third column (c, i, o, u) are the corresponding 2D high-definition microvasculature imaging (HDMI) images. The fourth (d, j, p, v) and the fifth 
+(e, k, q, w) columns are the corresponding 3D HDMI images obtained at different views. The quantitative parameters for the two malignant and 
+benign lesions obtained from q3D-HDMI and q2D-HDMI are shown in the figures (f, l, r, x). HDMI = high-definition microvasculature imaging
+Page 9 of 15
+Gu et al. Breast Cancer Research           (2022) 24:85 
+	
+Lesion differentiation analysis with LOOCV
+The ROC curves generated with ­MDmax, ­MDmean, ­BAmax 
+and ­BAmean obtained from q3D-HDMI and q2D-HDMI 
+are shown in Fig. 5a and b, respectively. All four param-
+eters obtained from q3D-HDMI gave a significantly 
+higher AUC when compared to the results obtained from 
+q2D-HDMI, with p < 0.001. For both q2D-HDMI and 
+q3D-HDMI, quantitative parameters VD, mvFD, τmax, 
+NV, NB, Dmean were included in the ROC Curves gener-
+ated with the LOOCV model, as shown in Fig. 5c. The 
+AUC for ROC curve of the q2D-HDMI was 83.8% (95% 
+CI 75.2–92.3%). The corresponding sensitivity, specific-
+ity, PPV, and NPV were 86.1%, 75.4%, 68.9% and 89.6%, 
+respectively. The AUC increased significantly (p = 0.02) 
+for q3D-HDMI and it was 95.8% (95% CI 0.901–1.000). 
+The corresponding sensitivity, specificity, PPV, and NPV 
+were 91.7%, 98.2%, 97.1%, 94.9%, respectively. The nega-
+tive likelihood ratio (NRL) for q2D-HDMI and q3D-
+HDMI were 0.184 and 0.085, respectively.
+Fig. 5  a ROC curves generated with ­MDmax, ­MDmean, ­BAmax and ­BAmean obtained from 3D high-definition microvasculature imaging (q3D-HDMI). 
+b ROC curves generated with ­MDmax, ­MDmean, ­BAmax and ­BAmean obtained from 2D high-definition microvasculature imaging (q2D-HDMI). c 
+ROC curves generated with the leave-one-out cross-validation (LOOCV) method for q2D-HDMI and q3D-HDMI method. For both q2D-HDMI 
+and q3D-HDMI, quantitative parameters VD, mvFD, τmax, NV, NB, ­Dmean were included in the LOOCV model. d Boxplot of the distribution of 
+the malignancy probability for each lesion in each BI-RADS category. The coefficients included in the equation for calculating the malignancy 
+probability were obtained with LOOCV. The malignancy probability was calculated with LOOCV for the q3D HDMI. The dashed red line indicates 
+the cutoff for differentiating benign from malignant lesions. The red dots represent the malignant lesions, and the blue dots represent the benign 
+lesions. HDMI = high-definition microvasculature imaging. ROC = receiver operating characteristic. LOOCV = Leave-one-out cross-validation
+Page 10 of 15
+Gu et al. Breast Cancer Research           (2022) 24:85 
+The malignancy probability [9] was calculated with 
+LOOCV for q3D-HDMI. Figure  5d shows the malig-
+nancy probability distribution for each lesion in each 
+BI-RADS category for q3D-HDMI. The cutoff value 
+of the malignancy probability is 0.668, denoted by a 
+red dashed line in Fig.  5d. As illustrated in Fig.  5d, 
+the benign and malignant lesions in BI-RADS 3 and 
+4 groups were captured successfully with the q3D-
+HDMI. There were three false negatives (represented 
+by red dots below the red dashed line) and one false 
+positive (represented by blue dot above the red dashed 
+line). Among the three false negatives, there were two 
+ductal carcinomas in  situ (DCIS), low nuclear grade 
+cribriform type, one 9 mm, and the second was 14 mm 
+in diameter. The third false negative case was a male 
+patient whose breast pathology indicating a 20  mm 
+invasive ductal carcinoma, Nottingham grade II (of 
+III), subtype category of Luminal A (estrogen and pro-
+gesterone receptors positive, HER2- negative and low 
+levels of the protein Ki-67). The pathology of false posi-
+tive was a 12  mm size fibroadenoma with lactational 
+changes in background breast parenchyma from a 
+female patient. The biopsy results of benign lesions also 
+revealed 3 radial scars and 12 fibrocystic changes with-
+out hyperplasia. The prediction model of q3D-HDMI 
+correctly predicted all three radial scars and 12 fibro-
+cystic changes as benign. Figure  6 shows an example 
+of a 8 mm radial scar next to a 10 mm invasive ductal 
+carcinoma.
+Discussion
+In this study, we presented in  vivo imaging of breast 
+tumor microvessels volumetrically along with com-
+prehensive quantitative analysis of tumor microvessels 
+extracted from the novel q3D-HDMI for the first time. 
+No contrast agent was applied. We demonstrated that 
+q3D-HDMI outperforms the 2D approach and increases 
+the accuracy in malignancy prediction of breast lesions.
+The results of our study included one false positive. The 
+pathology confirmed the lesion to be a fibroadenoma with 
+lactational changes in background breast parenchyma. 
+It is known that fibroadenoma is a hormone sensitive 
+Fig. 6  Visual presentation of conventional B-mode and Doppler ultrasound, and q3D-HDMI images of a radial scar and an invasive ductal 
+carcinoma. a-c Illustration of a 8 mm breast mass, fragments of radial scar with florid usual type ductal hyperplasia and apocrine, from a 55-yrs-old 
+female. d–f Illustration of a 10 mm breast mass, invasive ductal carcinoma, Nottingham grade II, from a 60-yrs-old female
+Page 11 of 15
+Gu et al. Breast Cancer Research           (2022) 24:85 
+	
+tumor and often becomes enlarged with increased vas-
+cularity during pregnancy and lactation. Furthermore, 
+fibroadenoma tends to get atypical radiological features 
+during pregnancy and lactation, necessitating core nee-
+dle biopsy to confirm the diagnosis [25]. The study also 
+included 3 false negatives. The pathology of two of false 
+negatives was DCIS with low nuclear grade cribriform 
+type. Studies show that low-grade DCIS tend to have less 
+vascularity and may develop into low-grade invasive car-
+cinoma [26]. Indeed, Grade 1 DCIS generates much less 
+angiogenesis than high nuclear grade of DCIS [27]. In 
+other words, the false negativity of these low-grade DCIS 
+in our study is more physiologic than a technical issue. 
+The third false negative was IDC Nottingham grade II 
+(of III), subtype category of Luminal A. It is known that 
+luminal A subtypes are slow growing cancers and have 
+low microvessel density with less structural complexity 
+and they maintain the best prognosis among all subtypes 
+[28]. In other words, this false negative IDC was more 
+physiologic than a technical issue.
+Radial scars are often difficult to differentiate from 
+IDC on conventional imaging and pathology review is 
+often non-trivial [29]. All three radial scars included in 
+this study were correctly predicted as benign. Thus, with 
+q3D-HDMI, the microvasculature features of radial scars 
+could assist for more accurate differentiation. Further-
+more, the proposed prediction model correctly predicted 
+all the masses with fibrocystic breast changes without 
+evidence of hyperplasia as benign. Our finding is sup-
+ported by report of previous study indicating that fibro-
+cystic breast disease without hyperplasia shows lower 
+grade microvessel density compared to those associated 
+with hyperplasia [30].
+Though, 3D power Doppler ultrasound for breast 
+cancer diagnosis [31] and contrast agent mediated 3D 
+ultrasound localization microscopy on tumor bearing 
+rats [13] demonstrated the potential of such volumetric 
+techniques; our study demonstrated the effectiveness of 
+the q3D-HDMI through a comprehensive quantitative 
+in  vivo study for characterization of breast masses in 
+human.
+It is known that angiogenesis, the formation of new 
+microvessels toward and within a malignant breast 
+tumor, starts when the tumor reaches the size of 2–4 mm 
+in diameter [32]. One of the important findings in this 
+study is that q3D-HDMI was able to capture the micro-
+vasculature structures in a breast lesion as small as 3 mm. 
+Furthermore, the q3D-HDMI displayed more vessels 
+with better connectivity in this small tumor than what 
+was possible with q2D-HDMI. As a result, the predic-
+tion model based on q3D-HDMI quantitative biomark-
+ers correctly diagnosed this small lesion as malignant. It 
+is known that male breast cancer has even more intense 
+angiogenic reaction than female breast cancer [33], this 
+is in support of our study, which included two men with 
+breast masses and q3D-HDMI quantitative biomarkers 
+correctly diagnosed them as invasive ductal carcinoma.
+To the best of our knowledge, this study is the first to 
+compare 3D and 2D microvessel images quantitatively 
+and demonstrates that the new 3D microvasculature 
+imaging technique, q3D-HDMI, is superior to the cur-
+rent q2D-HDMI method for several reasons. With 2D 
+microvasculature imaging, only one plane of the lesion 
+can be evaluated [13]. In our study, for the 2D analysis, 
+the microvessel image corresponding to the B-mode 
+image with the largest lesion area was selected. How-
+ever, the microvasculature information in the malignant 
+lesion is highly spatially heterogeneous, and therefore the 
+microvessel information could largely vary from slice to 
+slice, making it hard to select a representative 2D slice for 
+analysis. Therefore, the microvasculature morphological 
+features obtained on a single plane in 2D imaging may 
+not be a true estimation and could be underestimated 
+or overestimated [14]. For example, our study showed 
+that the mvFD, NB and tortuosity information obtained 
+from q3D-HDMI was significantly higher than the same 
+parameters obtained from q2D-HDMI and significantly 
+different in benign and malignant. In addition, q2D-
+HDMI can visualize the vessel only in a two-dimensional 
+space, hence vessels extending outside the imaging plane 
+and their morphological parameters would not be cap-
+tured. On the other hand, q3D-HDMI captures the entire 
+vessel network and their morphological parameters, pro-
+viding a more accurate estimation of such parameters. 
+This finding is in agreement with previous study [14]. 
+Our study also showed that the vessel density measured 
+with q2D-HDMI was significantly higher than that meas-
+ured with 3D, indicating that q2D-HDMI overestimated 
+microvessel density. However, this is expected as the ves-
+sel density in 2D is calculated per unit area, whereas in 
+3D it is calculated per unit volume.
+In this study, the recently introduced parameters for 
+breast cancer detection, Murray’s deviation [8, 34], rep-
+resenting the relationship between mother vessel and 
+daughter vessels and bifurcation angle [8, 35] based on 
+information between the daughter vessels, were signifi-
+cantly different in benign and malignant in q3D-HDMI 
+approach, indicating its ability to accurately visualize 
+branches information in a 3-dimensional space. However, 
+for q2D-HDMI, most of the lesions resulted in NaN val-
+ues for these two parameters, suggesting that no daugh-
+ter vessels were observed.
+Microvessel morphology and its distribution feature 
+vary between benign and malignant breast tumors and 
+are likely to be an important discrimination marker [2, 
+36]. Studies have shown that morphological parameters 
+Page 12 of 15
+Gu et al. Breast Cancer Research           (2022) 24:85 
+of tumor microvessels obtained from contrast-free 
+quantitative 2D-HDMI increases the sensitivity and 
+specificity in discriminating malignant from benign 
+breast masses [7, 9, 10]. The study presented here 
+shows that morphological biomarkers of microvascula-
+ture network obtained by 3D-HDMI outperforms those 
+of q2D-HDMI and increases the sensitivity and speci-
+ficity in differentiating malignant from benign breast 
+masses. It is known that the morphology of the vascu-
+lature in the immediate vicinity of breast tumors plays 
+a significant role in differentiation between cancerous 
+and benign masses. Studies in [19, 37] used a combined 
+optoacoustic and ultrasound images of breast tumors to 
+show that aggressively growing malignant tumors tend 
+to recruit vasculature from the immediate proximity so 
+that small arteries penetrate cancerous tumors radially. 
+In contrast, benign tumors push surrounding vascula-
+ture out, so those vessels appear on and parallel to the 
+surface of fibroadenomas.
+The performance of combined OA and grayscale US 
+for breast lesion differentiation has been shown in [19, 
+37]. Study in [19] also showed that OA/US increased the 
+specificity of breast mass assessment compared with the 
+device internal grayscale ultrasound alone. A direct com-
+parison of the sensitivity/specificity for HDMI and OA/
+US requires a separate comparative study. However, since 
+HDMI and OA/US present different characteristics of 
+breast lesions, it is expected that they could complement 
+each other in breast lesion differentiation. Therefore, it will 
+be interesting to combine q3D-HDMI with OA/US in the 
+future to further improve the specificity of breast lesion 
+differentiation and reduce the unnecessary biopsies.
+Our study had limitations. The sample size was small. 
+Also, to have pathology as gold reference standard, only 
+the participants with recommendation for breast biopsy, 
+nearly all BI-RADS 4 and 5, were enrolled in this study. 
+This prevented a direct comparison between q3D-HDMI 
+and gray scale ultrasound. In the future, we plan to apply 
+this method on a larger population irrespective of their 
+BI-RADS category. Also, there is a potential for data 
+degradation due to breathing motions, as patients were 
+allowed to breathe normally during data collection. In 
+the future we plan to utilize and expand the motion cor-
+rection algorithms [38–40] to reduce potential motion 
+artifacts or to use deep learning technique [41, 42] with 
+potential for correction of motion artifacts.
+Conclusions
+In summary, our study comprehensively  assesses 
+tumor microvessel morphological features in a three-
+dimensional space using our novel contrast-free ultra-
+sound-based quantitative 3D-HDMI. All quantitative 
+parameters obtained from the q3D-HDMI outperformed 
+the q2D-HDMI in differentiating malignant versus 
+benign breast masses. Appendix 3 explains a practical 
+way for applying this new q3D-HDMI technique clini-
+cally. In the future, the proposed method can offer a new 
+means for breast mass characterization when used as a 
+complementary imaging tool to conventional ultrasound.
+Appendix 1: 3D volume rendering using Amira 3D 
+and quantification
+After importing the 2D images to the Amira 3D software, 
+the voxel size along the elevational direction was set as 
+0.25 mm as the scanning step size was 0.5 mm. The B-mode 
+images at different slices were segmented along the lesion 
+boundary to reconstruct the 3D volume of the lesion. Simi-
+larly, the 3D microvessel image was reconstructed using the 
+ensemble of the 2D microvessel images along the elevational 
+direction. The “Structure enhancement filter” function was 
+first applied to automatically identify the blood vessels, and 
+therefore, enhanced the 3D structures [21]. With this fil-
+ter, a score between 0 and 1 was computed for each pixel 
+in the 3D image, with 0 representing the background and 
+1 representing a good matching with the structure model. 
+The score was calculated based on the Hessian matrix of the 
+image and the Hessian matrix was computed by filtering the 
+image with the derivative of a Gaussian kernel. The size of 
+the Gaussian kernel controlled the scale of analysis since the 
+structures were detected from minimum standard deviation 
+value to the maximum value at a constant step size. In this 
+study, the standard deviation maximum and minimum val-
+ues were set as 1 and 2, respectively, and the step was set 
+as 0.5. The lesion volume was dilated 2 mm along the seg-
+mented lesion boundary, and the 3D microvessel image was 
+masked with the dilated lesion volume.
+Later, the “Threshold by criterion” function was applied 
+to the 3D structure. The criterion value was set between 
+0 and 1.0, and the signals with amplitude less than the 
+criterion value were considered as artifacts or noise and 
+were removed. For most of the lesions, the threshold was 
+set empirically as 0.03. A smaller threshold was applied 
+for deep-seated lesions as it was expected that signal 
+intensity decreased with increased penetration [11, 43]. 
+A larger threshold was applied if obvious large motion 
+artifacts existed. Appendix Fig. 7a shows an example for 
+the 3D microvessel structure. Next, the “Fill holes” func-
+tion was used to fill the holes inside the 3D volume struc-
+ture using the interpolation method in which voxels with 
+at least one common vertex were considered connected, 
+irrespective of the volume structure size. After that, the 
+“Remove small spots” function was used to remove 3D 
+objects with total size less than 30 pixels as they were 
+considered as noise or artifacts.
+Page 13 of 15
+Gu et al. Breast Cancer Research           (2022) 24:85 
+	
+MATLAB was used for quantitative analysis of the 2D 
+images obtained from Amira 3D. Appendix Fig. 7b shows 
+the 3D microvessel structure generated using MAT-
+LAB. The thinning algorithm as described in [7, 44] was 
+used to extract the skeleton. Appendix Fig. 7c shows the 
+binary skeleton image. The skeleton image was used for 
+extracting quantitative parameters, as described in [7, 8].
+Appendix 2: Statistical analysis 
+with the parameters with NaN value
+In cases, where the vessel has no branches, the values for 
+­BAmean, ­BAmax, ­MDmean and ­MDmax parameters are unde-
+fined, and outputs a not a number (NaN) value. These NaN 
+values embody structural missingness and contain infor-
+mation that either no vessel was detected in the lesion, or 
+if there was a vessel, it did not have any branches. There-
+fore, it is important to use this information in the statisti-
+cal analysis. Two sub-parameters were derived for each of 
+the above-mentioned parameters. The first sub-parameter 
+was assigned a binary value of 0 if the parameter value was 
+a NaN, or 1, if the parameter value was not a NaN. With 
+this definition, this sub-parameter simply indicates the 
+presence or absence of a branch. The second sub-parame-
+ter was defined as a continuous variable; it was assigned 0 if 
+the parameter value was a NaN, or the original value of the 
+parameter if it had a numeric value. In order to evaluate the 
+diagnostic performance of individual parameters ­BAmean, 
+­BAmax, ­MDmean and ­MDmax, the pair of sub-parameters 
+corresponding to each of these parameters were tested sep-
+arately using multivariable logistic regression analysis.
+Appendix 3: Clinical application of the quantitative 
+3D high‑definition microvasculature imaging
+The q3D-HDMI is a quantitative approach, and objectively 
+classifies breast tumor in benign or malignant, which makes 
+this method less  operator dependent and eliminates the 
+observer/reader variability. The clinical application of this 
+technique would be: 1) quantitative biomarkers, which are 
+extracted automatically by the ultrasound machine imple-
+mented with the q3D-HDMI algorithm, are combined with 
+the prediction model and a malignancy probability will be 
+given for each scanned lesion. The scanning time required 
+for each lesion along each orientation is less than 5  min. 
+With advanced and powerful computation system, real time 
+processing is possible. 2) The malignancy probability is then 
+compared with the cutoff value. The cutoff value proposed 
+in this study does not represent the final optimized value 
+for general population. Multi-center, large population stud-
+ies should be conducted to calculate and validate the cutoff 
+value. 3) If the malignancy probability is higher than the 
+cutoff, indicating that the 3D scanning supports the biopsy. 
+Otherwise, the 3D scanning supports for follow-ups. We 
+want to clarify that the q3D-HDMI technique proposed in 
+this study is not used for replacing the conventional B-mode, 
+or current imaging techniques, but as a complementary for 
+improving the sensitivity and sensitivity in breast lesion dif-
+ferentiation. The final decision whether the patient should 
+undergo the biopsy should be the decision of the radiologist.
+Abbreviations
+qHDMI: Quantitative high-definition microvasculature imaging; ROC: Receiver 
+operating characteristic; LOOCV: Leave-one-out cross-validation; AUC​: Area 
+under the curve; NaN: Not a number; CI: Confidence interval; PPV: Positive pre-
+dictive value; NPV: Negative predictive value; IDC: Invasive ductal carcinoma.
+Supplementary Information
+The online version contains supplementary material available at https://​doi.​
+org/​10.​1186/​s13058-​022-​01583-3.
+Additional file  1. 3D video of the rendered 3D microvasculature image 
+for a 36 mm invasive ductal carcinoma from a 55-yrs-old female with Not-
+tingham grade III.
+Additional file  2. 3D video of the rendered 3D microvasculature image 
+for a 3 mm invasive ductal carcinoma from a 40-yrs-old female with Not-
+tingham grade II.
+Additional file  3. 3D video of the rendered 3D microvasculature image 
+for a 16 mm benign dense stromal fibrosis from a 43-yrs-old female.
+Additional file 4. 3D video of the rendered 3D microvasculature image 
+for a 26 mm benign Gynecomastia from a 79-yrs-old male.
+Fig. 7  Set of q3D-HDMI processing steps after image formation and segmentation to prepare the image for quantification. a Microvasculature 
+image of malignant breast tumor obtained from Amira 3D, b binary microvasculature image generated in MATLAB, c skeleton showing the network 
+of vessels, d the skeleton overlaid on the binary vessel image. HDMI = high-definition microvasculature imaging
+Page 14 of 15
+Gu et al. Breast Cancer Research           (2022) 24:85 
+Acknowledgements
+The authors would like to thank Dr. Rohit Nayak, PhD, Dr. David Rosen, PhD, 
+Ms. Shaheeda A. Adusei, MS., and Mr. Jeremy Webb, MS., for their assistance 
+in data acquisition at different periods during the patient studies. Also, the 
+authors would like to thank Mr. Duane Meixner, R.V.T., R.D.M.S., Ms. Kate Knoll, 
+R.V.T., R.D.M.S for scanning patients, Ms. Cindy Andrist and Ms. Patricia O’Neil 
+for their valuable help in patient recruitment, and Dr. Lucy Bahn, PhD for her 
+editorial help.
+Author contributions
+AA and MF performed conceptualization & design, methodology, investiga-
+tion, administrative, resources, funding and supervision. AA, MF, RTF, JG, SS and 
+RT were involved in visualization. AA, MF, RTF, JG, SS, RT and JMC performed 
+interpretation and validation. AA and JG were involved in writing and editing. 
+MF, RTF, NBL, JMC, SS and RT were involved in critical review and editing. NBL 
+was involved in statistical methods and formal analysis. JG was involved in 
+statistical analysis. JG and RT were involved in image processing. JG performed 
+vessel quantification and data analysis. All authors read and approved the final 
+manuscript.
+Funding
+This work was supported in part by the NIH Grants R01CA239548 and 
+R01CA195527 (A. Alizad and M. Fatemi), R01CA168575 (M. Fatemi). The 
+content is solely the responsibility of the authors and does not necessarily 
+represent the official views of NIH. The NIH did not have any additional role in 
+the study design, data collection and analysis, decision to publish or prepara-
+tion of the manuscript.
+Availability of data and materials
+The data that support the findings of this study are available from the cor-
+responding author upon reasonable request. The requested data may include 
+figures that have associated raw data. Because the study was conducted on 
+human volunteers, the release of patient data may be restricted by Mayo pol-
+icy and needs special request. The request can be sent to: Karen A. Hartman, 
+MSN, CHRC | Administrator—Research Compliance| Integrity and Compliance 
+Office | Assistant Professor of Health Care Administration, Mayo Clinic College 
+of Medicine & Science | 507-538-5238 | Administrative Assistant: 507-266-6286 
+| hartman.karen@mayo.edu Mayo Clinic | 200 First Street SW | Rochester, MN 
+55905 | mayoclinic.org. We do not have publicly available Accession codes, 
+unique identifiers, or web links.
+Code availability
+The custom code or mathematical algorithms that are deemed central to the 
+conclusions are available from the corresponding author upon request.
+Declarations
+Ethics approval and consent to participate
+The Research involved human participants. The study received institutional 
+review board approval (IRB#: 19-003028) and was Health Insurance Portability 
+and Accountability Act (HIPAA) compliant. All procedures performed in this 
+study were in accordance with the ethical standards of the institutional and/
+or national research committee and with the 1964 Helsinki declaration and its 
+later amendments or comparable ethical standards.
+Informed consent
+Signed IRB approved informed consent with permission for publication was 
+obtained from all individual participants included in the study.
+Competing interests
+The authors of this manuscript declare no relationships with any companies, 
+whose products or services may be related to the subject matter of the article 
+and the authors affirm that they have no financial interest related to the 
+technology referenced in this paper.
+Author details
+1 Department of Physiology and Biomedical Engineering, Mayo Clinic College 
+of Medicine and Science, Rochester, MN, USA. 2 Department of Quantitative 
+Health Sciences, Mayo Clinic College of Medicine and Science, Rochester, MN, 
+USA. 3 Department of Laboratory Medicine and Pathology, Mayo Clinic College 
+of Medicine and Science, Rochester, MN, USA. 4 Department of Radiology, 
+Mayo Clinic College of Medicine and Science, 200 1St Street SW, Rochester, 
+MN 55905, USA. 
+Received: 9 May 2022   Accepted: 18 November 2022
+References
+	1.	
+Hanahan D, Weinberg RA. Hallmarks of cancer: the next generation. Cell. 
+2011;144(5):646–74.
+	2.	
+Nagy J, Chang SH, Dvorak AM, Dvorak HF. Why are tumour blood 
+vessels abnormal and why is it important to know? Br J Cancer. 
+2009;100(6):865–9.
+	3.	
+Sharma S, Sharma M, Sarkar C. Morphology of angiogenesis in human 
+cancer: a conceptual overview, histoprognostic perspective and signifi-
+cance of neoangiogenesis. Histopathology. 2005;46(5):481–9.
+	4.	
+Christensen-Jeffries K, Couture O, Dayton PA, Eldar YC, Hynynen K, 
+Kiessling F, O’Reilly M, Pinton GF, Schmitz G, Tang M-X. Super-resolution 
+ultrasound imaging. Ultrasound Med Biol. 2020;46(4):865–91.
+	5.	
+Xiao X-y. Chen X, Guan X-f, Wu H, Qin W, Luo B-m. Superb microvas-
+cular imaging in diagnosis of breast lesions: a comparative study with 
+contrast-enhanced ultrasonographic microvascular imaging. Br J Radiol. 
+2016;89(1066):20160546.
+	6.	
+Bayat M, Fatemi M, Alizad A. Background removal and vessel filtering of 
+noncontrast ultrasound images of microvasculature. IEEE Trans Biomed 
+Eng. 2018;66(3):831–42.
+	7.	
+Ghavami S, Bayat M, Fatemi M, Alizad A. Quantification of morphological 
+features in non-contrast-enhanced ultrasound microvasculature imaging. 
+IEEE Access. 2020;8:18925–37.
+	8.	
+Ternifi R, Wang Y, Polley EC, Fazzio RT, Fatemi M, Alizad A. Quantitative 
+Biomarkers for Cancer Detection Using Contrast-Free Ultrasound High-
+Definition Microvessel Imaging: Fractal Dimension, Murray’s Deviation, 
+Bifurcation Angle & Spatial Vascularity Pattern. IEEE Trans Med Imaging. 
+2021;40(12):3891–900.
+	9.	
+Ternifi R, Wang Y, Gu J, Polley EC, Carter JM, Pruthi S, Boughey JC, Fazzio 
+RT, Fatemi M, Alizad A. Ultrasound high-definition microvasculature imag-
+ing with novel quantitative biomarkers improves breast cancer detection 
+accuracy. Eur Radiol. 2022:1–15.
+	10.	 Gu J, Ternifi R, Larson NB, Carter JM, Boughey JC, Stan DL, Fazzio RT, 
+Fatemi M, Alizad A. Hybrid high-definition microvessel imaging/shear 
+wave elastography improves breast lesion characterization. Breast Cancer 
+Res. 2022;24(1):1–13.
+	11.	 Sridharan A, Eisenbrey JR, Machado P, Ojeda-Fournier H, Wilkes A, Sevru-
+kov A, Mattrey RF, Wallace K, Chalek CL, Thomenius KE. Quantitative analy-
+sis of vascular heterogeneity in breast lesions using contrast-enhanced 
+3-D harmonic and subharmonic ultrasound imaging. IEEE Trans Ultrason 
+Ferroelectr Freq Control. 2015;62(3):502–10.
+	12.	 Sridharan A, Eisenbrey JR, Stanczak M, Daecher A, Machado P, Wilkes A, 
+Sevrukov A, Ojeda-Fournier H, Mattrey RF, Wallace K: Contrast-enhanced 
+nonlinear 3D ultrasound imaging of breast lesions in a clinical popula-
+tion. In: 2016 IEEE International Ultrasonics Symposium (IUS): 2016: IEEE; 
+2016: 1–4
+	13.	 Lin F, Shelton SE, Espíndola D, Rojas JD, Pinton G, Dayton PA. 3-D ultra-
+sound localization microscopy for identifying microvascular morphology 
+features of tumor angiogenesis at a resolution beyond the diffraction 
+limit of conventional ultrasound. Theranostics. 2017;7(1):196.
+	14.	 Harput S, Toulemonde M, Ramalli A, Christensen-Jeffries K, Boni E, Tortoli 
+P, Dunsby C, Tang M-X: Quantitative microvessel analysis with 3-D super-
+resolution ultrasound and velocity mapping. In: 2020 IEEE International 
+Ultrasonics Symposium (IUS): 2020: IEEE; 2020: 1–4.
+	15.	 Shelton SE, Lee YZ, Lee M, Cherin E, Foster FS, Aylward SR, Dayton PA. 
+Quantification of microvascular tortuosity during tumor evolution using 
+acoustic angiography. Ultrasound Med Biol. 2015;41(7):1896–904.
+	16.	 Yang M, Zhao L, Yang F, Wang M, Su N, Zhao C, Gui Y, Wei Y, Zhang R, Li 
+J. Quantitative analysis of breast tumours aided by three-dimensional 
+photoacoustic/ultrasound functional imaging. Sci Rep. 2020;10(1):1–9.
+	17.	 Yamaga I, Kawaguchi-Sakita N, Asao Y, Matsumoto Y, Yoshikawa A, Fukui T, 
+Takada M, Kataoka M, Kawashima M, Fakhrejahani E. Vascular branching 
+Page 15 of 15
+Gu et al. Breast Cancer Research           (2022) 24:85 
+	
+•
+ 
+fast, convenient online submission
+ 
+•
+  
+thorough peer review by experienced researchers in your ﬁeld
+• 
+ 
+rapid publication on acceptance
+• 
+ 
+support for research data, including large and complex data types
+•
+  
+gold Open Access which fosters wider collaboration and increased citations 
+ 
+maximum visibility for your research: over 100M website views per year 
+•
+  
+At BMC, research is always in progress.
+Learn more biomedcentral.com/submissions
+Ready to submit your research
+Ready to submit your research ?  Choose BMC and benefit from: 
+?  Choose BMC and benefit from: 
+point counts using photoacoustic imaging in the superficial layer of 
+the breast: a potential biomarker for breast cancer. Photoacoustics. 
+2018;11:6–13.
+	18.	 Zhang X-Y, Zhang L, Li N, Zhu Q-L, Li J-C, Sun Q, Wang H-Y, Jiang Y-X. 
+Vascular index measured by smart 3-D superb microvascular imaging can 
+help to differentiate malignant and benign breast lesion. Cancer Manag 
+Res. 2019;11:5481.
+	19.	 Neuschler EI, Butler R, Young CA, Barke LD, Bertrand ML, Böhm-Vélez M, 
+Destounis S, Donlan P, Grobmyer SR, Katzen J. A pivotal study of optoa-
+coustic imaging to diagnose benign and malignant breast masses: a new 
+evaluation tool for radiologists. Radiology. 2018;287(2):398–412.
+	20.	 Li Y-J, Wen G, Wang Y, Wang D-X, Yang L, Deng Y-J, Wei H-Q, He J, Zhang 
+X, Gu Y-S. Perfusion heterogeneity in breast tumors for assessment of 
+angiogenesis. J Ultrasound Med. 2013;32(7):1145–55.
+	21.	 Frangi AF, Niessen WJ, Vincken KL, Viergever MA. Multiscale vessel 
+enhancement filtering. In: International conference on medical image 
+computing and computer-assisted intervention: 1998: Springer; 1998: 
+130–137.
+	22.	 Lam L, Lee S-W, Suen CY. Thinning methodologies-a comprehensive 
+survey. IEEE Trans Pattern Anal Mach Intell. 1992;14(09):869–85.
+	23.	 Moons KG, Altman DG, Reitsma JB, Ioannidis JP, Macaskill P, Steyerberg 
+EW, Vickers AJ, Ransohoff DF, Collins GS. Transparent Reporting of a multi-
+variable prediction model for Individual Prognosis or Diagnosis (TRIPOD): 
+explanation and elaboration. Ann Intern Med. 2015;162(1):W1–73.
+	24.	 Sun X, Xu W. Fast implementation of DeLong’s algorithm for comparing 
+the areas under correlated receiver operating characteristic curves. IEEE 
+Signal Process Lett. 2014;21(11):1389–93.
+	25.	 Lee SE, Bae YK. Breast lesions during pregnancy and lactation: a pictorial 
+essay. Ultrasonography. 2020;39(3):298.
+	26.	 Heffelfinger SC, Yassin R, Miller MA, Lower E. Vascularity of proliferative 
+breast disease and carcinoma in situ correlates with histological features. 
+Clin Cancer Res: Off J Am Assoc Cancer Res. 1996;2(11):1873–8.
+	27.	 Teo N, Shoker B, Jarvis C, Martin L, Sloane J, Holcombe C. Vascular density 
+and phenotype around ductal carcinoma in situ (DCIS) of the breast. Br J 
+Cancer. 2002;86(6):905–11.
+	28.	 Zhang X-Y, Cai S-M, Zhang L, Zhu Q-L, Sun Q, Jiang Y-X, Wang H-Y, Li J-C. 
+Association between vascular index measured via superb microvascular 
+imaging and molecular subtype of breast cancer. Front Oncol. 2022, 12.
+	29.	 King TA, Scharfenberg JC, Smetherman DH, Farkas EA, Bolton JS, Fuhr-
+man GM. A better understanding of the term radial scar. Am J Surg. 
+2000;180(6):428–33.
+	30.	 Raman D, Boj S, Arumugam D, Chidambaram L. An assessment of angio-
+genesis in fibrocystic breast disease and invasive breast carcinoma. J Evol 
+Med Dent Sci. 2017;6(78):5553–7.
+	31.	 Kupeli A, Kul S, Eyuboglu I, Oguz S, Mungan S. Role of 3D power Doppler 
+ultrasound in the further characterization of suspicious breast masses. Eur 
+J Radiol. 2016;85(1):1–6.
+	32.	 Weidner N. Current pathologic methods for measuring intratumoral 
+microvessel density within breast carcinoma and other solid tumors. 
+Breast Cancer Res Treat. 1995;36(2):169–80.
+	33.	 Bakkar R, Nahleh Z, Bui H, Samaan S, Sanders J, Namakydoust A, Komrokji 
+R. A comparative analysis of angiogenesis between male and female 
+breast cancers. J Clin Oncol. 2007;25(18_suppl):21101–21101.
+	34.	 Secomb TW, Dewhirst MW, Pries AR. Structural adaptation of normal and 
+tumour vascular networks. Basic Clin Pharmacol Toxicol. 2012;110(1):63–9.
+	35.	 Konerding M, Fait E, Gaumann A. 3D microvascular architecture of 
+pre-cancerous lesions and invasive carcinomas of the colon. Br J Cancer. 
+2001;84(10):1354–62.
+	36.	 Du J, Li F-H, Fang H, Xia J-G, Zhu C-X. Microvascular architecture of breast 
+lesions: evaluation with contrast-enhanced ultrasonographic micro flow 
+imaging. J Ultrasound Med. 2008;27(6):833–42.
+	37.	 Oraevsky A, Clingman B, Zalev J, Stavros A, Yang W, Parikh J. Clinical 
+optoacoustic imaging combined with ultrasound for coregistered 
+functional and anatomical mapping of breast tumors. Photoacoustics. 
+2018;12:30–45.
+	38.	 Nayak R, Kumar V, Webb J, Fatemi M, Alizad A. Non-invasive small vessel 
+imaging of human thyroid using motion-corrected spatiotemporal clut-
+ter filtering. Ultrasound Med Biol. 2019;45(4):1010–8.
+	39.	 Nayak R, Kumar V, Webb J, Gregory A, Fatemi M, Alizad A. Non-contrast 
+agent based small vessel imaging of human thyroid using motion cor-
+rected power Doppler imaging. Sci Rep. 2018;8(1):1–15.
+	40.	 Nayak R, MacNeill J, Flores C, Webb J, Fatemi M, Alizad A. Quantitative 
+assessment of ensemble coherency in contrast-free ultrasound microvas-
+culature imaging. Med Phys. 2021;48(7):3540–58.
+	41.	 Pawar K, Chen Z, Shah NJ, Egan GF: Motion correction in MRI using deep 
+convolutional neural network. In: Proceedings of the ISMRM Scientific 
+Meeting & Exhibition, Paris: 2018; 2018.
+	42.	 Küstner T, Armanious K, Yang J, Yang B, Schick F, Gatidis S. Retrospective 
+correction of motion-affected MR images using deep learning frame-
+works. Magn Reson Med. 2019;82(4):1527–40.
+	43.	 Chen C, Hendriks GA, Fekkes S, Mann R, Menssen J, Siebers CC, De Korte 
+CL, Hansen HH. In vivo 3D power Doppler imaging using continuous 
+translation and ultrafast ultrasound. IEEE Trans Biomed Eng. 2021;69:1042.
+	44.	 Lam L, Lee SW, Suen CY. Thinning methodologies - a comprehensive 
+survey. Ieee T Pattern Anal. 1992;14(9):869–85.
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in pub-
+lished maps and institutional affiliations.

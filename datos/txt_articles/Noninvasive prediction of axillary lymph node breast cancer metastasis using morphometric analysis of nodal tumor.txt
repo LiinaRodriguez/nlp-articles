@@ -1,0 +1,953 @@
+Ferroni et al. Breast Cancer Research           (2023) 25:65  
+https://doi.org/10.1186/s13058-023-01670-z
+RESEARCH
+Open Access
+© The Author(s) 2023. Open Access  This article is licensed under a Creative Commons Attribution 4.0 International License, which 
+permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the 
+original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line 
+to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory 
+regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this 
+licence, visit http://​creat​iveco​mmons.​org/​licen​ses/​by/4.​0/. The Creative Commons Public Domain Dedication waiver (http://​creat​iveco​
+mmons.​org/​publi​cdoma​in/​zero/1.​0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data.
+Breast Cancer Research
+Noninvasive prediction of axillary 
+lymph node breast cancer metastasis using 
+morphometric analysis of nodal tumor 
+microvessels in a contrast‑free ultrasound 
+approach
+Giulia Ferroni1†, Soroosh Sabeti1†, Tasneem Abdus‑Shakur2, Lorenzo Scalise3, Jodi M. Carter4,5, Robert T. Fazzio2, 
+Nicholas B. Larson6, Mostafa Fatemi1† and Azra Alizad1,2*† 
+Abstract 
+Purpose  Changes in microcirculation of axillary lymph nodes (ALNs) may indicate metastasis. Reliable noninvasive 
+imaging technique to quantify such variations is lacking. We aim to develop and investigate a contrast-free ultrasound 
+quantitative microvasculature imaging technique for detection of metastatic ALN in vivo.
+Experimental design  The proposed ultrasound-based technique, high-definition microvasculature imaging (HDMI) 
+provides superb images of tumor microvasculature at sub-millimeter size scales and enables quantitative analysis 
+of microvessels structures. We evaluated the new HDMI technique on 68 breast cancer patients with ultrasound-
+identified suspicious ipsilateral axillary lymph nodes recommended for fine needle aspiration biopsy (FNAB). HDMI 
+was conducted before the FNAB and vessel morphological features were extracted, analyzed, and the results were 
+correlated with the histopathology.
+Results  Out of 15 evaluated quantitative HDMI biomarkers, 11 were significantly different in metastatic and reactive 
+ALNs (10 with P << 0.01 and one with 0.01 < P < 0.05). We further showed that through analysis of these biomark‑
+ers, a predictive model trained on HDMI biomarkers combined with clinical information (i.e., age, node size, cortical 
+thickness, and BI-RADS score) could identify metastatic lymph nodes with an area under the curve of 0.9 (95% CI 
+[0.82,0.98]), sensitivity of 90%, and specificity of 88%.
+Conclusions  The promising results of our morphometric analysis of HDMI on ALNs offer a new means of detecting 
+lymph node metastasis when used as a complementary imaging tool to conventional ultrasound. The fact that it does 
+not require injection of contrast agents simplifies its use in routine clinical practice.
+Keywords  Breast cancer, Ultrasound microvessel imaging, Axillary lymph node metastasis, Flow imaging, Vessel 
+morphological biomarkers
+†Giulia Ferroni and Soroosh Sabeti: Shared first authorship, Mostafa Fatemi 
+and Azra Alizad: Shared senior authorship.
+*Correspondence:
+Azra Alizad
+Alizad.azra@mayo.edu
+Full list of author information is available at the end of the article
+Page 2 of 11
+Ferroni et al. Breast Cancer Research           (2023) 25:65 
+Introduction
+Axillary lymph nodes (ALNs) status is a key predictive 
+factor for distant metastasis and recurrence risk in breast 
+cancer patients [1]. A correct assessment of the status of 
+ALNs is crucial for staging breast cancer and selection 
+of appropriate treatment option. Physical examination, 
+such as palpation of the axilla, is notoriously inaccurate 
+and axillary metastasis estimated by clinical palpation is 
+associated with a large proportion of false-negative rates 
+(%70) and a false-positive rate of 20% [2]. Visualization of 
+ALN is limited in digital mammography or digital breast 
+tomosynthesis, particularly for deeper seated level I and 
+level II nodes [3]. Among the current imaging modali-
+ties, ultrasound (US) is the primary method to evaluate 
+ALNs in women with newly diagnosed breast cancer, and 
+the number of ALN metastases determined by preopera-
+tive ultrasound can be useful in predicting prognosis [4]. 
+However, wide ranges of sensitivity (49–87%) and speci-
+ficity (55–97%) have been reported [5, 6]. The addition of 
+shear wave elastography to conventional US has relatively 
+increased the sensitivity and specificity of ultrasound 
+for breast cancer detection [7, 8], as well as improved 
+prediction of cancer invasiveness and identification of 
+metastatic ALNs [9–11]. Traditionally, preoperative iden-
+tification of axillary metastases is through US-guided 
+biopsy as well as sentinel lymph node biopsy and surgi-
+cal excision, which is associated with complications such 
+as infection as well as long term problems including 
+lymphedema, localized swelling, sensory loss, and weak-
+ness [12–15]. Therefore, a preoperative and noninvasive 
+alternative approach is essential to accurately identify 
+and quantify metastatic ALNs.
+Angiogenesis, or the formation of new blood vessels, is 
+a critical component of progression of the tumor growth 
+and metastasis [16, 17] and has a crucial role in predic-
+tion of cancer aggressiveness and poor prognosis [18]. 
+Studies have suggested that angiogenic activity in meta-
+static tumors, rather than primary tumors, may better 
+predict prognosis in individuals with breast cancer [18, 
+19]. Tumor angiogenesis is generally measured by quan-
+tifying microvessel density (MVD). MVD is positively 
+correlated with prognosis, histological grade, and lymph 
+node status [20]. Moreover, morphological features of 
+tumor microvessels are expected to be important bio-
+markers in differentiating cancerous from non-cancer-
+ous masses [21, 22]. Evaluating the vascularity of ALNs 
+by noninvasive techniques could be useful in predicting 
+lymph node metastasis, especially in the absence of typi-
+cal sonographic findings.
+Only few imaging techniques are capable of visual-
+izing vascularity with tumor size scale and penetration 
+depth. Dynamic contrast-enhanced magnetic resonance 
+imaging (DCE-MRI) may provide noninvasive kinetic 
+information suggesting axillary nodal status, but it has 
+lower specificity; also, it is not affordable or widely avail-
+able [23]. Conventional Doppler US is also useful for 
+identifying nonhilar peripheral blood flow seen in meta-
+static ALNs [24], but it only detects rapid flow, producing 
+highly fragmented, patchy images of vasculature, making 
+the structural analysis of microvessels impossible. Other 
+imaging modalities, such as Photoacoustic imaging, have 
+been employed to visualize microvasculature structure 
+[25]; though, it is only applicable for superficial tumors 
+[26]. Recently, superb microvascular imaging (SMI) [27] 
+and microflow imaging [28] modalities have been inves-
+tigated for detecting metastatic ALN, without using a 
+contrast agent; however, the diagnosis is mostly based on 
+pixel counting and visual inspection.
+Recently, a novel contrast-free ultrasound-based 
+modality has been developed to visualize sub-millim-
+eter vessels as small as 300 μm in diameter [29], named 
+high-definition microvessel imaging (HDMI) [30]. The 
+HDMI approach is equipped with a series of morphologi-
+cal filtering and vessel enhancement in order to quantify 
+tumor vessel morphological parameters as quantitative 
+vessel biomarkers [31, 32]. The performance of quantita-
+tive HDMI biomarkers has been reported for differentia-
+tion of benign and malignant breast masses [30], thyroid 
+nodules [33], and  hepatic masses [34]. We hypothesize 
+that morphometric analysis of node microvessels can 
+objectively distinguish metastatic axillary lymph nodes 
+from reactive, thus rendering this method less operator-
+dependent and eliminating the observer/reader variabil-
+ity for reliable clinical use. To test this hypothesis, gross 
+images of ALN microvasculature and vessel quantitative 
+biomarkers are first derived using the HDMI technique 
+and quantification algorithms [29, 31, 32], to depict the 
+microvascular architecture of ALNs. Furthermore, all the 
+vessel biomarkers are combined to create a model capa-
+ble of classifying the ALN as metastatic or reactive.
+Materials and methods
+Ethics approval
+This prospective single-center study, from June 2018 to 
+October 2022, was approved by the institutional review 
+board (IRB#13-006035 and IRB # 19-003028) and was 
+in accordance with the Health Insurance Portability and 
+Accountability Act. Prior to the study, each enrolled par-
+ticipant signed an IRB approved written informed con-
+sent with permission for publication.
+Study population
+The imaging study was completed on 71 female volun-
+teers with recently diagnosed breast cancer and with 
+suspicious ALNs in clinical ultrasound imaging. The 
+enrolled patients were previously assigned the Breast 
+Page 3 of 11
+Ferroni et al. Breast Cancer Research           (2023) 25:65 
+	
+Imaging Reporting and Data System (BI-RADS) assess-
+ments for breast lesions by their radiologists and referred 
+for breast core needle biopsy as their clinical plan; there-
+fore, BI-RADS scores of 4, 5 or 6 were included. Inclu-
+sion criteria include patients ages 18 and up who had a 
+suspicious axillary lymph node identified by axillary 
+ultrasound and were scheduled for ultrasound guided 
+fine needle aspiration biopsy (FNAB) of ALN, as part of 
+their clinical care. A total of three patients were excluded 
+from the data analysis. Among excluded patients, one 
+scheduled FNAB was cancelled due to benign appear-
+ance of the lymph node at the second look in ultrasound 
+imaging performed just before the procedure, the report 
+of surgery indicated that 0 of 1 sentinel lymph nodes 
+were positive for metastatic disease. Other excluded 
+patients (N = 2) preferred to have FNAB and follow-ups 
+in their hometown. The final cohort included 68 female 
+patients, age 28–88  years (mean ± standard deviation: 
+55.7 ± 12.9  y). Patients did not receive any treatment 
+before the study, and the pathology results of the FNAB, 
+obtained from the clinical record, were used as the refer-
+ence gold standard. All quantitative HDMI studies were 
+conducted prior to FNAB.
+Clinical ultrasound features
+All enrolled patients had clinical breast imaging exami-
+nations and were assigned BI-RADS scores for breast 
+lesions before the breast cancer diagnosis. The axilla 
+was imaged with ultrasound if a breast mass fell into 
+BIRADS 4/5 or if a breast mass was biopsied and posi-
+tive for malignancy. Subsequently, our study patients 
+underwent axillary ultrasound examination as their clini-
+cal care and the morphological features of lymph nodes 
+were assessed. Among the ultrasound features of ALNs, 
+the cortical thickness and the presence or absence of a 
+fatty hilum were considered in analysis as clinical imag-
+ing findings.
+High‑definition microvasculature imaging and extraction 
+of vessel biomarkers
+The imaging studies were performed using an Alpin-
+ion Ecube12-R ultrasound machine (ALPINION Medi-
+cal Systems, Seoul, Korea) with capability of plane wave 
+imaging providing a sequence of high-frame-rate images. 
+A linear array transducer, L3-12H operating at 8.5 MHz 
+(ALPINION Medical Systems, Seoul, South Korea) was 
+used for studying subjects with ALNs. Two sonographers 
+with more than 30 and 18 years of ultrasound scanning 
+experience, conducted the US examination. The axil-
+lary lymph nodes were identified on B-mode plane wave 
+imaging mode and a sequence of high-frame-rate data 
+(at ~ 600 frames per second) was acquired on the ALN 
+site, as detailed in [30]. To reduce undesired compression 
+effect on altering tissue microvessel, our sonographers 
+were instructed to lower the preload during ultrasound 
+examination. To minimize motion artifacts, patients were 
+asked to remain still and hold their breath for around 3 s 
+while the data was being collected. Two acquisitions were 
+made for each orientation of the HDMI scan to improve 
+repeatability. Only one of the two sonographers partici-
+pated in the HDMI scanning for each patient participant. 
+HDMI image processing and denoising have been done 
+as reported in [8, 35–39]. The ALNs were manually seg-
+mented using B-mode images obtained from the IQ data 
+reconstruction, binary and skeleton images were pro-
+duced to quantify morphological parameters of tumor 
+microvessels [32].
+Microvessel morphometric analysis
+For each targeted lymph node, a region of interest (ROI) 
+was defined based on the cortex and hilum boundaries 
+acquired from the B-mode ultrasound images. To include 
+peripheral vascularity, the defined ROI was dilated 2 mm. 
+After the image formation process, a set of processing 
+steps consisting of converting to binary image and con-
+structing the full skeleton of the vessel network, were 
+performed to prepare the microvessel images for quanti-
+fication of morphological parameters [32]. After all these 
+steps, analysis of desired quantitative parameters of the 
+vessels has been done on the vessel segments of output 
+images. A series of microvessel morphological parame-
+ters of lymph node including, number of vessel segments 
+(NV), number of branch points (NB), vessel density (VD), 
+vessel diameter (D), distance metric as a measure of tor-
+tuosity (τ), microvessel fractal dimension (mvFD), Mur-
+ray’s deviation (MD), bifurcation angle (BA), and spatial 
+vascularity pattern (SVP) calculated by vessel density 
+ratio (VDR), were extracted from output HDMI images, 
+and measured. The methods for obtaining HDMI images, 
+vessel extraction and steps for vessel segmentation have 
+been detailed in [8, 30–32]. A diagram presenting HDMI 
+image acquisition, image formation and segmentation to 
+extract the vessel biomarkers is shown in Fig. 1.
+Microvessel morphological parameters
+The tumor microvessel morphological parameters 
+extracted from the HDMI images were used in this 
+study as imaging biomarkers. One of the most known 
+parameters obtained through HDMI is the vessel den-
+sity, defined as the ratio of the geometric area of vessel 
+segments to the geometric area of the associated lesion 
+region of interest [40]. Moreover, we have also calculated 
+the number of vessel segments (NV), and the number of 
+branch points (NB) (branch point defined as a common 
+point connected to three or more vessel segments) [32, 
+41]. Vessel diameter, defined as two times the minimum 
+Page 4 of 11
+Ferroni et al. Breast Cancer Research           (2023) 25:65 
+distance between the vessel centerline and the vessel bor-
+der has also been measured [32]. Furthermore, Murray’s 
+deviation (MD) was an important biomarker used in the 
+analysis. Murray’s deviation presents a diameter mis-
+match, defined as the deviations from Murray’s Law, defi-
+nition, and calculation of which has been detailed in [31]. 
+Additionally, vessel tortuosity, determined by the dis-
+tance metric (DM), which is defined as the ratio between 
+the actual path length of a meandering curve (vessel) and 
+the linear distance between the two endpoints [32], was 
+evaluated in this study.
+Another biomarker that has been included in the analy-
+sis is microvessel fractal dimension (mvFD), a unit-less, 
+geometrical feature to quantify the structural complex-
+ity of a vascular network to provide additional diagnostic 
+and prognostic information [31, 42]. Moreover, bifurca-
+tion angle, that refers to the angle between two daugh-
+ter vessels, has also been used as a distinctive biomarker, 
+detailed definition and calculation of which can be found 
+in [31]. Vessel density ratio (VDR), defined as the ratio of 
+vessel density of the tumor center to periphery [31], and 
+spatial vascularity pattern (SVP), calculated by VDR, can 
+present the tumor vascular distribution pattern as being 
+either intratumoral or being peritumoral [31, 43].
+The proposed morphological operations and quan-
+tification steps have been well detailed in our previous 
+papers [31, 32].
+Fine needle aspiration biopsy
+All study patients underwent FNAB within one hour 
+after the HDMI test. In our institution the false-nega-
+tive rate of FNAB is very low. Infrequently, core needle 
+biopsy is conducted for any discordant or non-diagnostic 
+FNA results. FNAB was done by one of our six board-
+certified radiologists with 10 to 30  years of experience 
+in breast imaging. The procedure was done under ultra-
+sound guidance and standard sterile technique, using 
+a 25-gauge needle to obtain six fine needle aspirates for 
+each ALN. Slides were immediately prepared and sent 
+for cytology. Specimens underwent routine pathologic 
+examination and results were obtained from the clinical 
+record. The pathological results of FNAB for all ALNs, 
+positive or negative were included for data analysis as ref-
+erence gold standard.
+Statistical analysis and classification modeling
+All images and data were analyzed by the members of 
+our investigative team who were blinded to the results of 
+ALN biopsy. All statistical analyses were performed using 
+MATLAB® environment (MATLAB version R2022b). 
+For each image, vascular morphological features were 
+examined for statistical significance in distinguishing 
+metastatic from reactive lymph nodes, using pathol-
+ogy outcomes as the reference gold standard. Box plots 
+were created for each quantitative biomarker and the 
+Wilcoxon rank-sum test was performed to evaluate dis-
+tributional differences by malignancy status. Statistical 
+significance was considered with p < 0.05.
+To evaluate the collective discrimination information 
+of the HDMI biomarkers for ALN malignancy status, 
+we trained multivariable machine learning classification 
+models. The training of the classifier was implemented in 
+Classification Learner app on MATLAB. This app allows 
+performing supervised machine learning by supplying a 
+Fig. 1  HDMI image acquisition and a set of processing for image segmentation to extract vessel biomarkers: A HDMI image acquisition of ALN, 
+B Microvasculature image of a metastatic ALN, C Defined ROI with 2 mm dilation of the ALN, D Conversion of the microvasculature image into a 
+binary image, E skeleton image of vessel network, F HDMI biomarkers extracted for the skeleton to be used for distinguishing the metastatic ALN 
+from reactive. HDMI: High definition microvessel imaging; ALN: Axillary lymph node; mvFD: Microvessel fractal dimension; NB: Number of branch 
+points; VD: Vessel density; SVP: Spatial vascularity pattern; D: Diameter; τ: Tortuosity; NV: Number of vessel segments; MD: Murray’s deviation; VDR: 
+Vessel density ratio; BA: Bifurcation angle.
+Page 5 of 11
+Ferroni et al. Breast Cancer Research           (2023) 25:65 
+	
+known set of input data and corresponding known labels. 
+Three models were developed in this framework. First, all 
+of the HDMI biomarkers were used to train a classifica-
+tion model, called HDMI model, to classify the metastatic 
+and reactive ALNs. Next, clinical factors, namely age, 
+cortical thickness, lymph node size, and BI-RADS were 
+added to the HDMI model. The new model was denoted 
+as the HDMI-C model. Finally, a model trained only on 
+the aforementioned clinical factors was developed and 
+was named the C model. In order to avoid the problem 
+of overfitting, the training was performed using fivefold 
+cross-validation. The modeling was performed using a 
+random 70/30 train/test split (48 training samples, and 
+20 test (10 metastatic, and 10 reactive) samples) using a 
+support vector machine (SVM) algorithm with a coarse 
+Gaussian kernel, which was then applied to the leave-out 
+test data for performance evaluation. SVM is a common 
+and efficient supervised machine learning algorithm uti-
+lized for classification purposes. The performances of 
+trained models on the test set were summarized using 
+receiver operating characteristic (ROC) curve analysis, 
+reporting the area under the ROC curve (AUC) and the 
+corresponding 95% confidence interval (CI). From the 
+resulting ROCs, cut-off thresholds corresponding to the 
+points closest to maximum sensitivity and specificity 
+(top-left corner) were selected to generate estimates of 
+sensitivity, specificity, and accuracy.
+Sample size and statistical power
+This study was not designed to be powered to detect a 
+specific effect size a priori. The analytical cohort sample 
+size after consideration for inclusion/exclusion criteria 
+was N = 68 (34 reactive, 34 metastatic). Under these con-
+ditions, a two-sample Wilcoxon rank-sum test for mean 
+differences in biomarker values by malignancy status 
+under a two-sided alpha level of 0.05 would have approxi-
+mately > 90% power to identify a difference equivalent to 
+0.82 standard deviations, per simulation under assump-
+tions of equal variance and normality.
+Results
+Of the total of 68 patients, the pathology data of FNAB 
+indicated that 34 ALNs were negative for metastasis and 
+34 were positive for metastatic carcinoma. Of the meta-
+static lymph nodes, the primary tumors were mostly clas-
+sified as BI-RADS 5 and 6, 38%, and 47%, respectively. 
+The most common histological type of these primary 
+tumors was invasive ductal carcinoma (79%) and most 
+were reported as grade 2 (56%) and grade 3 (38%). Details 
+of the primary tumors for metastatic lymph nodes are 
+shown in Table 1.
+The cortical thickness ranged from 2 to 25 mm, with a 
+mean ± standard deviation of 6 ± 4 mm. The lymph node 
+Table 1  Details of the primary tumors for metastatic lymph 
+nodes
+a Numbers are presented in mean ± standard deviation
+Metastatic n = 34 (50%)
+Malignant grade
+ 1
+2 (6%)
+ 2
+19 (56%)
+ 3
+13 (38%)
+ER (positive)
+31 (91%)
+PR (positive)
+28 (82%)
+HER2 (positive)
+10 (29%)
+Ki-67a
+0.25 ± 0.17
+BIRADS
+ 4
+5 (15%)
+ 5
+13 (38%)
+ 6
+16 (47%)
+Histological Type
+ Invasive ductal carcinoma
+27 (79%)
+ Invasive lobular carcinoma
+5 (15%)
+ Invasive mammary carcinoma with mixed ductal and 
+lobular features
+2 (6%)
+Table 2  Participant demographics, lymph node characteristics, 
+and the summary of the performance of quantitative HDMI 
+biomarkers
+Unless otherwise specified, Data are presented as mean ± standard deviation
+ª Data are numbers of participants
+b  Wilcoxon rank-sum test
+Numbers in bold indicate statistical significance, i.e., p-value < 0.05
+Reactive
+(n = 34)
+Metastatic
+(n = 34)
+p-valueb
+Age (y)
+55.06 ± 12.93
+56.6 ± 13.04
+0.73
+ALN size (mm)
+22 ± 6
+24 ± 6
+0.0135
+Cortical thickness (mm)
+4.8 ± 2.0
+7.7 ± 4.4
+ < 0.001
+HDMI Biomarkers
+ ­(DMmean)τmean
+1.03 ± 0.03
+1.04 ± 0.02
+0.005
+ ­(DMmax)τmax
+1.14 ± 0.16
+1.27 ± 0.22
+0.00017
+ NV
+9.56 ± 7.96
+24.65 ± 23.13
+ < 0.00001
+ NB
+4.00 ± 1.19
+13.59 ± 16.44
+0.00001
+ VD
+0.03 ± 0.02
+0.06 ± 0.04
+0.00018
+ VDR
+4.94 ± 4.84
+2.35 ± 1.73
+0.02
+ mvFD
+1.17 ± 0.11
+1.29 ± 0.10
+ < 0.00001
+ μm ­Dmax
+548.73 ± 106.89
+566.03 ± 0.38
+0.13
+ μm ­Dmean
+450.41 ± 86.49
+449.39 ± 0.31
+0.49
+ ­MDmax
+0.46 ± 0.27
+0.64 ± 0.23
+0.007
+ ­MDmean
+0.31 ± 0.16
+0.32 ± 0.07
+0.40
+ ­MDmin
+0.18 ± 0.17
+0.08 ± 0.09
+0.003
+ ­BAmax
+114.63 ± 23.60
+135.40 ± 11.24
+0.006
+ ­BAmean
+101.28 ± 18.36
+101.03 ± 11.24
+0.92
+ ­BAmin
+85.37 ± 27.73
+62.80 ± 28.39
+0.004
+Page 6 of 11
+Ferroni et al. Breast Cancer Research           (2023) 25:65 
+size ranged from 13 to 41 mm, with a mean ± standard 
+deviation of 23 ± 6 mm. Table 2 summarizes the relevant 
+results of patient and lymph node characteristics as well 
+as the results of quantitative HDMI biomarkers and 
+respective p-values for reactive and metastatic ALN. The 
+values of the number of vessel segments (NV), number 
+of branch points (NB), vessel density (VD), maximum 
+tortuosity (τmax), microvessel fractal dimension (mvFD), 
+maximum Murray’s deviation ­(MDmax), and maximum 
+diameter ­(Dmax) were much higher in the metastatic 
+nodes compared to the reactive ones. Mean bifurcation 
+angle ­(BAmean) was lower in the metastatic ALN.
+High‑definition microvasculature imaging 
+of representative metastatic and reactive ALN cases
+We demonstrated the visual presentation of the conven-
+tional B-mode and the HDMI images of two reactive and 
+two metastatic ALNs along with the values of respective 
+HDMI biomarkers in Figs. 2 and 3. Figure 2 depicts the 
+B-mode and HDMI images of small size lymph nodes, 
+16  mm in reactive and 14  mm in metastatic, in largest 
+dimension. The visual inspection of the metastatic ALN 
+displays more vascularity with dilated vessels than in 
+reactive. The quantitative HDMI biomarkers shown on 
+the sides of each HDMI image represent the differences 
+in the values of each biomarker for reactive and meta-
+static lymph nodes. Figure 3 illustrates the B-mode and 
+HDMI images of larger lymph nodes, with a mass size 
+along the largest dimension of 25  mm in reactive and 
+30 mm in metastatic. Visual inspection shows consider-
+able hypervascularity and morphological irregularity of 
+microvessels in metastatic ALN compared to reactive 
+that has fewer microvessels.
+Statistical results of HDMI biomarkers for differentiation 
+of metastatic and reactive ALNs
+Most of quantitative HDMI biomarkers (11/15) show 
+statistically significant differences at p < 0.05 between 
+metastatic and reactive ALNs, as reported in Table  2. 
+The values of NV, NB, VD, mvFD, τmax were significantly 
+higher for metastatic ALNs with p-values of < 0.001. The 
+values of BAmax and BAmin showed significant differences 
+between reactive and metastatic with p-values of 0.006 
+and 0.004, respectively. Figure 4A–K shows the boxplots 
+for VD, NB, NV, τmax, τmean, VDR, mvFD, ­MDmax, MDmin, 
+BAmax, and ­BAmin.
+The ROC curves for the HDMI, HDMI-C, and C mod-
+els are shown in Fig.  5. All 15 HDMI biomarkers were 
+Fig. 2  B-mode and HDMI images of small metastatic and reactive ALNs. The relative quantitative biomarkers are shown on the left side of each 
+HDMI image. A and B are B-mode and HDMI images of a small reactive ALN in a 39-year-old woman, respectively. C and D are B-mode and HDMI 
+images of a small metastatic ALN in a 60-year-old woman, respectively. The dashed white and green curves indicate the boundaries of ALNs with 
+and without the 2 mm dilation, respectively
+Page 7 of 11
+Ferroni et al. Breast Cancer Research           (2023) 25:65 
+	
+included in the HDMI model. The AUC for this model 
+in the leave-out test set (containing 10 samples from the 
+reactive set and 10 samples from the metastatic set) was 
+0.89 (95% CI [0.81,0.97]) with a sensitivity, specificity, and 
+accuracy of 90%, 75%, and 83%, respectively. The AUC 
+was further increased for the HDMI-C model. The cor-
+responding AUC estimate was 0.90 (95% CI [0.82,0.98]) 
+with the sensitivity, specificity, and accuracy of 90%, 
+88%, and 89%, respectively. The C model trained only 
+on the clinical biomarkers had an AUC of 0.86 (95% CI 
+[0.77,0.95]) with the sensitivity, specificity, and accuracy 
+of 80%, 80%, and 80%, respectively.
+Discussion
+The current study explored the performance of the 
+quantitative biomarkers of contrast-free high-definition 
+microvessel imaging (HDMI) in differentiating meta-
+static and reactive ALNs. Our findings reveal that most 
+of the HDMI biomarkers (Tortuosity, Diameter, NV, NBP, 
+VD, mvFD, MD, BA and VDR) demonstrated significant 
+differences between metastatic and reactive ALNs. In 
+the current study, the SVM-based classification models 
+demonstrated the discriminating performance of using 
+HDMI biomarkers as training features. SVM is known 
+to be effective for classification of high-dimensional 
+data, and in conditions with limited number of samples 
+compared to the number of features. The addition of the 
+clinical features age, cortical thickness, lymph nodes size 
+and BI-RADS scores, to the multivariable analysis can 
+increase the sensitivity, accuracy, and AUC (as was the 
+case for our test set in this study).
+Preclinical studies using contrast enhanced ultra-
+sound approach [44] and 3-dimensional super resolu-
+tion imaging of microvessels of rabbit’s lymph node [45] 
+have examined the importance of microvessel density for 
+diagnosis of lymph node metastasis, however, both tech-
+niques need the injection of exogenous contrast agents, 
+and have limited quantification evaluation. Without the 
+help of contrast agents, a clinical study was conducted 
+using superb microvessel imaging (SMI) [27] for dif-
+ferentiation of metastatic from reactive lymph nodes, 
+however, the quantification was limited to vessel index 
+estimation and pixel counting with a sensitivity and spec-
+ificity of and 69% and 63%, respectively. Instead, the cur-
+rent work combines a wide range of quantitative HDMI 
+biomarkers that can separate metastatic from reactive 
+ALN with higher sensitivity and specificity than what 
+was reported in the SMI study. The further advantage of 
+Fig. 3  B-mode and HDMI images of large metastatic and reactive ALNs. The relative quantitative biomarkers are shown on the left side for each 
+HDMI image. A and B are B-mode and HDMI images of a large reactive ALN in a 41-year-old woman, respectively. C and D are B-mode and HDMI 
+images of a metastatic ALN in a 63-year-old woman, respectively. The dashed white and green curves indicate the boundaries of ALNs with and 
+without the 2 mm dilation, respectively
+Page 8 of 11
+Ferroni et al. Breast Cancer Research           (2023) 25:65 
+Fig. 4  Box plots of significant biomarkers for differentiation of reactive and metastatic lymph nodes. A. Vessel density (VD), B. Number of 
+vessel segments (NV), C. Number of branch points (NB), D. Maximum tortuosity (τmax), E. Mean tortuosity (τmean), F. Vessel density ratio (VDR), G. 
+Microvessel fractal dimension (mvFD), H. Maximum Murray’s deviation ­(MDmax), I. Minimum Murray’s deviation ­(MDmin), J. Maximum bifurcation 
+angle ­(BAmax), K. Minimum bifurcation angle ­(BAmin). *p < 0.05, **p < 0.01, ***p < 0.001, **** < 0.0001, ***** < 0.00001, Benign (n = 34) Malignant 
+(n = 34)
+Page 9 of 11
+Ferroni et al. Breast Cancer Research           (2023) 25:65 
+	
+the proposed method is that the enhancement and visu-
+alization of microvessels at the submillimeter level is pos-
+sible without the help of contrast agents. Additionally, 
+HDMI method can accurately quantify vessel diameter, 
+which may be challenging in contrast-enhanced tracking 
+approaches [46].
+The current study shows increased numbers in vessel 
+segments and branch points in metastatic lymph nodes, 
+indicating the presence of a greater level of vessel sprout-
+ing, an important marker in metastatic lymph nodes [47]. 
+This result is supported by previous studies [30, 31, 48]. 
+Vessel tortuosity metric was also statistically significantly 
+higher in metastatic compared to reactive ALNs, which 
+is in agreement with the fact that vessel tortuosity anal-
+ysis can offer additional information that help with dis-
+criminating malignant lesions from hypervascular benign 
+lesions [49]. Our study also shows maximum vessel tor-
+tuosity has higher statistically significant differences 
+compared to averaging. This is in agreement with prior 
+studies that have shown that as tumor expands in size, 
+more tortuous vessels with increased diameter are seen 
+in the periphery rather than the center of the tumor [22, 
+50], suggesting that averaging these biomarkers has less 
+diagnostic value than their maxima. The current study 
+also investigated the performance of other vessel mor-
+phological parameters such as Murray’s deviation, show-
+ing a significantly higher value in metastatic ALNs. This 
+is supported by observation of deviation from Murray’s 
+Law, observed in diseased tissue and for differentiation 
+of malignant from benign breast masses, reported in [30, 
+31, 48]. Furthermore, current study shows statistically 
+significant differences of bifurcation angle in metastatic 
+and reactive ALNs that is also observed in breast masses 
+differentiation [30, 31, 48]. In current study, microvascu-
+lar complexity, measured by mvFD, shows higher values 
+in metastatic compared to reactive ALNs. This finding 
+indicates that malignant lesions tend to have dense vas-
+cularity, with irregularly branched and twisted microves-
+sels, therefore the findings indicate promise, but that 
+would need to be followed with additional studies[30, 31, 
+51].
+One limitation of our study is that the imaging method 
+used in this study is two-dimensional (2D). Estimat-
+ing HDMI biomarkers in 2D plane may ignore some of 
+the morphological features and the connectivity of ves-
+sels in three-dimensional (3D) space, resulting in either 
+underestimation or overestimation of many morpho-
+metric parameters [52]. Additionally, the sample size was 
+relatively small. To address these limitations, we plan to 
+advance our 3D-HDMI technique and study on a large 
+patient population to further investigate the efficiency of 
+these morphometric parameters in differentiating meta-
+static ALNs from reactive.
+Conclusion
+The use of a noninvasive and affordable quantitative 
+imaging tool that provides objective information is of 
+importance for prediction of metastatic ALNs in breast 
+cancer patients. In current study, we showed the per-
+formance of quantitative vessel biomarkers extracted 
+by a contrast-free ultrasound microvessel imaging 
+technique, HDMI. Using the morphological features 
+of tumor microvessels, we were able to separate meta-
+static from reactive ALNs with high accuracy. Addition 
+of clinical factors to the set of features showed a poten-
+tial for further increase of the classification accuracy 
+Fig. 5  ROC curves generated with HDMI biomarkers extracted from HDMI images, and clinical biomarkers. Green line represents the HDMI model, 
+red line depicts HDMI-C model, and the blue line corresponds to the C model. The table on the right side of the figure contains a summary of 
+the test-set performance of the biomarkers in discriminating metastatic and reactive ALNs. HDMI = high-definition microvasculature imaging, 
+HDMI-C = high-definition microvasculature imaging + clinical data, AUC = area under the curve, ROC = receiver operating characteristic.
+Page 10 of 11
+Ferroni et al. Breast Cancer Research           (2023) 25:65 
+in this study. Furthermore, as a complementary tool 
+to conventional ultrasound, quantitative HDMI could 
+offer a way to accurately assess the status of ALNs, stag-
+ing breast cancer, and minimize the number of unnec-
+essary ALN biopsies.
+Acknowledgements
+Financial Support:
+This work was supported in part by the NIH Grants R01CA239548 and 
+R01CA195527 (A. Alizad and M. Fatemi). The content is solely the responsibility 
+of the authors and does not necessarily represent the official views of NIH. The 
+NIH did not have any additional role in the study design, data collection and 
+analysis, decision to publish or preparation of the manuscript.
+Author contributions
+Conceptualization and design: AA, MF. Methodology: AA, MF. Investigation: 
+AA, MF. Software: SS. Data curation: GF and SS, TAS. Visualization: GF and SS, 
+AA, MF. Validation: AA, MF, SS, NBL, RTF, LS, JMC. Formal analysis (e.g., statistical 
+analysis, biostatistics, computational analysis): GF, SS, NBL. Writing-original 
+draft: GF, SS. Writing, review and edits: AA, MF, JMC, NBL, SS, RTF, GF, LS, TAS. 
+Administrative, Resources: AA, MF. Funding acquisition: AA, MF. Study supervi‑
+sion: AA, MF. All authors read and approved the final manuscript.
+Availability of data and materials
+The data that support the findings of this study are available from the cor‑
+responding author upon reasonable request. The requested data may include 
+figures that have associated raw data. Because the study was conducted on 
+human volunteers, the release of patient data may be restricted by Mayo pol‑
+icy and needs special request. The request can be sent to: Karen A. Hartman, 
+MSN, CHRC | Administrator—Research Compliance| Integrity and Compliance 
+Office | Assistant Professor of Health Care Administration, Mayo Clinic College 
+of Medicine & Science | 507–538-5238 | Administrative Assistant: 507-266-6286 
+| hartman.karen@mayo.edu Mayo Clinic | 200 First Street SW | Rochester, MN 
+55905 | mayoclinic.org. We do not have publicly available Accession codes, 
+unique identifiers, or web links.
+Code availability
+The custom code or mathematical algorithms that are deemed central to the 
+conclusions are available from the corresponding author upon request.
+Declarations
+Ethical approval and consent to participate
+The Research involved human participants. The study was approved by Insti‑
+tutional Review Board (IRB) of Mayo Clinic (IRB # 13-006035, last approval date: 
+6/28/2022 and IRB # 19-003028, last approved 3/8/2022) and was Health Insur‑
+ance Portability and Accountability Act compliant. All procedures performed 
+in this study were in accordance with the ethical standards of the institutional 
+and/or national research committee and with the 1964 Helsinki Declaration 
+and its later amendments or comparable ethical standards.
+Informed consent
+Signed IRB approved informed consent with permission for publication was 
+obtained from all individual participants included in the study.
+Competing interests
+The authors of this manuscript declare no relationships with any companies, 
+whose products or services may be related to the subject matter of the article, 
+and the authors affirm that they do not have any potential financial interest 
+related to the technology referenced in this paper.
+Author details
+1 Department of Physiology and Biomedical Engineering, Mayo Clinic College 
+of Medicine and Science, Rochester, MN 55905, USA. 2 Department of Radiol‑
+ogy, Mayo Clinic College of Medicine and Science, 200 1st. St. SW, Rochester, 
+MN 55905, USA. 3 Department of Industrial Engineering and Mathematical 
+Science, Marche Polytechnic University, 60131 Ancona, Italy. 4 Department 
+of Laboratory Medicine and Pathology, Mayo Clinic College of Medicine 
+and Science, Rochester, MN, USA. 5 Department of Laboratory Medicine 
+and Pathology, University of Alberta, Edmonton, AB, Canada. 6 Department 
+of Quantitative Health Sciences, Mayo Clinic College of Medicine and Science, 
+Rochester, MN 55905, USA. 
+Received: 19 February 2023   Accepted: 2 June 2023
+References
+	1.	
+Schwartz RS, Erban JK. Timing of metastasis in breast cancer. N Engl J 
+Med. 2017;376(25):2486–8.
+	2.	
+Majid S, Tengrup I, Manjer J. Clinical assessment of axillary lymph nodes 
+and tumor size in breast cancer compared with histopathological 
+examination: a population-based analysis of 2537 women. World J Surg. 
+2013;37(1):67–71.
+	3.	
+Chang JM, Leung JW, Moy L, Ha SM, Moon WK. Axillary nodal evaluation 
+in breast cancer: state of the art. Radiology. 2020;295(3):500–15.
+	4.	
+Kijima Y, Yoshinaka H, Hirata M, Mizoguchi T, Ishigami S, Nakajo A, Arima 
+H, Ueno S, Natsugoe S. Number of axillary lymph node metastases deter‑
+mined by preoperative ultrasound is related to prognosis in patients with 
+breast cancer. Cancers. 2010;2(1):20–31.
+	5.	
+Alvarez S, Añorbe E, Alcorta P, López F, Alonso I, Cortés J. Role of sonogra‑
+phy in the diagnosis of axillary lymph node metastases in breast cancer: a 
+systematic review. Am J Roentgenol. 2006;186(5):1342–8.
+	6.	
+Marino MA, Avendano D, Zapata P, Riedl CC, Pinker K. Lymph node imag‑
+ing in patients with primary breast cancer: concurrent diagnostic tools. 
+Oncologist. 2020;25(2):e231–42.
+	7.	
+Gu J, Polley EC, Boughey JC, Fazzio RT, Fatemi M, Alizad A. Prediction of 
+invasive breast cancer using mass characteristic frequency and elasticity 
+in correlation with prognostic histologic features and immunohisto‑
+chemical biomarkers. Ultrasound Med Biol. 2021;47(8):2193–201.
+	8.	
+Bayat M, Denis M, Gregory A, Mehrmohammadi M, Kumar V, Meixner D, 
+Fazzio RT, Fatemi M, Alizad A. Diagnostic features of quantitative comb-
+push shear elastography for breast lesion differentiation. PLoS ONE. 
+2017;12(3): e0172801.
+	9.	
+Denis M, Gregory A, Bayat M, Fazzio RT, Whaley DH, Ghosh K, Shah S, 
+Fatemi M, Alizad A. Correlating tumor stiffness with immunohisto‑
+chemical subtypes of breast cancers: prognostic value of comb-push 
+ultrasound shear elastography for differentiating luminal subtypes. PLoS 
+ONE. 2016;11(10): e0165003.
+	10.	 Ng WL, Omar N, Ab Mumin N, Hamid MTR, Vijayananthan A, Rahmat K. 
+Diagnostic accuracy of shear wave elastography as an adjunct tool in 
+detecting axillary lymph nodes metastasis. Acad Radiol. 2022;29:S69–78.
+	11.	 Gregory A, Denis M, Bayat M, Kumar V, Kim BH, Webb J, Nayak R, Adabi 
+S, Meixner DD, Polley EC. Predictive value of comb-push ultrasound 
+shear elastography for the differentiation of reactive and metastatic 
+axillary lymph nodes: a preliminary investigation. PLoS ONE. 2020;15(1): 
+e0226994.
+	12.	 Mansel RE, Fallowfield L, Kissin M, Goyal A, Newcombe RG, Dixon JM, 
+Yiangou C, Horgan K, Bundred N, Monypenny I. Randomized multi‑
+center trial of sentinel node biopsy versus standard axillary treatment 
+in operable breast cancer: the ALMANAC Trial. J Natl Cancer Inst. 
+2006;98(9):599–609.
+	13.	 Krag DN, Anderson SJ, Julian TB, Brown AM, Harlow SP, Costantino JP, 
+Ashikaga T, Weaver DL, Mamounas EP, Jalovec LM. Sentinel-lymph-node 
+resection compared with conventional axillary-lymph-node dissection 
+in clinically node-negative patients with breast cancer: overall survival 
+findings from the NSABP B-32 randomised phase 3 trial. Lancet Oncol. 
+2010;11(10):927–33.
+	14.	 Alkuwari E, Auger M. Accuracy of fine-needle aspiration cytology of 
+axillary lymph nodes in breast cancer patients: a study of 115 cases with 
+cytologic-histologic correlation. Cancer Cytopathol Interdiscip Int J Am 
+Cancer Soc. 2008;114(2):89–93.
+	15.	 Vijayaraghavan GR, Vedantham S, Kataoka M, DeBenedectis C, Quinlan 
+RM. The relevance of ultrasound imaging of suspicious axillary lymph 
+nodes and fine-needle aspiration biopsy in the post-ACOSOG Z11 era in 
+early breast cancer. Acad Radiol. 2017;24(3):308–15.
+	16.	 Lee E, Koskimaki JE, Pandey NB, Popel AS. Inhibition of lymphangiogen‑
+esis and angiogenesis in breast tumor xenografts and lymph nodes 
+Page 11 of 11
+Ferroni et al. Breast Cancer Research           (2023) 25:65 
+	
+by a peptide derived from transmembrane protein 45A. Neoplasia. 
+2013;15(2):112-IN116.
+	17.	 Longatto Filho A, Lopes JM, Schmitt FC. Angiogenesis and breast cancer. 
+J Oncol. 2010. https://​doi.​org/​10.​1155/​2010/​576384.
+	18.	 Nakamura Y, Yasuoka H, Tsujimoto M, Yang Q, Imabun S, Nakahara M, 
+Nakao K, Nakamura M, Mori I, Kakudo K. Flt-4-positive vessel density cor‑
+relates with vascular endothelial growth factor-d expression, nodal status, 
+and prognosis in breast cancer. Clin Cancer Res. 2003;9(14):5313–7.
+	19.	 Guidi AJ, Berry DA, Broadwater G, Perloff M, Norton L, Barcos MP, Hayes 
+DF. Association of angiogenesis in lymph node metastases with outcome 
+of breast cancer. J Natl Cancer Inst. 2000;92(6):486–92.
+	20.	 Pyakurel D, Karki S, Agrawal C. A study on microvascular density in breast 
+carcinoma. J Pathol Nepal. 2014;4(7):570–5.
+	21.	 Carmeliet P, Jain RK. Angiogenesis in cancer and other diseases. Nature. 
+2000;407(6801):249–57.
+	22.	 Nagy J, Chang SH, Dvorak AM, Dvorak HF. Why are tumour blood 
+vessels abnormal and why is it important to know? Br J Cancer. 
+2009;100(6):865–9.
+	23.	 Loiselle CR, Eby PR, Peacock S, Kim JN, Lehman CD. Dynamic contrast-
+enhanced magnetic resonance imaging and invasive breast cancer: 
+primary lesion kinetics correlated with axillary lymph node extracapsular 
+extension. J Magn Reson Imaging. 2011;33(1):96–101.
+	24.	 Yang WT, Chang J, Metreweli C. Patients with breast cancer: differences in 
+color Doppler flow and gray-scale US features of benign and malignant 
+axillary lymph nodes. Radiology. 2000;215(2):568–73.
+	25.	 Steinberg I, Huland DM, Vermesh O, Frostig HE, Tummers WS, Gambhir SS. 
+Photoacoustic clinical imaging. Photoacoustics. 2019;14:77–98.
+	26.	 Zare A, Shamshiripour P, Lotfi S, Shahin M, Rad VF, Moradi A-R, Haji‑
+ahmadi F, Ahmadvand D. Clinical theranostics applications of photo-
+acoustic imaging as a future prospect for cancer. J Control Release. 
+2022;351:805–33.
+	27.	 Kurt SA, Eryurekli AE, Kayadibi Y, Samancı C, Velidedeoglu M, Onur I, 
+Arslan S, Taskin F. Diagnostic Performance of Superb Microvascular 
+Imaging in Differentiating Benign and Malignant Axillary Lymph Nodes. 
+Ultrasound Q. 2022. https://​doi.​org/​10.​1097/​RUQ.​00000​00000​000617.
+	28.	 de Koekkoek-Doll PK, Roberti S, van den Brekel MW, Maas M, Smit L, 
+Beets-Tan R, Castelijns J. Value of assessing peripheral vascularization with 
+micro-flow imaging, resistive index and absent hilum sign as predictor for 
+malignancy in lymph nodes in head and neck squamous cell carcinoma. 
+Cancers. 2021;13(20):5071.
+	29.	 Bayat M, Fatemi M, Alizad A. Background removal and vessel filtering of 
+noncontrast ultrasound images of microvasculature. IEEE Trans Biomed 
+Eng. 2018;66(3):831–42.
+	30.	 Ternifi R, Wang Y, Gu J, Polley EC, Carter JM, Pruthi S, Boughey JC, Fazzio 
+RT, Fatemi M, Alizad A. Ultrasound high-definition microvasculature 
+imaging with novel quantitative biomarkers improves breast cancer 
+detection accuracy. European Radiol. 2022. https://​doi.​org/​10.​1007/​
+s00330-​022-​08815-2.
+	31.	 Ternifi R, Wang Y, Polley EC, Fazzio RT, Fatemi M, Alizad A. Quantitative 
+biomarkers for cancer detection using contrast-free ultrasound high-
+definition microvessel imaging: fractal dimension, murray’s deviation, 
+bifurcation angle & spatial vascularity pattern. IEEE Trans Med Imaging. 
+2021;40(12):3891–900.
+	32.	 Ghavami S, Bayat M, Fatemi M, Alizad A. Quantification of morphological 
+features in non-contrast-enhanced ultrasound microvasculature imaging. 
+IEEE Access. 2020;8:18925–37.
+	33.	 Kurti M, Sabeti S, Robinson KA, Scalise L, Larson NB, Fatemi M, Alizad A. 
+Quantitative biomarkers derived from a novel contrast-free ultrasound 
+high-definition microvessel imaging for distinguishing thyroid nodules. 
+Cancers. 2023;15(6):1888.
+	34.	 Sabeti S, Ternifi R, Larson NB, Olson MC, Atwell TD, Fatemi M, Alizad A. 
+Morphometric analysis of tumor microvessels for detection of hepatocel‑
+lular carcinoma using contrast-free ultrasound imaging: A feasibility 
+study. Front Oncol. 2023. https://​doi.​org/​10.​3389/​fonc.​2023.​11216​64.
+	35.	 Adabi S, Ghavami S, Fatemi M, Alizad A. Non-local based denoising 
+framework for in vivo contrast-free ultrasound microvessel imaging. Sen‑
+sors. 2019;19(2):245.
+	36.	 Nayak R, Kumar V, Webb J, Fatemi M, Alizad A. Non-invasive small vessel 
+imaging of human thyroid using motion-corrected spatiotemporal clut‑
+ter filtering. Ultrasound Med Biol. 2019;45(4):1010–8.
+	37.	 Nayak R, Kumar V, Webb J, Gregory A, Fatemi M, Alizad A. Non-contrast 
+agent based small vessel imaging of human thyroid using motion cor‑
+rected power Doppler imaging. Sci Rep. 2018;8(1):1–15.
+	38.	 Nayak R, MacNeill J, Flores C, Webb J, Fatemi M, Alizad A. Quantitative 
+assessment of ensemble coherency in contrast-free ultrasound microvas‑
+culature imaging. Med Phys. 2021;48(7):3540–58.
+	39.	 Nayak R, Fatemi M, Alizad A. Adaptive background noise bias suppres‑
+sion in contrast-free ultrasound microvascular imaging. Phys Med Biol. 
+2019;64(24): 245015.
+	40.	 You QS, Chan JC, Ng AL, Choy BK, Shih KC, Cheung JJ, Wong JK, Shum JW, 
+Ni MY, Lai JS. Macular vessel density measured with optical coherence 
+tomography angiography and its associations in a large population-
+based study. Invest Ophthalmol Vis Sci. 2019;60(14):4830–7.
+	41.	 Edgar LT, Hoying JB, Utzinger U, Underwood CJ, Krishnan L, Baggett 
+BK, Maas SA, Guilkey JE, Weiss JA. Mechanical interaction of angiogenic 
+microvessels with the extracellular matrix. J Biomech Eng. 2014;136(2): 
+021001.
+	42.	 Sabo E, Boltenko A, Sova Y, Stein A, Kleinhaus S, Resnick MB. Microscopic 
+analysis and significance of vascular architectural complexity in renal cell 
+carcinoma. Clin Cancer Res. 2001;7(3):533–7.
+	43.	 Caresio C, Caballo M, Deandrea M, Garberoglio R, Mormile A, Rossetto R, 
+Limone P, Molinari F. Quantitative analysis of thyroid tumors vascular‑
+ity: a comparison between 3-D contrast-enhanced ultrasound and 3-D 
+power Doppler on benign and malignant thyroid nodules. Med Phys. 
+2018;45(7):3173–84.
+	44.	 Li L, Mori S, Kodama M, Sakamoto M, Takahashi S, Kodama T. Enhanced 
+sonographic imaging to diagnose lymph node metastasis: importance of 
+blood vessel volume and density. Can Res. 2013;73(7):2082–92.
+	45.	 Zhu J, Rowland EM, Harput S, Riemer K, Leow CH, Clark B, Cox K, Lim 
+A, Christensen-Jeffries K, Zhang G. 3D super-resolution US imaging of 
+rabbit lymph node vasculature in vivo by using microbubbles. Radiology. 
+2019;291(3):642–50.
+	46.	 Kanoulas E, Butler M, Rowley C, Voulgaridou V, Diamantis K, Duncan WC, 
+McNeilly A, Averkiou M, Wijkstra H, Mischi M. Super-resolution contrast-
+enhanced ultrasound methodology for the identification of in vivo vascu‑
+lar dynamics in 2D. Invest Radiol. 2019;54(8):500.
+	47.	 Chappell JC, Wiley DM, Bautch VL. How blood vessel networks are made 
+and measured. Cells Tissues Organs. 2012;195(1–2):94–107.
+	48.	 Gu J, Ternifi R, Larson NB, Carter JM, Boughey JC, Stan DL, Fazzio RT, 
+Fatemi M, Alizad A. Hybrid high-definition microvessel imaging/shear 
+wave elastography improves breast lesion characterization. Breast Cancer 
+Res. 2022;24(1):1–13.
+	49.	 Bullitt E, Zeng D, Gerig G, Aylward S, Joshi S, Smith JK, Lin W, Ewend MG. 
+Vessel tortuosity and brain tumor malignancy: a blinded study1. Acad 
+Radiol. 2005;12(10):1232–40.
+	50.	 Konerding M, Fait E, Gaumann A. 3D microvascular architecture of 
+pre-cancerous lesions and invasive carcinomas of the colon. Br J Cancer. 
+2001;84(10):1354–62.
+	51.	 Chen C, He ZC, Shi Y, Zhou W, Zhang X, Xiao HL, Wu HB, Yao XH, Luo WC, 
+Cui YH. Microvascular fractal dimension predicts prognosis and response 
+to chemotherapy in glioblastoma: an automatic image analysis study. 
+Lab Investig. 2018;98(7):924–34.
+	52.	 Gu J, Ternifi R, Sabeti S, Larson NB, Carter JM, Fazzio RT, Fatemi M, Alizad 
+A. Volumetric imaging and morphometric analysis of breast tumor angio‑
+genesis using a new contrast-free ultrasound technique: a feasibility 
+study. Breast Cancer Res. 2022;24(1):1–15.
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in pub‑
+lished maps and institutional affiliations.

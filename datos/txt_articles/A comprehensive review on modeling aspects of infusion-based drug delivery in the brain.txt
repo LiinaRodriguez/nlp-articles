@@ -1,0 +1,3149 @@
+Acta Biomaterialia 185 (2024) 1–23 
+Contents lists available at ScienceDirect 
+Acta Biomaterialia 
+journal homepage: www.elsevier.com/locate/actbio 
+Review article 
+A comprehensive review on modeling aspects of infusion-based drug 
+delivery in the brain 
+Tian Yuan a , ∗, Wenbo Zhan b , Michele Terzano c , Gerhard A. Holzapfel c , d , Daniele Dini a , ∗
+a Department of Mechanical Engineering, Imperial College London, SW7 2AZ, UK 
+b School of Engineering, University of Aberdeen, Aberdeen, AB24 3UE, UK 
+c Institute of Biomechanics, Graz University of Technology, Austria 
+d Department of Structural Engineering, NTNU, Trondheim, Norway 
+a r t i c l e 
+i n f o 
+Article history: 
+Received 21 March 2024 
+Revised 10 July 2024 
+Accepted 11 July 2024 
+Available online 19 July 2024 
+Keywords: 
+Brain disease 
+Computational modeling 
+Mechanical property 
+Drug delivery 
+Finite element method 
+Neuron 
+Biophysics 
+Biomechanics 
+a b s t r a c t 
+Brain disorders represent an ever-increasing health challenge worldwide. While conventional drug ther- 
+apies are less effective due to the presence of the blood-brain barrier, infusion-based methods of drug 
+delivery to the brain represent a promising option. Since these methods are mechanically controlled and 
+involve multiple physical phases ranging from the neural and molecular scales to the brain scale, highly 
+eﬃcient and precise delivery procedures can signiﬁcantly beneﬁt from a comprehensive understanding 
+of drug-brain and device-brain interactions. Behind these interactions are principles of biophysics and 
+biomechanics that can be described and captured using mathematical models. Although biomechanics 
+and biophysics have received considerable attention, a comprehensive mechanistic model for modeling 
+infusion-based drug delivery in the brain has yet to be developed. Therefore, this article reviews the state- 
+of-the-art mechanistic studies that can support the development of next-generation models for infusion- 
+based brain drug delivery from the perspective of ﬂuid mechanics, solid mechanics, and mathematical 
+modeling. The supporting techniques and database are also summarized to provide further insights. Fi- 
+nally, the challenges are highlighted and perspectives on future research directions are provided. 
+Statement of signiﬁcance 
+Despite the immense potential of infusion-based drug delivery methods for bypassing the blood-brain 
+barrier and eﬃciently delivering drugs to the brain, achieving optimal drug distribution remains a signif- 
+icant challenge. This is primarily due to our limited understanding of the complex interactions between 
+drugs and the brain that are governed by principles of biophysics and biomechanics, and can be described 
+using mathematical models. This article provides a comprehensive review of state-of-the-art mechanistic 
+studies that can help to unravel the mechanism of drug transport in the brain across the scales, which un- 
+derpins the development of next-generation models for infusion-based brain drug delivery. More broadly, 
+this review will serve as a starting point for developing more effective treatments for brain diseases and 
+mechanistic models that can be used to study other soft tissue and biomaterials. 
+© 2024 The Author(s). Published by Elsevier Ltd on behalf of Acta Materialia Inc. 
+This is an open access article under the CC BY license ( http://creativecommons.org/licenses/by/4.0/ ) 
+1. Introduction 
+Neurological disorders, particularly brain diseases such as 
+Alzheimer’s disease, Parkinson’s disease, brain tumors, epilepsy 
+and stroke, represent a signiﬁcant health challenge worldwide, 
+∗Corresponding authors. 
+E-mail addresses: t.yuan19@imperial.ac.uk (T. Yuan), d.dini@imperial.ac.uk 
+(D. Dini) . 
+especially given the rapid growth of the aging population over 
+the last two decades [1] . The World Health Organization (WHO) 
+estimates that neurological disorders will cause 12.22% of all 
+deaths worldwide in 2030 [2] . Therefore, developing effective 
+treatments for neurological disorders has been a major concern. 
+While pharmacotherapy is a common treatment approach for 
+various brain diseases, drug delivery to the brain is challenging 
+due to the selective permeability of the blood-brain barrier (BBB). 
+The BBB consists of closely connected endothelial cells and is 
+additionally reinforced by astrocytes. It is a protective barrier 
+https://doi.org/10.1016/j.actbio.2024.07.015 
+1742-7061/© 2024 The Author(s). Published by Elsevier Ltd on behalf of Acta Materialia Inc. This is an open access article under the CC BY license 
+( http://creativecommons.org/licenses/by/4.0/ ) 
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+Fig. 1. Schematic representation of brain structures at different scales and the convection-enhanced delivery (CED) technique: (A) Schematic representation of the blood- 
+brain barrier and the CED technique. (B) The color tracts are nerve ﬁbers visualized by the diffusion tensor imaging technique. This shows the direction of nerve ﬁbers in 
+different regions. The nerve ﬁbers (axons) form the white matter of the brain, while the cell bodies of the neurons (soma) form the brain gray matter. 
+that prevents harmful substances from entering the brain. This 
+gives the BBB a selective function to properly transport nutrients, 
+oxygen and metabolic wastes and ﬁlter the toxic substances, but 
+along with most conventional drug molecules [3] . 
+To penetrate the BBB and deliver drugs to the brain, some novel 
+drug-delivery techniques have been developed. A promising ap- 
+proach is convection-enhanced delivery (CED) [4] . As schematically 
+shown in Fig. 1 A, CED involves the implantation of one or more 
+catheters (or needles) into the brain to deliver the therapeutic 
+agent to the target area by applying a pressure gradient, thereby 
+physically bypassing the BBB [5] . Despite its high eﬃciency and 
+accuracy, few desired results have been achieved in clinical CED 
+trials for the treatment of brain diseases [6] . One of the biggest 
+failures is the unwanted distribution of drugs, e.g. , some areas re- 
+ceive too little or too much of the drug [7] , uneven distribution of 
+drug concentration [8] , backﬂow of the drug caused by incorrect 
+pressure or catheter position [9] , tissue damage caused by implan- 
+tation of catheters [9] . Because it is a mechanically triggered and 
+controlled drug delivery technique, these problems in CED could 
+be alleviated by improving the current insuﬃcient understanding 
+of the ﬂuid transport properties of the brain and the relationship 
+of tissue response to local microstructural features and cells. 
+The brain is the most sophisticated soft tissue in nature, making 
+it a source of endless scientiﬁc challenges. As shown in Fig. 1 B, it 
+is mainly composed of gray matter (GM) and white matter (WM). 
+While GM consists of neuronal bodies and dendrites distributed 
+on the surface of the brain to produce and process neuronal sig- 
+nals, WM contains bundles of nerve ﬁbers or axons which trans- 
+mit signals between neurons in different brain areas and between 
+the brain and the rest of the body. Because the nerve ﬁbers are 
+enclosed by myelin, a sheath made of proteins and fat, the tissue 
+appears relatively white and is therefore called white matter [10] . 
+The nerve ﬁbers connect different regions of the brain and have a 
+speciﬁc orientation, giving WM a structural anisotropy. The combi- 
+nation of GM and WM, as well as the different packing patterns of 
+neurons in different regions, make the brain tissue very heteroge- 
+neous. As drugs ﬂow around neurons, the morphological features 
+of brain tissue suggest that the micro-channel network for drug 
+delivery is both anisotropic and heterogeneous. From a hydrody- 
+namics perspective, this makes drug ﬂow very complex and diﬃ- 
+cult to predict. In addition, since the neurons are extremely soft 
+and the equivalent Young’s modulus is in the range of 102 ∼104 
+Pa [11,12] , the infused drug can easily deform the microstructure, 
+which in turn changes the micro-channel network for drug deliv- 
+ery [13] . Since the diffusion of the drug molecules also depends on 
+the shape of the micro-channels [14] , the complex and deformable 
+micro-channel network also makes the prediction of the diffusion 
+eﬃciency (which can be characterized by the diffusion coeﬃcient) 
+challenging. Despite increasing research, the fundamental relation- 
+ship between the ﬂow status and the mechanical behavior of sur- 
+rounding neurons is not yet clearly understood and deﬁned. This 
+unclear perception of the connection between ﬂuid ﬂow and neu- 
+ron deformation may mislead clinical treatments at the brain level. 
+Therefore, highly eﬃcient drug delivery in the brain relies on (i) 
+a clear and fundamental mechanistic understanding of how drug 
+ﬂuid and molecules are transported in brain tissue while interact- 
+ing with them and (ii) a new model correlating microscale drug- 
+neuron interactions with the macroscale drug transport properties 
+of brain tissues, thus enabling accurate pre-operative predictions of 
+the drug-delivery process in the brain. 
+Computational modeling plays an increasingly important role 
+in understanding drug transport in the brain [15–19] . It can pro- 
+vide cost-effective approaches to (i) conduct comprehensive para- 
+metric sensitivity analyzes to identify the most inﬂuential factors; 
+(ii) allow for individual examination multiple steps and factors in- 
+volved in drug delivery, taking into account the effects of other 
+steps and factors; and (iii) integrate clinically controllable param- 
+eters such as drug dose and administration schedule into in sil- 
+ico models. Once fully validated, the models can be used to as- 
+sist in the design of drug delivery systems for optimal therapeu- 
+tic responses [20] . This can also help reduce the number of lab- 
+oratory and animal experiments. However, developing a compre- 
+hensive mathematical framework for brain drug delivery is chal- 
+lenging. First of all, it is important to correctly deﬁne the individ- 
+ual physical phases of the entire delivery process at the respec- 
+tive scales. The phases include the ﬂuid phase ( e.g. , drug ﬂuid, 
+interstitial ﬂuid (ISF) and cerebrospinal ﬂuid (CSF) [21,22] ), the 
+solid phase ( e.g. , neurons [13,23] and tissues [24,25] ), and the 
+molecular phase ( e.g. , drug molecules [26,27] ). Second, the trans- 
+port processes span large length and time scales, from the cellular 
+and molecular scale ( nm ∼μm , μs ∼s ) [13,23,28] , through the tis- 
+sue scale ( μm ∼mm , ms ∼min ) [24,29] , to the organ scale (cm, 
+h ∼day ) [30–32] ). Most importantly, these transport processes, 
+which involve different phases and time/length scales, are usually 
+strongly coupled. 
+Under these circumstances, an in-depth analysis of the mecha- 
+nisms and theories of infusion-based drug delivery in the brain, as 
+well as a comprehensive review of relevant recent studies are par- 
+ticularly important. This will not only help expand the currently 
+insuﬃcient knowledge of drug transport in the brain, but also im- 
+prove our ability to accurately predict this process. From a physical 
+point of view, the process of drug delivery in the brain is mainly 
+governed by the interactions between the ﬂuids (including the so- 
+lutes, e.g. , drug molecules) and the solids, which take place at dif- 
+ferent scales. At the tissue level, interactions between the drug 
+ﬂuid and tissue opens gaps between the needle and the tissue, 
+leading to local tissue swelling and backﬂow of the drug to the 
+tissue surface. At the cellular level, interactions between the drug 
+ﬂuid and the cells alter the tissue microstructure, thus changing 
+the ﬂow pathway and tissue permeability; this controls the bipha- 
+2
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+sic property of the brain tissue and can be described by a poro- 
+elastic model at the tissue level. Capturing such a complex process 
+requires a fundamental understanding and accurate mathematical 
+descriptions of the key factors controlled by ﬂuid mechanics and 
+solid mechanics at the tissue and cellular levels. Fortunately, there 
+are some comprehensive literature reviews that discuss the me- 
+chanical properties of the brain [33] and testing methods [34] , the 
+mechanics of the brain [35] and computational models for axonal 
+cytoskeletal components of neuron [36] , physiological mechanisms 
+of ﬂuid transport mechanism in the brain [37] and computational 
+models of drug delivery to brain tumors. They have provided im- 
+portant insights into modeling the mechanical processes in the 
+brain. However, there is still a gap in integrating the methods and 
+techniques from different areas to build a comprehensive mathe- 
+matical model to accurately predict the drug delivery process in 
+the brain. 
+In order to close this gap, in this review article we ﬁrst deal 
+with ﬂuid mechanics ( Section 2 ) and solid mechanics ( Section 3 
+at the tissue scale and Section 4 at the cellular scale) involved in 
+infusion-based drug delivery in the brain. Note that the principle of 
+ﬂuid mechanics at the cellular level is primarily the Navier-Stokes 
+(NS) equations. Therefore, in Section 2 we focus mainly on the 
+principles of ﬂuid mechanics at the tissue scale. Then, in Section 5 , 
+we provide an overview of the mathematical models that can in- 
+tegrate inputs obtained by applying ﬂuid mechanics and solid me- 
+chanics methods to model the process of drug delivery through- 
+out the brain. Finally, in Section 6 , we summarize the key ﬁnd- 
+ings of the reviewed studies, analyze the limitations of current re- 
+search, and propose strategies to close the research gaps. The in- 
+sight provided in this review will serve as a starting point for the 
+development of more comprehensive and accurate computational 
+models that can accurately predict the brain drug delivery process, 
+thereby improving the treatment eﬃciency of infusion-based brain 
+drug delivery. 
+2. Fluid mechanics: ﬂuid ﬂow and mass transfer in the brain 
+From the perspective of ﬂuid mechanics, drug delivery in the 
+brain occurs primarily through (i) convection, i.e. transport by ﬂuid 
+ﬂow, (ii) diffusion, i.e. transport through molecules’ thermal mo- 
+tion, and (iii) reaction, i.e. the biochemical interactions between 
+drug molecules and the other substances. The entire process can 
+be brieﬂy described by the convection-diffusion reaction equation 
+[21] : 
+∂(φCn ) 
+∂t 
++ ∂(ρCS n ) 
+∂t 
++ ∇ · (uF Cn ) 
+   
+Convection 
+= ∇ · [(Dn + DS n ) ∇Cn ] 
+ 
+ 
+ 
+Diffusion 
++ R (Cn ) 
+   
+Reaction 
+, 
+(1) 
+where n denotes the species of drug particles, φ is the tissue 
+porosity, Cn (mol/l) is the particle concentration in the ﬂuid phase, 
+CS n (mol/unit dry weight of the cells) is the amount absorbed by 
+the cells, ρ = (1 −φ) ρS is the dry bulk density and ρS is the cell 
+density, t is time, uF is the ﬂow velocity, Dn ( m2 / s ) is the par- 
+ticle diffusion tensor in the ﬂuid phase, DS n is that in the solid 
+phase, R (Cn ) deﬁnes the biochemical reaction processes of the drug 
+particles. 
+2.1. Convection 
+Driven by the ﬂuid ﬂow, the convection term in Eq. (1) can 
+be obtained by solving the NS equations. However, because of its 
+physiological structure, as shown in Fig. 1 , brain tissues are widely 
+treated as porous media. The NS equations must therefore be mod- 
+iﬁed to take into account the effect of the porous medium on the 
+drug delivery pathway, i.e. 
+Continuity equation 
+∂ρF 
+∂t + ∇ · (ρF uF ) + S = 0 , 
+(2) 
+Momentum equation 
+ρF 
+∂uF 
+∂t + (uF · ∇) uF 
+
+= −∇ p + μF ∇2 uF + ρF f , 
+(3) 
+where ρF is the ﬂuid density, S is the source term counting for the 
+plasma leakage (or ﬂuid exchange between tissue and the blood lu- 
+men), p is the hydraulic pressure, μF ( Pa · s ) is the dynamic viscos- 
+ity of the ﬂuid and f is the force per unit volume that the porous 
+medium exerts on the ﬂuid. 
+The above equations are strongly coupled, nonlinear and have 
+no analytical solutions. Therefore, Darcy’s law, as a simpliﬁed ver- 
+sion of the NS equations, is more widely used to determine the 
+ﬂow ﬁeld in porous media. Named after Henry Darcy, a French en- 
+gineer who ﬁrst formulated it in 1856 based on the results of ex- 
+periments on the ﬂow of water through sand beds, Darcy’s law ex- 
+presses a proportional relationship between the pressure drop and 
+the ﬂow rate in porous media, described as 
+w = −κ
+μF ∇p,
+(4) 
+where w (m/s) is the averaged ﬂow velocity over the cross sec- 
+tion and κ (m2 ) is the hydraulic permeability tensor of the porous 
+medium, which measures the ability of the material to allow ﬂuids 
+to pass through. It is worth noting that in order to apply Darcy’s 
+law, the following conditions must be met: 
+(i) the ﬂuid must be incompressible and Newtonian, i.e. , 
+Eq. (2) can be reduced to ∇ · uF = 0 ; 
+(ii) the ﬂow must be slow and steady so that the convective accel- 
+eration is small compared to the viscous forces, i.e. , Eq. (3) can 
+be reduced to ∇ p = μF ∇2 uF + ρF f ; 
+(iii) the porous medium must be fully saturated and homogeneous 
+so that the above equation can be further reduced to ∇p = 
+μF ∇2 uF and a local volume-averaging approximation can be 
+applied. 
+Although Darcy’s law was originally obtained as an empirical 
+expression based on experimental measurements, it can be derived 
+theoretically by substituting the above assumptions into the NS 
+equations [38–40] . This makes Darcy’s Law a fundamental princi- 
+ple in the mechanics of porous ﬂuids. Because of its universality, 
+Darcy’s law has numerous applications in various ﬁelds of science 
+and engineering, including hydrogeological science, soil mechanics, 
+petroleum engineering, environmental engineering, and biomedical 
+engineering. The adoption of Darcy’s law to model ﬂuid transport 
+in the brain, e.g. , to understand the formation and resolution of 
+hydrocephalus and oedema, goes back to the 1980s [41,42] . In the 
+past two decades, due to the sharp increase in the incidence rate 
+of brain diseases, great attention has been paid to the development 
+of highly eﬃcient drug delivery techniques to cure brain diseases. 
+Darcy’s law is now more practically applied to predict and opti- 
+mize the procedures of drug delivery to the brain, especially for 
+direct and localized drug delivery methods in the brain, e.g. , CED 
+[43,44] . 
+Application of Darcy’s law requires knowing the hydraulic per- 
+meability tensor κ of the target porous medium, which largely de- 
+pends on the microstructure of the medium, e.g. pore size and dis- 
+tribution, and is usually characterized by measuring the ﬂow rate 
+in the samples under a given pressure drop [24,45] . 
+Table 1 shows a summary of the characterized permeability of 
+brain tissues. The methods developed for brain permeability char- 
+acterization will be detailed in Section 2.4.1 . 
+3
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+Table 1 
+Hydraulic permeability of brain tissue determined using various methods. The values correspond to the scalar compo- 
+nents of isotropic or transversely isotropic permeability tensors. 
+Tissue type 
+Permeability κ 
+m2 	
+Method 
+Refs. 
+Hepatic neoplastic tissue in vitro 
+3 . 1 × 10−17 
+Lab test 
+[46] 
+Hepatic neoplastic tissue in vivo 
+(2 . 9 ∼8 . 4) × 10−18 
+Lab test 
+[46] 
+MCaIV murine mammary carcinoma 
+1 . 86 × 10−15 
+Lab test 
+[47] 
+LS174T human colon adenocarcinoma 
+3 . 37 × 10−16 
+Lab test 
+[47] 
+U87 human glioblastoma 
+4 . 87 × 10−16 
+Lab test 
+[47] 
+HSTS 26T human soft tissue sarcoma 
+6 . 9 × 10−17 
+Lab test 
+[47] 
+Human brain tissue 
+2 . 47 × 10−17 
+Lab test 
+[48] 
+Sheep corona radiata ⊥∗
+7 × 10−17 
+Lab test 
+[24] 
+Sheep corona radiata ∥∗∗
+2 × 10−16 
+Lab test 
+[24] 
+Sheep corpus callosum ⊥ 
+7 . 94 × 10−16 
+CFD 
+[28] 
+Sheep corpus callosum ∥ 
+1 . 71 × 10−15 
+CFD 
+[28] 
+Sheep fornix ⊥ 
+4 . 32 × 10−16 
+CFD 
+[28] 
+Sheep fornix ∥ 
+9 . 05 × 10−16 
+CFD 
+[28] 
+Sheep WM ⊥ 
+(0 . 9 ∼1 . 8) × 10−16 
+Theory and CFD 
+[49] 
+Sheep WM ∥ 
+(0 . 48 ∼0 . 82) × 10−16 
+Theory and CFD 
+[49] 
+∗⊥ : perpendicular to nerve ﬁbers ∗∗∥ : parallel to nerve ﬁbers. 
+2.2. Diffusion 
+The diffusion behavior of drug particles is determined by the 
+thermal motion of the particles themselves and the effects from 
+the liquid environment, cells and other substances. According to 
+Fick’s law [50] , the fundamental principle that describes the dif- 
+fusion of molecules, the rate of diffusion of a substance is pro- 
+portional to the concentration gradient of the substance across the 
+diffusion domain, i.e. 
+J = −D ∇C,
+(5) 
+where J is the diffusion ﬂux vector, representing the amount of 
+substance moving through a unit area per unit time, and ∇C is 
+the concentration gradient of the diffusing substance, represent- 
+ing the concentration changes with position. The negative sign in 
+the equation indicates that the substance diffuses from higher to a 
+lower concentration. The coeﬃcient D denotes the diffusion tensor, 
+which determines the diffusion eﬃciency. Analogous to hydraulic 
+permeability, the isotropic diffusion coeﬃcient D of a speciﬁc par- 
+ticle in the brain microenvironment is a key parameter in deter- 
+mining the drug delivery route. It can be determined both through 
+laboratory tests and numerical simulations, mainly based on Fick’s 
+law, i.e. Eq. (5) , by measuring the ﬂux and concentration gradients 
+[51–54] , and the Einstein diffusion Eq. (6) , by recording the dy- 
+namics of the displacement of each individual particle. Thus, the 
+diffusion coeﬃcient D may be given as 
+D = ⟨ R ⟩ 
+6t =
+
+ N 
+i =1 (d2 
+xi + d2 
+yi + d2 
+zi ) /N 
+6t 
+,
+(6) 
+where ⟨ R ⟩ is the mean square displacement of all particles, N is 
+the particle number and dxi , dyi , dzi are the i −th particle dis- 
+placements in the directions x , y and z over the time period t. 
+The studies that have developed methods for evaluating the dif- 
+fusion coeﬃcient of substances in the brain will be discussed in 
+Section 2.4.2 . 
+2.3. Reaction 
+While the diffusion term in drug delivery models represents the 
+physical transport of drug particles in the ECS, the reaction term 
+accounts for drug elimination due to biochemical interactions be- 
+tween drug molecules and cells. Enzyme kinetic models, a class of 
+mathematical models that describe the rate of enzyme-catalyzed 
+chemical reactions, can be used to describe the drug reaction pro- 
+cess. One of the most widely adopted models is the Michaelis- 
+Menten model, i.e. 
+V = Vmax C 
+Km + C ,
+(7) 
+which describes the rate of enzymatic reactions by relating the re- 
+action rate to the concentration of a substrate. In Eq. (7) , V is the 
+reaction rate, Vmax is the maximum reaction rate, C is the substrate 
+concentration and Km is the Michaelis constant, which represents 
+the substrate concentration at which the reaction rate is half of 
+Vmax . Researchers have used the Michaelis-Menten kinetics model 
+to describe the active transport of drugs into or out of the nerve 
+cells [23,55–57] . 
+By deﬁning the reaction rate as a function of drug concentra- 
+tion, this model can be perfectly integrated into the convection- 
+diffusion equation. However, this also represents a signiﬁcant limi- 
+tation of the model, as the rate of drug reaction is generally not 
+determined by concentration alone. It is also worth mentioning 
+that the Michaelis constant Km varies depending on the type of 
+drugs and cells and must be carefully calibrated. Therefore, more 
+sophisticated kinetics models are required to describe drug reac- 
+tions in the brain [58] . 
+2.4. Supporting techniques 
+The supporting methods for the above-mentioned studies 
+mainly include experimental and numerical characterization of 
+hydraulic permeability, diffusion coeﬃcient and reaction rate re- 
+quired to solve the established biomechanical models, as well as 
+experimental observations of unknown phenomena to develop new 
+biophysical laws. 
+2.4.1. Characterization of hydraulic permeability 
+The characterization of hydraulic permeability has been a long- 
+standing research topic since the introduction of Darcy’s law in 
+1856. Based on Darcy’s law, the typical method is to apply a pres- 
+sure gradient across the sample and measure the ﬂow rate of the 
+ﬂuid ﬂowing through the sample [59–61] , as shown in Fig. 2 A, and 
+referred to as the perfusion method. Tavner et al. [62] used this 
+method to measure the hydraulic conductivity of lamb and sheep 
+brains. 
+Compression is also a commonly used method for indirectly 
+measuring hydraulic permeability. Based on the consolidation the- 
+ory, which considers the equilibrium between the hydraulic pres- 
+sure inside the pores and the stress of the matrix caused by com- 
+pression, the relationship between the ﬂow rate due to pore de- 
+formation and the hydraulic pressure can be obtained to calcu- 
+4
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+Fig. 2. Methods for characterizing the hydraulic permeability of brain tissue: (A) Perfusion method. Orange block represents the tissue, P1 −P2 stands for the pressure 
+difference along the sample, and Q is the ﬂow rate. (B) Unconﬁned compression method. (C) Infusion method, where P is the applied pressure difference and Q the ﬂow 
+rate. (D) Computational ﬂuid dynamic method based on high-resolution imaging and reconstruction techniques; reproduced from Vidotto et al. [28] . 
+late the permeability. There are two types of compression meth- 
+ods, namely unconﬁned compression and conﬁned compression. In 
+unconﬁned compression, as shown in Fig. 2 B, ﬂuid drains out of 
+all boundaries of the sample. Using this method, Cheng and Bil- 
+ston [63] and Su et al. [64] measured the permeability of calf brain 
+and porcine brain, respectively. In conﬁned compression, the ﬂuid 
+drains out from the top and bottom of the sample. Based on con- 
+ﬁned compression, Franceschini et al. [48] performed an uniaxial 
+deformation experiment on human brain tissue within 12h after 
+death and indirectly determined the permeability from the com- 
+pressibility parameters by ﬁtting the data to Terzaghi’s theory. 
+However, for brain tissues, which are very soft, highly het- 
+erogeneous and less permeable, both the perfusion method and 
+the compression method reach their limits. Low perfusion pres- 
+sure gradients may not allow ﬂuid to ﬂow through the tissue, 
+while high perfusion pressure gradients may compress the tissue 
+and alter its microstructure, resulting in inaccurate values of mea- 
+sured permeability. This indicates that the parameters in the perfu- 
+sion method should be determined very carefully. In addition, the 
+compression method deﬁnitely deforms the microstructure. Under 
+these circumstances, the infusion method, which involves injecting 
+ﬂuid into tissue while monitoring the ﬂow rate and injection pres- 
+sure, as shown in Fig. 2 C, can be applied [65–67] . Furthermore, the 
+infusion method offers the advantage of capturing local permeabil- 
+ity, which cannot be explicitly measured using the perfusion and 
+compression methods in nonuniform tissues. Using the infusion 
+method, Jamal et al. [24] measured the localized anisotropic per- 
+meability tensor of the ovine brain WM under different infusion 
+pressure. Importantly, this study found that the brain permeability 
+is pressure dependent. Subsequent theoretical studies [13,23] re- 
+vealed that this is caused by the interactions between the infused 
+ﬂuid and the axons. These studies demonstrated the signiﬁcant ef- 
+fects of pressure-driven neuronal deformation on the permeability 
+tensor of brain WM. Subsequently, a new pressure-dependent per- 
+meability tensor for brain WM was proposed, which complements 
+the classical Darcy’s law and can quantitatively consider the effects 
+of infusion pressure on the drug-delivery process in the brain [13] . 
+Numerical methods can also be employed to derive hydraulic 
+permeability because pressure drop and ﬂow rate can be calcu- 
+lated by solving the NS equations in the pore-scale geometry. For 
+example, based on simpliﬁed geometries and realistic geometries 
+at the neuron level, Vidotto et al. [22,28] characterized the per- 
+meability tensors of brain tissue in different regions using com- 
+putational ﬂuid dynamics (CFD) simulations. Their study showed 
+high heterogeneity of hydraulic permeability in different regions of 
+the brain, which to some extent explains the failure in drug de- 
+livery to the brain caused by CED, especially the observed uneven 
+distribution of drug volume and concentration [7,8] . Motivated by 
+the uncertainty of brain permeability due to microstructural het- 
+erogeneity, in a recent study Yuan et al. [49] proposed a math- 
+ematical expression that links the microstructural information of 
+brain WM with its permeability tensor, using mathematical deriva- 
+tion, CFD modeling and stochastically reconstructed brain WM ge- 
+ometry obtained from high-resolution imaging (FIB-SEM) data. This 
+study was able to ﬁll this gap and provide more accurate predic- 
+tions about the pathway of drug delivery in brain tissue. However, 
+from an imaging perspective, further effort s are required to cap- 
+ture the microstructural information in vivo . Importantly, Su et al. 
+[68] found that wettability signiﬁcantly inﬂuences the permeabil- 
+ity of brain WM and that the effects are anisotropic. This shows 
+the importance of adjusting the boundary conditions when using 
+CFD to characterize the permeability of brain WM. 
+2.4.2. Characterization of the diffusion coeﬃcient 
+Characterizing the diffusion coeﬃcient of molecules or parti- 
+cles in the brain is a challenging task. According to Section 2.2 , 
+either the concentration gradient (macroscale, Fick’s Law Eq. (5) ) 
+or the motions of individual particles (microscale, Einstein’s diffu- 
+sion equation Eq. (6) ) must be known to be able to calculate the 
+diffusion coeﬃcient. 
+Based on Fick’s law, Nicholson and Tao [69] developed a 
+concentration-based method called integrative optical imaging 
+(IOI) technique to measure the diffusion coeﬃcient of ﬂuorescent 
+dextran molecules in the agarose gel and in the extracellular mi- 
+croenvironment of the brain. As demonstrated in Fig. 3 A, they in- 
+jected a known amount of ﬂuorescent molecules ( i.e. , a known 
+concentration) into the tissue and then took images of the ﬂuo- 
+rescence over time using a microscope. By analyzing the changes 
+in ﬂuorescence intensity in the images, they were able to calculate 
+the apparent diffusion coeﬃcient (ADC) of the dextran molecules. 
+In addition, by analyzing the diffusion of particles of different 
+sizes, Thorne and Nicholson [70] found that the extracellular space 
+(ECS) of brain tissue has a normal width of 38 to 64 nm, which 
+has a great impact on subsequent studies related to the brain 
+micro-environment, e.g. , drug development and delivery [71–73] , 
+metabolic waste clearance [37,74] , and treatments of brain can- 
+cer [73,75] . Similarly, Valnes et al. [76] developed a mathematical 
+contrast approach to measure the diffusion coeﬃcient of the CSF 
+tracer in the cortical GM of the human cerebral cortex. The au- 
+thors used the diffusion equation to model the concentration of a 
+tracer injected into the CSF of the brain. By comparing the results 
+of their model with the observed CSF tracer concentrations from 
+magnetic resonance imaging (MRI) scans, they were able to esti- 
+mate the ADC that best ﬁt the data. 
+Einstein’s diffusion equation provides the fundamental theory 
+for the numerical characterization of the diffusion tensor, since the 
+trajectory of the particles can be solved based on Newton’s second 
+law once the forces acting on the particles are described math- 
+ematically. For example, Su et al. [26] developed a particle tra- 
+jectory tracking model that can account for particle dynamics in 
+5
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+Fig. 3. Diffusion in the brain: (A) In vivo measurement of particle diffusion in 
+the brain. Consecutive images of ﬂuorescent intensity I were taken with a cooled 
+charge-coupled device camera through a microscope with a ×10 water-immersion 
+objective after pressure ejection from a micropipette into the rat brain accessible 
+through an open cranial window (scale bar: 500 μm); reproduced from Thorne 
+and Nicholson [70] . (B) Typical mean square displacement relationship over time 
+of nanoparticles in brain WM; reproduced from Yuan et al. [27] . (C) Representa- 
+tive particle trajectories for COOH- and PEG-coated nanoparticles of various sizes in 
+human brain tissue at a time scale of 1 s; reproduced from Nance et al. [71] . 
+an aqueous solution and the interactions of the particles with a 
+spherical surface, which allowed the authors to calculate the diffu- 
+sion tensor of particles. However, in this study, the microstructure 
+of the porous medium was not considered, which means that the 
+model may not be valid if the particle size is not negligible com- 
+pared to the pore size. A new framework developed by Yuan et al. 
+[27] that embeds a particle tracking model into the neuron-scale 
+microstructure of the brain WM narrows the gap and is able to 
+estimate the diffusion coeﬃcient of nanoparticles (NPs) up to the 
+ECS width of the brain WM. The authors obtained the typical rela- 
+tionship between the mean squared displacement and the time of 
+charged NPs in the brain WM, as shown in Fig. 3 B. The slope of the 
+Stage II curve is the diffusion coeﬃcient. The accuracy obviously 
+depends on the accuracy of the reconstructed microstructure. The 
+Brownian force due to molecular thermal motion, the drag force of 
+the ﬂuid environment, and the electrical forces due to the charge 
+properties of particles and neurons are the most commonly consid- 
+ered forces in the reported models. Further investigation demon- 
+strated the ability of this model to explore new drug delivery tech- 
+niques, such as achieving isotropic drug distribution in anisotropic 
+brain tissue by applying magnetic NPs and an external magnetic 
+ﬁeld [77] . Nance et al. [71] has also successfully measured the ADC 
+of particles with different surface coatings in the brain parenchyma 
+by adopting the multiple particle tracking method to record parti- 
+cle trajectories, as shown in Fig. 3 C. The advanced particle tracking 
+methods also allow researchers to explicitly observe the particle- 
+brain interactions in the brain micro-environment. These provide 
+strong evidence for developing a deeper understanding of particle 
+behavior in the brain and for creating more precise models, e.g. , 
+models based on molecular dynamics (MD) simulations [78,79] to 
+characterize the reaction term of the transport processes. The re- 
+cent advances and capabilities of particle tracking methods have 
+been discussed in detail in [80,81] . 
+2.4.3. Characterization of the reaction rate 
+From a macroscale perspective, clearance is the most important 
+measure of drug reaction. It can be deﬁned as the theoretical vol- 
+ume of ﬂuid from which a drug is completely removed per unit 
+time [82] . In other words, clearance represents the rate at which 
+the drug is removed from the body. The clearance rates of some 
+commonly used brain tumor drugs can be found in [29] . 
+To explicitly account for individual drug molecules, the reaction 
+rate of drugs can also be assessed through MD modeling. Com- 
+pared with the particle trajectory tracking model discussed in the 
+above section, MD has inherent advantages in terms of accuracy 
+because the objects of MD are atoms and molecules that form the 
+drug particles and cell surfaces. Therefore, far fewer hypotheses are 
+needed in the simulations, aside from the availability of accurate 
+potentials to describe atomic and molecular interactions, which is 
+essential to avoid deviation or the inability to capture the funda- 
+mental interactions of interest. Consequently, MD has been widely 
+used to model particle-cell interactions. Shi and co-authors have 
+performed extensive experimental and MD studies to investigate 
+the process of molecules and NPs entering into cells. For example, 
+they used the method of coarse-grained molecular dynamics to 
+theoretically analyze the entry process of one-dimensional nano- 
+materials into the cell [78] . The results showed that the caps or 
+shells at the tip of NPs have a signiﬁcant effect on the nature of 
+membrane interaction. Further studies were conducted to investi- 
+gate the inﬂuence of other factors on the molecular-membrane in- 
+teractions, including size [83–85] , shape [78,86] , and chemical and 
+physical properties of the molecules [87,88] . 
+2.4.4. Imaging techniques for microstructure reconstruction 
+Numerical characterization of the hydraulic permeability and 
+diffusion coeﬃcient as mentioned in Sections 2.4.1 (represented by 
+Fig. 2 D) and 2.4.2 (represented by Fig. 3 B) are gaining increasing 
+attention as high-resolution imaging techniques become more ac- 
+cessible for neuron-scale microstructural reconstruction [27,28,89] . 
+Rapid advances in these techniques over the past two decades have 
+led to noticeable improvements in both higher resolution and the 
+ability to segment and reconstruct brain microstructure with in- 
+creased accuracy and varying degrees of automation [90,91] . The 
+most commonly used techniques include: 
+(i) Scanning electron microscopy (SEM): a type of electron micro- 
+scope that creates images of a sample by scanning its surface 
+with a focused beam of electrons. The electrons interact with 
+atoms in the sample and produce various signals that contain 
+information about the surface topography and composition of 
+the sample. 
+(ii) Transmission electron microscopy (TEM): a microscopy tech- 
+nique in which a beam of electrons is transmitted through an 
+ultra-thin specimen (usually less than 100 nm) to produce an 
+image. The electrons interact with the sample as the beam 
+passes through it, and an image is formed from this interaction. 
+Due to the smaller de Broglie wavelength of electrons, TEMs 
+are image with a signiﬁcant higher resolution than light micro- 
+scopes. This allows the instrument to capture ﬁne details, even 
+as small as a single column of atoms. 
+(iii) Focused ion beam-scanning electron microscopy (FIB-SEM): a 
+technique that combines a focused ion beam (FIB) and a scan- 
+ning electron microscope (SEM) on the same platform. The FIB 
+can be used to remove or deposit materials on the sample sur- 
+face, while the SEM can be used to image the surface with 
+electrons. FIB-SEM can create two-dimensional (2D) and three- 
+dimensional (3D) images of surface topography and resolve nm- 
+scale features. FIB-SEM can also integrate diffraction and X-ray 
+spectroscopy for microstructural analysis. 
+(iv) Micro-computed tomography ( μ-CT): a non-destructive imag- 
+ing tool that produces high-resolution 3D images consisting of 
+2D trans-axial projections or ’slices’ of a target specimen. μ-CT 
+is similar to hospital CT imaging, but on a smaller scale and 
+with signiﬁcantly higher resolution. It allows examining the in- 
+ternal structure of an object without having to destroy it. 
+Theoretically, they all have the ability to microstructurally re- 
+construct brain tissue, but they have their speciﬁc advantages and 
+6
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+disadvantages. For example, while SEM and TEM have higher reso- 
+lution compared to μ-CT, they are destructive. FIB-SEM is capable 
+of producing high-resolution 3D images, but is time-consuming. A 
+systematic comparison between these techniques, including other 
+3D imaging modalities, e.g. , confocal optical microscopy, neutron 
+tomography and MRI, was carried out by Vásárhelyi et al. [92] . 
+3. Solid mechanics: brain tissue properties and needle-tissue 
+interaction 
+As an invasive drug delivery method to physically bypass the 
+BBB, CED operations will inevitably lead to brain deformation and 
+damage [93] . The deformation may further change the local mi- 
+crostructure and pathways for drug transport, thus affecting the 
+eﬃciency of drug delivery [13,29] . In addition, the brain-needle in- 
+teraction can alter the penetration path of the needle, especially 
+when using ﬂexible catheters designed for robotic needle steering, 
+which can also affect drug delivery eﬃcacy [94,95] . The principles 
+of solid mechanics are therefore essential to understand, predict 
+and minimize tissue damage caused by invasive drug delivery to 
+the brain. 
+3.1. Properties and constitutive models of brain tissues 
+3.1.1. Nonlinearity 
+Based on experimental and theoretical methods, it is widely 
+accepted that brain tissue deforms similarly to soft porous elas- 
+tomers, with an intricate response governed by large deformations, 
+pre-conditioning, and rate-dependent behavior at different time 
+scales [33,96] . Various strain-energy functions for brain tissue have 
+been proposed in the literature, including Mooney-Rivlin [97,98] , 
+Fung [97] , Gent [97] , Ogden [97–102] and some polynomial for- 
+mulations [100,103–105] . In addition, the mechanical properties of 
+brain tissue are heterogeneous, region- and age-dependent [106–
+112] . GM usually appears stiffer than WM in large-strain compres- 
+sion, tension and shear experiments [110] , while the opposite trend 
+is observed for indentation [109,112–116] . 
+3.1.2. Rate-dependence 
+Rate-dependence in brain tissue is traditionally related to vis- 
+coelasticity and has been modeled using various approaches based 
+on linear or quasi-linear viscoelasticity [97–105,108,115,117,118] , 
+fractional viscoelasticity [119,120] , and nonlinear viscoelastic mod- 
+els [121–124] . Given the extreme softness of brain tissue, several 
+studies have emphasized the importance of considering nonlinear 
+deformations in brain tissue mechanics. Nonlinear viscoelasticity 
+is usually based on a kinematic multiplicative split of the defor- 
+mation gradient tensor F into an elastic part (labeled by the sub- 
+script e ) and a viscous part (labeled by the subscript v ), so that 
+F = Fe Fv . As a result, one can obtain a decoupled representation of 
+the strain-energy function and of the Cauchy stress tensor [125] , 
+namely 
+(C ) = eq (C ) + neq (Ce ) , 
+(8a) 
+σ = σeq + σneq = 2 J−1 F∂eq 
+∂C FT + 2 J−1 Fe ∂neq 
+∂Ce 
+FT 
+e , 
+(8b) 
+where C = FT F is the right Cauchy–Green tensor, Ce = FT 
+e Fe is the 
+elastic part and J = det F > 0 is the volume ratio. It may be ben- 
+eﬁcial to visualize this decomposition with a classical rheological 
+model, borrowed from linear viscoelasticity, in which the strain- 
+energy function eq and the associated stress σeq represent the 
+contribution of an elastic spring, while neq is the strain energy 
+in the spring-dashpot element and σneq the associated stress. Note 
+that there is no restriction on the speciﬁc form of the strain-energy 
+functions that enter into Eq. (8) . 
+It is worth mentioning that some studies claim that the appli- 
+cability of linear models should not be ruled out. At low loading 
+rates, which is usually the case in drug delivery and device im- 
+plantation, linear viscoelasticity might provide reliable results and 
+ensure higher eﬃciency [98,108,112] . 
+3.1.3. Anisotropy 
+Some experimental studies suggest that WM regions of the 
+brain exhibit mechanical anisotropy, probably due to the bun- 
+dles of axonal ﬁbers that can be highly aligned along a preferen- 
+tial direction, such as in the corpus callosum [98,106,107,126,127] . 
+Therefore, WM models based on those developed for ﬁber- 
+reinforced soft tissues have been proposed [11,126,128–130] . How- 
+ever, the anisotropic nature of brain tissue is still controversial, and 
+other studies assumed that the mechanical anisotropy is marginal 
+[102,110,131] and the structural anisotropy of the tissue is only rel- 
+evant to the diffusion or permeability properties [24,29] . Part of 
+the discrepancy may depend on the different scale and loads at 
+which the tissue samples were tested [132] . Here, we assume that 
+the strain-energy terms appearing in Eq. (8) are isotropic func- 
+tions, leaving open the possibility of extending this framework to 
+anisotropy, but at the expense of a more cumbersome numerical 
+treatment [133] . Assuming isotropy, the strain-energy function and 
+the associated Cauchy stress tensor of the viscoelastic brain tissue 
+are expressed as [123] 
+(b ) = eq (b ) + neq (be ) , 
+(9a) 
+σ = σeq + σneq = J−1 
+3 
+ 
+a =1 
+λa ∂eq 
+∂λa 
+na  na 
++ J−1 
+3 
+ 
+a =1 
+λa, e ∂neq 
+∂λa, e 
+na, e  na, e , 
+(9b) 
+where λa , a ∈1 , 2 , 3 , are principal stretches representing the eigen- 
+values of the left Cauchy–Green tensor b = FFT = 
+ 3 
+a =1 λ2 
+a na  na , 
+where na are the principal directions of the material in the current 
+conﬁguration. The elastic principal stretches λa, e and principal di- 
+rections na, e are deﬁned analogously from the elastic left Cauchy–
+Green tensor be = Fe FT 
+e . This tensor represents the viscoelastic his- 
+tory variable and is obtained from the solution of an appropri- 
+ate rate equation (generally one for each spring-dashpot element 
+introduced to approximate the relaxation of the material), which 
+needs to ensure a non-negative viscous dissipation Dv . For exam- 
+ple, Budday et al. [123] adopted the following rate equation [125] : 
+−Lv be b−1 
+e = (J/η) σneq , where η is the viscosity of the solid and 
+Lv denotes the Lie derivative [134] . The viscous dissipation rate is 
+then calculated as Dv = (J2 / 2 η) σneq : σneq [135] . 
+3.1.4. Compressibility 
+Another fundamental aspect of brain tissue mechanics is related 
+to volumetric deformations. It is generally accepted that viscous 
+relaxation has no inﬂuence on the volumetric response [121,123] , 
+so that the non-equilibrium term in Eq. (9) becomes purely devia- 
+toric. In addition, similar to elastomers, the volumetric component 
+is usually decoupled from the total deformation, so the equilibrium 
+Cauchy stress is given as σeq = σeq 
+iso + σvol , where σeq 
+iso is the devi- 
+atoric equilibrium stress and σvol is the term associated to the vol- 
+umetric deformations. In several studies, brain tissue is assumed 
+to be incompressible, meaning that the volumetric term σvol = −pI 
+is a means to enforce incompressibility through a Lagrange param- 
+eter p [121,123] . However, as discussed later in this section, brain 
+tissue is highly hydrated and the motion of the interstitial ﬂuid 
+must be reﬂected in the bulk response of the material. For exam- 
+ple, Prevost et al. [122] proposed the following expression for the 
+7
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+volumetric stress, i.e. 
+σvol = K ln 
+
+J −f1 
+1 −f1 
+
+I , 
+(10) 
+where K is the bulk modulus and I denotes the second-order iden- 
+tity tensor. The scalar f1 represents the incompressible volume 
+fraction of the material and deﬁnes the so-called compaction point 
+of the material, that is, the volumetric stress becomes inﬁnite for 
+J → f1 [122] . 
+3.1.5. Biphasic and poro-elastic properties 
+The effects of ﬂuid-solid interaction (FSI) between ﬂuids and 
+cells are a fundamental part of the mechanical behavior of brain 
+tissue and are involved in the healthy and pathological physiol- 
+ogy of the human brain [136–138] . Although it is quite common 
+in the brain tissue literature to include rate-dependent behavior 
+only in the framework of viscoelasticity [62,103] , the interaction 
+between brain tissue deformation and ﬂuid transport is crucial in 
+the context of drug delivery. Modeling approaches that consider 
+the presence of a ﬂuid phase in the brain are based on the theory 
+of porous media, which approximates the brain tissue as a bipha- 
+sic material. The basic biphasic theory assumes that the tissue is a 
+mixture of an elastic solid phase and an inviscid ﬂuid phase. The 
+relative motion between these two phases results into a form of 
+dissipation that determines the characteristic relaxation in the soft 
+tissue. This approach, formalized by Bowen [139] and ﬁrst applied 
+to biological tissues for articular cartilage by Mow et al. [140] , was 
+also adapted to the brain [141] . More recently, it has been com- 
+bined with viscoelasticity to describe ﬂow-independent dissipation 
+[135,142–144] and with a growth term to account for tumor prolif- 
+eration [145] . In parallel, another modeling approach was derived 
+from Biot’s classical consolidation theory [146,147] , and applied to 
+the brain within the inﬁnitesimal strain theory [4 8,14 8–151] or 
+nonlinear poroelasticity [101,152–155] . 
+Speciﬁcally, the brain tissue is modeled as a biphasic medium 
+consisting of a solid phase, including the network of cells and cap- 
+illaries embedded in the ECS, and a ﬂuid phase consisting of inter- 
+stitial ﬂuid surrounding the neurons [135] . These two phases are 
+characterized by mass densities ρF , ρS and volume fractions nF , nS , 
+which we assume to satisfy the condition of saturation nF + nS = 1 . 
+The theory is developed within the framework of nonlinear kine- 
+matics and requires the fundamental mass and momentum bal- 
+ances for the biphasic medium [156] . In the current conﬁguration 
+these are expressed as 
+∇ · ( nF wF ) +
+˙ln J = 0 ,
+(11a) 
+∇ · ( σF + σS ) + ρf = 0 .
+(11b) 
+The mass balance in Eq. (11a) equates the rate of volume 
+change of the biphasic medium with the outﬂow of ﬂuid and is 
+derived assuming the incompressibility of the single phases. Here 
+wF is the seepage velocity, a relative velocity of the ﬂuid with re- 
+spect to the deforming solid, and J is the volume ratio, which de- 
+scribes the volume change in the biphasic medium. In the bal- 
+ance of linear momentum for quasi-static conditions, written in 
+Eq. (11b) , f is the vector of body forces per unit volume and ρ = 
+nF ρF + (1 −nF ) ρS is the homogenized density. This expression for 
+the biphasic medium is derived by considering the Cauchy stress 
+tensor in the single phases and the interaction terms, which we 
+express as 
+σF = −nF pI , 
+σS = σE 
+S −nS pI , 
+(12a) 
+˜ 
+pF = −˜ 
+pS = p∇nF + ˜ 
+pE 
+F . 
+(12b) 
+Eq. (12a) deﬁnes the extra stress in the solid matrix σE 
+S , similar 
+to the concept of effective stress in Biot’s classical consolidation 
+theory and assumes that the shear stresses of the ﬂuid are negli- 
+gible. The internal friction exerted between the solid and the ﬂuid 
+is modeled by the exchange term ˜ 
+pE 
+F in Eq. (12b) , which therefore 
+provides the ﬂuid-dependent dissipative contribution in the model. 
+The theory is completed by suitable constitutive models for the 
+solid and ﬂuid phases. The constitutive behavior of the ﬂuid in 
+the biphasic medium is governed by the generalized Darcy’s law, 
+which was introduced in Eq. (4) , where w = nF wF . With this as- 
+sumption, the ﬂuid-dependent dissipation rate can be calculated 
+from the interaction term as Df = − 
+pE 
+F · wF = μF κ−1 w · w [135] . 
+Note that the hydraulic permeability tensor κ appearing in 
+Darcy’s law (4) is a spatial tensor that is generally anisotropic 
+[157] . Ehlers and Eipper [156] proposed a power law form to ac- 
+count for the dependence of the hydraulic permeability on defor- 
+mation, i.e. 
+κ =
+
+J −n0 , S 
+1 −n0 , S 
+m 
+κ0 ,
+(13) 
+where κ0 = κ0 I is an isotropic material tensor, m ≥0 is a param- 
+eter, n0 , S is the initial solid volume fraction and κ0 is the intrinsic 
+hydraulic permeability, a material property. Due to the microstruc- 
+tural complexity of brain tissues, the porosity of the tissue ( φ or nF 
+in mixture theory) cannot uniquely determine its permeability ten- 
+sor [49] . Yuan et al. [13] has developed a permeability tensor as a 
+function of local pressure and pressure gradient, providing an accu- 
+rate alternative to consider the deformation-dependent permeabil- 
+ity of brain tissue. This function was derived by explicitly model- 
+ing the dynamic interactions between axonal deformation and ﬂuid 
+ﬂow, as shown in Fig. 4 . 
+The constitutive model for the solid phase may include nonlin- 
+ear elastic or viscoelastic terms. Although the individual phases are 
+incompressible, it is required to include a term that allows for large 
+volume changes that can occur as a result of changes in volume 
+fractions [156] . Following the framework introduced by Eq. (9) , 
+Comellas et al. [135] proposed two Ogden strain-energy functions 
+for the equilibrium and non-equilibrium parts of the solid, so that 
+the Cauchy extra stress in the solid matrix is expressed as 
+σE 
+S = σeq 
+S , iso + σvol + σneq 
+S , iso , 
+(14a) 
+σeq 
+S ,iso = J−1 μ∞ 
+3 
+ 
+a =1 
+
+λa α∞ −1 
+3 
+
+λ1 α∞ + λ2 α∞ + λ3 α∞ 
+
+na  na , 
+(14b) 
+σneq 
+S ,iso = J−1 μ
+3 
+ 
+a =1 
+
+λa, e α −1 
+3 
+
+λ1 , e α + λ2 , e α + λ3 , e α
+na, e  na, e , 
+(14c) 
+where we have introduced the Ogden moduli and nonlinear pa- 
+rameters μ∞ , α∞ and μ, α in the equilibrium term eq 
+S and the 
+non-equilibrium term neq 
+S , respectively. In Eq. (14b) , ¯λa are iso- 
+choric principal stretches that represent the eigenvalues of the iso- 
+choric left Cauchy–Green tensor and b = J−2 / 3 FFT = 
+ 3 
+a =1 λ
+2 
+a na 
+na , and analogously for their elastic counterparts in Eq. (14c) . The 
+volumetric Cauchy stress tensor in Eq. (14a) is given by Comellas 
+et al. [135] 
+σvol = (1 −n0 , S )2 
+
+1 
+1 −n0 , S 
+−
+1 
+J −n0 , S 
+
+I , 
+(15) 
+where  is the second Lamé parameter related to the bulk mod- 
+ulus. Eq. (15) is similar to Eq. (10) , but here the evolution of the 
+8
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+Table 2 
+Mechanical properties of brain tissue obtained using different methods (GM = gray matter; WM = white matter). 
+Tissue types and region 
+Material model 
+Loading condition 
+Refs. 
+Swine brain 
+Hyper-viscoelastic model 
+indentation, in vivo ∗
+[158] 
+Swine brain 
+Hyper-viscoelastic model 
+tension and unconﬁned compression (strain 
+in < −0 . 3 , 0 . 2 > ) 
+[99] 
+Porcine brain GM and WM 
+Modiﬁed Ogden hyperelastic model 
+shear and compression 
+[106] 
+Porcine brain cerebral cortex 
+Hyper-viscoelastic model 
+indentation, in vivo, in situ , and in vitro 
+[159] 
+Human brain GM and WM 
+Poro-viscoelastic model 
+cyclic loading, failure, conﬁned compression 
+[48] 
+Calf brain WM 
+Poro-viscoelastic model 
+unconﬁned compression 
+[142] 
+Bovine brain GM and WM 
+Linear elastic model 
+tension 
+[160] 
+Bovine brain GM and WM 
+Anisotropy rate-dependent model 
+high strain-rate compression (up to 3000/s) 
+[131] 
+Porcine brain mixed GM and WM samples 
+Large strain, nonlinear, viscoelastic model 
+cyclic unconﬁned compression 
+[122,161] 
+Porcine brain GM and WM 
+Elastic and Yeoh hyperelastic models 
+indentation, in vitro 
+[162] 
+Porcine brain multiple regions 
+Quasi-linear viscoelastic 
+multistep indentation 
+[108] 
+Bovine brain 
+Quasi-linear viscoelastic model hyperelastic 
+material 
+ﬁnite step-and-hold uniaxial unconﬁned 
+compression 
+[104] 
+Porcine brain mixed GM and WM samples 
+One-term Ogden model 
+unconﬁned compression strain rates ≤90 /s 
+[163,164] 
+Lamb brain WM 
+Transversely isotropic hyperelastic model 
+indentation 
+[126] 
+Porcine brain mixed GM and WM samples 
+Ogden and Mooney-Rivlin models 
+simple shear test at strain rates ≤120 /s 
+[97] 
+Human brain multiple regions 
+Isotropic modiﬁed one-term Ogden model 
+simple shear in two orthogonal directions, 
+unconﬁned compression, and tension 
+[110] 
+Brain 
+Visco-hyperelastic model 
+tension/unconﬁned compression 
+[165] 
+Porcine brain multiple regions 
+Linear viscoelastic model 
+multistep stress relaxation indentations 
+[98] 
+Bovine brain different WM regions 
+Hyperelastic, strain-stiffening in compression 
+and strain-softening in tension 
+uniaxial tension and unconﬁned compression 
+[166] 
+Sheep brain, WM regions 
+Two-term prony series 
+microindentation 
+[127] 
+Human brain, fresh, post-operative, GM and WM 
+Linear viscoelastic 
+multistep indentation 
+[112] 
+Göttingen minipigs brain multiple regions 
+Unidirectional hyper-viscoelastic models with 
+an Ogden hyperelastic representation and a 
+single-term Prony series, strain rate stiffening 
+in both shear and compression 
+simple shear and unconﬁned compression 
+[167] 
+∗In vivo experiments are listed; no information means in vitro experiments. 
+Fig. 4. Derivation of the brain white matter permeability tensor as a function of 
+pressure and pressure drop by explicitly modeling the ﬂuid-solid interaction be- 
+tween the interstitial ﬂuid and the axons; reproduced from Yuan et al. [13] : (A) 
+Parallel ﬂow status and axonal displacement. The streamlines on the left side of 
+the ﬁgures indicate the ﬂow direction. The cone size of the streamlines is propor- 
+tional to the ﬂow velocity magnitude and the scaling factors are indicated below 
+the streamlines. The images on the right show the axonal displacement in the cen- 
+tral cross section ( i.e. the T - T cross section as annotated in the streamline image). 
+(B) Permeability in the parallel direction as a function of pressure and pressure drop 
+( i.e. κ∥ = f(p, p) ) derived by surface ﬁtting. The tables show the ﬁtting equations, 
+values of the coeﬃcients ± standard error (SE) as a percentage of the coeﬃcients, 
+and the R2 of each ﬁtting result. (C) Perpendicular ﬂow status and axonal deforma- 
+tion. (D) Permeability in the perpendicular direction as a function of pressure and 
+pressure drop ( i.e. κ⊥ = f(p, p) ). 
+volume fraction depends on the continuity equation of the bipha- 
+sic medium. 
+Table 2 summarizes the mechanical properties of brain tissue in 
+terms of tissue types, tissue regions, constitutive model and load- 
+ing conditions obtained by experimental tests. The adoption of a 
+speciﬁc material model depends on the application. In the condi- 
+tion of hydrocephalus, which resembles the drug transport process 
+in the brain, Gholampour et al. [137,138] suggested that the most 
+optimal material properties for the brain are ‘poro-visco-elastic’. 
+This can be an important reference when selecting material mod- 
+els for modeling drug delivery in the brain. 
+3.2. Needle-tissue interaction during infusion-based drug delivery 
+The deformation of brain tissue caused by infusion-based drug 
+delivery occurs in several stages [168,169] . As illustrated in Fig. 5 , it 
+includes tissue compression, contact with friction, and rupture. In 
+general, both the tangential stress ts and the normal stress tn pro- 
+vide an energetic contribution entering Eq. 16 and directly affect 
+the tissue rupture [170,171] . Subsequently one can observe local tis- 
+sue swelling due to drug injection [172] , tissue-needle separation 
+due to backﬂow [173] , and recovery of tissue viscosity with drug 
+absorption and outﬂow from the injection site. If the pressure is 
+too high, local tissue damage can occur. Capturing these phenom- 
+ena requires a combination of theoretical principles and targeted 
+experiments. 
+Studies of needle-tissue interaction in the brain began about 
+20 years ago. However, despite the relevance of such phenomena, 
+there are few studies directly targeting the brain, which may be 
+partly due to limited access to brain samples and data. Fortunately, 
+there are a number of related studies on various soft tissues or tis- 
+sue phantoms that could provide useful insights for needle-brain 
+studies. 
+The ﬁrst attempt to model the needle-tissue interaction re- 
+sulted in low-resolution numerical models based on phenomeno- 
+9
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+Fig. 5. Types of tissue deformation during the needle insertion process: (A) Tissue rupture and shear deformation; tn stands for normal stress and ts for shear stress due to 
+friction. (B) Local tissue swelling due to drug accumulation. (C) Tissue-needle separation due to development of backﬂow. (D) Tissue recovery due to drug absorption and 
+drainage. 
+logical expressions of the forces exerted by the needle on the sub- 
+strate [174–177] . It is noteworthy that in these studies the tis- 
+sue mechanics was based on the linearized theory of elasticity. In 
+2008, Wittek et al. [178] developed a continuum mechanics-based 
+needle insertion model for the brain using a nonlinear viscoelas- 
+tic constitutive model and patient-speciﬁc brain geometry recon- 
+structed from MRI images. While this study assumed that brain tis- 
+sue represented a single-phase continuum, other models for brain 
+drug delivery developed the same period began to suggest the use 
+of biphasic models [179,180] . However, the fundamental aspects 
+of tissue rupture and needle-tissue interaction during penetration 
+have been neglected, despite the proven importance of these fac- 
+tors [173] . 
+The role of fracture mechanics in needle insertion has been in- 
+vestigated in several theoretical and numerical studies [181–183] . 
+Accordingly, a versatile description of the needle insertion process 
+provides an energy balance taking into account only mechanical 
+work and quasi-static conditions. That reads [184] 
+˙Wext = ˙Wint + ˙Uf + ˙ .
+(16) 
+The left-hand side of Eq. (16) represents the rate of change of the 
+external mechanical work, Wext , while the right-hand side stands 
+for the rate of change of the internal energy of the system, Wint , 
+the energy per unit time dissipated due to friction, Uf (equiva- 
+lent to the effect of shear stress ts in Fig. 5 A), and the energy per 
+unit time spent increasing the crack surface, . The internal en- 
+ergy might also be responsible for the deformation of ﬂexible nee- 
+dles commonly used in drug delivery and consists of a stored part 
+W s 
+int and a dissipated part W d 
+int in a material with rate-dependent 
+behavior. For example, with respect to the nonlinear biphasic vis- 
+coelastic model presented in Section 3.1 , the internal energy is 
+(with a rigid needle) 
+W s 
+int =
+ 
+v 
+eq 
+S + neq 
+S 
+	
+d v , W d 
+int =
+ 
+v 
+ 
+t ( Dv + Df ) d t d v .
+(17) 
+Now we introduce the assumption that the crack propagation 
+occurs in a steady-state fashion, which implies that the rate of 
+new crack surface formation is equivalent to the penetration rate 
+of the needle [185] . Furthermore, the inﬁnitesimal increment in 
+time is proportional to the inﬁnitesimal increment in the area A 
+of the crack surface, which can be mathematically translated into 
+∂ /∂ t = ˙A ∂ /∂ A . Eq. (16) can then be re-written as 
+∂ 
+∂A 
+
+Wext −W s 
+int 
+	
+= G0 + Gd + ∂ 
+∂A 
+
+W d 
+int + Uf 
+	
+,
+(18) 
+where G0 is the intrinsic fracture energy of the material, and Gd 
+is a rate-dependent contribution. Note that Eq. (18) for a purely 
+elastic material and mode-I crack propagation, reduces to [182] 
+F d u = d W s 
+int + Ff d u + G0 bd u,
+(19) 
+where d u is the increment of the needle displacement, b is the 
+thickness of the material and Ff denotes the frictional force. 
+Fig. 6. Flexible needle for brain drug delivery and ﬁnite element modeling: (A) Pro- 
+grammable bevel-tip needle (PBN) for infusion-based brain drug delivery developed 
+by Secoli et al. [95] . Left : Trocar with embedded medical grade PBN. Right : Cross 
+section of the 4-segment PBN with two working channels with a diameter of 0.3 
+mm per segment. The overall diameter of the PBN is 2.5 mm. The ﬁgure is adapted 
+from Secoli et al. [95] . (B) Typical force-displacement relationship obtained from 
+the PBN insertion simulation. The simulation is based on an adaptive ﬁnite element 
+algorithm developed by Terzano et al. [25] . The ﬁgure is adapted from Terzano et al. 
+[25] . 
+Advances in computational methods have enabled the incor- 
+poration of tissue rupture in large-scale ﬁnite element simula- 
+tions of needle-tissue interaction [186] using cohesive zone models 
+[25,94,187–190] or meshless methods [191] . Considering the new 
+generation of steerable needles [95] , Terzano et al. [25] have de- 
+veloped an adaptive ﬁnite element algorithm to handle the chal- 
+lenge that there is no predetermined penetration path, as shown 
+in Fig. 6 . This study showed that needle tip trajectories are highly 
+dependent on the relative stiffness of the needle and tissue. In this 
+study, a soft elastic phantom material was considered. 
+Regarding the effects of needle insertion in the tissue, Mahvash 
+and Dupont [188] found that increasing insertion velocity leads to 
+lower tissue rupture force and suggested applying a velocity in- 
+versely proportional to the relaxation time of the tissue to reduce 
+tissue damage. Interestingly, Casanova et al. [173] came to the op- 
+posite conclusion and found that the average rupture force and 
+surface dimpling increased with increasing insertion speed. These 
+contrasting ﬁndings may be caused by the different tissues used in 
+these studies, particularly pig heart in [188] and rat brain in [173] . 
+While the heart is more densely made up of cardiomyocytes, the 
+brain is more viscous due to the high proportion of water. Further- 
+more, Casanova et al. [173] also compared the responses of brain- 
+mimicking hydrogels and real brain tissue and found that hydro- 
+gels exhibited opposite trends for dimpling and friction stress with 
+10
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+insertion speed. In their study, Mahvash and Dupont [188] also 
+examined the rupture transitions between tissue layers, which is 
+important in brain tissue because the properties of GM and WM 
+show signiﬁcant differences [109] . 
+These ﬁndings highlight the requirements for creating special- 
+ized brain-needle models that must further consider the hetero- 
+geneity and anisotropy of brain tissue. Experiments are essential 
+for the development and validation of such models. While a small 
+number of experiments have been conducted with brain tissue, 
+e.g. , rat brain [173] and swine brain [178] , most existing studies 
+are based on tissue-mimicking materials [25,94,187,192] . 
+At the initial stage of drug infusion, when the drug infusion rate 
+is higher than the drainage rate, the retained drug ﬂuid will gener- 
+ate a high hydraulic pressure at the tip of the needle and compress 
+the local tissue forming a spherical cavity ﬁlled with drug ﬂuid. 
+Hydraulic pressure can also open and enlarge the gaps between 
+the needle wall and the tissue, allowing ﬂuid to ﬂow back to the 
+tissue surface. This is the so-called backﬂow, one of the main prob- 
+lems in CED treatment [173,193,194] . Because the high local pres- 
+sure can potentially cause discomfort or other complications to the 
+patient and the backﬂow would signiﬁcantly reduce the drug vol- 
+ume, local tissue compression should be avoided. 
+The FSI modeling method is ideal for capturing the ﬂuid-solid 
+interface and helps in the development of backﬂow-free needles 
+and procedures [193] . However, FSI has so far not been widely ap- 
+plied due to the numerical challenges of some factors, e.g. , (i) the 
+ﬂuid-solid interface is not constant but varies with hydraulic pres- 
+sure, (ii) the fact that the tissue itself is permeable. Alternatively, 
+[195] proposed using multiple layers of solid elements to repre- 
+sent the ﬂow and tissue. The deformability of the two layers of 
+solid elements enables capturing of the deformation of ﬂuid-solid 
+boundaries. This method was then adopted and extended to 3D by 
+Orozco et al. [194] . The accuracy of this method highly depends 
+on the properties of the solid elements, which must match the 
+behavior of the ﬂuid. Ivanchenko et al. [196] also applied the hy- 
+draulic pressure directly to the solid domain to solve the solid de- 
+formation. Particular attention must then be paid to the applied 
+hydraulic pressure. 
+3.3. Development of hydrogels to mimic brain tissue 
+Because brain tissue is not easily accessible and raises ethical 
+issues, synthetic materials that have similar mechanical properties 
+to the real brain are gaining increasing attention [197] . As men- 
+tioned above, some needle-tissue studies are based on phantoms. 
+Hydrogels are, among other materials, the most commonly used 
+materials that can mimic the mechanical and hydraulic behav- 
+ior of brain tissues. These properties allow the hydrogels to serve 
+as phantoms and provide real-scale training models for develop- 
+ing treatments, e.g. , drug delivery, tumor resection and device im- 
+plantation [198–200] . Reported brain-mimicking phantoms include 
+those developed by Forte et al. [201,202] and Tan et al. [203] for 
+brain surgery and drug delivery (among other things, the nonlinear 
+mechanical properties of the brain-like hydrogel were fully charac- 
+terized by Kainz et al. [204] ), Lavrova et al. [205] for the study of 
+molecule diffusion in the brain, Distler et al. [206] for various load- 
+ing conditions, including compression, tension and torsional shear, 
+and Vanina et al. [207] for modeling complex metabolic transport 
+processes. 
+Researchers have also compared the properties of different ma- 
+terials against different tissues and loading conditions with the aim 
+of ﬁnding solutions to further improve existing materials and also 
+provide guidance on material selection. Leibinger et al. [208] con- 
+cluded that while gelatin (a commonly used phantom [209] ) re- 
+produces well the needle insertion forces of the brain, a newly de- 
+signed composite hydrogel developed at Imperial College [201] can 
+better mimic the viscous nature of the soft tissue. Navarro-Lozoya 
+et al. [210] compared hydrogels and emulsions with porcine brain 
+tissue under similar strains and strain rates and concluded that the 
+emulsion exhibits mechanical responses more similar to those of 
+native porcine brain tissue than the other candidates. Tejo-Otero 
+et al. [211] even tested a number of commonly used hydrogels ( e.g. , 
+agarose, polyvinyl alcohol -PVA-, Phytagel -PHY- and methacrylate 
+gelatine -GelMA-) and compared their mechanical properties to a 
+variety of organs ( e.g. , liver, heart, kidney and brain) and drew 
+some important practical conclusions. 
+With the remarkable advancement of 3D printing techniques 
+for hydrogels [212] , brain-like properties can be achieved at the 
+macro scale by programming the microstructure of the mate- 
+rial. This requires a quantitative understanding of the key mi- 
+crostructural factors that govern the macroscale properties, thus 
+enabling precise microstructural design [213] . Dimensional analy- 
+sis, as represented by the Buckingham π theorem, provides pow- 
+erful tools for identifying the key dimensionless parameters that 
+govern some speciﬁc physical phenomenon. For example, the well- 
+known Reynolds number, known in ﬂuid mechanics, regulates the 
+ﬂow patterns [214] ; and a series of dimensionless parameters pro- 
+posed by Yuan and colleagues can control the nonlinear buckling 
+process [215–217] . Therefore, if the key dimensionless microstruc- 
+tural parameters that control the mechanical and hydraulic be- 
+havior of the brain can be identiﬁed, our ability to develop and 
+program brain-mimicking phantoms will be greatly improved. The 
+good news is that in recent years, machine learning has made com- 
+plex dimensionless analyses more accessible [218,219] . 
+3.4. Supporting techniques 
+To understand the mechanical behavior of brain tissue and 
+characterize its mechanical properties, mechanical testing tech- 
+niques are required. The most commonly used techniques are 
+compression testing, (including conﬁned compression, unconﬁned 
+compression and indentation), tension testing and shear testing. 
+Indentation testing methods [220,221] are often used to char- 
+acterize compression behavior and to develop constitutive mod- 
+els of brain tissue. Since compression is the most common defor- 
+mation pattern of the brain, most mechanical tests of brain tis- 
+sue have been performed using indentation methods, as summa- 
+rized in Table 2 . Brain tissues have been shown to be strain rate 
+and depth sensitive materials [99,109,131] , so strain rate and in- 
+dentation depth are important factors to consider in these tests. 
+In published data, strain rates used for brain tissue testing are up 
+to 30 0 0/s. Indentation tests can also be carried out at different 
+scales. While macroscopic indentations extract the macroscale and 
+homogenized properties of tissues for practical applications and 
+modeling, microscopic indentations are able to capture localized 
+properties to reveal some unknown mechanisms [110,127] . Further- 
+more, indentation testing can be performed in vivo and provide re- 
+sults with high ﬁdelity [158,159] . 
+Tensile testing is another type of mechanical testing used to de- 
+termine mechanical properties of materials in which a controlled 
+tension is applied to a sample until it fails. In fact, compared to 
+indentation testing, it provides more comprehensive information 
+about the mechanical properties of the material. However, since 
+(i) this type of test is often used for materials that can with- 
+stand tensile forces without immediately breaking while brain tis- 
+sue is extremely soft and vulnerable, (ii) a larger sample size is 
+required while brain tissue is diﬃcult to obatin, and (iii) it cannot 
+be performed in vivo due to its destructive power, tension tests 
+are relatively rarely used for mechanical tests of brain tissue (see 
+Table 2 ). Nevertheless, Miller and Chinzei [99] showed that swine 
+brain tissue was signiﬁcantly softer when extended than when 
+compressed, and the brain tissue constitutive models developed 
+11
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+based on compression experiments are not suﬃcient to explain 
+tissue behavior under tension. Similarly, Eskandari et al. [166] ob- 
+served that brain tissue exhibited strain-stiffening under compres- 
+sion and strain-softening under tension. Budday et al. [110] also 
+concluded that material parameters of the human brain identiﬁed 
+for a single loading mode cannot predict a response under arbi- 
+trary loading conditions. Therefore, tensile testing is essential to 
+fully describe the mechanical behavior of brain tissue. 
+However, in terms of the drug-delivery process, tension is not 
+the main pattern of tissue deformation. On the other hand, the 
+shear deformation caused by needle insertion might be more rel- 
+evant. Shear properties ( e.g. , the shear modulus) of soft tissue can 
+be measured by applying shear deformation and recording the re- 
+action force, and there are a number of studies that have con- 
+ducted shear tests with brain tissue [97,104,106,108,110,126,164] . It 
+is worth noting that magnetic resonance elastography (MRE) is a 
+new technique that can precisely measure the stiffness, shear mod- 
+uli and viscosity of brain tissue in vivo [222–224] . The mechanism 
+is to use a mechanical vibrator on the surface of the patient’s body 
+to generate shear waves that propagate into deeper tissues of the 
+patient, measure the propagation and velocity of the waves using 
+an MRI acquisition sequence, and ﬁnally map the stiffness using 
+inversion algorithms. The resolution reaches the scale of mm ∼cm 
+[225] . However, since tissue stiffness is calculated by the inversion 
+algorithm, the MRE measurements may be inaccurate for regions 
+with strong heterogeneity, i.e. where the stiffness varies over a very 
+small distance [226] . 
+4. Solid mechanics: properties and deformation of neurons 
+4.1. Mechanical properties of neurons 
+At the cellular level, the neurons and their mechanical behav- 
+ior also play an important role in brain drug delivery. On the 
+one hand, neurons constitute the brain tissue, so their mechani- 
+cal properties and spatial distribution directly determine the me- 
+chanical behavior of the brain tissue. On the other hand, the gaps 
+between neurons form the ﬂuid ﬂow pathway, so their mechanical 
+behavior can divert the drug delivery route. Consequently, a deep 
+understanding of the mechanical response and properties of neu- 
+rons is crucial for developing precise drug-delivery procedures in 
+the brain and can also unravel some unsolved brain problems re- 
+lated to ﬂuid and mass transport [37] . 
+As mentioned in Section 1 and illustrated in Fig. 1 , neurons 
+consist of three parts: the cell body, also called the soma, which 
+contains genetic information and maintains the structure of the 
+neurons, and provides energy to drive activities; the axon, a long 
+tail-like structure that connects to the cell body at a special junc- 
+tion, often insulated with a fatty substance called myelin that helps 
+them transmit an electrical signal; and the dendrites, which are ﬁ- 
+brous roots that branch off from the cell body and receive/process 
+signals from the axons of other neurons. This slender structure 
+makes neurons extremely soft and ﬂexible, with the equivalent 
+elastic moduli typically in the range of 0 . 1 ∼2 kPa [227] . This 
+means that even minor mechanical stimulation may deform the 
+neurons, while the drug infusion pressure can reach up to 10 kPa 
+[5] . In addition, neurons also show hysteretic features, strong non- 
+linearity and signiﬁcant time/rate dependencies [12,228] . There- 
+fore, some hyper- and viscoelastic material models have been pro- 
+posed and the corresponding parameters characterized to describe 
+the mechanical behavior of neurons [12,13,228,229] . The fracture 
+property of neurons is another important factor to be considered 
+when injecting drugs as a benchmark for deﬁning the threshold of 
+locally applied hydraulic pressure. According to Hasan et al. [230] , 
+the failure strains for the microtubules and Tau proteins (major 
+components of neuronal cytoskeleton) are 50 and 40%, respectively, 
+Fig. 7. Methods for measuring the mechanical properties of neurons: (A) Schematic 
+representation of the indentation test using atomic force microscopy. (B) Left : 
+Schematic representation of the tension test with micro-needle and micro-motor 
+system. Right : Neuron deformation over time using the micro-needle and micro- 
+motor system; reproduced from Bernal et al. [12] . (C) Top : Schematic representation 
+of the tension test with optical tweezers. Bottom : Neuron stretch with and without 
+applying optical tweezers; reproduced from Lu et al [229] . 
+and the corresponding axonal failure strain and stress vary be- 
+tween 6 and 11% and 5 ∼19 . 8 MPa under strain rates from 10/s 
+to 50/s. All the above evidence supports the need to consider the 
+mechanical behavior of neurons to better capture the process of 
+drug delivery in the brain. 
+4.2. Supporting techniques 
+The techniques that have been used to measure the mechanical 
+properties of neurons can be categorized into indentation meth- 
+ods and tension methods, although all types of tests are very rare 
+in the literature. The indentation method is mainly based on the 
+use of atomic force microscopy (AFM). Using a very sharp tip at- 
+tached to a cantilever, as shown in Fig. 7 A, AFM is capable of 
+not only scanning over a sample surface and restoring the shape 
+of the surface, but also to penetrate the sample and return the 
+force-displacement curve. Lu et al [229] used AFM to determine 
+viscoelastic properties of neurons and glial cells from the mam- 
+malian brain (hippocampus) and retina. They found that elastic 
+behavior dominates over viscous behavior in all CNS cells. Zhang 
+et al. [231] used AFM to show that the stiffness of the axon plasma 
+membrane is signiﬁcantly higher than the stiffness of dendrites 
+and soma using cultured rat hippocampus neurons. Regarding the 
+tension test of neurons, Bernal et al. [12] used a micro-needle 
+mounted on a direct current motor to retract the neurons like 
+pulling back a bow, and recorded the force-displacement curve, as 
+shown in Fig. 7 B. They observed elastic response, viscoelastic relax- 
+ation and active contraction, and created a constitutive model to 
+describe these behaviors. Optical tweezers / stretchers / trap, a type 
+of technology that uses laser beams to manipulate microscopic 
+and sub-microscopic objects, offers another approach to conduct- 
+ing tension testing on neurons, as shown in Fig. 7 C, and has been 
+widely used to study cell mechanics [232,233] . In the work by 
+Lu et al. [229] , the optical stretcher has also been used to mea- 
+sure the viscoelastic properties of glial cells and neurons. Other 
+techniques such as the nano tensile tester [234] and the mag- 
+netic (electromagnetic) tweezers [235] could also offer alternatives. 
+The theories, capabilities and limitations of these advanced, high- 
+precision techniques are systematically reviewed by Neuman and 
+Nagy [236] . A comprehensive analysis of neuronal biomechanics 
+using AFM can also be found in [237] . 
+12
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+In addition, understanding and modeling the behavior of neu- 
+rons also requires ultra-high resolution imaging techniques to ob- 
+serve the components in neurons and reconstruct the geometry or 
+microstructure of neurons to model them [227,230] . Using SEM, 
+the cross-sectional view of the axons revealed the cytoskeleton of 
+the axon, which includes the microtubules, Tau proteins, neuro- 
+ﬁlaments, and microﬁlaments, and that the microtubules are or- 
+ganized in a hexagonal arrangement and cross-linked by proteins 
+[230] . Using FIB-SEM, Wu et al. [238] reconstructed the realistic 3D 
+structure of neurons, and in addition, Bernardini et al. [239] built 
+a comprehensive database of the size and shape distribution of ax- 
+ons in the ovine brain. These data allow researchers to reconstruct 
+neurons and conduct numerical studies to gain a deeper under- 
+standing of the mechanical behaviors of neurons across scales [13] . 
+5. Mathematical models for brain drug delivery 
+While biomechanics and biophysics focus on a few speciﬁc fac- 
+tors to build the principles that control the drug-delivery processes 
+in the brain, mathematical models utilize these principles and in- 
+tegrate the information to further predict the entire drug-delivery 
+process. Due to the ﬂourishing biomechanical and biophysical re- 
+search on the brain, numerous mathematical models for drug de- 
+livery in the brain have been proposed. Here, we focus primarily 
+on infusion-based methods of drug delivery. 
+5.1. Single-phase models 
+As mentioned in Section 2 , the convection-diffusion-reaction 
+equation is a fundamental principle in building mathematical mod- 
+els for drug delivery. An example of seminal work dates back to 
+1997, when Kalyanasundaram et al. [15] used MR images to rebuild 
+brain geometry in 2D. The employment of the convection-diffusion 
+equation allowed them to simulate the interleukin-2 transport in 
+the brain parenchyma post-ventricular perfusion and, based on the 
+simulation results, identify the essential role of brain microstruc- 
+ture and drug transport properties on the delivery of this speciﬁc 
+drug. A more advanced image-based brain model in 3D was set 
+up years later, enabling the comparison of various brain regions 
+[240] . Their study demonstrated the signiﬁcant differences in drug 
+distribution in the GM and WM, in particular along and perpen- 
+dicular to axons, indicating the necessity to develop models that 
+can consider tissue anisotropy and microstructural heterogeneity. 
+Linninger et al. [16,20,30] and Kim et al. [31,241,242] developed a 
+protocol and model to extract tissue anisotropy and heterogene- 
+ity from DTI images. Moreover, their drug delivery model was also 
+developed with the capability of considering drug metabolism and 
+elimination, including drug absorption, distribution, metabolism, 
+and excretion (ADME). These contributions further increased the 
+model’s accuracy in predicting drug delivery in the brain and pro- 
+vided valuable references for optimizing the design of the CED in- 
+fusion catheter. In pharmacology, the ADME processes of drugs can 
+be mathematically described using pharmacokinetic models [17] . 
+These models are particularly useful for understanding the fate of 
+drugs in the brain and have therefore been widely developed and 
+adopted. 
+The ﬂuid ﬁeld of drugs in brain tissue is also affected by other 
+bioﬂuids and components in the brain, such as CSF and ISF, which 
+form other phases in mathematical models. Stine and Munson 
+thoroughly analyzed the relationship between CED and ISF dynam- 
+ics in their review [243] . A biphasic model, which is more sys- 
+tematic, was established by Linninger and colleagues by coupling 
+pulsatile CSF motion with intracranial pressure [244,245] . Although 
+the model was developed to investigate hydrocephalus and exter- 
+nal ﬂuid which was not considered, it could still be utilized to 
+simulate drug delivery through CED. Later, a nonlinear biphasic 
+model was further developed by considering ﬂuid exchange be- 
+tween the blood and tissue. This allowed the model to represent 
+a more complex system for cerebral ﬂow infusion analysis [246] . 
+To be closer to reality, ISF, blood plasma [247,248] and tumor leak- 
+age [249] were also considered in the following studies. In the 
+mathematical models by Zhan and colleagues [18,19,29,32,44,250] , 
+multiple steps in brain drug delivery, including drug release and 
+bioreactions, werecombined with the drug ﬂuid and ISF. The 
+Physiologically-based pharmacokinetics (PBPK) models have the 
+advantage of providing more accurate and comprehensive results 
+because they take into account the physiological and anatomi- 
+cal differences between individuals, such as blood ﬂow rates be- 
+tween speciﬁc organs, tissue partitioning coeﬃcients, and organ 
+size [251–253] . Therefore, a number of other PBPK models are also 
+being developed to predict the fate of different drugs in different 
+brain compartments [254–259] . Readers can refer to a recent book 
+chapter [260] and a review [261] , in which the pharmacokinetic 
+principles and anatomical connections of drug distribution in the 
+brain have been comprehensively presented. 
+Since these models only consider the drug ﬂuid, we categorize 
+them as a type of single-phase model. By using advanced imag- 
+ing techniques to create realistic geometries, single-phase models 
+have become very sophisticated after almost 20 years of develop- 
+ment. However, ﬁndings from biomechanical and biophysical stud- 
+ies clearly show that the drug-delivery process in the brain does 
+not involve just one phase. The tissue and neuron deformations, 
+for example, must be taken into account. 
+5.2. Considerations of the biphasic nature of the brain 
+The deformation of the neuron leads to microstructural defor- 
+mation, which can alter the local ﬂow ﬁeld and trigger the de- 
+velopment of biphasic models for the brain. Chen et al. [262] es- 
+tablished one of the earliest poroelastic models of brain tissue in 
+2002 to enable the prediction of ﬂuid ﬂow in brain tissue in CED 
+with improved accuracy. In addition to the possibility of visualiz- 
+ing the ﬂow ﬁeld in the brain, the tissue microstructure deforma- 
+tion caused by the localized ﬂuid pressure could also be included 
+in the model. To validate the model, brain-like agarose gel exper- 
+iments were performed. As the ﬁrst step to establish the poroe- 
+lasticity model for the tissues of brain, some assumptions were 
+introduced, particularly the tissue was considered linear elastic, 
+isotropic and homogeneous. To relax the linear elastic assump- 
+tion, Chen and Sarntinoranont [179] applied an exponential equa- 
+tion to describe the tissue deformation and hydraulic permeability, 
+derived from agarose gels and biological tissues, e.g. cartilage. In 
+addition to the application of empirical relations, the introduction 
+of nonlinear material properties to the model is an effective way, 
+which has already been studied in detail, particularly in Smith’s 
+group. They ﬁrst utilized an Ogden-type hyperelastic compress- 
+ible function to describe brain tissues, enabling modeling of the 
+nonlinear relationship existing between local hydraulic permeabil- 
+ity and local ﬂuid pressure [180] . The later model which geomet- 
+rical nonlinearity was added allowed simulation of the hydraulic 
+permeability’s dependence on both the matrix strain and nonlin- 
+ear boundary conditions at the infusion cavity [263] . A compari- 
+son of modeling prediction from single-phase and biphasic models 
+demonstrated the importance of considering the matrix’s ﬁnite de- 
+formation when predicting drug concentration and its distribution 
+pattern. Moreover, their studies also highlighted the necessity to 
+experimentally determine the brain tissue’s material nonlinearity 
+in a range of strains [263,264] . 
+Another potential improvement of poroelastic models is to in- 
+clude the anisotropy and heterogeneity of brain tissues. In pio- 
+neering work performed by Støverud et al. [265] in 2012, patient- 
+speciﬁc brain structures and parameters were acquired from DTI 
+13
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+Fig. 8. Finite element models for the brain: (A) Finite element modeling for drug delivery in the brain. Brain geometry is reconstructed using magnetic resonance imaging 
+(MRI); reproduced from Yang and Zhan [19] ; CNP stands for the drug concentration. (B) Registration of tissue anisotropy based on diffusion tensor imaging (DTI); reproduced 
+from Hajiaghamemar et al. [269] . 
+data and implemented into their biphasic model. The model char- 
+acterized the difference between WM and GM in terms of frac- 
+tional anisotropy, whereas, material nonlinearity was not covered. 
+Despite widespread acceptance of accounting for the two-phase 
+nature of the brain, the implementations at the whole brain level 
+and in drug-delivery scenarios are scarcely seen. 
+Obviously, consideration of the biphasic nature of the brain 
+highlights the importance of understanding and characterizing the 
+hydraulic and mechanical properties of brain tissue and neurons, 
+which have been discussed in Sections 2 –4 . 
+5.3. Supporting techniques and databases 
+Obviously, the mathematical model’s development is inextrica- 
+bly linked to the development of imaging techniques and geometry 
+reconstruction methods as well as the construction of experimen- 
+tal databases that can be used to validate the models. 
+Mathematical models are commonly established based on 
+idealized geometrical models at the initial stages of develop- 
+ment. For instance, Chen et al. [262] developed their poroelas- 
+tic biphasic model in 2002 using brain phantom gels, which 
+could be considered isotropic and homogeneous. The model was 
+upgraded to include material and geometric nonlinearity while 
+it was still based on an idealized model in spherical geometry 
+[179,180,246,263,264,266] . Idealized models are suitable for con- 
+ducting parametric scan to determine the impact of different ma- 
+terials and administration parameters on the spatial proﬁle of drug 
+concentration since geometric properties are not a primary focus. 
+Hence, in recent years, the spherical model is still used to examine 
+how drug diffusion anisotropy and tissue permeability determine 
+the delivery outcome of CED [29] . Notably, so far, most simula- 
+tion studies of drug particle diffusion are based on idealized mod- 
+els [26,266–268] . The main reasons are (i) the shortage of high- 
+resolution and accurate anatomical images to re-build brain tumor 
+microstructure; and (ii) the high requirement on computational re- 
+sources and power to perform particle-tracking simulations that 
+can accommodate the complex realistic tissue microstructure and 
+micro-environment. 
+Given the importance of anisotropy and heterogeneity of brain 
+tissues, more realistic geometric models are necessary to ensure 
+the modeling prediction accuracy at the relevant length scales 
+[29,270] . Anatomical MRI and DTI techniques have been exten- 
+sively developed and applied in simulation studies in the last few 
+years. In the earliest work done by Kalyanasundaram et al. [15] in 
+1997, a realistic 2D brain geometry was extracted from MRI data. 
+This was closely followed by the reconstruction of the brain in 
+3D from anatomic MRI [270] . With the recognition of the impor- 
+tance of anisotropy, DTI technology has also begun to be widely 
+used to characterize the orientation of neurons, particularly ax- 
+ons in WM [30] . Since then, the use of anatomical MRI and DTI 
+techniques to reconstruct the brain, as shown in Fig. 8 , has gradu- 
+ally become a conventional method in mathematical modeling ap- 
+plications [31,32,44,241,242,24 8,24 9,265] . The primary objective of 
+developing mathematical models is to offer recommendations for 
+preoperative planning. However, because of individual differences, 
+a geometric model cannot be used for different patients. There- 
+fore, the procurement of patient-speciﬁc models also become a hot 
+topic and has been extensively studied [93,271–273] . As a practi- 
+cal diffusion MRI technique, Neurite Oriented Dispersion and Den- 
+sity Imaging (NODDI) can provide estimations of the microstruc- 
+tural complexity of dendrites and axons in vivo on clinical MRI 
+scanners Zhang et al. [274] . Such detailed information on tissue 
+Table 3 
+Animal studies that can develop and improve mathematical models of drug delivery in the brain. 
+Subjects 
+Health condition 
+Infusion substance 
+Measured parameters 
+Images 
+Refs. 
+Monkey 
+Healthy 
+MRI contrast agent Gadoteridol 
+Infusate position and size, ﬂow rate 
+MRI, DTI 
+[276] 
+Monkey 
+Healthy 
+liposomal GD, free GD 
+Flow rate, distribution of GDNF protein 
+MRI 
+[277] 
+Porcine 
+Healthy 
+MR marker Gadodiamide 
+Tracer concentration, ﬂow rate, brain tissue expansion 
+MRI 
+[278] 
+Rat 
+Healthy 
+Gd-DTPA albumin tracer 
+Tracer distributions, ﬂow rate 
+MRI, DTI 
+[31] 
+Monkey 
+Healthy 
+Saline 
+Flow rate, infusate distribution, anisotropy, and 
+temporal dynamics, tissue structure change 
+MRI, DTI 
+[279] 
+Sheep 
+Healthy 
+Gadolinium (GD) 
+Flow rate, GD distribution 
+CBCT, MRI 
+[280] 
+Pig 
+Healthy 
+GD 
+Flow rate, GD distribution 
+MRI 
+[281] 
+Human 
+Brain tumor 
+Gd-DTPA tracer 
+Flow rate, distribution and concentration of Gd-DTPA 
+tracer 
+MRI 
+[273] 
+14
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+microstructure can improve mathematical models. The most im- 
+pressive feature in terms of mathematical modeling is its ability to 
+provide in vivo information about the local porosity distribution. 
+Since the hydraulic permeability of porous media is closely related 
+to the porosity of the medium and the correlation of permeabil- 
+ity with variable porosity is the basis of biphasic models, NODDI 
+holds great potential to be an effective tool in further improving 
+the mathematical modeling of drug delivery in the brain. 
+A number of animal studies of CED have been performed in 
+swine, monkey, ovine, and rat models, and there are also some 
+clinical trials with human patients. These experiments and tri- 
+als are important databases that can be used to create and im- 
+prove mathematical models of drug delivery in the brain. The de- 
+tailed information of some referenced experiments is summarized 
+in Table 3 . Further preclinical and clinical evidence can be found in 
+the review [275] and on ClinicalTrials.gov (a database of privately 
+and publicly funded clinical studies conducted around the world). 
+6. Conclusions, challenges and perspectives 
+Mathematical models for infusion-based drug delivery in the 
+brain have steadily improved over the past twenty years, partic- 
+ularly with the advancement of emerging supporting techniques. 
+However, several gaps still need to be ﬁlled to meet clinical re- 
+quirements. In this section, we ﬁrst summarize the strategy for 
+modeling infusion-based drug delivery in the brain, drawing on 
+key ﬁndings from the reviewed studies. This will help readers get 
+clear ideas of how to build proper models according to the needs 
+of their search. We then highlight the major gaps in the develop- 
+ment of next-generation models and provide insights into strate- 
+gies to potentially address these gaps. 
+It is worth noting that although most of the studies reviewed 
+relate to CED, the most representative type of mechanically con- 
+trolled drug delivery in the brain, there are also other types, such 
+as focused ultrasound blood-brain barrier disruption [282] , which 
+uses ultrasound waves to temporarily open the BBB to allow drugs 
+to pass, and magnetic ﬁeld-assisted drug delivery [283] . They also 
+involve ﬂuid transport and tissue deformation. Therefore, the in- 
+sights of this article are also applicable to modeling other types of 
+mechanically controlled drug delivery in the brain. 
+6.1. Summary 
+In this article, we have provided a comprehensive overview of 
+the current status of the ﬁeld to shed light on the development of 
+a next-generation computational model that can accurately predict 
+infusion-based drug delivery in the brain from physical, mechani- 
+cal, and mathematical perspectives. 
+In general, the convection-diffusion-reaction Eq. (1) , as dis- 
+cussed in Section 2 , provides the framework for capturing the 
+time-varying drug concentration distribution in the brain. The con- 
+struction of this equation requires a number of inputs, namely tis- 
+sue permeability, drug diffusivity and drug clearance rate, which 
+can be characterized by methods discussed in Section 2.4 . Due 
+to the biphasic nature of the brain, the permeability of brain tis- 
+sue varies during the drug transport process, as drug ﬂow can 
+deform the nerve cells and change the ﬂow pathway, as shown 
+in Fig. 4 [13,24] . This problem can be solved by adopting (i) a 
+pressure-dependent permeability tensor for brain tissue, as devel- 
+oped by Yuan et al. [13] and (ii) the poro-elastic theory and com- 
+putational models that connect tissue deformation with perme- 
+ability change, as discussed in Sections 3.1.5 and 5.2 , respectively. 
+Capturing ﬂuid-cell interactions at the cellular level is crucial for 
+developing pressure-dependent permeability tensors and advanced 
+poro-elastic models to more accurately predict drug delivery in 
+the brain. Therefore, we discussed the properties of nerve cells in 
+Section 4 . 
+A complete model should also account for the effects of nee- 
+dle implantation and drug injection on the ability to administer 
+drug delivery and thus be able to provide practical suggestions for 
+conducting drug delivery. The needle implantation process can be 
+modeled by properly describing the needle-brain interaction ( i.e. 
+friction, shear deformation, crack initiation, crack propagation). The 
+process of drug injection, which involves the complex interactions 
+that lead to tissue swelling and backﬂow ( Fig. 5 B and C), can po- 
+tentially be modeled by FSI techniques and models [193] . How- 
+ever, modeling the backﬂow is still challenging, as analyzed in 
+Section 3.2 . The properties and constitutive models form the ba- 
+sis for modeling brain deformation during these processes, which 
+were analyzed in detail in Section 3 . 
+6.2. Limitations and future work in parameter identiﬁcation 
+Parameter identiﬁcation of processes governing drug delivery 
+in the brain is currently highly variable. For example, the mea- 
+sured hydraulic permeability values of brain tissue differ by a fac- 
+tor of 10 0 0 among different studies, as shown in Table 1 . This can 
+be attributed to differences in brain regions, species, measurement 
+methods and environmental conditions, etc . It should be noted that 
+sample preparations in these tests ( e.g. , shipping, cutting) can have 
+a signiﬁcant effect on the hydraulic permeability since the mi- 
+crostructure of the porous medium would inevitably change. How- 
+ever, due to the limitations and possible biases in the experimen- 
+tal setups, as analyzed in Section 2.4.1 , there are no gold standard 
+methods. In addition, the current understanding of the mechani- 
+cal properties of neurons is neither suﬃcient nor comprehensive, 
+while abundant evidence demonstrates the signiﬁcant inﬂuence of 
+the mechanical behavior of neurons on drug delivery pathways in 
+the brain. The question therefore arises as to how to develop gold 
+standard methods to generally and precisely identify the properties 
+that govern drug delivery in the brain, e.g. , the permeability tensor 
+of brain tissue, the diffusivity tensor of drug particles, constitutive 
+models of brain tissues and neurons are essential. Furthermore, 
+the question of how to characterize these properties non-invasively 
+is not currently addressed but, once resolved, would greatly con- 
+tribute to clinical practice. 
+Alternatively, numerical modeling offers great potential to as- 
+sist in the characterization of these properties, but the precision 
+depends heavily on the ﬁdelity of the microstructural description. 
+Although the NODDI technique has made it possible to map the 
+local porosity of the brain, additional details, e.g. , the neuron size 
+distribution, are required to map the permeability tensor. There is 
+also a need for models and techniques at the molecular and neu- 
+ron scales that can help identify the interactions between neurons 
+and drug molecules. This is not only valuable for the discovery of 
+new eﬃcient drugs, but can also provide information for establish- 
+ing and improving upper-scale models. 
+6.3. Disease-induced alterations 
+The occurrence of pathologies can lead to changes in tissue mi- 
+crostructure, thereby affecting the results of drug delivery. On the 
+one hand, parameters that reﬂect tissue properties can be changed 
+signiﬁcantly. For example, tissue permeability in brain tumors can 
+become an order of magnitude higher than that of surrounding 
+normal tissue due to increased tissue porosity and changes in the 
+proportion of extracellular matrix components [284] . Moreover, tis- 
+sue porosity varies with the grade of brain tumors [285,286] , fur- 
+ther expanding the spectrum of tissue permeability changes. These 
+changes in tissue microstructure also complicate drug delivery. In 
+neurodegenerative diseases, the change or loss of neuronal myelin 
+15
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+[287,288] can alter the surface charge of axons, which may further 
+inﬂuence the outcomes of nanoparticle-mediated drug delivery 
+due to the crucial role of Coulomb forces in determining nanopar- 
+ticle diffusion in the brain tissue [27] . On the other hand, these 
+alterations also affect model assumptions. For example, mathemat- 
+ical models of drug delivery to the brain often assume that BBB 
+is intact. However, it has been found that intratumoral microvas- 
+culature can become leaky in metastatic brain tumors [289] , mak- 
+ing the assumption of an intact BBB less valid for simulating drug 
+delivery to these tumors. The effects of disease on tissue proper- 
+ties are diverse and may be interrelated, ultimately affecting drug 
+transport and accumulation. This inﬂuence may vary depending on 
+the disease type, highlighting the need to establish disease-speciﬁc 
+models. 
+6.4. Limitations and future work in modeling approaches 
+Drug delivery in the brain is a multiscale process and includes 
+several phases. The ﬁnal drug distribution pattern throughout 
+the brain is determined by the underlying complex sub-processes 
+down to the neuron and tissue scales, which are governed by in- 
+teractions between different physical factors. Once the effects of 
+individual phases have been identiﬁed, how to reconcile the in- 
+teractions between these different phases ( i.e. chemical reaction, 
+biological metabolism, mechanical behavior) and different compo- 
+nents ( e.g. , ECM, neurons, ISF, CSF) in one equation system is also a 
+challenging problem. Furthermore, the homogenization of this sys- 
+tem of equations in the heterogeneous and anisotropic brain tis- 
+sues still remains a challenge given the multiple scales. 
+At the tissue and brain scales, consolidation theory ( i.e. 
+poroelastic/poroviscoelastic models) is a great inspiration and a 
+powerful tool to study the mechanical behavior of brain tissue 
+during the drug infusion process. While the assumption that 
+local homogeneity and isotropy agree well with geological ex- 
+periments, the same hypothesis may not be applicable to brain 
+tissues. To obtain more accurate outcomes, it is worth going to 
+the microscopic scale to analyze the interaction between the hy- 
+draulic pressure and the microstructure, which also increases the 
+need for a reconstruction method with higher resolution imaging 
+techniques. 
+There is not enough research on how to capture the phenom- 
+ena caused by the interactions between the drug and the brain 
+tissue across scales. These include tissue swelling due to the ac- 
+cumulation of the drug at the needle tip, backﬂow ( i.e. drug ﬂow 
+back along the gap between the needle wall and the tissue when 
+the local hydraulic pressure is high), and tissue recovery due to 
+the absorption and drainage of the drug, as shown in Fig. 5 . 
+Section 3.2 has reviewed studies on tissue needle interactions, but 
+very few studies have involved brain tissue. The diﬃculty in mod- 
+eling these phenomena lies in the continuously evolving ﬂuid-solid 
+interfaces. The pressure-dependent permeability of brain tissues 
+due to the interaction between the ﬂuid and neurons also requires 
+more attention. 
+Model validation using experimental or clinical data, particu- 
+larly at the brain level, represents an open challenge, mainly due to 
+ethical issues and the lack of experimental/clinical data. Therefore, 
+there are currently no fully validated computational models avail- 
+able to predict convection-enhanced drug delivery in the brain. 
+In fact, as introduced in Section 5.3 , some animal studies of CED 
+have been conducted on swine, monkey, ovine, and rat models, 
+and there are also some clinical trials on human patients, which 
+are summarized in Table 3 . These data could be used to validate 
+brain-scale models. Model validation can focus on the outcomes of 
+delivery, including the time course and spatial distribution of drug 
+concentration, as well as treatment effectiveness, such as changes 
+in tumor volume in cancer therapy. 
+6.5. Model-image compatibility and patient speciﬁcity 
+Currently, single-phase mathematical models have shown the 
+best compatibility with advanced imaging-based digital brains, al- 
+lowing them to assist clinical planning. However, a major short- 
+coming is that the role of tissue deformation in determining drug 
+distribution cannot be taken into account. Although two-phase 
+models can account for the coupling effects of ﬂuid and solid 
+phases, they have not yet been fully integrated into realistic geo- 
+metric models. This may be attributed to numerical challenges and 
+computational workload. Greater diﬃculties may arise when mul- 
+tiphasic mathematical models are solved on patient-speciﬁc brain 
+structures, although this can signiﬁcantly improve the reliability of 
+the predictions. While searching for the most accurate method, one 
+must also consider how to keep the trade-off between the advan- 
+tages of advanced mathematical models and the heavy workload 
+brought by realistic geometric models. 
+In addition, the biological and physiological properties of tis- 
+sues as well as the transport properties of drugs can vary signiﬁ- 
+cantly from patient to patient and can be highly heterogeneous in 
+some diseases, such as brain tumors. These variations and changes 
+can greatly inﬂuence drug transport and accumulation, thereby af- 
+fecting the outcomes of drug delivery. Advances in medical imag- 
+ing techniques have enabled the interpretation of various tissue 
+and drug properties from medical images of patients, which can be 
+captured during diagnosis. The imaging protocols, tissue and drug 
+properties, models for property extraction and applications for var- 
+ious modalities of MRI, CT, ultrasound and PET are discussed by 
+Bhandari et al. [290] . Readers are encouraged to study Section 3 of 
+this reference for detailed information. 
+6.6. Emerging technologies and approaches for improved drug 
+delivery in the brain 
+Except for the infusion-based drug delivery method, emerging 
+technologies have shown promise in overcoming the BBB in pre- 
+clinical trials. Nano-sized drug delivery systems (DDSs) that encap- 
+sulate small molecular drugs with materials inert to bioreactions 
+can effectively extend the circulation time and half-life of drugs in 
+the human body [291] , ensuring sustainable drug supply. In addi- 
+tion, surface modiﬁcations using speciﬁc ligands enable these DDSs 
+to bind to corresponding receptors on the membrane of endothe- 
+lial cells, thereby enhancing BBB penetration [292] . In addition, the 
+combination of microbubbles and ultrasound was found to tem- 
+porarily open the BBB [293] . Unlike most nano-sized DDSs that cir- 
+culate throughout the body with the bloodstream, the location of 
+BBB disruption can be precisely controlled by focusing ultrasound, 
+allowing for more localized drug delivery to target regions in the 
+brain. Beyond intravenous administration, CED offers an alterna- 
+tive by infusing drugs directly in the extracellular space of the tis- 
+sue. To minimize tissue damage during catheter infusion, ﬂexible 
+catheters that can penetrate the tissue along a pre-designed tra- 
+jectory have also been developed [294,295] . Their integration with 
+an image-based path planner and visual navigation system can en- 
+sure accurate placement at the target infusion site while avoid- 
+ing important and sensitive brain regions [95,296] . Limited drug 
+penetration remains another challenge in brain drug delivery. In- 
+travenously administered drugs accumulate mainly near capillaries 
+[297] , and the drug concentration in CED is high enough for ef- 
+fective therapy only near the infusion site [44,298] . Recent stud- 
+ies have demonstrated the potential to homogenize drug distribu- 
+tion using external magnetic ﬁelds [299] . Drug delivering through 
+the glymphatic system [300] and intrathecal injection [301] also 
+play prominent roles in the ﬁeld of brain drug delivery. These 
+techniques allow the drugs to transport though the convection of 
+CSF, thus proving other ways to bypass the BBB. However, there 
+16
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+are signiﬁcant challenges to be addressed before achieving their 
+clinical applications. Therefore, they also require attentions to be 
+paid to the speciﬁc processes, challenges, and solutions. Artiﬁ- 
+cial intelligence (AI), with its powerful data processing capabilities, 
+holds great potential in drug development and design to identify 
+the most effective therapeutic compounds [302,303] . AI can also 
+quickly extract tissue properties from medical images, providing 
+a more detailed description of the patient-speciﬁc environment in 
+vivo [304] . Since the patient’s condition can change during treat- 
+ment, reinforcement learning-based models have been developed 
+to adapt drug delivery regimens in real time to the patient’s evolv- 
+ing condition [305,306] . 
+Declaration of competing interest 
+The authors declare that they have no known competing ﬁnan- 
+cial interests or personal relationships that could have appeared to 
+inﬂuence the work reported in this paper. 
+CRediT authorship contribution statement 
+Tian Yuan: Writing – review & editing, Writing – original 
+draft, Methodology, Investigation, Data curation, Conceptualization. 
+Wenbo Zhan: Writing – review & editing, Writing – original 
+draft, Methodology, Data curation. Michele Terzano: Writing – re- 
+view & editing, Writing – original draft, Methodology. Gerhard A. 
+Holzapfel: Writing – review & editing, Supervision, Methodology. 
+Daniele Dini: Writing – review & editing, Supervision, Resources, 
+Project administration, Methodology, Conceptualization. 
+Acknowledgements 
+This project has received funding from the European Unions 
+Horizon 2020 research and innovation program under Grant Agree- 
+ment No. 688279. Daniele Dini would like to acknowledge the 
+support received from the EPSRC under the Established Career 
+Fellowship Grant No. EP/N025954/1, the Shell/RAEng Research 
+Chair in Complex Engineering Interfaces (RCSRF2122-14-143), and 
+the Medical Research Council (MR/Y008448/1). Tian Yuan would 
+like to acknowledge the support received from Great Britain- 
+China Educational Trust award and the Medical Research Council 
+(MR/Y008448/1). 
+References 
+[1] V.L. Feigin, T. Vos, E. Nichols, M.O. Owolabi, W.M. Carroll, M. Dichgans, 
+G. Deuschl, P. Parmar, M. Brainin, C. Murray, The global burden of neurolog- 
+ical disorders: translating evidence into policy, Lancet Neurol. 19 (3) (2020) 
+255–265, doi: 10.1016/S1474- 4422(19)30411- 9 . 
+[2] V.L. Feigin, E. Nichols, T. Alam, M.S. Bannick, et al., Global, regional, and na- 
+tional burden of neurological disorders, 1990–2016: a systematic analysis for 
+the Global Burden of Disease Study 2016, Lancet Neurol. 18 (5) (2019) 459–
+480, doi: 10.1016/S1474- 4422(18)30499- X . 
+[3] N.J. Abbott, A .A .K. Patabendige, D.E.M. Dolman, S.R. Yusof, D.J. Begley, Struc- 
+ture and function of the blood–brain barrier, Neurobiol. Dis. 37 (1) (2010) 
+13–25, doi: 10.1016/j.nbd.2009.07.030 . 
+[4] A .M. Mehta, A .M. Sonabend, J.N. Bruce, Convection-enhanced delivery, Neu- 
+rotherapeutics 14 (2) (2017) 358–371, doi: 10.1007/s13311- 017- 0520- 4 . 
+[5] R.H. Bobo, D.W. Laske, A. Akbasak, P.F. Morrison, R.L. Dedrick, E.H. Oldﬁeld, 
+Convection-enhanced delivery of macromolecules in the brain, Proc. Natl. 
+Acad. Sci. U.S.A. 91 (6) (1994) 2076–2080, doi: 10.1073/pnas.91.6.2076 . 
+[6] A. Jamal, T. Yuan, S. Galvan, A. Castellano, M. Riva, R. Secoli, A. Falini, L. Bello, 
+F. Rodriguez y. Baena, D. Dini, Insights into infusion-based targeted drug de- 
+livery in the brain: perspectives, challenges and opportunities, Int. J. Mol. Sci. 
+23 (6) (2022) 3139, doi: 10.3390/ijms23063139 . 
+[7] J.H. Sampson, G. Archer, C. Pedain, E. Wembacher-Schröder, M. West- 
+phal, S. Kunwar, M.A. Vogelbaum, A. Coan, J.E. Herndon, R. Raghavan, 
+M.L. Brady, D.A. Reardon, A.H. Friedman, H.S. Friedman, M.I. Rodríguez-Ponce, 
+S.M. Chang, S. Mittermeyer, D. Croteau, R.K. Puri, Poor drug distribution as 
+a possible explanation for the results of the PRECISE trial: clinical article, J. 
+Neurosurg. 113 (2) (2010) 301–309, doi: 10.3171/2009.11.JNS091052 . 
+[8] M.F. Salvatore, Y. Ai, B. Fischer, A.M. Zhang, R.C. Grondin, Z. Zhang, G.A. Ger- 
+hardt, D.M. Gash, Point source concentration of GDNF may explain failure 
+of phase II clinical trial, Exp. Neurol. 202 (2) (2006) 497–505, doi: 10.1016/ 
+j.expneurol.2006.07.015 . 
+[9] F. Casanova, P.R. Carney, M. Sarntinoranont, Effect of needle insertion speed 
+on tissue injury, stress, and backﬂow distribution for convection-enhanced 
+delivery in the rat brain, PLoS One 9 (4) (2014) e94919, doi: 10.1371/journal. 
+pone.0094919 . 
+[10] R.J. Mackenzie, Gray matter vs white matter, Neurosci. Technol. Netw. (2023) . 
+https://www.technologynetworks.com/neuroscience/articles/gray- matter- vs- 
+white-matter-322973 
+[11] D.F. Meaney, Relationship between structural modeling and hyperelas- 
+tic material behavior: application to CNS white matter, Biomech. Model. 
+Mechanobiol. 1 (4) (2003) 279–293, doi: 10.1007/s10237- 002- 0020- 1 . 
+[12] R. Bernal, P.A. Pullarkat, F. Melo, Mechanical properties of axons, Phys. Rev. 
+Lett. 99 (1) (2007) 018301, doi: 10.1103/PhysRevLett.99.018301 . 
+[13] T. Yuan, W. Zhan, D. Dini, Linking ﬂuid-axons interactions to the macroscopic 
+ﬂuid transport properties of the brain, Acta Biomater. 160 (2023) 152–163, 
+doi: 10.1016/j.actbio.2023.02.010 . 
+[14] S. Ito, M. Funaoka, I. Hanasaki, S. Takei, M. Morimoto, M. Irie, H. Miyasaka, 
+Visualization of the microstructure and the position-dependent diffusion 
+coeﬃcient in a blended polymer solid using photo-activation localization 
+microscopy combined with single-molecule tracking based on one-color 
+ﬂuorescence-switching of diarylethene, Polym. Chem. 13 (6) (2022) 736–740, 
+doi: 10.1039/D1PY01100F . 
+[15] S. Kalyanasundaram, V.D. Calhoun, K.W. Leong, A ﬁnite element model for 
+predicting the distribution of drugs delivered intracranially to the brain, Am. 
+J. Physiol. Regul. Integr. Comp. Physiol. (1997) . https://journals.physiology.org/ 
+doi/full/10.1152/ajpregu.1997.273.5.R1810 
+[16] A .A . Linninger, M.R. Somayaji, M. Mekarski, L. Zhang, Prediction of 
+convection-enhanced drug delivery to the human brain, J. Theor. Biol. 250 
+(1) (2008) 125–138, doi: 10.1016/j.jtbi.2007.09.009 . 
+[17] W. Zhan, M. Alamer, X.Y. Xu, Computational modelling of drug delivery to 
+solid tumour: understanding the interplay between chemotherapeutics and 
+biological system for optimised delivery systems, Adv. Drug Deliv. Rev. 132 
+(2018) 81–103, doi: 10.1016/j.addr.2018.07.013 . 
+[18] W. Zhan, Convection enhanced delivery of anti-angiogenic and cytotoxic 
+agents in combination therapy against brain tumour, Eur. J. Pharm. Sci. 141 
+(2020) 105094, doi: 10.1016/j.ejps.2019.105094 . 
+[19] Y. Yang, W. Zhan, Role of tissue hydraulic permeability in convection- 
+enhanced delivery of nanoparticle-encapsulated chemotherapy drugs 
+to brain tumour, Pharm. Res. 39 (5) (2022) 877–892, doi: 10.1007/ 
+s11095- 022- 03261- 7 . 
+[20] M.R. Somayaji, M. Xenos, L. Zhang, M. Mekarski, A .A . Linninger, Systematic 
+design of drug delivery therapies, Comput. Chem. Eng. 32 (1) (2008) 89–98, 
+doi: 10.1016/j.compchemeng.2007.06.014 . 
+[21] J. Siepmann, F. Siepmann, A.T. Florence, Local controlled drug delivery to the 
+brain: mathematical modeling of the underlying mass transport mechanisms, 
+Int. J. Pharm. 314 (2) (2006) 101–119, doi: 10.1016/j.ijpharm.2005.07.027 . 
+[22] M. Vidotto, D. Botnariuc, E. De Momi, D. Dini, A computational ﬂuid dy- 
+namics approach to determine white matter permeability, Biomech. Model. 
+Mechanobiol. 18 (4) (2019) 1111–1122, doi: 10.1007/s10237- 019- 01131- 7 . 
+[23] T. Yuan, W. Zhan, A. Jamal, D. Dini, On the microstructurally driven 
+heterogeneous response of brain white matter to drug infusion pres- 
+sure, Biomech. Model. Mechanobiol. 21 (4) (2022) 1299–1316, doi: 10.1007/ 
+s10237- 022- 01592- 3 . 
+[24] A. Jamal, M.T. Mongelli, M. Vidotto, M. Madekurozwa, A. Bernardini, 
+D.R. Overby, E. De Momi, F. Rodriguez y Baena, J.M. Sherwood, D. Dini, Infu- 
+sion mechanisms in brain white matter and their dependence on microstruc- 
+ture: an experimental study of hydraulic permeability, IEEE Trans. Biomed. 
+Eng. 68 (4) (2021) 1229–1237, doi: 10.1109/TBME.2020.3024117 . 
+[25] M. Terzano, D. Dini, F. Rodriguez y. Baena, A. Spagnoli, M. Oldﬁeld, 
+An adaptive ﬁnite element model for steerable needles, Biomech. Model. 
+Mechanobiol. 19 (5) (2020) 1809–1825, doi: 10.1007/s10237- 020- 01310- x . 
+[26] D. Su, R. Ma, M. Salloum, L. Zhu, Multi-scale study of nanoparticle transport 
+and deposition in tissues during an injection process, Med. Biol. Eng. Comput. 
+48 (9) (2010) 853–863, doi: 10.1007/s11517- 010- 0615- 0 . 
+[27] T. Yuan, L. Gao, W. Zhan, D. Dini, Effect of particle size and surface charge on 
+nanoparticles diffusion in the brain white matter, Pharm. Res. 39 (4) (2022) 
+767–781, doi: 10.1007/s11095- 022- 03222- 0 . 
+[28] M. Vidotto, A. Bernardini, M. Trovatelli, E. De Momi, D. Dini, On the 
+microstructural origin of brain white matter hydraulic permeability, Proc. 
+Natl. Acad. Sci. U.S.A. 118 (36) (2021), doi: 10.1073/pnas.2105328118 . 
+e2105328118 
+[29] W. Zhan, F. Rodriguez y. Baena, D. Dini, Effect of tissue permeability and 
+drug diffusion anisotropy on convection-enhanced delivery, Drug Deliv. 26 (1) 
+(2019) 773–781, doi: 10.1080/1071754 4.2019.163984 4 . 
+[30] A .A . Linninger, M.R. Somayaji, T. Erickson, X. Guo, R.D. Penn, Computational 
+methods for predicting drug transport in anisotropic and heterogeneous brain 
+tissue, J. Biomech. 41 (10) (2008) 2176–2187, doi: 10.1016/j.jbiomech.2008.04. 
+025 . 
+[31] J.H. Kim, G.W. Astary, S. Kantorovich, T.H. Mareci, P.R. Carney, M. Sarnti- 
+noranont, Voxelized Computational model for convection-enhanced deliv- 
+ery in the rat ventral hippocampus: comparison with in vivo MR experi- 
+mental studies, Ann. Biomed. Eng. 40 (9) (2012) 2043–2058, doi: 10.1007/ 
+s10439- 012- 0566- 8 . 
+17
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+[32] W. Zhan, C.-H. Wang, Convection enhanced delivery of liposome encapsulated 
+doxorubicin for brain tumour therapy, J. Controlled Release 285 (2018) 212–
+229, doi: 10.1016/j.jconrel.2018.07.006 . 
+[33] S. Budday, T.C. Ovaert, G.A. Holzapfel, P. Steinmann, E. Kuhl, Fifty shades 
+of brain: a review on the mechanical testing and modeling of brain tis- 
+sue, Arch. Comput. Methods Eng. 27 (4) (2020) 1187–1230, doi: 10.1007/ 
+s11831- 019- 09352- w . 
+[34] S. Chatelin, A. Constantinesco, R. Willinger, Fifty years of brain tissue me- 
+chanical testing: from in vitro to in vivo investigations, Biorheology 47 (5-6) 
+(2010) 255–276, doi: 10.3233/BIR- 2010- 0576 . 
+[35] A. Goriely, M.G.D. Geers, G.A. Holzapfel, J. Jayamohan, A. Jérusalem, S. Sival- 
+oganathan, W. Squier, J.A.W. van Dommelen, S. Waters, E. Kuhl, Mechanics 
+of the brain: perspectives, challenges, and opportunities, Biomech. Model. 
+Mechanobiol. 14 (5) (2015) 931–965, doi: 10.1007/s10237- 015- 0662-4 . 
+[36] M.I. Khan, F. Hasan, K.A .H.A . Mahmud, A . Adnan, Recent computational ap- 
+proaches on mechanical behavior of axonal cytoskeletal components of neu- 
+ron: a brief review, Multiscale Sci. Eng. 2 (4) (2020) 199–213, doi: 10.1007/ 
+s42493- 020- 0 0 043-4 . 
+[37] M.K. Rasmussen, H. Mestre, M. Nedergaard, Fluid transport in the brain, Phys- 
+iol. Rev. (2022) . https://journals.physiology.org/doi/full/10.1152/physrev.0 0 031. 
+2020 
+[38] S.P. Neuman, Theoretical derivation of Darcy’s law, Acta Mech. 25 (3) (1977) 
+153–170, doi: 10.1007/BF01376989 . 
+[39] S. Whitaker, Flow in porous media I: a theoretical derivation of Darcy’s law, 
+Transp. Porous Media 1 (1) (1986) 3–25, doi: 10.1007/BF01036523 . 
+[40] F.J. Suárez-Grau, Theoretical derivation of Darcy’s law for ﬂuid ﬂow in thin 
+porous media, Math. Nachr. 295 (3) (2022) 607–623, doi: 10.1002/mana. 
+2020 0 0184 . 
+[41] T. Nagashima, N. Tamaki, S. Matsumoto, B. Horwitz, Y. Seguchi, Biomechan- 
+ics of hydrocephalus: a new theoretical model, Neurosurgery 21 (6) (1987) 
+898–904 . 
+[42] T. Nagashima, T. Shirakuni, S.I. Rapoport, A two-dimensional, ﬁnite element 
+analysis of vasogenic brain edema, Neurologia Medico-Chirurgica 30 (1) 
+(1990) 1–9 . 
+[43] K.H. Rosenbluth, J.F. Eschermann, G. Mittermeyer, R. Thomson, S. Mittermeyer, 
+K.S. Bankiewicz, Analysis of a simulation algorithm for direct brain drug de- 
+livery, Neuroimage 59 (3) (2012) 2423–2429, doi: 10.1016/j.neuroimage.2011. 
+08.107 . 
+[44] W. Zhan, C.-H. Wang, Convection enhanced delivery of chemotherapeutic 
+drugs into brain tumour, J. Controlled Release 271 (2018) 74–87, doi: 10.1016/ 
+j.jconrel.2017.12.020 . 
+[45] G.E. Kapellos, T.S. Alexiou, Chapter 1 - Modeling momentum and mass trans- 
+port in cellular biological media: from the molecular to the tissue scale, in: 
+Transport in Biological Media, Elsevier, Walthm, MA , USA , 2013, pp. 1–40, 
+doi: 10.1016/B978- 0- 12- 415824- 5.0 0 0 01-1 . 
+[46] E.A. Swabb, J. Wei, P.M. Gullino, Diffusion and convection in nor- 
+mal and neoplastic tissues, Cancer Res. 34 (10) (1974) 2814–2822 . 
+https://aacrjournals.org/cancerres/article/34/10/2814/479947/Diffusion-and- 
+Convection- in- Normal- and- Neoplastic 
+[47] P.A . Netti, D.A . Berk, M.A . Swartz, A .J. Grodzinsky, R.K. Jain, Role of ex- 
+tracellular matrix assembly in interstitial transport in solid tumors, Cancer 
+Res. 60 (9) (20 0 0) 2497–2503 . https://aacrjournals.org/cancerres/article/60/9/ 
+2497/507280/Role- of- Extracellular- Matrix- Assembly- in 
+[48] G. Franceschini, D. Bigoni, P. Regitnig, G.A. Holzapfel, Brain tissue deforms 
+similarly to ﬁlled elastomers and follows consolidation theory, J. Mech. Phys. 
+Solids 54 (12) (2006) 2592–2620, doi: 10.1016/j.jmps.2006.05.004 . 
+[49] T. Yuan, L. Shen, D. Dini, Porosity-permeability tensor relationship of closely 
+and randomly packed ﬁbrous biomaterials and biological tissues: application 
+to the brain white matter, Acta Biomater. 173 (2024) 123–134, doi: 10.1016/j. 
+actbio.2023.11.007 . 
+[50] A. Fick, V. On liquid diffusion, London Edinb. Dublin Philos. Magaz. J. Sci. 10 
+(63) (1855) 30–39, doi: 10.1080/14786445508641925 . 
+[51] B. Serin, R.T. Ellickson, Determination of diffusion coeﬃcients, J. Chem. Phys. 
+9 (10) (1941) 742–747, doi: 10.1063/1.1750834 . 
+[52] C. Andrade, Calculation of chloride diffusion coeﬃcients in concrete from 
+ionic migration measurements, Cem. Concr. Res. 23 (3) (1993) 724–742, 
+doi: 10.1016/0 0 08-8846(93)90 023-3 . 
+[53] T. Sasaki, Y. Gunji, T. Iida, Transient-diffusion measurements of radon: Fick’s 
+law conﬁrmation and 218Po/214Po behavior determination, J. Nucl. Sci. Tech- 
+nol. 44 (10) (2007) 1330–1336, doi: 10.1080/18811248.2007.9711379 . 
+[54] M.P. di Cagno, F. Clarelli, J. Våbenø, C. Lesley, S.D. Rahman, J. Cauzzo, 
+E. Franceschinis, N. Realdon, P.C. Stein, Experimental determination of drug 
+diffusion coeﬃcients in unstirred aqueous environments by temporally re- 
+solved concentration measurements, Mol. Pharm. 15 (4) (2018) 1488–1494, 
+doi: 10.1021/acs.molpharmaceut.7b01053 . 
+[55] C. Nicholson, Interaction between diffusion and Michaelis-Menten uptake of 
+dopamine after iontophoresis in striatum, Biophys. J. 68 (5) (1995) 1699–
+1715, doi: 10.1016/S0 0 06-3495(95)80348-6 . 
+[56] C. Nicholson, K.C. Chen, S. Hrabˇetová, L. Tao, Diffusion of molecules in brain 
+extracellular space: theory and experiment, in: Progress in Brain Research, 
+volume 125, Elsevier, Walthm, MA , USA , 20 0 0, pp. 129–154, doi: 10.1016/ 
+S0 079-6123(0 0)250 07-3 . 
+[57] D. Calvetti, Y. Cheng, E. Somersalo, A spatially distributed computational 
+model of brain cellular metabolism, J. Theor. Biol. 376 (2015) 48–65, doi: 10. 
+1016/j.jtbi.2015.03.037 . 
+[58] E. Vendel, V. Rottschäfer, E.C.M. de Lange, The need for mathematical mod- 
+elling of spatial drug distribution within the brain, Fluids Barriers CNS 16 (1) 
+(2019) 1–33, doi: 10.1186/s12987- 019- 0133- x . 
+[59] X.-Y. Zhang, J. Luck, M.W. Dewhirst, F. Yuan, Interstitial hydraulic conductiv- 
+ity in a ﬁbrosarcoma, Am. J. Physiol.-Heart Circ. Physiol. (20 0 0), doi: 10.1152/ 
+ajpheart.20 0 0.279.6.H2726 . 
+[60] P. Heneghan, P.E. Riches, Determination of the strain-dependent hydraulic 
+permeability of the compressed bovine nucleus pulposus, J. Biomech. 41 (4) 
+(2008) 903–906, doi: 10.1016/j.jbiomech.2007.11.014 . 
+[61] K.L. Kleinhans, A.R. Jackson, Hydraulic permeability of meniscus ﬁbrocartilage 
+measured via direct permeation: effects of tissue anisotropy, water volume 
+content, and compressive strain, J. Biomech. 72 (2018) 215–221, doi: 10.1016/ 
+j.jbiomech.2018.03.011 . 
+[62] A.C.R. Tavner, T.D. Roy, K.W.W. Hor, M. Majimbi, G.R. Joldes, A. Wittek, 
+S. Bunt, K. Miller, On the appropriateness of modelling brain parenchyma 
+as a biphasic continuum, J. Mech. Behav. Biomed. Mater. 61 (2016) 511–518, 
+doi: 10.1016/j.jmbbm.2016.04.010 . 
+[63] S. Cheng, L.E. Bilston, Unconﬁned compression of white matter, J. Biomech. 
+40 (1) (2007) 117–124, doi: 10.1016/j.jbiomech.2005.11.004 . 
+[64] L. Su, M. Wang, J. Yin, F. Ti, J. Yang, C. Ma, S. Liu, T.J. Lu, Distinguishing poroe- 
+lasticity and viscoelasticity of brain tissue with time scale, Acta Biomater. 155 
+(2023) 423–435, doi: 10.1016/j.actbio.2022.11.009 . 
+[65] Y. Boucher, C. Brekken, P.A. Netti, L.T. Baxter, R.K. Jain, Intratumoral infusion 
+of ﬂuid: estimation of hydraulic conductivity and implications for the deliv- 
+ery of therapeutic agents, Br. J. Cancer 78 (1998) 1442–1448, doi: 10.1038/bjc. 
+1998.705 . 
+[66] A.M. Saaibi, M. Sarntinoranont, An infusion and pressure system to measure 
+hydraulic conductivity at a microscale level, ASME Digit. Collect. (2014) 561–
+562, doi: 10.1115/SBC2008-193011 . 
+[67] P. Shrestha, B. Stoeber, Imaging ﬂuid injections into soft biological tissue to 
+extract permeability model parameters, Phys. Fluids 32 (1) (2020), doi: 10. 
+1063/1.5131488 . 
+[68] L. Su, J.-C. Lei, Z. Li, C. Ma, S. Liu, Wettability effect on hydraulic permeabil- 
+ity of brain white matter, Acta Mech. Sin. 40 (2) (2024) 1–15, doi: 10.1007/ 
+s10409- 023- 23278- x . 
+[69] C. Nicholson, L. Tao, Hindered diffusion of high molecular weight compounds 
+in brain extracellular microenvironment measured with integrative optical 
+imaging, Biophys. J. 65 (6) (1993) 2277–2290, doi: 10.1016/S0 0 06-3495(93) 
+81324-9 . 
+[70] R.G. Thorne, C. Nicholson, In vivo diffusion analysis with quantum dots and 
+dextrans predicts the width of brain extracellular space, Proc. Natl. Acad. Sci. 
+U.S.A. 103 (14) (2006) 5567–5572, doi: 10.1073/pnas.0509425103 . 
+[71] E.A. Nance, G.F. Woodworth, K.A. Sailor, T.-Y. Shih, Q. Xu, G. Swaminathan, 
+D. Xiang, C. Eberhart, J. Hanes, A dense poly(ethylene glycol) coating im- 
+proves penetration of large polymeric nanoparticles within brain tissue, Sci. 
+Transl. Med. 4 (149) (2012) 149ra119, doi: 10.1126/scitranslmed.3003594 . 
+[72] J.J. Lochhead, R.G. Thorne, Intranasal delivery of biologics to the central ner- 
+vous system, Adv. Drug Deliv. Rev. 64 (7) (2012) 614–628, doi: 10.1016/j.addr. 
+2011.11.002 . 
+[73] S. Quader, K. Kataoka, H. Cabral, Nanomedicine for brain cancer, Adv. Drug 
+Deliv. Rev. 182 (2022) 114115, doi: 10.1016/j.addr.2022.114115 . 
+[74] G. Ringstad, L.M. Valnes, A.M. Dale, A.H. Pripp, S.-A.S. Vatnehol, K.E. Emblem, 
+K.-A. Mardal, P.K. Eide, Brain-wide glymphatic enhancement and clearance in 
+humans assessed with MRI, JCI Insight 3 (13) (2018), doi: 10.1172/jci.insight. 
+121537 . 
+[75] C.D. Arvanitis, G.B. Ferraro, R.K. Jain, The blood–brain barrier and blood–
+tumour barrier in brain tumours and metastases, Nat. Rev. Cancer 20 (2020) 
+26–41, doi: 10.1038/s41568- 019- 0205- x . 
+[76] L.M. Valnes, S.K. Mitusch, G. Ringstad, P.K. Eide, S.W. Funke, K.-A. Mardal, 
+Apparent diffusion coeﬃcient estimates based on 24 hours tracer move- 
+ment support glymphatic transport in human cerebral cortex, Sci. Rep. 10 (1) 
+(2020) 1–12, doi: 10.1038/s41598- 020- 66042- 5 . 
+[77] T. Yuan, Y. Yang, W. Zhan, D. Dini, Mathematical optimisation of magnetic 
+nanoparticle diffusion in the brain white matter, Int. J. Mol. Sci. 24 (3) (2023) 
+2534, doi: 10.3390/ijms24032534 . 
+[78] X. Shi, A. von dem Bussche, R.H. Hurt, A.B. Kane, H. Gao, Cell entry of one- 
+dimensional nanomaterials occurs by tip recognition and rotation, Nat. Nan- 
+otechnol. 6 (2011) 714–719, doi: 10.1038/nnano.2011.151 . 
+[79] X. Zhang, G. Ma, W. Wei, Simulation of nanoparticles interacting with a cell 
+membrane: probing the structural basis and potential biomedical application, 
+NPG Asia Mater. 13 (52) (2021) 1–18, doi: 10.1038/s41427- 021- 00320- 0 . 
+[80] C. Manzo, M.F. Garcia-Parajo, A review of progress in single particle tracking: 
+from methods to biophysical insights, Rep. Prog. Phys. 78 (12) (2015) 124601, 
+doi: 10.1088/0034-4885/78/12/124601 . 
+[81] T. Kuhn, J. Hettich, R. Davtyan, J.C.M. Gebhardt, Single molecule tracking and 
+analysis framework including theory-predicted parameter settings, Sci. Rep. 
+11 (9465) (2021) 1–12, doi: 10.1038/s41598- 021- 88802- 7 . 
+[82] A.J. Onetto, S. Sharif, Drug Distribution, StatPearls Publishing, 2022 . https:// 
+www.ncbi.nlm.nih.gov/books/NBK567736 
+[83] X. Lin, Y. Li, N. Gu, Nanoparticle’s size effect on its translocation across a lipid 
+bilayer: a molecular dynamics simulation, J. Comput. Theor. Nanosci. 7 (1) 
+(2010) 269–276, doi: 10.1166/jctn.2010.1358 . 
+[84] T. Yue, X. Zhang, Molecular understanding of receptor-mediated membrane 
+responses to ligand-coated nanoparticles, Soft Matter 7 (19) (2011) 9104–
+9112, doi: 10.1039/C1SM05398A . 
+18
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+[85] C. Montis, D. Maiolo, I. Alessandri, P. Bergese, D. Berti, Interaction of nanopar- 
+ticles with lipid membranes: a multiscale perspective, Nanoscale 6 (12) 
+(2014) 6452–6457, doi: 10.1039/C4NR00838C . 
+[86] C. Huang, Y. Zhang, H. Yuan, H. Gao, S. Zhang, Role of nanoparticle geometry 
+in endocytosis: laying down to stand up, Nano Lett. 13 (9) (2013) 4546–4550, 
+doi: 10.1021/nl402628n . 
+[87] Y. Li, X. Chen, N. Gu, Computational investigation of interaction between 
+nanoparticles and membranes: hydrophobic/hydrophilic effect, J. Phys. Chem. 
+B 112 (51) (2008) 16647–16653, doi: 10.1021/jp8051906 . 
+[88] H.-m. Ding, Y.-q. Ma, Interactions between Janus particles and membranes, 
+Nanoscale 4 (4) (2012) 1116–1122, doi: 10.1039/C1NR11425E . 
+[89] K.B. Walhovd, H. Johansen-Berg, R.T. Káradóttir, Unraveling the secrets of 
+white matter – bridging the gap between cellular, animal and human imag- 
+ing studies, Neuroscience 276 (2014) 2–13, doi: 10.1016/j.neuroscience.2014. 
+06.058 . 
+[90] R.I. Koning, A.J. Koster, T.H. Sharp, Advances in cryo-electron tomography for 
+biology and medicine, Anna. Anatomy Anatomischer Anz. 217 (2018) 82–96, 
+doi: 10.1016/j.aanat.2018.02.004 . 
+[91] M. Kleinnijenhuis, E. Johnson, J. Mollink, S. Jbabdi, K.L. Miller, A semi-au- 
+tomated approach to dense segmentation of 3D white matter electron mi- 
+croscopy, bioRxiv (2020) . 
+[92] L. Vásárhelyi, Z. Kónya, Á. Kukovecz, R. Vajtai, Microcomputed tomography–
+based characterization of advanced materials: a review, Mater. Today Adv. 8 
+(2020) 10 0 084, doi: 10.1016/j.mtadv.2020.10 0 084 . 
+[93] E.D. Bander, K. Tizi, E. Wembacher-Schroeder, R. Thomson, M. Donzelli, 
+E. Vasconcellos, M.M. Souweidane, Deformational changes after convection- 
+enhanced delivery in the pediatric brainstem, Neurosurg. Focus 48 (1) (2020) 
+E3, doi: 10.3171/2019.10.FOCUS19679 . 
+[94] S. Misra, K.B. Reed, B.W. Schafer, K.T. Ramesh, A.M. Okamura, Mechanics of 
+ﬂexible needles robotically steered through soft tissue, Int. J. Rob. Res. 29 (13) 
+(2010) 1640–1660, doi: 10.1177/0278364910369714 . 
+[95] R. Secoli, E. Matheson, M. Pinzi, S. Galvan, A. Donder, T. Watts, M. Riva, 
+D.D. Zani, L. Bello, F.R.y. Baena, Modular robotic platform for precision neuro- 
+surgery with a bio-inspired needle: System overview and ﬁrst in-vivo deploy- 
+ment, PLoS One 17 (10) (2022) e0275686, doi: 10.1371/journal.pone.0275686 . 
+[96] A. Goriely, M.G.D. Geers, G.A. Holzapfel, J. Jayamohan, A. Jérusalem, S. Sival- 
+oganathan, W. Squier, J.A.W. van Dommelen, S. Waters, E. Kuhl, Mechanics 
+of the brain: perspectives, challenges, and opportunities, Biomech. Model. 
+Mechanobiol. 14 (5) (2015) 931–965, doi: 10.1007/s10237- 015- 0662-4 . 
+[97] B. Rashid, M. Destrade, M.D. Gilchrist, Mechanical characterization of brain 
+tissue in simple shear at dynamic strain rates, J. Mech. Behav. Biomed. Mater. 
+28 (2013) 71–85, doi: 10.1016/j.jmbbm.2013.07.017 . 
+[98] S.N. Sundaresh, J.D. Finan, B.S. Elkin, C. Lee, J. Xiao, B. Morrison, Viscoelas- 
+tic characterization of porcine brain tissue mechanical properties under in- 
+dentation loading, Brain Multiphys. 2 (2021) 10 0 041, doi: 10.1016/j.brain.2021. 
+10 0 041 . 
+[99] K. Miller, K. Chinzei, Mechanical properties of brain tissue in tension, J. 
+Biomech. 35 (4) (2002) 4 83–4 90, doi: 10.1016/s0021-9290(01)00234-2 . 
+[100] M. Kohandel, S. Sivaloganathan, G. Tenti, J.M. Drake, The constitutive proper- 
+ties of the brain parenchyma Part 1. Strain energy approach, Med. Eng. Phys. 
+28 (5) (2006) 449–454, doi: 10.1016/j.medengphy.2005.01.005 . 
+[101] A.E. Forte, S.M. Gentleman, D. Dini, On the characterization of the het- 
+erogeneous mechanical response of human brain tissue, Biomech. Model. 
+Mechanobiol. 16 (3) (2017) 907–920, doi: 10.1007/s10237- 016- 0860- 8 . 
+[102] A .M. Felfelian, A . Baradaran Najar, R. Jafari Nedoushan, H. Salehi, Determining 
+constitutive behavior of the brain tissue using digital image correlation and 
+ﬁnite element modeling, Biomech. Model. Mechanobiol. 18 (6) (2019) 1927–
+1945, doi: 10.1007/s10237- 019- 01186- 6 . 
+[103] K. Miller, Constitutive model of brain tissue suitable for ﬁnite element anal- 
+ysis of surgical procedures, J. Biomech. 32 (5) (1999) 531–537, doi: 10.1016/ 
+S0 021-9290(99)0 0 010-X . 
+[104] K. Laksari, M. Shaﬁeian, K. Darvish, Constitutive model for brain tissue under 
+ﬁnite compression, J. Biomech. 45 (4) (2012) 642–646, doi: 10.1016/j.jbiomech. 
+2011.12.023 . 
+[105] A. Awasthi, U. Gautam, S. Bhaskar, S. Roy, Biomechanical modelling and 
+computer aided simulation of deep brain retraction in neurosurgery, Com- 
+put. Methods Programs Biomed. 197 (2020) 105688, doi: 10.1016/j.cmpb.2020. 
+105688 . 
+[106] M.T. Prange, S.S. Margulies, Regional, directional, and age-dependent prop- 
+erties of the brain undergoing large deformation, J. Biomech. Eng. 124 (2) 
+(2002) 244–252, doi: 10.1115/1.1449907 . 
+[107] F. Velardi, F. Fraternali, M. Angelillo, Anisotropic constitutive equations and 
+experimental tensile behavior of brain tissue, Biomech. Model. Mechanobiol. 
+5 (1) (2006) 53–61, doi: 10.1007/s10237- 005- 0007- 9 . 
+[108] B.S. Elkin, A. Ilankova, B. Morrison, Dynamic, regional mechanical properties 
+of the porcine brain: indentation in the coronal plane, J. Biomech. Eng. 133 
+(7) (2011) 071009., doi: 10.1115/1.4004494 . 
+[109] S. Budday, R. Nay, R. de Rooij, P. Steinmann, T. Wyrobek, T.C. Ovaert, E. Kuhl, 
+Mechanical properties of gray and white matter brain tissue by indentation, 
+J. Mech. Behav. Biomed. Mater. 46 (2015) 318–330, doi: 10.1016/j.jmbbm.2015. 
+02.024 . 
+[110] S. Budday, G. Sommer, C. Birkl, C. Langkammer, J. Haybaeck, J. Kohnert, 
+M. Bauer, F. Paulsen, P. Steinmann, E. Kuhl, G.A. Holzapfel, Mechanical char- 
+acterization of human brain tissue, Acta Biomater. 48 (2017) 319–340, doi: 10. 
+1016/j.actbio.2016.10.036 . 
+[111] A. Samadi-Dooki, G.Z. Voyiadjis, R.W. Stout, An indirect indentation method 
+for evaluating the linear viscoelastic properties of the brain tissue, J. Biomech. 
+Eng. 139 (6) (2017) ., doi: 10.1115/1.4036486 . 
+[112] S.N. Sundaresh, J.D. Finan, B.S. Elkin, A.V. Basilio, G.M. McKhann, B.M. Rd, 
+Region-dependent viscoelastic properties of human brain tissue under large 
+deformations, Ann. Biomed. Eng. 50 (11) (2022) 1452–1460, doi: 10.1007/ 
+s10439- 022- 02910- 7 . 
+[113] J.A.W. van Dommelen, T.P.J. van der Sande, M. Hrapko, G.W.M. Peters, Me- 
+chanical properties of brain tissue by indentation: interregional variation, J. 
+Mech. Behav. Biomed. Mater. 3 (2) (2010) 158–166, doi: 10.1016/j.jmbbm.2009. 
+09.001 . 
+[114] J. Weickenmeier, R. de Rooij, S. Budday, T.C. Ovaert, E. Kuhl, The mechani- 
+cal importance of myelination in the central nervous system, J. Mech. Behav. 
+Biomed. Mater. 76 (2017) 119–124, doi: 10.1016/j.jmbbm.2017.04.017 . 
+[115] A. Samadi-Dooki, G.Z. Voyiadjis, R.W. Stout, A combined experimental, mod- 
+eling, and computational approach to interpret the viscoelastic response of 
+the white matter brain tissue during indentation, J. Mech. Behav. Biomed. 
+Mater. 77 (2018) 24–33, doi: 10.1016/j.jmbbm.2017.08.037 . 
+[116] A. Menichetti, D.B. MacManus, M.D. Gilchrist, B. Depreitere, J. Vander Sloten, 
+N. Famaey, Regional characterization of the dynamic mechanical properties of 
+human brain tissue by microindentation, Int. J. Eng. Sci. 155 (2020) 103355, 
+doi: 10.1016/j.ijengsci.2020.103355 . 
+[117] L. Qian, H. Zhao, Y. Guo, Y. Li, M. Zhou, L. Yang, Z. Wang, Y. Sun, Inﬂuence of 
+strain rate on indentation response of porcine brain, J. Mech. Behav. Biomed. 
+Mater. 82 (2018) 210–217, doi: 10.1016/j.jmbbm.2018.03.031 . 
+[118] Z. Du, Z. Li, P. Wang, Z. Zhuang, Z. Liu, Revealing the nonlinear mechanical be- 
+havior of white matter brain tissue by analyzing the asynchronous deforma- 
+tion and damage of matrix and axonal ﬁbers, Int. J. Solids Struct. 242 (2022) 
+111554, doi: 10.1016/j.ijsolstr.2022.111554 . 
+[119] M. Kohandel, S. Sivaloganathan, G. Tenti, K. Darvish, Frequency dependence 
+of complex moduli of brain tissue using a fractional Zener model, Phys. Med. 
+Biol. 50 (12) (2005) 2799–2805, doi: 10.1088/0031-9155/50/12/005 . 
+[120] G. Davis, M. Kohandel, S. Sivaloganathan, G. Tenti, The constitutive properties 
+of the brain paraenchyma Part 2. Fractional derivative approach, Med. Eng. 
+Phys. 28 (5) (2006) 455–459, doi: 10.1016/j.medengphy.2005.07.023 . 
+[121] M. Hrapko, J.A. Van Dommelen, G.W. Peters, J.S. Wismans, The mechanical 
+behaviour of brain tissue: large strain response and constitutive modelling, 
+Biorheology 43 (2006) 59–69 . ISBN: 2951421060 
+[122] T.P. Prevost, A. Balakrishnan, S. Suresh, S. Socrate, Biomechanics of brain tis- 
+sue, Acta Biomater. 7 (1) (2011) 83–95, doi: 10.1016/j.actbio.2010.06.035 . 
+[123] S. Budday, G. Sommer, G.A. Holzapfel, P. Steinmann, E. Kuhl, Viscoelastic pa- 
+rameter identiﬁcation of human brain tissue, J. Mech. Behav. Biomed. Mater. 
+74 (2017) 463–476, doi: 10.1016/j.jmbbm.2017.07.014 . 
+[124] K. Haldar, C. Pal, Rate dependent anisotropic constitutive modeling of brain 
+tissue undergoing large deformation, J. Mech. Behav. Biomed. Mater. 81 
+(2018) 178–194, doi: 10.1016/j.jmbbm.2017.12.021 . 
+[125] S. Reese, S. Govindjee, A theory of ﬁnite viscoelasticity and numerical 
+aspects, Int. J. Solids Struct. 35 (26-27) (1998) 3455–3482, doi: 10.1016/ 
+S0 020-7683(97)0 0217-5 . 
+[126] Y. Feng, R.J. Okamoto, R. Namani, G.M. Genin, P.V. Bayly, Measurements 
+of mechanical anisotropy in brain tissue and implications for transversely 
+isotropic material models of white matter, J. Mech. Behav. Biomed. Mater. 23 
+(2013) 117–132, doi: 10.1016/j.jmbbm.2013.04.007 . 
+[127] A . Jamal, A . Bernardini, D. Dini, Microscale characterisation of the time- 
+dependent mechanical behaviour of brain white matter, J. Mech. Behav. 
+Biomed. Mater. 125 (2022) 104917, doi: 10.1016/j.jmbbm.2021.104917 . 
+[128] R.J.H. Cloots, J.A.W. van Dommelen, T. Nyberg, S. Kleiven, M.G.D. Geers, Mi- 
+cromechanics of diffuse axonal injury: inﬂuence of axonal orientation and 
+anisotropy, Biomech. Model. Mechanobiol. 10 (3) (2011) 413–422, doi: 10. 
+1007/s10237-010-0243-5 . 
+[129] C. Giordano, S. Kleiven, Connecting fractional anisotropy from medical im- 
+ages with mechanical anisotropy of a hyperviscoelastic ﬁbre-reinforced con- 
+stitutive model for brain tissue, J. R. Soc. Interface 11 (91) (2014) 20130914, 
+doi: 10.1098/rsif.2013.0914 . 
+[130] K.M. Labus, C.M. Puttlitz, An anisotropic hyperelastic constitutive model of 
+brain white matter in biaxial tension and structural-mechanical relationships, 
+J. Mech. Behav. Biomed. Mater. 62 (2016) 195–208, doi: 10.1016/j.jmbbm.2016. 
+05.003 . 
+[131] F. Pervin, W.W. Chen, Dynamic mechanical response of bovine gray matter 
+and white matter brain tissues under compression, J. Biomech. 42 (6) (2009) 
+731–735, doi: 10.1016/j.jbiomech.2009.01.023 . 
+[132] S. Saeidi, M.P. Kainz, M. Dalbosco, M. Terzano, G.A. Holzapfel, Histology- 
+informed multiscale modeling of human brain white matter, Sci. Rep. 13 (1) 
+(2023) 19641, doi: 10.1038/s41598- 023- 46600- 3 . 
+[133] J. Ciambella, P. Nardinocchi, A structurally frame-indifferent model for 
+anisotropic visco-hyperelastic materials, J. Mech. Phys. Solids 147 (2021) 
+104247, doi: 10.1016/j.jmps.2020.104247 . 
+[134] G.A. Holzapfel, Nonlinear Solid Mechanics: A Continuum Approach for Engi- 
+neering Science, Wiley, Chichester, 20 0 0 . 
+[135] E. Comellas, S. Budday, J.-P. Pelteret, G.A. Holzapfel, P. Steinmann, Modeling 
+the porous and viscous responses of human brain tissue behavior, Comput. 
+Methods Appl. Mech. Eng. 369 (2020) 113128, doi: 10.1016/j.cma.2020.113128 . 
+[136] M. Kaczmarek, The hydromechanics of hydrocephalus: steady-state solutions 
+for cylindrical geometry, Bull. Math. Biol. 59 (2) (1997) 295–323, doi: 10.1016/ 
+S0 092-8240(96)0 0 073-0 . 
+19
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+[137] S. Gholampour, N. Fatouraee, Boundary conditions investigation to improve 
+computer simulation of cerebrospinal ﬂuid dynamics in hydrocephalus pa- 
+tients, Commun. Biol. 4 (394) (2021) 1–15, doi: 10.1038/s42003- 021- 01920- w . 
+[138] S. Gholampour, D. Frim, B. Yamini, Long-term recovery behavior of brain tis- 
+sue in hydrocephalus patients after shunting, Commun. Biol. 5 (1198) (2022) 
+1–13, doi: 10.1038/s42003- 022- 04128- 8 . 
+[139] R.M. Bowen, Theory of mixtures, in: A.C. Eringen (Ed.), Continuum Physics, 3, 
+Academic Press, New York, 1976 . 
+[140] V.C. Mow, S.C. Kuei, W.M. Lai, C.G. Armstrong, Biphasic creep and stress 
+relaxation of articular cartilage in compression: theory and experiments, J. 
+Biomech. Eng. 102 (1) (1980) 73–84, doi: 10.1115/1.3138202 . 
+[141] W. Ehlers, A. Wagner, Multi-component modelling of human brain tissue: 
+a contribution to the constitutive and computational description of defor- 
+mation, ﬂow and diffusion processes with application to the invasive drug- 
+delivery problem, Comput. Methods Biomech. Biomed. Eng. 5842 (8) (2015) 
+861–879, doi: 10.1080/10255842.2013.853754 . 
+[142] S. Cheng, L.E. Bilston, Unconﬁned compression of white matter, J. Biomech. 
+40 (1) (2007) 117–124, doi: 10.1016/j.jbiomech.2005.11.004 . 
+[143] A. Greiner, N. Reiter, F. Paulsen, G.A. Holzapfel, P. Steinmann, E. Comellas, 
+S. Budday, Poro-viscoelastic effects during biomechanical testing of human 
+brain tissue, Front. Mech. Eng. 7 (2021), doi: 10.3389/fmech.2021.708350 . 
+[144] S. Urcun, P.-Y. Rohan, G. Sciumé, S.P.A. Bordas, Cortex tissue relaxation and 
+slow to medium load rates dependency can be captured by a two-phase ﬂow 
+poroelastic model, J. Mech. Behav. Biomed. Mater. 126 (2022) 104952, doi: 10. 
+1016/j.jmbbm.2021.104952 . 
+[145] W. Ehlers, M. Morrison, P. Schröder, D. Stöhr, A. Wagner, Multiphasic mod- 
+elling and computation of metastatic lung-cancer cell proliferation and 
+atrophy in brain tissue based on experimental data, Biomech. Model. 
+Mechanobiol. 21 (1) (2022) 277–315, doi: 10.1007/s10237- 021- 01535- 4 . 
+[146] M.A. Biot, General theory of three-dimensional consolidation, J. Appl. Phys. 12 
+(2) (1941) 155–164, doi: 10.1063/1.1712886 . 
+[147] M.A. Biot, Theory of ﬁnite deformations of porous solids, Indiana Univ. Math. 
+J. 21 (7) (1972) 597–620 . 
+[148] S. Sivaloganathan, M. Stastna, G. Tenti, J.M. Drake, Biomechanics of the brain: 
+a theoretical and numerical study of Biot’s equations of consolidation the- 
+ory with deformation-dependent permeability, Int. J. Non-Linear Mech. 40 (9) 
+(2005) 1149–1159, doi: 10.1016/j.ijnonlinmec.20 05.04.0 04 . 
+[149] B. Wirth, I. Sobey, An axisymmetric and fully 3D poroelastic model for the 
+evolution of hydrocephalus, Math. Med. Biol. 23 (4) (2006) 363–388, doi: 10. 
+1093/imammb/dql014 . 
+[150] I. Sobey, B. Wirth, Effect of non-linear permeability in a spherically sym- 
+metric model of hydrocephalus, Math. Med. Biol. 23 (4) (2006) 339–361, 
+doi: 10.1093/imammb/dql015 . 
+[151] A. Mehrabian, Y. Abousleiman, General solutions to poroviscoelastic model 
+of hydrocephalic human brain tissue, J. Theor. Biol. 291 (1) (2011) 105–118, 
+doi: 10.1016/j.jtbi.2011.09.011 . 
+[152] T. Dutta-Roy, A. Wittek, K. Miller, Biomechanical modelling of normal pres- 
+sure hydrocephalus, J. Biomech. 41 (10) (2008) 2263–2271, doi: 10.1016/j. 
+jbiomech.2008.04.014 . 
+[153] J.J. Garcia, J.H. Smith, A biphasic hyperelastic model for the analysis of ﬂuid 
+and mass transport in brain tissue, Ann. Biomed. Eng. 37 (2) (2009) 375–386, 
+doi: 10.1007/s10439- 008- 9610- 0 . 
+[154] J.H. Smith, J.J. Garcia, A nonlinear biphasic model of ﬂow-controlled infusion 
+in brain: ﬂuid transport and tissue deformation analyses, J. Biomech. 42 (13) 
+(2009) 2017–2025, doi: 10.1016/j.jbiomech.2009.06.014 . 
+[155] M. Hosseini-Farid, M. Ramzanpour, J. McLean, M. Ziejewski, G. Karami, A 
+poro-hyper-viscoelastic rate-dependent constitutive modeling for the anal- 
+ysis of brain tissues, J. Mech. Behav. Biomed. Mater. 102 (2020) 103475, 
+doi: 10.1016/j.jmbbm.2019.103475 . 
+[156] W. Ehlers, G. Eipper, Finite elastic deformations in liquid-saturated and 
+empty porous solids, in: Porous Media: Theory and Experiments, 34, Springer 
+Netherlands, Dordrecht, 1999, pp. 179–191 . 
+[157] G.A . Ateshian, J.A . Weiss, Anisotropic hydraulic permeability under ﬁnite de- 
+formation, J. Biomech. Eng. 132 (11) (2010) 1–7, doi: 10.1115/1.4002588 . 
+[158] K. Miller, K. Chinzei, G. Orssengo, P. Bednarz, Mechanical properties of brain 
+tissue in-vivo: experiment and computer simulation, J. Biomech. 33 (11) 
+(20 0 0) 1369–1376, doi: 10.1016/s0 021-9290(0 0)0 0120-2 . 
+[159] A. Gefen, S.S. Margulies, Are in vivo and in situ brain tissues mechanically 
+similar? J. Biomech. 37 (9) (2004) 1339–1352, doi: 10.1016/j.jbiomech.2003.12. 
+032 . 
+[160] S. Mehdizadeh, M. Khoshgoftar, N. Siamak, F. Farhad, A. Hooshiar, Comparison 
+between brain tissue gray and white matters in tension including necking 
+phenomenon, Am. J. Appl. Sci. 5 (2008), doi: 10.3844/ajassp.2008.1701.1706 . 
+[161] T.P. Prevost, G. Jin, M.A. de Moya, H.B. Alam, S. Suresh, S. Socrate, Dynamic 
+mechanical response of brain tissue in indentation in vivo, in situ and in 
+vitro, Acta Biomater. 7 (12) (2011) 4090–4101, doi: 10.1016/j.actbio.2011.06. 
+032 . 
+[162] T. Kaster, I. Sack, A. Samani, Measurement of the hyperelastic properties of 
+ex vivo brain tissue slices, J. Biomech. 44 (6) (2011) 1158–1163, doi: 10.1016/j. 
+jbiomech.2011.01.019 . 
+[163] B. Rashid, M. Destrade, M.D. Gilchrist, Mechanical characterization of brain 
+tissue in compression at dynamic strain rates, J. Mech. Behav. Biomed. Mater. 
+10 (2012) 23–38, doi: 10.1016/j.jmbbm.2012.01.022 . 
+[164] B. Rashid, M. Destrade, M.D. Gilchrist, Mechanical characterization of brain 
+tissue in tension at dynamic strain rates, J. Mech. Behav. Biomed. Mater. 33 
+(2014) 43–54, doi: 10.1016/j.jmbbm.2012.07.015 . 
+[165] Z. Zhu, C. Jiang, H. Jiang, A visco-hyperelastic model of brain tissue incorpo- 
+rating both tension/compression asymmetry and volume compressibility, Acta 
+Mech. 230 (6) (2019) 2125–2135, doi: 10.10 07/s0 0707- 019- 02383- 1 . 
+[166] F. Eskandari, M. Shaﬁeian, M.M. Aghdam, K. Laksari, Tension strain-softening 
+and compression strain-stiffening behavior of brain white matter, Ann. 
+Biomed. Eng. 49 (1) (2021) 276–286, doi: 10.1007/s10439- 020- 02541- w . 
+[167] G.M. Boiczyk, N. Pearson, V.B. Kote, A. Sundaramurthy, D.R. Subramaniam, 
+J.E. Rubio, G. Unnikrishnan, J. Reifman, K.L. Monson, Rate- and region- 
+dependent mechanical properties of Göttingen minipig brain tissue in simple 
+shear and unconﬁned compression, J. Biomech. Eng. 145 (6) (2023) 061004., 
+doi: 10.1115/1.4056480 . 
+[168] N. Abolhassani, R. Patel, M. Moallem, Needle insertion into soft tissue: a sur- 
+vey, Med. Eng. Phys. 29 (4) (2007) 413–431, doi: 10.1016/j.medengphy.2006.07. 
+003 . 
+[169] B. Takabi, B.L. Tai, A review of cutting mechanics and modeling tech- 
+niques for biological materials, Med. Eng. Phys. 45 (2017) 1–14, doi: 10.1016/j. 
+medengphy.2017.04.004 . 
+[170] F. Zhong, Y. Wang, Z. Wang, Y.-H. Liu, Dual-arm robotic needle insertion with 
+active tissue deformation for autonomous suturing, IEEE Rob. Autom. Lett. 4 
+(3) (2019) 2669–2676, doi: 10.1109/LRA.2019.2913082 . 
+[171] W. Wu, C. Xu, C. Pan, Z. Huang, J. Zhou, P. Huang, Effect of vibration frequency 
+on frictional resistance of brain tissue during vibration-assisted needle inser- 
+tion, Med. Eng. Phys. 86 (2020) 35–40, doi: 10.1016/j.medengphy.2020.10.003 . 
+[172] Y. Tang, J. Zou, R.C.C. Flesch, T. Jin, Backﬂow modeling in nanoﬂuid infusion 
+and analysis of its effects on heat induced damage during magnetic hyper- 
+thermia, Appl. Math. Model. 114 (2023) 583–600, doi: 10.1016/j.apm.2022.10. 
+020 . 
+[173] F. Casanova, P.R. Carney, M. Sarntinoranont, In vivo evaluation of needle force 
+and friction stress during insertion at varying insertion speed into the brain, 
+J. Neurosci. Methods 237 (2014) 79–89, doi: 10.1016/j.jneumeth.2014.08.012 . 
+[174] C. Simone, A.M. Okamura, Modeling of needle insertion forces for robot- 
+assisted percutaneous therapy, in: Proceedings 2002 IEEE International Con- 
+ference on Robotics and Automation, 2, 2002, pp. 2085–2091, doi: 10.1109/ 
+ROBOT.2002.1014 84 8 . 
+[175] S. DiMaio, S. Salcudean, Needle insertion modeling and simulation, IEEE 
+Trans. Rob. Autom. 19 (5) (2003) 864–875, doi: 10.1109/TRA.2003.817044 . 
+[176] A.M. Okamura, C. Simone, M. O’Leary, Force modeling for needle insertion 
+into soft tissue, IEEE Trans. Biomed. Eng. 51 (10) (2004) 1707–1716, doi: 10. 
+1109/TBME.2004.831542 . 
+[177] S. DiMaio, S. Salcudean, Needle steering and motion planning in soft tis- 
+sues, IEEE Trans. Biomed. Eng. 52 (6) (2005) 965–974, doi: 10.1109/TBME. 
+2005.846734 . 
+[178] A. Wittek, T. Dutta-Roy, Z. Taylor, A. Horton, T. Washio, K. Chinzei, K. Miller, 
+Subject-speciﬁc non-linear biomechanical model of needle insertion into 
+brain, Comput. Methods Biomech. Biomed. Eng. 11 (2) (2008) 135–146, 
+doi: 10.1080/10255840701688095 . 
+[179] X. Chen, M. Sarntinoranont, Biphasic ﬁnite element model of solute trans- 
+port for direct infusion into nervous tissue, Ann. Biomed. Eng. 35 (12) (2007) 
+2145–2158, doi: 10.1007/s10439- 007- 9371- 1 . 
+[180] J.J. García, J.H. Smith, A biphasic hyperelastic model for the analysis of ﬂuid 
+and mass transport in brain tissue, Ann. Biomed. Eng. 37 (2) (2009) 375–386, 
+doi: 10.1007/s10439- 008- 9610- 0 . 
+[181] O.A . Shergold, N.A . Fleck, Mechanisms of deep penetration of soft solids, with 
+application to the injection and wounding of skin, Proc. R. Soc. A Math. Phys. 
+Eng. Sci. 460 (2050) (2004) 3037–3058, doi: 10.1098/rspa.2004.1315 . 
+[182] T. Azar, V. Hayward, Estimation of the fracture toughness of soft tissue from 
+needle insertion, in: F. Bello, P.J.E. Edwards (Eds.), Biomedical Simulation, 
+Springer Berlin Heidelberg, Berlin, Heidelberg, 2008, pp. 166–175 . 
+[183] M. Khadem, C. Rossa, R.S. Sloboda, N. Usmani, M. Tavakoli, Mechanics of tis- 
+sue cutting during needle insertion in biological tissue, IEEE Rob. Autom. Lett. 
+1 (2) (2016) 800–807, doi: 10.1109/LRA.2016.2528301 . 
+[184] M. Kuna, Finite Elements in Fracture Mechanics: Theory - Numerics - Appli- 
+cations, Springer Netherlands, Heidelberg, 2013 . 
+[185] M. Terzano, A. Spagnoli, P. Ståhle, A fracture mechanics model to study in- 
+dentation cutting, Fatigue Fract. Eng. Mater. Struct. 41 (4) (2018) 821–830, 
+doi: 10.1111/ffe.12750 . 
+[186] H. Mohammadi, A. Ebrahimian, N. Maftoon, Finite-element modelling of 
+needle-tissue interactions, Arch. Comput. Methods Eng. (2023), doi: 10.1007/ 
+s11831- 023- 10020- 3 . https://link.springer.com/10.1007/s11831- 023- 10020- 3 
+[187] S. Misra, K.B. Reed, A.S. Douglas, K.T. Ramesh, A.M. Okamura, Needle-tissue 
+interaction forces for bevel-tip steerable needles, in: 2008 2nd IEEE RAS & 
+EMBS International Conference on Biomedical Robotics and Biomechatronics, 
+2008, pp. 224–231, doi: 10.1109/BIOROB.2008.4762872 . ArXiv: NIHMS150003 
+ISSN: 2155-1774 
+[188] M. Mahvash, P. Dupont, Mechanics of dynamic needle insertion into a bio- 
+logical material, IEEE Trans. Biomed. Eng. 57 (4) (2010) 934–943, doi: 10.1109/ 
+TBME.2009.2036856 . 
+[189] M. Oldﬁeld, D. Dini, G. Giordano, F. Rodriguez y. Baena, Detailed ﬁnite ele- 
+ment modelling of deep needle insertions into a soft tissue phantom using 
+a cohesive approach, Comput. Methods Biomech. Biomed. Eng. 16 (5) (2013) 
+530–543, doi: 10.1080/10255842.2011.628448 . 
+[190] J.D. Toaquiza Tubon, O. Moreno-Flores, V.D. Sree, A.B. Tepole, Anisotropic 
+damage model for collagenous tissues and its application to model fracture 
+and needle insertion mechanics, Biomech. Model. Mechanobiol. 21 (6) (2022) 
+1–16, doi: 10.1007/s10237- 022- 01624- y . Publisher: Springer Berlin Heidelberg 
+ISBN: 0123456789 
+20
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+[191] A. Wittek, G. Bourantas, B.F. Zwick, G. Joldes, L. Esteban, K. Miller, Mathemat- 
+ical modeling and computer simulation of needle insertion into soft tissue, 
+PLOS ONE 15 (12) (2020) e0242704, doi: 10.1371/journal.pone.0242704 . 
+[192] A .A . Yakovenko, Y.-X. Lai, I.G. Goryacheva, M.-S. Ju, M.Z. Dosaev, Y.D. Se- 
+lyutskiy, Modeling and experimental study of the needle indentation into 
+a brain phantom, Int. J. Non-Linear Mech. 137 (2021) 103832, doi: 10.1016/j. 
+ijnonlinmec.2021.103832 . 
+[193] E. Lueshen, K. Tangen, A.I. Mehta, A. Linninger, Backﬂow-free catheters for 
+eﬃcient and safe convection-enhanced delivery of therapeutics, Med. Eng. 
+Phys. 45 (2017) 15–24, doi: 10.1016/j.medengphy.2017.02.018 . 
+[194] G.A. Orozco, J.H. Smith, J.J. García, Three-dimensional nonlinear ﬁnite el- 
+ement model to estimate backﬂow during ﬂow-controlled infusions into 
+the brain, Proc. Inst. Mech. Eng. H 234 (9) (2020) 1018–1028, doi: 10.1177/ 
+0954411920937220 . 
+[195] J.J. García, A.B. Molano, J.H. Smith, Description and validation of a ﬁnite ele- 
+ment model of backﬂow during infusion into a brain tissue phantom, J. Com- 
+put. Nonlinear Dyn. 8 (1) (2013), doi: 10.1115/1.4007311 . 
+[196] O. Ivanchenko, N. Sindhwani, A. Linninger, Experimental techniques for study- 
+ing poroelasticity in brain phantom gels under high ﬂow microinfusion, J. 
+Biomech. Eng. 132 (5) (2010), doi: 10.1115/1.4001164 . 
+[197] E. Axpe, G. Orive, K. Franze, E.A. Appel, Towards brain-tissue-like biomaterials, 
+Nat. Commun. 11 (3423) (2020) 1–4, doi: 10.1038/s41467- 020- 17245- x . 
+[198] X. Chen, G.W. Astary, H. Sepulveda, T.H. Mareci, M. Sarntinoranont, Quan- 
+titative assessment of macromolecular concentration during direct infusion 
+into an agarose hydrogel phantom using contrast-enhanced MRI, Magn. Re- 
+son. Imaging 26 (10) (2008) 1433–1441, doi: 10.1016/j.mri.2008.04.011 . 
+[199] P. Nakielski, T. Kowalczyk, K. Zembrzycki, T.A. Kowalewski, Experimental and 
+numerical evaluation of drug release from nanoﬁber mats to brain tissue, J. 
+Biomed. Mater. Res. Part B 103 (2) (2015) 282–291, doi: 10.1002/jbm.b.33197 . 
+[200] Z. Tan, J.P. Ewen, A.E. Forte, S. Galvan, E. De Momi, F. Rodriguez y. Baena, 
+D. Dini, What does a brain feel like? J. Chem. Educ. 97 (11) (2020) 4078–
+4083, doi: 10.1021/acs.jchemed.0c00957 . 
+[201] A.E. Forte, S. Galvan, F. Manieri, F. Rodriguez y. Baena, D. Dini, A composite 
+hydrogel for brain tissue phantoms, Mater. Des. 112 (2016) 227–238, doi: 10. 
+1016/j.matdes.2016.09.063 . 
+[202] A.E. Forte, S. Galvan, D. Dini, Models and tissue mimics for brain shift sim- 
+ulations, Biomech. Model. Mechanobiol. 17 (1) (2018) 249–261, doi: 10.1007/ 
+s10237- 017- 0958- 7 . 
+[203] Z. Tan, D. Dini, F. Rodriguez y. Baena, A.E. Forte, Composite hydrogel: a high 
+ﬁdelity soft tissue mimic for surgery, Mater. Des. 160 (2018) 886–894, doi: 10. 
+1016/j.matdes.2018.10.018 . 
+[204] M.P. Kainz, A. Greiner, J. Hinrichsen, D. Kolb, E. Comellas, P. Steinmann, 
+S. Budday, M. Terzano, G.A. Holzapfel, Poro-viscoelastic material parameter 
+identiﬁcation of brain tissue-mimicking hydrogels, Front. Bioeng. Biotechnol. 
+11 (2023), doi: 10.3389/fbioe.2023.1143304 . 
+[205] A .I. Lavrova, A .V. Sychev, A .S. Vanina, E.V. Grekhnyova, E.B. Postnikov, Access- 
+ing random diffusivity in a hydrogel-based brain’s paranchyma phantom, in: 
+2022 7th International Conference on Intelligent Informatics and Biomedi- 
+cal Science (ICIIBMS), IEEE, 2022, pp. 24–26, doi: 10.1109/ICIIBMS55689.2022. 
+9971620 . 
+[206] T. Distler, E. Schaller, P. Steinmann, A.R. Boccaccini, S. Budday, Alginate-based 
+hydrogels show the same complex mechanical behavior as brain tissue, J. 
+Mech. Behav. Biomed. Mater. 111 (2020) 103979, doi: 10.1016/j.jmbbm.2020. 
+103979 . 
+[207] A .S. Vanina, A .V. Sychev, A .I. Lavrova, P.V. Gavrilov, P.L. Andropova, 
+E.V. Grekhnyova, T.N. Kudryavtseva, E.B. Postnikov, A hydrogel-based phan- 
+tom of the brain tissue aimed at modelling complex metabolic trans- 
+port processes, Eur. Phys. J. Spec. Top. (2022) 1–9, doi: 10.1140/epjs/ 
+s11734- 022- 00733- 0 . 
+[208] A . Leibinger, A .E. Forte, Z. Tan, M.J. Oldﬁeld, F. Beyrau, D. Dini, F. Ro- 
+driguez y. Baena, Soft tissue phantoms for realistic needle insertion: a com- 
+parative study, Ann. Biomed. Eng. 44 (8) (2016) 2442–2452, doi: 10.1007/ 
+s10439-015-1523-0 . 
+[209] A.E. Forte, F. D’Amico, M.N. Charalambides, D. Dini, J.G. Williams, Modelling 
+and experimental characterisation of the rate dependent fracture properties 
+of gelatine gels, Food Hydrocolloids 46 (2015) 180–190, doi: 10.1016/j.foodhyd. 
+2014.12.028 . 
+[210] M. Navarro-Lozoya, M.S. Kennedy, D. Dean, J.I. Rodriguez-Devora, Develop- 
+ment of phantom material that resembles compression properties of human 
+brain tissue for training models, Materialia 8 (2019) 100438, doi: 10.1016/j. 
+mtla.2019.100438 . 
+[211] A. Tejo-Otero, F. Fenollosa-Artés, I. Achaerandio, S. Rey-Vinolas, I. Buj- 
+Corral, M.Á. Mateos-Timoneda, E. Engel, Soft-tissue-mimicking using hydro- 
+gels for the development of phantoms, Gels 8 (1) (2022) 40., doi: 10.3390/ 
+gels8010040 . 
+[212] S.D. Kim, K. Kim, M. Shin, Recent advances in 3D printable conductive hy- 
+drogel inks for neural engineering, Nano Convergence 10 (1) (2023) 1–19, 
+doi: 10.1186/s40580- 023- 00389- z . 
+[213] F. Dell’Isola, D. Steigmann, A.D. Corte, Synthesis of ﬁbrous complex struc- 
+tures: designing microstructure to deliver targeted macroscale response, 
+Appl. Mech. Rev. 67 (6) (2015), doi: 10.1115/1.4032206 . 
+[214] N. Rott, Note on the history of the Reynolds number, Annu. Rev. Fluid Mech. 
+22 (1) (1990) 1–12, doi: 10.1146/annurev.ﬂ.22.010190.0 0 0245 . 
+[215] X. Kong, Y. Yang, J. Gan, T. Yuan, L. Ao, W. Wu, Experimental and numerical 
+investigation on the detailed buckling process of similar stiffened panels sub- 
+jected to in-plane compressive load, Thin-Walled Struct. 148 (2020) 106620, 
+doi: 10.1016/j.tws.2020.106620 . 
+[216] T. Yuan, Y. Yang, X. Kong, W. Wu, Similarity criteria for the buckling pro- 
+cess of stiffened plates subjected to compressive load, Thin-Walled Struct. 
+158 (2021) 107183, doi: 10.1016/j.tws.2020.107183 . 
+[217] Z. Wang, T. Yuan, X. Kong, W. Wu, A universal similarity method and design 
+procedure for buckling assessment of stiffened plates under compression load 
+on real ships, Thin-Walled Struct. 181 (2022) 110025, doi: 10.1016/j.tws.2022. 
+110025 . 
+[218] J. Bakarji, J. Callaham, S.L. Brunton, J.N. Kutz, Dimensionally consistent learn- 
+ing with Buckingham Pi, Nat. Comput. Sci. 2 (2022) 834–844, doi: 10.1038/ 
+s43588- 022- 00355- 5 . 
+[219] X. Xie, A. Samaei, J. Guo, W.K. Liu, Z. Gan, Data-driven discovery of dimen- 
+sionless numbers and governing laws from scarce measurements, Nat. Com- 
+mun. 13 (7562) (2022) 1–11, doi: 10.1038/s41467- 022- 35084- w . 
+[220] E.P. Chan, Y. Hu, P.M. Johnson, Z. Suo, C.M. Stafford, Spherical indentation 
+testing of poroelastic relaxations in thin hydrogel layers, Soft Matter 8 (5) 
+(2012) 1492–1498, doi: 10.1039/C1SM06514A . 
+[221] M. Wang, S. Liu, Z. Xu, K. Qu, M. Li, X. Chen, Q. Xue, G.M. Genin, T.J. Lu, F. Xu, 
+Characterizing poroelasticity of biological tissues by spherical indentation: an 
+improved theory for large relaxation, J. Mech. Phys. Solids 138 (2020), doi: 10. 
+1016/j.jmps.2020.103920 . 
+[222] S. Chatelin, A. Constantinesco, R. Willinger, Fifty years of brain tissue me- 
+chanical testing: from in vitro to in vivo investigations, Biorheology 47 (5-6) 
+(2010) 255–276, doi: 10.3233/BIR- 2010- 0576 . 
+[223] M.C. Murphy, J. Huston, R.L. Ehman, MR elastography of the brain and its 
+application in neurological diseases, Neuroimage 187 (2019) 176–183, doi: 10. 
+1016/j.neuroimage.2017.10.008 . 
+[224] H. Herthum, S.C.H. Dempsey, A. Samani, F. Schrank, M. Shahryari, C. War- 
+muth, H. Tzschätzsch, J. Braun, I. Sack, Superviscous properties of the in vivo 
+brain at large scales, Acta Biomater. 121 (2021) 393–404, doi: 10.1016/j.actbio. 
+2020.12.027 . 
+[225] L.V. Hiscox, C.L. Johnson, M.D.J. McGarry, M. Perrins, A. Littlejohn, E.J.R. van 
+Beek, N. Roberts, J.M. Starr, High-resolution magnetic resonance elastogra- 
+phy reveals differences in subcortical gray matter viscoelasticity between 
+young and healthy older adults, Neurobiol. Aging 65 (2018) 158, doi: 10.1016/ 
+j.neurobiolaging.2018.01.010 . 
+[226] A . Arani, A . Manduca, R.L. Ehman, J.H. Iii, Harnessing brain waves: a review of 
+brain magnetic resonance elastography for clinicians and scientists entering 
+the ﬁeld, Br. J. Radiol. (2021) . https://www.birpublications.org/doi/10.1259/bjr. 
+20200265 
+[227] E. Spedden, J.D. White, E.N. Naumova, D.L. Kaplan, C. Staii, Elasticity 
+maps of living neurons measured by combined ﬂuorescence and atomic 
+force microscopy, Biophys. J. 103 (5) (2012) 868–877, doi: 10.1016/j.bpj.2012. 
+08.005 . 
+[228] K.B. Bernick, T.P. Prevost, S. Suresh, S. Socrate, Biomechanics of single cortical 
+neurons, Acta Biomater. 7 (3) (2011) 1210–1219, doi: 10.1016/j.actbio.2010.10. 
+018 . 
+[229] Y.-B. Lu, K. Franze, G. Seifert, C. Steinhäuser, F. Kirchhoff, H. Wolburg, J. Guck, 
+P. Janmey, E.-Q. Wei, J. Käs, A. Reichenbach, Viscoelastic properties of individ- 
+ual glial cells and neurons in the CNS, Proc. Natl. Acad. Sci. U.S.A. 103 (47) 
+(2006) 17759–17764, doi: 10.1073/pnas.0606150103 . 
+[230] F. Hasan, K. Al Mahmud, Md.I. Khan, A. Adnan, Front. Bioeng. Biotechnol. 10 
+(2022), doi: 10.3389/fbioe.2022.904818 . 
+[231] Y. Zhang, K. Abiraman, H. Li, D.M. Pierce, A.V. Tzingounis, G. Lykotraﬁtis, Mod- 
+eling of the axon membrane skeleton structure and implications for its me- 
+chanical properties, PLoS Comput. Biol. 13 (2) (2017) e1005407, doi: 10.1371/ 
+journal.pcbi.1005407 . 
+[232] M. Dao, C.T. Lim, S. Suresh, Mechanics of the human red blood cell deformed 
+by optical tweezers, J. Mech. Phys. Solids 51 (11) (2003) 2259–2280, doi: 10. 
+1016/j.jmps.2003.09.019 . 
+[233] J. Sigüenza, S. Mendez, F. Nicoud, How should the optical tweezers ex- 
+periment be used to characterize the red blood cell membrane mechan- 
+ics? Biomech. Model. Mechanobiol. 16 (5) (2017) 1645–1657, doi: 10.1007/ 
+s10237- 017- 0910- x . 
+[234] E.P.S. Tan, S.Y. Ng, C.T. Lim, Tensile testing of a single ultraﬁne polymeric 
+ﬁber, Biomaterials 26 (13) (2005) 1453–1456, doi: 10.1016/j.biomaterials.2004. 
+05.021 . 
+[235] X. Tang, X. Liu, P. Li, D. Liu, M. Kojima, Q. Huang, T. Arai, Eﬃcient single- 
+cell mechanical measurement by integrating a cell arraying microﬂuidic de- 
+vice with magnetic tweezer, IEEE Rob. Autom. Lett. 6 (2) (2021) 2978–2984, 
+doi: 10.1109/LRA.2021.3062793 . 
+[236] K.C. Neuman, A. Nagy, Single-molecule force spectroscopy: optical tweezers, 
+magnetic tweezers and atomic force microscopy, Nat. Methods 5 (6) (2008) 
+491–505, doi: 10.1038/nmeth.1218 . 
+[237] E. Spedden, C. Staii, Neuron biomechanics probed by atomic force microscopy, 
+Int. J. Mol. Sci. 14 (8) (2013) 16124–16140, doi: 10.3390/ijms140816124 . 
+[238] Y. Wu, C. Whiteus, C.S. Xu, K.J. Hayworth, R.J. Weinberg, H.F. Hess, P. De 
+Camilli, Contacts between the endoplasmic reticulum and other membranes 
+in neurons, Proc. Natl. Acad. Sci. U.S.A. 114 (24) (2017) E4 859–E4 867, doi: 10. 
+1073/pnas.1701078114 . 
+[239] A. Bernardini, M. Trovatelli, M.M. Kłosowski, M. Pederzani, D.D. Zani, S. Briz- 
+zola, A. Porter, F. Rodriguez y. Baena, D. Dini, Reconstruction of ovine axonal 
+cytoarchitecture enables more accurate models of brain biomechanics, Com- 
+mun. Biol. 5 (1101) (2022) 1–14, doi: 10.1038/s42003- 022- 04052- x . 
+21
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+[240] M. Sarntinoranont, R.K. Banerjee, R.R. Lonser, P.F. Morrison, A computational 
+model of direct interstitial infusion of macromolecules into the spinal cord, 
+Ann. Biomed. Eng. 31 (4) (2003) 448 . 
+[241] J.H. Kim, G.W. Astary, X. Chen, T.H. Mareci, M. Sarntinoranont, Voxelized 
+model of interstitial transport in the rat spinal cord following direct infusion 
+into white matter, J. Biomech. Eng. 131 (7) (2009), doi: 10.1115/1.3169248 . 
+[242] J.H. Kim, T.H. Mareci, M. Sarntinoranont, A voxelized model of direct infusion 
+into the corpus callosum and hippocampus of the rat brain: model develop- 
+ment and parameter analysis, Med. Biol. Eng. Comput. 48 (3) (2010) 203–214, 
+doi: 10.1007/s11517- 009- 0564- 7 . 
+[243] C.A. Stine, J.M. Munson, Convection-enhanced delivery: connection to and im- 
+pact of interstitial ﬂuid ﬂow, Front. Oncol. 9 (2019), doi: 10.3389/fonc.2019. 
+00966 . 
+[244] A .A . Linninger, C. Tsakiris, D.C. Zhu, M. Xenos, P. Roycewicz, Z. Danziger, 
+R. Penn, Pulsatile cerebrospinal ﬂuid dynamics in the human brain, IEEE 
+Trans. Biomed. Eng. 52 (4) (2005) 557–565, doi: 10.1109/TBME.2005.844021 . 
+[245] A .A . Linninger, M. Xenos, D.C. Zhu, M.R. Somayaji, S. Kondapalli, R.D. Penn, 
+Cerebrospinal ﬂuid ﬂow in the normal and hydrocephalic human brain, IEEE 
+Trans. Biomed. Eng. 54 (2) (2007) 291–302, doi: 10.1109/TBME.2006.886853 . 
+[246] J.H. Smith, K.A. Starkweather, J.J. García, Implications of transvascular ﬂuid 
+exchange in nonlinear, biphasic analyses of ﬂow-controlled infusion in brain, 
+Bull. Math. Biol. 74 (4) (2012) 881–907, doi: 10.1007/s11538- 011- 9696- 7 . 
+[247] A. Wagner, W. Ehlers, Continuum-mechanical analysis of human brain tissue, 
+Proc. Appl. Math. Mech. 10 (1) (2010) 99–10 0, doi: 10.10 02/pamm.201010042 . 
+[248] A. Wagner, W. Ehlers, Computational modelling of drug infusion into the 
+anisotropic white-matter tracts of the human brain, Proc. Appl. Math. Mech. 
+11 (1) (2011) 133–134, doi: 10.1002/pamm.201110058 . 
+[249] K.N. Magdoom, G.L. Pishko, L. Rice, C. Pampo, D.W. Siemann, M. Sarntinora- 
+nont, MRI-based computational model of heterogeneous tracer transport fol- 
+lowing local infusion into a mouse hind limb tumor, PLoS One 9 (3) (2014) 
+e89594, doi: 10.1371/journal.pone.0089594 . 
+[250] W. Zhan, D.Y. Ariﬁn, T.K.Y. Lee, C.-H. Wang, Mathematical modelling of con- 
+vection enhanced delivery of carmustine and paclitaxel for brain tumour 
+therapy, Pharm. Res. 34 (4) (2017) 860–873, doi: 10.1007/s11095- 017- 2114- 6 . 
+[251] S.A. Peters, Identiﬁcation of intestinal loss of a drug through phys- 
+iologically based pharmacokinetic simulation of plasma concentration- 
+time proﬁles, Clin. Pharmacokinet. 47 (4) (2008) 245–259, doi: 10.2165/ 
+0 0 0 03088-20 0847040-0 0 0 03 . 
+[252] W.-C. Chou, Y.-H. Cheng, J.E. Riviere, N.A. Monteiro-Riviere, W.G. Kreyling, 
+Z. Lin, Development of a multi-route physiologically based pharmacokinetic 
+(PBPK) model for nanomaterials: a comparison between a traditional versus a 
+new route-speciﬁc approach using gold nanoparticles in rats, Part. Fibre Tox- 
+icol. 19 (1) (2022) 1–19, doi: 10.1186/s12989- 022- 00489- 4 . 
+[253] D. Deepika, V. Kumar, The role of “Physiologically Based Pharmacokinetic 
+Model (PBPK)” New Approach Methodology (NAM) in pharmaceuticals and 
+environmental chemical risk assessment, Int. J. Environ. Res. Public Health 20 
+(4) (2023) 3473, doi: 10.3390/ijerph20043473 . 
+[254] M. Hammarlund-Udenaes, M. Fridén, S. Syvänen, A. Gupta, On the rate and 
+extent of drug delivery to the brain, Pharm. Res. 25 (8) (2008) 1737–1750, 
+doi: 10.1007/s11095- 007- 9502- 2 . 
+[255] J. Westerhout, B. Ploeger, J. Smeets, M. Danhof, E.C.M. de Lange, Phys- 
+iologically based pharmacokinetic modeling to investigate regional brain 
+distribution kinetics in rats, AAPS J. 14 (3) (2012) 543–553, doi: 10.1208/ 
+s12248-012-9366-1 . 
+[256] I. Loryan, E. Melander, M. Svensson, M. Payan, F. König, B. Jansson, 
+M. Hammarlund-Udenaes, In-depth neuropharmacokinetic analysis of an- 
+tipsychotics based on a novel approach to estimate unbound target-site con- 
+centration in CNS regions: link to spatial receptor occupancy, Mol. Psychiatry 
+21 (2016) 1527–1536, doi: 10.1038/mp.2015.229 . 
+[257] Y. Yamamoto, P.A. Välitalo, D.R. Huntjens, J.H. Proost, A. Vermeulen, 
+W. Krauwinkel, M.W. Beukers, D.-J. van den Berg, R. Hartman, Y.C. Wong, 
+M. Danhof, J.G.C. van Hasselt, E.C.M. de Lange, Predicting drug concentration- 
+time proﬁles in multiple CNS compartments using a comprehensive 
+physiologically-based pharmacokinetic model, CPT Pharmacometrics Syst. 
+Pharmacol. 6 (11) (2017) 765–777, doi: 10.1002/psp4.12250 . 
+[258] Y. Yamamoto, P.A. Välitalo, Y.C. Wong, D.R. Huntjens, J.H. Proost, A. Ver- 
+meulen, W. Krauwinkel, M.W. Beukers, H. Kokki, M. Kokki, M. Danhof, 
+J.G.C. van Hasselt, E.C.M. de Lange, Prediction of human CNS pharmacokinet- 
+ics using a physiologically-based pharmacokinetic modeling approach, Eur. J. 
+Pharm. Sci. 112 (2018) 168–179, doi: 10.1016/j.ejps.2017.11.011 . 
+[259] A.M. Heitman, R.R. Bies, S.L. Schwartz, A physiologically-based pharmacoki- 
+netic model of the brain considering regional lipid variance, J. Pharmacol. 
+Exp. Ther. 383 (3) (2022) 217–226, doi: 10.1124/jpet.122.001256 . 
+[260] M. Hammarlund-Udenaes, Pharmacokinetic concepts in brain drug delivery, 
+in: Drug Delivery to the Brain, Springer, Cham, Switzerland, 2022, pp. 173–
+209, doi: 10.1007/978- 3- 030- 88773- 5_7 . 
+[261] I. Loryan, M. Hammarlund-Udenaes, S. Syvänen, Brain distribution of drugs: 
+pharmacokinetic considerations, Handb. Exp. Pharmacol. 273 (121-150) 
+(2022), doi: 10.1007/164_2020_405 . 
+[262] Z.-J. Chen, W.C. Broaddus, R.R. Viswanathan, R. Raghavan, G.T. Gillies, Intra- 
+parenchymal drug delivery via positive-pressure infusion: experimental and 
+modeling studies of poroelasticity in brain phantom gels, IEEE Trans. Biomed. 
+Eng. 49 (2) (2002) 85–96, doi: 10.1109/10.979348 . 
+[263] J.H. Smith, J.J. Garcíaa, A nonlinear biphasic model of ﬂow-controlled infusion 
+in brain: ﬂuid transport and tissue deformation analyses, J. Biomech. 42 (13) 
+(2009) 2017–2025, doi: 10.1016/j.jbiomech.2009.06.014 . 
+[264] J.H. Smith, J. Jaime Garcíaa, A nonlinear biphasic model of ﬂow-controlled 
+infusions in brain: mass transport analyses, J. Biomech. 44 (3) (2011) 524–
+531, doi: 10.1016/j.jbiomech.2010.09.010 . 
+[265] K.H. Støverud, M. Darcis, R. Helmig, S.M. Hassanizadeh, Modeling concentra- 
+tion distribution and deformation during convection-enhanced drug delivery 
+into brain tissue, Transp. Porous Media 92 (1) (2012) 119–143, doi: 10.1007/ 
+s11242-011-9894-7 . 
+[266] D. Su, R. Ma, L. Zhu, Numerical study of nanoﬂuid infusion in deformable 
+tissues for hyperthermia cancer treatments, Med. Biol. Eng. Comput. 49 (11) 
+(2011) 1233–1240, doi: 10.1007/s11517- 011- 0819- y . 
+[267] M. Nilsson, J. Lätt, F. Ståhlberg, D. van Westen, H. Hagslätt, The im- 
+portance of axonal undulation in diffusion MR measurements: a Monte 
+Carlo simulation study, NMR Biomed. 25 (5) (2012) 795–805, doi: 10.1002/ 
+nbm.1795 . 
+[268] C. Nicholson, P. Kamali-Zare, Reduction of dimensionality in Monte Carlo sim- 
+ulation of diffusion in extracellular space surrounding cubic cells, Neurochem. 
+Res. 45 (1) (2020) 42–52, doi: 10.1007/s11064- 019- 02793- 6 . 
+[269] M. Hajiaghamemar, T. Wu, M.B. Panzer, S.S. Margulies, Embedded axonal 
+ﬁber tracts improve ﬁnite element model predictions of traumatic brain in- 
+jury, Biomech. Model. Mechanobiol. 19 (3) (2020) 1109–1130, doi: 10.1007/ 
+s10237- 019- 01273- 8 . 
+[270] M. Sarntinoranont, R.K. Banerjee, R.R. Lonser, P.F. Morrison, A computational 
+model of direct interstitial infusion of macromolecules into the spinal cord, 
+Ann. Biomed. Eng. 31 (4) (2003) 448–461, doi: 10.1114/1.1558032 . 
+[271] B. Sweetman, M. Xenos, L. Zitella, A .A . Linninger, Three-dimensional compu- 
+tational prediction of cerebrospinal ﬂuid ﬂow in the human brain, Comput. 
+Biol. Med. 41 (2) (2011) 67–75, doi: 10.1016/j.compbiomed.2010.12.001 . 
+[272] E. Messaritaki, S.U. Rudrapatna, G.D. Parker, W.P. Gray, D.K. Jones, Improv- 
+ing the predictions of computational models of convection-enhanced drug 
+delivery by accounting for diffusion non-gaussianity, Front. Neurol. 9 (2018), 
+doi: 10.3389/fneur.2018.01092 . 
+[273] M. Brady, R. Raghavan, J. Sampson, Determinants of intraparenchymal infu- 
+sion distributions: modeling and analyses of human glioblastoma trials, Phar- 
+maceutics 12 (9) (2020) 895, doi: 10.3390/pharmaceutics12090895 . 
+[274] H. Zhang, T. Schneider, C.A. Wheeler-Kingshott, D.C. Alexander, NODDI: prac- 
+tical in vivo neurite orientation dispersion and density imaging of the human 
+brain, Neuroimage 61 (4) (2012) 10 0 0–1016, doi: 10.1016/j.neuroimage.2012. 
+03.072 . 
+[275] A . Jahangiri, A .T. Chin, P.M. Flanigan, R. Chen, K. Bankiewicz, M.K. Aghi, 
+Convection-enhanced delivery in glioblastoma: a review of preclinical and 
+clinical studies, J. Neurosurg. 126 (1) (2017) 191–200, doi: 10.3171/2016.1. 
+JNS151591 . 
+[276] D.P.M. Tromp, N. Adluru, A.L. Alexander, M.E. Emborg, Simulating convection- 
+enhanced delivery in the putamen using probabilistic tractography, 2011 IEEE 
+International Symposium on Biomedical Imaging: From Nano to Macro, IEEE, 
+2011, doi: 10.1109/ISBI.2011.5872523 . 2011–02 
+[277] F. Gimenez, M.T. Krauze, F. Valles, P. Hadaczek, J. Bringas, N. Sharma, J. For- 
+sayeth, K.S. Bankiewicz, Image-guided convection-enhanced delivery of GDNF 
+protein into monkey putamen, Neuroimage 54 (2011) S189–S195, doi: 10.1016/ 
+j.neuroimage.2010.01.023 . 
+[278] M. Brady, R. Raghavan, Z.-J. Chen, W.C. Broaddus, Quantifying ﬂuid infusions 
+and tissue expansion in brain, IEEE Trans. Biomed. Eng. 58 (8) (2011) 2228–
+2237, doi: 10.1109/TBME.2011.2128869 . 
+[279] K.H. Rosenbluth, A.J. Martin, J. Bringas, K.S. Bankiewicz, Evaluation of 
+pressure-driven brain infusions in nonhuman primates by intra-operative 7 
+tesla MRI, J. Magn. Reson. Imaging 36 (6) (2012) 1339–1346, doi: 10.1002/jmri. 
+23771 . 
+[280] I.M.J. van der Bom, R.P. Moser, G. Gao, M. Sena-Esteves, N. Aronin, M.J. Gou- 
+nis, Frameless multimodal image guidance of localized convection-enhanced 
+delivery of therapeutics in the brain, J. NeuroIntervent. Surg. 5 (1) (2013) 69–
+72, doi: 10.1136/neurintsurg-2011-010170 . 
+[281] R.S. D’Amico, J.A. Neira, J. Yun, N.G. Alexiades, M. Banu, Z.K. Englander, 
+B.C. Kennedy, T.H. Ung, R.J. Rothrock, A. Romanov, X. Guo, B. Zhao, A.M. Son- 
+abend, P. Canoll, J.N. Bruce, Validation of an effective im plantable pum p- 
+infusion system for chronic convection-enhanced delivery of intracerebral 
+topotecan in a large animal model, J. Neurosurg. 133 (3) (2019) 614–623, 
+doi: 10.3171/2019.3.JNS1963 . 
+[282] B. Partridge, A. Eardley, B.E. Morales, S.N. Campelo, M.F. Lorenzo, J.N. Mehta, 
+Y. Kani, J.K.G. Mora, E.-O.Y. Campbell, C.B. Arena, S. Platt, A. Mintz, R.L. Shinn, 
+C.G. Rylander, W. Debinski, R.V. Davalos, J.H. Rossmeisl, Advancements in 
+drug delivery methods for the treatment of brain disease, Front. Vet. Sci. 9 
+(2022) 1039745, doi: 10.3389/fvets.2022.1039745 . 
+[283] S.K. Niazi, Non-invasive drug delivery across the blood–brain barrier: 
+a prospective analysis, Pharmaceutics 15 (11) (2023) 2599, doi: 10.3390/ 
+pharmaceutics15112599 . 
+[284] D.Y. Ariﬁn, K.Y.T. Lee, C.-H. Wang, Chemotherapeutic drug transport to brain 
+tumor, J. Controlled Release 137 (3) (2009) 203–210, doi: 10.1016/j.jconrel. 
+2009.04.013 . 
+[285] L. Vargová, A. Homola, J. Zámeˇcnik, M. Tichý, V. Beneš, E. Syková, Diffusion 
+parameters of the extracellular space in human gliomas, Glia 42 (1) (2003) 
+77–88, doi: 10.1002/glia.10204 . 
+[286] J. Zamecnik, The extracellular space and matrix of gliomas, Acta Neuropathol. 
+110 (5) (2005) 435–442, doi: 10.10 07/s0 0401-0 05-1078-5 . 
+[287] B.D. Trapp, J. Peterson, R.M. Ransohoff, R. Rudick, S. Mörk, L. Bö, Axonal tran- 
+section in the lesions of multiple sclerosis, N. Engl. J. Med. (1998), doi: 10. 
+1056/NEJM199801293380502 . 
+22
+T. Yuan, W. Zhan, M. Terzano et al.
+Acta Biomaterialia 185 (2024) 1–23
+[288] A. Wilkins, Y. Kondo, J. Song, S. Liu, A. Compston, J.A. Black, S.G. Waxman, 
+I.D. Duncan, Slowly progressive axonal degeneration in a rat model of chronic, 
+nonimmune-mediated demyelination, J. Neuropathol. Exp. Neurol. 69 (12) 
+(2010) 1256–1269, doi: 10.1097/NEN.0b013e3181ffc317 . 
+[289] E.K. Nduom, C. Yang, M.J. Merrill, Z. Zhuang, R.R. Lonser, Characterization of 
+the blood-brain barrier of metastatic and primary malignant neoplasms: lab- 
+oratory investigation, J. Neurosurg. 119 (2) (2013) 427–433, doi: 10.3171/2013. 
+3.JNS122226 . 
+[290] A. Bhandari, B. Gu, F.M. Kashkooli, W. Zhan, Image-based predictive modelling 
+frameworks for personalised drug delivery in cancer therapy, J. Controlled Re- 
+lease 370 (2024) 721–746, doi: 10.1016/j.jconrel.2024.05.004 . 
+[291] J.S. Tan, D.E. Butterﬁeld, C.L. Voycheck, K.D. Caldwell, J.T. Li, Surface modiﬁca- 
+tion of nanoparticles by PEO/PPO block copolymers to minimize interactions 
+with blood components and prolong blood circulation in rats, Biomaterials 14 
+(11) (1993) 823–833, doi: 10.1016/0142-9612(93)90 0 04-L . 
+[292] S.A. Kulkarni, S.-S. Feng, Effects of surface modiﬁcation on delivery eﬃciency 
+of biodegradable nanoparticles across the blood–brain barrier, Nanomedicine 
+(2011), doi: 10.2217/nnm.10.131 . 
+[293] N. McDannold, N. Vykhodtseva, K. Hynynen, Blood-brain barrier disruption 
+induced by focused ultrasound and circulating preformed microbubbles ap- 
+pears to be characterized by the mechanical index, Ultrasound Med. Biol. 34 
+(5) (2008) 834–840, doi: 10.1016/j.ultrasmedbio.2007.10.016 . 
+[294] M.J. Oldﬁeld, C. Burrows, J. Kerl, L. Frasson, T. Parittotokkaporn, F. Beyrau, 
+F. Rodriguez y. Baena, Highly resolved strain imaging during needle insertion: 
+Results with a novel biologically inspired device, J. Mech. Behav. Biomed. 
+Mater. 30 (2014) 50–60, doi: 10.1016/j.jmbbm.2013.10.016 . 
+[295] T. Watts, R. Secoli, F.R.y. Baena, A mechanics-based model for 3-D steering 
+of programmable bevel-tip needles, IEEE Trans. Rob. 35 (2) (2018) 371–386, 
+doi: 10.1109/TRO.2018.2879584 . 
+[296] M. Pinzi, S. Galvan, F. Rodriguez y. Baena, The Adaptive Hermite Fractal 
+Tree (AHFT): a novel surgical 3D path planning approach with curvature 
+and heading constraints, Int. J. CARS 14 (4) (2019) 659–670, doi: 10.1007/ 
+s11548- 019- 01923- 3 . 
+[297] M.R. Dreher, W. Liu, C.R. Michelich, M.W. Dewhirst, F. Yuan, A. Chilkoti, Tumor 
+vascular permeability, accumulation, and penetration of macromolecular drug 
+carriers, J. Natl. Cancer Inst. 98 (5) (2006) 335–344, doi: 10.1093/jnci/djj070 . 
+[298] R. Raghavan, M.L. Brady, M.I. Rodríguez-Ponce, A. Hartlep, C. Pedain, 
+J.H. Sampson, Convection-enhanced delivery of therapeutics for brain dis- 
+ease, and its optimization, Neurosurg. Focus 20 (4) (2006) E12, doi: 10.3171/ 
+foc.2006.20.4.7 . 
+[299] T. Yuan, L. Shen, D. Dini, Porosity-permeability tensor relationship of closely 
+and randomly packed ﬁbrous biomaterials and biological tissues: applica- 
+tion to the brain white matter, bioRxiv (2023), doi: 10.1101/2023.01.14.524065 . 
+2023.01.14.524065 
+[300] T.J. Lohela, T.O. Lilius, M. Nedergaard, The glymphatic system: implications for 
+drugs for central nervous system diseases, Nat. Rev. Drug Discov. 21 (2022) 
+763–779, doi: 10.1038/s41573- 022- 0 050 0-9 . 
+[301] M.J. Fowler, J.D. Cotter, B.E. Knight, E.M. Sevick-Muraca, D.I. Sandberg, 
+R.W. Sirianni, Intrathecal drug delivery in the era of nanomedicine, Adv. Drug 
+Deliv. Rev. 165-166 (2020) 77–95, doi: 10.1016/j.addr.2020.02.006 . 
+[302] W. Duch, K. Swaminathan, J. Meller, Artiﬁcial intelligence approaches for ra- 
+tional drug design and discovery, Curr. Pharm. Des. 13 (14) (2007) 1497–1508, 
+doi: 10.2174/138161207780765954 . 
+[303] R. Gupta, D. Srivastava, M. Sahu, S. Tiwari, R.K. Ambasta, P. Kumar, Artiﬁcial 
+intelligence to deep learning: machine intelligence approach for drug discov- 
+ery, Mol. Diversity 25 (3) (2021) 1315–1360, doi: 10.1007/s11030- 021- 10217- 3 . 
+[304] C. Meaney, S. Das, E. Colak, M. Kohandel, Deep learning characterization of 
+brain tumours with diffusion weighted imaging, J. Theor. Biol. 557 (2023) 
+111342, doi: 10.1016/j.jtbi.2022.111342 . 
+[305] R. Padmanabhan, N. Meskin, W.M. Haddad, Reinforcement learning-based 
+control of drug dosing for cancer chemotherapy treatment, Math. Biosci. 293 
+(2017) 11–20, doi: 10.1016/j.mbs.2017.08.004 . 
+[306] H. Mashayekhi, M. Nazari, F. Jafarinejad, N. Meskin, Deep reinforcement 
+learning-based control of chemo-drug dose in cancer treatment, Comput. 
+Methods Programs Biomed. 243 (2024) 107884, doi: 10.1016/j.cmpb.2023. 
+107884 . 
+23

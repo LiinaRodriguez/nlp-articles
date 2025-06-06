@@ -1,0 +1,1063 @@
+Physica Medica 79 (2020) 103–112
+Available online 19 November 2020
+1120-1797/© 2020 Associazione Italiana di Fisica Medica. Published by Elsevier Ltd. All rights reserved.
+Review paper 
+External beam radiation therapy with kilovoltage x-rays 
+Dylan Y Breitkreutz a, Michael D Weil b, Magdalena Bazalova-Carter c,* 
+a Department of Radiation Oncology, Stanford University, Palo Alto, CA, USA 
+b Sirius Medicine LLC, Half Moon Bay, CA, USA 
+c Department of Physics and Astronomy, University of Victoria, Victoria, BC, Canada   
+A R T I C L E  I N F O   
+Keywords: 
+Radiotherapy 
+Kilovoltage x-rays 
+Microbeam therapy 
+FLASH 
+A B S T R A C T   
+Kilovoltage (kV) x-rays are most commonly used for diagnostic imaging due to their sensitivity to tissue 
+composition. In radiation therapy (RT), due to their fast attenuation, kV x-rays are typically only used for su­
+perficial irradiation of skin cancer and for intra-operative RT (IORT). Recently, however, a number of kV RT 
+techniques have emerged. In this review article, we provide a brief overview of the use of kV x-rays for RT. 
+Various kV x-ray source technologies suitable for RT, such as conventional x-ray tubes as well as novel x-ray 
+sources, are first described. This x-ray source section is then followed by a section on their implementation in 
+terms of clinical, veterinary and preclinical applications. Specifically, IORT, superficial RT and dose enhance­
+ment with iodine and gold nanoparticles, as well as microbeam RT and FLASH RT are discussed in this context. 
+Then, a number of kV x-ray RT applications in modeling and proof-of-principle stages, such as breast external 
+beam RT with rotational sources, kilovoltage arc therapy and the BriXS Compton pulsed x-ray sources, are 
+reviewed. Finally, some clinical and economic considerations for the development of kV RT techniques are 
+discussed.   
+1. Introduction 
+1.1. History of kilovoltage x-ray beam radiotherapy 
+Wilhelm Roentgen discovered x-rays in 1895. Within months of the 
+discovery, x-rays were being applied to medical problems, primarily for 
+imaging. The first radiation treatment of cancer using x-rays was 
+recorded in 1896 when Victor Despeignes treated a patient with stomach 
+cancer. Despite this first application of x-rays for stomach cancer, the 
+primary therapeutic use of x-rays in these early days was only for su­
+perficial lesions. Early x-ray tube technology was only capable of 
+generating x-rays in the kilovoltage (kV) energy range and the treatment 
+of deep-seated lesions was limited by radiation-induced skin damage. In 
+1909, Alban Kohler, in an attempt to reduce the skin toxicity of kV x-rays 
+and enable their use for the treatment of deep-seated lesions, devised the 
+method of grid therapy [1]. By passing the x-rays through a metal grid, 
+the dose to skin was spatially fractionated thereby reducing the 
+magnitude of skin toxicity. The basic technology of the x-ray tube 
+remained relatively unchanged in the century following the discovery of 
+x-rays. 
+Today, 20–150 kVp x-rays are primarily used for diagnostic imaging. 
+Higher-energy 100–500 kVp x-rays are used for superficial therapy, and 
+in some cases, intraoperative radiation therapy. In this review article, 
+we will summarize applications of kV radiotherapy with x-rays of en­
+ergies between 50 and 320 kVp, typically referred to as superficial and 
+orthovoltage x-rays. While the most common clinical applications of kV 
+x-rays to superficial RT and intraoperative RT are briefly mentioned, this 
+review focuses on ‘exotic’ applications of kV x-rays designed to treat 
+deep-seated tumors either by combining kilovoltage RT with either 
+contrast material injection or by designing non-standard x-ray sources. 
+Various applications of kV RT, mostly in the treatment planning stage 
+but also in pre-clinical or clinical trials are summarized here. 
+1.2. Why use kV radiotherapy? 
+Medical applications of x-ray beams in RT have been strictly 
+segmented according to the energy employed by the radiation machines. 
+High-energy (megavoltage, MV) systems are used for cancer therapy 
+because their beams spare the skin and readily penetrate tissue. On the 
+other hand, low-energy kV devices are mainly used for imaging, e.g. in 
+computed tomography (CT), mammography and chest/bone x-ray im­
+aging. These kV x-ray beams are more sensitive to tissue composition 
+* Corresponding author. 
+E-mail address: bazalova@uvic.ca (M. Bazalova-Carter).  
+Contents lists available at ScienceDirect 
+Physica Medica 
+journal homepage: www.elsevier.com/locate/ejmp 
+https://doi.org/10.1016/j.ejmp.2020.11.001 
+Received 29 July 2020; Received in revised form 3 October 2020; Accepted 1 November 2020   
+Physica Medica 79 (2020) 103–112
+104
+and less penetrating and their use for treatment is conventionally limited 
+to skin cancer. While it is challenging to treat deep-seated tumors with 
+kV x-rays, benefits of radiation treatment with kV x-rays exist. 
+First, the generation of kV x-rays (see section 2) is much less complex 
+than generation of MV x-rays. Conventional MV linear accelerators 
+(linacs) used for clinical MV RT are sophisticated in their design and 
+contain many components including an accelerating waveguide with a 
+high manufacturing cost. The power and space requirements for oper­
+ating linacs are greater than for operating kV x-ray devices. In addition, 
+linacs require housing with 2-meter thick concrete walls to protect 
+personnel; kV x-ray units only require ~ 2-millimeter lead shielding. In 
+light of the considerable cost reduction possible with kV RT, it could 
+become a suitable cancer treatment modality in the limited-resource 
+settings of developing countries. 
+Despite advancing healthcare technology, world-wide annual cancer 
+mortality exceeds deaths from HIV-AIDS, tuberculosis and malaria 
+combined. In part, this is the result of a significant and disturbing 
+inequality in global delivery of cancer treatment; 70% of new cases are 
+in the developing world where cases go undiagnosed and untreated 
+because of cost [2]. 
+X-ray treatment is effective as a single or combined modality for 
+local–regional tumor control. It is also one of the most precisely planned 
+and delivered therapeutic options. MV linacs and the infrastructure 
+needed for treatment cost ~ US$5M and carry significant operating 
+expenses in terms of personnel, supporting devices and services. The 
+unit’s housing, requiring concrete bunkers, costs ~$1.5 M to build. 
+There has been little challenge to the present strategy restricting MV 
+linear accelerators to treat most cancers, while consigning kV x-rays to 
+imaging. Though kV x-ray systems have not been optimal for therapy 
+within the body, they offer the potential for simultaneous high-quality 
+imaging during treatment and are undoubtedly much less costly than 
+MV systems. 
+2. X-ray beam generation 
+2.1. Conventional x-ray tubes 
+The technology currently used to produce kV x-rays has not funda­
+mentally changed from the original vacuum tube design used in 
+Roentgen’s experiments. An x-ray tube consists of an evacuated glass 
+tube containing an anode and a cathode. High voltage is applied across 
+the vacuum tube and thermionic emission is used to liberate electrons 
+from the cathode. The electrons are accelerated across the tube and 
+strike the anode. The anode is made of a high atomic number (Z) metal 
+and the rapid deceleration of the electrons incident on the anode pro­
+duces photons by bremsstrahlung radiation. Anode design varies among 
+x-ray tubes based on their application. X-ray tubes used for imaging 
+employ a rotating anode which allows for smaller electron focal spots 
+with high instantaneous current without exceeding the heat load spec­
+ifications of the anode. X-ray tubes for therapy use larger electron focal 
+spots along with lower currents over longer periods and use a large 
+stationary anode [3]. 
+X-ray tube potential and added filtration are the main factors 
+affecting the beam quality typically quoted in either mean energy or the 
+half-value layer (HVL). For radiation therapy of deep-seated tumors, 
+more filtration with higher tube potential, resulting in higher beam 
+energy associated with deeper tissue penetration, is typically desirable. 
+However, higher beam energy results in more heat-loading of the anode 
+that can lead to anode melting. In addition, increased beam filtration 
+decreases x-ray output, which in turn increases treatment time. A 
+compromise between x-ray beam energy and beam filtration has to be 
+identified for each radiotherapy application. 
+2.2. Novel technology 
+Apart from conventional x-ray tubes, a number of other x-ray sources 
+that could be considered for the delivery of radiotherapy have been 
+developed and will be discussed here. 
+2.2.1. Scanning electron sources 
+Since electrons are light charged particles, they can be easily steered 
+electromagnetically with magnetic fields on the order of only 10–20 
+Gauss. There are two existing examples of diagnostic x-ray sources 
+generated by scanned electron beam: the electron-beam computed to­
+mography (EBCT) system [4] and the scanning beam digital x-ray 
+(SBDX) source. A modified design of the SBDX system has been simu­
+lated for the delivery of kilovoltage x-ray beam arc therapy (KVAT) 
+discussed in section 3.4.2. 
+The SBDX source consists of a large (23 × 23) cm2 tungsten anode 
+and an electron beam scanning the anode in an array of 100 × 100 spots. 
+The resulting x-ray beams from the transmission target are then shaped 
+into 1.5-mm diameter beamlets directed towards the (5.5 × 5.5) 
+cm2 detector by an ~ 2-cm-thick brass collimator [5]. The source was 
+designed for the use in interventional and diagnostic radiography with 
+lower radiation exposure to an interventionalist [6]. 
+2.2.2. Miniature x-ray tubes 
+Small-size x-ray sources can be conveniently used for interstitial 
+treatment of tumors in intraoperative treatments or for brachytherapy. 
+In 1996, a novel miniature x-ray tube, the primary component of a 
+Photon Radiosurgery System (PRS), was presented [7]. The electron gun 
+was a conventional miniature gun with a barium oxide thermoionic 
+cathode. Three anodes were used to extract, focus and accelerate the 
+electron beam that impinged on a gold target to produce x-rays. The 
+portable low-power 3-mm diameter 100-mm long x-ray source was 
+capable of operating at 40 kV tube voltage and 40 µA tube current 
+generating a beam with mean energy of 16 keV. 
+The more commonly used miniature Xoft Axxent x-ray tube consists 
+of a disposable microminiature x-ray tube with a < 1-mm anode inte­
+grated into a cooled, flexible, disposable sheath of 5.3 mm in diameter. 
+The Axxent x-ray source operates at tube voltages of 20 to 50 kV and 
+tube currents of 1–300 µA producing air kerma strength of up to 1600 
+Gy.cm2.h−1 and it is designed for a lifetime of 2.5 h [8]. Another com­
+mercial system which uses a small form (7 cm × 11 cm × 17 cm) x-ray 
+tube is the INTRABEAM (Carl Zeiss Surgical, Oberkochen, Germany) 
+intraoperative radiotherapy system. This system is capable of using 
+various applicators which are inserted directly inside the surgical cavity 
+which is then irradiated with 50 kV photons [62]. 
+2.2.3. Carbon nanotubes 
+In most commercial x-ray sources, the properties of the electrons 
+striking an anode drive many of the properties of the resulting x-ray 
+beam, such as its spatial and temporal distribution. Conventional x-ray 
+sources take advantage of thermionic emission (TE) for the generation of 
+the electron beam, which poses challenges in terms of temporal (long 
+beam ramp-up and cool-down times, up to ~ 1 s) and spatial (large ~ 1 
+mm beam size) x-ray beam characteristics. However, in field emission 
+(FE), electrons tunnel through the narrowed potential barrier caused by 
+an application of a high electric field. As a result, a very fast x-ray 
+emission with response times on the order of 50 µs can be achieved [9]. 
+In addition, due to the high-spatial resolution fabrication of carbon 
+nanotubes (CNTs), FE-based CNT x-ray sources of 5 µm in size have been 
+manufactured [10]. 
+CNTs x-ray sources have been designed with imaging tasks in mind. 
+They are typically capable of producing microfocus x-ray beams with 
+anode voltages up to 70 kV, albeit with typically low ~ mA currents 
+[11]. Thanks to their small focal spot on the order of µm, CNTs have 
+been studied for the use in spatially-fractionated microbeam radio­
+therapy (MRT) discussed in section 3.3.2. 
+A miniaturized CNT has been developed by KAIST University in 
+Korea for the use in intra-cavitary radiotherapy [12]. The 7-mm diam­
+eter 47-mm long x-ray tube operates at tube voltages of up to 60 kV 
+D.Y. Breitkreutz et al.                                                                                                                                                                                                                          
+Physica Medica 79 (2020) 103–112
+105
+producing dose rates of 100 Gy/min in permanent operation. The 
+advantage of a CNT-based miniature x-ray tube compared to conven­
+tional miniature x-ray tubes described in section 2.2.2 is their longer 
+lifetime and cold emission radiation not requiring additional cooling. 
+2.2.4. Synchrotron sources 
+When electrons are accelerated on a curved path, they lose some of 
+their energy by emission of x-rays termed synchrotron radiation. Syn­
+chrotron radiation is typically extracted in bending magnets of a ~ GeV 
+electron beam circulating in a storage ring. Similar to x-ray tube beams, 
+synchrotron radiation has a broad energy spectrum, but it is distinctive 
+in a number of aspects compared to x-ray sources featuring an electron 
+beam striking an anode. Synchrotron x-ray beams are of high flux, high 
+brilliance, pulsed with short ~ picosecond-long pulses and polarized. 
+Three synchrotron beamlines were used in radiation therapy exper­
+iments discussed in this article: the ID17 beamline at the European 
+Synchrotron Research Facility (ESRF), the x17B beamline at Brookhaven 
+National Laboratory (BNL) and the Imaging and Medical Beamline 
+(IMBL) at the Australian Synchrotron. All beamlines are similar in their 
+beam characteristics and only the ID17 ESRF beamline, with the most 
+RT publications, will be briefly described. The high-brilliance low- 
+divergence ID17 x-ray beam of 1–3 mm in height and ~ 40 mm in width 
+can deliver dose rates of 8,000 to 16,000 Gy/ s [13,14]. The x-ray beam 
+contains 30–600 keV x-rays with a mean energy of ~ 105 keV [15]. 
+2.2.5. Compton sources 
+Compton x-ray sources work on the principle of inverse Compton 
+scattering (ICS). In 1998, Huang and Ruth proposed a compact laser- 
+electron storage ring (LESR) for electron beam cooling or x-ray gener­
+ation [16]. When a laser beam interacted with an electron bunch, a high- 
+brilliance x-ray beam is generated. In the LESR source operated in 
+transient mode, a 2-J power laser with 3-mm long pulses is scattered off 
+100 MeV electron bunches with 1.3 × 1010 electrons and a 200 keV 
+photon beam is generated with a flux of 2.6 × 1020 photons/s. A com­
+mercial example of such a source, the Compact Light Source (CLS) 
+manufactured by Lyncean Technologies Inc, was operated at 13.5 keV 
+with 3% energy spread to image a moth placed at 10 m from the x-ray 
+source using phase-contrast x-ray imaging [17]. The BriXS (Bright and 
+compact X-ray Source), used for an RT study presented in section 3.4.3, 
+is a twin Compton x-ray source. The operation of the BriXS source is 
+based on superconductive cavities technology for the electron beam 
+with energy recirculation and on a laser system in Fabry-P´erot cavity at a 
+repetition rate of 100 MHz, producing 20–180 keV x-ray beam [18]. 
+3. Applications of kV radiotherapy 
+3.1. Clinical applications 
+3.1.1. Intraoperative radiotherapy 
+Intraoperative radiotherapy (IORT) is a method by which a large 
+dose of radiation is delivered directly to the tumor site. This technique is 
+possible due to direct access to the tumor site during a surgical pro­
+cedure. Since there is no overlying tissue during IORT, and therefore no 
+need for skin-sparing, kV x-rays are preferred over higher energy pho­
+tons due to their reduced penetration, which reduces dose to normal 
+tissues beyond the tumor site. IORT was first introduced in the 1960 s 
+and consisted primarily of x-ray tube systems installed in surgery suites 
+[19]. While not a common method of radiotherapy, due to the surgical 
+requirements, the ability to deliver a large dose directly to the tumor 
+site, as well as the potential for physically spacing surrounding normal 
+tissue from the irradiated area, results in an enhanced therapeutic ratio. 
+However, the increased attenuation of the kV x-rays in bone due to a 
+higher photoelectric cross-section is a disadvantage. Alternatives to kV 
+x-ray IORT include MeV electron therapy, which has the advantage of 
+reduced dose past the tumor site in comparison to kV x-rays. In recent 
+years, advances in technology have resulted in mobile kV x-ray IORT 
+platforms which can provide advanced beam shaping and require less 
+room shielding. 
+One novel technology which is well suited to IORT is the miniature x- 
+ray tube. The small size of miniature x-ray tubes allows them to be 
+placed directly within a patient and directly at the site requiring irra­
+diation. The Xoft Axxent miniature x-ray tube has been extensively used 
+for intraoperative treatment of early stage breast cancer [20]. CNT- 
+based miniature x-ray tubes in combination with endoscopic interven­
+tional technology have also been considered to treat the oral cavity and 
+larynx [21,22]. IORT technology is an expansive field and dedicated 
+reviews on IORT exist and should be consulted by the reader for further 
+information [19]. 
+3.1.2. Superficial radiotherapy 
+Kilovoltage x-rays are also used for treatment of superficial cancers 
+[23]. The energy spectrum of x-rays for this application ranges from 50 
+to 150 kVp. Since the cancer is superficial, skin-sparing is not generally a 
+restrictive concern in these treatments. Due to the capability of many 
+linacs to generate MeV electrons, it is common for superficial cancers to 
+be treated with MeV electrons rather than kV x-rays which would 
+require additional technology. Further reasons for the use of MeV 
+electrons over kV x-rays are the finite range of electrons, higher dose 
+rates and ease of modelling in modern treatment planning systems. 
+3.1.3. Dose enhancement with iodine 
+Due to the increased probability of photo-electric interactions, kV x- 
+ray beams have the potential to increase radiation dose to a target 
+loaded with x-ray contrast agents of high atomic number (Z), such as 
+iodine. The increased photo-electric effect occurring in the high-Z ma­
+terial results in the emission of short-range Meitner electrons, more 
+commonly referred to as Auger-electrons first discovered by Lise Meitner 
+in 1922 [24]. Such electrons deposit their energy locally in the vicinity 
+of the high-Z material and damage cells loaded with the contrast agent, 
+causing the so-called “radiosensitization.” 
+In 1999, two publications investigating the treatment of brain tu­
+mors with a modified CT scanner were published [25,26]. Termed CTRx, 
+the CT scanner with a modified pencil-beam collimator was able to 
+function as both a diagnostic and therapeutic system. Mesa et al. used 
+Monte Carlo dose calculations to investigate the dosimetric properties of 
+the CTRx system when used to treat brain tumors injected with iodine 
+contrast for tumor dose enhancement. The energy spectrum used in the 
+simulations was taken from the 140 kVp setting of a GE CT scanner. 
+Skull dose reduction was explored both by means of increasing the 
+concentration of iodine (up to 20 mg/ml) in the tumor as well as the use 
+of three non-coplanar (20◦, 0◦and −20◦) treatment arcs by tilting the 
+gantry. The CTRx treatments were compared to simulated treatments 
+with 10 MV photons. The primary factor in achieving desired dose dis­
+tributions within the tumor, as well as skull dose reduction, was found to 
+be the concentration of iodine. Higher concentrations resulted in more 
+tumor dose and less skull dose. The highest skull dose was 80% of the 
+maximum dose delivered with 0 mg/ml of iodine and 20% of the 
+maximum dose with 15 mg/ml of iodine contrast. It should be noted that 
+in clinical practice only concentrations of up to 5 mg/ml are routinely 
+achieved using standard intravenous injection techniques. Iodine con­
+centrations above 15 mg/ml were found to result in less homogenous 
+dose distributions within the tumor. The 10 MV treatment was more 
+uniform than the CTRx treatment and also had a smaller skull dose. 
+Rose et al. later published the results of a phase I clinical trial in 
+which 8 patients with metastatic brain lesions smaller than 2.5 cm in 
+diameter were treated with a modified CT scanner [26]. The CT scanner 
+was set to 140 kVp for treatment. The patients were injected with iodine 
+contrast and received 3 to 5 weekly fractions of 5 Gy. Each patient had at 
+least one other metastatic brain lesion which did not receive CTRx and 
+served as a control. The patients also received conventional whole brain 
+radiotherapy either before, during or after their CTRx treatment. The 
+authors reported that no patients demonstrated any side effects from the 
+D.Y. Breitkreutz et al.                                                                                                                                                                                                                          
+Physica Medica 79 (2020) 103–112
+106
+CTRx. Of the eight patients, the irradiated tumors shrank in six cases, 
+remained constant in one case and grew in one case. The control tumors 
+shrank in four cases, grew in two cases and remained constant in one 
+case. The control tumor data for one patient was not available. The 
+authors conclude that CTRx treatment is safe and that an advanced 
+version of the CTRx system could provide diagnostic and therapeutic 
+treatment for select patients. 
+Between 1997 and 1999, Weil et al. explored the safety of kV 
+radiotherapy with dose enhancement using mostly directly injected 
+iodine contrast for palliation of advanced cancers of different histologies 
+in a Phase I/II human trial (unpublished data). The study was conducted 
+in a university setting under IRB oversight. Eleven patients with recur­
+rent disease in a variety of sites ranging from extremities to brain and 
+liver were treated via CT-guided intralesional injection of 0.5–4.5 ml of 
+iopromide with 37% w/v iodine using a 120 kVp beam of a radiotherapy 
+simulator (Fig. 1a). The spatial distribution and concentration of iodine 
+contrast in the tumors was derived from the Hounsfield numbers of the 
+CT image in near real time. Thereby, the dose enhancement and 
+dosimetry of the kV beam was optimized for each treatment. Several 
+significant responses were noted with no skin reaction or sequelae 
+attributable to RT. For example, a patient with multiply recurrent non- 
+Hodgkin’s lymphoma on the forehead completely responded to a single 
+1.5-Gy treatment fraction delivered with contrast-enhanced RT (CERT) 
+and underwent successful reconstructive surgery to cover a skull defect 
+as the tumor had previously penetrated the bone (Fig. 1b-c). 
+3.2. Veterinary applications 
+Radiation therapy options for companion animals include the use of 
+kV x-rays. In 1997, Norman et al. performed a study in which canines 
+diagnosed with brain tumors were treated with the CTRx system 
+mentioned above [27]. The study involved 47 dogs from private 
+households. The modified CT scanner was equipped with two separate 
+collimators, the standard imaging collimator and a custom collimator 
+for treatment. The dogs were treated with weekly fractions of 5.6 Gy 
+using 140 kVp x-rays on the CTRx after anesthetization and intravenous 
+injection of iodinated contrast (280 mg/ml). The iodine-based contrast 
+was used both for improved localization of the tumor and a dose 
+enhancement effect. The tumor was located using the diagnostic imag­
+ing function of the CTRx after which the lesion was positioned at iso­
+center. The tumors were treated with the therapy collimator set to a 
+rectangular aperture of 1 cm by 3 cm. The scanner delivered the radi­
+ation using a scan speed of 4 s per rotation with a total of 60 rotations per 
+fraction. The gantry was tilted at −20, 0 and 20 degrees for 20 rotations 
+each to deliver non-coplanar beams. The median survival for all treated 
+canines was 133 days. However, the authors note that many owners 
+decided to euthanize their animals early during treatment which 
+decreased the median survival. The median survival of animals that 
+completed treatment (defined as 6 or more fractions) was 231 days. 
+Furthermore, the median survival of the canines who completed treat­
+ment was similar to previously published data of canines treated with 
+cobalt therapy and orthovoltage therapy for brain tumors. In compari­
+son, historical studies of the survival of canines with brain tumors sug­
+gest a median survival of 6 – 13 days. Autopsies of canines who received 
+CTRx treatment indicated no damage to healthy brain tissue, bone or 
+skin. The authors concluded that CTRx treatment of brain tumors in 
+canines was a safe and effective method. 
+Radiotherapy treatment options for companion animals are some­
+what limited as linear accelerators are too costly for most veterinary 
+hospitals to own. kV x-ray systems may be more suitable for companion 
+animal radiation therapy due to their lower cost and, in addition, 
+companion animals are smaller than humans and therefore involve 
+much shallower treatment depths, which makes them ideal for lower 
+energy kV x-ray treatment. 
+In 2018, Seo et al. published an article investigating the treatment of 
+cancer in companion animals (canines) with 300 and 450 kV x-rays [28]. 
+The authors used numerical methods to calculate dose distributions 
+using 300 kV, 450 kV and 6 MV photons for brain, nasal cavity, forefoot 
+and abdomen cancers in companion animals. Dose distributions were 
+evaluated by means of DVH, homogeneity index and conformity index. 
+DVH analysis indicated that all three x-ray beam energies yielded 
+comparable dose distributions for brain and nasal tumors. The metrics of 
+homogeneity and conformity index were optimal for the 6 MV x-rays for 
+the nasal, forefoot and abdominal tumors. The authors noted that in 
+general dose to at-risk organs was less for the 6 MV x-rays but was not 
+significantly higher for the kV x-rays. 
+3.3. Preclinical applications 
+3.3.1. Dose enhancement with gold nanoparticles 
+Due to their biocompatibility, gold nanoparticles (AuNP) have been 
+most commonly investigated for RT dose enhancement. Hainfeld et al. in 
+2004 irradiated tumors of mice with subcutaneous EMT-6 mammary 
+carcinomas after an injection of AuNP with 250 kVp x-rays [29]. One- 
+year survival of 86% was significantly higher than the 20% survival 
+after radiation alone and 0% with AuNP alone. 
+Many following computational, in vitro and in vivo studies demon­
+strated the NP radiosensitization effect with kV x-ray beams and an 
+overview of the topic can be found in [30]. As expected, computational 
+Monte Carlo dose calculation studies clearly show that NP dose 
+enhancement in kV x-ray beams is in the order of 30–40% and it is 
+negligible in the more penetrating clinically relevant MV photon beams. 
+However, Jain et al. demonstrated a 41% and 29% dose enhancement in 
+a 160 kVp and 6 MV x-ray beam for breast cancer MDA-MB-231 cells 
+[31]. The same study presented no dose enhancement in normal L132, 
+prostate cancer DU145 cells at kV or MV energies, suggesting that 
+Fig. 1. Iodine contrast in a metastatic ovarian adenocarcinoma to an axillary lymph node after an intratumoral injection of iopromide (a). Patient with a recurrent 
+Non-Hodgkin’s lymphoma penetrating skull before (b) and 9 months after (c) single-fraction 1.5-Gy treatment delivered with a 120 kVp beam after an intratumoral 
+iopromide injection. 
+D.Y. Breitkreutz et al.                                                                                                                                                                                                                          
+Physica Medica 79 (2020) 103–112
+107
+radiosensitization even with kV x-ray beams is cell specific. Regardless, 
+kV x-ray beams are most suitable for dose enhancement in combination 
+with NP therapy. Thanks to their shallow tissue penetration, kV x-ray 
+beams in the arrangement of rotational therapy described in section 3.4 
+might be best suited for optimal results of NP radiosensitization. 
+3.3.2. Microbeam radiation therapy (MRT) 
+In MRT, radiation is not delivered in the conventional broad-beam 
+pattern, but it is delivered with an array of parallel 100–300 µm wide 
+beams separated by 100–300 µm. Compared to MV beams, kV x-ray 
+beams are better suited for MRT delivery. Due to the short range of 
+secondary electrons, the spatial fractionation of the beam can be pre­
+served in tissue. MRT has been mostly delivered with high-brilliance 
+synchrotron beams at dose rates of > 100 Gy/s and has shown to 
+improve normal tissue sparing while maintaining tumor control [32]. 
+For example, Dilmanian et al. irradiated rat intracranial 9L gliosarcoma 
+with various arrangements of microbeam size and spacing on the BNL 
+synchrotron beamline with a mean x-ray beam energy of 70 keV. The 
+median survival of a subset of rats was 170 days compared to the pre­
+viously reported 34-day survival of similar models irradiated with a 
+broad beam [33]. In 2003, subcutaneous mouse models of ENT-6 murine 
+mammary carcinoma were irradiated with microbeams and a broad 
+beam on the same beamline using x-ray beams with mean energy of 100 
+or 118 keV [34]. Tumor ablation rates were higher and normal-tissue 
+toxicity, acute (moist desquamation and epilation) and delayed (fail­
+ure of hair regrowth), was lower for MRT compared to the broad beam 
+irradiation. 
+Hadsell et al. investigated whether high dose-rate MRT can be 
+delivered using a 50 kV anode voltage and 0.5 mA beam current CNT x- 
+ray source [35]. Based on their experimental pilot study they concluded 
+that the required MRT pattern could be achieved with a CNT x-ray 
+source, however, their setup only allowed for a dose rate of 1.54 mGy/s. 
+The authors predicted that a CNT x-ray source with a 160 kV anode 
+voltage and 1 A beam current would be required for a 100 Gy/s dose rate 
+delivery of MRT. In their follow-up work, the group at University of 
+North Carolina has built a compact prototype MRT system with 160 kV 
+anode voltage and 30 mA beam current and delivered 2–3-beam MRT to 
+mouse models of glioblastoma multiforme (GBM) with a skin dose rate 
+of 1.2 Gy/min [36]. The evidence of DNA double-strand breaks in the 
+path of the microbeams was demonstrated via γ-H2AX staining. Yuan 
+et al. irradiated mouse GBM models reaching 48 Gy and 72 Gy dose 
+levels with MRT (Fig. 2) versus 10 Gy with broad beam and found 
+similar survival when employing 72-Gy irradiation or 10 Gy broad beam 
+irradiation [37]. A review of the group’s MRT work with CNTs can be 
+found in [38]. 
+In 2011, Le Duc et al. presented a study combining the delivery of 
+gadolinium-based nanoparticles (GBN) with MRT performed at the ID17 
+ESRF beamline for the treatment of a rats bearing intracerebral 9L 
+gliosarcoma [39]. When MRT irradiation using cross-fired 25-µm mi­
+crobeams separated by 200 µm gaps was delivered 20 min post GBN 
+injection, median survival increased to 90 days compared to 19 days and 
+47 days for no treatment and MRT treatment without GBN, respectively. 
+Interestingly, the median survival decreased to 34 days when MRT was 
+delivered only 5 min after the injection of GBN. The authors concluded 
+that the ratio of GBN concentration in the tumor to GBN concentration in 
+normal tissue is a critical radiosensitization parameter rather than GBN 
+concentration in the tumor itself. 
+3.3.3. FLASH therapy 
+Possibly the most recent application of kV x-rays in RT is the delivery 
+of > 40 Gy/s ultrahigh dose-rate (FLASH) RT. After initial studies in the 
+late 1960 s [40,41], ultrahigh dose-rate RT was rediscovered in 2014 by 
+Favaudon et al. [42]. In their study, the authors irradiated thoraxes of 
+mice with a 4.5 MeV electron beam with a dose rate of 40 Gy/s and 
+reported a significant decrease in radiation-induced lung fibrosis when 
+compared to conventional irradiations at a dose rate of 0.03 Gy/s per­
+formed with a 137Cs gamma ray source. Most clinical RT is performed 
+with x-ray beams and there was interest to investigate whether the 
+FLASH effect can be also triggered with an x-ray beam. Due to engi­
+neering challenges of accelerator-based megavoltage x-ray beam gen­
+eration at high dose rates, a synchrotron source was chosen for this 
+purpose. 
+In 2018, mouse whole brain irradiations (WBI) were performed with 
+the ID17 ESRF beamline using a thin 50-µm wide synchrotron x-ray 
+beam scanned across the mouse brain at an in-slice dose rate of 12,000 
+Gy/s and a mean brain dose rate of 37 Gy/s [43]. The conventional low- 
+dose rate WBI was delivered with the 225 kVp beam on the image- 
+guided small animal radiation research platform (SARRP). After a 10- 
+Gy brain dose, unlike after the conventional SARRP irradiation, no in­
+duction in memory deficit was observed after FLASH irradiation and the 
+case for normal tissue sparing of x-ray FLASH was therefore 
+strengthened. 
+More recently, Bazalova-Carter and Esplen have proposed that it 
+might be possible to use conventional x-ray tubes to deliver ultrahigh 
+Fig. 2. Microbeam profiles using Gafchromic films and γ-H2AX staining on irradiated brain. The beam width (FWHM) was 280 µm at the entrance plane on the top of 
+the mouse brain (panel A) and 380 µm at the exit plane at the bottom of the head (panel B). Normal brain tissue section (panel C) and tumor-bearing mouse brain 
+(panel D) were stained with anti-γ-H2AX antibody at 1 h after microbeam irradiation. Red fluorescence signal indicates the positive expression of γ-H2AX signal. 
+Staining of γ-H2AX demonstrated the microbeam radiation track. The average FWHM of the γ-H2AX staining was 343 µm. (Reprinted with permission from Yuan 
+et al., 2015, © 2020 Radiation Research Society.) (For interpretation of the references to colour in this figure legend, the reader is referred to the web version of 
+this article.) 
+D.Y. Breitkreutz et al.                                                                                                                                                                                                                          
+Physica Medica 79 (2020) 103–112
+108
+dose-rate RT [44]. Dose rates of > 40 Gy/s can be achieved for an 
+unfiltered x-ray beam at shallow < 1 mm depth in a sample placed at the 
+x-ray tube surface. The FLASH effect, however, has not yet been inves­
+tigated with this continuous x-ray source. A comprehensive review of 
+FLASH therapy can be found in [63]. 
+3.4. Proof-of-principle and computational models 
+3.4.1. Kilovoltage external beam radiotherapy (kV-EBRT) 
+Dedicated breast CT (bCT) platforms were first developed in 2008 in 
+order to improve the diagnosis of breast cancer [45]. In 2012, Prionas 
+et al. published work investigating rotational kilovoltage external beam 
+radiation therapy (kV-EBRT) of breast cancer with 320 kVp x-rays using 
+a bCT system [46]. kV-EBRT was simulated using Monte Carlo methods 
+for both cylindrical phantoms and breast CT data. The beam was 
+simulated and 2D and 3D dose distributions were generated with a range 
+of collimation settings. The smallest diameter was 1 cm and the largest 
+was 14 cm in the XY plane. Z collimation was 0.1 cm for 2D profiles and 
+2 cm for 3D dose distribution. Smaller XY collimation settings demon­
+strated centrally peaked dose deposition with the 1 cm setting depos­
+iting as little as 7% dose at the periphery of the cylindrical phantom. The 
+14 cm collimation setting resulting in a centrally cupped dose 
+distribution. 
+Experimental validation was performed using a CT scanner operating 
+at a tube voltage of 120 kV. Dose measurements of the radial dose dis­
+tributions in a 14-cm diameter polyethylene cylinder were made using 
+an ionization chamber. These measurements were compared to Monte 
+Carlo simulated radial dose distributions with a matched energy spec­
+trum. The mean percentage of difference between the simulated and 
+measured dose distributions was 10.5% +- 7.7% for the 1-cm collimated 
+beam and 2.8% +- 2.3% for the 14-cm collimated beam. 
+The authors also investigated whole breast irradiation using phan­
+toms, dose “painting” and the treatment of patients with Monte Carlo 
+simulations. Of particular note are the simulations of a breast cancer 
+patient imaged with iodine contrast (Fig. 3). Using a 2 cm collimated 
+beam, the calculated dose distribution shows that the lesion was con­
+tained within the 90% isodose line and that the skin received 10% of the 
+maximum dose. 
+A number of follow-up studies on breast kV-EBRT were published by 
+a group at the University of Naples. In 2019, Buonano et al. published a 
+similar study to the one by Prionas et al., in which they investigated 
+breast phantom dose distributions achieved by 150, 300, and 320 kVp x- 
+ray beams generated by an x-ray tube by means of MC simulations and 
+experiments [47]. Rotational kV-EBRT permitted a periphery-to-center 
+dose ratio from 13% to 9% in homogeneous breast phantoms of 14-cm 
+in diameter for beams of ~ 1 cm in size. Earlier the group investigated 
+breast EBRT with a synchrotron beam termed synchrotron radiation 
+rotational radiotherapy (SR3T) by means of MC simulations and exper­
+iments with the same 14-cm diameter phantom [48,49]. They performed 
+Geant4 simulations and measurements with Gafchromic films, ioniza­
+tion chambers and TLD of phantom dose delivered with monoenergetic 
+60–175 keV synchrotron x-ray beams at the Australian Synchrotron 
+Fig. 3. Contrast-enhanced breast computed tomography image containing enhancing invasive mammary carcinoma used to simulate rotational kilovoltage external 
+beam radiotherapy with 2-cm x–y collimation centered at lesion (a). Resulting dose distribution (b) and fusion image (c). (Reprinted with permission from Prionas 
+et al., 2012.) 
+Fig. 4. A schematic drawing of the proposed KVAT x-ray source (a). The x-ray source was designed to treat a 4-cm diameter at 10-cm depth in a 40-cm diameter 
+cylinder using arc therapy (b). (Reprinted with permission from Bazalova-Carter et al., 2017.) 
+D.Y. Breitkreutz et al.                                                                                                                                                                                                                          
+Physica Medica 79 (2020) 103–112
+109
+IMBL. They calculated and measured a tumor-to-skin absorbed dose 
+ratio ranging from about 7:1 (at 60 keV photon energy) to about 10:1 (at 
+175 keV) for a 1.5-cm wide beam, which was deemed sufficient for skin 
+sparing during radiotherapy. 
+3.4.2. Kilovoltage x-ray beam arc therapy 
+In the EBCT and SBDX x-ray sources electron beam energies of 
+80–140 keV are used, resulting in an x-ray beam with shallow dose 
+deposition and not suitable for radiotherapy. To overcome this short­
+coming, a design of a stationary-anode source was modeled for the de­
+livery of kilovoltage arc therapy (KVAT) to deep-seated tumors 
+employing non-coplanar kV beams (Fig. 4). First, a source design study 
+was performed to optimize the delivery of conformal radiation to a 4-cm 
+diameter, 10-cm deep lesion by varying beam energy, x-ray beam 
+filtration, target thickness and collimator design [50]. Several follow-up 
+studies published by Breitkreutz et al. are described briefly below. 
+The first publication by Breitkreutz et al. involved Monte Carlo 
+simulations of a novel geometry, scanning electron-beam x-ray tube 
+design which produces a non-coplanar linear array of x-ray beamlets 
+with an energy of 200 kV. The system was designed with a gantry to 
+allow 360◦rotation around the patient. The scanning nature of the x-ray 
+tube allows for adjustment of beamlet dwell times to produce true in­
+tensity modulated therapy. Proof-of-principle simulations were first 
+used with a transmission anode design. These simulations for cylindrical 
+water phantoms indicated that a skin sparing effect could be produced 
+while delivering a dose rate up to 345 cGy/min for a 1-cm diameter 
+spherical target, with dose rates decreasing at greater target size and 
+depth [51]. 
+Further work employed Monte Carlo simulations to investigate the 
+treatment of lung, breast and prostate cancer using inversely optimized 
+treatment planning [52]. These simulated kV treatments were compared 
+to MV photon treatments for reference. Dose constraints taken from 
+RTOG reports were used to evaluate the breast, lung and prostate KVAT 
+plans and were met in all cases. However, the KVAT prostate plan likely 
+was untreatable due to lengthy delivery times and suboptimal dosimetry 
+for healthy tissues. This was due primarily to the size of the patient, the 
+less penetrating radiation and avoidance of bony anatomy. One limita­
+tion of this study was the use of idealized, spherical lesions as tumor 
+targets. 
+Lastly, Breitkreutz et al. simulated KVAT of lung tumors with realistic 
+lung lesions based on CT scan data from three lung cancer patients [53]. 
+In this study, the KVAT model was modified to a reflection anode. The 
+location of the lung tumors varied in each patient. It was found that for a 
+patient with a tumor directly next to the chest wall that the rib dose may 
+exceed dose constraints. All other dose constraints were met for each 
+patient. 
+In summary, the KVAT x-ray source has been developed to address 
+kV shortcomings by rapidly distributing multiple kV beams via elec­
+tronic manipulation rather than with conventional mechanical control. 
+It focuses dose deposition while dispersing entrance dose and overrides 
+attenuation constraints of lower energy x-rays and thereby enables less 
+expensive kV x-ray technology for radiotherapy treatment. 
+The KVAT system is the main component of the linear converging 
+radiotherapy system (LCRS) under development by PrecisionRT (Las 
+Vegas, NV, USA). The LCRS will be capable of simultaneous tomosyn­
+thesis imaging of real-time tumor motion and radiation therapy delivery 
+[54]. Thanks to the addition of a detector, the source can create CT scans 
+and image in real-time during therapy without a separate CT unit. 
+Simulations have demonstrated the design can plan and complete 
+effective therapy within one hour. Most of these models demonstrated 
+equivalent performance to MV volumetric modulated arc therapy 
+(VMAT) at 10% of the cost per system and likely reducing cost per pa­
+tient to US$100 or less. 
+It will be possible to house the LCRS in a conventional 3.2-mm thick, 
+lead-lined room found in most clinics or in a mobile trailer. The treat­
+ment planning software currently under development will be capable of 
+optimizing a radiosurgical treatment prescription. The patient will be 
+immobilized and aligned per conventional techniques. Thanks to ma­
+chine learning (ML), treatment planning and delivery will be performed 
+in a matter of minutes, slightly more time than it takes to do a diagnostic 
+scan [55]. 
+3.4.3. BriXS source for rotational breast radiotherapy 
+In 2019, Sarno et al. published work investigating the use of a BriXS 
+twin Compton pulsed x-ray source as an alternative source for the 
+treatment of breast cancer [56]. The BriXS source has a physical foot­
+print of 40 m by 20 m and produces an x-ray spectrum with a mean 
+energy of 88 keV with a high photon flux suitable for radiation therapy. 
+The Geant4 Monte Carlo software was used to simulate rotational 
+radiotherapy of breast cancer using the BriXS source. The breast was 
+modelled as a 14 cm diameter cylinder with a 1 cm circular lesion at the 
+center and off-axis. The modeled beam was rotated 360◦around the 
+cylinder to simulate a prone breast geometry. The main metric used to 
+evaluate the simulated dose distributions was skin-to-tumor dose ratio. 
+The skin-to-tumor dose ratio was 7% for the central lesion and 36% for 
+the off-axis lesion. 
+3.4.4. Kilovoltage intensity modulated radiotherapy 
+In 2019, a group at Wayne State University presented a MC computer 
+model and a proof-of-principle experiment for a kilovoltage intensity 
+modulated radiotherapy (IMRT) for the treatment of GBM by means of 
+CERT with iodine [57]. They used Geant4 to simulate dose deposition in 
+a 15-cm diameter spherical water phantom with a 1.4-cm thick spherical 
+shell mimicking the skull and a target of 1.8-cm in diameter filled with 
+10 mg/mL of iodine. A CERT IMRT treatment with 17 heavily tungsten- 
+filtered 120 kVp coplanar beams, the dose to the target was by a factor of 
+3–4 higher than dose to the skull. The proof-of-principle experiment was 
+performed with an in-house multi-rod collimator using a set of deliveries 
+and phantoms with radiochromic films. A good agreement between a 3D 
+conformal radiotherapy plan delivery and its MC dose calculation was 
+found. The main limitation of the proof-of-principle system was found in 
+the delivery time, that was from 3 to 20 h long for the IMRT plans. 
+4. Benefits and drawbacks of kV radiotherapy 
+While there are benefits of kV radiotherapy listed in section 1.2, 
+there are also practical drawbacks to the use of kV x-rays for the treat­
+ment of deep-seated tumors. The benefits and drawbacks are briefly 
+summarized in qualitative and quantitative terms in Table 1. 
+The first consideration is the limitation of kV x-ray beam penetration. 
+Kilovoltage x-ray beams are characterized by no build-up and therefore 
+maximum dose deposition Dmax occurs in a patient’s skin. This is prob­
+lematic as any dose delivered to a target below the surface will neces­
+sitate a larger dose to the tissue above it, which can be problematic 
+unless beams from multiple directions intersecting at the target are used. 
+Secondary electrons produced by kV x-rays have less energy and a 
+shorter range than those created by MV x-rays resulting in a smaller 
+percentage of the maximum dose being delivered at larger depths. This 
+fact compounds the problem of delivering dose to a lesion below the 
+surface. On the other hand, the shorter range of secondary electrons is 
+Table 1 
+Summary of benefits and drawbacks of kV RT compared to MV RT.   
+kV RT (200 kV) 
+MV RT (6 MV) 
+Skin dose 
+high 
+(~100% of Dmax) 
+low 
+(40% of Dmax) 
+Dose fall off 
+fast 
+(20% of Dmax at 10 
+cm depth) 
+slow 
+(70% of Dmax at 10 
+cm depth) 
+Range of 
+secondary e- 
+short 
+(1–2 mm) 
+long 
+(~1–2 cm) 
+Treatment time 
+long 
+(~20 min) 
+short 
+(~2 min) 
+Shielding 
+thin 
+(~2 mm lead) 
+thick 
+(~2 m concrete) 
+Machine cost 
+low 
+(US$200,000) 
+high 
+(US$3,000,000)  
+D.Y. Breitkreutz et al.                                                                                                                                                                                                                          
+Physica Medica 79 (2020) 103–112
+110
+responsible for the sharper beam penumbra in kV x-ray beams compared 
+to MV x-rays. When compared to MV x-rays the faster fall-off of kV x-ray 
+beam dose results in lower exit dose. The lack of penetration of kV x-rays 
+is the primary reason why novel kV-based technologies use more com­
+plex source geometry and delivery techniques to reduce surface dose. 
+Treatment times of kV x-ray sources for deep-seated lesions can also 
+be problematic. Due to the physics of the bremsstrahlung process, a 
+lower percentage of the kV electrons incident on the bremsstrahlung 
+target is converted into photons compared to MV electrons resulting in 
+the generation of a large amount of heat. Ultimately, there is a practical 
+limit to the electron current at which an x-ray tube may be safely 
+operated, which limits its achievable dose rate. This causes problems for 
+patient treatment as delivery times will be longer than systems using MV 
+x-rays. Longer treatment times will result in less patient comfort and 
+problems associated with patient motion during treatment, if not 
+addressed by real-time imaging. 
+5. Other considerations 
+Kilovoltage x-rays have been used for the treatment of cancer 
+alongside MV x-rays for decades. For treatments of deep-seated tumors, 
+a number of challenges for kV therapy compared to MV therapy exist, 
+such as the increased treatment time, dose calculation complexity, po­
+tential differences in radiobiology between kV and MV beams. Some of 
+these topics for external beam kV RT are discussed here. 
+5.1. Clinical consideration 
+Consideration of normal tissue and tumor control probability can be 
+derived from the hypo-fractionated protocols conventionally employed 
+in the clinic [58]. For example, the presence of a higher cross-section of 
+cortical bone to kV x-rays might limit use of certain beam angles when 
+planned per accepted tolerances. Even though it is mostly accepted that 
+cell killing potential for kV and MV x-rays is similar [59], some literature 
+suggests differences in the radiobiology of kV and MV beams exist [60]. 
+There is no compelling support in the literature for significant differ­
+ences in the radiobiology of the respective beam energies. Therefore, the 
+dose effects are considered similar, except for the significant enhance­
+ment possible in the presence of high-Z contrast agents described in 
+sections 3.1.3 and 3.3.1. 
+5.2. Economic considerations 
+There are three macro trends in healthcare that could affect use of a 
+kV treatment system. First, cancer therapy is a growing concern as the 
+populations in developing countries age. Longer life spans and changes 
+with economic advances are associated with increased incidence of 
+cancer, e.g., lung cancer is rising dramatically in Asia due to high to­
+bacco consumption. At the same time, since standard treatment is costly 
+and complex, the additional population burdens on advanced care could 
+make it more inaccessible in the majority of developing economies 
+where finances and infrastructure are limited. Second, the consolidation 
+and squeezing of hospitals and third-party payers (insurers, businesses 
+and government) caused by the 2020 pandemic has decreased cases and 
+income for technical and professional oncology billing. If this trend 
+continues, it will put pressure on a portion of the market and some fa­
+cilities may have to forgo high-end construction and equipment. Finally, 
+the successful introduction of immuno-oncologic and targeted drug 
+therapies is making significant inroads in cancer care, and is also of 
+import in delivering palliative care. Given their improved prospects to 
+slow a tumor’s growth, a patient might live with a protracted malig­
+nancy, which requires additional loco-regional control. Thus, if a new 
+cancer therapy induces chronic or stable disease, such disease status can 
+potentially lead to more treatments with kV radiotherapy for adjuvant or 
+palliative care. 
+Of note, some predictions can be made in terms of the number of 
+patients treated by converging kV teletherapy, e.g. the LCRS source, in 
+the USA thanks to data collected by the National Cancer Institute (NCI) 
+[61]. Previous in silico studies have demonstrated that lung and breast 
+are suitable sites for the effective application of converging kV tele­
+therapy due to their reduced attenuation of the beams [52]. In addition, 
+though the increased dose to bone might limit dose escalation for most 
+treatment sites, it can be exploited for the focused kV treatments of bone 
+metastases. Under the assumption that approximately 50% of cancer 
+patients receive conventional radiotherapy for local control, and an 
+estimated 50–90% likelihood of referrals, it can be predicted that in the 
+USA alone, about 460,000 patients with bone, breast and lung cancer 
+might be treated annually (Table 2). 
+6. Conclusions 
+In this review article, we have provided a brief overview of a number 
+of radiotherapy techniques employing kilovoltage x-rays for treatments 
+of cancer. We summarized the potential benefits and drawbacks of the 
+currently investigated treatment modalities and discussed the impor­
+tance of developing low-cost radiotherapy. 
+Acknowledgements 
+The authors would like to acknowledge the support of the Canada 
+Research Chairs program and the Natural Sciences and Engineering 
+Research Council (NSERC). 
+References 
+[1] Laissue JA, Blattmann H, Slatkin DN. Alban K¨ohler (1874-1947): Erfinder der 
+Gittertherapie. Zeitschrift für Medizinische Physik 2012;22(2):90–9. https://doi. 
+org/10.1016/j.zemedi.2011.07.002. 
+[2] Kerr DJ, Midgley R. Can We Treat Cancer for a Dollar a Day? Guidelines for Low- 
+Income Countries. N Engl J Med 2010;363(9):801–3. https://doi.org/10.1056/ 
+NEJMp1002812. 
+[3] Stathakis S. The Physics of Radiation Therapy. Med. Phys. 2010;37(3):1374–5. 
+https://doi.org/10.1118/1.3319185. 
+[4] Rand RE. Scanning electron beam computed tomography scanner with ion aided 
+focusing. Google Patents 1985. 
+[5] Van Lysel MS, Solomon EG, Wilfley BP, Dutta A, Speidel MA. Performance 
+assessment of the scanning beam digital X-ray (SBDX) system. Proceedings of the 
+SPIE - The International Society for Optical Engineering. 1997;3032:161-70. 
+[6] Speidel MA, Wilfley BP, Star-Lack JM, Heanue JA, Van Lysel MS. Scanning-beam 
+digital x-ray (SBDX) technology for interventional and diagnostic cardiac 
+angiography: SBDX technology for interventional cardiac angiography. Med. Phys. 
+2006;33(8):2714–27. https://doi.org/10.1118/1.2208736. 
+[7] Dinsmore M, Harte KJ, Sliski AP, Smith DO, Nomikos PM, Dalterio MJ, Boom AJ, 
+Leonard WF, Oettinger PE, Yanch JC. A new miniature x-ray source for interstitial 
+radiosurgery: Device description. Med. Phys. 1996;23(1):45–52. https://doi.org/ 
+10.1118/1.597790. 
+[8] Rivard MJ, Davis SD, DeWerd LA, Rusch TW, Axelrod S. Calculated and measured 
+brachytherapy dosimetry parameters in water for the Xoft Axxent X-Ray Source: An 
+electronic brachytherapy sourcea): Dosimetry parameters for the Xoft Axxent X- 
+Ray Source. Med. Phys. 2006;33(11):4020–32. https://doi.org/10.1118/ 
+1.2357021. 
+[9] Lei W, Li C, Cole MT, Qu Ke, Ding S, Zhang Y, Warner JH, Zhang X, Wang B, 
+Milne WI. A graphene-based large area surface-conduction electron emission 
+display. Carbon 2013;56:255–63. https://doi.org/10.1016/j.carbon.2013.01.004. 
+[10] Heo SH, Ihsan A, Cho SO. Transmission-type microfocus x-ray tube using carbon 
+nanotube field emitters. Appl. Phys. Lett. 2007;90(18):183109. https://doi.org/ 
+10.1063/1.2735549. 
+Table 2 
+Projections on annual kV teletherapy cases for the USA.  
+Site 
+Total Cases1 
+Treatable fraction 2 
+Projected # patients 
+Bone, secondary 
+208,000  
+0.90 
+187,000 
+Breast 
+266,000  
+0.50 
+133,000 
+Lung, primary 
+234,000  
+0.60 
+140,000 
+Total 
+708,000  
+460,000  
+1 National Cancer Institute, SEER Cancer Statistics Review [61]. 
+2 Treatable fraction based on advanced stage, technical feasibility and referral 
+patterns. 
+D.Y. Breitkreutz et al.                                                                                                                                                                                                                          
+Physica Medica 79 (2020) 103–112
+111
+[11] Parmee RJ, Collins CM, Milne WI, Cole MT. X-ray generation using carbon 
+nanotubes. Nano Convergence 2015;2(1). https://doi.org/10.1186/s40580-014- 
+0034-2. 
+[12] Kim HJ, Ha JM, Heo SH, Cho SO. Small-Sized Flat-Tip CNT Emitters for 
+Miniaturized X-Ray Tubes. J Nanomater 2012;2012:1–6. https://doi.org/10.1155/ 
+2012/854602. 
+[13] Serduc R, Br¨auer-Krisch E, Siegbahn EA, Bouchet A, Pouyatos B, Carron R, et al. 
+High-precision radiosurgical dose delivery by interlaced microbeam arrays of high- 
+flux low-energy synchrotron x-rays. PLoS ONE. 2010;5:1-12. 
+[14] Br¨auer-Krisch E, Adam J-F, Alagoz E, Bartzsch S, Crosbie J, DeWagter C, 
+Dipuglia A, Donzelli M, Doran S, Fournier P, Kalef-Ezra J, Kock A, Lerch M, 
+McErlean C, Oelfke U, Olko P, Petasecca M, Povoli M, Rosenfeld A, Siegbahn EA, 
+Sporea D, Stugu B. Medical physics aspects of the synchrotron radiation therapies: 
+Microbeam radiation therapy (MRT) and synchrotron stereotactic radiotherapy 
+(SSRT). Physica Med 2015;31(6):568–83. https://doi.org/10.1016/j. 
+ejmp.2015.04.016. 
+[15] Laissue JA, Bartzsch S, Blattmann H, Br¨auer-Krisch E, Bravin A, Dall´ery D, 
+Djonov V, Hanson AL, Hopewell JW, Kaser-Hotz B, Keyril¨ainen J, Laissue PP, 
+Miura M, Serduc R, Siegbahn AE, Slatkin DN. Response of the rat spinal cord to X- 
+ray microbeams. Radiother Oncol 2013;106(1):106–11. https://doi.org/10.1016/j. 
+radonc.2012.12.007. 
+[16] Huang Z, Ruth RD. Laser-Electron Storage Ring. Phys Rev Lett 1998;80(5):976–9. 
+https://doi.org/10.1103/PhysRevLett.80.976. 
+[17] Bech M, Bunk O, David C, Ruth R, Rifkin J, Loewen R, Feidenhans’l R, Pfeiffer F. 
+Hard X-ray phase-contrast imaging with the Compact Light Source based on 
+inverse Compton X-rays. J Synchrotron Rad 2009;16(1):43–7. https://doi.org/ 
+10.1107/S090904950803464X. 
+[18] Drebot I, Bacci A, Bosotti A, Broggi F, Canella F, Cardarelli P, et al. BriXs ultra high 
+flux inverse compton source based on modified push-pull energy recovery linacs. 
+Instruments. 2019;3:49. 
+[19] Pilar A, Gupta M, Laskar SG, Laskar S. Intraoperative radiotherapy: review of 
+techniques and results. Ecancermedicalscience. 2017;11. 
+[20] Dickler A, Ivanov O, Francescatti D. Intraoperative radiation therapy in the 
+treatment of early-stage breast cancer utilizing xoft axxent electronic 
+brachytherapy. World J Surg Onc 2009;7(1). https://doi.org/10.1186/1477-7819- 
+7-24. 
+[21] Boese A, Johnson F, Ebert T, Mahmoud-Pashazadeh A, Arens C, Friebe M. Trans- 
+oral miniature X-ray radiation delivery system with endoscopic optical feedback. 
+Int J CARS 2017;12(11):1995–2002. https://doi.org/10.1007/s11548-017-1601-x. 
+[22] Mahmoud-Pashazadeh A, Illanes A, Joseph FJ, van Oepen A, Boese A, Friebe M. 
+Miniature CNT-based X-ray tube: assessment for use in intraoperative radiation 
+therapy: Miniature CNT-based X-ray tube. Current Directions in Biomedical 
+Engineering. 2017;3:643-6. 
+[23] McGregor S, Minni J, Herold D. Superficial radiation therapy for the treatment of 
+nonmelanoma skin cancers. J Clinic Aesth Dermatol 2015;8:12. 
+[24] Meitner L. Über die entstehung der β-strahl-spektren radioaktiver substanzen. 
+Zeitschrift für Physik. 1922;9:131–44. 
+[25] Mesa AV, Norman A, Solberg TD, Demarco JJ, Smathers JB. Dose distributions 
+using kilovoltage x-rays and dose enhancement from iodine contrast agents. Phys 
+Med Biol 1999;44(8):1955–68. https://doi.org/10.1088/0031-9155/44/8/308. 
+[26] Rose JH, Norman A, Ingram M, Aoki C, Solberg T, Mesa A. First radiotherapy of 
+human metastatic brain tumors delivered by a computerized tomography scanner 
+(CTRx). Int J Rad Oncol Biol Phys 1999;45(5):1127–32. https://doi.org/10.1016/ 
+S0360-3016(99)00347-8. 
+[27] Norman A, Ingram M, Skillen RG, Freshwater DB, Iwamoto KS, Solberg T. X-ray 
+phototherapy for canine brain masses. Radiat. Oncol. Investig. 1997;5(1):8–14. 
+https://doi.org/10.1002/(SICI)1520-6823(1997)5:1<8::AID-ROI2>3.0.CO;2-1. 
+[28] Seo J, Son J, Cho Y, Park N, Kim DW, Kim J, Yoon M. Kilovoltage radiotherapy for 
+companion animals: dosimetric comparison of 300 kV, 450 kV, and 6 MV X-ray 
+beams. J Vet Sci 2018;19(4):550. https://doi.org/10.4142/jvs.2018.19.4.550. 
+[29] Hainfeld JF, Slatkin DN, Smilowitz HM. The use of gold nanoparticles to enhance 
+radiotherapy in mice. Phys Med Biol 2004;49(18):N309–15. https://doi.org/ 
+10.1088/0031-9155/49/18/N03. 
+[30] Haume K, Rosa S, Grellet S, ´Smiałek MA, Butterworth KT, Solov’yov AV, Prise KM, 
+Golding J, Mason NJ. Gold nanoparticles for cancer radiotherapy: a review. Cancer 
+Nano 2016;7(1). https://doi.org/10.1186/s12645-016-0021-x. 
+[31] Jain S, Coulter JA, Hounsell AR, Butterworth KT, McMahon SJ, Hyland WB, 
+Muir MF, Dickson GR, Prise KM, Currell FJ, O’Sullivan JM, Hirst DG. Cell-Specific 
+Radiosensitization by Gold Nanoparticles at Megavoltage Radiation Energies. Int J 
+Rad Oncol Biol Phys 2011;79(2):531–9. https://doi.org/10.1016/j. 
+ijrobp.2010.08.044. 
+[32] Laissue JA, Geiser G, Spanne PO, Dilmanian FA, Gebbers J-O, Geiser M, Wu X-Y, 
+Makar MS, Micca PL, Nawrocky MM, Joel DD, Slatkin DN. Neuropathology of 
+ablation of rat gliosarcomas and contiguous brain tissues using a microplanar beam 
+of synchrotron-wiggler-generated X rays. Int. J. Cancer 1998;78(5):654–60. 
+https://doi.org/10.1002/(SICI)1097-0215(19981123)78:5<654::AID-IJC21>3.0. 
+CO;2-L. 
+[33] Dilmanian FA, Button TM, Duc GL, Zhong N, Pe˜na LA, Smith JAL, et al. Response of 
+rat intracranial 9L gliosarcoma to microbeam radiation therapy. Neuro Oncol 
+2002;4:26–38. 
+[34] Dilmanian FA, Morris GM, Zhong N, Bacarian T, Hainfeld JF, Kalef-Ezra J, 
+Brewington LJ, Tammam J, Rosen EM. Murine EMT-6 Carcinoma: High 
+Therapeutic Efficacy of Microbeam Radiation Therapy. Radiat Res 2003;159(5): 
+632–41. https://doi.org/10.1667/0033-7587(2003)159[0632:MECHTE]2.0.CO;2. 
+[35] Hadsell M, Cao G, Zhang J, Burk L, Schreiber T, Schreiber E, Chang S, Lu J, Zhou O. 
+Pilot study for compact microbeam radiation therapy using a carbon nanotube field 
+emission micro-CT scanner: Pilot study for MRT using CNT micro-CT scanner. Med 
+Phys 2014;41(6Part1):061710. https://doi.org/10.1118/1.4873683. 
+[36] Zhang L, Yuan H, Burk LM, Inscoe CR, Hadsell MJ, Chtcheprov P, Lee YZ, Lu J, 
+Chang S, Zhou O. Image-guided microbeam irradiation to brain tumour bearing 
+mice using a carbon nanotube x-ray source array. Phys Med Biol 2014;59(5): 
+1283–303. https://doi.org/10.1088/0031-9155/59/5/1283. 
+[37] Yuan H, Zhang L, Frank JE, Inscoe CR, Burk LM, Hadsell M, et al. Treating brain 
+tumor with microbeam radiation generated by a compact carbon-nanotube-based 
+irradiator: initial radiation efficacy study. Radiation research. 2015;184:322-33. 
+[38] Zhang L, Yuan H, Inscoe C, Chtcheprov P, Hadsell M, Lee Y, Lu J, Chang S, Zhou O. 
+Nanotube x-ray for cancer therapy: a compact microbeam radiation therapy system 
+for brain tumor treatment. Expert Rev Anticancer Ther 2014;14(12):1411–8. 
+https://doi.org/10.1586/14737140.2014.978293. 
+[39] Le Duc G, Miladi I, Alric C, Mowat P, Br¨auer-Krisch E, Bouchet A, Khalil E, 
+Billotey C, Janier M, Lux F, Epicier T, Perriat P, Roux S, Tillement O. Toward an 
+Image-Guided Microbeam Radiation Therapy Using Gadolinium-Based 
+Nanoparticles. ACS Nano 2011;5(12):9566–74. https://doi.org/10.1021/ 
+nn202797h. 
+[40] Todd P, Winchell H, Feola J, Jones G. Inactivation by pulsed high-intensity x-rays 
+of human cells cultured in vitro. RADIATION RESEARCH: RADIATION RESEARCH 
+SOC 2021 SPRING RD, STE 600, OAK BROOK, IL 60521; 1967. p. 644-&. 
+[41] TOWN CD. Effect of High Dose Rates on Survival of Mammalian Cells. Nature 
+1967;215(5103):847–8. https://doi.org/10.1038/215847a0. 
+[42] Favaudon V, Caplier L, Monceau V, Pouzoulet F, Sayarath M, Fouillade C, et al. 
+Ultrahigh dose-rate FLASH irradiation increases the differential response between 
+normal and tumor tissue in mice. Science translational medicine. 2014;6:245ra93- 
+ra93. 
+[43] Montay-Gruel Pierre, Bouchet Audrey, Jaccard Maud, Patin David, 
+Serduc Raphael, Aim Warren, Petersson Kristoffer, Petit Benoit, Bailat Claude, 
+Bourhis Jean, Br¨auer-Krisch Elke, Vozenin Marie-Catherine. X-rays can trigger the 
+FLASH effect: Ultra-high dose-rate synchrotron light source prevents normal brain 
+injury after whole brain irradiation in mice. Radiother Oncol 2018;129(3):582–8. 
+https://doi.org/10.1016/j.radonc.2018.08.016. 
+[44] Bazalova-Carter Magdalena, Esplen Nolan. On the capabilities of conventional x- 
+ray tubes to deliver ultra-high (FLASH) dose rates. Med. Phys. 2019;46(12): 
+5690–5. https://doi.org/10.1002/mp.13858. 
+[45] Lindfors Karen K, Boone John M, Nelson Thomas R, Yang Kai, Kwan Alexander LC, 
+Miller DeWitt F. Dedicated Breast CT: Initial Clinical Experience. Radiology 2008; 
+246(3):725–33. https://doi.org/10.1148/radiol.2463070410. 
+[46] Prionas Nicolas D, McKenney Sarah E, Stern Robin L, Boone John M. Kilovoltage 
+Rotational External Beam Radiotherapy on a Breast Computed Tomography 
+Platform: A Feasibility Study. Int J Rad Oncol Biol Phys 2012;84(2):533–9. https:// 
+doi.org/10.1016/j.ijrobp.2011.12.042. 
+[47] Buonanno F, Sarno A, De Lucia PA, Di Lillo F, Masi M, Di Franco F, Mettivier G, 
+Russo P. Rotational radiotherapy of breast cancer with polyenergetic kilovoltage X- 
+ray beams: An experimental and Monte Carlo phantom study. Phys Med 2019;62: 
+63–72. https://doi.org/10.1016/j.ejmp.2019.05.002. 
+[48] Di Lillo Francesca, Mettivier Giovanni, Sarno Antonio, Castriconi Roberta, 
+Russo Paolo. Towards breast cancer rotational radiotherapy with synchrotron 
+radiation. Phys Med 2017;41:20–5. https://doi.org/10.1016/j.ejmp.2017.06.009. 
+[49] Di Lillo F, Mettivier G, Castriconi R, Sarno A, Stevenson AW, Hall CJ, et al. 
+Synchrotron radiation external beam rotational radiotherapy of breast cancer: 
+proof of principle. Journal of synchrotron radiation. 2018;25:857-68. 
+[50] Bazalova-Carter Magdalena, Weil Michael D, Breitkreutz Dylan Yamabe, 
+Wilfley Brian P, Graves Edward E. Feasibility of external beam radiation therapy to 
+deep-seated targets with kilovoltage x-rays. Med Phys 2017;44(2):597–607. 
+https://doi.org/10.1002/mp.12047. 
+[51] Breitkreutz Dylan Y, Weil Michael D, Zavgorodni Sergei, Bazalova- 
+Carter Magdalena. Monte Carlo simulations of a kilovoltage external beam 
+radiotherapy system on phantoms and breast patients. Med Phys 2017;44(12): 
+6548–59. https://doi.org/10.1002/mp.12619. 
+[52] Breitkreutz Dylan Y, Renaud Marc-Andr´e, Seuntjens Jan, Weil Michael D, 
+Zavgorodni Sergei, Bazalova-Carter Magdalena. Inverse optimization of low-cost 
+kilovoltage x-ray arc therapy plans. Med Phys 2018;45(11):5161–71. https://doi. 
+org/10.1002/mp.13153. 
+[53] Breitkreutz DY, Renaud M-A, Weil MD, Zavgorodni S, Han J, Baxter H, et al. Monte 
+Carlo calculated kilovoltage x-ray arc therapy plans for three lung cancer patients. 
+Biomedical Physics & Engineering Express. 2019;5:065022. 
+[54] Stalbaum T, Boyd D, Weil M, Chen H, Plies M, Song S, et al. 200 kV x-ray source for 
+radiotherapy and imaging: preliminary results and discussion. Medical Imaging 
+2020: Physics of Medical Imaging: International Society for Optics and Photonics; 
+2020. p. 113123I. 
+[55] Zankowski C, Adelsheim C, Pyyry J, Kuusela E. Radiotherapy treatment planning 
+using artificial intelligence (ai) engines. Google Patents; 2019. 
+[56] Sarno A, Mettivier G, Russo P, Drebot I, Petrillo V, Bacci A, et al. Kilovoltage 
+rotational radiotherapy of breast cancer with the BriXS source. Journal of 
+Instrumentation. 2020;15:C05012. 
+[57] Loughery B, Halford R, Dess K, Rakowski J, Cox M, Koh J, et al. A proof of concept 
+kilovoltage intensity modulated radiotherapy platform for the treatment of 
+glioblastoma multiforme. Biomedical Physics & Engineering Express. 2019;5: 
+055013. 
+[58] Bentzen Søren M, Constine Louis S, Deasy Joseph O, Eisbruch Avi, 
+Jackson Andrew, Marks Lawrence B, Ten Haken Randall K, Yorke Ellen D. 
+Quantitative Analyses of Normal Tissue Effects in the Clinic (QUANTEC): An 
+Introduction to the Scientific Issues. Int J Rad Oncol Biol Phys 2010;76(3):S3–9. 
+https://doi.org/10.1016/j.ijrobp.2009.09.040. 
+D.Y. Breitkreutz et al.                                                                                                                                                                                                                          
+Physica Medica 79 (2020) 103–112
+112
+[59] Icrp I. Publication 61: Annual limits on intake of radionuclides for workers based 
+on the 1990 recommendations. New York: Pergamon Press; 1990. 
+[60] Amols HI, Lagueux B, Cagna D. Radiobiological Effectiveness (RBE) of Megavoltage 
+X-Ray and Electron Beams in Radiotherapy. Radiat Res 1986;105(1):58. https:// 
+doi.org/10.2307/3576725. 
+[61] Noone A, Howlader N, Krapcho M, Miller D, Brest A, Yu M, et al. SEER cancer 
+statistics review, 1975–2015. Bethesda, MD: National Cancer Institute; 2018. p. 4. 
+[62] Sethi Anil, Emami Bahman, Small Jr William, Thomas Tarita. Intraoperative 
+Radiotherapy With INTRABEAM: Technical and Dosimetric Considerations. Front 
+Oncol 2018;8(74). https://doi.org/10.3389/fonc.2018.00074. 
+[63] Esplen Nolan, Mendonca Marc, Bazalova-Carter Magdalena. Physics and biology of 
+ultrahigh dose-rate (FLASH) radiotherapy: a topical review. Phys Med Biol 2020. In 
+press. 
+D.Y. Breitkreutz et al.                                                                                                                                                                                                                          

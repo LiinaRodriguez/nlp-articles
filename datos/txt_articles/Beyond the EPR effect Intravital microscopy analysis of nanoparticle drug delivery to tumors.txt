@@ -1,0 +1,2677 @@
+Advanced Drug Delivery Reviews 219 (2025) 115550
+Available online 26 February 2025
+0169-409X/© 2025 The Author(s). Published by Elsevier B.V. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+Beyond the EPR effect: Intravital microscopy analysis of nanoparticle drug 
+delivery to tumors☆
+Iaroslav B. Belyaev a,b, Olga Yu. Griaznova a, Alexey V. Yaremenko c, Sergey M. Deyev a,  
+Ivan V. Zelepukin a,d,*
+a Shemyakin-Ovchinnikov Institute of Bioorganic Chemistry of the Russian Academy of Sciences, Moscow, Russia
+b Eindhoven University of Technology, Eindhoven 5600 MB, the Netherlands
+c Aristotle University of Thessaloniki, Thessaloniki 54124, Greece
+d Department of Immunology, Genetics and Pathology, Uppsala University, Uppsala 75123, Sweden
+G R A P H I C A L  A B S T R A C T
+A R T I C L E  I N F O
+Keywords:
+Nanoparticle delivery
+EPR effect
+Endothelial extravasation
+Intravital microscopy
+EPR alternatives
+A B S T R A C T
+Delivery of nanoparticles (NPs) to solid tumors has long relied on enhanced permeability and retention (EPR) 
+effect, involving permeation of NPs through a leaky vasculature with prolonged retention by reduced lymphatic 
+drainage in tumor. Recent research studies and clinical data challenge EPR concept, revealing alternative 
+pathways and approaches of NP delivery. The area was significantly impacted by the implementation of intra­
+vital optical microscopy, unraveling delivery mechanisms at cellular level in vivo. This review presents analysis of 
+the reasons for EPR heterogeneity in tumors and describes non-EPR based concepts for drug delivery, which can 
+supplement the current paradigm. One of the approaches is targeting tumor endothelium by NPs with subsequent 
+intravascular drug release and gradient-driven drug transport to tumor interstitium. Others exploit various 
+Abbreviations: CAM, cell adhesion molecule; CD, cluster of differentiation; ECM, extracellular matrix; EPR, enhanced permeability and retention; ESL, E-selectin 
+ligand; EV, extravascular space; FlaRE, flash release in endothelium; FLIM, fluorescence lifetime imaging microscopy; FRET, F¨orster resonance energy transfer; HSA, 
+human serum albumin; IFP, interstitial fluid pressure; IL, interleukin; IVM, intravital microscopy; MDN, membrane-derived nanovesicle; MMP, matrix metal­
+loproteinase; MPO, myeloperoxidase; MPS, mononuclear phagocyte system; NIR, near-infrared; NP, nanoparticle; N-TEC, nanoparticle transport endothelial cell; 
+PEG, polyethylene glycol; PLGA, poly lactic-co-glycolic acid; PLVAP, plasmalemma vesicle-associated protein; PSMA, prostate-specific membrane antigen; RBC, red 
+blood cell; TAM, tumor-associated macrophage; TEM, tumor endothelial marker; TGF, transforming growth factor; TLR, toll-like receptor; TLs, thermoresponsive 
+liposomes; TME, tumor microenvironment; VE, vascular endothelial; VEGF, vascular endothelial growth factor; VL, vessel lumen; VVOs, vesiculo-vacuolar organelles.
+☆This article is part of a special issue entitled: ‘Optical Monitoring’ published in Advanced Drug Delivery Reviews.
+* Corresponding author at: Shemyakin-Ovchinnikov Institute of Bioorganic Chemistry of the Russian Academy of Sciences, Moscow, Russia.
+E-mail address: ivan.zelepukin@igp.uu.se (I.V. Zelepukin). 
+Contents lists available at ScienceDirect
+Advanced Drug Delivery Reviews
+journal homepage: www.elsevier.com/locate/adr
+https://doi.org/10.1016/j.addr.2025.115550
+Received 31 October 2024; Received in revised form 18 February 2025; Accepted 18 February 2025  
+Advanced Drug Delivery Reviews 219 (2025) 115550
+2
+immune cells for tumor infiltration and breaking endothelial barriers. Finally, we discuss the involvement of 
+active transcytosis through endothelial cells in NP delivery. This review aims to inspire further understanding of 
+the process of NP extravasation in tumors and provide insights for developing next-generation nanomedicines 
+with improved delivery.
+1. Introduction
+Nanoparticles (NPs) have emerged as a versatile tool for targeted 
+drug delivery and bright imaging of malignant tissues. NPs can serve as 
+carriers for both molecular chemotherapeutics and larger biomolecules, 
+protecting the payload from degradation and increasing its bioavail­
+ability [1]. They can be engineered to respond to specific stimuli in the 
+tumor microenvironment, such as acidic pH, hypoxia, or certain en­
+zymes, to perform selective and localized drug release [2]. Decoration of 
+NPs with targeting ligands, recognizing receptors overexpressed on 
+tumor cells, improves precision of therapeutics and minimizes toxicity to 
+healthy tissues [3,4].
+The performance of NPs in vivo largely depends on their delivery to 
+tumor tissue, which, for several decades, was believed to occur solely 
+through the “enhanced permeability and retention” (EPR) effect. The 
+EPR effect, first observed by Matsumura and Maeda in 1986, refers to 
+the enhanced accumulation of NPs via the abnormal leaky vasculature of 
+tumors and the subsequent retention due to impaired lymphatic 
+drainage [5–7]. NPs with a size from 10 to 500 nm have been shown to 
+traverse the intercellular gaps and accumulate in tumors, imposing 
+constraints on the design of drug carriers [8,9]. Transport via the EPR 
+effect generally belongs to passive delivery routes, meaning it does not 
+require binding to receptors or energy-dependent internalization. In 
+contrast, active delivery routes involve receptors or cells in the process 
+of NP extravasation. Passive transport is an attractive concept for tumor 
+treatment, since it has the potential to be universal for broad classes of 
+nanomedicines, including drug carriers, mRNA vesicles and oncolytic 
+viruses.
+However, the clinical translation of EPR-based nanomedicines faced 
+substantial challenges. Despite promising preclinical outcomes, many 
+NPs have failed to demonstrate consistent therapeutic efficacy in human 
+cancers [10]. One of the reasons for this is the significant heterogeneity 
+of the EPR effect, which varies between different types of tumors, be­
+tween patients, and even within different regions of the same tumor. 
+This variability can be attributed to factors such as the tumor’s vascular 
+density, number and size of intercellular gaps, thrombogenesis, differ­
+ences in tumor’s interstitial fluid pressure, and functional state of the 
+lymphatic system [11,12]. Such heterogeneity is lower for artificial 
+human xenografts than for patient-derived tumors in murine models 
+[13]. Moreover, the EPR effect is typically more uniform in small, 
+rapidly growing tumors, similar to preclinical models [11]. This led to a 
+re-evaluation of the reliance of drug delivery on the EPR concept, 
+prompting researchers to explore complementary mechanisms for 
+enhanced NP accumulation in tumors, particularly as the understanding 
+of tumor biology and nanoparticle interactions expands [14].
+Intravital microscopy (IVM) has emerged as a powerful tool to 
+discover and refine strategies for enhanced NP delivery in tumors. IVM is 
+an optical imaging technique that enables real-time visualization of NP 
+behavior in live animals at the cellular level [15]. Starting from the early 
+years after discovery of the EPR effect, fluorescence microscopy was 
+used to analyze influence of the size and coating of liposomes on the 
+microvascular permeability in tumors [16,17]. Over the past decade, 
+IVM revealed additional processes involved in the delivery of nano­
+materials [18]. For instance, polymeric NPs, dendrimers, and liposomes 
+with cationic charge were shown to induce adsorptive-mediated trans­
+cytosis in tumor blood vessels. Similarly, IVM revealed a special subtype 
+of tumor endothelial cells, participating in NP transport [19]. These 
+transendothelial mechanisms may provide a more consistent pathway 
+for NP delivery, especially in tumors with limited EPR-based 
+accumulation [20].
+IVM led to the exploration of other passive and active mechanisms of 
+transport by focusing on microvascular dynamics of NPs and their 
+permeation through the tumor vessels. For instance, IVM data demon­
+strates potential of targeting NPs to the features of tumor vasculature. 
+The reduced blood flow rate in solid tumors enables adhesion and pas­
+sive accumulation of sub-micrometer drug vesicles [21]. Functionali­
+zation of NPs with ligands that bind to receptors overexpressed on tumor 
+endothelial cells (e.g., pro-angiogenic factors or cell adhesion molecules) 
+enables active targeting and retention at the tumor site [22]. For 
+instance, NPs recognizing vascular endothelial growth factor (VEGF) 
+have been shown to remain in C6 glioma for one day [23]. Membrane- 
+derived nanoghosts or membrane-coated NPs can exploit the natural 
+ability of certain cell types to home to the tumor or to the inflamed 
+tumor endothelium [24,25]. Subsequent localized drug release in blood 
+vessels can improve cancer therapy even without NPs permeation [26].
+Intravital fluorescence tracking of single cells shows the involvement 
+of cell-mediated active delivery of NPs in overcoming endothelial bar­
+riers. Immune cells, including monocytes, neutrophils and lymphocytes 
+naturally home to tumors and can be engineered to carry NPs [27]. 
+Macrophages have shown the ability to transport NPs across the 
+blood–brain barrier, and into challenging tumor regions far from blood 
+vessel wall [28,29]. Circulating leukocytes and marginated neutrophils 
+normally uptake part of intravenously injected nanomaterials and can 
+significantly alter their biodistribution [30,31]. In addition, leukocyte 
+trafficking creates leakiness in basement membrane, enabling NPs to use 
+this route for entrance into the tumor [32]. Red blood cells (RBCs) lack 
+cancer-targeting characteristics but are capable of vascular organ- 
+specific targeting. RBCs have been shown to deliver NPs to the lungs 
+and brain [33] and to perform specific treatment of pulmonary metas­
+tases [26]. By leveraging the natural migratory, tumor-homing proper­
+ties and prolonged circulation of cells, cell-mediated NP delivery 
+bypasses the limitations of EPR-dependent accumulation.
+This review provides a comprehensive analysis of the diverse path­
+ways which are utilized by NPs to enter tumors and deliver drugs to 
+cancer cells. We present the EPR effect as a cornerstone principle gov­
+erning the design of NPs for drug delivery, while also discussing the 
+reasons behind the heterogeneity of this effect in clinical settings. In 
+view of this, we emphasize the role of non-EPR-based transport mech­
+anisms in overcoming heterogeneity of tumor biology. We focus on in­
+sights gained from IVM methods for real-time analysis of NP behavior 
+within the tumor microenvironment. Non-EPR-based delivery mecha­
+nisms, such as targeting of tumor endothelium, transcytosis, and cell- 
+mediated delivery, offer new perspectives to drive NP design for can­
+cer therapy. These mechanisms are complementary to the EPR concept 
+and all of them may coexist within a single tumor. The review aims to 
+shape the development of next-generation nanomedicines that move 
+beyond the constraints of EPR-dependent uptake, paving the way for 
+personalized, effective, and adaptable delivery strategies for patients 
+with variable tumor profiles.
+2. EPR effect in preclinical and clinical studies
+2.1. The phenomenon of EPR effect in nanoparticle delivery
+Discovery of the EPR effect undoubtedly boosted design of nano­
+materials with more than 60 nanomedicines that have been approved for 
+clinical use [34]. The EPR-based accumulation for now remains the 
+fundamental principle underlying passive targeting for imaging and 
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+3
+therapy of solid tumors. The enhanced accumulation of NPs in tumors in 
+comparison to healthy tissues was observed in rodents, rabbits, dogs and 
+other vertebrate animals [16,35,36]. In clinical settings, the EPR effect 
+has been shown in human cancers such as those of the colon, rectum, 
+breast, stomach, and ovaries [37]. However, not all tumors exhibited a 
+strong EPR effect. For example, human pancreatic tumors are known for 
+poor vascularization and a dense microenvironment, which limits tissue 
+permeability [38,39].
+EPR mechanism involves the enhanced accumulation of macromol­
+ecules through a leaky tumor vasculature and retention via restricted 
+blood and lymphatic elimination pathways (Fig. 1A) [6]. In the pio­
+neering study of Matsumura and Maeda, this was supported by post- 
+mortem optical visualization of delivery of albumin-Evans blue com­
+plexes to Sarcoma 180 tumor [5]. Modern IVM techniques allow real- 
+time and high-resolution imaging in living animals, enabling both 
+whole-body cancer screening and microscopic visualization of the tumor 
+vessels (Fig. 1B). For instance, Qi et al. utilized short-wave infrared 
+imaging to observe the dynamics of EPR-based delivery of 33-nm fluo­
+rescent dots in prostate xenografts, with minimal interference from 
+endogenous fluorescence of tissues [40].
+The EPR-based accumulation of NPs is primarily driven by patho­
+logical openings between endothelial cells in the tumor vasculature. 
+Immunohistochemistry of blood vessels in MCa-IV murine mammary 
+carcinomas has shown that 14 % of the vessel surface is lined by 
+defective and poorly connected cells. Electron microscopy study of these 
+vessels revealed that endothelium has intercellular openings with a 
+median size of 1.5 µm (ranging from 0.3 to 4.7 µm) and transcellular 
+holes with a median size of 0.6 µm (ranging from 0.2 to 0.9 µm) [41]. A 
+series of studies showed size-dependent accumulation of liposomes in 
+subcutaneous tumor models, where most tumors exhibited a vascular 
+cut-off pore size ranging from 380 nm to 780 nm [9,16,42]. The leaky 
+tumor vasculature facilitates the deposition of drug-loaded nano­
+particles, leading to enhanced delivery to tumors compared to normal 
+tissues.
+A second key component of the EPR effect is the prolonged retention 
+of NPs within the tumor tissue. This retention has largely been attributed 
+to impaired lymphatic drainage, due to the collapse of lymphatic vessels 
+or the absence of functional lymphatics far from the tumor margin 
+[7,43]. However, lymphatics functionality is usually accessed by 
+monitoring the interstitial drainage of labeled macromolecules [7,44]. A 
+recent study by Nguyen et al. examined the lymphatic drainage of NPs in 
+common murine tumor models (B16-F10, 4 T1, MMTV-PyVT) [45]. All 
+studied tumor lymphatic vessels were not fully collapsed and had a 
+lumen size larger than 286 nm, which is sufficient for NP exit. Optical 
+imaging confirmed that both peritumoral and intratumoral lymphatic 
+vessels participate in NP elimination, while clearance enhances with the 
+decrease of NP size. Large 100-nm particles experienced only minimal 
+clearance, with just 2.1 % elimination of injected dose. This study pro­
+vides evidence of lymphatic drainage of NPs in tumors, while also sup­
+porting the general concept of NP retention, which can be attributed to 
+NP interactions with both cellular and acellular components of tumors 
+[45,46].
+The described EPR concept has set restrictions on NP design to 
+maximize tumor accumulation. All the current cancer nanomedicines 
+are designed with a size lower than the endothelial openings cut-off. In 
+addition, NPs should be larger than 6 nm to avoid renal clearance [47]
+and preferably smaller than 200 nm to reduce uptake by tissue-resident 
+macrophages [48,49]. Consequently, it is generally accepted that NPs 
+within the 10–200 nm range are ideal for passive accumulation in solid 
+tumors [50]. Beyond NP size, surface chemistry has been modified to 
+diminish the uptake by circulating cells, macrophages, and endothelial 
+cells. Surface of NPs is modified with stealth polymers like polyethylene 
+glycol (PEG), shielding interaction with biomolecules, in the vast ma­
+jority of clinical liposomal and polymeric cancer pharmaceuticals [51]. 
+Recent data, reinforced by IVM observations, suggest multiple alterna­
+tive mechanisms to the EPR-based permeation of NPs through static 
+pores in endothelium [19,32,52]. If the role of the EPR effect as the 
+primary route of NP delivery to tumor is compromised, restrictions on 
+NP engineering can be reduced.
+2.2. Challenges of EPR effect in clinical translation
+Over several decades of the pre-clinical development of anti-cancer 
+nanomedicines, numerous NPs demonstrated efficiency in treating 
+solid tumors in animals. Clinical studies showed limited success. For 
+instance, liposomal formulations of doxorubicin significantly reduced 
+cardiotoxic effects for patients compared to free drug administration 
+[53]. However, the clinical assessment of liposomal doxorubicin has 
+shown only modest or no improvement in objective response rates when 
+compared to standard chemotherapy, with no effect on progression-free 
+Fig. 1. The enhanced permeability and retention (EPR) effect in nanoparticle delivery. (A) Principle of the EPR effect: circulating NPs passively enter tumors through 
+the pores in abnormal tumor vasculature and retain in tissue due to low lymphatic drainage. The EPR principle restrains NP design. To enhance passive accumulation, 
+the size of NPs should be lower than pore size in endothelium, while surface is shielded from the uptake by any non-target cells. Created with BioRender.com (B) 
+Visualization of the EPR effect in tumor site with the short-wave infrared fluorescence imaging. Whole-body biodistribution (top) and NPs spread near the tumor 
+vessel (bottom) were accessed 5 min and 24 h after intravenous injection of fluorescent NPs. Adapted with permission from ref. [40].
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+4
+survival [54]. Other NP-based drug delivery systems have encountered 
+clinical setbacks. BIND-014 docetaxel-loaded polymeric NPs targeting 
+prostate-specific membrane antigen (PSMA) in metastatic prostate 
+cancer failed to demonstrate significant therapy improvement over 
+standard docetaxel therapy in a phase II clinical trial [55]. While NPs in 
+general offer favorable blood circulation, their therapeutic effects in 
+humans have often been underwhelming, highlighting the challenges in 
+translating preclinical successes to clinics.
+These challenges can be largely attributed to the differences in 
+structure of murine tumor models and clinical samples (Fig. 2). Human 
+tumors are typically larger and exhibit more heterogeneous and diverse 
+genetic patterns compared to animal models [56]. This heterogeneity, in 
+particular, is reflected in the non-uniform vascularization and vessel 
+fenestration, and variations in the parenchymal microenvironment 
+[57,58]. Furthermore, blood flow in human tumors is frequently sup­
+pressed and vessels are blocked due to the formation of thrombi and 
+occlusions, which can hinder sufficient NP accumulation in the peritu­
+moral vasculature [11]. Tumor size is another aspect influencing the 
+EPR status. The analysis of clinical trials by Natfji et al. concluded that 
+large tumors (140 cm2 > area > 25 cm2) generally exhibit greater 
+nanomedicine accumulation compared to medium-sized (area ≤25 
+cm2) or very large tumors (area ≥140 cm2). However, the enhanced 
+permeation was observed in only about half of the patients with large 
+tumors, whereas for medium-sized tumors it occurred in most cases 
+[37]. This contradicts murine models, where the tumor concentration of 
+NPs tends to decrease with the increase of tumor size [59,60].
+Active proliferation of cancer cells and deposition of extracellular 
+matrix (ECM) create solid stresses, which compress blood and lymphatic 
+vessels and induce hypoxia [43,61]. This compression, along with high 
+vascular permeability and reduced lymphatic drainage, results in 
+elevated IFP, creating a diffusion barrier that impedes the penetration of 
+macromolecules and NPs into deep regions of the tumor [62]. Conse­
+quently, even when NPs successfully extravasate into the extravascular 
+space, they may not be able to distribute evenly through the tumor 
+volume, which is important for achieving therapeutic efficacy [63]. 
+Moreover, tumor cells tend to populate more densely the space near the 
+blood vessels [64]. These dense perivascular layers may impede the 
+permeation of NPs, which is similar to the effect of limited diffusion of 
+molecular drugs through multicellular layers [65].
+Other components of tumor microenvironment (TME) play a critical 
+role in EPR-based NP delivery. The TME includes a network of stromal 
+cells, including fibroblasts, pericytes, smooth muscle cells, and various 
+immune cells, embedded within a rigid ECM primarily composed of 
+collagen [66]. This high-density matrix acts as a significant physical 
+barrier, impeding the diffusion of NPs and macromolecules within the 
+tumor [67]. Moreover, stromal cells contribute to the solid stress and 
+compress blood vessels [61]. TME generally features a highly hypoxic 
+and acidic extracellular environment due to irregular blood flow and 
+oxygen deprivation. However, the levels of acidity and oxygenation are 
+not uniform within the tissue [68], which results in different NP 
+behavior in interstitial regions [69,70]. These variability factors 
+severely compromise the uniform distribution of nanomedicines within 
+solid tumors, particularly in areas distant from blood vessels [71,72].
+IVM can be an informative tool to report physical parameters of the 
+TME, which is important for any drug delivery concept. Intraoperative 
+IVM of patient tumor vessels in clinics has shown that they are disor­
+ganized, tortuous, and half of them do not support blood flow [73]. 
+Wang et al. presented a novel hypoxia probe and intravitally examined 
+the activity and extravasation of hypoxic and normoxic cell phenotypes 
+near the blood vessels. Zhang et al. recently established the method to 
+evaluate the progression of intratumoral solid stress over time at single- 
+cell resolution, achieved by probing the deformation of polyacrylamide 
+particles with intravital fluorescence microscopy [74]. Cell migration, 
+pH, enzyme activity and other functional and anatomical features of 
+tumor can be accessed using fluorescent probes to provide valuable in­
+sights about TME in clinical samples [75].
+Challenges in the translation of EPR-based nanomedicines can be 
+partially overcome by implementation of personalized medicine 
+concept. The TME characteristics and EPR-based accumulation should 
+be analyzed before therapy with nanomedicines. IVM with the ability to 
+Fig. 2. Barriers preventing the efficient extravasation of NPs via the EPR effect. In normal blood vessels, cells are connected by tight junctions and lack 
+intercellular pores, which limits the permeation of NPs larger than 5 nm. In tumor blood vessels, NPs extravasate from the lumen through the pathological inter­
+endothelial pores via convection. Pericyte coverage and basement membrane impede NP leakage into the tumor interstitium. Tumors build a dense microenvi­
+ronment consisting of rapidly proliferating cancer cells, infiltrating immune cells, and fibroblasts. Combined with a dense extracellular matrix (ECM), the solid stress 
+created by disorganized and compact cell arrangement establishes a diffusion barrier for NPs. Permeation and diffusion are further hindered by elevated interstitial 
+fluid pressure (IFP) due to the imbalance between liquid influx and lymphatic outflow. Finally, the flow of NPs from tumor vessels can be blocked by vascular 
+occlusions, such as thrombi. Created with BioRender.com.
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+5
+monitor NP behavior in real-time remains attractive for investigations of 
+the correlation between vascularization properties and particle delivery 
+[76]. Miller et al. demonstrated that some magnetic and fluorescent NPs 
+can be used as companion imaging agents during nanomedicine trials to 
+predict drug accumulation and treatment response in solid tumors [77]. 
+Alternatively, animal avatars with patient-derived tumors can be used 
+for clinical analysis of EPR status of tissue and its heterogeneity [78]. 
+Jeon et al. applied near-infrared fluorescent imaging to analyze tumor- 
+targeting efficiency of NPs in cellular pancreatic tumor model, xeno­
+grafts from patient-derived cells and patient-derived tissues [13]. Tar­
+geting of malignant tissue was closely related to the characteristics of 
+TME, including blood vessel density and ECM content. The model from 
+patient-derived tissues better displays TME of clinical tumors and shows 
+faithful heterogeneity of NP accumulation in tissue.
+3. Non-EPR based mechanisms of nanoparticle delivery
+The enhanced accumulation of nanoparticles, observed in certain 
+tumor types or specific tumor regions, drives investigation into the 
+reasons behind this phenomenon. The passive accumulation of NPs 
+through the tumor’s leaky vasculature is likely not the sole mechanism 
+of NP delivery. IVM reveals that immune and endothelial cells actively 
+participate in the delivery and retention of NPs. Multiple mechanisms 
+are involved in NP transport and the dominant pathways in specific 
+tumor types or microenvironments have yet to be determined.
+3.1. Approaches for intravascular targeting and drug release
+3.1.1. Drug release in the tumor vasculature
+The high heterogeneity and instability of NP delivery to tumors raise 
+the question: “Is the NP extravasation across tumor vasculature even 
+necessary for cancer treatment?” In certain cases, the answer might be 
+“No.” Delivering NPs “as close as possible” to the tumor can still be 
+effective for cancer diagnostics and therapy. IVM reveals that dense 
+collagen matrix in tumors hinders the penetration of most nano­
+medicines deep into malignant tissue [46,79]. As a result, in most cases, 
+tumor imaging with NPs represents only visualization of the tumor 
+margin. On the other hand, Miller et al. reported a multispectral IVM 
+analysis of biodistribution of NPs and their therapeutic cargo within 
+tissue. Although the NPs did not cross the blood vessel wall, their 
+released payload permeated tumor tissue within 30 min after particle 
+injection (Fig. 3A) [80].
+In consistency with this fact, a novel drug delivery concept was 
+recently proposed that does not require extravasation of NPs through the 
+endothelium. This approach, termed Flash Release in Endothelium 
+(FlaRE)-based drug delivery, involves the rapid delivery and enhanced 
+accumulation of drug-loaded NPs in the tumor vasculature, followed by 
+their fast degradation within the vessels. The flash release of the cargo in 
+the tumor vasculature creates high concentration of the drug in blood 
+vessel and drives its diffusion along the gradient from the endothelium 
+into the interstitium. Thus, the released payload can reach distant cancer 
+cells, with ensuing therapeutic effects (Fig. 3B) [26].
+According to the EPR-based drug delivery paradigm, slow and 
+gradual release is expected to induce better treatment outcomes, since 
+NPs require time to reach the interstitium. Under this rationale, most 
+drug delivery systems developed over the past decades have been 
+designed for controlled and prolonged drug release over hours or days 
+[82]. Novel NPs were engineered to release payload under external 
+stimuli specific for TME, such as acidic pH, increased oxygenation or 
+high redox potential [82]. The therapeutic efficiency of anti-cancer 
+drugs can be predicted by the peak drug concentration at the affected 
+site [83]. A theoretical comparison of drug delivery using NPs with slow 
+(3 h) and rapid (3 min) drug release, has shown the advantages of NPs 
+with rapid drug release mode. After fast intravascular drug release, the 
+highest peak concentration of drug was achieved in the distant malig­
+nant cells (Fig. 3C), which further allowed to perform treatment of 
+pulmonary metastases in mice [26].
+The feasibility of the FlaRE drug delivery principle existed 
+Fig. 3. Drug release in tumor vasculature as an alternative to EPR-based extravasation. (A) Time-lapse intravital images of NPs (blue) and their payload (yellow) 
+accumulation in a xenograft tumor model. Scale bar is 50 μm. Adapted with permission from ref. [80]. (B) Schematic diagram of FlaRE drug delivery concept: NPs 
+bind to tumor vasculature and rapidly release encapsulated drug (green). The high intravascular concentration of drug drives diffusion to the distant tumor 
+interstitium. Adapted with permission from ref. [26]. (C) Theoretical modeling of drug concentration at the 50-μm distance from the endothelial wall for different 
+drug delivery modes: delivery with NPs degrading within 3 min (rapid release) and 3 h (slow release). Adapted with permission from ref. [26]. (D) Doxorubicin 
+delivery via triggering of intravascular release from thermoresponsive liposomes (TLs). Blood vessels are stained with fluorescein-labeled dextran (green) or 
+fluorescein-labeled liposomes (green) in corresponding columns, while doxorubicin permeation is marked with red. Scale bar is 100 μm. Adapted with permission 
+from ref. [81].
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+6
+throughout the literature for nanomaterials activated by external stim­
+uli. Manzoor et al. reported triggering of rapid intravascular drug release 
+from thermally activated liposomes. Real-time confocal imaging of 
+doxorubicin illustrates that intravascular drug release increases both the 
+drug permeation distance and the duration of cancer cell exposure 
+(Fig. 3D) [81]. Li et al. used thermosensitive liposome, which released 
+95 % of doxorubicin upon mild heating from 37 ◦C to 42 ◦C to treat 
+human melanoma xenografts and significantly improved the survival of 
+mice [84]. Modification of clinically used liposomes with temperature- 
+sensitive polymers can transform NPs from slow to rapid drug release 
+systems [85].
+Other external stimuli such as light, X-ray, and ultrasound, can be 
+used to trigger drug release in blood vessels. Luo et al. developed lipo­
+somes activated under near-infrared light by incorporating porphyr­
+in–phospholipids in the NP structure. Light irradiation induced singlet 
+oxygen-mediated oxidization of unsaturated lipids, leading to a drug 
+release [86]. The FlaRE strategy can be further enhanced by triggering 
+drug release with ultrasound. Ho and Yeh demonstrated that acoustic 
+vaporization of nanodroplets induces intravascular release of doxoru­
+bicin, but also disrupts tumor vessels smaller than 30 µm [87]. Acoustic 
+cluster therapy utilized sound-activated large microbubbles to exert 
+intense mechanical effects on endothelial cells, further improving drug 
+delivery [88]. Real-time multiphoton IVM has shown the potential of 
+ultrasound to increase extravasation of large macromolecules, such as 
+dextran, at distances of up to 46 µm from the vessel. This covers most 
+tumor regions, since the intercapillary distances in cancer tissues are 
+lower than 100–150 μm [89]. Ultrasound has also shown potential as 
+cancer monotherapy. Ultrasound irradiation at specific wavelengths can 
+damage rapidly dividing cancer cells during mitosis, thereby slowing 
+down tumor growth [90,91]. Combining ultrasound-mediated nano­
+particle delivery with passive ultrasound-induced damage to cancer cells 
+could result in synergistic therapeutic effects.
+Liposomes with intravascular drug release are currently undergoing 
+clinical studies. A phase I trial of ThermoDox demonstrated the safety of 
+using focused ultrasound to trigger drug release from thermosensitive 
+liposomes. Drug transport in clinical solid tumors mirrored results from 
+murine studies, showing significant permeation of malignant tissue with 
+doxorubicin after liposome activation. The non-invasive thermal drug 
+release was precise and safe for patients [92,93].
+IVM is one of the few methods that may be used for real-time 
+experimental validation of different intravascular drug delivery ap­
+proaches. For instance, ten Hagen et al. developed a theoretical model 
+for drug transport after different drug release modes and validated it 
+through the IVM data in mice [94]. This study underscores the impor­
+tance of identifying materials that exhibit first-pass accumulation in 
+tumor vessels and rapid drug release within minutes.
+3.1.2. Active targeting to receptors of tumor vasculature
+Drug delivery concepts with flash intravascular release of payload 
+may benefit from rapid binding of drug-loaded NPs to tumor endothelial 
+cells. Active targeting receptors overexpressed on the surface of these 
+cells is a straightforward method to enhance specific NP accumulation 
+near the malignant tissue. To ensure specific delivery, molecular targets 
+should be limited to those found only on pathological endothelial cells 
+rather than normal ones [95]. Tumor endothelial cells express various 
+tumor endothelial markers (TEM), some of which encode membrane 
+proteins available for targeting [96]. Molecular targets commonly used 
+for vascular targeting are listed in Table 1. However, not all such pro­
+teins are endothelial-specific and may be present on other cell types. 
+Non-specific targeting of tumor endothelial cells induces high accumu­
+lation of drug-loaded NPs in inflamed tissues, such as joints, which is not 
+beneficial for treatment of elderly patients [97]. In addition, expression 
+of receptor can be upregulated on endothelium during several cardio­
+vascular diseases, such as atherosclerosis, coronary artery disease, 
+myocardial infarction, and ischemic stroke. Certain receptors can be also 
+overexpressed in different tumor cells (Table 1). However, in the context 
+of low efficiency of EPR-based permeation of nanomedicines, other cells 
+except endothelial are unlikely to be accessible for targeting with FlaRE 
+delivery concept.
+B7-H3, also known as CD276, is a transmembrane protein from the 
+B7 family of immune checkpoint proteins that regulates the adaptive 
+immune response [117]. CD276 was found to be overexpressed on 
+endothelial cells during pathological, but not physiological, angiogen­
+esis. For example, expression level of CD276 was upregulated in the 
+vasculature of clear cell renal cell carcinoma in 95 % of patient samples 
+[118] and in adrenocortical carcinoma in 91 % of samples [119]. This 
+receptor is also overexpressed in a wide range of tumor types, including 
+cancers of bladder, breast, colorectal, ovarian, prostate, and melanoma, 
+among others [98,99]. A meta-analysis of RNA sequencing data and 
+clinical data shows that CD276 is overexpressed in most malignant tis­
+sues, and high receptor expression is correlated with low survival 
+probability [98]. CD276 can be a target for NPs and drug conjugates. 
+CD276-positive endothelial cells promoted tumor delivery of gold NPs in 
+mature vessels with proper pericyte coverage [120]. This study con­
+tradicts the EPR concept and indicates that CD276 tumor endothelial 
+cells can participate not only in binding targeted NPs in vasculature, but 
+in their further transport toward tumor cells. Seaman et al. applied anti- 
+CD276 drug conjugates for the treatment of several models of breast, 
+lung and colon cancer xenografts [99]. They demonstrate that CD276 is 
+expressed on both newly formed and established vasculature, co-opted 
+by the tumor during growth. The treatment shows complete eradica­
+tion of lesions for lung and colon carcinomas and potent anti-tumor and 
+Table 1 
+Endothelial markers for tumor vasculature targeting.
+Target
+Presence on vasculature
+Presence on 
+tumor cells
+Reference
+B7-H3, 
+CD276
+Tumor endothelial cells
+Expressed, not 
+specific
+[98,99]
+4-1BB, 
+CD137
+Tumor endothelial cells
+Expressed, not 
+specific
+[100]
+TEM1, 
+CD248
+Fibroblasts and a subset of pericytes 
+associated with tumor blood vessels
+No
+[101,102]
+TEM5, 
+Gpr124
+Tumor endothelial cells
+No
+[96,103]
+TEM7
+Tumor endothelial cells
+No
+[96,103]
+TEM8
+Tumor endothelial cells
+No
+[96,103]
+MMP-2
+Tumor endothelial cells
+Expressed, not 
+specific
+[104,105]
+MMP-9
+Tumor endothelial cells
+Expressed, not 
+specific
+[105]
+MMP-11
+Tumor endothelial cells
+Expressed, not 
+specific
+[106]
+PV1, 
+PLVAP
+Tumor endothelial cells and 
+endothelial cells during 
+cardiovascular diseases
+No
+[107,108]
+VCAM-1, 
+CD106
+Ubiquitous. Upregulated in 
+inflamed endothelium, tumor 
+endothelial cells and endothelial 
+cells during cardiovascular diseases
+No
+[109]
+ICAM-1, 
+CD54
+Ubiquitous. Upregulated in 
+inflamed endothelium, tumor 
+endothelial cells and endothelial 
+cells during cardiovascular diseases
+No
+[109]
+E-selectin, 
+CD62E
+Inflamed endothelium, tumor 
+endothelial cells and endothelial 
+cells during cardiovascular diseases
+Expressed, not 
+specific
+[110]
+P-selectin, 
+CD62P
+Inflamed endothelium, tumor 
+endothelial cells and endothelial 
+cells during cardiovascular diseases
+Expressed, not 
+specific
+[110,111]
+APN, CD13
+Tumor endothelial cells and 
+angiogenic vasculature
+Expressed, not 
+specific
+[112]
+Integrin 
+αvβ3
+Tumor endothelial cells and 
+angiogenic vasculature
+Expressed, not 
+specific
+[113,114]
+Integrin 
+αvβ5
+Tumor endothelial cells and 
+angiogenic vasculature
+Expressed, not 
+specific
+[113]
+Integrin 
+α5β1
+Tumor endothelial cells and 
+angiogenic vasculature
+Expressed, not 
+specific
+[115,116]
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+7
+anti-metastatic activity for other cancer models [99]. Another study 
+demonstrated precise accumulation of anti-CD-276 targeted gold 
+nanocages in small lung carcinoma and destruction of B7-H3-positive 
+tumor cells and tumor-associated vasculature through synergistic 
+chemo- and photothermal therapy [121].
+4-1BB or CD137 belongs to the tumor necrosis factor receptor family. 
+It is a membrane surface protein expressed on activated T-cells, B-cells, 
+natural killers, and other immune cells. The use of CD137 agonists in 
+cancer treatment promotes tumor shrinkage by enhancing the cytotox­
+icity of T-cells [122]. CD137 is expressed on tumor endothelial cells, 
+does not present on normal endothelium, and is minimally expressed on 
+tumor cells or in inflamed tissues, as observed in human tissue samples. 
+Positive staining to CD137 was observed in the vessels of 32 % of ma­
+lignant tumor tissue samples [100]. Analysis of human melanoma brain 
+metastases showed the expression of CD137 on both cancer and endo­
+thelial cells [123]. Expression of CD137 at the protein level can be 
+increased under hypoxic conditions [124]. The presence of CD137 on 
+pathological endothelium is not specific to a particular tumor type and 
+can be found in colon and breast tumors, both in transplanted and 
+spontaneous models [124]. Anti-CD137 nanomedicines were not yet 
+used for chemotherapy but promoted immunotherapy through receptor 
+activation and increasing trafficking of T-cells to the tumor site [124]. 
+Liposomes decorated with anti-CD137 and interleukin-2 have shown 
+higher NP accumulation in tumor and anti-cancer activity without sys­
+tematic toxic effects [125]. However, CD137 is also found in inflamed 
+atherosclerotic lesions, suggesting that future therapies targeting CD137 
+should consider the potential for mistargeting tumors and side effects on 
+the cardiovascular system [126]. Utilizing NPs decorated with CD137 
+agonists may not only enhance NP delivery to tumor blood vessels but 
+also improve the cytotoxic effects of chemotherapy by stimulating im­
+mune cells.
+Serial analysis of gene expression in normal and tumor endothelial 
+cells identified several genes that are upregulated in tumor vasculature. 
+Some of these TEMs encode cell surface proteins available for NP tar­
+geting, such as TEM1, TEM5, TEM7 and TEM8 [96]. Recent studies 
+indicate that TEM1 (CD248) is expressed on the surface of fibroblasts 
+and a subset of pericytes associated with tumor blood vessels, but not on 
+the tumor endothelial cells [102]. TEM5, or the endothelial G-protein- 
+coupled receptor (Gpr124), plays a role in embryonic development of 
+brain blood vessels and function of blood–brain barrier [127]. Although 
+TEMs are general markers of angiogenesis, they are not specific to tu­
+mors and can be found during embryonic development. However, in 
+adults, cell surface TEMs are largely restricted to tumor endothelial cells 
+and are absent in the blood vessels of healthy tissues [103]. Therefore, 
+TEM5, TEM7 and TEM8 are potential targets for selective delivery to 
+tumor vasculature. To the best of our knowledge, anti-TEMs NPs are not 
+yet have been studied for targeted delivery of drugs to the tumor vessels 
+and cancer treatment.
+Matrix metalloproteinases (MMPs) are a family of both soluble and 
+membrane-anchored enzymes, whose primary function is the cleavage 
+of the extracellular matrix. MMPs are associated with angiogenesis, both 
+normal and pathological, as well as with the metastatic processes [128]. 
+MMP-2, MMP-9, and MMP-11 are overexpressed on the surface of tumor 
+vasculature and play a crucial role in tumor angiogenesis [96,104,106]. 
+Modification of the NP surface with MMP-sensitive polymers or encap­
+sulating drugs within MMP-cleavable polymers enhances drug delivery 
+to tumors through the activity of enzymes. These MMP-sensitive NP 
+delivery systems improve the treatment of both primary tumors and 
+metastases [129,130]. High efforts have been made to create anti-MMP- 
+2 antibodies [131,132], which could be used to modify the NP surface 
+for active targeting of MMP-2-positive endothelial cells.
+Plasmalemma vesicle-associated protein (PLVAP) is specifically 
+expressed on the cell surface of endothelium and participates in cardiac 
+development in embryos. PLVAP is not found in the heart of adult mice. 
+However, PLVAP is upregulated in abnormal endothelial cells in cancer, 
+heart injuries, traumatic spinal cord injury and several other diseases 
+[107,108]. Anti-PLVAP treatment of hepatocellular carcinoma admin­
+istrated through tumor-feeding artery resulted in thrombosis, blockade 
+of tumor vasculature, reduced blood flow and tumor necrosis [133]. 
+Conjugation of anti-PLVAP antibodies to NP surface may provide suffi­
+cient carrier accumulation in tumor vessels.
+Other receptors are less specific to the tumor neo-vasculature and are 
+also present on endothelial cells in inflamed tissues. However, several 
+studies demonstrated the potential of using these molecular targets to 
+improve cancer treatment with controlled and manageable side effects 
+[134–136]. Cell adhesion molecules (CAMs) are a family of cell–cell 
+recognition proteins found on the membranes of endothelial and im­
+mune cells [137]. Expression of several CAMs is upregulated in tumor 
+vessels making them viable molecular targets: vascular cell adhesion 
+molecule 1 (VCAM-1), intracellular adhesion molecule 1 (ICAM-1), 
+selectins, and integrins [134,136,138]. For instance, liposomes func­
+tionalized with anti-VCAM-1 antibodies showed preferential accumu­
+lation and retention in tumor vessels, while non-modified liposomes 
+were able to diffuse into the tumor interstitium [136]. P-selectin is an 
+intracellular CAM that can become extracellular after activation of 
+endothelial cells. Shamay et al. reported the induction of P-selectin 
+expression in tumor vessels after X-ray radiation, followed by localized 
+chemotherapy with fucoidan-based NPs [139].
+Numerous nanomedicine cancer treatments were demonstrated with 
+targeting by RGD (Arg-Gly-Asp) peptides, a minimal motif binding 
+integrins [135]. RGD-decorated NPs accumulate highly in tumors, for 
+example, in breast cancer [140] and glioma [141] models. Thermo­
+sensitive liposomes modified with the RGD motif showed high accu­
+mulation in tumor vasculature in melanoma, enhancing drug 
+penetration into the tumor interstitium after triggered intravascular 
+release [142]. Moreover, integrin activation with RGD motif can pro­
+mote endocytosis and transport of nanoparticles. Modification of drug- 
+loaded dendrimers with RGD-based peptides resulted in a 3-fold 
+improvement of nanocarrier permeation in a spheroid cancer model. 
+After systemic administration, the modified dendrimers demonstrated 
+increased tumor vascular permeability of doxorubicin, with significant 
+prolongation of mice survival [143].
+3.1.3. Design of nanoparticles for passive targeting of tumor vasculature
+Along with active targeting receptors of endothelial tumor cells, NPs 
+can be designed to have passive accumulation at the vasculature without 
+subsequent extravasation into malignant tissue. Tumor blood vessels 
+have elevated viscous and geometrical resistance, which reduces blood 
+flow compared to normal tissue [144,145]. Therefore, NPs of submicron 
+size are delivered and retained in tumor endothelium due to enhanced 
+shear stress. This is beneficial for the concept of drug delivery via 
+intravascular flash drug release [21,146]. Other characteristics of NPs 
+and blood vessels can influence NP retention in vasculature and can be 
+used for passive tumor targeting [147].
+To adhere to endothelial cells, NPs should marginate from the blood 
+flow towards the vessel wall. Numerous experimental and theoretical 
+studies have shown that the shape and size of NPs significantly influence 
+their margination behavior [148]. Once injected, NPs collide with each 
+other and with cells present in the blood, primarily erythrocytes. RBCs 
+tend to move toward the center of blood flow, influencing the distri­
+bution of NPs within the bloodstream. Vahidkhah and Bagchi theoreti­
+cally analyzed the shape-dependent behavior of submicron-sized 
+particles (spherical, cylindrical, and discoidal) in the presence of RBCs. 
+Discoidal particles align with the shear flow plane, leading to more 
+frequent collisions and greater lateral drift than microspheres. Cylin­
+drical particles align with the vorticity axis and have fewer collisions 
+and reduced lateral drift. Once marginated, cylindrical particles are 
+more likely to contact the wall due to their alignment and large angular 
+fluctuations. Simulations indicate that disk-like particles have the 
+highest probability of firm adhesion to the vessel wall, followed by 
+elongated particles and microspheres [149].
+Dynamic analysis with IVM highlights the margination-adhesion 
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+8
+behavior exhibited by individual particles with different shapes within 
+the tumor vasculature [146]. Among spherical, hemispherical, and 
+discoidal particles, the latter demonstrated a higher tendency to adhere 
+to the blood vessel wall and exhibited longer circulation times [150]. 
+Another study optically visualized the movement of spherical NPs with 
+sizes from 10 to 1000 nm in vivo. Particles smaller than 100 nm moved 
+uniformly with RBCs and showed limited near-wall accumulation, 
+whereas larger particles tended to accumulate preferentially along 
+vessel walls, with approximately 70 % of 1000-nm particles found near 
+the endothelium [151]. Further in vivo tracking of discoidal and cylin­
+drical silicon NPs using IVM revealed that discoidal particles preferen­
+tially accumulated within the tumor vasculature. Discoidal particles 
+with 1000 × 400 nm size showed the highest tumor-to-liver accumu­
+lation ratio among the studied particles [146]. Thus, discoidal particles 
+of submicron size are preferred for enhanced margination and adher­
+ence to the tumor vasculature.
+Mechanical properties of NPs can significantly influence the 
+margination and adherence to endothelium [152]. From theoretical 
+calculations, stiff particles, i.e. those featuring higher Young’s elastic 
+moduli, have a higher probability to marginate towards the blood vessel 
+wall than soft analogs [153]. Nevertheless, adhesion of microparticles 
+can greatly depend on the wall shear rate in blood vessels. Fish et al. 
+investigated adhesion of ICAM-1-targeted soft and stiff microgels on 
+human endothelial monolayers under different blood flow conditions. 
+Soft microgels demonstrated better adhesion at low wall shear rate (200 
+s−1), while stiff microgels better bound to the endothelium at high shear 
+rate (1000 s−1) [154]. This finding led to the development of a multistep 
+delivery system, where deformable micro-sized particles are used to 
+deliver smaller NPs to the tumor vasculature. This system enhanced the 
+delivery of 50-nm polystyrene NPs 30-fold in comparison to the freely 
+injected NPs [154]. For active methods of NPs targeting, soft NPs tend to 
+demonstrate longer interaction with endothelial cells via enhanced 
+avidity of particles after flow-stress deformation [155].
+In addition to longer retention in tumor vessels, soft nanoparticles 
+have lower interaction with immune cells and macrophages. As a 
+consequence, soft nanomaterials usually have longer blood circulation 
+time than hard counterparts [156,157]. Key et al. compared the bio­
+distribution of 1000 × 400 nm discoidal polymeric NPs with Young’s 
+modulus of 1.3 and 15 kPa [158]. Stiffer NPs showed higher deposition 
+in Kupffer cells and along vascular walls of liver. Soft counterparts were 
+distributed with 6-fold higher area density in vasculature of B16-F1 
+melanoma model [158]. Similar results were obtained by comparing 
+biodistribution of polymeric nanogels, where liver uptake increased 
+with the increase of Young’s modulus of NPs from 80 kPa to 420 kPa 
+[157]. Uptake by tumor cells is also lower for soft NPs. Guo et al. 
+analyzed uptake of NPs with moduli varied from 45 kPa to 19 MPa and 
+found up to a five-fold in vitro cellular uptake and 2.6-fold higher in vivo 
+tumor uptake for soft NPs [159]. However, small soft nanoparticles were 
+shown to permeate tumor due to lower interaction with extracellular 
+stroma and deformability [160,161].
+One of the most effective ways to target a specific site is to mimic 
+natural solutions already existing in the body. Exosomes or extracellular 
+vesicles are enclosed compartments with sizes up to 200 nm, produced 
+by various cell types and used for cell–cell communication through the 
+transport of biological molecules [162]. While exosomes can naturally 
+recognize specific cell types, their isolation in high quantity is compli­
+cated. Thus, artificially engineered membrane-derived nanovesicles 
+(MDNs), or cell nanoghosts, were proposed for tumor homing. These 
+MDNs combine targeting moiety from the surface molecules of the 
+parent cell, incorporation of cytotoxic component for cancer treatment, 
+and reproducibility of nanovesicles production [163]. As MDNs preserve 
+the biological function of the cell membrane, their biodistribution and 
+blood circulation depend on the parent cell type [24]. A comparison of 
+biodistributions of neutrophil- and erythrocyte-derived nanovesicles by 
+means of IVM revealed that only neutrophil-derived MDNs exhibited 
+specific accumulation in inflamed endothelium, whereas RBC-derived 
+did not [164]. Several other cell types can target human tumors. For 
+instance, MDNs derived from mesenchymal stem cells demonstrated 
+specific targeting of cancer tissue with no accumulation in human pri­
+mary benign cells, owing to the natural ability of parental cells for 
+chemotaxis and surface interactions with susceptible tumors [165]. 
+Nanoghosts derived from cancer cell membranes have been shown to 
+self-recognize homotypic tumors, which can be utilized for drug delivery 
+[166].
+Alongside their application as drug carriers, MDNs can be used for 
+camouflaging NPs of different nature, including polymeric and inor­
+ganic materials [167]. Platelet membrane-coated nanogels have shown 
+a higher accumulation at tumor site compared to non-modified NPs, 
+with a 4-fold reduced tumor volume 16 days after the treatment. 
+Additionally, platelet-coated NPs significantly reduced the number of 
+metastatic nodules in lungs, while bare NPs did not show any anti- 
+metastatic activity [168]. Cancer cell-membrane coated PLGA NPs 
+recognized homologous tumors in vivo [169]. This recognition is specific 
+to homologous pair of membrane-camouflaged NPs and cancer cells 
+type. For instance, coating magnetic iron oxide NPs with cancer cell 
+membranes, provided 3-fold increase in doxorubicin tumor-specific 
+delivery by homotypic NPs, compared to heterotypic ones [170].
+To increase NP accumulation in tumor vasculature their surface can 
+be modified with neutrophil or leukocyte membranes [25,171]. 
+Neutrophil membrane-coated polymeric PEG-PLGA NPs have shown 
+enhanced internalization by inflamed endothelial cells in vitro and 
+improved retention in both orthotopic and ectopic pancreatic tumor 
+models. Site-specific release of celastrol from NPs significantly inhibited 
+primary tumor growth, prolonged mice survival and minimized liver 
+metastases [172]. In another study, decoration of discoidal silicon NPs 
+with leukocyte membrane increased NP attachment to tumor endothe­
+lium. Modified NPs mimicked leukocytes and had longer blood circu­
+lation time and higher accumulation in inflamed tumor endothelium, as 
+confirmed by IVM [173,174]. Incorporation of leukocyte membrane 
+proteins into liposomes increased accumulation of NPs in breast and 
+melanoma tumors [175,176]. Quantification from IVM images showed a 
+4.5-fold increase in liposomes concentration in vessel lumens and a 14- 
+fold increased presence in vessel walls after modification. This delivery 
+can be reduced or prevented by blocking the surface of liposomes with 
+antibodies against LFA-1 and CD45 proteins [175]. Further progress in 
+membrane-modified NPs could come from using hybrid cell membranes 
+[25]. For instance, camouflaging NPs with mixed membranes from RBCs 
+and immune cells can improve blood circulation by inhibiting phago­
+cytosis via CD47-signal regulatory protein alpha (SIRPα) pathway, while 
+maintaining endothelial targeting. However, the targeting of inflamed 
+tissues can result in off-target accumulation in conditions such as 
+atherosclerosis, stenosed vessels, and other vascular diseases [177,178]. 
+Therefore, a thorough evaluation of the risks and benefits is essential 
+before clinical implementation of vascular-targeted nanomedicines.
+3.2. Cell-mediated nanoparticle delivery
+In the EPR paradigm, many stealth NPs were designed to avoid non- 
+target interactions during circulation. Nevertheless, various types of 
+blood-circulating cells can enhance NP delivery to tumors [32,179]. 
+Neutrophils, lymphocytes, and monocytes naturally migrate to inflamed 
+tissues through chemotaxis, while infiltrating macrophages form up to 
+half of the tumor mass at advanced stages of cancer [180]. NPs can 
+utilize the natural routes of these cells to cross endothelial barriers, 
+either by anchoring to their surface or via internal uptake. In addition, 
+immune cell permeation through vascular barriers can promote delivery 
+of non-bonded NPs by inducing microleakages.
+Other cell-targeting strategies focus on delivering NPs to affected 
+organs. T-cells can transport drug-loaded NPs to lymphoid organs, 
+which are difficult to access from circulation [181]. RBCs can enhance 
+NP delivery to organs with high number of small capillaries, such as 
+lungs and brain [33]. These approaches can increase the specificity of 
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+9
+metastasis treatment in selected organs. The cell-mediated “hitchhiking” 
+of NPs can be achieved through ex vivo loading but can also occur 
+through in situ interactions within the bloodstream, influencing delivery 
+of non-stealth nanomaterials (Fig. 4A) [30,182]. The approaches pro­
+moting assembly of NPs with cells are summarized in Fig. 4B, C.
+IVM has become a valuable tool to study interactions of NPs with 
+circulating blood cells and their subsequent transport [32,179,183]. 
+With IVM, the insights on the uptake of NPs by phagocytes in circulation 
+and at the endothelial interface were provided, in particular for neu­
+trophils [32] and monocytes [183]. IVM proved feasibility for tracking 
+the dynamics of the NP transport bound to neutrophils via diapedesis. 
+This mechanism has emerged as critical for permeation of a wide variety 
+of nanomaterials into tumor [184,185]. Methods of intravital fluores­
+cence imaging are evolving to address the migration of phagocytes in 
+challenging environments, such as respiratory system, where motion 
+artifacts can hinder clear imaging [186]. As a result, IVM currently 
+emerges as a main method unlocking the potential of cell-mediated NP 
+delivery for improved cancer therapies.
+3.2.1. Delivery with neutrophils
+Neutrophils are the major population of circulating leukocytes 
+(50–70 %) and are the first responders to inflammation or injury. About 
+1011 neutrophils are produced in bone marrow daily and then cleared 
+with a short lifespan of 7 –20 h primarily by the bone marrow and liver 
+[188]. In certain tumor types, neutrophils are a major infiltrating im­
+mune cell population, playing a key role in acute inflammation. Their 
+recruitment is driven by the expression of CXC chemokines (e.g., CXCL5, 
+CXCL2, CXCL6), which mediate neutrophil migration through a process 
+known as the extravasation cascade (Fig. 4E) [189]. This begins when 
+circulating neutrophils are captured by endothelial E- and P-selectins, 
+which interact with glycoprotein ligands on the neutrophil surface (e.g., 
+P-selectin glycoprotein ligand-1, CD44, E-selectin ligand-1). Neutrophils 
+then roll along the endothelial wall until activated β2 integrins on their 
+surface form stable bonds with ICAM-1 glycoproteins on the endothe­
+lium, leading to deceleration and strong adhesion. Once adhered, neu­
+trophils extravasate into the interstitial space either by rearranging their 
+filamentous actin to form protrusions or by crossing the endothelium via 
+diapedesis. These protrusions respond to chemotactic gradients, allow­
+ing neutrophils to navigate through the endothelium, pericytes, and 
+basement membrane to reach the interstitium [190].
+Building on their role in inflammation and tumor infiltration, neu­
+trophils demonstrated the ability to enhance NP delivery. They can 
+induce leakages in the endothelial wall during transvascular migration, 
+facilitating the exit of NPs from circulation. This mechanism has been 
+shown across different human and murine tumor models, with treatment 
+efficiency positively correlated to neutrophil quantity in the peritumoral 
+vasculature [32]. Migrating neutrophils are also capable of breaching 
+the tumor vascular basement membrane surrounding the endothelium, 
+enabling deeper NP permeation into tumors [184].
+Neutrophils can sequester any systemically administered nano­
+materials, as was shown with 500-nm polystyrene particles, polylactic- 
+co-glycolic acid (PLGA) NPs of 100 and 260 nm sizes, 150-nm PEGy­
+lated liposomes, and 35-nm magnetic NPs [185,191–193]. This associ­
+ation alters the pharmacokinetic properties of both neutrophils and NPs 
+and works as a double-edged sword. First, it reduces the adhesion of 
+neutrophils to the endothelium and reroutes part of NPs to the liver 
+[191,194]. This feature was applied to mitigate fast infiltration of neu­
+trophils and therefore prevent acute inflammation in tissues [194]. On 
+the other hand, neutrophils and other marginating leukocytes can act as 
+reservoirs transporting NPs from vasculature to tumor interstitium. The 
+example of NP uptake and extravasation to tumor in vivo is shown in 
+Fig. 4F. Targeting activated neutrophils with anti-CD11b antibodies 35- 
+fold increased tumor delivery of gold nanorods compared to PEGylated 
+nanorods [195]. Targeting neutrophils can promote their activation, 
+where the antitumor N1 phenotype is advantageous for cancer treat­
+ment, as it enhances the release of primary granules with 
+myeloperoxidase (MPO). MPO release remained unchanged when neu­
+trophils were loaded with anti-CD11b-functionalized 240-nm spheric 
+polymeric NPs [196], but increased significantly when larger disk- 
+shaped microparticles were attached (6 µm diameter, 625 nm thick­
+ness). The mechanism of activation is mediated by providing cells with 
+surface for adhesion and for fragment antigen-binding region (Fab) 
+mediated cross-linking of neutrophil’s receptors.
+Attachment of NPs onto neutrophils ex vivo remains an attractive 
+idea but presents challenges due to their short lifespan, potential 
+changes of their adhesion and activation, and adverse effects associated 
+with their transfusion. Large-scale neutrophil extraction can lead to 
+neutropenia syndrome in donor, characterized by a cytokine storm and 
+increased susceptibility to lung infections, while transfusion may cause 
+hypoxia [197]. Nevertheless, cancer treatment with chemotherapeutic 
+NPs (silica [198] and liposomes [199]) loaded into neutrophils was 
+shown to be significantly improved compared to standard neutrophil 
+infusion or NP administration in mice. In these studies, neutrophils 
+released NPs within the tumor interstitium. This process was concomi­
+tant with the release of neutrophil extracellular traps, an anti-microbial 
+extracellular fiber composed primarily of DNA and globular proteins.
+3.2.2. Delivery with monocytes and macrophages
+Monocytes circulating in the blood are key players of the innate 
+immune system, differentiating into macrophages and dendritic cells. 
+Their transport presents both‘ challenges and opportunities for NP-based 
+drug delivery. Monocyte-derived macrophages rapidly sequester NPs 
+from the bloodstream into tissues of the mononuclear phagocyte system 
+(MPS). To address this, strategies such as stealth coating of NPs or MPS 
+blockade have been developed to improve NP delivery in tumors 
+[49,200]. Nevertheless, monocytes can also be recruited to sites of 
+inflammation in tumor, where they differentiate into TAMs. This opens a 
+pathway for NPs to reach tumor tissues by “hitchhiking” on these cells 
+[201].
+Deprez et al. reported that myeloid-cell-mediated transport accounts 
+for 50–60 % of the delivery of lipid nanocarriers to inflamed tissue. 
+Importantly, PEGylation of liposomes decreased the uptake by MPS 
+cells, but the longer blood circulation time favored the uptake by 
+myeloid cells [193]. Another study by Garanina et al. showed that 
+liposomal and polymeric NPs were found in 80 % of circulating mono­
+cytes, highlighting the importance of these cells in interaction with NPs. 
+Huang et al. advanced monocyte targeting via the design of a series of 
+monocyte-binding aptamers anchored at lipid-based nanocarriers. The 
+aptamer functionalization significantly improved NP delivery in an 
+orthotopic pancreatic cancer model, characterized by high monocyte 
+infiltration [202]. Kuang et al. developed MMP-2 peptide-liposomes 
+loaded with doxorubicin and modified with lipoteichoic acid, a molecule 
+recognized by CD14 and toll-like receptor 2 (TLR2) on monocytes. These 
+NPs successfully reached glioblastomas after systemic administration by 
+hitchhiking on monocytes [203].
+Monocyte differentiation into TAMs presents another target for drug 
+delivery. Miller et al. conducted high-resolution microscopic imaging in 
+tumor-bearing mice with dorsal window chamber to show that TAMs 
+can act as long-term drug reservoirs in tumors [80]. They separately 
+monitored NPs, carrying platinum payload, and DNA damage at the 
+single-cell level and observed TAMs sequestration of the Pt followed by 
+its release into neighboring tumor cells. TAMs depletion significantly 
+reduced both NP accumulation within tumor and their effectiveness 
+[80]. The in vivo microscopic visualization of TAMs in this study was 
+achieved by using Cx3cr1GFP/+ reporter mice, where expression of GFP- 
+labeled fractalkine receptor (CX3CR1) indicated the population of the 
+host leukocytes on site [204]. Since TAMs could not be identified from 
+other CX3CR1-positive cells, these conclusions were made by synergiz­
+ing the IVM data with immunofluorescence histology and flow cytom­
+etry for macrophage-specific markers.
+IVM also demonstrated that TAMs can actively transport NPs from 
+stromal cells into the tumor interstitium (Fig. 4G, H) [29]. Lin et al. 
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+10
+(caption on next page)
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+11
+observed that passive diffusion of NPs is limited due to interaction with 
+extracellular matrix and stromal cells. Nevertheless, NPs can be engulfed 
+by TAMs and redistributed at 2–5 farther distances away from tumor 
+vessels, compared to passive diffusion [29]. TAMs-associated transport 
+was size-dependent and enhanced with an increase of NP size from 15 to 
+100 nm. It is likely that tumor-associated monocytes demonstrate 
+similar mechanisms of intratumoral transport during the infiltration 
+process, as they have higher mobility than differentiated macrophages 
+[205].
+Monocyte- and macrophage-mediated NP delivery is a promising 
+approach for boosting efficiency of targeted cancer nanotherapy. How­
+ever, these strategies depend on tumor’s ability to recruit myeloid cells 
+and the viability of transport cells. After uptake of NPs by macrophages, 
+they are processed into endosomes and subsequently into lysosomes for 
+degradation, where the payload can be released and may damage host 
+cells, limiting their movement. Therefore, these transport methods are 
+more appropriate for delivering pro-drugs or NPs activable by external 
+stimuli.
+3.2.3. Delivery with lymphocytes
+The high heterogeneity of the EPR effect makes the treatment of 
+highly disseminated diseases and tumors with poor angiogenesis chal­
+lenging. One such tumor type is lymphoma, which spreads to numerous 
+tissues through the lymphatic system. Lymphocytes demonstrate a 
+physically optimized amoeboid migration that enables flexible trans­
+port, and a homing process regulated by adhesion molecules and che­
+mokines [206]. Therefore, healthy lymphocytes, such as T-cells, can 
+serve as vehicles for NPs targeting lymphoma tumors, mimicking the 
+behavior of cancer cells. Huang et al. expanded autologous polyclonal T- 
+cells ex vivo under conditions that promoted their homing to lymphoid 
+organs and attached NPs to their surface. This resulted in a 100-fold 
+increase in the concentration of NPs in lymph nodes compared to stan­
+dard intravenous administration [181]. The anti-lymphoma drug SN-38, 
+loaded into these NPs, accumulated in the lymph nodes 90-fold more 
+efficiently than the free drug, even when the latter was administered at a 
+10-fold higher dose. This significant increase in drug transport was also 
+observed in other lymphoid organs, such as spleen and bone marrow, 
+providing better targeting of disseminated lymphoma sites [181].
+T-cells have shown promise in delivering nanotherapeutics to a va­
+riety of other tumor types. Lipid NPs loaded with an interleukin-15 
+super-agonist complex (IL-15Sa) and interleukin-21 (IL-21) were con­
+jugated to CD8 + T-cells, improving drug delivery to melanoma in mice 
+[187]. This strategy resulted not only in the transport of NPs to tumors 
+but also in a 10-fold increase in T-cell expansion and enhanced tumor 
+eradication triggered by the release of bioactive cytokines. Notably, the 
+attachment of NPs to the cells did not affect their proliferation or other 
+key cellular functions, preserving therapeutic potential of the T-cells 
+[187]. Tang et al. advanced this strategy by attaching nanogels to T-cells 
+through the CD45 receptor [207]. These nanogels selectively released 
+their drug cargo in response to T-cell receptor (TCR) activation, which 
+occurs when the T-cells recognize antigens in the TME. This method 
+allowed for at least 8-fold higher cytokine doses to be delivered in tu­
+mors without toxicity. IL-15Sa drug release from nanogels induced 16- 
+fold greater expansion of T-cells compared to systemic administration 
+of free cytokine, and improved therapy of murine melanoma allografts 
+and human glioblastoma xenografts. Considering advances of chimeric 
+antigen receptor T-cell (CAR-T) therapy in humans [208], NP transport 
+with T-cells presents an innovative approach capable of synergizing 
+different modes for cancer treatment.
+3.2.4. Delivery by red blood cells
+RBCs are flexible vehicles with a long circulation time (~120 days in 
+humans), which have long been used for improving pharmacokinetics of 
+drugs, biomolecules and NPs [209]. Unlike immune cells, RBCs do not 
+typically extravasate through endothelial walls or adhere to them. 
+However, the high deformability of RBCs enables them to pass through 
+capillaries smaller than their own diameter (~ 6–7 µm). This gives an 
+opportunity to transport NPs to endothelial walls in certain organs by 
+detachment of particles under shear stress during erythrocyte movement 
+(Fig. 4I) [210].
+The feasibility of erythrocytes as shuttles to the endothelium was 
+first demonstrated by groups of Mitragotri and Muzykantov, where 
+intravenous infusion of RBCs with non-covalently anchored polystyrene 
+NPs led to more than a 7-fold increase in NP delivery to lungs [211]. A 
+40-fold enhancement in lung delivery was further observed for lipo­
+somes after optimization of the loading protocols on RBCs [33]. Notably, 
+Brenner et al. revealed that adsorption of nanogels onto RBCs facilitates 
+the delivery of these particles to both endothelial cells and lymphocytes 
+in inflamed lungs (Fig. 4J, K) [33]. The enhanced accumulation of NPs 
+in lungs is also physiologically favored by large cardiac output, exten­
+sive endothelial surface area (25 % – 30 % of the total endothelial sur­
+face in the body), and a slow blood flow relative to systemic circulation 
+[210].
+This delivery concept is promising for treating pulmonary metasta­
+ses, where cancer cells arrest and disseminate near the endothelium. 
+Triggering rapid payload release from NPs can induce diffusion-driven 
+drug permeation through the endothelium. Two different groups 
+demonstrated treatment or prevention of multiple melanoma metastases 
+in lungs via RBC-hitchhiking [212,213]. Erythrocyte-mediated delivery 
+of 100-nm chitosan-coated particles loaded with doxorubicin increased 
+lung accumulation of NPs up to 41 % of the injected dose. Doxorubicin 
+release induces a 3-fold decrease in the total number of pulmonary 
+metastatic nodes and a significant decrease in the average size of the 
+metastases [212]. Similarly, doxorubicin-loaded polymeric NPs assem­
+bled on the surface of RBCs demonstrated prolonged blood circulation 
+time and 10-fold higher drug accumulation in the lungs compared to 
+injection of non-bound nanoparticles. RBC-mediated delivery substan­
+tially inhibited tumor growth and improved survival outcomes in both 
+early- and late-stage melanoma models of pulmonary metastases [213].
+Erythrocytes can interact with certain NPs inside the blood vessel 
+and transport them to non-lung tumor types. Zhao et al. designed a li­
+brary of zwitterionic liposomes containing tertiary amine oxides. These 
+liposomes showed reversible binding to circulating RBCs through in­
+teractions with hydrophilic heads of membrane phospholipids and 
+detachment near the tumor site [214]. Two types of these carriers 
+demonstrated the infiltration of tumor via transcytosis through rapid 
+micropinocytosis and endoplasmic reticulum/Golgi-involved exocytosis 
+of NPs. The delivery of anticancer drugs in zwitterionic micelles 
+Fig. 4. Blood cells and immune cells transport nanoparticles. (A) NPs can be attached to specific isolated cells in vitro or can interact with them during circulation in 
+blood. (B) The main types of interactions of NPs with the cell membrane. (C,D) NPs can be anchored to the surface of blood cells and hitchhike on them (C) or can be 
+transported inside cells after the uptake (D). Bottom: optical imaging of both transport modes on immune blood cells, adapted with permission from ref. [187] and 
+ref. [185]. (E) Mechanism of extravascular transport of captured NPs by circulating leukocytes. (F) Interaction of 100 nm PLGA NPs (red) with neutrophils (Ly6G, 
+blue) inside the blood vessel (dotted line) and transport of NPs to the tumor microenvironment (TME). Scale bars are 20 µm. Adapted with permission from ref. [185]. 
+(G) Tumor-associated macrophages (TAMs) capture NPs in tumor stroma and redistribute them in microenvironment. (H) IVM images showing the uptake and 
+migration of NPs (grey) captured by macrophages (blue) from the blood vessel (red) into the tumor over time. Scale bars are 10 µm. Adapted with permission from 
+ref. [29]. (I) NPs, hitchhiked on RBCs, can detach at the endothelial wall of capillaries due to shear stress and be endocytosed by endothelial cells. Also, NPs can be 
+transferred from RBC to marginated leukocytes. (J) Electron microscopy image of nanogel adsorption on RBCs. Scale bar is 1 µm. (K) Micrographs of lungs after 
+treatment with nanogel-loaded RBCs. Nanogels (red) are absorbed by pulmonary capillary endothelial cells (VE-cadherin, blue) and resident leukocytes (NIMP, 
+green). Scale bars are 100 µm. Images from (J) and (K) are adapted with permission from ref. [33]. Graphic schemes are created with BioRender.com.
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+12
+improves treatment of both human orthotopic HepG2 xenografts and 
+patient-derived tumors in mice [215]. This strategy illustrates how RBC 
+hitchhiking can be adapted to target a broader range of cancers beyond 
+pulmonary metastases.
+3.3. Transendothelial permeation of nanoparticles
+3.3.1. Vascular eruptions
+Disorganization of peritumoral vessels with the formation of static 
+gaps between endothelial cells with incomplete pericyte coverage was 
+considered the primary route for NP transport in the classical EPR 
+paradigm. One of the key oversights in this early understanding of the 
+EPR mechanism was the failure to account for its dynamic nature. This 
+aspect was highlighted in 2016 when Matsumoto et al. demonstrated 
+that, alongside static pores, some endothelial openings exhibit a sto­
+chastic and transient behavior (Fig. 5A) [52]. These time-limited dy­
+namic pores can randomly open across tumor vessels, allowing NPs to 
+erupt deeply into the tumor interstitium, driven by pressure gradient. 
+The escape of NPs through these pores creates a plume-shaped front in 
+the perivascular space, which then spreads over the interstitial space as 
+the pore closes. Using IVM, the progression of these eruptions was 
+visualized, showing bright single events in sub-micrometer endothelial 
+openings that later diffused across areas larger than 1000 µm2 (Fig. 5B) 
+[216]. These vascular eruptions were observed in mice bearing 
+pancreatic human BxPC3 adenocarcinoma xenografts and 4 T1 mam­
+mary carcinoma allografts [217–219].
+The effect of dynamic pores on NP extravasation becomes more 
+pronounced with the increase of particle size. Fluorescent NPs of 70-nm 
+diameter generated larger and longer-lived eruption plumes compared 
+to 30-nm NPs [52]. Through a combination of mathematical modeling 
+and in vivo imaging of breast cancer tumors, it was concluded that these 
+dynamic pores can reach diameters of at least 625 nm, allowing the 
+effective passage of sub-300 nm particles and even platelets [218]. 
+Dynamic pores coexist with static pores in the tumor-surrounding 
+vasculature, but vascular eruptions were identified as the primary 
+mechanism responsible for the extravasation of clinically approved 
+liposomal nanomedicine Doxil (85 nm) [52]. This highlights the need to 
+rethink and refine NP design strategies that have traditionally been 
+based on the static EPR model.
+Studies on murine breast cancer models have confirmed that dy­
+namic pores occur more frequently in vessels located within or adjacent 
+to tumor tissues compared to distant healthy regions. Moreover, for­
+mation of dynamic pores can be stimulated by damaging endothelium 
+(Fig. 5C). Naumenko et al. described two patterns of NP extravasation 
+through the dynamic pores [32], classified by the degree of NP leakage 
+(Fig. 5D-F). Microleakage, or local deposition of NPs in perivascular 
+space, was found in both cancer and healthy tissues. On the other hand, 
+macroleakages were observed in malignant tissues, characterized by 
+deep penetration of NPs in tissue through the basement membrane. The 
+distribution of leakages was heterogeneous between different tumor 
+types. Few eruptions were observed for human prostate cancer 22Rv1, 
+while an increase of macroleakages was found for orthotopic breast 4 T1 
+Fig. 5. Dynamic vascular openings participate in NP transport. (A) Illustration of the NP extravasation through static and dynamic pores to the tumor interstitium. 
+Static pores are constantly open for NP transport. Dynamic pores are short-living wide openings in the endothelium, allowing the extravasation of large quantities of 
+nanoparticles. (B) Time-lapse images of vascular burst (red circle) generated by 70-nm polymeric micelles (grey) in BxPC3 human xenografts. Scale bars are 100 μm. 
+Adapted with permission from ref. [216]. (C) Approaches for stimulation of vascular bursts. Local radiation therapy promotes the recruitment of myeloid cells, such 
+as monocytes and neutrophils, to the tumor site. The extravascular migration of cells is associated with NP eruptions. Endothelial cell–cell junctions can be breached 
+by local hyperthermia, while the detachment of pericytes can be achieved by inhibiting growth factors. (D) Illustration of micro- and macro-leakages of NPs promoted 
+by the extravasation of immune cells. Agglomerates of NPs are distributed along the vessel wall in intraendothelial pores and cannot diffuse deeply into tumor due to 
+basement membrane barrier. In microleakage, phagocytes cross NP pools but remain in the perivascular zone. Macroleakages occur when extravasating leukocytes 
+break the basement membrane, promoting NP release into the interstitium. (E,F) The time-lapse images of phagocyte-mediated leakages of liposomes (red) in mouse 
+tumor after neutrophil extravasation (Ly6G, green). Scale bars are 50 μm. Arrow points to migrating neutrophils. Adapted with permission from ref. [32]. Partially 
+created with BioRender.com.
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+13
+cancer, compared to ectopic model. Moreover, even different blood 
+vessels within one tumor demonstrated heterogeneous extravasation of 
+NPs.
+Several studies closely linked dynamic pore formation with the 
+damage in the basement membrane and the recruitment of immune cells 
+to the tumor site. The infiltration of neutrophils and monocytes into the 
+tumor has been shown to drive NP leakage, as these cells induce tem­
+porary disruptions in the vasculature [32,217]. Miller et al. demon­
+strated that low-dose radiation therapy, known to promote macrophage 
+recruitment, can trigger vascular bursts and enhance tumor uptake of 
+NPs ranging from 5 to 110 nm [219]. Moreover, the frequency and the 
+area of transient openings can be further increased by inhibiting TGFβ, 
+which disrupts intercellular junctions between endothelial cells and 
+pericytes, facilitating nanoparticle extravasation [216]. Wang et al. 
+demonstrated that NP eruptions could result from the release of accu­
+mulated pools in the space between endothelial cells and the basement 
+membrane. By inducing local hyperthermia in the tumor, they disrupted 
+vascular endothelial (VE)-cadherin junctions, leading to accumulation 
+of NPs at the basement membrane. The following eruptions were asso­
+ciated with neutrophil migration through the endothelial wall [184]. 
+Nevertheless, some reports did not identify a clear correlation between 
+immune cell presence in vasculature and NP eruption. For instance, 
+Hoechst staining of neutrophils in BxPC3 pancreatic cancer model has 
+revealed that NP eruptions can occur without cells nearby [52].
+3.3.2. Transcytosis through tumor blood vessels
+Transcytosis, an active and dynamic cellular process, enables the 
+transport of NPs across the endothelium. This mechanism involves the 
+internalization of NPs at the apical side, followed by their transport 
+across the cell and their eventual release into the tumor interstitium via 
+exocytosis or diffusion [220]. Unlike passive delivery mechanisms like 
+the EPR effect, transcytosis leverages cellular machinery, allowing NPs 
+to navigate through various endothelial features, such as intracellular 
+vesicles, vesicular-vacuolar organelles and thin fenestrae (Fig. 6A) [20]. 
+Sindhwani et al. quantified the density of intracellular and intercellular 
+gaps, and fenestrae across blood vessel perimeters in U87-MG glioblas­
+toma xenografts. They found that gaps were relatively rare events, with 
+only 1.1 gaps detected per millimeter of vessel length, and that only 27 
+% of them were classical intercellular channels typically associated with 
+the EPR effect. Vacuoles and fenestrae were observed at densities of 111 
+and 24 per millimeter, respectively. The frequency of different endo­
+thelial features was similar in mouse models and in clinical samples of 
+human cancer (Fig. 6B), while tumor vessels of cancer patients express 
+proteins associated with transcytosis [19]. This study highlights the 
+significant role of transcytosis in NP transport.
+IVM allows the capture of the dynamic aspect of NP extravasation by 
+analyzing NP signal colocalization with endothelial cells. Bright fluo­
+rescent spots from gold NPs were observed by microscopy in vicinity of 
+endothelial cells, described as different stages of transcytosis [19]. A 
+similar IVM pattern was observed for tumor permeation of albumin- 
+coated NPs [221] and single-walled carbon nanotubes [222]. Trans­
+cytosis can account for a substantial portion of NP transport. Sindhwani 
+et al. developed “Zombie” animal model obtained through whole-body 
+paraformaldehyde fixation of blood vessels. The accumulation of NPs 
+in this model can be only due to passive pathways, such as gaps, and 
+accounts for only 3–25 % of NP accumulation, dependent on NP size. 
+However, rational criticism exists regarding potential overestimation of 
+transcytosis contribution in “Zombie” model due to unexamined impacts 
+on pore structure by fixation methods [223]. Nevertheless, 3D micro­
+scopy demonstrated that gold NPs remained localized in the fixated 
+tumor vessels, while clear active extravasation of NPs was observed in 
+naïve mice.
+Fig. 6. Transcytosis through the endothelium in NP delivery. (A) Main pathways for transcellular transport of NPs through tumor endothelial cells: (i) recycling of 
+captured NPs from endosomes to the extracellular environment, (ii) migration within vesiculo-vacuolar organelles (VVOs), and (iii) permeation through fenestrae. 
+(B) Relative fraction of permeation-determining features of tumor endothelium (tight junctions, fenestrae, intercellular and intracellular gaps) in murine tumor 
+models and clinical tumor samples. Data reexamined from ref. [224]. (C) Main vesicular uptake pathways mediating transcytosis of NPs. Formation of vesicles is 
+triggered by specific receptors on the cell surface. (D-F) Special nanoparticle transport endothelial cells (N-TECs) responsible for NP transport: scheme of NP delivery 
+(D) and corresponding transmission electron micrographs of a tumor blood vessel (E,F). N-TECs are marked in green, endothelial cells in red, basement membrane in 
+blue. A solid black arrow indicates NP clusters in vacuoles of N-TECs, an open arrow shows NPs in the extravascular space at basolateral side. Scale bars are 5 μm (E) 
+and 1 μm (F). (G) IVM imaging of gold NP transport through N-TECs. Tumor blood vessels are pseudocolored in green, NPs in red. VL −
+vessel lumen. EV −
+extravascular space. The NP-associated plum moves toward the EV space with time. Scale bars are 50 μm (top) and 10 μm (bottom). Images in (D-G) adapted with 
+permission from ref. [224]. Partially created with BioRender.com.
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+14
+Several mechanisms can induce transcytosis of NPs (Fig. 6C). 
+Caveolae-mediated uptake is considered one of the primary transcytosis 
+initiators for macromolecules. This pathway is particularly active for 
+NPs presenting albumin on their surface, as albumin binds with caveolar 
+glycoprotein receptors (gp60 and gp90) on endothelial cells, facilitating 
+their transport toward the basolateral side [225–227]. Nevertheless, 
+caveolar-mediated endocytosis is also reported to take place for poly­
+styrene and metal NPs [227,228], as well as for PEGylated liposomes 
+[229]. Despite the estimated upper physical diameter of caveolae vesi­
+cles is 80 nm, NPs even larger than 200 nm have been reported to follow 
+caveolae-dependent uptake [230]. Clathrin-mediated endocytosis has 
+been identified responsible for the uptake of certain NP types, especially 
+particles functionalized with ligands for transferrin or leptin receptors 
+[231–233]. Liposomes functionalized with antibody against transferrin 
+receptor allow transport of NPs across the blood–brain barrier [231]. 
+The vesicles formed in clathrin-mediated uptake are typically 80–100  
+nm in diameter, but there is a variability in their size since polystyrene 
+particles larger 500 nm have been reported to internalize through a 
+clathrin-dependent mechanism [234]. Other receptor-dependent and 
+independent endocytosis mechanisms can also play a role in vascular 
+transcytosis. PEGylated liposomes with engineered transcytosis-targeted 
+peptide underwent transfer through monolayers of brain-derived 
+endothelial cells via lipid raft-mediated endocytosis [235]. Endocy­
+tosis modulated by ICAM-1 was reported in vascular endothelial cells for 
+targeted NPs [236]. Lin et al. reported that NPs can interact with 
+increased concentrations of platelet factor 4 in injured blood vessels to 
+induce uptake into endothelial cells [237]. Further studies required to 
+link transcytosis in tumor endothelial cells with certain uptake 
+mechanisms.
+Transendothelial transport of NPs in vivo predominantly occurs 
+within a specialized subpopulation of endothelial cells in tumor vessels, 
+known as NP transport endothelial cells (N-TECs) (Fig. 6D) [224]. These 
+N-TECs present only 21 % of tumor endothelial cells located on a small 
+number of vessels. They exhibit elevated levels of caveolin-1 and 
+clathrin-related gene expression, which are associated with the 
+enhanced accumulation of nanoparticles. Their involvement in NP 
+transcytosis was confirmed both by transmission electron microscopy 
+(Fig. 6E, F) and IVM (Fig. 6G).
+An alternative transcytosis pathway involves trafficking NPs through 
+the network of vesiculo-vacuolar organelles (VVOs) of tumor endothe­
+lial cells [20]. VVOs appear as cytoplasmic grape-like clusters, which 
+can form a connection between luminal and abluminal cell sides. VVOs 
+have been observed at least in the ovarian (MOT) and mammary (TA3/ 
+St) murine cancer models [238], as well as in patient-derived pancreatic 
+cancer xenografts [239]. Dvorak and colleagues accounted the VVOs as 
+the primary promoters of hyperpermeability of tumor vessels, although 
+their findings of VVO presence in endothelium were reported only in 
+limited solid and ascites tumor models in mice and guinea pigs [240]. 
+Liu et al. demonstrated that stimulating tumor endothelial cells with the 
+iRGD (CRGD[K/R]GP[D/E]C) peptide led to a significant increase in 
+VVO formation within 1 day in human pancreatic cancer models in mice 
+[239]. This peptide indirectly targeted the NRP-1 receptor via C-termi­
+nal CendR motif, resulting from iRGD cleavage upon binding to the 
+integrins on the tumor capillary endothelial surface, and eventually 
+triggered 
+transcytosis 
+through 
+VVOs 
+[241]. 
+Moreover, 
+co- 
+administration of iRGD with 130-nm lipid-coated silica NPs resulted in 
+a 4-fold increase in NP uptake in tumors [239]. This highlights the 
+critical role that VVO-mediated transcytosis may play in enhancing NP 
+delivery.
+Modification of surface properties of NPs can improve their trans­
+cytosis. Zhou et al. demonstrated that presentation of cationic moieties 
+on zwitterionic micelles enhanced caveolae-mediated endocytosis by 
+promoting interactions with endothelial cells [215,242]. Poly(2-(N- 
+oxide-N,N-diethylamino)ethyl methacrylate) (OPDEA) micelles, conju­
+gated to the anticancer drug SN38, showed tumor accumulation driven 
+by transcytosis. IVM revealed that micellar OPDEA-SN38 formulation 
+exhibited faster systemic clearance than PEGylated micelles, but rapidly 
+extravasated in the vascular endothelium and accumulated 2-fold 
+greater in tumor tissue [215]. Similarly, Wang et al. demonstrated that 
+cationic lipid NPs exhibited the greatest ability to traverse matrix gels, as 
+observed in endothelial (HUVEC) and breast cancer (MDA-MB-231) cell 
+models, compared to neutral and anionic analogs. This enhanced 
+translocation of NPs correlated with their better therapeutic outcomes in 
+models of hyperpermeable, poorly permeable, and metastatic tumors 
+[243]. Another strategy to improve delivery by transcytosis is to provide 
+albumin moieties on the surface of NPs. Wei et al. observed that micelles 
+coated with human serum albumin (HSA) achieved 7.2-fold higher 
+intratumoral delivery compared to uncoated micelles [221]. IVM 
+demonstrated that HSA-mediated transport was accompanied by pres­
+ence of multiple focal spots in the tumor interstitium, suggesting that 
+NPs are delivered by transcytosis route.
+Another strategy to improve transcytosis is through the regulation of 
+angiogenesis. Yamamoto et al. provided unexpected evidence that 
+silencing the vascular endothelial cell growth factor receptor 2 
+(VEGFR2) in hypervascular tumors significantly enhanced the uptake of 
+100-nm liposomes [244–246]. These findings were counter-intuitive 
+because VEGF is a key protein in cancer angiogenesis, and its knock­
+down is accompanied with the maturation of the tumor vasculature, 
+including increased pericyte coverage and increased endothelial cell 
+adhesion [246]. Nevertheless, such treatment increased the expression 
+of caveolin-1 protein in tumor endothelial cells, while knocking down 
+the caveolin-1 alongside with VEGFR2 abolished the enhanced accu­
+mulation of liposomes [245]. This supports the dominant role of 
+caveolae-mediated transcytosis in NP transport through mature vascu­
+lature. However, the approach of VEGFR2 silencing for transcytosis 
+improvement might be effective only in specific types of “vessel-rich” 
+cancers, while tumors with a stromal vessel type, such as colorectal and 
+breast cancer, may not respond to this therapy [247].
+4. IVM development for nanoparticle transport analysis
+A broad toolkit of optical microscopy techniques is available to 
+analyze the TME, visualize NP transport, and study their interactions 
+with various cells in the living body. A detailed discussion of these 
+techniques is beyond the scope of this review, as they have been 
+extensively reviewed elsewhere [15,248]. However, in this section, we 
+will survey the main achievements in the development of IVM, which 
+boosted progress in the field of NP delivery, and highlight further steps 
+required for the development of this area.
+In the pioneering paper describing the EPR effect, one of the proofs 
+was optical analysis of accumulation of Evans blue-albumin complex in 
+intradermal tumor compared to skin in mice [5]. Post-mortem analysis 
+provides limited information about processes involved in NP delivery. In 
+contrast, IVM methods enable the capture dynamics of the accumulation 
+and assess its heterogeneity by analyzing different tumor regions. In 
+1993, IVM was used to observe higher extravascular accumulation of 80- 
+nm PEGylated liposomes compared to conventional liposomes in rat 
+mammary adenocarcinoma [17]. Yuan et al. established a 400-nm cut- 
+off size for effective extravasation of liposomes in LS174T human xe­
+nografts [9]. Over the past decade, IVM has demonstrated its feasibility 
+for multiplex monitoring of the transport of NPs and their molecular 
+payloads in relation to various cell populations present in the TME [15].
+Despite this potential, high optical scattering and absorption of 
+biological tissues limit the IVM technique to visualizing only the surface 
+tumor vasculature. Multiphoton microscopy provides greater penetra­
+tion depth by relying on non-linear optical effects and pulsed near- 
+infrared (NIR) excitation (700 – 1300 nm). NIR light has reduced scat­
+tering and absorption in biological tissues compared to light with shorter 
+wavelengths, while non-linear absorption enables narrow localization of 
+emission at the focal plane [249]. A multiphoton microscope excites 
+fluorophores only within the focus volume, reducing photodamage and 
+allowing for the acquisition of optical slices without the use of confocal 
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+15
+pinholes. The combination of multiphoton microscopy and NPs that 
+absorb and emit light in the short-wave infrared region can further in­
+crease imaging depth to almost 1 mm [40,250,251]. Such nanomaterials 
+in most cases cannot be used as drug carriers by themselves but can serve 
+as companions to access tumor permeability.
+IVM analysis of deep-seated tumors benefits from introduction of 
+imaging windows. The dorsal window chamber technique involves 
+surgically implanting a titanium frame to support a transparent window 
+for microscopic probing of subcutaneous tumors and internal organs 
+[252]. This technology enables high-resolution analysis of NP transport 
+from the same vessels over extended periods but can be impractical for 
+accommodating growing tumors and may obstruct perfusion of the tis­
+sues. Moreover, the mechanotransductive effects of the window inter­
+face can influence tumorigenesis in these models [253]. The substitution 
+of the glass interface with flexible silicon membranes has recently been 
+proposed to perform microscopy of rapidly growing soft tissues [254]. 
+Perfusion window chambers incorporate microchannels for drug injec­
+tion and enable IVM studies of drug transport after local administration 
+in tumor surroundings [255]. Alternatively, optical tissue clearing 
+techniques offer an attractive pathway for microscopic imaging without 
+mechanical perturbation. Recently, it was demonstrated that the injec­
+tion of tartrazine dye can significantly reduce light scattering of lipids, 
+allowing the observation of abdominal organs without the need for 
+imaging chambers [256]. This and other tissue clearing techniques 
+[257] hold promise to improve analysis of NP transport in a minimally 
+disturbed microenvironment.
+The challenge posed to IVM as a pre-clinical cancer imaging modality 
+is the extension of its applicability to probing orthotopic tumors. IVM- 
+aided cancer research is predominantly focused on subcutaneous tu­
+mors, as their superficial localization facilitates clear imaging with 
+conventional single-photon microscopy systems and imaging chambers. 
+Orthotopic models provide a more reliable landscape for pre-clinical NP 
+delivery evaluation, as their microenvironment is native in vascularity, 
+cellular network and extracellular matrix structure. Some orthotopic 
+tumors can be accessed by developing organ-specific imaging windows 
+[258] and improving the signal-to-noise ratio of microscopy [259]. For 
+example, intravital two-photon microscopy with a transparent cranial 
+window has been used to analyze NP delivery in brain gliomas after TME 
+remodeling [260]. To name a few, pancreatic, liver, and breast tumors 
+can be accessed orthotopically using IVM and mechanisms of NP de­
+livery can differ significantly from those observed in ectopic tumors.
+Complex dynamics of NP interaction with cells in vivo can be eluci­
+dated by advanced fluorescence imaging tools. Standard fluorescence 
+imaging can be enhanced by fluorescence lifetime imaging microscopy 
+(FLIM). FLIM provides information on the interaction of fluorophores 
+with surrounding environment based on the changes in their fluores­
+cence lifetime [261]. A fluorophore’s lifetime can be significantly 
+affected by F¨orster resonance energy transfer (FRET), where the lifetime 
+of an energy donor is shortened in proximity to an acceptor. For 
+example, intravital FRET-assisted FLIM allowed longitudinal imaging of 
+doxorubicin intercalation into GFP-tagged chromatin of cancer cells in 
+tumor nodules in mouse peritoneum [262]. Similarly, FLIM can indicate 
+localization of NPs and their payloads at subcellular level. Furthermore, 
+FLIM can distinguish between released and encapsulated payloads in 
+tumors. For instance, the fluorescence lifetime of free porphyrazine 
+molecules is approximately four times shorter than that of NP-loaded 
+ones, reflecting differences in intramolecular rotation and local viscos­
+ity [21].
+However, detailed analysis of mechanisms of NP delivery requires 
+the integration of additional imaging techniques to overcome limita­
+tions of IVM. While IVM allows for high-magnification observations at 
+the cellular level, it is less suited for capturing accumulation at the organ 
+level. The same fluorescent NPs used for IVM can often be adapted for 
+whole-body fluorescence imaging, establishing a full landscape of NP 
+delivery in animal models [40]. Another challenge with IVM is quanti­
+fication of NPs via fluorescence, as the signal can be significantly 
+influenced by the microenvironment. Reliable biodistribution mea­
+surement can be achieved through nuclear imaging techniques, partic­
+ularly single-photon emission computed tomography (SPECT) and 
+positron emission tomography (PET). These methods need the incor­
+poration of suitable tracer probes into NPs for accurate assessment of 
+their delivery in tissues.
+Looking ahead, a more precise analysis of NP behavior may be 
+facilitated by the application of artificial intelligence tools. Deep 
+leaning-based image restoration can play an important role in improving 
+the signal-to-noise ratio in deep tissue layers [259]. Furthermore, ma­
+chine learning algorithms can process various types of medical data to 
+perfume large-scale quantification of NP transport mechanisms, critical 
+step in addressing heterogeneity of nanomedicine accumulation in 
+clinical samples [263].
+The final challenge in the convergence of IVM with nanomedicine 
+will be validating different NP transport mechanisms in clinical settings. 
+The rapid dynamics and complexity of the processes require the use of 
+advanced microscopy techniques. In the current state, intraoperative 
+IVM technology enables visualization of tumor vasculature and mea­
+surement of blood flow [73,264]. To minimize invasiveness of obser­
+vations, confocal laser endomicroscopy can be employed during 
+laparoscopic procedures [265]. Enhancing the spatial resolution of these 
+techniques in clinical trials could potentially guide clinical decisions 
+regarding tumor stratification and treatment options.
+5. Conclusion
+Exploiting IVM techniques evolved the understanding of NP trans­
+port from belief in EPR-based accumulation through static pores to 
+involvement of multiple diverse pathways for tumor entry. Among the 
+most significant discoveries are the dynamic nature of the EPR effect, the 
+involvement of immune blood cells in NP transport, and the recognition 
+of active transcytosis of NPs via N-TECs. However, these mechanisms 
+have only been observed in animal xenograft models, which poorly 
+reflect the architecture of human tumors. Monocellular xenografts 
+exhibit low heterogeneity and limited genetic diversity. Employing 
+patient-derived xenografts or tumors grown from patient-derived cells 
+could improve the relevance of preclinical studies [13]. Development of 
+multicellular heterogenous tumors could benefit from the application of 
+IVM to assess the accuracy of these models. The use of advanced fluo­
+rescent cellular sensors for measuring acidity (pH), oxygenation (pO2), 
+solid stress and other parameters can precisely assess tissue heteroge­
+neity [74,266].
+Second, the accumulation of EPR-designed nanomaterials in clinic 
+was highly heterogeneous both in different regions of tumor and be­
+tween patients. The newly discovered routes of active NP transport are 
+likely subject to the same heterogeneity, which needs to be measured. 
+For now, immune cell infiltration levels vary significantly among pa­
+tients with the same tumor type [267,268]. Endothelial cells capable for 
+transcytosis of NPs are also distributed unevenly along the tumor 
+vasculature [224]. Therefore, it is crucial to evaluate the contributions 
+of different mechanisms to the overall transport of NPs and to develop 
+the capability to predict tumor response to various treatment options. 
+Companion diagnostic nanoagents have been proposed to assess the 
+passive accumulation of therapeutic nanocarriers in tumors via the EPR 
+effect [77,269]. Similar selective tracers should be developed to target 
+active NP transport mechanisms.
+Finally, if the EPR effect is not the sole mechanism, the constraints it 
+imposes on nanomedicine design need to be reassessed. For example, 
+stealth coatings of NPs have been developed to prolong circulation time 
+and reduce non-specific interactions with other cells, primarily of the 
+MPS [270]. However, these coatings can significantly affect interactions 
+with endothelial cells, neutrophils, and blood monocytes, potentially 
+limiting active transport of NPs to tumors. Recent studies have shown 
+that prolonged circulation time can be achieved even without stealth 
+coatings by injecting high doses of NPs [271] or by pre-blocking the MPS 
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+16
+[200,272]. In addition, a small NP size below 100 nm is beneficial for 
+both the EPR concept and for delivery via clathrin- or caveolin-mediated 
+transcytosis, due to the size limit of the endocytic vesicles. Nanoparticles 
+with larger sizes may exhibit better margination near tumor vasculature 
+and greater interaction with blood immune cells, facilitating 
+chemotaxis-mediated delivery. Therefore, the optimal size of NPs should 
+depend on the relative contributions of different pathways involved in 
+NP transport. It is essential to investigate the influence of other physi­
+cochemical properties of NPs, such as shape, rigidity, and functional 
+modifications, on the efficiency of different delivery mechanisms in 
+tumors.
+Funding.
+The work was supported by the Ministry of Science and Higher Ed­
+ucation of the Russian Federation, Agreement No. 075–15-2024–536. I. 
+V.Z. is supported by the Wenner-Gren Foundations, Sweden (grant No. 
+UPD2024-0182) .
+Declaration of competing interest
+The authors declare that they have no known competing financial 
+interests or personal relationships that could have appeared to influence 
+the work reported in this paper.
+Appendix A. Supplementary data
+Supplementary data to this article can be found online at https://doi. 
+org/10.1016/j.addr.2025.115550.
+Data availability
+No data was used for the research described in the article.
+References
+[1] M.J. Mitchell, M.M. Billingsley, R.M. Haley, M.E. Wechsler, N.A. Peppas, 
+R. Langer, Engineering precision nanoparticles for drug delivery, Nat. Rev. Drug 
+Discov. 20 (2021) 101–124, https://doi.org/10.1038/s41573-020-0090-8.
+[2] L. Sun, H. Liu, Y. Ye, Y. Lei, R. Islam, S. Tan, R. Tong, Y.-B. Miao, L. Cai, Smart 
+nanoparticles for cancer therapy, Sig Transduct Target Ther 8 (2023) 1–28, 
+https://doi.org/10.1038/s41392-023-01642-x.
+[3] A.C. Marques, P.J. Costa, S. Velho, M.H. Amaral, Functionalizing nanoparticles 
+with cancer-targeting antibodies: A comparison of strategies, J. Control. Release 
+320 (2020) 180–200, https://doi.org/10.1016/j.jconrel.2020.01.035.
+[4] F. Mahmoudian, A. Ahmari, S. Shabani, B. Sadeghi, S. Fahimirad, F. Fattahi, 
+Aptamers as an approach to targeted cancer therapy, Cancer Cell Int 24 (2024) 
+1–22, https://doi.org/10.1186/s12935-024-03295-4.
+[5] Y. Matsumura, H. Maeda, A new concept for macromolecular therapeutics in 
+cancer chemotherapy: mechanism of tumoritropic accumulation of proteins and 
+the antitumor agent smancs, Cancer Res. 46 (1986).
+[6] H. Maeda, J. Wu, T. Sawa, Y. Matsumura, K. Hori, Tumor vascular permeability 
+and the EPR effect in macromolecular therapeutics: a review, J. Control. Release 
+65 (2000), https://doi.org/10.1016/s0168-3659(99)00248-5.
+[7] T.P. Padera, A. Kadambi, T.E. di, C.M. Carreira, E.B. Brown, Y. Boucher, N.C. 
+Choi, D. Mathisen, J. Wain, E.J. Mark, L.L. Munn, R.K. Jain, Lymphatic metastasis 
+in the absence of functional intratumor lymphatics, Science (New York, N.Y.) 296 
+(2002). Doi: 10.1126/science.1071420.
+[8] T. Stylianopoulos, EPR-effect: Utilizing size-dependent Nanoparticle Delivery to 
+Solid Tumors, Ther. Deliv. 4 (2013) 421–423, https://doi.org/10.4155/tde.13.8.
+[9] F. Yuan, M. Dellian, D. Fukumura, M. Leunig, D.A. Berk, V.P. Torchilin, R.K. Jain, 
+Vascular permeability in a human tumor xenograft: molecular size dependence 
+and cutoff size, Cancer Res. 55 (1995).
+[10] F. Tong, Y. Wang, H. Gao, Progress and challenges in the translation of cancer 
+nanomedicines, Curr. Opin. Biotechnol. 85 (2024) 103045, https://doi.org/ 
+10.1016/j.copbio.2023.103045.
+[11] J. Fang, W. Islam, H. Maeda, Exploiting the dynamics of the EPR effect and 
+strategies to improve the therapeutic effects of nanomedicines by using EPR effect 
+enhancers, Adv. Drug Deliv. Rev. 157 (2020) 142–160, https://doi.org/10.1016/ 
+j.addr.2020.06.005.
+[12] H. Maeda, Toward a full understanding of the EPR effect in primary and 
+metastatic tumors as well as issues related to its heterogeneity, Adv. Drug Deliv. 
+Rev. 91 (2015) 3–6, https://doi.org/10.1016/j.addr.2015.01.002.
+[13] S. Jeon, E. Jun, H. Chang, J.Y. Yhee, E.-Y. Koh, Y. Kim, J.Y. Jung, E.J. Jeong, J. 
+W. Lee, M.K. Shim, H.Y. Yoon, S. Chang, K. Kim, S.C. Kim, Prediction the clinical 
+EPR effect of nanoparticles in patient-derived xenograft models, J. Control. 
+Release 351 (2022) 37–49, https://doi.org/10.1016/j.jconrel.2022.09.007.
+[14] L.N.M. Nguyen, W. Ngo, Z.P. Lin, S. Sindhwani, P. MacMillan, S.M. Mladjenovic, 
+W.C.W. Chan, The mechanisms of nanoparticle delivery to solid tumours, Nat Rev 
+Bioeng 2 (2024) 201–213, https://doi.org/10.1038/s44222-024-00154-9.
+[15] J. Momoh, D. Kapsokalyvas, M. Vogt, S. Hak, F. Kiessling, M. van Zandvoort, 
+T. Lammers, A.M. Sofias, Intravital microscopy for real-time monitoring of drug 
+delivery and nanobiological processes, Adv. Drug Deliv. Rev. 189 (2022) 114528, 
+https://doi.org/10.1016/j.addr.2022.114528.
+[16] F. Yuan, M. Leunig, S.K. Huang, D.A. Berk, D. Papahadjopoulos, R.K. Jain, 
+Microvascular permeability and interstitial penetration of sterically stabilized 
+(stealth) liposomes in a human tumor xenograft, Cancer Res. 54 (1994).
+[17] N.Z. Wu, D. Da, T.L. Rudoll, D. Needham, A.R. Whorton, M.W. Dewhirst, 
+Increased microvascular permeability contributes to preferential accumulation of 
+Stealth liposomes in tumor tissue, Cancer Res. 53 (1993).
+[18] Q. Lin, P. Fathi, X. Chen, Nanoparticle delivery in vivo: A fresh look from 
+intravital imaging, eBioMedicine 59 (2020) 102958. Doi: 10.1016/j. 
+ebiom.2020.102958.
+[19] S. Sindhwani, A.M. Syed, J. Ngai, B.R. Kingston, L. Maiorino, J. Rothschild, 
+P. MacMillan, Y. Zhang, N.U. Rajesh, T. Hoang, J.L.Y. Wu, S. Wilhelm, A. Zilman, 
+S. Gadde, A. Sulaiman, B. Ouyang, Z. Lin, L. Wang, M. Egeblad, W.C.W. Chan, The 
+entry of nanoparticles into solid tumours, Nat. Mater. 19 (2020) 566–575, 
+https://doi.org/10.1038/s41563-019-0566-2.
+[20] Q. Zhou, J. Li, J. Xiang, S. Shao, Z. Zhou, J. Tang, Y. Shen, Transcytosis-enabled 
+active extravasation of tumor nanomedicine, Adv. Drug Deliv. Rev. 189 (2022) 
+114480, https://doi.org/10.1016/j.addr.2022.114480.
+[21] B.V. Parakhonskiy, N.Y. Shilyagina, O.I. Gusliakova, A.B. Volovetskiy, A. 
+B. Kostyuk, I.V. Balalaeva, L.G. Klapshina, S.A. Lermontova, V. Tolmachev, 
+A. Orlova, D.A. Gorin, G.B. Sukhorukov, A.V. Zvyagin, A method of drug delivery 
+to tumors based on rapidly biodegradable drug-loaded containers, Appl. Mater. 
+Today 25 (2021) 101199, https://doi.org/10.1016/j.apmt.2021.101199.
+[22] T.D. Clemons, R. Singh, A. Sorolla, N. Chaudhari, A. Hubbard, K.S. Iyer, 
+Distinction Between Active and Passive Targeting of Nanoparticles Dictate Their 
+Overall Therapeutic Efficacy, Langmuir 34 (2018) 15343–15349, https://doi. 
+org/10.1021/acs.langmuir.8b02946.
+[23] M.A. Abakumov, N.V. Nukolova, M. Sokolsky-Papkov, S.A. Shein, T.O. Sandalova, 
+H.M. Vishwasrao, N.F. Grinenko, I.L. Gubsky, A.M. Abakumov, A.V. Kabanov, V. 
+P. Chekhonin, VEGF-targeted magnetic nanoparticles for MRI visualization of 
+brain tumor, Nanomedicine: Nanotechnology, Biology and Medicine 11 (2015) 
+825–833, https://doi.org/10.1016/j.nano.2014.12.011.
+[24] M.Y.N. Thanuja, C.N. Anupama, S.H. Ranganath, Bioengineered cellular and cell 
+membrane-derived vehicles for actively targeted drug delivery: So near and yet so 
+far, Adv. Drug Deliv. Rev. 132 (2018), https://doi.org/10.1016/j. 
+addr.2018.06.012.
+[25] Y. Zhao, A. Li, L. Jiang, Y. Gu, J. Liu, Hybrid Membrane-Coated Biomimetic 
+Nanoparticles (HM@BNPs): A Multifunctional Nanomaterial for Biomedical 
+Applications, Biomacromolecules 22 (2021) 3149–3167, https://doi.org/ 
+10.1021/acs.biomac.1c00440.
+[26] I.V. Zelepukin, O.Y. Griaznova, K.G. Shevchenko, A.V. Ivanov, E.V. Baidyuk, N. 
+B. Serejnikova, A.B. Volovetskiy, S.M. Deyev, A.V. Zvyagin, Flash drug release 
+from nanoparticles accumulated in the targeted blood vessels facilitates the 
+tumour treatment, Nat. Commun. 13 (2022) 6910, https://doi.org/10.1038/ 
+s41467-022-34718-3.
+[27] A.C. Anselmo, S. Mitragotri, Cell-mediated delivery of nanoparticles: Taking 
+advantage of circulatory cells to target nanoparticles, J. Control. Release 190 
+(2014) 531–541, https://doi.org/10.1016/j.jconrel.2014.03.050.
+[28] L. An, Y. Wang, J. Lin, Q. Tian, Y. Xie, J. Hu, S. Yang, Macrophages-Mediated 
+Delivery of Small Gold Nanorods for Tumor Hypoxia Photoacoustic Imaging and 
+Enhanced Photothermal Therapy, ACS Appl. Mater. Interfaces 11 (2019) 
+15251–15261, https://doi.org/10.1021/acsami.9b00495.
+[29] Z.P. Lin, L.N.M. Nguyen, B. Ouyang, P. MacMillan, J. Ngai, B.R. Kingston, S. 
+M. Mladjenovic, W.C.W. Chan, Macrophages Actively Transport Nanoparticles in 
+Tumors After Extravasation, ACS Nano 16 (2022) 6080–6092, https://doi.org/ 
+10.1021/acsnano.1c11578.
+[30] J.L. Betker, D. Jones, C.R. Childs, K.M. Helm, K. Terrell, M.A. Nagel, T. 
+J. Anchordoquy, Nanoparticle uptake by circulating leukocytes: A major barrier 
+to tumor delivery, J. Control. Release 286 (2018) 85–93, https://doi.org/ 
+10.1016/j.jconrel.2018.07.031.
+[31] M.E. Zamora, E.-O. Essien, K. Bhamidipati, A. Murthy, J. Liu, H. Kim, M.N. Patel, 
+J. Nong, Z. Wang, C. Espy, F.N. Chaudhry, L.T. Ferguson, S. Tiwari, E.D. Hood, O. 
+A. Marcos-Contreras, S. Omo-Lamai, T. Shuvaeva, E. Arguiri, J. Wu, L. Rauova, 
+M. Poncz, M.C. Basil, E. Cantu, J.D. Planer, K. Spiller, J. Zepp, V.R. Muzykantov, 
+J.W. Myerson, J.S. Brenner, Marginated Neutrophils in the Lungs Effectively 
+Compete for Nanoparticles Targeted to the Endothelium, Serving as a Part of the 
+Reticuloendothelial System, ACS Nano 18 (2024) 22275–22297, https://doi.org/ 
+10.1021/acsnano.4c06286.
+[32] V.A. Naumenko, K.Y. Vlasova, A.S. Garanina, P.A. Melnikov, D.M. Potashnikova, 
+D.A. Vishnevskiy, S.S. Vodopyanov, V.P. Chekhonin, M.A. Abakumov, A. 
+G. Majouga, Extravasating Neutrophils Open Vascular Barrier and Improve 
+Liposomes Delivery to Tumors, ACS Nano 13 (2019) 12599–12612, https://doi. 
+org/10.1021/acsnano.9b03848.
+[33] J.S. Brenner, D.C. Pan, J.W. Myerson, O.A. Marcos-Contreras, C.H. Villa, P. Patel, 
+H. Hekierski, S. Chatterjee, J.-Q. Tao, H. Parhiz, K. Bhamidipati, T.G. Uhler, E. 
+D. Hood, R.Y. Kiseleva, V.S. Shuvaev, T. Shuvaeva, M. Khoshnejad, I. Johnston, J. 
+V. Gregory, J. Lahann, T. Wang, E. Cantu, W.M. Armstead, S. Mitragotri, 
+V. Muzykantov, Red blood cell-hitchhiking boosts delivery of nanocarriers to 
+chosen organs by orders of magnitude, Nat Commun 9 (2018) 1–14, https://doi. 
+org/10.1038/s41467-018-05079-7.
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+17
+[34] M.A. Younis, H.M. Tawfeek, A.A.H. Abdellatif, J.A. Abdel-Aleem, H. Harashima, 
+Clinical translation of nanomedicines: Challenges, opportunities, and keys, Adv. 
+Drug Deliv. Rev. 181 (2022), https://doi.org/10.1016/j.addr.2021.114083.
+[35] A. Nagamitsu, T. Konno, T. Oda, K. Tabaru, Y. Ishimaru, N. Kitamura, Targeted 
+cancer chemotherapy for VX2 tumour implanted in the colon with lipiodol as a 
+carrier, European journal of cancer (Oxford, England 1990) 34 (1998). Doi: 
+10.1016/s0959-8049(98)00153-1.
+[36] A.E. Hansen, A.L. Petersen, J.R. Henriksen, B. Boerresen, P. Rasmussen, D.R. 
+Elema, P.M. af Rosensch¨old, A.T. Kristensen, A. Kjær, T.L. Andresen, Positron 
+Emission Tomography Based Elucidation of the Enhanced Permeability and 
+Retention Effect in Dogs with Cancer Using Copper-64 Liposomes, ACS Nano 9 
+(2015) 6985–6995. Doi: 10.1021/acsnano.5b01324.
+[37] A.A. Natfji, D. Ravishankar, H.M.I. Osborn, F. Greco, Parameters Affecting the 
+Enhanced Permeability and Retention Effect: The Need for Patient Selection, 
+J. Pharm. Sci. 106 (2017) 3179–3187, https://doi.org/10.1016/j. 
+xphs.2017.06.019.
+[38] D.P. Berger, L. Herbstritt, W.A. Dengler, D. Marm´e, R. Mertelsmann, H.H. Fiebig, 
+Vascular endothelial growth factor (VEGF) mRNA expression in human tumor 
+models of different histologies, Annals of Oncology Official Journal of the 
+European Society for Medical Oncology 6 (1995), https://doi.org/10.1093/ 
+oxfordjournals.annonc.a059322.
+[39] Y. Xie, Y. Hang, Y. Wang, R. Sleightholm, D.R. Prajapati, J. Bader, A. Yu, W. Tang, 
+L. Jaramillo, J. Li, R.K. Singh, D. Oupický, Stromal Modulation and Treatment of 
+Metastatic Pancreatic Cancer with Local Intraperitoneal Triple miRNA/siRNA 
+Nanotherapy, ACS Nano 14 (2020) 255–271, https://doi.org/10.1021/ 
+acsnano.9b03978.
+[40] J. Qi, C. Sun, A. Zebibula, H. Zhang, R.T.K. Kwok, X. Zhao, W. Xi, J.W.Y. Lam, 
+J. Qian, B.Z. Tang, Real-Time and High-Resolution Bioimaging with Bright 
+Aggregation-Induced Emission Dots in Short-Wave Infrared Region, Advanced 
+materials (Deerfield Beach, Fla.) 30 (2018) e1706856, https://doi.org/10.1002/ 
+adma.201706856.
+[41] H. Hashizume, P. Baluk, S. Morikawa, J.W. McLean, G. Thurston, S. Roberge, R. 
+K. Jain, D.M. McDonald, Openings between Defective Endothelial Cells Explain 
+Tumor Vessel Leakiness, Am. J. Pathol. 156 (2000) 1363–1380, https://doi.org/ 
+10.1016/S0002-9440(10)65006-7.
+[42] S.K. Hobbs, W.L. Monsky, F. Yuan, W.G. Roberts, L. Griffith, V.P. Torchilin, R. 
+K. Jain, Regulation of transport pathways in tumor vessels: Role of tumor type 
+and microenvironment, in: Proceedings of the National Academy of Sciences 95, 
+1998, pp. 4607–4612, https://doi.org/10.1073/pnas.95.8.4607.
+[43] T.P. Padera, B.R. Stoll, J.B. Tooredman, D. Capen, E. Di Tomaso, R.K. Jain, Cancer 
+cells compress intratumour vessels, Nature 427 (2004) 695, https://doi.org/ 
+10.1038/427695a.
+[44] A.J. Leu, D.A. Berk, A. Lymboussaki, K. Alitalo, R.K. Jain, Absence of Functional 
+Lymphatics within a Murine Sarcoma: A Molecular and Functional Evaluation, 
+Cancer Res 60 (2000) 4324–4327.
+[45] L.N.M. Nguyen, Z.P. Lin, S. Sindhwani, P. MacMillan, S.M. Mladjenovic, 
+B. Stordy, W. Ngo, W.C.W. Chan, The exit of nanoparticles from solid tumours, 
+Nat. Mater. 22 (2023) 1261–1272, https://doi.org/10.1038/s41563-023-01630- 
+0.
+[46] C. Wong, T. Stylianopoulos, J. Cui, J. Martin, V.P. Chauhan, W. Jiang, Z. Popovi´c, 
+R.K. Jain, M.G. Bawendi, D. Fukumura, Multistage nanoparticle delivery system 
+for deep penetration into tumor tissue, in: Proceedings of the National Academy 
+of Sciences 108, 2011, pp. 2426–2431, https://doi.org/10.1073/ 
+pnas.1018382108.
+[47] H. Soo Choi, W. Liu, P. Misra, E. Tanaka, J.P. Zimmer, B. Itty Ipe, M.G. Bawendi, 
+J.V. Frangioni, Renal clearance of quantum dots, Nat Biotechnol 25 (2007) 
+1165–1170, https://doi.org/10.1038/nbt1340.
+[48] I.V. Zelepukin, A.V. Yaremenko, M.V. Yuryev, A.B. Mirkasymov, I.L. Sokolov, S. 
+M. Deyev, P.I. Nikitin, M.P. Nikitin, Fast processes of nanoparticle blood 
+clearance: Comprehensive study, J. Control. Release 326 (2020) 181–191, 
+https://doi.org/10.1016/j.jconrel.2020.07.014.
+[49] E. Blanco, H. Shen, M. Ferrari, Principles of nanoparticle design for overcoming 
+biological barriers to drug delivery, Nat Biotechnol 33 (2015) 941–951, https:// 
+doi.org/10.1038/nbt.3330.
+[50] M. Longmire, P.L. Choyke, H. Kobayashi, Clearance properties of nano-sized 
+particles and molecules as imaging agents: considerations and caveats, 
+Nanomedicine (lond) 3 (2008) 703–717, https://doi.org/10.2217/ 
+17435889.3.5.703.
+[51] D. Shi, D. Beasock, A. Fessler, J. Szebeni, J.Y. Ljubimova, K.A. Afonin, M. 
+A. Dobrovolskaia, To PEGylate or not to PEGylate: Immunological properties of 
+nanomedicine’s most popular component, polyethylene glycol and its 
+alternatives, Adv. Drug Deliv. Rev. 180 (2022) 114079, https://doi.org/10.1016/ 
+j.addr.2021.114079.
+[52] Y. Matsumoto, J.W. Nichols, K. Toh, T. Nomoto, H. Cabral, Y. Miura, R.J. Christie, 
+N. Yamada, T. Ogura, M.R. Kano, Y. Matsumura, N. Nishiyama, T. Yamasoba, Y. 
+H. Bae, K. Kataoka, Vascular bursts enhance permeability of tumour blood vessels 
+and improve nanoparticle delivery, Nature Nanotech 11 (2016) 533–538, https:// 
+doi.org/10.1038/nnano.2015.342.
+[53] M.E.R. O’Brien, N. Wigler, M. Inbar, R. Rosso, E. Grischke, A. Santoro, R. Catane, 
+D.G. Kieback, P. Tomczak, S.P. Ackland, F. Orlandi, L. Mellars, L. Alland, 
+C. Tendler, Reduced cardiotoxicity and comparable efficacy in a phase IIItrial of 
+pegylated liposomal doxorubicin HCl(CAELYX™/Doxil®) versus conventional 
+doxorubicin forfirst-line treatment of metastatic breast cancer, Ann. Oncol. 15 
+(2004) 440–449, https://doi.org/10.1093/annonc/mdh097.
+[54] G.H. Petersen, S.K. Alzghari, W. Chee, S.S. Sankari, N.M. La-Beck, Meta-analysis 
+of clinical and preclinical studies comparing the anticancer efficacy of liposomal 
+versus conventional non-liposomal doxorubicin, J. Control. Release 232 (2016) 
+255–264, https://doi.org/10.1016/j.jconrel.2016.04.028.
+[55] K.A. Autio, R. Dreicer, J. Anderson, J.A. Garcia, A. Alva, L.L. Hart, M.I. Milowsky, 
+E.M. Posadas, C.J. Ryan, R.P. Graf, R. Dittamore, N.A. Schreiber, J.M. Summa, 
+H. Youssoufian, M.J. Morris, H.I. Scher, Safety and Efficacy of BIND-014, a 
+Docetaxel Nanoparticle Targeting Prostate-Specific Membrane Antigen for 
+Patients With Metastatic Castration-Resistant Prostate Cancer: A Phase 2 Clinical 
+Trial, JAMA Oncol. 4 (2018) 1344–1351, https://doi.org/10.1001/ 
+jamaoncol.2018.2168.
+[56] A. Marusyk, K. Polyak, Tumor heterogeneity: Causes and consequences, 
+Biochimica et Biophysica Acta (BBA) - Reviews on, Cancer 1805 (2010) 105–117, 
+https://doi.org/10.1016/j.bbcan.2009.11.002.
+[57] M. Sharifi, W.C. Cho, A. Ansariesfahani, R. Tarharoudi, H. Malekisarvar, S. Sari, 
+S.H. Bloukh, Z. Edis, M. Amin, J.P. Gleghorn, Hagen, Timo L. M. ten, M. Falahati, 
+An Updated Review on EPR-Based Solid Tumor Targeting Nanocarriers for Cancer 
+Treatment, Cancers 14 (2022) 2868. Doi: 10.3390/cancers14122868.
+[58] F. Danhier, To exploit the tumor microenvironment: Since the EPR effect fails in 
+the clinic, what is the future of nanomedicine? J. Control. Release 244 (2016) 
+108–121, https://doi.org/10.1016/j.jconrel.2016.11.015.
+[59] R. Duncan, Y.-N. Sat-Klopsch, A.M. Burger, M.C. Bibby, H.H. Fiebig, E. 
+A. Sausville, Validation of tumour models for use in anticancer nanomedicine 
+evaluation: the EPR effect and cathepsin B-mediated drug release rate, Cancer 
+Chemother Pharmacol 72 (2013) 417–427, https://doi.org/10.1007/s00280- 
+013-2209-7.
+[60] K.J. Harrington, G. Rowlinson-Busza, K.N. Syrigos, R.M. Abra, P.S. Uster, A. 
+M. Peters, J.S.W. Stewart, Influence of tumour size on uptake of111In-DTPA- 
+labelled pegylated liposomes in a human tumour xenograft model, Br J Cancer 83 
+(2000) 684–688, https://doi.org/10.1054/bjoc.2000.1320.
+[61] H.T. Nia, L.L. Munn, R.K. Jain, Physical traits of cancer, Science 370 (2020), 
+https://doi.org/10.1126/science.aaz0868.
+[62] S. Torosean, B. Flynn, J. Axelsson, J. Gunn, K.S. Samkoe, T. Hasan, M.M. Doyley, 
+B.W. Pogue, Nanoparticle uptake in tumors is mediated by the interplay of 
+vascular and collagen density with interstitial pressure, Nanomedicine: 
+Nanotechnology, Biology and Medicine 9 (2013) 151–158, https://doi.org/ 
+10.1016/j.nano.2012.07.002.
+[63] Q. Zhou, C. Dong, W. Fan, H. Jiang, J. Xiang, N. Qiu, Y. Piao, T. Xie, Y. Luo, Z. Li, 
+F. Liu, Y. Shen, Tumor extravasation and infiltration as barriers of nanomedicine 
+for high efficacy: The current status and transcytosis strategy, Biomaterials 240 
+(2020), https://doi.org/10.1016/j.biomaterials.2020.119902.
+[64] I.F. Tannock, G. Gordon Steel, Cell proliferation, drug distribution and 
+therapeutic effects in relation to the vascular system of solid tumours, Br J Cancer 
+128 (2023) 413–418, https://doi.org/10.1038/s41416-022-02109-6.
+[65] I.F. Tannock, C.M. Lee, J.K. Tunggal, D.S.M. Cowan, M.J. Egorin, Limited 
+Penetration of Anticancer Drugs through Tumor TissueA Potential Cause of 
+Resistance of Solid Tumors to Chemotherapy, Clin Cancer Res 8 (2002) 878–884.
+[66] R. Baghban, L. Roshangar, R. Jahanban-Esfahlan, K. Seidi, A. Ebrahimi-Kalan, 
+M. Jaymand, S. Kolahian, T. Javaheri, P. Zare, Tumor microenvironment 
+complexity and therapeutic implications at a glance, Cell Commun Signal 18 
+(2020) 1–19, https://doi.org/10.1186/s12964-020-0530-4.
+[67] X. He, Y. Yang, Y. Han, C. Cao, Z. Zhang, L. Li, C. Xiao, H. Guo, L. Wang, L. Han, 
+Qu. Zhiguo, Na. Liu, S. Han, Xu. Feng, Extracellular matrix physical properties 
+govern the diffusion of nanoparticles in tumor microenvironment, Proc. Natl. 
+Acad. Sci. u. s. a. 120 (2023), https://doi.org/10.1073/pnas.2209260120.
+[68] G. Helmlinger, F. Yuan, M. Dellian, R.K. Jain, Interstitial pH and pO2 gradients in 
+solid tumors in vivo: high-resolution measurements reveal a lack of correlation, 
+Nat. Med. 3 (1997), https://doi.org/10.1038/nm0297-177.
+[69] F.J. Voskuil, P.J. Steinkamp, T. Zhao, B. van der Vegt, M. Koller, J.J. Doff, 
+Y. Jayalakshmi, J.P. Hartung, J. Gao, B.D. Sumer, M.J.H. Witjes, G.M. van Dam, 
+Exploiting metabolic acidosis in solid cancers using a tumor-agnostic pH- 
+activatable nanoprobe for fluorescence-guided surgery, Nat. Commun. 11 (2020) 
+3257, https://doi.org/10.1038/s41467-020-16814-4.
+[70] S. Maritim, D. Coman, Y. Huang, J.U. Rao, J.J. Walsh, F. Hyder, Mapping 
+Extracellular pH of Gliomas in Presence of Superparamagnetic Nanoparticles: 
+Towards Imaging the Distribution of Drug-Containing Nanoparticles and Their 
+Curative Effect on the Tumor Microenvironment, Contrast Media Mol. Imaging 
+2017 (2017), https://doi.org/10.1155/2017/3849373.
+[71] A. Pluen, Y. Boucher, S. Ramanujan, T.D. McKee, T. Gohongi, E. Di Tomaso, E. 
+B. Brown, Y. Izumi, R.B. Campbell, D.A. Berk, R.K. Jain, Role of tumor-host 
+interactions in interstitial diffusion of macromolecules: cranial vs. subcutaneous 
+tumors, Proc. Natl. Acad. Sci. u. s. a. 98 (2001) 4628–4633, https://doi.org/ 
+10.1073/pnas.081626898.
+[72] H.S. Abyaneh, M. Regenold, T.D. McKee, C. Allen, M.A. Gauthier, Towards 
+extracellular matrix normalization for improved treatment of solid tumors, 
+Theranostics 10 (2020) 1960–1980, https://doi.org/10.7150/thno.39995.
+[73] D.T. Fisher, J.B. Muhitch, M. Kim, K.C. Doyen, P.N. Bogner, S.S. Evans, J. 
+J. Skitzki, Intraoperative intravital microscopy permits the study of human 
+tumour vessels, Nat Commun 7 (2016) 1–9, https://doi.org/10.1038/ 
+ncomms10684.
+[74] S. Zhang, G. Grifno, R. Passaro, K. Regan, S. Zheng, M. Hadzipasic, R. Banerji, 
+L. O’Connor, V. Chu, S.Y. Kim, J. Yang, L. Shi, K. Karrobi, D. Roblyer, M. 
+W. Grinstaff, H.T. Nia, Intravital measurements of solid stresses in tumours reveal 
+length-scale and microenvironmentally dependent force transmission, Nat. 
+Biomed. Eng 7 (2023) 1473–1492, https://doi.org/10.1038/s41551-023-01080- 
+8.
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+18
+[75] R.K. Jain, L.L. Munn, D. Fukumura, Dissecting tumour pathophysiology using 
+intravital microscopy, Nat Rev Cancer 2 (2002) 266–276, https://doi.org/ 
+10.1038/nrc778.
+[76] Y. Wang, H. Wang, J. Li, D. Entenberg, A. Xue, W. Wang, J. Condeelis, Direct 
+visualization of the phenotype of hypoxic tumor cells at single cell resolution in 
+vivo using a new hypoxia probe, IntraVital 5 (2016) e1187803, https://doi.org/ 
+10.1080/21659087.2016.1187803.
+[77] M.A. Miller, S. Gadde, C. Pfirschke, C. Engblom, M.M. Sprachman, R.H. Kohler, K. 
+S. Yang, A.M. Laughney, G. Wojtkiewicz, N. Kamaly, S. Bhonagiri, M.J. Pittet, O. 
+C. Farokhzad, R. Weissleder, Predicting therapeutic nanomedicine efficacy using 
+a companion magnetic resonance imaging nanoparticle, Science Translational 
+Medicine 7 (2015) 314ra183, https://doi.org/10.1126/scitranslmed.aac6522.
+[78] P. Malaney, S.V. Nicosia, V. Dav´e, One mouse, one patient paradigm: New avatars 
+of personalized cancer therapy, Cancer Lett. 344 (2014) 1–12, https://doi.org/ 
+10.1016/j.canlet.2013.10.010.
+[79] H.-J. Li, J.-Z. Du, X.-J. Du, C.-F. Xu, C.-Y. Sun, H.-X. Wang, Z.-T. Cao, X.-Z. Yang, 
+Y.-H. Zhu, S. Nie, J. Wang, Stimuli-responsive clustered nanoparticles for 
+improved tumor penetration and therapeutic efficacy, Proc. Natl. Acad. Sci. u. s. 
+a. 113 (2016) 4164–4169, https://doi.org/10.1073/pnas.1522080113.
+[80] M.A. Miller, Y.-R. Zheng, S. Gadde, C. Pfirschke, H. Zope, C. Engblom, R. 
+H. Kohler, Y. Iwamoto, K.S. Yang, B. Askevold, N. Kolishetti, M. Pittet, S. 
+J. Lippard, O.C. Farokhzad, R. Weissleder, Tumour-associated macrophages act as 
+a slow-release reservoir of nano-therapeutic Pt(IV) pro-drug, Nat Commun 6 
+(2015) 1–13, https://doi.org/10.1038/ncomms9692.
+[81] A.A. Manzoor, L.H. Lindner, C.D. Landon, J.-Y. Park, A.J. Simnick, M.R. Dreher, 
+S. Das, G. Hanna, W. Park, A. Chilkoti, G.A. Koning, T.L.M. ten Hagen, 
+D. Needham, M.W. Dewhirst, Overcoming Limitations in Nanoparticle Drug 
+Delivery: Triggered, Intravascular Release to Improve Drug Penetration into 
+Tumors, Cancer Res 72 (2012) 5566–5575, https://doi.org/10.1158/0008-5472. 
+CAN-12-1683.
+[82] N. Kamaly, B. Yameen, J. Wu, O.C. Farokhzad, Degradable Controlled-Release 
+Polymers and Polymeric Nanoparticles: Mechanisms of Controlling Drug Release, 
+Chem. Rev. 116 (2016) 2602–2663, https://doi.org/10.1021/acs. 
+chemrev.5b00346.
+[83] S. Eikenberry, A tumor cord model for Doxorubicin delivery and dose 
+optimization in solid tumors, Theor Biol Med Model 6 (2009) 1–20, https://doi. 
+org/10.1186/1742-4682-6-16.
+[84] L. Li, T.L.M. ten Hagen, M. Hossann, R. Süss, G.C. van Rhoon, A.M.M. Eggermont, 
+D. Haemmerich, G.A. Koning, Mild hyperthermia triggered doxorubicin release 
+from optimized stealth thermosensitive liposomes improves intratumoral drug 
+delivery and efficacy, J. Control. Release 168 (2013) 142–150, https://doi.org/ 
+10.1016/j.jconrel.2013.03.011.
+[85] M. Amin, T. Lammers, T.L.M. ten Hagen, Temperature-sensitive polymers to 
+promote heat-triggered drug release from liposomes: Towards bypassing EPR, 
+Adv. Drug Deliv. Rev. 189 (2022) 114503, https://doi.org/10.1016/j. 
+addr.2022.114503.
+[86] D. Luo, N. Li, K.A. Carter, C. Lin, J. Geng, S. Shao, W.-C. Huang, Y. Qin, G. 
+E. Atilla-Gokcumen, J.F. Lovell, Rapid Light-Triggered Drug Release in Liposomes 
+Containing Small Amounts of Unsaturated and Porphyrin-Phospholipids, Small 
+12 (2016) 3039–3047, https://doi.org/10.1002/smll.201503966.
+[87] Y.-J. Ho, C.-K. Yeh, Concurrent anti-vascular therapy and chemotherapy in solid 
+tumors using drug-loaded acoustic nanodroplet vaporization, Acta Biomater. 49 
+(2017) 472–485, https://doi.org/10.1016/j.actbio.2016.11.018.
+[88] J.L. Fernandez, S. Snipstad, A. Bjørkøy, C.d.L. Davies, Real-time multiphoton 
+intravital microscopy of drug extravasation in tumours during acoustic cluster 
+therapy, Cells 13 (2024) 349, https://doi.org/10.3390/cells13040349.
+[89] M. Welter, H. Rieger, Physical determinants of vascular network remodeling 
+during tumor growth, Eur. Phys. J. E 33 (2010) 149–163, https://doi.org/ 
+10.1140/epje/i2010-10611-6.
+[90] N. Buaron, A. Mangraviti, Y. Wang, A. Liu, M. Pedone, E. Sankey, I. Adar, 
+A. Nyska, R. Goldbart, T. Traitel, H. Brem, B. Tyler, J. Kost, Ultrasound inhibits 
+tumor growth and selectively eliminates malignant brain tumor in vivo, Bioeng. 
+Transl. Med. 9 (2024) e10660, https://doi.org/10.1002/btm2.10660.
+[91] A. Azagury, E. Amar-Lewis, Y. Yudilevitch, C. Isaacson, B. Laster, J. Kost, 
+Ultrasound Effect on Cancerous versus Non-Cancerous Cells, Ultrasound Med. 
+Biol. 42 (2016) 1560–1567, https://doi.org/10.1016/j. 
+ultrasmedbio.2016.02.005.
+[92] P.C. Lyon, M.D. Gray, C. Mannaris, L.K. Folkes, M. Stratford, L. Campo, D.Y. 
+F. Chung, S. Scott, M. Anderson, R. Goldin, R. Carlisle, F. Wu, F.V. Middleton, C. 
+C.C. Gleeson, Safety and feasibility of ultrasound-triggered targeted drug delivery 
+of doxorubicin from thermosensitive liposomes in liver tumours (TARDOX): a 
+single-centre, open-label, phase 1 trial, Lancet Oncol. 19 (2018), https://doi.org/ 
+10.1016/S1470-2045(18)30332-2.
+[93] M.D. Gray, P.C. Lyon, C. Mannaris, L.K. Folkes, M. Stratford, L. Campo, D.Y. 
+F. Chung, S. Scott, M. Anderson, R. Goldin, R. Carlisle, F. Wu, F.V. Middleton, C. 
+C.C. Gleeson, Focused Ultrasound Hyperthermia for Targeted Drug Release from 
+Thermosensitive Liposomes: Results from a Phase I Trial, Radiology 291 (2019), 
+https://doi.org/10.1148/radiol.2018181445.
+[94] T.L.M. ten Hagen, M.R. Dreher, S. Zalba, A.L.B. Seynhaeve, M. Amin, L. Li, 
+D. Haemmerich, Drug transport kinetics of intravascular triggered drug delivery 
+systems, Commun. Biol. 4 (2021), https://doi.org/10.1038/s42003-021-02428-z.
+[95] M. Howard, B.J. Zern, A.C. Anselmo, V.V. Shuvaev, S. Mitragotri, V. Muzykantov, 
+Vascular targeting of nanocarriers: perplexing aspects of the seemingly 
+straightforward paradigm, ACS Nano 8 (2014) 4100–4132, https://doi.org/ 
+10.1021/nn500136z.
+[96] B. St Croix, C. Rago, V. Velculescu, G. Traverso, K.E. Romans, E. Montgomery, A. 
+Lal, G.J. Riggins, C. Lengauer, B. Vogelstein, K.W. Kinzler, Genes expressed in 
+human tumor endothelium, Science (New York, N.Y.) 289 (2000) 1197–1202. 
+Doi: 10.1126/science.289.5482.1197.
+[97] A. Daiber, S. Steven, A. Weber, V.V. Shuvaev, V.R. Muzykantov, I. Laher, H. Li, 
+S. Lamas, T. Münzel, Targeting vascular (endothelial) dysfunction, Br. J. 
+Pharmacol. 174 (2017) 1591–1619, https://doi.org/10.1111/bph.13517.
+[98] S. Liu, J. Liang, Z. Liu, C. Zhang, Y. Wang, A.H. Watson, C. Zhou, F. Zhang, K. Wu, 
+Y. Lu, X. Wang, The Role of CD276 in Cancers, Front. Oncol. 11 (2021), https:// 
+doi.org/10.3389/fonc.2021.654684.
+[99] S. Seaman, Z. Zhu, S. Saha, X.M. Zhang, M.Y. Yang, M.B. Hilton, K. Morris, 
+C. Szot, H. Morris, D.A. Swing, L. Tessarollo, S.W. Smith, S. Degrado, D. Borkin, 
+N. Jain, J. Scheiermann, Y. Feng, Y. Wang, J. Li, D. Welsch, G. DeCrescenzo, 
+A. Chaudhary, E. Zudaire, K.D. Klarmann, J.R. Keller, D.S. Dimitrov, B. St, Croix, 
+Eradication of Tumors through Simultaneous Ablation of CD276/B7-H3-Positive 
+Tumor Cells and Tumor Vasculature, Cancer Cell 31 (2017) 501–515.e8, https:// 
+doi.org/10.1016/j.ccell.2017.03.005.
+[100] K. Broll, G. Richter, S. Pauly, F. Hofstaedter, H. Schwarz, CD137 Expression in 
+Tumor Vessel Walls: High Correlation With Malignant Tumors, Am J Clin Pathol 
+115 (2001) 543–549, https://doi.org/10.1309/E343-KMYX-W3Y2-10KY.
+[101] R.G. Bagley, N. Honma, W. Weber, P. Boutin, C. Rouleau, S. Shankara, S. Kataoka, 
+I. Ishida, B.L. Roberts, B.A. Teicher, Endosialin/TEM 1/CD248 is a pericyte 
+marker of embryonic and tumor neovascularization, Microvasc. Res. 76 (2008), 
+https://doi.org/10.1016/j.mvr.2008.07.008.
+[102] J.R. MacFadyen, O. Haworth, D. Roberston, D. Hardie, M.-T. Webster, H. 
+R. Morris, M. Panico, M. Sutton-Smith, A. Dell, P. van der Geer, D. Wienke, C. 
+D. Buckley, C.M. Isacke, Endosialin (TEM1, CD248) is a marker of stromal 
+fibroblasts and is not selectively expressed on tumour endothelium, FEBS Lett. 
+579 (2005) 2569–2575, https://doi.org/10.1016/j.febslet.2005.03.071.
+[103] E.B. Carson-Walter, D.N. Watkins, A. Nanda, B. Vogelstein, K.W. Kinzler, B. St, 
+Croix, Cell Surface Tumor Endothelial Markers Are Conserved in Mice and 
+Humans, Cancer Res 61 (2001) 6649–6655.
+[104] E.I. Deryugina, J.P. Quigley, Tumor angiogenesis: MMP-mediated induction of 
+intravasation- and metastasis-sustaining neovasculature, Matrix Biol. 44–46 
+(2015) 94–112, https://doi.org/10.1016/j.matbio.2015.04.004.
+[105] X. Zhang, S. Huang, J. Guo, L. Zhou, L. You, T. Zhang, Y. Zhao, Insights into the 
+distinct roles of MMP-11 in tumor biology and future therapeutics (Review), Int. 
+J. Oncol. 48 (2016), https://doi.org/10.3892/ijo.2016.3400.
+[106] P.C. Brooks, S. Str¨omblad, L.C. Sanders, T.L. von Schalscha, R.T. Aimes, W. 
+G. Stetler-Stevenson, J.P. Quigley, D.A. Cheresh, Localization of Matrix 
+Metalloproteinase MMP-2 to the Surface of Invasive Cells by Interaction with 
+Integrin αvβ3, Cell 85 (1996) 683–693, https://doi.org/10.1016/s0092-8674(00) 
+81235-0.
+[107] L. Denzer, W. Muranyi, H. Schroten, C. Schwerk, The role of PLVAP in endothelial 
+cells, Cell Tissue Res 392 (2023) 393–412, https://doi.org/10.1007/s00441-023- 
+03741-1.
+[108] Y. Sui, S. Kou, K. Ge, J. Cao, C. Liu, H. Zhang, Expression analysis of plvap in 
+mouse heart development, homeostasis and injury, Gene Expr. Patterns 50 (2023) 
+119343, https://doi.org/10.1016/j.gep.2023.119343.
+[109] V. Singh, R. Kaur, P. Kumari, C. Pasricha, R. Singh, ICAM-1 and VCAM-1: 
+Gatekeepers in various inflammatory and cardiovascular disorders, Clinica 
+chimica acta; international journal of clinical chemistry 548 (2023). Doi: 
+10.1016/j.cca.2023.117487.
+[110] S.R. Barthel, J.D. Gavino, L. Descheny, C.J. Dimitroff, Targeting selectins and 
+selectin ligands in inflammation and cancer, Expert Opin. Ther. Targets 11 
+(2007), https://doi.org/10.1517/14728222.11.11.1473.
+[111] R.J. Ludwig, M.P. Sch¨on, W.H. Boehncke, P-selectin: a common therapeutic target 
+for cardiovascular disorders, inflammation and tumour metastasis, Expert Opin. 
+Ther. Targets 11 (2007), https://doi.org/10.1517/14728222.11.8.1103.
+[112] M. Wickstr¨om, R. Larsson, P. Nygren, J. Gullbo, Aminopeptidase N (CD13) as a 
+target for cancer chemotherapy, Cancer Sci. 102 (2011), https://doi.org/ 
+10.1111/j.1349-7006.2010.01826.x.
+[113] A. Vogetseder, S. Thies, B. Ingold, P. Roth, M. Weller, P. Schraml, S.L. Goodman, 
+H. Moch, αv-Integrin isoform expression in primary human tumors and brain 
+metastases, Int. J. Cancer 133 (2013) 2362–2371-2371, https://doi.org/10.1002/ 
+ijc.28267.
+[114] A.J. Beer, M. Schwaiger, Imaging of integrin alphavbeta3 expression, Cancer 
+Metastasis Rev. 27 (2008), https://doi.org/10.1007/s10555-008-9158-3.
+[115] E.M. Fabricius, G.P. Wildner, U. Kruse-Boitschenko, B. Hoffmeister, S. 
+L. Goodman, J.D. Raguse, Immunohistochemical analysis of integrins αvβ3, αvβ5 
+and α5β1, and their ligands, fibrinogen, fibronectin, osteopontin and vitronectin, 
+in frozen sections of human oral head and neck squamous cell carcinomas, Exp. 
+Ther. Med. 2 (2011), https://doi.org/10.3892/etm.2010.171.
+[116] J. Hou, D. Yan, Y. Liu, P. Huang, H. Cui, The Roles of Integrin α5β1 in Human 
+Cancer, OncoTargets and Therapy 13 (2020), https://doi.org/10.2147/OTT. 
+S273803.
+[117] K. Flem-Karlsen, Ø. Fodstad, C.E. Nunes-Xavier, B7-H3 Immune Checkpoint 
+Protein in Human Cancer, Curr. Med. Chem. 27 (2020) 4062–4086, https://doi. 
+org/10.2174/0929867326666190517115515.
+[118] P.L. Crispen, Y. Sheinin, T.J. Roth, C.M. Lohse, S.M. Kuntz, X. Frigola, R. 
+H. Thompson, S.A. Boorjian, H. Dong, B.C. Leibovich, M.L. Blute, E.D. Kwon, 
+Tumor cell and tumor vasculature expression of B7-H3 predict survival in clear 
+cell renal cell carcinoma, Clin. Cancer Res. 14 (2008), https://doi.org/10.1158/ 
+1078-0432.CCR-08-0536.
+[119] J. Liang, Z. Liu, T. Pei, Y. Xiao, L. Zhou, Y. Tang, C. Zhou, K. Wu, F. Zhang, X. Yin, 
+N. Chen, X. Wei, Y. Lu, Y. Zhu, Clinicopathological and Prognostic Characteristics 
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+19
+of CD276 (B7-H3) Expression in Adrenocortical Carcinoma, Dis. Markers 2020 
+(2020), https://doi.org/10.1155/2020/5354825.
+[120] M. Izci, C. Maksoudian, F. Gonçalves, L. Aversa, R. Salembier, A. Sargsian, I. P´erez 
+Gilabert, T. Chu, C. Rios Luci, E. Bolea-Fernandez, D. Nittner, F. Vanhaecke, B. 
+B. Manshian, S.J. Soenen, Gold nanoparticle delivery to solid tumors: a 
+multiparametric study on particle size and the tumor microenvironment, 
+J Nanobiotechnol 20 (2022) 1–20, https://doi.org/10.1186/s12951-022-01727- 
+9.
+[121] B. Chen, K. Zheng, S. Fang, K. Huang, C. Chu, J. Zhuang, J. Lin, S. Li, H. Yao, 
+A. Liu, G. Liu, J. Lin, X. Lin, B7H3 targeting gold nanocage pH-sensitive 
+conjugates for precise and synergistic chemo-photothermal therapy against 
+NSCLC, J Nanobiotechnol 21 (2023) 1–19, https://doi.org/10.1186/s12951-023- 
+02078-9.
+[122] L. Liu, F. Chen, S. Li, T. Yang, S. Chen, Y. Zhou, Z. Lin, G. Zeng, P. Feng, H.B. Shu, 
+Q. Zhou, K. Ding, L. Chen, Human/mouse CD137 agonist, JNU-0921, effectively 
+shrinks tumors through enhancing the cytotoxicity of CD8+ T cells in cis and in 
+trans, Sci. Adv. 10 (2024), https://doi.org/10.1126/sciadv.adp8647.
+[123] M. Mittelbronn, M. Ronellenfitsch, H. Schwarz, B. Weide, P. Baumgarten, 
+S. Bernatz, R. Beschorner, A.-E. Blank, A. Braczynski, P. Harter, E. Hattingen, 
+Tumor necrosis factor receptor superfamily member 9 is upregulated in the 
+endothelium and tumor cells in melanoma brain metastasis, Neuroimmunol 
+Neuroinflammation 1 (2014) 135, https://doi.org/10.4103/2347-8659.143670.
+[124] A. Palaz´on, A. Teijeira, I. Martínez-Forero, S. Herv´as-Stubbs, C. Roncal, 
+I. Pe˜nuelas, J. Dubrot, A. Morales-Kastresana, J.L. P´erez-Gracia, M.C. Ochoa, 
+L. Ochoa-Callejero, A. Martínez, A. Luque, J. Dinchuk, A. Rouzaut, M. Jure- 
+Kunkel, I. Melero, Agonist Anti-CD137 mAb Act on Tumor Endothelial Cells to 
+Enhance Recruitment of Activated T Lymphocytes, Cancer Res 71 (2011) 
+801–811, https://doi.org/10.1158/0008-5472.CAN-10-1733.
+[125] Y. Zhang, N. Li, H. Suh, D.J. Irvine, Nanoparticle anchoring targets immune 
+agonists to tumors enabling anti-cancer immunity without systemic toxicity, Nat 
+Commun 9 (2018) 1–15, https://doi.org/10.1038/s41467-017-02251-3.
+[126] P.S. Olofsson, L.A. S¨oderstr¨om, D. Wågs¨ater, Y. Sheikine, P. Ocaya, F. Lang, 
+C. Rabu, L. Chen, M. Rudling, P. Aukrust, U. Hedin, G. Paulsson-Berne, A. Sirsj¨o, 
+G.K. Hansson, CD137 is expressed in human atherosclerosis and promotes 
+development of plaque inflammation in hypercholesterolemic mice, Circulation 
+117 (2008) 1292–1301, https://doi.org/10.1161/ 
+CIRCULATIONAHA.107.699173.
+[127] M. Cullen, M.K. Elzarrad, S. Seaman, E. Zudaire, J. Stevens, M.Y. Yang, X. Li, A. 
+Chaudhary, L. Xu, M.B. Hilton, D. Logsdon, E. Hsiao, E.V. Stein, F. Cuttitta, D.C. 
+Haines, K. Nagashima, L. Tessarollo, B. St Croix, GPR124, an orphan G protein- 
+coupled receptor, is required for CNS-specific vascularization and establishment 
+of the blood-brain barrier, Proc. Natl. Acad. Sci. U. S. A. 108 (2011) 5759–5764. 
+Doi: 10.1073/pnas.1017192108.
+[128] A. John, G. Tuszynski, The role of matrix metalloproteinases in tumor 
+angiogenesis and tumor metastasis, Pathol. Oncol. Res. 7 (2001) 14–23, https:// 
+doi.org/10.1007/BF03032599.
+[129] S. Li, Y. Zhang, J. Wang, Y. Zhao, T. Ji, X. Zhao, Y. Ding, X. Zhao, R. Zhao, F. Li, 
+X. Yang, S. Liu, Z. Liu, J. Lai, A.K. Whittaker, G.J. Anderson, J. Wei, G. Nie, 
+Nanoparticle-mediated local depletion of tumour-associated platelets disrupts 
+vascular barriers and augments drug accumulation in tumours, Nat Biomed Eng 1 
+(2017) 667–679, https://doi.org/10.1038/s41551-017-0115-8.
+[130] W. Hou, F. Xia, C.S. Alves, X. Qian, Y. Yang, D. Cui, MMP2-Targeting and Redox- 
+Responsive PEGylated Chlorin e6 Nanoparticles for Cancer Near-Infrared Imaging 
+and Photodynamic Therapy, ACS Appl. Mater. Interfaces 8 (2016) 1447–1457, 
+https://doi.org/10.1021/acsami.5b10772.
+[131] A. Marturano, M.L.V. Hendrickx, E. Falcinelli, M. Sebastiano, G. Guglielmini, 
+G. Hassanzadeh-Ghassabeh, S. Muyldermans, P.J. Declerck, P. Gresele, 
+Development of anti-matrix metalloproteinase-2 (MMP-2) nanobodies as 
+potential therapeutic and diagnostic tools, Nanomedicine: Nanotechnology, 
+Biology and Medicine 24 (2020) 102103, https://doi.org/10.1016/j. 
+nano.2019.102103.
+[132] K.M. Panth, T. van den Beucken, R. Biemans, N.G. Lieuwes, M. Weber, M. Losen, 
+A. Yaromina, L.J. Dubois, P. Lambin, In vivo optical imaging of MMP2 immuno 
+protein antibody: tumor uptake is associated with MMP2 activity, Sci Rep 6 
+(2016) 1–10, https://doi.org/10.1038/srep22198.
+[133] Y.-H. Wang, T.-Y. Cheng, T.-Y. Chen, K.-M. Chang, V.P. Chuang, K.-J. Kao, 
+Plasmalemmal Vesicle Associated Protein (PLVAP) as a therapeutic target for 
+treatment of hepatocellular carcinoma, BMC Cancer 14 (2014) 1–12, https://doi. 
+org/10.1186/1471-2407-14-815.
+[134] P. Guo, J. Huang, L. Wang, Di Jia, J. Yang, D.A. Dillon, D. Zurakowski, H. Mao, M. 
+A. Moses, D.T. Auguste, ICAM-1 as a molecular target for triple negative breast 
+cancer, Proc. Natl. Acad. Sci. U. S. A. 111 (2014) 14710–14715. Doi: 10.1073/ 
+pnas.1408556111.
+[135] F. Danhier, B. Vroman, N. Lecouturier, N. Crokart, V. Pourcelle, H. Freichels, 
+C. J´erˆome, J. Marchand-Brynaert, O. Feron, V. Pr´eat, Targeting of tumor 
+endothelium by RGD-grafted PLGA-nanoparticles loaded with paclitaxel, 
+J. Control. Release 140 (2009) 166–173, https://doi.org/10.1016/j. 
+jconrel.2009.08.011.
+[136] S. Gosk, T. Moos, C. Gottstein, G. Bendas, VCAM-1 directed immunoliposomes 
+selectively target tumor vasculature in vivo, Biochim. Biophys. Acta Biomembr. 
+(1778 (2008)) 854–863, https://doi.org/10.1016/j.bbamem.2007.12.021.
+[137] G.M. Edelman, Cell Adhesion Molecules, Science 219 (1983) 450–457, https:// 
+doi.org/10.1126/science.6823544.
+[138] D. Arosio, C. Casagrande, Advancement in integrin facilitated drug delivery, Adv. 
+Drug Deliv. Rev. 97 (2016) 111–143, https://doi.org/10.1016/j. 
+addr.2015.12.001.
+[139] Y. Shamay, M. Elkabets, H. Li, J. Shah, S. Brook, F. Wang, K. Adler, E. Baut, 
+M. Scaltriti, P.V. Jena, E.E. Gardner, J.T. Poirier, C.M. Rudin, J. Baselga, 
+A. Haimovitz-Friedman, D.A. Heller, P-selectin is a nanotherapeutic delivery 
+target in the tumor microenvironment, Sci. Transl. Med. 8 (2016), https://doi. 
+org/10.1126/scitranslmed.aaf7374.
+[140] R.-Y. Lin, K. Dayananda, T.-J. Chen, C.-Y. Chen, G.-C. Liu, K.-L. Lin, Y.-M. Wang, 
+Targeted RGD nanoparticles for highly sensitive in vivo integrin receptor imaging, 
+Contrast Media Mol. Imaging 7 (2012) 7–18, https://doi.org/10.1002/cmmi.457.
+[141] Z. Zhen, W. Tang, H. Chen, X. Lin, T. Todd, G. Wang, T. Cowger, X. Chen, J. Xie, 
+RGD-modified apoferritin nanoparticles for efficient drug delivery to tumors, ACS 
+Nano 7 (2013) 4830–4837, https://doi.org/10.1021/nn305791q.
+[142] B.M. Dicheva, T.L.M. ten Hagen, A.L.B. Seynhaeve, M. Amin, A.M.M. Eggermont, 
+G.A. Koning, Enhanced Specificity and Drug Delivery in Tumors by cRGD - 
+Anchoring Thermosensitive Liposomes, Pharm Res 32 (2015) 3862–3876, 
+https://doi.org/10.1007/s11095-015-1746-7.
+[143] K. Wang, X. Zhang, Y. Liu, C. Liu, B. Jiang, Y. Jiang, Tumor penetrability and anti- 
+angiogenesis using iRGD-mediated delivery of doxorubicin-polymer conjugates, 
+Biomaterials 35 (2014) 8735–8747, https://doi.org/10.1016/j. 
+biomaterials.2014.06.042.
+[144] R.K. Jain, Determinants of Tumor Blood Flow: A Review, Cancer Res 48 (1988) 
+2641–2658.
+[145] W.S. Kamoun, S.-S. Chae, D.A. Lacorre, J.A. Tyrrell, M. Mitre, M.A. Gillissen, 
+D. Fukumura, R.K. Jain, L.L. Munn, Simultaneous measurement of RBC velocity, 
+flux, hematocrit and shear rate in vascular networks, Nat Methods 7 (2010) 
+655–660, https://doi.org/10.1038/nmeth.1475.
+[146] A.L. van de Ven, P. Kim, O. Haley, J.R. Fakhoury, G. Adriani, J. Schmulen, 
+P. Moloney, F. Hussain, M. Ferrari, X. Liu, S.H. Yun, P. Decuzzi, Rapid 
+tumoritropic accumulation of systemically injected plateloid particles and their 
+biodistribution, J. Control. Release 158 (2012), https://doi.org/10.1016/j. 
+jconrel.2011.10.021.
+[147] J.W. Myerson, A.C. Anselmo, Y. Liu, S. Mitragotri, D.M. Eckmann, V. 
+R. Muzykantov, Non-affinity factors modulating vascular targeting of nano- and 
+microcarriers, Adv. Drug Deliv. Rev. 99 (2016) 97–112, https://doi.org/10.1016/ 
+j.addr.2015.10.011.
+[148] K. Müller, D.A. Fedosov, G. Gompper, Margination of micro- and nano-particles in 
+blood flow and its effect on drug delivery, Sci Rep 4 (2014) 1–8, https://doi.org/ 
+10.1038/srep04871.
+[149] K. Vahidkhah, P. Bagchi, Microparticle shape effects on margination, near-wall 
+dynamics and adhesion in a three-dimensional simulation of red blood cell 
+suspension, Soft Matter 11 (2015) 2097–2109, https://doi.org/10.1039/ 
+C4SM02686A.
+[150] P. Decuzzi, B. Godin, T. Tanaka, S.-Y. Lee, C. Chiappini, X. Liu, M. Ferrari, Size 
+and shape effects in the biodistribution of intravascularly injected particles, 
+J. Control. Release 141 (2010) 320–327, https://doi.org/10.1016/j. 
+jconrel.2009.10.014.
+[151] T.-R. Lee, M. Choi, A.M. Kopacz, S.-H. Yun, W.K. Liu, P. Decuzzi, On the near-wall 
+accumulation of injectable particles in the microcirculation: smaller is not better, 
+Sci Rep 3 (2013) 1–8, https://doi.org/10.1038/srep02079.
+[152] A.C. Anselmo, S. Mitragotri, Impact of particle elasticity on particle-based drug 
+delivery systems, Adv. Drug Deliv. Rev. 108 (2017) 51–67, https://doi.org/ 
+10.1016/j.addr.2016.01.007.
+[153] A. Kumar, M.D. Graham, Segregation by membrane rigidity in flowing binary 
+suspensions of elastic capsules, Phys. Rev. E Stat. Nonlin. Soft Matter Phys. 84 
+(2011), https://doi.org/10.1103/PhysRevE.84.066316.
+[154] M.B. Fish, A.L. Banka, M. Braunreuther, C.A. Fromen, W.J. Kelley, J. Lee, R. Adili, 
+M. Holinstat, O. Eniola-Adefeso, Deformable microparticles for shuttling 
+nanoparticles to the vascular wall, Sci. Adv. 7 (2021), https://doi.org/10.1126/ 
+sciadv.abe0143.
+[155] X. Chen, S. Zhang, J. Li, X. Huang, H. Ye, X. Qiao, Z. Xue, W. Yang, T. Wang, 
+Influence of Elasticity of Hydrogel Nanoparticles on Their Tumor Delivery, 
+Advanced science (Weinheim, Baden-Wurttemberg, Germany) 9 (2022). Doi: 
+10.1002/advs.202202644.
+[156] A.C. Anselmo, M. Zhang, S. Kumar, D.R. Vogus, S. Menegatti, M.E. Helgeson, 
+S. Mitragotri, Elasticity of nanoparticles influences their blood circulation, 
+phagocytosis, endocytosis, and targeting, ACS Nano 9 (2015) 3169–3177, https:// 
+doi.org/10.1021/acsnano.5b00147.
+[157] Z. Li, Y. Zhu, H. Zeng, C. Wang, C. Xu, Q. Wang, H. Wang, S. Li, J. Chen, C. Xiao, 
+X. Yang, Z. Li, Mechano-boosting nanomedicine antitumour efficacy by blocking 
+the reticuloendothelial system with stiff nanogels, Nat Commun 14 (2023) 1–18, 
+https://doi.org/10.1038/s41467-023-37150-3.
+[158] J. Key, A.L. Palange, F. Gentile, S. Aryal, C. Stigliano, D. Di Mascolo, E. de Rosa, 
+M. Cho, Y. Lee, J. Singh, P. Decuzzi, Soft Discoidal Polymeric Nanoconstructs 
+Resist Macrophage Uptake and Enhance Vascular Targeting in Tumors, ACS Nano 
+9 (2015) 11628–11641, https://doi.org/10.1021/acsnano.5b04866.
+[159] P. Guo, D. Liu, K. Subramanyam, B. Wang, J. Yang, J. Huang, D.T. Auguste, M. 
+A. Moses, Nanoparticle elasticity directs tumor uptake, Nat Commun 9 (2018) 
+1–9, https://doi.org/10.1038/s41467-017-02588-9.
+[160] Y. Hui, D. Wibowo, Y. Liu, R. Ran, H.F. Wang, A. Seth, A.P.J. Middelberg, C. 
+X. Zhao, Understanding the Effects of Nanocapsular Mechanical Property on 
+Passive and Active Tumor Targeting, ACS Nano 12 (2018), https://doi.org/ 
+10.1021/acsnano.8b00242.
+[161] Q. Liang, N. Bie, T. Yong, K. Tang, X. Shi, Z. Wei, H. Jia, X. Zhang, H. Zhao, 
+W. Huang, L. Gan, B. Huang, X. Yang, The softness of tumour-cell-derived 
+microparticles regulates their drug-delivery efficiency, Nat. Biomed. Eng. 3 
+(2019), https://doi.org/10.1038/s41551-019-0405-4.
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+20
+[162] A.M. Yashchenok, V.S. Chernyshev, E.V. Konovalova, R. Kholodenko, 
+E. Tsydenzhapova, V.O. Shipunova, A.A. Schulga, S.M. Deyev, D.A. Gorin, Anti- 
+CD63-Oligonucleotide Functionalized Magnetic Beads for the Rapid Isolation of 
+Small Extracellular Vesicles and Detection of EpCAM and HER2 Membrane 
+Receptors using DARPin Probes, Anal. Sens. 3 (2023) e202200059, https://doi. 
+org/10.1002/anse.202200059.
+[163] W. Jo, J. Kim, J. Yoon, D. Jeong, S. Cho, H. Jeong, Y.J. Yoon, S.C. Kim, Y.S. Gho, 
+J. Park, Large-scale generation of cell-derived nanovesicles, Nanoscale 6 (2014) 
+12056–12064, https://doi.org/10.1039/c4nr02391a.
+[164] J. Gao, D. Chu, Z. Wang, Cell membrane-formed nanovesicles for disease-targeted 
+delivery, J. Control. Release 224 (2016), https://doi.org/10.1016/j. 
+jconrel.2016.01.024.
+[165] F.N.E. Toledano, Y. Lupu-Haber, T. Bronshtein, L. Kaneti, N. Letko, E. Weinstein, 
+L. Baruch, M. Machluf, Reconstructed stem cell nanoghosts: a natural tumor 
+targeting platform, Nano Lett. 13 (2013), https://doi.org/10.1021/nl401376w.
+[166] R. Prasad, K. Prerna, M. Temgire, P. Banerjee, R. Kumari, G.C. Kundu, D. Hattila, 
+C.V. Mangannavar, A.S. Meena, M. Gorain, J. Bellare, P. Chandra, V.K. Dubey, 
+Molecular Engineering of Ultrabright Biomimetic NanoGhost for Site-Selective 
+Tumor Imaging and Biodistribution, Adv. Healthc. Mater. (2024), https://doi. 
+org/10.1002/adhm.202401233.
+[167] S.T. Yurkin, Z. Wang, Cell membrane-derived nanoparticles: emerging clinical 
+opportunities for targeted drug delivery, Nanomedicine (lond) 12 (2017), https:// 
+doi.org/10.2217/nnm-2017-0100.
+[168] Q. Hu, W. Sun, C. Qian, C. Wang, H.N. Bomba, Z. Gu, Anticancer Platelet- 
+Mimicking Nanovehicles, Advanced materials (Deerfield Beach, Fla.) 27 (2015), 
+https://doi.org/10.1002/adma.201503323.
+[169] R.H. Fang, C.M. Hu, B.T. Luk, W. Gao, J.A. Copp, Y. Tai, O’, D.E. Connor, L. 
+Zhang, Cancer cell membrane-coated nanoparticles for anticancer vaccination 
+and drug delivery, Nano letters 14 (2014). Doi: 10.1021/nl500618u.
+[170] J.Y. Zhu, D.W. Zheng, M.K. Zhang, W.Y. Yu, W.X. Qiu, J.J. Hu, J. Feng, X. 
+Z. Zhang, Preferential Cancer Cell Self-Recognition and Tumor Self-Targeting by 
+Coating Nanoparticles with Homotypic Cancer Cell Membranes, Nano Lett. 16 
+(2016), https://doi.org/10.1021/acs.nanolett.6b02786.
+[171] A. Parodi, D. Kostyushev, S. Brezgin, A. Kostyusheva, T. Borodina, R. Akasov, 
+A. Frolova, V. Chulanov, A.A. Zamyatnin, Biomimetic approaches for targeting 
+tumor-promoting inflammation, Semin. Cancer Biol. 86 (2022) 555–567, https:// 
+doi.org/10.1016/j.semcancer.2022.04.007.
+[172] X. Cao, Y. Hu, S. Luo, Y. Wang, T. Gong, X. Sun, Y. Fu, Z. Zhang, Neutrophil- 
+mimicking therapeutic nanoparticles for targeted chemotherapy of pancreatic 
+carcinoma, Acta Pharm. Sin. B 9 (2019) 575–589, https://doi.org/10.1016/j. 
+apsb.2018.12.009.
+[173] A. Parodi, N. Quattrocchi, A.L. van de Ven, C. Chiappini, M. Evangelopoulos, J. 
+O. Martinez, B.S. Brown, S.Z. Khaled, I.K. Yazdi, M.V. Enzo, L. Isenhart, 
+M. Ferrari, E. Tasciotti, Synthetic nanoparticles functionalized with biomimetic 
+leukocyte membranes possess cell-like functions, Nature Nanotech 8 (2013) 
+61–68, https://doi.org/10.1038/nnano.2012.212.
+[174] R. Palomba, A. Parodi, M. Evangelopoulos, S. Acciardo, C. Corbo, E. de Rosa, I. 
+K. Yazdi, S. Scaria, R. Molinaro, N.E.T. Furman, J. You, M. Ferrari, F. Salvatore, 
+E. Tasciotti, Biomimetic carriers mimicking leukocyte plasma membrane to 
+increase tumor vasculature permeability, Sci Rep 6 (2016) 1–11, https://doi.org/ 
+10.1038/srep34422.
+[175] J.O. Martinez, R. Molinaro, K.A. Hartman, C. Boada, R. Sukhovershin, E. de Rosa, 
+D. Kirui, S. Zhang, M. Evangelopoulos, A.M. Carter, J.A. Bibb, J.P. Cooke, 
+E. Tasciotti, Biomimetic nanoparticles with enhanced affinity towards activated 
+endothelium as versatile tools for theranostic drug delivery, Theranostics 8 
+(2018) 1131–1145, https://doi.org/10.7150/thno.22078.
+[176] R. Molinaro, J.O. Martinez, A. Zinger, V.A. De, G. Storci, N. Arrighetti, R.E. De, K. 
+A. Hartman, N. Basu, N. Taghipour, C. Corbo, E. Tasciotti, Leukocyte-mimicking 
+nanovesicles for effective doxorubicin delivery to treat breast cancer and 
+melanoma, Biomater. Sci. 8 (2020), https://doi.org/10.1039/c9bm01766f.
+[177] T. Saxer, A. Zumbuehl, B. Müller, The use of shear stress for targeted drug 
+delivery, Cardiovasc Res 99 (2013) 328–333, https://doi.org/10.1093/cvr/ 
+cvt102.
+[178] W. Shi, A.R.M. Fuad, Y. Li, Y. Wang, J. Huang, R. Du, G. Wang, Y. Wang, T. Yin, 
+Biodegradable polymeric nanoparticles increase risk of cardiovascular diseases by 
+inducing endothelium dysfunction and inflammation, J Nanobiotechnol 21 
+(2023) 1–16, https://doi.org/10.1186/s12951-023-01808-3.
+[179] A.M. Sofias, Y.C. Toner, A.E. Meerwaldt, M.M.T. van Leent, G. Soultanidis, M. 
+Elschot, H. Gonai, K. Grendstad, Å. Flobak, U. Neckmann, C. Wolowczyk, E.L. 
+Fisher, T. Reiner, C.d.L. Davies, G. Bjørkøy, A.J.P. Teunissen, J. Ochando, C. 
+P´erez-Medina, W.J.M. Mulder, S. Hak, Tumor Targeting by αvβ3-Integrin-Specific 
+Lipid Nanoparticles Occurs via Phagocyte Hitchhiking, ACS Nano 14 (2020) 
+7832–7846. Doi: 10.1021/acsnano.9b08693.
+[180] G. Solinas, G. Germano, A. Mantovani, P. Allavena, Tumor-associated 
+macrophages (TAM) as major players of the cancer-related inflammation, 
+J Leukoc Biol. 86 (2009) 1065–1073, https://doi.org/10.1189/jlb.0609385.
+[181] B. Huang, W.D. Abraham, Y. Zheng, L.S.C. Bustamante, S.S. Luo, D.J. Irvine, 
+Active targeting of chemotherapy to disseminated tumors using nanoparticle- 
+carrying T cells, Sci. Transl. Med. 7 (2015), https://doi.org/10.1126/ 
+scitranslmed.aaa5447.
+[182] E. Udofa, Z. Zhao, In situ cellular hitchhiking of nanoparticles for drug delivery, 
+Adv. Drug Deliv. Rev. 204 (2024) 115143, https://doi.org/10.1016/j. 
+addr.2023.115143.
+[183] B.R. Smith, E.E.B. Ghosn, H. Rallapalli, J.A. Prescher, T. Larson, L.A. Herzenberg, 
+S.S. Gambhir, Selective uptake of single-walled carbon nanotubes by circulating 
+monocytes for enhanced tumour delivery, Nature Nanotech 9 (2014) 481–487, 
+https://doi.org/10.1038/nnano.2014.62.
+[184] Q. Wang, Q. Liang, J. Dou, H. Zhou, C. Zeng, H. Pan, Y. Shen, Q. Li, Y. Liu, D. 
+T. Leong, W. Jiang, Y. Wang, Breaking through the basement membrane barrier to 
+improve nanotherapeutic delivery to tumours, Nat. Nanotechnol. 19 (2024) 
+95–105, https://doi.org/10.1038/s41565-023-01498-w.
+[185] A.S. Garanina, D.A. Vishnevskiy, A.A. Chernysheva, M.P. Valikhov, J. 
+A. Malinovskaya, P.A. Lazareva, A.S. Semkina, M.A. Abakumov, V.A. Naumenko, 
+Neutrophil as a Carrier for Cancer Nanotherapeutics: A Comparative Study of 
+Liposome, PLGA, and Magnetic Nanoparticles Delivery to Tumors, 
+Pharmaceuticals 16 (2023) 1564, https://doi.org/10.3390/ph16111564.
+[186] A.J. McFarlane, F. Fercoq, S.B. Coffelt, L.M. Carlin, Neutrophil dynamics in the 
+tumor microenvironment, J. Clin. Invest. 131 (2021), https://doi.org/10.1172/ 
+JCI143759.
+[187] M.T. Stephan, J.J. Moon, S.H. Um, A. Bershteyn, D.J. Irvine, Therapeutic cell 
+engineering with surface-conjugated synthetic nanoparticles, Nat Med 16 (2010) 
+1035–1041, https://doi.org/10.1038/nm.2198.
+[188] L. Koenderman, K. Tesselaar, N. Vrisekoop, Human neutrophil kinetics: a call to 
+revisit old evidence, Trends Immunol. 43 (2022) 868–876, https://doi.org/ 
+10.1016/j.it.2022.09.008.
+[189] L. Wu, S. Saxena, R.K. Singh, Neutrophils in the Tumor Microenvironment, 
+Advances in Experimental Medicine and Biology 1224 (2020) 1–20, https://doi. 
+org/10.1007/978-3-030-35723-8_1.
+[190] M.D. Filippi, Mechanism of Diapedesis: Importance of the Transcellular Route, 
+Adv. Immunol. 129 (2016), https://doi.org/10.1016/bs.ai.2015.09.001.
+[191] C.A. Fromen, W.J. Kelley, M.B. Fish, R. Adili, J. Noble, M.J. Hoenerhoff, 
+M. Holinstat, O. Eniola-Adefeso, Neutrophil–Particle Interactions in Blood 
+Circulation Drive Particle Clearance and Alter Neutrophil Responses in Acute 
+Inflammation, ACS Nano 11 (2017) 10797–10807, https://doi.org/10.1021/ 
+acsnano.7b03190.
+[192] J. Hao, J. Chen, M. Wang, J. Zhao, J. Wang, X. Wang, Y. Li, H. Tang, Neutrophils, 
+as “Trojan horses”, participate in the delivery of therapeutical PLGA nanoparticles 
+into a tumor based on the chemotactic effect, Drug Deliv. 27 (2020) 1–14, 
+https://doi.org/10.1080/10717544.2019.1701141.
+[193] J. Deprez, R. Verbeke, S. Meulewaeter, I. Aernout, H. Dewitte, T. Decruy, 
+J. Coudenys, J. van Duyse, G. van Isterdael, D. Peer, R. van der Meel, S.C. de 
+Smedt, P. Jacques, D. Elewaut, I. Lentacker, Transport by circulating myeloid cells 
+drives liposomal accumulation in inflamed synovium, Nat. Nanotechnol. 18 
+(2023) 1341–1350, https://doi.org/10.1038/s41565-023-01444-w.
+[194] Z. Wang, J. Li, J. Cho, A.B. Malik, Prevention of vascular inflammation by 
+nanoparticle targeting of adherent neutrophils, Nat. Nanotechnol. 9 (2014), 
+https://doi.org/10.1038/nnano.2014.17.
+[195] D. Chu, X. Dong, Q. Zhao, J. Gu, Z. Wang, Photosensitization Priming of Tumor 
+Microenvironments Improves Delivery of Nanotherapeutics via Neutrophil 
+Infiltration, Advanced materials (Deerfield Beach, Fla.) 29 (2017), https://doi. 
+org/10.1002/adma.201701021.
+[196] N. Kumbhojkar, S. Prakash, T. Fukuta, K. Adu-Berchie, N. Kapate, R. An, S. Darko, 
+V. Chandran Suja, K.S. Park, A.P. Gottlieb, M.G. Bibbey, M. Mukherji, L.-L.- 
+W. Wang, D.J. Mooney, S. Mitragotri, Neutrophils bearing adhesive polymer 
+micropatches as a drug-free cancer immunotherapy, Nat. Biomed. Eng 8 (2024) 
+579–592, https://doi.org/10.1038/s41551-024-01180-z.
+[197] L.J. Estcourt, S.J. Stanworth, S. Hopewell, C. Doree, M. Trivella, E. Massey, 
+Granulocyte transfusions for treating infections in people with neutropenia or 
+neutrophil dysfunction, Cochrane Database Syst. Rev. 4 (2016) CD005339, 
+https://doi.org/10.1002/14651858.CD005339.pub2.
+[198] M. Wu, H. Zhang, C. Tie, C. Yan, Z. Deng, Q. Wan, X. Liu, F. Yan, H. Zheng, MR 
+imaging tracking of inflammation-activatable engineered neutrophils for targeted 
+therapy of surgically treated glioma, Nat Commun 9 (2018) 1–13, https://doi. 
+org/10.1038/s41467-018-07250-6.
+[199] J. Xue, Z. Zhao, L. Zhang, L. Xue, S. Shen, Y. Wen, Z. Wei, L. Wang, L. Kong, 
+H. Sun, Q. Ping, R. Mo, C. Zhang, Neutrophil-mediated anticancer drug delivery 
+for suppression of postoperative malignant glioma recurrence, Nature Nanotech 
+12 (2017) 692–700, https://doi.org/10.1038/nnano.2017.54.
+[200] I.V. Zelepukin, K.G. Shevchenko, S.M. Deyev, Rediscovery of mononuclear 
+phagocyte system blockade for nanoparticle drug delivery, Nat Commun 15 
+(2024) 1–14, https://doi.org/10.1038/s41467-024-48838-5.
+[201] L. Zheng, X. Hu, H. Wu, L. Mo, S. Xie, J. Li, C. Peng, S. Xu, L. Qiu, W. Tan, In Vivo 
+Monocyte/Macrophage-Hitchhiked Intratumoral Accumulation of Nanomedicines 
+for Enhanced Tumor Therapy, J. Am. Chem. Soc. 142 (2019) 382–391, https:// 
+doi.org/10.1021/jacs.9b11046.
+[202] S.-S. Huang, K.-J. Lee, H.-C. Chen, R.P. Prajnamitra, C.-H. Hsu, C.-B. Jian, X.- 
+E. Yu, D.-Y. Chueh, C.W. Kuo, T.-C. Chiang, O.K. Choong, S.-C. Huang, C.Y. Beh, 
+L.-L. Chen, J.J. Lai, P. Chen, T.J. Kamp, Y.-W. Tien, H.-M. Lee, P.-C.-H. Hsieh, 
+Immune cell shuttle for precise delivery of nanotherapeutics for heart disease and 
+cancer, Sci. Adv. 7 (2021), https://doi.org/10.1126/sciadv.abf2400.
+[203] J. Kuang, Z.-Y. Rao, D.-W. Zheng, D. Kuang, Q.-X. Huang, T. Pan, H. Li, X. Zeng, 
+X.-Z. Zhang, Nanoparticles Hitchhike on Monocytes for Glioblastoma Treatment 
+after Low-Dose Radiotherapy, ACS Nano 17 (2023) 13333–13347, https://doi. 
+org/10.1021/acsnano.3c01428.
+[204] S. Jung, J. Aliberti, P. Graemmel, M.J. Sunshine, G.W. Kreutzberg, A. Sher, 
+Littman, Analysis of fractalkine receptor CX(3)CR1 function by targeted deletion 
+and green fluorescent protein reporter gene insertion, Mol. Cell. Biol. 20 (2000), 
+https://doi.org/10.1128/MCB.20.11.4106-4114.2000.
+[205] W. Du, B. Zhou, A. Forjaz, S.M. Shin, F. Wu, A.J. Crawford, P.R. Nair, A.C. 
+Johnston, H. West-Foyle, A. Tang, D. Kim, R. Fan, A.L. Kiemen, P.H. Wu, J.M. 
+Phillip, W.J. Ho, D.E. Sanin, D. Wirtz, High-motility pro-tumorigenic monocytes 
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+21
+drive macrophage enrichment in the tumor microenvironment, bioRxiv the 
+preprint server for biology (2024). Doi: 10.1101/2024.07.16.603739.
+[206] S.T. Pals, D.J.J. de Gorter, M. Spaargaren, Lymphoma dissemination: the other 
+face of lymphocyte homing, Blood 110 (2007) 3102–3111, https://doi.org/ 
+10.1182/blood-2007-05-075176.
+[207] L. Tang, Y. Zheng, M.B. Melo, L. Mabardi, A.P. Casta˜no, Y.-Q. Xie, N. Li, S. 
+B. Kudchodkar, H.C. Wong, E.K. Jeng, M.V. Maus, D.J. Irvine, Enhancing T cell 
+therapy through TCR-signaling-responsive nanoparticle drug delivery, Nat 
+Biotechnol 36 (2018) 707–716, https://doi.org/10.1038/nbt.4181.
+[208] C.H. June, R.S. O’Connor, O.U. Kawalekar, S. Ghassemi, M.C. Milone, CAR T cell 
+immunotherapy for human cancer, Science (New York, N.Y.) 359 (2018) 
+1361–1365. Doi: 10.1126/science.aar6711.
+[209] C.H. Villa, A.C. Anselmo, S. Mitragotri, V. Muzykantov, Red blood cells: 
+Supercarriers for drugs, biologicals, and nanoparticles and inspiration for 
+advanced delivery systems, Adv. Drug Deliv. Rev. 106 (2016) 88–103, https:// 
+doi.org/10.1016/j.addr.2016.02.007.
+[210] J.S. Brenner, S. Mitragotri, V.R. Muzykantov, Red Blood Cell Hitchhiking: A Novel 
+Approach for Vascular Delivery of Nanocarriers, Annu. Rev. Biomed. Eng. 23 
+(2021), https://doi.org/10.1146/annurev-bioeng-121219-024239.
+[211] A.C. Anselmo, V. Gupta, B.J. Zern, D. Pan, M. Zakrewsky, V. Muzykantov, 
+S. Mitragotri, Delivering nanoparticles to lungs while avoiding liver and spleen 
+through adsorption on red blood cells, ACS Nano 7 (2013) 11129–11137, https:// 
+doi.org/10.1021/nn404853z.
+[212] A.V. Zelepukin IV, V.O. Yaremenko, A.V.B. Shipunova, P.I. Balalaeva IV, S. 
+M. Nikitin, M.P.N. Deyev, Nanoparticle-based drug delivery via RBC-hitchhiking 
+for the inhibition of lung metastases growth, Nanoscale 11 (2019), https://doi. 
+org/10.1039/c8nr07730d.
+[213] Z. Zhao, A. Ukidve, Y. Gao, J. Kim, S. Mitragotri, Erythrocyte leveraged 
+chemotherapy (ELeCt): Nanoparticle assembly on erythrocyte surface to combat 
+lung metastasis, Sci. Adv. 5 (2019) eaax9250, https://doi.org/10.1126/sciadv. 
+aax9250.
+[214] Z. Zhao, Y. Feng, J. Xiang, J. Liu, Y. Piao, S. Shao, J. Tang, Z. Zhou, Y. Shen, 
+Screening of Zwitterionic Liposomes with Red Blood Cell-Hitchhiking and Tumor 
+Cell-Active Transporting Capability for Efficient Tumor Entrance, Adv Funct 
+Materials 33 (2023) 2214369, https://doi.org/10.1002/adfm.202214369.
+[215] S. Chen, Y. Zhong, W. Fan, J. Xiang, G. Wang, Q. Zhou, J. Wang, Y. Geng, R. Sun, 
+Z. Zhang, Y. Piao, J. Wang, J. Zhuo, H. Cong, H. Jiang, J. Ling, Z. Li, D. Yang, 
+X. Yao, X. Xu, Z. Zhou, J. Tang, Y. Shen, Enhanced tumour penetration and 
+prolonged circulation in blood of polyzwitterion–drug conjugates with cell- 
+membrane affinity, Nat Biomed Eng 5 (2021) 1019–1037, https://doi.org/ 
+10.1038/s41551-021-00701-4.
+[216] Y. Inoue, Y. Matsumoto, K. Toh, K. Miyano, H. Cabral, K. Igarashi, S. Iwasaki, 
+K. Kataoka, T. Yamasoba, Manipulating dynamic tumor vessel permeability to 
+enhance polymeric micelle accumulation, J. Control. Release 329 (2021) 63–75, 
+https://doi.org/10.1016/j.jconrel.2020.11.063.
+[217] J. Liu, L. Guo, Z. Mi, Z. Liu, P. Rong, W. Zhou, Vascular bursts-mediated tumor 
+accumulation and deep penetration of spherical nucleic acids for synergistic 
+radio-immunotherapy, J. Control. Release 348 (2022) 1050–1065, https://doi. 
+org/10.1016/j.jconrel.2022.06.030.
+[218] K. Igarashi, H. Cabral, T. Hong, Y. Anraku, F. Mpekris, T. Stylianopoulos, T. Khan, 
+A. Matsumoto, K. Kataoka, Y. Matsumoto, T. Yamasoba, Vascular Bursts Act as a 
+Versatile Tumor Vessel Permeation Route for Blood-Borne Particles and Cells, 
+Small 17 (2021) e2103751, https://doi.org/10.1002/smll.202103751.
+[219] M.A. Miller, R. Chandra, M.F. Cuccarese, C. Pfirschke, C. Engblom, S. Stapleton, 
+U. Adhikary, R.H. Kohler, J.F. Mohan, M.J. Pittet, R. Weissleder, Radiation 
+therapy primes tumors for nanotherapeutic delivery via macrophage-mediated 
+vascular bursts, Sci. Transl. Med. 9 (2017), https://doi.org/10.1126/ 
+scitranslmed.aal0225.
+[220] K.Y.Y. Fung, G.D. Fairn, W.L. Lee, Transcellular vesicular transport in epithelial 
+and endothelial cells: Challenges and opportunities, Traffic (copenhagen, 
+Denmark) 19 (2018), https://doi.org/10.1111/tra.12533.
+[221] G. Wei, S. Zhang, S. Yu, W. Lu, Intravital Microscopy Reveals Endothelial 
+Transcytosis Contributing to Significant Tumor Accumulation of Albumin 
+Nanoparticles, Pharmaceutics 15 (2023) 519, https://doi.org/10.3390/ 
+pharmaceutics15020519.
+[222] B.R. Smith, C. Zavaleta, J. Rosenberg, R. Tong, J. Ramunas, Z. Liu, H. Dai, S. 
+S. Gambhir, High-resolution, serial intravital microscopic imaging of nanoparticle 
+delivery and targeting in a small animal tumor model, Nano Today 8 (2013) 
+126–137, https://doi.org/10.1016/j.nantod.2013.02.004.
+[223] T. Skotland, K. Sandvig, Transport of nanoparticles across the endothelial cell 
+layer, Nano Today 36 (2021) 101029, https://doi.org/10.1016/j. 
+nantod.2020.101029.
+[224] B.R. Kingston, Z.P. Lin, B. Ouyang, P. MacMillan, J. Ngai, A.M. Syed, 
+S. Sindhwani, W.C.W. Chan, Specific Endothelial Cells Govern Nanoparticle Entry 
+into Solid Tumors, ACS Nano 15 (2021) 14080–14094, https://doi.org/10.1021/ 
+acsnano.1c04510.
+[225] J.E. Schnitzer, gp60 is an albumin-binding glycoprotein expressed by continuous 
+endothelium involved in albumin transcytosis, Am. J. Phys. Anthropol. 262 
+(1992), https://doi.org/10.1152/ajpheart.1992.262.1.H246.
+[226] R.D. Minshall, C. Tiruppathi, S.M. Vogel, W.D. Niles, A. Gilchrist, H.E. Hamm, A. 
+B. Malik, Endothelial cell-surface gp60 activates vesicle formation and trafficking 
+via G(i)-coupled Src kinase signaling pathway, J. Cell Biol. 150 (2000), https:// 
+doi.org/10.1083/jcb.150.5.1057.
+[227] Z. Wang, C. Tiruppathi, R.D. Minshall, A.B. Malik, Size and Dynamics of Caveolae 
+Studied Using Nanoparticles in Living Endothelial Cells, ACS Nano 3 (2009) 
+4110–4116, https://doi.org/10.1021/nn9012274.
+[228] X. Hao, J. Wu, Y. Shan, M. Cai, X. Shang, J. Jiang, H. Wang, Caveolae-mediated 
+endocytosis of biocompatible gold nanoparticles in living Hela cells, Journal of 
+physics, Condensed Matter an Institute of Physics Journal 24 (2012), https://doi. 
+org/10.1088/0953-8984/24/16/164207.
+[229] Z.S. Al-Ahmady, D. Jasim, S.S. Ahmad, R. Wong, M. Haley, G. Coutts, I. Schiessl, 
+S.M. Allan, K. Kostarelos, Selective Liposomal Transport through Blood Brain 
+Barrier Disruption in Ischemic Stroke Reveals Two Distinct Therapeutic 
+Opportunities, ACS Nano 13 (2019) 12470–12486, https://doi.org/10.1021/ 
+acsnano.9b01808.
+[230] J.J. Rennick, A.P.R. Johnston, R.G. Parton, Key principles and methods for 
+studying the endocytosis of biological and nanoparticle therapeutics, Nat. 
+Nanotechnol. 16 (2021) 266–276, https://doi.org/10.1038/s41565-021-00858-8.
+[231] M.S. Thomsen, K.B. Johnsen, K. Kucharz, M. Lauritzen, T. Moos, Blood–Brain 
+Barrier Transport of Transferrin Receptor-Targeted Nanoparticles, Pharmaceutics 
+14 (2022) 2237, https://doi.org/10.3390/pharmaceutics14102237.
+[232] G. Tosi, L. Badiali, B. Ruozi, A.V. Vergoni, L. Bondioli, A. Ferrari, F. Rivasi, 
+F. Forni, M.A. Vandelli, Can Leptin-Derived Sequence-Modified Nanoparticles Be 
+Suitable Tools for Brain Delivery? Nanomedicine 7 (2012) 365–382, https://doi. 
+org/10.2217/nnm.11.98.
+[233] S. Santiwarangkool, H. Akita, I.A. Khalil, M.M. Abd Elwakil, Y. Sato, K. Kusumoto, 
+H. Harashima, A study of the endocytosis mechanism and transendothelial 
+activity of lung-targeted GALA-modified liposomes, Journal of Controlled Release 
+307 (2019) 55–63, https://doi.org/10.1016/j.jconrel.2019.06.009.
+[234] T. Tsuji, H. Yoshitomi, J. Usukura, Endocytic mechanism of transferrin- 
+conjugated nanoparticles and the effects of their size and ligand number on the 
+efficiency of drug delivery, J Electron Microsc (tokyo) 62 (2013) 341–352, 
+https://doi.org/10.1093/jmicro/dfs080.
+[235] H. Akita, T. Fujiwara, S. Santiwarangkool, N. Hossen, K. Kajimoto, A. El-Sayed, 
+Y. Tabata, H. Harashima, Transcytosis-Targeting Peptide: A Conductor of 
+Liposomal Nanoparticles through the Endothelial Cell Barrier, Small 12 (2015) 
+1212–1221, https://doi.org/10.1002/smll.201500909.
+[236] S. Muro, C. Garnacho, J.A. Champion, J. Leferovich, C. Gajewski, E. 
+H. Schuchman, S. Mitragotri, V.R. Muzykantov, Control of Endothelial Targeting 
+and Intracellular Delivery of Therapeutic Enzymes by Modulating the Size and 
+Shape of ICAM-1-targeted Carriers, Mol. Ther. 16 (2008) 1450–1458, https://doi. 
+org/10.1038/mt.2008.127.
+[237] Z.P. Lin, W. Ngo, S.M. Mladjenovic, J.L.Y. Wu, W.C.W. Chan, Nanoparticles Bind 
+to Endothelial Cells in Injured Blood Vessels via a Transient Protein Corona, Nano 
+Lett. 23 (2023) 1003–1009, https://doi.org/10.1021/acs.nanolett.2c04501.
+[238] D. Feng, J.A. Nagy, A.M. Dvorak, H.F. Dvorak, Different Pathways of 
+Macromolecule Extravasation from Hyperpermeable Tumor Vessels, Microvasc. 
+Res. 59 (2000) 24–37, https://doi.org/10.1006/mvre.1999.2207.
+[239] X. Liu, P. Lin, I. Perrett, J. Lin, Y.-P. Liao, C.H. Chang, J. Jiang, N. Wu, 
+T. Donahue, Z. Wainberg, A.E. Nel, H. Meng, Tumor-penetrating peptide 
+enhances transcytosis of silicasome-based chemotherapy for pancreatic cancer, 
+J. Clin. Investig. 127 (2017) 2007–2018, https://doi.org/10.1172/jci92284.
+[240] A.M. Dvorak, D. Feng, The vesiculo-vacuolar organelle (VVO). A new endothelial 
+cell permeability organelle, J. Histochem. Cytochem. 49 (2001) 419–432, https:// 
+doi.org/10.1177/002215540104900401.
+[241] X. Liu, J. Jiang, H. Meng, Transcytosis - An effective targeting strategy that is 
+complementary to “EPR effect” for pancreatic cancer nano drug delivery, 
+Theranostics 9 (2019) 8018–8025, https://doi.org/10.7150/thno.38587.
+[242] Q. Zhou, S. Shao, J. Wang, C. Xu, J. Xiang, Y. Piao, Z. Zhou, Q. Yu, J. Tang, X. Liu, 
+Z. Gan, R. Mo, Z. Gu, Y. Shen, Enzyme-activatable polymer–drug conjugate 
+augments tumour penetration and treatment efficacy, Nat. Nanotechnol. 14 
+(2019) 799–809, https://doi.org/10.1038/s41565-019-0485-z.
+[243] H.-X. Wang, Z.-Q. Zuo, J.-Z. Du, Y.-C. Wang, R. Sun, Z.-T. Cao, X.-D. Ye, J.- 
+L. Wang, K.W. Leong, J. Wang, Surface charge critically affects tumor penetration 
+and therapeutic efficacy of cancer nanomedicines, Nano Today 11 (2016) 
+133–144, https://doi.org/10.1016/j.nantod.2016.04.008.
+[244] S. Yamamoto, A. Kato, Y. Sakurai, T. Hada, H. Harashima, Modality of tumor 
+endothelial VEGFR2 silencing-mediated improvement in intratumoral 
+distribution of lipid nanoparticles, J. Control. Release 251 (2017) 1–10, https:// 
+doi.org/10.1016/j.jconrel.2017.02.010.
+[245] Y. Sakurai, A. Kato, H. Harashima, Involvement of Caveolin-1-mediated 
+transcytosis in the intratumoral accumulation of liposomes, Biochem. Biophys. 
+Res. Commun. 525 (2020) 313–318, https://doi.org/10.1016/j. 
+bbrc.2020.02.086.
+[246] Y. Sakurai, T. Hada, S. Yamamoto, A. Kato, W. Mizumura, H. Harashima, 
+Remodeling of the Extracellular Matrix by Endothelial Cell-Targeting siRNA 
+Improves the EPR-Based Delivery of 100 nm Particles, Mol. Ther. 24 (2016) 
+2090–2099, https://doi.org/10.1038/mt.2016.178.
+[247] N.R. Smith, D. Baker, M. Farren, A. Pommier, R. Swann, X. Wang, S. Mistry, 
+K. McDaid, J. Kendrew, C. Womack, S.R. Wedge, S.T. Barry, Tumor stromal 
+architecture can define the intrinsic tumor response to VEGF-targeted therapy, 
+Clin. Cancer Res. 19 (2013) 6943–6956, https://doi.org/10.1158/1078-0432. 
+CCR-13-1637.
+[248] M.A. Miller, R. Weissleder, Imaging the pharmacology of nanomaterials by 
+intravital microscopy: Toward understanding their biological behavior, Adv. Drug 
+Deliv. Rev. 113 (2017) 61–86, https://doi.org/10.1016/j.addr.2016.05.023.
+[249] C. Scheele, D. Herrmann, E. Yamashita, C.L. Celso, C.N. Jenne, M.H. Oktay, D. 
+Entenberg, P. Friedl, R. Weigert, F.L.B. Meijboom, M. Ishii, P. Timpson, R.J. van, 
+Multiphoton intravital microscopy of rodents, Nature reviews. Methods primers 2 
+(2022). Doi: 10.1038/s43586-022-00168-w.
+[250] H. Zhang, P. Fu, Y. Liu, Z. Zheng, L. Zhu, M. Wang, M. Abdellah, M. He, J. Qian, 
+A.W. Roe, W. Xi, Large-depth three-photon fluorescence microscopy imaging of 
+I.B. Belyaev et al.                                                                                                                                                                                                                               
+Advanced Drug Delivery Reviews 219 (2025) 115550
+22
+cortical microvasculature on nonhuman primates with bright AIE probe In vivo, 
+Biomaterials 289 (2022) 121809, https://doi.org/10.1016/j. 
+biomaterials.2022.121809.
+[251] O.T. Bruns, T.S. Bischof, D.K. Harris, D. Franke, Y. Shi, L. Riedemann, A. Bartelt, 
+F.B. Jaworski, J.A. Carr, C.J. Rowlands, M.W.B. Wilson, O. Chen, H. Wei, G. 
+W. Hwang, D.M. Montana, I. Coropceanu, O.B. Achorn, J. Kloepper, J. Heeren, P. 
+T.C. So, D. Fukumura, K.F. Jensen, R.K. Jain, M.G. Bawendi, Next-generation in 
+vivo optical imaging with short-wave infrared quantum dots, Nat Biomed Eng 1 
+(2017) 1–11, https://doi.org/10.1038/s41551-017-0056.
+[252] M. Alieva, L. Ritsma, R.J. Giedt, R. Weissleder, R.J. van, Imaging windows for 
+long-term intravital imaging: General overview and technical insights, IntraVital 
+3 (2014), https://doi.org/10.4161/intv.29917.
+[253] M.E. Fernandez-Sanchez, T. Brunet, J.C. R¨oper, E. Farge, Mechanotransduction’s 
+impact on animal development, evolution, and tumorigenesis, Annu. Rev. Cell 
+Dev. Biol. 31 (2015), https://doi.org/10.1146/annurev-cellbio-102314-112441.
+[254] G. Jacquemin, M. Benavente-Diaz, S. Djaber, A. Bore, V. Dangles-Marie, 
+D. Surdez, S. Tajbakhsh, S. Fre, B. Lloyd-Lewis, Longitudinal high-resolution 
+imaging through a flexible intravital imaging window, Sci. Adv. 7 (2021), https:// 
+doi.org/10.1126/sciadv.abg7663.
+[255] A. Korolj, R.H. Kohler, E. Scott, E.A. Halabi, K. Lucas, J.C.T. Carlson, R. 
+Weissleder, Perfusion Window Chambers Enable Interventional Analyses of 
+Tumor Microenvironments, Advanced science (Weinheim, Baden-Wurttemberg, 
+Germany) 10 (2023). Doi: 10.1002/advs.202304886.
+[256] Z. Ou, Y.-s. Duh, N.J. Rommelfanger, C.H.C. Keck, S. Jiang, K. Brinson, S. Zhao, E. 
+L. Schmidt, X. Wu, F. Yang, B. Cai, H. Cui, W. Qi, S. Wu, A. Tantry, R. Roth, J. 
+Ding, X. Chen, J.A. Kaltschmidt, M.L. Brongersma, G. Hong, Achieving optical 
+transparency in live animals with absorbing molecules, Science (New York, N.Y.) 
+385 (2024) eadm6869. Doi: 10.1126/science.adm6869.
+[257] D. Zhu, V. Tuchin, Tissue Optical Clearing Imaging from Ex vivo toward In vivo, 
+BME Front. 5 (2024) 58, https://doi.org/10.34133/bmef.0058.
+[258] T. Samuel, S. Rapic, O’, C. Brien, M. Edson, Y. Zhong, R.S. DaCosta, Quantitative 
+intravital imaging for real-time monitoring of pancreatic tumor cell hypoxia and 
+stroma in an orthotopic mouse model, Sci. Adv. 9 (2023). Doi: 10.1126/sciadv. 
+ade8672.
+[259] M.C. Schubert, S.J. Soyka, A. Tamimi, E. Maus, J. Schroers, N. Wißmann, 
+E. Reyhan, S.K. Tetzlaff, Y. Yang, R. Denninger, R. Peretzke, C. Beretta, 
+M. Drumm, A. Heuer, V. Buchert, A. Steffens, J. Walshon, K. McCortney, 
+S. Heiland, M. Bendszus, P. Neher, A. Golebiewska, W. Wick, F. Winkler, M. 
+O. Breckwoldt, A. Kreshuk, T. Kuner, C. Horbinski, F.T. Kurz, R. Prevedel, 
+V. Venkataramani, Deep intravital brain tumor imaging enabled by tailored three- 
+photon microscopy and analysis, Nat Commun 15 (2024) 1–21, https://doi.org/ 
+10.1038/s41467-024-51432-4.
+[260] Y. Chen, X. Liu, H. Yuan, Z. Yang, R.C.A. von, Y. Qie, H. Zhao, Y. Wang, W. Jiang, 
+B.Y.S. Kim, Therapeutic Remodeling of the Tumor Microenvironment Enhances 
+Nanoparticle Delivery, Advanced science (Weinheim, Baden-Wurttemberg, 
+Germany) 6 (2019). Doi: 10.1002/advs.201802070.
+[261] Y. Lu, P. Jabbari, A. Mukhamedshin, A.V. Zvyagin, Fluorescence lifetime imaging 
+in drug delivery research, Adv. Drug Deliv. Rev. (2025) 115521, https://doi.org/ 
+10.1016/j.addr.2025.115521.
+[262] H. Sparks, H. Kondo, S. Hooper, I. Munro, G. Kennedy, C. Dunsby, P. French, 
+E. Sahai, Heterogeneity in tumor chromatin-doxorubicin binding revealed by in 
+vivo fluorescence lifetime imaging confocal endomicroscopy, Nat Commun 9 
+(2018) 1–14, https://doi.org/10.1038/s41467-018-04820-6.
+[263] J.-N. May, J.I. Moss, F. Mueller, S.K. Golombek, I. Biancacci, L. Rizzo, A. 
+S. Elshafei, F. Gremse, R. Pola, M. Pechar, T. Etrych, S. Becker, C. Trautwein, R. 
+D. Bülow, P. Boor, R. Knuechel, S. von Stillfried, G. Storm, S. Puri, S.T. Barry, 
+V. Schulz, F. Kiessling, M.B. Ashford, T. Lammers, Histopathological biomarkers 
+for predicting the tumour accumulation of nanomedicines, Nat. Biomed. Eng 
+(2024) 1–13, https://doi.org/10.1038/s41551-024-01197-4.
+[264] E.M. Gabriel, K. Sukniam, K. Popp, S.P. Bagaria, Human intravital microscopy in 
+the study of sarcomas: an early trial of feasibility, Front. Oncol. 13 (2023) 
+1151255, https://doi.org/10.3389/fonc.2023.1151255.
+[265] E.M. Gabriel, M. Kim, D.T. Fisher, C. Mangum, K. Attwood, W. Ji, 
+D. Mukhopadhyay, S.P. Bagaria, M.W. Robertson, T.A. Dinh, K.L. Knutson, J. 
+J. Skitzki, M.B. Wallace, A pilot trial of intravital microscopy in the study of the 
+tumor vasculature of patients with peritoneal carcinomatosis, Sci Rep 11 (2021) 
+1–13, https://doi.org/10.1038/s41598-021-84430-3.
+[266] Q. Xin, H. Ma, H. Wang, X.-D. Zhang, Tracking tumor heterogeneity and 
+progression with near-infrared II fluorophores, Exploration (beijing) 3 (2023) 
+20220011, https://doi.org/10.1002/EXP.20220011.
+[267] Q. Zhou, C. Xue, J. Man, P. Zhang, X. Ke, J. Zhao, B. Zhang, J. Zhou, Correlation 
+of tumor-associated macrophage infiltration in glioblastoma with magnetic 
+resonance imaging characteristics: a retrospective cross-sectional study, Quant. 
+Imaging Med. Surg. 13 (2023) 5958–5973, https://doi.org/10.21037/qims-23- 
+126.
+[268] G. Erdag, J.T. Schaefer, M.E. Smolkin, D.H. Deacon, S.M. Shea, L.T. Dengel, J. 
+W. Patterson, C.L. Slingluff, Immunotype and immunohistologic characteristics of 
+tumor-infiltrating immune cells are associated with clinical outcome in metastatic 
+melanoma, Cancer Res. 72 (2012) 1070–1080, https://doi.org/10.1158/0008- 
+5472.CAN-11-3218.
+[269] V. Beckford, S.D. Fontaine, H.F. VanBrocklin, B.R. Hearn, R. Reid, G.W. Ashley, D. 
+V. Santi, PET Imaging of the EPR Effect in Tumor Xenografts Using Small 15 nm 
+Diameter Polyethylene Glycols Labeled with Zirconium-89, Mol. Cancer Ther. 19 
+(2020), https://doi.org/10.1158/1535-7163.MCT-19-0709.
+[270] H.H. Gustafson, D. Holt-Casper, D.W. Grainger, H. Ghandehari, Nanoparticle 
+uptake: The phagocyte problem, Nano Today 10 (2015) 487–510, https://doi. 
+org/10.1016/j.nantod.2015.06.006.
+[271] B. Ouyang, W. Poon, Y.-N. Zhang, Z.P. Lin, B.R. Kingston, A.J. Tavares, Y. Zhang, 
+J. Chen, M.S. Valic, A.M. Syed, P. MacMillan, J. Couture-Sen´ecal, G. Zheng, W.C. 
+W. Chan, The dose threshold for nanoparticle tumour delivery, Nat. Mater. 19 
+(2020) 1362–1371, https://doi.org/10.1038/s41563-020-0755-z.
+[272] I.B. Belyaev, A.B. Mirkasymov, V.I. Rodionov, J.S. Babkova, P.I. Nikitin, S. 
+M. Deyev, I.V. Zelepukin, MPS blockade with liposomes controls 
+pharmacokinetics of nanoparticles in a size-dependent manner, Biomed. Mater. 
+19 (2024), https://doi.org/10.1088/1748-605X/ad7e6f.
+I.B. Belyaev et al.                                                                                                                                                                                                                               

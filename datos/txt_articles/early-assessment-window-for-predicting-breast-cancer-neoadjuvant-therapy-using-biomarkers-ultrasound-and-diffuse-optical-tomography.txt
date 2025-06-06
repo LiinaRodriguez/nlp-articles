@@ -1,0 +1,1646 @@
+Vol.:(0123456789)
+1 3
+Breast Cancer Research and Treatment 
+https://doi.org/10.1007/s10549-021-06239-y
+CLINICAL TRIAL
+Early Assessment Window for Predicting Breast Cancer Neoadjuvant 
+Therapy using Biomarkers, Ultrasound, and Diffuse Optical 
+Tomography
+Quing Zhu1,2   · Foluso O. Ademuyiwa3 · Catherine Young4 · Catherine Appleton5 · Matthew F. Covington6 · 
+Cynthia Ma3 · Souzan Sanati7 · Ian S. Hagemann8 · Atahar Mostafa1 · K. M. Shihab Uddin1 · Isabella Grigsby3 · 
+Ashley E. Frith3 · Leonel F. Hernandez‑Aya3 · Steven S. Poplack2,9
+Received: 2 January 2021 / Accepted: 20 April 2021 
+© The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature 2021
+Abstract
+Purpose  The purpose of the study was to assess the utility of tumor biomarkers, ultrasound (US) and US-guided diffuse 
+optical tomography (DOT) in early prediction of breast cancer response to neoadjuvant therapy (NAT).
+Methods  This prospective HIPAA compliant study was approved by the institutional review board. Forty one patients were 
+imaged with US and US-guided DOT prior to NAT, at completion of the first three treatment cycles, and prior to defini-
+tive surgery from February 2017 to January 2020. Miller-Payne grading was used to assess pathologic response. Receiver 
+operating characteristic curves (ROCs) were derived from logistic regression using independent variables, including: tumor 
+biomarkers, US maximum diameter, percentage reduction of the diameter (%US), pretreatment maximum total hemoglobin 
+concentration (HbT) and percentage reduction in HbT (%HbT) at different treatment time points. Resulting ROCs were 
+compared using area under the curve (AUC). Statistical significance was tested using two-sided two-sample student t-test 
+with P < 0.05 considered statistically significant. Logistic regression was used for ROC analysis.
+Results  Thirty-eight patients (mean age = 47, range 24–71 years) successfully completed the study, including 15 HER2 + of 
+which 11 were ER + ; 12 ER + or PR + /HER2−, and 11 triple negative. The combination of HER2 and ER biomarkers, 
+%HbT at the end of cycle 1 (EOC1) and %US (EOC1) provided the best early prediction, AUC = 0.941 (95% CI 0.869–1.0). 
+Similarly an AUC of 0.910 (95% CI 0.810–1.0) with %US (EOC1) and %HbT (EOC1) can be achieved independent of HER2 
+and ER status. The most accurate prediction, AUC = 0.974 (95% CI 0.933–1.0), was achieved with %US at EOC1 and %HbT 
+(EOC3) independent of biomarker status.
+Conclusion  The combined use of tumor HER2 and ER status, US, and US-guided DOT may provide accurate prediction of 
+NAT response as early as the completion of the first treatment cycle.
+Clinical Trial Registration number: NCT02891681. https://​clini​caltr​ials.​gov/​ct2/​show/​NCT02​891681,Registration time: 
+September 7, 2016
+Keywords  Predicting neoadjuvant therapy · Personalized medicine · Near Infrared imaging · Ultrasound
+ *	 Quing Zhu 
+	
+zhu.q@wustl.edu
+	
+https://engineering.wustl.edu/faculty/Quing-Zhu.html
+1	
+Biomedical Engineering and Radiology, Washington 
+University in St Louis, One Brookings Drive, Mail 
+Box 1097, Whitaker Hall 200F, St. Louis, MO 63130, USA
+2	
+Washington University School of Medicine in St Louis, 
+St. Louis, USA
+3	
+Medical Oncology, Washington University School 
+of Medicine in St Louis, St. Louis, USA
+4	
+Washington Baylor Scott & White Health, Medical Center, 
+Texas, Dallas, USA
+5	
+Diagnostic Imaging Associates, Ltd. St. Luke’s Hospital, 
+Chesterfield, USA
+6	
+Department of Radiology and Imaging Sciences, University 
+of Utah, Salt Lake City, USA
+7	
+Pathology, Department of Pathology, Cedars-Sinai Medical 
+Center, Los Angeles, USA
+8	
+Washington University School of Medicine in St Louis, 
+St. Louis, USA
+9	
+Present Address: Radiology, Stanford University, Stanford, 
+USA
+	
+Breast Cancer Research and Treatment
+1 3
+Abbreviations
+NIR	
+Near infrared
+pCR	
+Pathological complete response
+ROI	
+Region of interest
+ER	
+Estrogen receptor
+PR	
+Progesterone receptor
+HER2	
+Human epidermal growth factor receptor 2
+TNBC	
+Triple-negative breast cancer
+MP	
+Miller-Payne grade
+RCB	
+Residual cancer burden
+NAT	
+Neoadjuvant therapy
+HbT	
+Total hemoglobin
+ROC	
+Receiver operating characteristic curve
+AUC​	
+Area under receiving operating characteristic 
+curve
+Introduction
+Preoperative neoadjuvant therapy (NAT) for patients with 
+locally advanced breast cancer downstages the tumor to 
+facilitate breast conserving surgery, and allows in vivo 
+assessment of therapeutic efficacy for tailored treatment 
+approaches. Pathological response to NAT predicts clini-
+cal outcome. An absence of residual invasive breast cancer 
+cells, in the primary tumor bed and lymph nodes follow-
+ing NAT is strongly correlated with improved disease-free 
+survival and overall survival [1]. However, breast cancer is 
+a heterogeneous disease; approximately 20–25% of breast 
+cancers have amplification of the human epidermal growth 
+factor receptor 2 (HER-2/neu), while 10–20% of breast 
+cancers lack expression of estrogen receptor and progester-
+one receptor and HER2 gene amplification, known as tri-
+ple-negative breast cancer (TNBC). Dual HER2 blockade 
+in the neoadjuvant setting has been shown to increase the 
+pathological complete response (pCR) rate in HER2 positive 
+disease [2–4]. Despite this, there is a significant percentage 
+of HER2 + patients who do not achieve a pCR or near pCR 
+[5]. Those patients who have residual invasive breast cancer 
+after HER2-targeted therapies have a worse prognosis [6]. 
+Moreover, to date, no FDA-approved targeted therapies are 
+available for early-stage TNBC patients and refining TNBC 
+breast cancers into molecular subtypes still is a significant 
+challenge in predicting NAT [7]. Thus, there is an unmet 
+need for individual assessment before and during early NAC 
+to guide treatment options by switching patients to other 
+therapies to achieve optimal outcomes with reduced toxicity.
+Many ongoing investigations are exploring imaging tech-
+niques to monitor response. The use of imaging is appealing 
+because it is non-invasive and may provide a window of 
+opportunity wherein ineffective treatment regimens could be 
+altered. Conventional imaging methods include mammogra-
+phy, ultrasound (US), MRI and PET-CT. Mammography has 
+low sensitivity in the evaluation of NAT response [8]. US is 
+moderately accurate [9–12] and has the additional benefits 
+of easy access and low cost. MRI and PET-CT have both 
+demonstrated good accuracy in predicting pCR [13–15], 
+however, both are cost prohibitive given the need for serial 
+imaging evaluation.
+Optical tomography and spectroscopy using near infra-
+red (NIR) diffused light has been explored as a novel tool 
+to predict and monitor tumor vasculature response to NAT 
+[16–26]. The NIR technique utilizes intrinsic hemoglobin 
+contrast, which is related to tumor angiogenesis. Recently 
+studies have shown that pre-treatment total hemoglobin con-
+centration (HbT) and changes in HbT measured at the early 
+treatment cycles can predict treatment outcome [16–26]. 
+Furthermore, the Diffuse Optical Tomography (DOT) can 
+be easily integrated with ultrasound systems for dual-modal-
+ity imaging assessment of breast cancer response to NAT. 
+This manuscript reports a three-year prospective study of a 
+considerable patient population evaluated with US and US-
+guided DOT before, during, and after treatment completion 
+in an attempt to identify the best and earliest predictors of 
+pCR for HER2 + , ER + /HER2− and triple negative breast 
+cancer subtypes.
+Materials and methods
+Patient
+This prospective study was approved by the local institu-
+tional review board and was HIPAA compliant. Sixty female 
+patients with newly diagnosed breast cancer presenting to 
+medical oncology at Washington University School of Medi-
+cine from February 2017 to August 2019 for preoperative 
+systemic therapy signed informed consent. Exclusion cri-
+teria were given in Fig. 1 and fifteen patients were subse-
+quently deemed ineligible and four patients withdrew. Of the 
+remaining 41 patients, two developed metastases and did not 
+complete the study and one had a contralateral abnormality 
+preventing reference imaging. Data from these three patients 
+were not included in the analysis. Thus 38 female patients 
+(mean age = 47, range 24–71 years) constituted the study 
+group and underwent US and US-guided DOT imaging of 
+the index breast cancer prior to the initiation of NAT, at the 
+end of the first three treatment cycles and before definitive 
+surgery. Patients were treated with NAT regimens accord-
+ing to current clinical practice or based on therapeutic trial 
+protocols.
+Baseline imaging was performed an average of 28 days 
+after diagnostic core needle biopsy (median = 26, range 
+7–56 days) and before the first treatment (median = 1 day, 
+range 0–15 days). During treatment, imaging occurred 
+before patient scheduled treatment (median = 0, range 
+Breast Cancer Research and Treatment	
+1 3
+0–5 days). The average interval between post-treatment 
+imaging and definitive surgery was 25 days (median 20, 
+range 1–163 days).
+US and US‑guided DOT imaging
+Ultrasound and US-guided DOT examinations were com-
+pleted in a breast imaging clinic with 4 commercial US units 
+and associated US probes of SL15-4 (Aixplorer™, Super-
+Sonic Imagine Inc., Aix-en-Provence, FR) and a 4th genera-
+tion DOT system. Standard US was performed by one of 
+four dedicated breast imaging radiologists with an average 
+of 12 years of breast US experience (range 2–24 years) at 
+study initiation. The index tumor was imaged in orthogonal 
+planes and the maximum diameter was recorded. Prior US 
+examinations were referenced during the exam to ensure 
+consistency of measurements. The percentage ratio %US, 
+largest dimension of each post-treatment time point over 
+the largest dimension pretreatment, was used to evaluate the 
+fraction reduction from NAT. After completion of the breast 
+US examination, the commercial US probe was inserted into 
+the DOT probe. The breast radiologist then directed the 
+engineer to the index tumor site and assisted in US-guided 
+DOT acquisition as needed.
+Details of the 4th generation DOT system used for this 
+trial have been previously reported [27]. Briefly, the US-
+guided DOT hand-held probe consists of the commercial 
+US transducer located centrally, with source and detector 
+optical fibers distributed around the periphery (see Fig. 2). 
+The entire data acquisition from 9 source positions and 14 
+detectors was less than 4 s. For each patient, US images 
+and optical measurements were acquired simultaneously of 
+both the index tumor site and subsequently a normal region 
+within the corresponding quadrant of the contralateral 
+breast. Multiple datasets were acquired of the index tumor 
+and contralateral reference site. The perturbation caused 
+by tumor between the measurements of the tumor site and 
+the reference site was used for image reconstruction. The 
+measurements from the normal contralateral breast were 
+used for calculating the background optical absorption and 
+reduced scattering coefficients which were used for comput-
+ing weight matrix for image reconstruction.
+The US-guided DOT reconstruction algorithm has been 
+reported [22, 28]. In brief, the DOT reconstruction uses 
+ultrasound lesion identification to segment the imaging 
+volume into a region of interest (ROI) and background to 
+improve the inversion. The ROI is two to three times larger 
+in spatial dimensions than the tumor size (as measured by 
+co-registered US) due to the low spatial resolution of dif-
+fused light. A tighter ROI in the depth dimension is set by 
+using co-registered US. The pretreatment ROI is used for 
+data processing of all time points, thereby minimizing the 
+effect of treatment related changes in tumor size on the opti-
+cal image reconstruction.
+The optical absorption distribution at each wavelength 
+was reconstructed, and the total hemoglobin concentration 
+(HbT), oxygenated-hemoglobin (oxyHb) and deoxygenated-
+hemoglobin concentration (deoxyHb) maps were computed. 
+An average maximum value of HbT, oxyHb, and deoxyHb 
+was obtained from 5 to 10 optical images reconstructed from 
+each of the separate repetition of measurements acquired 
+from the index tumor. Data with patient motion were rec-
+ognized by using two co-registered US images before and 
+after each optical data set and were excluded from averaging. 
+Fig. 1   Patient Study Flow 
+Diagram. Exclusion criteria 
+included pregnancy, breast-
+feeding, prior history of breast 
+cancer, prior history of chest 
+wall radiation, prior history of 
+breast reconstruction, reduction, 
+or augmentation and bilateral 
+breast cancers
+	
+Breast Cancer Research and Treatment
+1 3
+To assess each patient’s response, the HbT obtained before 
+treatment was taken as the baseline and the percentage 
+(%HbT) normalized to the baseline was used to quantita-
+tively evaluate the remaining tumor vascular fraction during 
+NAT.
+Pathology assessment
+Pathology data were extracted from pathology reports and 
+from re-examination of formalin-fixed, paraffin-embedded 
+slides to complete missing data. One breast pathologist 
+(SS, 10 years experience) evaluated cases from patients 
+recruited between February 2017 to May 2019 and the 
+second breast pathologist (ISH, 7 years experience) evalu-
+ated the rest. Response to NAT in each surgical resection 
+specimen was graded using Miller-Payne (MP) criteria 
+[29], with comparison to initial core biopsy when nec-
+essary. There are five MP grades based on reduction in 
+tumor cellularity: Grade 1—no change or minor alteration 
+in individual malignant cells but no reduction in overall 
+cellularity. Grade 2—minor (up to 30%) loss of tumor cells 
+but overall cellularity remains high. Grade 3—estimated 
+30% to 90% reduction in tumor cells. Grade 4—marked 
+(> 90%) disappearance of tumor cells or near pCR. Grade 
+5—no malignant cells are identifiable in sections from 
+the tumor bed (pCR). The MD Anderson residual cancer 
+burden (RCB) was calculated based on the primary tumor 
+bed, overall cancer cellularity, in situ disease, number of 
+positive lymph nodes and diameter of the largest lymph 
+node metastasis [30]. Since US and US-guided DOT were 
+performed on the index tumor, the MP grading system was 
+used to evaluate pathological response and RCB was used 
+as a reference for MP grade.
+Invasive carcinoma within the pretreatment core biop-
+sies was graded using the Nottingham histologic score 
+(NS). Testing for estrogen receptor (ER), progesterone 
+receptor (PR), and HER2/neu (c-erbB-2) expression was 
+performed by immunohistochemistry by an FDA-approved 
+method on formalin-fixed, paraffin-embedded pretreatment 
+core biopsy tissue. The ER and PR were scored by Allred 
+scoring system [31], where the total score ranges from 0 
+to 8 (scores ≥ 3 are positive). HER2 was scored in accord-
+ance with 2018 ASCO/CAP guidelines. Cases with equiv-
+ocal HER2 immunostaining were reflexed to fluorescence 
+in situ hybridization (FISH).
+Statistical analysis
+Generalized Logistic Regression (Eq. 1) was used to relate 
+treatment outcomes to individual predictor variables for 
+ROC analysis [32]. Briefly, logistic regression describes 
+the relationship of several predictor variables X1, X2… Xk 
+to a dichotomous response variable Y (1: responder, 0: 
+non-responder). The model can be written in the form of 
+the conditional probability of the occurrence of one of the 
+two possible outcomes of Y, as follows:
+Given the data on Y, X1, … Xk, the unknown parameters 훽n , 
+n = 0, 1, …k can be estimated using the maximum likelihood 
+method and an ROC is obtained from the regression output.
+Spearman is a rank based Pearson and is used for continu-
+ous or ordinal variables [32]. Because binary predictor vari-
+ables can be viewed as special ordinal variables, Spearman’s 
+rho correlation coefficient is used for assessing predictors in 
+our study. Each predictor was first correlated with the MP 
+grade using Spearman’s rho to assess its predictive value. 
+The t-test was used to evaluate the statistical significance 
+and P values less than 0.05 were considered significant. For 
+each pair of significant predictors, a correlation between the 
+two predictors was evaluated using Spearman’s rho. The cor-
+related predictors with Spearman’s rho greater than 0.6 were 
+not used together for ROC analysis. Minitab 19 software 
+(Minitab, State College, PA) was used for ROC and sta-
+tistical calculations. The 95% confidence interval (CI) of 
+each ROC was computed in R using the pROC package. To 
+evaluate the significance of different ROCs with different 
+sets of predictors, we used a function deltaAUC in R, which 
+(1)
+prY = 1X1, X2, … Xk
+ =
+1
+1 + exp(−
+
+훽0 + ∑k
+n=1 훽nXn)
+
+Fig. 2   US-guided DOT probe. The foot-print of the combined DOT 
+probe is approximately 10 cm. Four source laser diodes of 730 nm, 
+785 nm, 808 nm and 830 nm optical wavelengths were sequentially 
+switched to nine source positions (pointed by an arrow) on the probe, 
+while the reflected light was coupled by the 14 light guides (pointed 
+by an arrow) to 14 parallel detectors
+Breast Cancer Research and Treatment	
+1 3
+was specially designed to compare AUCs with overlapping 
+predictors [33].
+When comparing %HbT and %US at different treatment 
+cycles, the Bonferroni-Holm correction was applied to 
+obtain the corrected P value as Pc(i) = (n − i + 1) × P(i) < α, 
+where α is 0.05, n is 3 which corresponds to the first three 
+treatment cycles. i starts from 1 (corresponding to the small-
+est P value) to 3 (corresponding to the largest P value).
+In Online Appendix, we developed treatment prediction 
+models using a supervised machine learning method based 
+on logistic regression (Eq. 1). Data of 38 patients reported 
+in this study and 22 patients acquired in an earlier study with 
+similar DOT system parameters, patient and treatment char-
+acteristics [19] were used to train and then test the prediction 
+models for generalizing the models [34].
+Results
+Table 1 summarizes patient and tumor characteristics, NAT 
+regimens and MP grading. The histologic type of 35 patients 
+was invasive ductal carcinoma of no special type; one patient 
+had invasive mucinous carcinoma, one patient had invasive 
+lobular carcinoma and one patient had invasive mammary 
+carcinoma with mixed ductal and lobular features. One of 
+the 38 patients had multi-focal disease consisting of three 
+adjacent distinct tumor masses with identical histology. For 
+this patient, the largest of the three masses was used for data 
+analysis. Fifteen patients were HER2 + , 11 were triple-neg-
+ative (TNBC), and 12 were ER + /HER2 − (n = 10) or PR + /
+HER2 − (n = 2). Eight patients had stage 3 disease, 27–stage 
+2, and 3–stage 1. For the three patients with stage 1 disease, 
+two had HER2 + tumors, and one had high grade TNBC. 
+Based upon MP grade, 5 patients had no response (pNR) 
+(MP1), 11 patients had a partial response (pPR), including 
+3 with a minor response (MP2) and 8 with an intermediate 
+response (MP3), while 3 had a near pCR (MP4) and 19 had 
+a pCR (MP5). Tumor characteristics, US and optical param-
+eters were correlated to MP grades using the Spearman’s 
+rho correlation (Table 2). We have dichotomized MP1-3 to 
+non- or incomplete response, referred as non-responders, 
+MP4-5 to complete response, referred as complete respond-
+ers. Spearman’s rho correlation coefficients of all pairs of 
+treatment prediction variables were given in Table 3.
+HER2 + and ER + /HER2– status was significantly asso-
+ciated with MP-grade (P = 0.039, P = 0.036), while Not-
+tingham grade and TNBC were not predictive (P = 0.115, 
+P = 0.138). Pretreatment maximum tumor size measured 
+by US was predictive (P = 0.011). MP1–3 had a baseline 
+maximum of 34.4 mm ± 12.8 mm, vs. 26.9 mm ± 10.9 mm 
+for MP4–5, but the difference between the two responder 
+groups was not statistically significant (P = 0.066). Reduc-
+tion in tumor size %US at the end of each of the first three 
+cycles was predictive of MP-grade (P = 0.005, P = 0.045, 
+P = 0.013), especially at EOC1. Post-treatment %US was 
+not predictive (P = 0.111), however, post-treatment tumor 
+size was (P = 0.012). Pretreatment HbT correlated with 
+MP–grade (P = 0.028), while oxyHb and deoxyHb were not 
+(P = 0.091, P = 0.132). Reduction in HbT (%HbT) showed 
+the strongest correlation with MP–grade at the end of each 
+of the first three cycles (P = 0.001, P < 0.001, P < 0.001). 
+Post-treatment %HbT also showed a strong correlation with 
+MP–grade (P = 0.007).
+Figure  3 demonstrates the HbT, reduction in HbT, 
+%HbT, and reduction in tumor size, %US, over the first 
+three treatment cycles. Bonferroni-Holm correction was 
+applied to adjust for multiple comparisons of %HbT and 
+%US over treatment cycles. There was a significant differ-
+ence in pretreatment mean maximum HbT between MP4-5 
+(85.9 µM ± 20.0) vs. MP1-3 (71.3 µM ± 19.1) (P = 0.029) 
+(Fig.  3a). However, there was no difference at EOC1 
+or EOC2 (P = 0.870, P = 0.194) because the mean HbT 
+level decreased at a faster rate in complete responders. At 
+EOC3 complete responders had a significantly lower HbT 
+(P = 0.001). The faster rate of reduction is best visualized 
+in Fig. 3b. MP4–5 tumors decreased rapidly to 78% (of 
+baseline)± 18.9, 64.2%± 18.5, 48.2 ± 13.8 at EOC1, EOC2 
+and EOC3, respectively, whereas MP1–3 tumors changed 
+minimally to 97.3%± 22.6 (EOC1), 88.7%± 22.9 (EOC2), 
+and 89.0%± 26.4(EOC3). The differences between the two 
+groups were increasingly significant as treatment progressed 
+through the first three cycles; Pc = 0.012 (EOC1), Pc = 0.008 
+(EOC2) and Pc < 0.001 (EOC3), respectively.
+The %US measurements showed a similar trend. The 
+reduction in diameter was significant with reduction rate of 
+74.8%± 17.8, 61.8%± 28.3, 52.4%± 29.4 in MP4-5 tumors 
+and 96.5%± 17.8, 82.4%± 23.7 and 74.7%± 23.5 in MP1-3 
+tumors, respectively (Fig. 3c). The differences between 
+the two groups were significant with Pc = 0.003 (EOC1), 
+Pc = 0.028 (EOC2), Pc = 0.040 (EOC3), respectively.
+Examples of a treatment responder and a non-responder 
+are shown in Figs. 4 and 5.
+We performed ROC analyses using logistic regression 
+(Eq. 1) to identify the best early predictors of response 
+(MP4-5) at different treatment time points, EOC1–3. AUCs 
+are tabulated (Table 4) with and without predictive bio-
+marker status of ER and HER2, and subsets ROCs shown 
+graphically in Fig. 6 with generalized logistic regression 
+parameters, 훽n, given in Table 5. As noted above HER2 
+and ER status were shown to predict treatment response 
+without other imaging parameters (AUC = 0.773, 95% CI 
+0.629–0.917). When added to ER and HER2 status, %US 
+at EOC1 noticeably improves the AUC (AUC = 0.883, 
+95% CI 0.768–0.997). Similarly, the addition of HbT and 
+%HbT to biomarker status substantially increases the AUC 
+(AUC = 0.903, 95% CI 0.808–0.998). While each parameter 
+	
+Breast Cancer Research and Treatment
+1 3
+Table 1   Clinicopathologic characteristics, biomarkers, initial (clini-
+cal) tumor staging and primary baseline tumor size measured by US, 
+(post-neoadjuvant) residual gross tumor size, residual cancer burden, 
+post-treatment tumor size measured by US, treatment regimens, and 
+Miller-Payne (MP) grade
+IDC invasive ductal carcinoma, IMC invasive mucinous carcinoma, ILC invasive lobular carcinoma, TCHP docetaxel, carboplatin, trastuzumab, 
+and pertuzumab, ACT​ AC (Doxorubicin hydrochloride and cyclophosphamide) every two weeks followed by weekly paclitaxel (Taxol) for 
+12 weeks, CarboT carboplatin (paraplatin) and docetaxel (taxotere), ClinicalTrials.gov Identifier: NCT02124902, ACP atezolizumab carboplatin 
+paclitaxel ClinicalTrials.gov Identifier: NCT02883062, PLT Palbociclib Letrozole Trastuzumab ClinicalTrials.gov Identifier: NCT02907918, 
+CarboT-AC carboplatin and docetaxel for four cycles followed by doxorubicin (adriamycin) / cyclophosphamide
+1 Nottingham Grade: 1–3 low, 4–6 intermediate, 7–9 high
+2 Initial receptor report from outside hospital was TNBC and corrected later as ER + 
+3 Surgery earlier than scheduled
+Subject # Age Histology type Grade1 score Biological subtype
+Tumor stage /
+US tumor size 
+(cm)
+Residual 
+tumor (cm) 
+(gross)/RCB 
+index
+US Tumor 
+size (post)
+(cm)
+Treatment 
+regimen
+MP grade
+NIR005
+40
+IDC
+Intermed (6)
+ER + PR + HER2−
+T2/2.6
+2.1/2.796
+1.2
+ACT​
+3
+NIR006
+44
+IDC
+High (9)
+ER-PR-HER2−
+T2/2.2
+0.0/0.0
+0.3
+ACT​
+5
+NIR008
+31
+IDC
+High (9)
+ER + PR + HER2−
+T2/2.1
+0.8/2.73
+0.8
+ACT​
+3
+NIR011
+45
+IDC
+High (9)
+ER-PR-HER−
+T2/2.1
+0.0/0.0
+1.1
+ACT​
+5
+NIR014
+38
+IDC
+Intermed (6)
+ER + PR + HER2−
+T2/5.2
+2.5/3.19
+0.5
+ACT​
+2
+NIR015
+61
+IDC
+High (9)
+ER-PR + HER2−
+T2/3.6
+2.4/2.368
+1.0
+ACT​
+1
+NIR021
+59
+IDC
+High (8)
+ER-PR-HER−
+T1/1.0
+0.0/0.0
+0.4
+ACT​
+5
+NIR023
+65
+IDC
+High (9)
+ER-PR-HER2–
+T2/1.9
+0.3/1.333
+0.7
+ACT​
+3
+NIR025
+59
+IDC
+High (9)
+ER-PR-HER2−
+T3/4.6
+0.0/0.0
+0.4
+ACT​
+5
+NIR026
+45
+IDC
+High (9)
+ER + PR + HER2−
+T2/3.1
+0.7/1.355
+3.4
+ACT​
+4
+NIR027
+41
+IDC
+High (9)
+ER + PR-HER−
+T2/3.9
+3.1/3.52
+2.1
+ACT​
+1
+NIR034
+35
+IDC
+High (8)
+ER + PR + HER2−
+T2/3.1
+1.2/2.953
+1.0
+ACT​
+2
+NIR038
+44
+IDC
+Intermed (5)
+ER + PR + HER2−
+T3/2.0
+2.0/4.024
+1.9
+ACT​
+3
+NIR041
+48
+ILC
+Intermed (5)
+ER + PR + HER−
+T3/4.5
+4.1/4.251
+3.9
+ACT​
+1
+NIR001
+62
+IDC
+High (8)
+ER + PR + HER2 +  T2/1.2
+0.0/0.0
+0.0
+TCHP
+5
+NIR003
+48
+IMC
+Intermed (4)
+ER + PR + HER2 +  T2/2.9
+2.9/1.642
+3.0
+TCHP
+1
+NIR007
+42
+IDC
+High (9)
+ER- PR-HER2 + 
+T3/3.0
+0.0/0.0
+2.5
+TCHP
+5
+NIR010
+39
+IDC
+High (9)
+ER + PR-HER2 + 
+T2/3.0
+0.0/0.0
+0.5
+TCHP
+5
+NIR018
+44
+IDC
+High (7)
+ER-PR- HER2 + 
+T2/4.3
+0.0/0.0
+1.8
+TCHP
+5
+NIR019
+37
+IDC
+High (9)
+ER + PR + Her2 + 
+T2/4.7
+0.0/0.0
+1.9
+TCHP
+5
+NIR022
+30
+IDC
+High (9)
+ER-PR-HER2 + 
+T2/2.7
+0.0/0.0
+0.0
+TCHP
+5
+NIR029
+52
+IDC
+High (8)
+ER + PR-HER2 + 
+T2/2.2
+0.0/0.0
+1.4
+TCHP
+5
+NIR032
+38
+IDC
+Intermed (6)
+ER + PR-HER2 + 
+T3/1.9
+0.0/0.0
+1.2
+TCHP
+5
+NIR035
+50
+IDC
+High (7)
+ER-PR-HER2 + 
+T1/2.5
+0.0/0.0
+0.0
+TCHP
+5
+NIR040
+34
+IDC
+High (7)
+ER + PR + HER + 
+T2/4.8
+0.2/1.277
+0.8
+TCHP
+4
+NIR004
+50
+IDC
+High (9)
+ER-PR-HER2−
+T3/2.0
+0.0/0.0
+1.6
+CarboT
+5
+NIR009
+38
+IDC
+High (8)
+ER-PR + HER-
+PR + HER2−
+T2/1.4
+0.0/0.0
+0.0
+CarboT
+5
+NIR016
+53
+IDC
+High (9)
+ER + 2PR-HER2−
+T2/2.3
+0.0/0.0
+1.1
+CarboT
+5
+NIR020
+48
+IDC
+High (7)
+ER-PR-HER2−
+T2/2.7
+0.15/1.899
+1.9
+CarboT
+3
+NIR030
+71
+IDC
+High (9)
+ER-PR-HER2−
+T2/3.8
+0.9/2.045
+1.8
+CarboT
+2
+NIR031
+24
+IDC
+High (9)
+ER-PR-HER2−
+T3/3.4
+0.0/0.0
+0.5
+CarboT-AC
+5
+NIR012
+49
+IDC
+High (9)
+ER- PR-HER2−
+T2/2.2
+0.0/0.0
+2.3
+ACP
+5
+NIR028
+39
+IDC
+High (8)
+ER-PR-HER2−
+T2/2.8
+2.5/3.82
+2.4
+ACP
+3
+NIR013
+52
+IDC
+High (9)
+ER + PR-HER2 + 
+T3/6.8
+1.3/1.59
+n/a3
+PLT
+3
+NIR033
+56
+IDC/ILC
+High (9)
+ER + PR-HER2 + 
+T2/4.1
+1.1/1.561
+2.4
+PLT
+3
+NIR036
+57
+IDC
+High (8)
+ER + PR + HER2 +  T2/2.2
+0.1/0.598
+1.4
+PLT
+4
+NIR037
+43
+IDC
+High (7)
+ER + PR + HER2 +  T1/2.3
+0.0/0.0
+1.3
+PLT
+5
+NIR039
+66
+IDC
+Intermed (5)
+ER + PR + HER2–
+T2/3.1
+1.5/3.222
+n/a3
+Anastrazole
+1
+Breast Cancer Research and Treatment	
+1 3
+is independently helpful, the combination of %US and 
+%HbT is most effective in enhancing the prediction. The 
+combination of predictive biomarkers, %US and %HbT at 
+EOC1 provides the best prediction of response at the earliest 
+time point, AUC = 0.941 (95% CI 0.869–1.0), which is sig-
+nificant when compared with biomarkers and %US at EOC1 
+(P < 0.001). The greatest AUC of any time during early treat-
+ment (AUC = 0.974, 95% CI 0.932–1.0) is achieved through 
+the combination of predictive biomarkers, %US (EOC1) and 
+%HbT (EOC3), which is also significant when compared 
+with biomarkers and %US at EOC1 (P < 0.001). Even in 
+the absence of ER and HER2 status, the identical maxi-
+mum AUC is achieved (AUC = 0.974, 95% CI 0.933–1.0) 
+using %US (EOC1) and %HbT (EOC3), with only slight 
+diminution at the earliest time point, i.e. %US (EOC1) and 
+%HbT (EOC1), AUC = 0.910 (95% CI 0.810–1.0). The AUC 
+improvements of adding %HbT (EOC1) and %HbT (EOC3) 
+to %US (EOC1) is statistically significant (P < 0.001). Note 
+that MP–grade and RCB are highly correlated, Spearman’s 
+rho = 0.941 (P < 0.001). To develop a generalizable predic-
+tion model we have combined data from the 38 patients in 
+this study with earlier data of a smaller patient population 
+Table 2   Spearman’s rho 
+correlation coefficient and P 
+value between Miller-Payne 
+grade and tumor Nottingham 
+grade, tumor subtypes (HER2, 
+ER, TNBC), pre-treatment 
+HbT, oxyHb, deoxyHb, %HbT 
+measured at end of cycles 
+(EOCs) 1–3 and post-treatment 
+HbT and %HbT. Pre-treatment 
+US, %US measured at the end 
+of cycle 1–3, and post-treatment 
+US and %US
+Data were from this study of total 38 patients
+Predictors
+Biomarkers
+US predictors
+Hemoglobin predictors
+Nottingham grade
+rho = 0.260 (P = 0.115)
+HER2
+rho = 0.336 (P = 0.039)
+ER
+rho = 0.341 (P = 0.036)
+TNBC
+rho = 0.245 (P = 0.138)
+Pre-treatment US
+rho =  − 0.408 (P = 0.011)
+%US_EOC1
+rho =  − 0.461 (P = 0.005)
+%US_EOC2
+rho =  − 0.346 (P = 0.045)
+%US_EOC3
+rho =  − 0.420 (P = 0.013)
+Post-treatment US
+rho =  − 0.416 (P = 0.012)
+Post-treatment %US
+rho =  − 0.270 (P = 0.111)
+Pre-treatment HbT
+rho = 0.358 (P = 0.028)
+Pre-treatment oxyHb
+rho = 0.278 (P = 0.091)
+Pre-treatment deoxyHb
+rho = 0.249 (P = 0.132)
+%HbT_EOC1
+rho =  − 0.513 (P = 0.001)
+%HbT_EOC2
+rho =  − 0.587 (P < 0.001)
+%HbT_EOC3
+rho =  − 0.731 (P < 0.001)
+Post-treatment HbT
+rho =  − 0.094 (P = 0.592)
+Post-treatment %HbT
+rho =  − 0.445 (P = 0.007)
+Table 3   Spearman’s rho correlation coefficients of the treatment prediction variables
+Data were from this study of total 38 patients
+*The high correlation coefficients occur between %HbT_EOC1, %HbT_EOC2 and %HbT_EOC3, and between %US_EOC1, %US_EOC2, and 
+%US_EOC3
+ER
+HbT
+%Hb_EOC1
+%HbT_EOC2
+%HbT_EOC3
+US
+%US_EOC1
+%US_EOC2
+%US_EOC3
+HER2
+− 0.293
+0.263
+ − 0.052
+ − 0.114
+ − 0.386
+0.118
+ − 0.404
+− 0.241
+− 0.130
+ER
+0.171
+ − 0.129
+ − 0.210
+ − 0.196
+− 0.191
+ − 0.164
+− 0.222
+− 0.269
+TN
+0.000
+ − 0.154
+ − 0.194
+ − 0.131
+− 0.305
+0.099
+0.016
+− 0.135
+HbT
+ − 0.449
+ − 0.582
+ − 0.463
+− 0.015
+ − 0.167
+− 0.180
+0.234
+%HbT_EOC1
+0.701*
+0.641
+0.151
+ − 0.076
+0.037
+0.104
+%HbT_EOC2
+0.644
+− 0.039
+0.192
+0.142
+0.239
+%HbT_EOC3
+0.202
+0.282
+0.220
+0.399
+US
+ − 0.111
+− 0.178
+− 0.060
+%US_EOC1
+0.792
+0.641
+%US_EOC2
+0.875
+%US_EOC3
+	
+Breast Cancer Research and Treatment
+1 3
+Fig. 3   a HbT of Miller-Payne 
+grade 4–5 tumors (therapy 
+responders) and grade 1–3 
+tumors after 1, 2, 3 cycles of 
+neoadjuvant therapy. The unit 
+is µM. b %HbT of grade 4–5 
+tumors vs. grade 1–3 tumors 
+after first three cycles of 
+neoadjuvant therapy. c %US of 
+grade 4–5 tumors vs. grade 1–3 
+tumors after first three cycles 
+of neoadjuvant therapy. Pc is 
+Bonferroni-Holm corrected P 
+value
+Breast Cancer Research and Treatment	
+1 3
+of 22 patients. Similar results were obtained (see Online 
+Appendix).
+Discussion
+In current clinical practice, clinical breast examination, 
+mammography, US, MRI, and PET-CT have been used to 
+evaluate response in patients receiving NAT. Because of low 
+cost and accessibility, US has been evaluated in several stud-
+ies [9–12]. In a related study, Marinovich et al. evaluated 
+832 patients who underwent US at EOC2 and demonstrated 
+an average increase in AUCs of 2% and 3% to 0.79 and 0.80 
+respectively, with the addition of US to patient characteris-
+tics including biomarkers [9]. In this study, we found that 
+the fractional change of US maximum diameter (%US), 
+measured at EOC1 (AUC = 0.83), was more predictive than 
+EOC2 (AUC = 0.68). We further showed a substantial 11% 
+increase, AUC = 0.77 to 0.88 at EOC1, in patients with 
+known ER + or HER2 + disease. Our data show that early 
+US measurements at EOC1 can substantially avoid meas-
+urement uncertainty as seen by smaller standard deviations 
+of %US at EOC1 as compared to those at EOC2 and EOC3 
+for both responder and non-responder groups. In a recent 
+paper, Dobruch-Sobczak et al. reported a series study of 
+assessing US echogenicity, size, and other parameters of 
+19 tumors under NCT before treatment and after 7 days of 
+each treatment course for up to 4 cycles [35]. They found 
+that tumor echogenicity gradually increased from initially 
+hypoechoic (all tumors) to mixed (hypo/isoechoic) and iso-
+echoic tumors at a rate of 16% (3/19), 63% (12/19), 68% 
+(13/19) and 72% (13/18) after each course of NCT. This 
+texture change was caused by NCT-induced apoptosis of 
+tumor cells, fibrosis, collagenization, and microcalcification. 
+Tumor size was statistically significant between responders 
+and non-responders after the first course (P = 0.018) but not 
+at the second (P = 0.102) and the third course (P = 0.149). In 
+another study, Matsuda et al. reported similar echogenicity 
+changes during NCT but data were available only at the end 
+of treatment cycle 4 [36]. We have observed a similar tread 
+in echogenicity change as reported in [35] which increased 
+uncertainty in US size measurements. Thus an optimal pre-
+diction window of NCT by %US could be as early as com-
+pletion of one treatment cycle.
+Diffuse optical tomography exploits changes in tumor 
+vascularity and metabolism and have demonstrated the 
+potential for early prediction of breast cancer pathological 
+response [18–26]. Studies have shown accurate predictions 
+in the neoadjuvant setting by utilizing pretreatment hemo-
+globin levels and changes in hemoglobin early in the course 
+of treatment [19, 21–26], or by monitoring changes of blood 
+oxygen saturation sO2 at day 1 of dose dense treatment [18] 
+or day 10 during early treatment [20]. In the recent ACRIN 
+6691 trial evaluating 36 patients, the authors derived a tis-
+sue optical index (TOI), a product of deoxygenated Hb and 
+water concentration over lipid, and reported that the mid-
+treatment TOI can predict pCR with AUC 0.6 to 0.83 [16]. 
+Gunther et al. developed a dynamic diffuse optical tomog-
+raphy system that could identify patients with a pCR two 
+weeks into the treatment with AUC = 0.85 [17]. In an ear-
+lier investigation of 22 patients [19], Zhu et al. identified 
+HER2 status and HbT as the best pretreatment predictors of 
+pCR (AUC = 0.88). With known HER2 positivity, the best 
+window to accurately predict response was at the comple-
+tion of the first and second cycles of NAT (AUC = 0.96, 
+AUC = 0.97). For ER + /HER2- or TNBC subtype, the best 
+window was at the completion of the first cycle of NAT and 
+the best predictors were HbT and %HbT (AUC = 0.95).
+In this new cohort of 38 patients, “HER2, ER and pre-
+treatment HbT” has shown good prediction, AUC = 0.80 and 
+“HbT alone” has shown moderate prediction AUC = 0.71. 
+However, fractional reduction of HbT (%HbT) is a much 
+more powerful predictor of response, as is fractional reduc-
+tion of maximum diameter measured with US (%US) in 
+the first three cycles. For chemo-sensitive tumors, NCT-
+induced neovasculature damage causes a significant and 
+progressive decrease in tumor hemoglobin, as measured by 
+the DOT system, and NCT-induced tumor tissue damage 
+causes a significant size reduction, as measured by US. In 
+particular, combining tumor HER2 and ER status, %US and 
+%HbT at EOC1 provided the best early indicator of treat-
+ment response, AUC = 0.941, and remained powerful even 
+without biomarker data, AUC = 0.910. With the assessment 
+window extended to EOC3, the combination of %US EOC 
+3 and %HbT EOC3 provided accurate prediction, with AUC 
+values of 0.969 with biomarker data and 0.944 without it. 
+Overall, the highest accuracy, AUC = 0.974, was achieved 
+with the combination of %US EOC1 and %HbT at EOC3, 
+irrespective of biomarker status. To our knowledge, these 
+AUC values are among the highest reported results using 
+NAT regimens in current clinical practice.
+The US-guided DOT has low intrinsic cost and is easily 
+adaptable to clinical US systems. Disadvantages include: 
+US-guided DOT imaging is not real-time and reconstruction 
+currently takes 20 to 30 min. US-guided DOT is not suit-
+able for imaging tumors in the dark nipple-areolar complex, 
+and requires a sonographically visible tumor and normal 
+contralateral reference tissue. Our study has a number of 
+limitations. The treatment regimens were based on cur-
+rent practice at a research institution and were not limited 
+to a single regimen. The choice of systemic therapies for 
+breast cancer patients are based on multiple factors, includ-
+ing tumor biology, stage, patient characteristics and wishes, 
+clinical trial availability. The study population was not large 
+(n = 38) and to develop supervised machine learning predic-
+tion models detailed in Online Appendix, we included data 
+	
+Breast Cancer Research and Treatment
+1 3
+Fig. 4   A 59  year-old patient with a T3 triple negative cancer and 
+treated with ACT. The US/DOT imaging were performed at baseline, 
+end of cycle 1 (EOC1), 2, 3, 5 and before surgery. a–c are co-regis-
+tered US images obtained at baseline, EOC1 and EOC3. The largest 
+lesion diameters measured by US were 4.6 cm, 3.4 cm, 1.0 cm. The 
+corresponding %US at EOC1 and EOC 3 were 73.9% and 21.7%. e–f 
+are corresponding HbT maps. Each map has 7 slices reconstructed at 
+depths from 0.5 cm to 3.5 cm with 0.5 cm spacing. Each slice has 
+spatial dimensions of 9 cm by 9 cm. The maximum HbT measured at 
+baseline, EOC1, and EOC3 were 108.7 µM, 73.5 µM, and 45.0 µM. 
+The %HbT were 67.6% and 41.4% at EOC1 and EOC3. The patient 
+achieved pCR with Miller-Payne of 5
+Breast Cancer Research and Treatment	
+1 3
+from 22 patients from an earlier study with similar study 
+criteria and patient characteristics [19]. Similar results were 
+obtained. Only one patient was treated with an antiestrogen 
+regimen, i.e. anastazole, in our study cohort. Due to the lim-
+ited sample size, we have grouped this patient with the rest 
+of the patients and used pCR as surrogate endpoint.
+In our previous work, we dichotomized our comparison 
+groups as pCR and near pCR (MP4-5) versus non-respond-
+ers (MP1-3) [19, 21, 22]. In this report, we have used the 
+same comparison groups with the rationale given as follows: 
+In the original study by Ogston [29] the MP 5 and 4 groups 
+tended to track together with regard to 5 year disease free 
+survive (DFS) after NCT and surgery (85% and 72%) ver-
+sus 66%, 60% and 55% (for MP1-3). Later Zhao et al. [37], 
+evaluating the MP system using a different dataset found 
+very similar 5 year distant DFS and local recurrence-free 
+survival rates for MP4-5 versus MP1-3. In a recent study, 
+Sejben et al. [38] using the RCB system and another sepa-
+rate dataset also found the similar 5-year DFS for pCR and 
+near-pCR (RCB-1) (85.2% and 84.4%) versus 58.2 and 
+33.0 for RCB-2 and RCB-3 and 5-year overall survival for 
+pCR and near-pCR (94.4 and 87.7) versus 61.8 and 69.0 for 
+RCB-2 and RCB-3 (RCB-2, partial response and RCB-3, 
+chemoresistant).
+Our study has substantial implications for the combined 
+use of tumor subtypes, US and near-infrared-measured 
+tumor hemoglobin content in accurately predicting pCR as 
+soon as one treatment cycle is completed. A recently phase 
+3, open-label trial involving patients with HER2-positive 
+early breast cancer who were found to have residual invasive 
+disease has shown that adjuvant trastuzumab emtansine for 
+14 cycles reduced the risk of recurrence of invasive breast 
+cancer or death by 50% as compared with trastuzumab alone 
+[6]. Another trial of 910 HER2-negtive residual invasive 
+breast cancer patients after neoadjuvant chemotherapy 
+showed that adjuvant capecitabine was safe and effective in 
+prolonging disease-free survival and overall survival [39]. If 
+the residual disease could be accurately estimated earlier in 
+the NCT, patients with an unsatisfactory response could be 
+switched to investigational therapies or even definitive sur-
+gery as soon as cycle 1 is completed, allowing for personal-
+ized treatment. This ability will gain value as our armamen-
+tarium of interventions increases and responses can more 
+effectively tailor the therapeutic agents selected.
+Conclusion
+In conclusion, our results suggest that the combination of 
+HER2 and ER status, %HbT at the end of cycle 1 (EOC1) 
+and %US (EOC1) accurately predict NAT (AUC = 0.941), 
+and %HbT (EOC1) and %US (EOC1) predict NAT 
+(AUC = 0.910) regardless of HER2 and ER status. A greater 
+prediction accuracy can be achieved with AUC of 0.974 
+regardless of biomarkers when the treatment window is 
+extended to EOC3. The synergistic use of US and US-guided 
+DOT may provide a safe and low-cost strategy to accurately 
+predict NAT outcomes early in the course of therapy.
+	
+Breast Cancer Research and Treatment
+1 3
+Fig. 5   A 62 year-old patient with a T2 ER negative PR positive and 
+HER2 negative IDC and treated with ACT. The US/DOT imaging 
+were performed at baseline, end of cycle 1, 2, 3 and before surgery. 
+a–c are co-registered US images obtained at baseline, EOC1 and 
+EOC3. The largest lesion diameters measured by US were 3.6  cm, 
+2.4 cm, 1.7 cm. The corresponding %US at EOC1 and EOC 3 were 
+66.7% and 47.2%. e–f are corresponding HbT maps. Each map has 
+7 slices reconstructed at depths from 0.5 cm to 3.5 cm with 0.5 cm 
+spacing. Each slice has a spatial dimensions of 9 cm by 9 cm. The 
+maximum HbT measured at baseline, EOC1, and EOC3 were 
+70.3 µM, 79.3 µM, and 65.8 µm. The %HbT were 112.8% and 93.6% 
+at EOC1 and EOC3. The patient had 2.4 cm residual tumor with no 
+histologic evidence of tumor response as evaluated after the surgery. 
+Miller-Payne grade was 1
+Breast Cancer Research and Treatment	
+1 3
+Table 4   Logistic regression analysis based on tumor subtypes (HER2, ER) and TNBC, US measurements, and hemoglobin parameters, AUC​
+Data were from this study of total 38 patients
+*Best prediction at early treatment points
+ROC Analysis including HER2 and ER Biomarker status
+Biomarkers, HbT measured before 
+NAT
+Biomarkers, %US measured at EOCs 
+1–3
+Biomarkers, HbT, %HbT measured at 
+EOCs 1–3
+Biomarkers, %HbT 
+and %US measured 
+at EOCs 1–3
+HER2, ER
+AUC = 0.773
+95% CI: 0.629–0.917
+HER2, ER, HbT
+AUC = 0.804
+95% CI: 0.659–0.949
+TNBC
+AUC = 0.557
+95% CI: 0.407–0.707
+HER2, ER, %US_EOC1
+AUC = 0.883
+95% CI: 0.768–0.997
+HER2, ER, %US_EOC2
+AUC = 0.771
+95% CI: 0.608–0.935
+HER2, ER, %US_EOC3
+AUC = 0.842
+95% CI: 0.710–0.975
+HER2, ER, HbT, %HbT_EOC1
+AUC = 0.903
+95% CI: 0.808–0.998
+HER2, ER, HbT, %HbT_EOC2
+AUC = 0.911
+95% CI: 0.811–1.0
+HER2, ER, HbT, %HbT_EOC3
+AUC = 0.968
+95% CI:0.918–1.0
+HER2,ER,%HbT_
+EOC1,%US_
+EOC1
+AUC = 0.941*
+95% CI: 0.869–1.0
+HER2, ER, 
+%HbT_EOC2, 
+%US_EOC2
+AUC = 0.900
+95% CI: 0.797–1.0
+HER2, ER, 
+%HbT_EOC3, 
+%US_EOC3
+AUC = 0.968
+95% CI: 0.918–1.0
+HER2, ER, 
+%HbT_
+EOC3,%US_
+EOC1
+AUC = 0.974*
+95% CI: 0.932–1.0
+ROC Analysis using imaging parameters only
+US and HbT measured before NAT
+%US measured at EOCs 1–3
+%HbT measured EOCs 1–3
+%HbT and %US 
+measured at EOCs 
+1–3
+US
+AUC = 0.671
+95% CI: 0.492–0.849
+HbT
+AUC = 0.707
+95% CI:0.540–0.8744
+%US_EOC1
+AUC = 0.828
+95% CI: 0.685–0.971
+%US_EOC2
+AUC = 0.679
+95% CI: 0.489–0.869
+%US_EOC3
+AUC = 0.723
+95% CI: 0.547–0.898
+HbT, %HbT_EOC1
+AUC = 0.825
+95% CI: 0.684–0.966
+HbT, %HbT_EOC2
+AUC = 0.839
+95% CI: 0.706–0.973
+HbT, %HbT_EOC3
+AUC = 0.944
+95% CI: 0.870–1.0
+%HbT_EOC1, 
+%US_EOC1
+AUC = 0.910*
+95% CI: 0.810–1.0
+%HbT_EOC2, 
+%US_EOC2
+AUC = 0.889
+95% CI: 0.774–
+0.993
+%HbT_
+EOC3,%US_
+EOC3
+AUC = 0.944
+95% CI: 0.870–1.0
+%HbT_EOC3%, 
+US_EOC1
+AUC = 0.974*
+95% CI: 0.933–1.0
+	
+Breast Cancer Research and Treatment
+1 3
+Supplementary Information  The online version contains supplemen-
+tary material available at https://​doi.​org/​10.​1007/​s10549-​021-​06239-y.
+Acknowledgements  The authors appreciate the help of Clinical Trial 
+Office of the Oncology Department of Washington University School 
+of Medicine for patient consenting and scheduling. Drs. Catherine 
+Young, Catherine Appleton, Matthew F. Covington, were faculty mem-
+bers of Radiology Department of Washington University in St Louis 
+from the beginning of the study to July 2019.  Dr. Steven Poplack was 
+a faculty member of Radiology Department of Washington University 
+in St Louis from the beginning of the study to June 2020.
+Author contributions  QZ: designed and conducted all aspects of the 
+ultrasound-guided optical tomography data acquisition, image recon-
+struction and data analysis and contributed to the manuscript prepara-
+tion and literature review. SPP: designed and conducted patient imag-
+ing studies, data analysis, and contributed to the manuscript preparation 
+and literature review. FOA and CM: coordinated and recruited patients 
+to the study, and contributed to the manuscript review and literature 
+review. CY, CA, MFC: contributed to the imaging studies, imaging 
+interpretations, and manuscript review. SS and ISH: contributed to the 
+pathological data evaluations, interpretations, manuscript review. AM 
+and K.M.S.U: contributed to the development of optical tomography 
+system hardware and software as well as imaging algorithm. IG: coor-
+dinated, consented all study patients, and data analysis. AEF and LFH: 
+contributed to patient recruitments. All authors read and approved the 
+final manuscript.
+Funding  This study was funded by National Institutes of Health 
+(R01EB002136, R01 CA228047). SPP acknowledges funding support 
+from the Foundation for Barnes Jewish Hospital Ronald and Hanna 
+Evens Endowed Chair in Women’s Health.
+Data availability  The patients’ clinicopathologic characteristics are 
+given in Table 1. The datasets generated during and/or analyzed dur-
+ing the current study are available from the corresponding author on 
+reasonable request.
+Code availability  The code is available from the corresponding author 
+on reasonable request.
+Declarations 
+Conflict of interest  QZ is the inventor of the patents related to ul-
+trasound-guided near-infrared tomography technologies and patents 
+Fig. 6   ROCs obtained from different set of predictor variables. a 
+ROCs of known HER2/ER subgroup with 5 sets of predictor vari-
+ables, and b ROCs based on HbT, %US-EOC1, %HbT and %US 
+changes regardless of biomarkers
+Table 5   Generalized logistic regression parameters 훽n, n = 0, 1,2, 3,.. of selected models given in Fig. 6
+Data were from this study of total 38 patients
+HER2
+ER
+HbT
+%US_EOC1
+%HbT_EOC1
+%HbT_EOC3
+HER2, ER
+2.561
+2.026
+HER2, ER, HbT
+2.342
+1.866
+0.027
+HER2, ER, %US-EOC1
+2.442
+2.102
+− 0.056
+HER2, ER, %US_EOC1, %HbT_EOC1
+2.010
+2.179
+− 0.0711
+− 0.075
+HER2, ER, %US_EOC1, %HbT_EOC3
+− 0.121
+3.079
+− 0.098
+− 0.196
+HbT
+0.038
+%US_EOC1
+− 0.078
+%US_EOC1, %HbT_EOC1
+− 0.093
+− 0.077
+%US_EOC1, %HbT_EOC3
+− 0.078
+− 0.134
+Breast Cancer Research and Treatment	
+1 3
+owned by the University of Connecticut and/or Washington University 
+in St Louis. She has no conflicts of interest. All authors declare that 
+they have no conflicts of interests.
+Ethical approval  All procedures performed in studies involving human 
+participants were in accordance with the ethical standards of the insti-
+tutional and/or national research committee and with the 1964 Helsinki 
+declaration and its later amendments or comparable ethical standards.
+Informed consent  Informed consent was obtained from all individual 
+participants included in the study.
+Research involving human and animal rights  This article does not con-
+tain any studies with animals performed by any of the authors.
+Consent for publication  All authors have read the manuscript and 
+agreed with the submission.
+References
+	 1.	 Cortazar P, Zhang L, Untch M, Mehta K, Costantino JP, Wol-
+mark N, Bonnefoi H, Cameron D, Gianni L, Valagussa P, Swain 
+SM, Prowell T, Loibl S, Wickerham DL, Bogaerts J, Baselga 
+J, Perou C, Blumenthal G, Blohmer J, Mamounas EP, Bergh J, 
+Semiglazov V, Justice R, Eidtmann H, Paik S, Piccart M, Srid-
+hara R, Fasching PA, Slaets L, Tang S, Gerber B, Geyer CE Jr, 
+Pazdur R, Ditsch N, Rastogi P, Eiermann W, von Minckwitz G 
+(2014) Pathological complete response and long-term clinical 
+benefit in breast cancer: the CTNeoBC pooled analysis. Lancet 
+384(9938):164–172. https://​doi.​org/​10.​1016/​S0140-​6736(13)​
+62422-8
+	 2.	 Gianni L, Pienkowski T, Im YH et al (2012) Efficacy and safety of 
+neoadjuvant pertuzumab and trastuzumab in women with locally 
+advanced, inflammatory, or early HER2-positive breast cancer 
+(NeoSphere): a randomised multicentre, open-label, phase 2 trial. 
+Lancet Oncol 13:25–32
+	 3.	 Hurvitz SA, Martin M, Symmans WF, Jung KH, Huang CS, 
+Thompson AM, Harbeck N, Valero V, Stroyakovskiy D, Wildiers 
+H, Campone M, Boileau JF, Beckmann MW, Afenjar K, Fresco 
+R, Helms HJ, Xu J, Lin YG, Sparano J, Slamon D (2018) Neo-
+adjuvant trastuzumab, pertuzumab, and chemotherapy versus 
+trastuzumab emtansine plus pertuzumab in patients with HER2-
+positive breast cancer (KRISTINE): a randomised, open-label, 
+multicentre, phase 3 trial. Lancet Oncol 19(1):115–126. https://​
+doi.​org/​10.​1016/​S1470-​2045(17)​30716-7
+	 4.	 Schneeweiss A, Chia S, Hickish T et al (2013) Pertuzumab plus 
+trastuzumab in combination with standard neoadjuvant anthra-
+cycline-containing and anthracycline-free chemotherapy regi-
+mens in patients with HER2-positive early breast cancer: a rand-
+omized phase II cardiac safety study (TRYPHAENA). Ann Oncol 
+24:2278–2284
+	 5.	 Krystel-Whittemore M, Xu J, Brogi E, Ventura K, Patil S, Ross 
+DS, Dang C, Robson M, Norton L, Morrow M, Wen HY (2019) 
+Pathologic complete response rate according to HER2 detection 
+methods in HER2-positive breast cancer treated with neoadju-
+vant systemic therapy. Breast Cancer Res Treat. https://​doi.​org/​
+10.​1007/​s10549-​019-​05295-9
+	 6.	 von Minckwitz G, Huang CS, Mano MS, Loibl S, Mamounas 
+EP, Untch M, Wolmark N, Rastogi P, Schneeweiss A, Redondo 
+A, Fischer HH, Jacot W, Conlin AK, Arce-Salinas C, Wapnir 
+IL, Jackisch C, DiGiovanna MP, Fasching PA, Crown JP, Wülf-
+ing P, Shao Z, Rota Caremoli E, Wu H, Lam LH, Tesarowski D, 
+Smitt M, Douthwaite H, Singel SM, Geyer CE Jr, KATHERINE 
+Investigators (2019) Trastuzumab Emtansine for Residual Invasive 
+HER2-Positive Breast Cancer. N Engl J Med 380(7):617–628. 
+https://​doi.​org/​10.​1056/​NEJMo​a1814​017
+	 7.	 Lehmann BD, Jovanović B, Chen X, Estrada MV, Johnson KN, 
+Shyr Y, Moses HL, Sanders ME, Pietenpol JA (2016) Refine-
+ment of triple-negative breast cancer molecular subtypes: impli-
+cations for neoadjuvant chemotherapy selection. PLoS ONE 
+11(6):e0157368. https://​doi.​org/​10.​1371/​journ​al.​pone.​01573​68
+	 8.	 Keune JD, Jeffe DB, Schootman M, Hoffman A, Gillanders WE, 
+Aft RL (2010) Accuracy of ultrasonography and mammography 
+in predicting pathologic response after neoadjuvant chemotherapy 
+for breast cancer. Am J Surg 199(4):477–484. https://​doi.​org/​10.​
+1016/j.​amjsu​rg.​2009.​03.​012
+	 9.	 Marinovich ML, Houssami N, Macaskill P, von Minckwitz G, 
+Blohmer JU, Irwig L (2015) Accuracy of ultrasound for predict-
+ing pathologic response during neoadjuvant therapy for breast 
+cancer. Int J Cancer 136(11):2730–2737. https://​doi.​org/​10.​1002/​
+ijc.​29323
+	10.	 Candelaria RP, Bassett RL, Symmans WF, Ramineni M, Moulder 
+SL, Kuerer HM, Thompson AM, Yang WT (2017) Performance 
+of mid-treatment breast ultrasound and axillary ultrasound in pre-
+dicting response to neoadjuvant chemotherapy by breast cancer 
+subtype. Oncologist 22:394–401
+	11.	 von Minckwitz G, Kümmel S, Vogel P, Hanusch C, Eidtmann H, 
+Hilfrich J, Gerber B, Huober J, Costa SD, Jackisch C, Loibl S, 
+Mehta K, Kaufmann M, German Breast Group (2008) Intensi-
+fied neoadjuvant chemotherapy in early-responding breast can-
+cer: phase III randomized GeparTrio study. J Natl Cancer Inst. 
+100:552–562
+	12.	 Baumgartner A, Tausch C, Hosch S, Papassotiropoulos B, Varga 
+Z, Rageth C, Baege A (2018) Ultrasound-based prediction of 
+pathologic response to neoadjuvant chemotherapy in breast cancer 
+patients. Breast 39:19–23. https://​doi.​org/​10.​1016/j.​breast.​2018.​
+02.​028
+	13.	 Hayashi N, Tsunoda H, Namura M, Ochi T, Suzuki K, Yamauchi 
+H, Nakamura S (2019) Magnetic resonance imaging combined 
+with second-look ultrasonography in predicting pathologic com-
+plete response after neoadjuvant chemotherapy in primary breast 
+cancer patients. Clin Breast Cancer 19(1):71–77. https://​doi.​org/​
+10.​1016/j.​clbc.​2018.​08.​004
+	14.	 Paydary K, Seraj SM, Zadeh MZ, Emamzadehfard S, Shamchi 
+SP, Gholami S, Werner TJ, Alavi A (2019) The evolving role of 
+FDG-PET/CT in the diagnosis, staging, and treatment of breast 
+cancer. Mol Imaging Biol 21(1):1–10. https://​doi.​org/​10.​1007/​
+s11307-​018-​1181-3
+	15.	 Sheikhbahaei S, Trahan TJ, Xiao J, Taghipour M, Mena E, Con-
+nolly RM (2016) Subramaniam RM FDG-PET/CT and MRI for 
+evaluation of pathologic response to neoadjuvant chemotherapy in 
+patients with breast cancer: a meta-analysis of diagnostic accuracy 
+studies. Oncologist 21(8):931–939. https://​doi.​org/​10.​1634/​theon​
+colog​ist.​2015-​0353
+	16.	 Tromberg BJ, Zhang Z, Leproux A, O’Sullivan TD, Cerussi AE, 
+Carpenter PM, Mehta RS, Roblyer D, Yang W, Paulsen KD, 
+Pogue BW, Jiang S, Kaufman PA, Yodh AG, Chung SH, Schnall 
+M, Snyder BS, Hylton N, Boas DA, Carp SA, Isakoff SJ, Mankoff 
+D, ACRIN 6691 investigators (2016) Predicting responses to neo-
+adjuvant chemotherapy in breast cancer: ACRIN 6691 trial of dif-
+fuse optical spectroscopic imaging. Cancer Res 76(20):5933–5944
+	17.	 Gunther JE, Lim EA, Kim HK, Flexman M, Altoé M, Campbell 
+JA, Hibshoosh H, Crew KD, Kalinsky K, Hershman DL, Hiels-
+cher AH (2018) Dynamic diffuse optical tomography for monitor-
+ing neoadjuvant chemotherapy in patient. Radiology 287:778
+	18.	 Tank A, Peterson HM, Pera V, Tabassum S, Leproux A, 
+O’Sullivan T, Jones E, Cabral H, Ko N, Mehta RS, Tromberg 
+BJ, Roblyer D (2020) Diffuse optical spectroscopic imaging 
+reveals distinct early breast tumor hemodynamic responses to 
+	
+Breast Cancer Research and Treatment
+1 3
+metronomic and maximum tolerated dose regimens. Breast Can-
+cer Res 22(1):29. https://​doi.​org/​10.​1186/​s13058-​020-​01262-1
+	19.	 Zhu Q, Tannenbaum S, Kurtzman SH, DeFusco P, Ricci A Jr, 
+Vavadi H, Zhou F, Xu C, Merkulov A, Hegde P, Kane M, Wang 
+L, Sabbath K (2018) Identifying an early treatment window for 
+predicting breast cancer response to neoadjuvant chemotherapy 
+using immunohistopathology and hemoglobin parameters. Breast 
+Cancer Res 20(1):56. https://​doi.​org/​10.​1186/​s13058-​018-​0975-1
+	20.	 Cochran JM et al (2018) Tissue oxygen saturation predicts 
+response to breast cancer neoadjuvant chemotherapy within 10 
+days of treatment. J Biomed Opt 24:1
+	21.	 Zhu Q, Wang L, Tannenbaum S, Ricci A Jr, DeFusco P, Hegde P 
+(2014) Pathologic response prediction to neoadjuvant chemother-
+apy utilizing pretreatment near-infrared imaging parameters and 
+tumor pathologic criteria. Breast Cancer Res 16(5):456. https://​
+doi.​org/​10.​1186/​s13058-​014-​0456-0
+	22.	 Zhu Q, DeFusco PA, Ricci A Jr, Cronin EB, Hegde PU, Kane M, 
+Tavakoli B, Xu Y, Hart J, Tannenbaum SH (2013) Breast cancer: 
+assessing response to neoadjuvant chemotherapy by using US-
+guided near-infrared tomography. Radiology 266(2):433–442. 
+https://​doi.​org/​10.​1148/​radiol.​12112​415
+	23.	 Zhi W, Liu G, Chang C, Miao A, Zhu X, Xie L, Zhou J (2018) 
+Predicting treatment response of breast cancer to neoadjuvant 
+chemotherapy using ultrasound-guided diffuse optical tomogra-
+phy. Transl Oncol 11(1):56–64. https://​doi.​org/​10.​1016/j.​tranon.​
+2017.​10.​011
+	24.	 Jiang S, Pogue BW, Kaufman PA, Gui J, Jermyn M, Frazee TE, 
+Poplack S, DiFlorio-Alexander R, Wells WA, Paulsen KD (2014) 
+Predicting breast tumor response to neoadjuvant chemotherapy 
+with diffuse optical spectroscopic tomography prior to treatment. 
+Clin Cancer Res 20(23):6006–6015
+	25.	 Jiang S, Pogue BW (2016) A comparison of near-infrared diffuse 
+optical imaging and 18F-FDG PET/CT for the early prediction of 
+breast cancer response to neoadjuvant chemotherapy. J Nucl Med 
+57:1166
+	26.	 Tran WT, Gangeh MJ, Sannachi L, Chin L, Watkins E, Bruni 
+SG, Rastegar RF, Curpen B, Trudeau M, Gandhi S, Yaffe M, 
+Slodkowska E, Childs C, Sadeghi-Naini A, Czarnota GJ (2017) 
+Predicting breast cancer response to neoadjuvant chemotherapy 
+using pretreatment diffuse optical spectroscopic texture analysis. 
+Br J Cancer 116(10):1329–1339. https://​doi.​org/​10.​1038/​bjc.​2017.​
+97
+	27.	 Vavadi H, Mostafa A, Zhou F, Uddin KMS, Althobaiti M, Xu C, 
+Bansal R, Ademuyiwa F, Poplack S, Zhu Q (2018) Compact ultra-
+sound-guided diffuse optical tomography system for breast cancer 
+imaging. J Biomed Opt 24(2):1–9. https://​doi.​org/​10.​1117/1.​JBO.​
+24.2.​021203
+	28.	 Uddin KMS, Mostafa A, Anastasio M, Zhu Q (2017) Two step 
+imaging reconstruction using truncated pseudoinverse as a pre-
+liminary estimate in ultrasound guided diffuse optical tomography. 
+Biomed Opt Express 8(12):5437–5449. https://​doi.​org/​10.​1364/​
+BOE.8.​005437
+	29.	 Ogston KN, Miller ID, Payne S et al (2003) A new histologic 
+grading system to assess response of breast cancers to primary 
+chemotherapy; prognostic significance and survival. Breast 
+12:320–327
+	30.	 Symmans WF, Peintinger F, Hatzis C et al (2007) Measurement of 
+residual breast cancer burden to predict survival after neoadjuvant 
+chemotherapy. J Clin Oncol 25:4414–4422
+	31.	 Harvey JM, Clark GM, Osborne CK, Allred DC (1999) Estro-
+gen receptor status by immunohistochemistry is superior to the 
+ligand-binding assay for predicting response to adjuvant endocrine 
+therapy in breast cancer. J Clin Oncol 17(5):1474–1481
+	32.	 Nonparametric Statistics: a step-by-step approach, Gregory W. 
+Corder and Dole I. Foreman (2009).
+	33.	 Heller G, Seshan VE, Moskowitz CS, Gonen M (2016) Inference 
+for the difference in the area under the ROC curve derived from 
+nested binary regression models. Biostatistics 18:260–274
+	34.	 Kruppa J, Liu Y, Biau G, Kohler M, König IR, Malley JD, Ziegler 
+A (2014) Probability estimation with machine learning methods 
+for dichotomous and multicategory outcome: theory. Biom J 
+56(4):534–563. https://​doi.​org/​10.​1002/​bimj.​20130​0068
+	35.	 Dobruch-Sobczak K, Piotrzkowska-Wróblewska H, Klimonda Z, 
+Roszkowska-Purska K (2019) Litniewski ultrasound echogenic-
+ity reveals the response of breast cancer to chemotherapy. J Clin 
+Imaging 55:41–46. https://​doi.​org/​10.​1016/j.​clini​mag.​2019.​01.​
+021
+	36.	 Matsuda N, Kida K, Ohde S, Suzuki K, Yamauchi H, Nakamura S, 
+Tsunoda H (2018) Change in sonographic brightness can predict 
+pathological response of triple-negative breast cancer to neoad-
+juvant chemotherapy. Breast Cancer 25(1):43–49. https://​doi.​org/​
+10.​1007/​s12282-​017-​0782-z
+	37.	 Zhao Y, Dong X, Li R, Ma X, Song J, Li Y, Zhan D (2015) Evalu-
+ation of the pathological response and prognosis following neoad-
+juvant chemotherapy in molecular subtypes of breast cancer. Onco 
+Targets Ther 8:1511–1521
+	38.	 Sejben A, Kószó R, Kahán Z, Cserni G, Zombori T (2020) 
+Examination of tumor regression grading systems in breast can-
+cer patients who received neoadjuvant therapy. Pathol Oncol Res 
+26(4):2747–2754. https://​doi.​org/​10.​1007/​s12253-​020-​00867-3
+	39.	 Masuda N, Lee SJ, Ohtani S, Im YH, Lee ES, Yokota I, Kuroi K, 
+Im SA, Park BW, Kim SB, Yanagita Y, Ohno S, Takao S, Aogi K, 
+Iwata H, Jeong J, Kim A, Park KH, Sasano H, Ohashi Y, Toi M 
+(2017) Adjuvant capecitabine for breast cancer after preoperative 
+chemotherapy. N Engl J Med 376(22):2147–2159. https://​doi.​org/​
+10.​1056/​NEJMo​a1612​645
+Publisher’s Note  Springer Nature remains neutral with regard to 
+jurisdictional claims in published maps and institutional affiliations.

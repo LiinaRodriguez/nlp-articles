@@ -1,0 +1,2443 @@
+Medical Image Analysis 63 (2020) 101699 
+Contents lists available at ScienceDirect 
+Medical Image Analysis 
+journal homepage: www.elsevier.com/locate/media 
+Surgical spectral imaging 
+Neil T. Clancy a , b , ∗, Geoffrey Jones a , c , Lena Maier-Hein d , Daniel S. Elson e , f , Danail Stoyanov a , c 
+a Wellcome/EPSRC Centre for Interventional and Surgical Sciences (WEISS) , University College London , United Kingdom 
+b Centre for Medical Image Computing (CMIC), Department of Medical Physics and Biomedical Engineering, University College London, United Kingdom 
+c Centre for Medical Image Computing (CMIC), Department of Computer Science, University College London, United Kingdom 
+d German Cancer Research Centre (DKFZ), Heidelberg, Germany 
+e Hamlyn Centre for Robotic Surgery, Institute of Global Health Innovation, Imperial College London, United Kingdom 
+f Department of Surgery and Cancer, Imperial College London, United Kingdom 
+a r t i c l e 
+i n f o 
+Article history: 
+Received 22 May 2019 
+Revised 30 March 2020 
+Accepted 6 April 2020 
+Available online 13 April 2020 
+Keywords: 
+Multispectral imaging 
+Hyperspectral imaging 
+Minimally-invasive surgery 
+Computational imaging 
+a b s t r a c t 
+Recent technological developments have resulted in the availability of miniaturised spectral imaging sen- 
+sors capable of operating in the multi- (MSI) and hyperspectral imaging (HSI) regimes. Simultaneous 
+advances in image-processing techniques and artiﬁcial intelligence (AI), especially in machine learning 
+and deep learning, have made these data-rich modalities highly attractive as a means of extracting bio- 
+logical information non-destructively. Surgery in particular is poised to beneﬁt from this, as spectrally- 
+resolved tissue optical properties can offer enhanced contrast as well as diagnostic and guidance infor- 
+mation during interventions. This is particularly relevant for procedures where inherent contrast is low 
+under standard white light visualisation. This review summarises recent work in surgical spectral imag- 
+ing (SSI) techniques, taken from Pubmed, Google Scholar and arXiv searches spanning the period 2013–
+2019. New hardware, optimised for use in both open and minimally-invasive surgery (MIS), is described, 
+and recent commercial activity is summarised. Computational approaches to extract spectral information 
+from conventional colour images are reviewed, as tip-mounted cameras become more commonplace in 
+MIS. Model-based and machine learning methods of data analysis are discussed in addition to simula- 
+tion, phantom and clinical validation experiments. A wide variety of surgical pilot studies are reported 
+but it is apparent that further work is needed to quantify the clinical value of MSI/HSI. The current trend 
+toward data-driven analysis emphasises the importance of widely-available, standardised spectral imag- 
+ing datasets, which will aid understanding of variability across organs and patients, and drive clinical 
+translation. 
+© 2020 The Authors. Published by Elsevier B.V. 
+This is an open access article under the CC BY license. ( http://creativecommons.org/licenses/by/4.0/ ) 
+List of abbreviations: AI, Artiﬁcial intelligence; AOTF, Acousto-optic tuneable ﬁl- 
+ter; CNN, Convolutional neural network; CT, Computed tomography; DMD, Dig- 
+ital micromirror device; DPF, Differential pathlength factor; EMCCD, Electron- 
+multiplying charge-coupled device; FIGS, Fluorescence image-guided surgery; 
+FWHM, Full-width at half-maximum; GI, Gastrointestinal; HSI, Hyperspectral imag- 
+ing; INN, Invertible neural network; LCTF, Liquid crystal tuneable ﬁlter; LED, Light 
+emitting diode; LOOCV, Leave-one-out cross validation; MIS, Minimally-invasive 
+surgery; MRI, Magnetic resonance imaging; MSI, Multispectral imaging; NBI, Nar- 
+rowband imaging; NIR, Near infrared; OEM, Original equipment manufacturer; RGB, 
+Red, green, blue; sCMOS, Scientiﬁc complementary metal-oxide-semiconductor; 
+SFDI, Spatial frequency domain imaging; SNR, Signal-to-noise ratio; SSI, Surgical 
+spectral imaging; SVM, Support vector machine; VOF, Variable optical ﬁlter. 
+∗Corresponding author at: WEISS, Charles Bell House, 43-45 Foley St., London, 
+W1W 7TS, UK. 
+E-mail address: n.clancy@ucl.ac.uk (N.T. Clancy). 
+1. Introduction 
+Advances in interventional and surgical techniques have been 
+driven by technological developments in instrumentation and 
+imaging that have enhanced the surgeon’s ability to diagnose and 
+treat patients with greater precision. Continuous advances in illu- 
+mination, detection and display technology are beginning to ad- 
+dress limitations and enhance the information available to the 
+clinician beyond that naturally observable by the human eye or 
+under conventional white light visualisation. Spectrally-resolved 
+measurements of reﬂected light offer a particular opportunity to 
+explore and exploit inherent contrast between different tissues 
+and pathologies during both open and minimally-invasive surgery 
+(MIS). This review summarises the clinical context for this technol- 
+ogy, recent hardware and software advances, and discusses how it 
+may be translated into practice. 
+https://doi.org/10.1016/j.media.2020.101699 
+1361-8415/© 2020 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY license. ( http://creativecommons.org/licenses/by/4.0/ ) 
+2 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+Fig. 1. (a) Light propagation in a multi-layered tissue such as the bowel. Some light is regularly reﬂected, with the rest penetrating the surface where it may be scattered and 
+absorbed (indicated by the shift in colour of the arrows). Autoﬂuorescence emission may also occur. After suﬃcient scattering a fraction may re-emerge from the tissue and 
+be detected. Red wavelengths penetrate the tissue signiﬁcantly deeper, due to lower absorption by haemoglobin, than blue or green. (b) Optical properties of major absorbers 
+in surgical imaging applications (absorption data taken from compilation by Prahl (2018) ). Haemoglobin (molar concentration 2.33 mM) is the overwhelming chromophore, 
+while the water contribution (55 M) is negligible in the visible range. Bilirubin (20.5 μM) has a peak in the blue but normal physiological concentrations are low. The main 
+lipid (molar concentration unknown, see van Veen et al. (2004) for details) absorption peaks are found at blue and NIR wavelengths. The scattering curve shown, with values 
+indicated on the secondary axis, is constructed using Eq. (2) and typical values for bowel tissue from Jacques (2013) . Shaded areas represent typical RGB ﬁlter coverage in 
+the visible range. (c) Eight-band MSI datacube of a segment of porcine bowel tissue. The same information is collected by colour cameras in three 100 nm-wide red, green 
+and blue bands (RGB) which, when combined, produce a colour image. 
+1.1. Biophotonics and surgery 
+When light penetrates the surface of tissue it may be ab- 
+sorbed, scattered or transmitted. Additionally, after absorption, 
+some molecules may reradiate ﬂuorescent light of longer wave- 
+length ( Fig. 1 (a)). Therefore, when light is reﬂected from tissue it 
+carries the ﬁngerprint of the molecular make-up and constituents 
+of that tissue. Other weaker interactions, such as inelastic scatter- 
+ing ( Lin et al., 2018a ), and non-linear processes may offer addi- 
+tional contrast ( Palero et al., 2011 ), but are not considered here. 
+Fig. 1 (b) shows the chief attenuators of light in surgically-exposed 
+tissue, i.e., under the skin. Absorption by oxygenated and deoxy- 
+genated haemoglobin (HbO 2 and Hb, respectively) is dominant, 
+while fat (lipids) has a small peak in the visible range. Water 
+has a much weaker effect, that increases beyond NIR wavelengths. 
+Yellow pigments like bilirubin have an appreciable peak in the 
+blue-green region of the spectrum ( Jacques, 2013 ) but, outside 
+of areas with high concentrations of bile (e.g., the gall bladder 
+( Wirkert et al., 2017 ) or in cases of bilirubinaemia ( Halder et al., 
+2019 )), the volume fraction is low. Elastic scattering occurs due to 
+refractive index discontinuities at a range of length scales from 
+nanometres (cell membrane) to hundreds of microns (fat cells) 
+( Tuchin, 2015a ). The strength of these interactions varies with 
+wavelength, meaning that spectrally-resolved measurements may 
+be used to unmix and quantify the individual contributors. The 
+ﬁeld of biophotonics seeks to accomplish this disentanglement 
+through controlled illumination and detection hardware in tandem 
+with mathematical modelling, simulation and data-driven analysis 
+of the light-tissue interaction. 
+1.2. Optical imaging in surgery 
+Colour digital cameras are the primary sensing tools used to 
+guide surgeons during MIS ( Mirota et al., 2011 ). These mimic the 
+sensitivity of the human eye by detecting visible wavelengths of 
+light in the red, green and blue (RGB) spectral regions. These 
+are mounted on the proximal end of rigid endoscopes ( Fig. 2 (e)), 
+which relay images of the tissue via a system of Hopkins rod 
+lenses, while illumination is provided by a high-brightness white 
+light source ( Cockett and Cockett, 1998 ). Flexible endoscopes (and, 
+recently, some rigid endoscopes) have distal tip-mounted sensors 
+to provide high deﬁnition images. These allow detection and in- 
+spection of lesions within luminal structures, such as the gastroin- 
+testinal (GI) tract and bronchus, enabling complex interventions 
+to be performed ( Shen et al., 2019 ). Some specialist procedures, 
+such as inspection of the pancreatic and bile ducts, are carried 
+out using a ﬁbre optic imaging bundle ( Fig. 2 (f)) that transmits 
+a low resolution image to a camera at the instrument’s proxi- 
+mal end ( Voaklander et al., 2016 ). The most common surgical op- 
+tical imaging device outside of MIS is the operating microscope 
+( Fig. 2 (g)), and variations on its design are used for microsurgical 
+tasks in neurosurgery, otolaryngology, ophthalmology, gynaecology, 
+dentistry and plastic surgery ( Kriss and Kriss, 1998 ; Uluç et al., 
+2009 ). Although primarily used by the surgeon for direct, magni- 
+ﬁed, vision of the operating ﬁeld, many systems have additional 
+ports that can be used to mount cameras or additional eyepieces 
+( Hoerenz, 1980 ). 
+Standard colour cameras are chieﬂy used to relay images of 
+the operating ﬁeld to the surgeon, particularly in MIS or micro- 
+surgery. Therefore, beyond improvements in resolution, magniﬁca- 
+tion and access to challenging anatomical sites, enhancement of 
+the surgeon’s ability to assess the viability of a tissue or charac- 
+terise the extent of disease is limited to what would be observable 
+under direct vision. As a result many decisions are still subjective 
+( de Cunha et al., 2004 ) and heavily dependant on the experience of 
+the operator ( Ignjatovic et al., 2009 ). Surgery has increasingly been 
+looking to advanced optical instrumentation to improve this by 
+providing objective assessments of tissue health in real time. Some 
+optical imaging modalities have gained clinical adoption, such as 
+narrowband imaging (NBI), which uses a narrow range of green 
+and blue wavelengths to generate high contrast images of blood 
+vessels. This technology has had limited success in delivering on 
+its diagnostic potential as subjective human interpretation is still 
+required ( Ignjatovic et al., 2009 ; Rees et al., 2016 ). Exogenous ﬂu- 
+orescent contrast agents are also capable of identifying blood ves- 
+sels and recent trials have indicated potential for detection of can- 
+cer ( DSouza et al., 2016 ). Although several specialised agents with 
+molecular speciﬁcity are undergoing in vivo trials ( Nagaya et al., 
+2017 ), routine imaging capabilities are still restricted to a small 
+number of clinically-approved dyes. 
+1.3. Spectral imaging 
+Spectral imaging techniques capture the reﬂectance spectrum of 
+the tissue over an entire surface, assembling a datacube consist- 
+ing of one spectral and two spatial dimensions ( Fig. 1 (c)). Depend- 
+ing on the number of bands acquired the imaging system may be 
+termed multispectral (MSI; up to 10 s) or hyperspectral (HSI; up 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+3 
+to 100 s). Lu and Fei (2014) describe the main approaches used 
+to assemble the datacube, which may be broken down into scan- 
+ning (either in the spatial or spectral dimensions) and snapshot 
+(acquiring spatial and spectral information simultaneously) modal- 
+ities. These spectral data can then be used to generate maps of 
+tissue function ( Tetschke et al., 2016 ; Kawauchi et al., 2019 ), struc- 
+tural abnormalities ( Bedard et al., 2013 ) or enhanced contrast be- 
+tween different organs and structures ( Akbari et al., 20 08a , 20 08b ). 
+There are a variety of surgical imaging techniques with spectral 
+sensitivity, each bringing particular advantages in depth penetra- 
+tion (photoacoustic tomography; ( Zhu et al., 2018 )), separation of 
+absorption and scattering effects (spatial frequency domain imag- 
+ing (SFDI); ( Gioux et al., 2011 )) and speciﬁcity (ﬂuorescence guid- 
+ance; ( Zhou and El-Deiry, 2009 )). Despite their advantages, these 
+methods inevitably come with caveats related to hardware com- 
+plexity, motion artefacts or the need for exogenous contrast agents. 
+Although some of the demand for spectral imaging technology has 
+been motivated by the increasing availability of ﬂuorophores for 
+diagnostics and guidance ( Debie and Hernot, 2019 ), a detailed dis- 
+cussion of this ﬁeld is outside the scope of this paper and rele- 
+vant reviews may be found elsewhere ( DSouza et al., 2016 ). In this 
+review we concentrate on purely reﬂectance-based MSI and HSI 
+implementations due to their increasing availability, compatibility 
+with other clinical instruments, and the growing range and power 
+of data processing tools. 
+A review by Lu and Fei (2014) summarised the principal hard- 
+ware designs and general medical applications of spectral imaging. 
+Other relevant reviews have also been published, focussing on spe- 
+ciﬁc medical applications such as neuroimaging ( Giannoni et al., 
+2018 ), wound assessment ( Thatcher et al., 2016 ) and gastroenterol- 
+ogy ( Ortega et al., 2019 ). However, the ongoing growth of this re- 
+search ﬁeld, coupled with increasing commercial interest, has pro- 
+vided the motivation to write this review. In this article we aim 
+to: 
+• Focus on surgical applications with particular emphasis on MIS 
+and MIS-compatible approaches 
+• Describe current clinically-approved commercial systems 
+• Discuss new computational methods including estimation of 
+spectral detail from conventional colour images 
+• Discuss methods and data for training and validating imaging 
+systems as well as for understanding fundamental variability 
+across organs and patients. 
+Papers for this review were drawn from the Pubmed database, 
+Google Scholar and arXiv with an emphasis on those published 
+after spring 2013, which was the end of the period covered by 
+Lu and Fei (2014) . The search terms used were spectral imaging 
+(including multi/hyperspectral), surgery (including minimally inva- 
+sive, minimal access, and open) and in vivo . 
+In this paper we ﬁrst outline the major developments in imag- 
+ing hardware designs, separated by acquisition method, discussing 
+their relative merits with reference to speciﬁc clinical applica- 
+tions. Commercial spectral imaging cameras are highlighted, in- 
+cluding complete systems optimised for clinical use. Data analysis 
+is covered in Section 3 , beginning with a brief overview of light- 
+tissue interaction theory and modelling before progressing to re- 
+gression methods, classiﬁcation problems and machine learning. 
+Section 4 discusses methods of validating SSI systems, including 
+computer simulations, tissue phantoms and real tissue ( ex vivo and 
+in vivo ), and their ability to quantify performance. The discussion 
+in Section 5 identiﬁes the major challenges facing SSI technology 
+in its push toward routine clinical use, and proposes ways the re- 
+search community may focus their efforts to overcome them. 
+2. Surgical spectral imaging (SSI) hardware 
+The continued growth in spectral imaging activity has seen fur- 
+ther increases in the application and scope of SSI methods, as ev- 
+idenced by Table 1 . Detailed descriptions of datacube acquisition 
+mechanisms are described in other reviews, therefore we sum- 
+marise the main types relevant to SSI ( Sections 2.1 to 2.3 ), along 
+with a discussion of practical and application-speciﬁc constraints. 
+2.1. Spectral scanning 
+Spectral scanning methods sequentially acquire images at dif- 
+ferent wavelengths. One common approach is to ﬂood the scene 
+with broadband illumination and include a bandpass ﬁlter in front 
+of a monochrome camera to image the reﬂected light. A differ- 
+ent wavelength is acquired by mechanically switching using a 
+ﬁlter wheel ( Fig. 2 (a)) ( King et al., 2015 ; Wirkert et al., 2016 ; 
+Clancy et al., 2018 ), or by using an electronically-tuneable de- 
+vice such as a liquid crystal tuneable ﬁlter (LCTF) or acousto- 
+optical tuneable ﬁlter (AOTF). This has the advantage of being com- 
+patible with currently-used high-brightness xenon surgical light 
+sources, while the relatively simple detection hardware can be 
+connected directly to clinical optical imaging instruments as the 
+transmission ﬁlter is the only addition to the beam path. There- 
+fore, with minimal modiﬁcation, ﬁlter-based SSI devices can be at- 
+tached to rigid endoscopes ( Arnold et al., 2011 ; Kavvadias et al., 
+2013 ; Clancy et al., 2015 ) and operating microscopes ( Ma et al., 
+2016a ), or positioned on an articulated arm for open or external 
+imaging procedures ( Orfanoudaki et al., 2005 ; Holmer et al., 2018 ; 
+Kulcke et al., 2018 ). Relative tissue-camera motion may cause arte- 
+facts in the datacube, particularly during long sequences, although 
+this may be rectiﬁed post-acquisition using registration techniques 
+( Clancy et al., 2012b ; Du et al., 2015 ). 
+Scanning may also be implemented in illumination, using a 
+white light source and monochromator ( Regeling et al., 2016 ), ﬁl- 
+ter wheel ( Gu et al., 2016 ; Han et al., 2016 ; Wisotzky et al., 
+2018 ), variable optical ﬁlter (VOF) ( Kavvadias et al., 2013 ), AOTF 
+( Hohmann et al., 2017 ) or digital micromirror device (DMD; 
+Fig. 2 (b)) ( Koh et al., 2009 ; Zuzak et al., 2011 ). Triple bandpass 
+illumination ﬁlters overlapping with RGB detection can be used 
+to achieve a degree of parallelisation and higher acquisition rates 
+( Fawzy et al., 2015 ). The increasing availability of high-power light- 
+emitting diodes (LEDs) at multiple wavelengths has enabled cre- 
+ation of light-eﬃcient MSI sources capable of switching at high 
+speed ( Guevara et al., 2013 ; Bélanger et al., 2016 ) and at low- 
+cost ( Bolton et al., 2018 ). With a high quantum eﬃciency sen- 
+sor, such as an electron-multiplying charge-coupled device (EM- 
+CCD) or scientiﬁc complementary metal oxide semiconductor (sC- 
+MOS), a strobed LED source can also incorporate ﬂuorescence exci- 
+tation along with reﬂectance measurements, as demonstrated by 
+Ma et al. (2016a) . This allows quantiﬁcation of haemodynamic 
+events, which can further be used to correct the observed ﬂuores- 
+cence signal ( Ma et al., 2016b ). The disadvantages of LEDs are in- 
+eﬃcient ﬁbre-coupling, which is problematic for MIS applications, 
+and inconsistent spectral resolution across the visible and near- 
+infrared range. Low-loss multiplexing using light guides is possible 
+( Clancy et al., 2012a ) but is diﬃcult to scale to a large number of 
+wavelengths. The challenge for practical implementation of tune- 
+able light source-enabled SSI is the need to achieve fast electronic 
+or software-enabled synchronisation with the camera, which re- 
+quires interfaces that are not typically available on standard clini- 
+cal MIS or tip-mounted endoscopic cameras. In open surgery cases, 
+ambient light is an added complication as there is no rejection of 
+the out-of-band signal, nor can the spectrum of the background be 
+measured. This reduces the overall signal-to-noise ratio (SNR) to a 
+greater degree than in systems where scanning is accomplished on 
+4 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+Table 1 
+Comparison of recent SSI methods compatible with both open surgery and MIS. Datacube processing time, where available, is given in brackets beside the frame rate. 
+Author 
+Scan Method 
+Dispersive element 
+Spectral Range 
+(nm) 
+Spectral 
+Resolution (nm) 
+No. Bands 
+Spatial Resolution 
+(Px) 
+Frame Rate (fps) 
+Application 
+Target Tissue 
+Hohmann et al. (2017) 
+Spectral 
+AOTF 
+400–650 
+12–20 
+6 
+350 × 370 
+2 (1.55 s) 
+Gastroscopy 
+Stomach 
+Halicek et al. (2017) ; 
+Halicek et al. (2019) 
+Spectral 
+LCTF 
+450–900 
+7–20 
+91 
+1392 × 1040 
+0.02 (4 min) 
+Head and neck 
+cancer ex vivo 
+Tongue, pharynx, larynx, mandible 
+Lu et al. (2015) 
+Spectral 
+LCTF 
+450–900 
+20 
+45–226 
+1392 × 1040 
+0.008 (1 min) 
+Small animal 
+tumour 
+Various abdominal 
+Clancy et al. (2015) 
+Spectral 
+LCTF 
+460–690 
+7–20 
+24 
+1024 × 768 
+0.14 (45 s) 
+Laparoscopy 
+Bowel 
+Han et al. (2016) 
+Spectral 
+Filter wheel 
+405–665 
+10 
+27 
+582 × 752 
+0.24 (not given) 
+Colonoscopy 
+Bowel 
+King et al. (2015) 
+Spectral 
+Filter wheel 
+420–972 
+10 
+8 
+1392 × 1040 
+- (not given) 
+Open 
+Skin 
+Wirkert et al. (2016) ; 
+Ayala et al. (2019) 
+Spectral 
+Filter wheel 
+470–700 
+20–25 
+8 
+1228 × 1029 
+2.5 (0.18 s) 
+Laparoscopy, open 
+Bowel, brain 
+Olweny et al. (2013) 
+Spectral 
+Tuneable source 
+(DMD) 
+520–645 
+5 
+> 100 
+3 (0.2 s) 
+Laparoscopy 
+Kidney 
+Kavvadias et al. (2013) 
+Spectral 
+Tuneable source 
+(VOF) 
+400–1000 
+11–14 
+15 
+1920 × 1440 
+0.5 (not given) 
+Hysteroscopy 
+Endometrium 
+Bolton et al. (2018) 
+Spectral 
+Tuneable source 
+(multi LED) 
+400–950 
+11–100 
+13 
+2592 × 1944 
+0.03 (not given) 
+Erythaema 
+Skin 
+Fawzy et al. (2015) 
+Spectral 
+Tuneable source 
+(ﬁlter wheel) 
+400–760 
+15 
+18 
+659 × 494 
+15 (2.4 s) 
+Bronchoscopy 
+Lung 
+Wisotzky et al. (2018) 
+Spectral 
+Tuneable source 
+(ﬁlter wheel) 
+400–700 
+20 
+16 
+1920 × 1080 
+- (not given) 
+Otolaryngology 
+Mastoid, parotid, gland 
+Ma et al. (2016a) 
+Spectral 
+Tuneable source 
+(multi LED) 
+530–630 
+18–33 
+2 
+512 × 512 
+~10 (not given) 
+Neuroimaging 
+Brain 
+Luthman et al. (2018) 
+Snapshot 
+Mosaic sensor 
+470–630 
+600–1000 
+< 15 
+16 (VIS) 
+25 (NIR) 
+512 × 256 
+409 × 218 
+90 (10 min) 
+Gastroscopy 
+Oesophagus 
+Wirkert et al. (2018) 
+Snapshot 
+Mosaic sensor 
+470–630 
+< 15 
+16 
+512 × 256 
+90 (7.5 ms) 
+Laparoscopy 
+Kidney 
+Nishidate et al. (2013) ; 
+Akter et al. (2017) 
+Snapshot 
+RGB 
+450–690 
+–
+25 
+1024 × 768 
+15 (~5 s) 
+Open 
+Skin, liver 
+Jones et al. (2017b) 
+Snapshot 
+RGB 
+500–620 
+–
+13 
+1024 × 768 
+30 (33 ms) 
+Laparoscopy 
+Bowel 
+Clancy et al. (2014) 
+Snapshot 
+RGB 
+470–635 
+25/60 
+3 
+1024 × 768 
+7 (~3 ms) 
+Laparoscopy 
+Bladder, bowel 
+Kester et al. (2011) ; 
+Bedard et al. (2013) ; 
+Shadfan et al. (2017) 
+Snapshot 
+IMS 
+480–656 
+4–10 
+8–60 
+200 × 200 
+8–10 (not given) 
+Gastroscopy 
+Oesophagus 
+Lin et al. (2018b) 
+Snapshot 
+Fibre bundle + spec- 
+trograph 
+460–690 
+6 
+24 
+1024 × 768 
+2 (500 ms) 
+Laparoscopy, 
+otolaryngology 
+Bowel, larynx 
+Khoobehi et al. (2012) ; 
+Khoobehi et al. (2014) 
+Snapshot 
+Fibre bundle + spec- 
+trograph 
+–
+1 
+–
+458 ﬁbres 
+(~22 × 22) 
+Fundus camera 
+Optic nerve head 
+Clancy et al. (2016b) 
+Spatial 
+Spectrograph 
+350–750 
+5 
+> 200 
+1000 × 50 
+0.5 (not given) 
+Colonoscopy 
+Bowel 
+Kiyotoki et al. (2013) ; 
+Mori et al. (2014) ; 
+Kumashiro et al. (2016) 
+Spatial 
+Spectrograph 
+400–800 
+5–10 
+72 
+640 × 480 
+0.06–0.2 
+(~10–90 s) 
+Colonoscopy, 
+neurosurgery, 
+gastroscopy 
+Stomach, brain, bowel 
+Tetschke et al. (2016) 
+Spatial 
+Spectrograph 
+500–1000 
+5 
+100–750 
+640 × 480 
+0.1 (40 s) 
+Machine perfusion Kidney 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+5 
+Fig. 2. Representative selection of spectral detection mechanisms: (a) Spectral scanning using a ﬁlter wheel (or, alternatively, an LCTF/AOTF, Section 2.1 ) in front of a camera 
+sensor; (b) Spectral scanning using tuneable light source comprised of broadband light dispersed onto a DMD (alternatively, a ﬁlter wheel, monochromator or multi-LED 
+source, Section 2.1 ) and coupled into a ﬁbre bundle (FB); (c) Spatial scanning with a hyperspectral line sensor. The galvo mirror scans the image over the entrance slit 
+to a prism-grating-prism (PGP) spectrograph (or other imaging spectrograph or variable ﬁlter, Section 2.2 ); (d) Snapshot sensors with mosaic and tiled ﬁlter arrangements 
+attached directly onto the sensor (for other ﬁeld-splitting arrangements see Section 2.3 ). Commonly-used clinical imaging devices, excluding chip-on-tip instruments, are 
+shown, with cross-sections illustrating imaging mechanisms: (e) laparoscope with rod lens image relay and optical ﬁbres running inside the shaft to carry illumination 
+light; (f) ﬁbrescope with ﬂexible ﬁbre image guide and ﬁbre optic illumination; (g) operating microscope with co-axial illumination; (h) externally-mounted imager for open 
+surgery using camera lens and ring light illumination. The lenses at the eyepiece/camera port must be chosen to form a suitably-magniﬁed image on the sensor, if employing 
+SSI types (a, d), or to produce parallel rays, if using an additional scanning mechanism as in (c). 
+the detection side and ambient light may be accounted for during 
+system spectral correction. 
+2.2. Spatial scanning 
+Spatial scanning involves acquiring the spectral information 
+from a single point (whisk-broom ( Qiu et al., 2010 )) or line (push- 
+broom, Fig. 2 (c); ( Khoobehi et al., 2004 ; Clancy et al., 2016b ; 
+Tetschke et al., 2016 )) and scanning across the ﬁeld-of-view us- 
+ing galvanometer (galvo) mirrors or robotic actuation mechanisms 
+( Avila-Rencoret et al., 2015 ). Spectrometers and imaging spectro- 
+graphs enable high spectral resolution (a few nm, band full-width 
+at half-maximum (FWHM)) at hundreds of wavelengths. Spatial 
+resolution is limited to the number of scan lines acquired and 
+the constraints imposed by any motion in the target tissue. The 
+necessity to house multiple dispersive optical elements, particu- 
+larly in the case of pushbroom imagers, has made miniaturisa- 
+tion of these systems a challenge. However, developments such as 
+sensor-mounted Fabry-Pérot interference ﬁlters, have enabled the 
+manufacture of hyperspectral devices with spectral sensitivity in- 
+tegrated along one dimension of the sensor ( Pichette et al., 2017 ). 
+This means that the system footprint is limited by the scanning 
+mechanism employed. 
+The main limitation to surgical application of this method 
+is its sensitivity to motion artefacts and the diﬃculty in align- 
+ing the spatial slices post acquisition. In vivo imaging of inter- 
+nal anatomy using ﬂexible endoscopes has been demonstrated 
+with this technique ( Clancy et al., 2016b ), with scan times min- 
+imised to limit the effect of motion and deformation during 
+data capture ( Kumashiro et al., 2016 ). Alternatively, simultane- 
+ous wide-ﬁeld imaging using a second camera can allow motion- 
+correction ( Yoon et al., 2019a ). External anatomy and more rigid 
+internal organs, less prone to gross motion and deformation have 
+yielded high resolution results in wound-healing ( Calin et al., 2015 ; 
+Holmer et al., 2016 ), neuroimaging ( Mori et al., 2014 ; Fabelo et al., 
+2018 ) and ﬂap transplantation monitoring ( Kulcke et al., 2018 ). 
+2.3. Snapshot acquisition 
+Snapshot imagers capture all three dimensions of the datacube 
+simultaneously. This is usually done by distributing both spatial 
+and spectral information across a single image sensor. A compre- 
+hensive review of snapshot spectral imaging devices and a detailed 
+treatment of their operating principles is presented by Hagen and 
+Kudenov (2013) . Their principal disadvantage is that fast acquisi- 
+tion is achieved by compromising on spatial resolution. Depend- 
+ing on the mechanism used, this effectively limits the number of 
+wavebands to the MSI domain. For example, for a 9-band snap- 
+shot imager based on a 2048 × 1088 sensor, the ﬁnal spatial res- 
+olution will be 0.25 MP, but for 25 bands this drops to 0.09 MP. 
+This approach has found particular use in applications where the 
+sensor size is not the limiting factor for spatial resolution, such as 
+ﬁbrescopes. ( Shadfan et al., 2017 ). Improved spectral performance 
+can be achieved using ﬁbre bundles to map spatial locations to in- 
+puts on a spectrograph ( Khoobehi et al., 2012 ), while spatial res- 
+olution can be improved through combination with simultaneous 
+RGB imaging ( Lin et al., 2018b ). 
+Snapshot detectors using multiple optical elements, such as 
+prisms and image-slicing mirrors, may add signiﬁcant weight 
+through glass components and metal enclosures, which constrains 
+their use. Their complex bespoke design further limits the range of 
+applications in which they can be used. For these reasons snapshot 
+imagers have remained relatively inaccessible for general research 
+applications until recently, with the advent of spectral imaging 
+sensors. A number of companies now offer products in this area, 
+with spectral ﬁlters positioned directly onto the sensor. These are 
+conﬁgured as tiled , consisting of an array of relatively large ﬁlters 
+covering 10 0 0s of pixels, and mosaic , having a repeating pixel-level 
+pattern over the entire sensor, designs ( Fig. 2 (d)). They are cur- 
+6 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+rently available both in OEM form and as part of a complete cam- 
+era package ( Pichette et al., 2016 ). Like the spectral scanning sys- 
+tems, discussed in Section 2.1 , these cameras can be placed directly 
+in place of existing clinical digital cameras on rigid endoscopes 
+( Wirkert et al., 2018 ), ﬁbrescopes ( Luthman et al., 2018 ), and op- 
+erating microscopes. 
+2.4. Applications and system choice 
+The hardware conﬁguration to be used for a particular SSI ap- 
+plication must be made with an appreciation of the advantages 
+and disadvantages of each approach and is a question that can- 
+not be answered by a single metric. Variable ﬁlters such as the 
+LCTF and AOTF offer the advantages of being free from mov- 
+ing parts, having electronic control and ﬂexibility in wavelength 
+choice. However, the devices are optically ineﬃcient: for exam- 
+ple, LCTFs optical transmittance ranges from 5% at 420 nm to ap- 
+proximately 35% at 700 nm ( CRi, 2019 ; Thorlabs, 2019 ), necessitat- 
+ing long camera integration times or sophisticated high-sensitivity 
+sensors to collect enough light. Cameras employing sCMOS, inten- 
+siﬁers or EMCCDs ( Martin et al., 2006 ; Arnold et al., 2010 ) have 
+been used in these systems to operate at speeds approaching video 
+rates. Due to the sequential nature of the acquisition process, the 
+datacube may be subject to artefacts induced by cardiac, peri- 
+staltic or respiratory motion. This can cause signiﬁcant misalign- 
+ment in the image stack, particularly if a large number of wave- 
+lengths are required, resulting in errors in the spectra recorded 
+at particular spatial points. These errors can be corrected using 
+a separate colour camera to track motion and apply correspond- 
+ing adjustments to the spectral channel via photogrammetry tech- 
+niques ( Clancy et al., 2012b ). Alternatively, computer vision tools 
+for non-rigid registration can be used to align the spectral images 
+using contrast and intensity-based features ( Stoyanov et al., 2012 ; 
+Du et al., 2015 ). 
+Pushbroom hyperspectral sensors are desirable for applications 
+where high spectral resolution is required. For example, to achieve 
+spectral unmixing of multiple absorbers and scattering contribu- 
+tors ( Randeberg et al., 2010 ) or classify lesions ( Kumashiro et al., 
+2016 ). Pushbroom HSI cameras offer great application versatility 
+as they provide high resolution data at hundreds of wavelengths. 
+One of the main practical drawbacks of these devices for surgical 
+use is that they are much more sensitive to motion, lacking spatial 
+cues in individual scan lines, rendering vision-based registration 
+techniques unsuitable. There are practical limitations to mount- 
+ing these cameras on surgical imaging equipment. Scanning mech- 
+anisms need to be mounted with imaging spectrographs, adding 
+weight, complexity and the potential for misalignment. Further- 
+more, even the most compact spectrograph designs are relatively 
+large even without the imaging sensor, which would prevent their 
+use in hand-held devices such as laparoscopes (typical MIS cam- 
+eras weigh < 100 g). New systems, such as the Snapscan (IMEC, 
+Belgium) aim to counter these limitations by integrating scanning, 
+spectral dispersion and detection in a single unit. Although a much 
+more robust design, its weight (~500 g) remains a factor when 
+considering mechanical constraints. 
+The footprint of snapshot devices, particularly sensors of the 
+type shown in Fig. 2 (d), is comparable to conventional cameras 
+already used clinically and the design is mechanically robust. 
+The strength of this method in surgery is that it is immune to 
+motion-induced misalignments, thus enabling capture of fast pro- 
+cesses and delivery of functional information to the clinician in 
+real-time. These devices have been demonstrated in neurosurgery 
+( Pichette et al., 2016 ), ﬂexible endoscopy ( Luthman et al., 2018 ; 
+Wang et al., 2018 ), and retinal imaging ( Firn and Khoobehi, 2015 ). 
+Nevertheless, there remains some important considerations when 
+considering a sensor of this type. Snapshot acquisition requires 
+the 3D datacube to be distributed on a 2D sensor, meaning that 
+capture speed comes at the expense of spatial resolution and/or 
+the number of available wavebands. The type of ﬁlter used by the 
+sensor should also be considered when choosing an application- 
+speciﬁc imager. Signal cross-talk between adjacent pixels may be- 
+come signiﬁcant in mosaic-type sensors, where pixel-level ﬁlters 
+are used, leading to further degradation of spatial resolution. In 
+the case of interference ﬁlters, the transmission bandwidth and 
+centre wavelength is dependant on the distribution of angles of 
+incoming light ( Frey et al., 2015 ). Therefore, careful characterisa- 
+tion of the imaging optics is needed, with the ﬁnal spectral reso- 
+lution determined by the ratio of the camera focal length to the 
+diameter of the entrance pupil (the system’s F-number). This may 
+vary signiﬁcantly between surgical scenarios and the optical instru- 
+ments shown in Fig. 2 (e–h). Interpretation of signals from these 
+pixel-level sensors is also complicated by the spectral response of 
+the ﬁlters themselves, with some containing prominent side-lobes 
+and secondary passbands, which result in signiﬁcant cross-talk be- 
+tween the blue and red ends of the spectrum ( Wirkert et al., 2018 ; 
+Wisotzky et al., 2019 ). 
+Recognising the trade-offs that must be made between spa- 
+tial, spectral and temporal resolution, and bound by experimental 
+constraints, many researchers have adopted a two-stage develop- 
+ment process, using high spectral resolution HSI scanning devices 
+for initial exploratory work and then proceeding to more stream- 
+lined and eﬃcient MSI systems. This necessitates data reduction 
+techniques to isolate the spectral bands in HSI datacubes that 
+contain the most clinically-signiﬁcant information without com- 
+promising on speciﬁcity or sensitivity. Wirkert et al. (2014) anal- 
+ysed surgical datacubes comprised of 30 wavelengths, captured 
+using an LCTF-based system, and used an information theory- 
+based approach to identify eight optimal bands for oxygen sat- 
+uration estimation. This meant that the imaging hardware could 
+be switched to a fast ﬁlter-wheel platform. A similar approach 
+was taken by ( Kiyotoki et al., 2013 ) to identify ﬁve bands that 
+would optimally discriminate between adenomatous and normal 
+tissue in the colon. Reducing the number of wavebands brings sev- 
+eral advantages, including reducing the data storage burden, en- 
+abling use of high throughput transmission ﬁlters, and limiting 
+the impact of tissue motion through faster datacube acquisition 
+time. 
+Given the dynamic nature of the operating theatre, speed re- 
+mains an important performance metric of surgical imaging sys- 
+tems in general. Of the SSI systems surveyed here and listed in 
+Table 1 it is unsurprising that the snapshot methods boast the 
+highest acquisition rates. Those based on RGB camera hardware 
+can typically operate at 30 fps while more recently-developed 
+tiled/mosaic sensors can acquire at up to 90 fps. Both spatial 
+and spectral scanning methods are considerably slower, with most 
+achieving framerates of less than 0.5 fps. Just one of the cases 
+reported speeds approaching video rate, using an optimised ﬁl- 
+ter wheel setup running at 15 fps ( Fawzy et al., 2015 ). The next 
+closest to this used fast-switching light sources ( Hohmann et al., 
+2011 ; Olweny et al., 2013 ; Ma et al., 2016a ) and ﬁlter wheels 
+( Wirkert et al., 2016 ). The most signiﬁcant remaining bottleneck 
+though, is the processing method used. The computation times as- 
+sociated with each of the techniques is less than 1 fps in most 
+cases, with the 133 fps convolutional neural network (CNN)-based 
+method quoted by Wirkert et al. (2018) standing alone as a truly 
+videorate/realtime example. Even allowing for the wide variety of 
+processing techniques, datacube sizes, computer hardware and im- 
+plementation it seems clear that handling these datasets remains 
+a challenge. With this in mind it is worth considering what ‘real- 
+time’ means in the context of the surgical application before pur- 
+suing speed over other performance metrics. For example, a single 
+processed image showing a map of oxygenation or perfusion, pro- 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+7 
+cessed in a couple of seconds, may be just as clinically valuable 
+as a continuous, realtime measure of the same scene. Conversely, 
+an SSI-supported vision system to identify early-stage precancer- 
+ous lesions during exploratory procedures would have much higher 
+temporal demands. 
+2.5. Commercial systems and clinical translation 
+Commercial activity in spectral imaging devices has increased 
+steadily over the past decade and there are now several options 
+from OEM-scale sensors to complete systems spanning a range 
+of application areas. Table 2 summarises the range of currently- 
+available systems, along with references to research articles in 
+which they have been cited. Perhaps the most notable recent de- 
+velopment is the continued reﬁnement of snapshot sensors, which 
+have dramatically reduced the hardware footprint and increased 
+acquisition speed, both prerequisites for surgical use. As this tech- 
+nology begins the mature the variety of sensors has grown. The 
+Ocean Insight (formerly Ocean Optics/Pixelteq) PixelCam can de- 
+liver six bands in the visible range, while IMEC have a range of 
+tiled and mosaic sensors available from different camera manu- 
+facturers (Ximea, PhotonFocus) spanning visible and near-infrared 
+wavelengths. The CMS range from Silios Technologies includes mo- 
+saic sensors comprising eight ﬁltered and one monochrome (i.e., 
+unﬁltered) channel. 
+Commercial spectral scanning devices using tuneable light 
+sources are available from Optronic Laboratories (OL-490), but 
+scanning in detection is more common, with LCTF (Perkin Elmer 
+Nuance/Maestro) and ﬁlter wheel options (Ocean Insight Spec- 
+troCam). Pushbroom scanning imagers, like the Hyspex (Norsk 
+Elektro-Optikk), have been most commonly-used in skin imaging, 
+where there is a greater degree of control over potential tissue- 
+camera motion. 
+Clinical translation remains limited, with few systems on the 
+market for human use. The hyperspectral TIVITA series imagers 
+(Diaspective Vision GmbH, Germany) have options for general 
+tissue imaging, wound-healing and surgery, and have demon- 
+strated potential utility in gastric anastomoses ( Köhler et al., 2019 ) 
+and colorectal transection margins ( Jansen-Winkeln et al., 2019 ) 
+( Fig. 3 ). The multispectral HyperView (Hypermed Imaging, Inc., 
+USA) and Snapshot NIR (Kent Imaging, Inc., Canada) are hand- 
+held devices for perfusion and oximetry ( Hartwig et al., 2016 ). An 
+earlier iteration of the HyperView system, the OxyVu, was also 
+used to characterise burn depth in animal models ( Chin et al., 
+2016 ). Both can generate maps of relative haemoglobin concen- 
+tration and oxygen saturation, while the TIVITA system provides 
+additional indices relating to perfusion and water content. Com- 
+plete systems for small animal imaging in vivo , such as the Maestro 
+(Perkin Elmer, Inc., USA), have been used to collect spectral imag- 
+ing data from head-and-neck cancer xenografts ( Lu et al., 2015 ; 
+Halicek et al., 2019 ). 
+3. Spectral image analysis 
+After acquisition, the most fundamental processing step that is 
+carried out on the datacube is to convert the reﬂected intensity 
+measurements to reﬂectance spectra by correcting for the system’s 
+spectral sensitivity, normally achieved using a reference reﬂectance 
+standard measurement ( Lu and Fei, 2014 ). These spectra can be 
+further converted to absorbence by taking the negative logarithm 
+of reﬂectance. Interpretation of these results and quantiﬁcation of 
+tissue properties can then be achieved using light-tissue interac- 
+tion models ( Section 3.1 ) or data science techniques ( Section 3.2 ). 
+Fig. 3. Top: Intraoperative oxygenation mapping during transection of the large 
+bowel. Maps of SO 2 show a well-deﬁned border between perfused and non- 
+perfused tissue after separation of the marginal artery. The location of this bor- 
+der differs from that chosen by a surgeon, indicated by the steel instrument, fol- 
+lowing inspection. See Table 2 for acquisition details. Image taken from Jansen- 
+Winkeln et al., 2019 , Reprinted by permission from Springer Nature Customer Ser- 
+vice Centre GmbH: Springer International Journal of Colorectal Disease (Determina- 
+tion of the transection margin during colorectal resection with hyperspectral imag- 
+ing (HSI), Boris Jansen-Winkeln et al.)© (2019). Bottom: choosing a site to create an 
+oesophagogastric anastomosis, with SO 2 indicating a well-vascularised region. Im- 
+age taken from ( Köhler et al., 2019 ). Reprinted by permission from Springer Nature 
+Customer Service Centre GmbH: Springer Surgical Endoscopy (Evaluation of hyper- 
+spectral imaging (HSI) for the measurement of ischaemic conditioning effects of the 
+gastric conduit during esophagectomy, Hannes Köhler et al.)© (2019). 
+3.1. Light propagation models for surgery 
+If it is assumed that the forward process of light propagation 
+is well-described by mathematical models or simulations then the 
+inverse problem may yield the tissue properties of interest from 
+spectral measurements. An approximation of the total absorption 
+coeﬃcient of a tissue ( μa,tissue ) under investigation can be calcu- 
+lated, using Eq. (1) , as a linear sum of the contributors described 
+in Section 1.1 : 
+μa,tissue = ε Hb c Hb + ε Hb O 2 c Hb O 2 + ε water c water + ε fat c fat + ε bili c bili 
+(1) 
+where c [M or mol cm −3 ] and ε [ M −1 cm −1 ] represent the con- 
+centration and speciﬁc molar extinction coeﬃcient, respectively, of 
+deoxyhaemoglobin ( Hb ), oxyhaemoglobin ( HbO 2 ), water, lipids ( fat ) 
+and bilirubin ( bili ). Jacques (2013) has compiled a set of numeri- 
+cal values and typical volume fractions for various organs that can 
+be used with Eq. (1) to generate a realistic tissue absorption spec- 
+trum. Losses due to scattering from the continuum of particle sizes 
+may be described by Mie scattering theory, which assumes spher- 
+ical scatterers and generally predicts a smooth decrease with in- 
+creasing wavelength. Subcellular particles having diameters smaller 
+than the wavelength of light are subject to the Rayleigh limit 
+( Tuchin, 2015b ). Therefore, the observed reduced scattering coeﬃ- 
+cient ( μs ’ ) is a combination of both regimes and is often described 
+by the empirical model shown in Eq. (2) ( Hidovi ´c-Rowe and Clar- 
+idge, 2005 ; Jacques, 2013 ; Mourant et al., 2014 ; Pichette et al., 
+2016 ): 
+μ′ 
+s = a λ−b 
+(2) 
+where λ is wavelength, a is a scaling factor and b is termed the 
+scattering power , indicating the strength of the effect. 
+A common method to obtain the absorption and scattering 
+coeﬃcients from reﬂectance data is to perform iterative ﬁtting 
+8 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+Table 2 
+Commercial spectral imaging devices and systems for research and clinical use. 
+Manufacturer 
+Model 
+Spectral 
+resolution (nm) 
+Spatial Resolution 
+Bands 
+Spectral Range 
+(nm) 
+Datacube Acquisition 
+Time (s) 
+Citing articles 
+Diaspective Vision GmbH 
+TIVITA (formerly TI-CAM) 
+5 
+640 × 480 
+100–750 
+500–1000 
+5 
+Holmer et al. (2016) ; Tetschke et al. (2016) ; 
+Holmer et al. (2018) ; Kulcke et al. (2018) ; 
+Jansen-Winkeln et al., 2019 ; Köhler et al., 
+2019 
+Hypermed, Inc. 
+HyperView/OxyVu 
+‡ 
+‡ 
+8 
+400–700 
+< 1 
+Yudovsky et al. (2011) 
+Kent Imaging, Inc. 
+Snapshot NIR 
+‡ 
+‡ 
+4 
+670–940 
+< 1 ∗
+Hartwig et al. (2016) 
+IMEC 
+CMV2K-SSM4 × 4–9.2.10.3 
+Ximea xiQ 
+15 
+512 × 256 
+16 
+470–630 
+0.01–1 
+Luthman et al. (2018) ; Wirkert et al. (2018) 
+IMEC 
+SSM5 × 5 5.4.20.8 
+Ximea xiQ 
+15 
+409 × 218 
+25 
+600–1000 
+0.01–1 
+Luthman et al. (2018) 
+Optronic Laboratories 
+OL-490 
+5 
+NA ǁ
+> 100 
+380–780 
+NA ǁ
+Zuzak et al. (2011) ; Olweny et al. (2013) 
+Ocean Insight (Pixelteq) 
+PixelCam 
+60 
+2048 × 2048 
+6 
+400–1000 
+0.067 
+( Vemuri et al., 2019 ) 
+Ocean Insight (Pixelteq) 
+SpectroCam 
+10–100 
+2456 × 2058 
+8 
+400–1000 
+0.27 
+Clancy et al. (2013) ; Moccia et al. (2018) ; 
+Wirkert et al. (2018) 
+Ocean Insight (Fluxdata) 
+FD-1665-MS 
+50 
+1628 × 1236 
+3–7 
+400–1000 
+0.01 
+Sohaib and Robles-Kelly (2015) 
+Photonfocus 
+MV1-D2014 × 1088-HS03 
+15 
+2048 × 1088 
+16 
+470–630 
+0.02 
+Wang et al. (2018) 
+Photonfocus 
+MV1-D2048 × 1088-HS05-G2 
+10–12 
+2048 × 1088 
+150 
+470–900 
+42 fps † 
+Norsk Elektro Optikk 
+HySpex VNIR 1800 
+3.26 
+1800 
+182 
+400–1000 
+260 fps † 
+Bjorgan and Randeberg (2015) ; 
+Paluchowski et al. (2016) 
+IMEC 
+Snapscan NIR 
+Snapscan VNIR 
+10–15 
+3650 × 2048 
+> 100 
+> 150 
+600–970 
+470–900 
+0.2 
+IMEC 
+Linescan NIR 
+Linescan VNIR 
+< 10 
+2048 
+> 100 
+> 150 
+600–1000 
+470–900 
+2720 lines/s † 
+Silios Technologies 
+CMS-C 
+CMS-V 
+CMS-S 
+40 
+426 × 339 
+8 
+500–830 
+650–930 
+0.02 
+Waterhouse et al. (2017) 
+Perkin Elmer 
+Nuance/Maestro 
+7–20 
+1392 × 1040 
+500 
+450–950 
+5 (16 bands) §
+Lu et al. (2015) ; Halicek et al. (2017) ; 
+Halicek et al. (2019) 
+Surface Optics 
+Light Shift 
+25 
+512 × 512 
+16 
+400–1000 
+0.0333 
+∗Includes haemoglobin estimation processing. † Acquisition rate for individual spatial line. Needs line-scanning mechanism for image formation. ‡ Information not available. §dependant on number of bands and camera integration 
+time. ǁSystem is a stand-alone multispectral light source; camera/detector is user-dependant. 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+9 
+on a forward model based on diffusion theory ( Spott et al., 
+1998 ). This has been used successfully with point probes 
+in the pancreas to identify adenocarcinomas and pancreatitis 
+( Wilson et al., 2009 ). This was expanded to HSI of the skin by 
+Randeberg et al. (2010) and allows calculation of relative concen- 
+trations of absorbers, scatterer size and distribution, and estima- 
+tion of blood vessel density ( Randeberg et al., 2005 ). This is a 
+computationally-expensive process for imaging, given the complex- 
+ity of the model and number of free variables, to solve the inverse 
+problem iteratively and requires more advanced parallel computing 
+methods ( Bjorgan and Randeberg, 2015 ). 
+A simpler approach uses the modiﬁed Beer-Lambert law 
+( Villringer and Chance, 1997 ), which states that absorbence ( A ) is 
+proportional to the concentration ( c ) of the light-absorbing com- 
+pound and the distance that the light travels through the tissue 
+( L ). The constant of proportionality is the extinction coeﬃcient ( ε) 
+and there is an offset term ( G ) to account for scattering losses, ap- 
+proximated as being wavelength-independent ( Eq. (3) ): 
+A ( λ) = Lcε ( λ) + G ;μa = cε 
+(3) 
+A differential pathlength correction factor ( DPF ), determined 
+experimentally ( Pichette et al., 2016 ), or using computer simula- 
+tions ( Hillman, 2007 ), may also be included to correct wavelength- 
+dependant variations in L . To simplify calculations for SSI an ‘equal 
+pathlength’ assumption can be made, and the DPF and L incorpo- 
+rated with c , which becomes a relative concentration . 
+If A is measured using the SSI device, and ε is known a pri- 
+ori , then Eq. (3) can be solved using linear least squares regres- 
+sion to compute the relative concentrations and G . Subsequent 
+calculation of total haemoglobin ( THb = c HbO2 + c Hb ) and oxy- 
+gen saturation ( SO 2 = c HbO2 / THb ), can then be easily achieved. 
+Eq. (3) can be solved analytically, making it attractive for fast 
+processing over an entire image, and has been used to quan- 
+tify haemoglobin and perfusion-related variables in the heart 
+( Nighswander-Rempel et al., 2003 ), bowel ( Clancy et al., 2015 ), 
+uterus ( Clancy et al., 2016a ), skin ( Zuzak et al., 2002 ) and mam- 
+mary carcinomas ( Sorg et al., 2005 ). Calculations can also be sig- 
+niﬁcantly simpliﬁed if some experimental constraints are applied. 
+If temporal changes are relevant, in a study of brain activity to var- 
+ious stimuli, for example, then SSI data acquired from the same 
+stationary tissue area can be analysed to calculate changes in 
+chromophore concentration, as the pathlength terms cancel out 
+( Bouchard et al., 2009 ). 
+Computer simulations of photon propagation in tissue can be 
+used to form a forward model, avoiding some of the assumptions 
+made by diffusion theory and Beer-Lambert. Claridge and Hidovi ´c- 
+Rowe (2014) have developed an image analysis method based on 
+a multilayer Monte Carlo (MC) model for examining pathologi- 
+cal changes in the mucosa of bowel tissue ex vivo . The model is 
+used to simulate reﬂectance spectra for ranges of tissue optical 
+properties. These spectra are ﬁtted to experimental results in a 
+fast iterative process that uses the Kubelka-Munk approximation 
+of diffuse reﬂectance as part of the optimisation process ( Hidovi ´c 
+and Rowe, 2004 ; Hidovi ´c-Rowe and Claridge, 2005 ; Claridge et al., 
+2007 ). Wirkert et al. (2016) also employed a forward Monte Carlo 
+model to estimate the tissue properties. In this case, multiple sim- 
+ulations for varying tissue oxygenation and blood volume condi- 
+tions were used to train a random forest regressor and achieve 
+rapid processing of high-resolution multispectral images during 
+MIS (imaging and regression times of 400 ms and 180 ms, respec- 
+tively). 
+3.2. Multivariate regression and classiﬁcation algorithms 
+The previous section included an outline of analytical and lin- 
+ear regression methods used to unmix individual spectral contrib- 
+utors to the observed reﬂectance signal based on some assump- 
+tions and a priori knowledge of the principal chromophores. How- 
+ever, a purely data-driven method using a statistical model treating 
+spectral data as predictors can avoid the assumptions of physical 
+models. These are well-suited for imaging applications due to their 
+computational eﬃciency and ability to detect subtle differences be- 
+tween classes. This is an attractive proposition in surgical segmen- 
+tation problems, where lesions or anatomical structures of interest 
+may have broadly similar reﬂectance characteristics to background 
+tissue. 
+The review by Lu and Fei (2014) contains an overview of many 
+of the most commonly-used statistical analysis methods applied to 
+medical spectral images in general. For HSI this can include an ini- 
+tial dimensionality-reduction step, achieved using principal com- 
+ponent analysis (PCA), minimum noise fraction (MNF) or indepen- 
+dent component analysis (ICA), to extract the most information- 
+rich spectral features and reduce redundancy in the data. These 
+techniques transform the data into a subspace where it is arranged 
+according to the amount of variance, thus enabling separation of 
+different contributors to the signal, such as tumourous and healthy 
+tissue ( Lu et al., 2014 ; Chung et al., 2016 ). In addition to identi- 
+ﬁcation of diagnostic signals, this type of approach can also be 
+used to reduce noise in the datacube by keeping only the trans- 
+formed bands with high signal-to-noise ratio ( Bjorgan and Ran- 
+deberg, 2015 ). Dimensionality reduction helps to avoid overﬁtting 
+problems associated with unsupervised methods such as k-means 
+clustering, when used as a pre-processing step ( Torti et al., 2018 ). 
+K-means, which iteratively assigns pixels to ‘cluster centres’ by 
+minimising their Euclidian distance, has been used to identify can- 
+cer of the breast ( Khouj et al., 2018 ), colon ( Baltussen et al., 2019 ) 
+and brain ( Torti et al., 2018 ), as well as hyperplasia in the en- 
+dometrium ( Kavvadias et al., 2013 ). 
+Examples of supervised classiﬁers that have been used with SSI 
+data are support vector machines (SVM) and spectral angle map- 
+ping (SAM). An advantage of SVMs is that they are robust to noisy, 
+high-dimensional data, thus not requiring a feature selection step 
+( Camps-Valls and Bruzzone, 2005 ). Akbari et al. (2012) used an 
+SVM to classify cancerous and normal tissue in lung and lymph 
+tissue histology slides, achieving 93–96% sensitivity and 98% speci- 
+ﬁcity, while Hohmann et al. (2017) reported 57–66% sensitivity 
+and 52–62% speciﬁcity for fresh tissue samples of gastric adeno- 
+mas. Han et al. (2016) conducted an in vivo colonoscopy study 
+with a ﬁve-band MSI system and classiﬁed adenomas with 95% 
+sensitivity and 89% speciﬁcity. Spectral features can also be com- 
+bined with measures of local texture to improve classiﬁcation ac- 
+curacy of SVM ( Zhang et al., 2016 ). Intrinsic measures of uncer- 
+tainty, using the Gini coeﬃcient, have demonstrated further im- 
+provements in performance ( Fig. 4 ) by identifying and excluding 
+low accuracy superpixel subregions ( Moccia et al., 2018 ). This al- 
+lows automatic tagging of tissues in vivo with 96% accuracy when 
+used with an 8-band multispectral datacube. SAM treats individual 
+spectra as high-dimensional vectors, differentiating regions or tis- 
+sue types using the angle between them. This has the advantage 
+of being robust to variations in illumination strength or shadows 
+( Martin et al., 2012 ). 
+Artiﬁcial neural networks (ANNs) and, more speciﬁcally, deep 
+learning with CNNs have recently seen growth in detection, classi- 
+ﬁcation and segmentation problems in a variety of medical imag- 
+ing modalities due to their eﬃcient architecture and use of local 
+context ( Shen et al., 2017 ). Recent applications in spectral imag- 
+ing analysis include use of CNNs to differentiate abdominal organs 
+( Akbari et al., 2008b ), and detect gastric ( Hu et al., 2019 ) and head- 
+and-neck cancers ( Halicek et al., 2017 , 2019 ). Reported accuracy in 
+these studies is high ( > 95%) and a recent comparative study also 
+suggests that CNNs may out-perform competing supervised clas- 
+siﬁcation methods, such as SVMs ( Halicek et al., 2017 ). CNNs can 
+10 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+Fig. 4. Improving classiﬁcation accuracy through awareness of uncertainty in the 
+data. (a) Spectral input image. (b) Input image after creation of texture-based su- 
+perpixels. (c) Classiﬁcation result showing only high-accuracy superpixels, as iden- 
+tiﬁed in (d) conﬁdence map. See Table 2 for acquisition details. Adapted from 
+Moccia et al. (2018) .© 2018 IEEE. Reprinted, with permission, from Sara Moccia 
+et al., Uncertainty-aware organ classiﬁcation for surgical data science applications 
+in laparoscopy. IEEE Trans. Biomed. Eng. 65 (11), 2649–2659. 
+incorporate multiple processing steps within the overall network 
+architecture, including pre-processing calibration steps, within the 
+network, which optimises speed when compared to other regres- 
+sors such as random forests ( Ayala et al., 2019 ). By avoiding more 
+tailored regression approaches, CNNs may capture subtle signal 
+variations that support interpretation or classiﬁcation much more 
+effectively. This would be logical given the performance increases 
+demonstrated through deep learning in general computer vision 
+and signal analysis problems. 
+The main limitation of these machine learning methods in gen- 
+eral is that accuracy depends on the available labelled training 
+data. This is a problem in surgical imaging, where a well-deﬁned 
+gold standard is lacking, and inter and intrapatient variability is 
+large but the quantity of datasets is extremely limited. Common 
+solutions used to boost training data are to use transformations 
+(e.g., rotation, translation), pretrained networks and to use image 
+patches ( Shen et al., 2017 ). Previous work in other medical imaging 
+modalities has also combined separate datasets in an effort to bet- 
+ter represent variability across patients ( Shin et al., 2016 ). Trans- 
+fer learning, where a pre-trained network is adapted for use in a 
+new setting, is a potential solution, and has already seen use in 
+other medical image analysis problems, where available training 
+data are insuﬃcient ( Signoroni et al., 2019 ). Wirkert et al. (2017) 
+have recently demonstrated the potential of using this technique 
+to adapt a network, trained on a generic simulated tissue, to unla- 
+belled in vivo datasets. Recent efforts in developing unsupervised 
+learning may translate to SSI problems and additional potential 
+could be explored by training on phantom or controlled environ- 
+ments prior to ﬁne tuning networks using small datasets of clinical 
+data. In histopathology some recent effort s have shown that net- 
+works could capture information typically extracted through con- 
+trast agents and staining ( Pei et al., 2019 ; Talo, 2019 ) and a similar 
+methodology could be pursued in SSI. 
+Another challenge related to variability, and inherent in the 
+ambiguous nature of the problem, is the fact that the map- 
+ping between measured optical signals and estimated physiolog- 
+ical variables may not be one-to-one. To address this problem 
+Ardizzone et al. (2019) has proposed invertible neural networks 
+(INNs), which aim to learn the posterior probability distribution 
+and represent ambiguity in the solution. This has recently been ap- 
+plied to MSI imaging of the brain ( Adler et al., 2019 ). 
+3.3. Estimating spectral information from RGB 
+Deducing the underlying spectral properties of tissue using 
+standard colour cameras would be a convenient way to realise 
+an SSI system. The challenge here is that the inverse problem is 
+ill-posed, with many different combinations of component spec- 
+tra capable of producing a given RGB response. Regression mod- 
+els between MC-simulated spectra and observed RGB values en- 
+able calculation of relative concentrations of HbO 2 , Hb and melanin 
+( Nishidate et al., 2008 , 2011 ). Their accuracy, however, is subject 
+to the MC model being a good match to reality. Variation in tis- 
+sue layer thickness and/or scattering properties are not accounted 
+for and contribute to errors in the estimated concentration val- 
+ues. Wiener estimation, alternatively, predicts the reﬂectance spec- 
+trum of an object using a priori knowledge of the camera’s spec- 
+tral sensitivity and the reﬂectance spectrum of the object un- 
+der test ( Stigell et al., 2007 ). This has been used to estimate 
+melanin and haemoglobin concentrations in skin ( Nishidate et al., 
+2013 ), scattering variables in the brain ( Yoshida et al., 2015 ; 
+Hasnat et al., 2016 ) and bowel oxygen saturation ( Jones et al., 
+2016 ). Lin et al. (2017) demonstrated that a CNN could be used to 
+estimate ﬁne spectral data from RGB laparoscopic images. Strong 
+qualitative agreement with reference MSI data was shown, al- 
+though large errors at some wavelengths were noted. Subsequent 
+work improved accuracy by adding sparsely-sampled high spectral 
+resolution data to update and reﬁne the CNN result ( Lin et al., 
+2018b ). Li et al., 2019 has modiﬁed this approach using a condi- 
+tional generative adversarial network (cGAN) to bypass the spectral 
+estimation step and generate maps of oxygen saturation directly. 
+4. Data assessment and validation 
+A clear validation process is necessary to understand the ca- 
+pabilities of a given SSI system, quantify its accuracy and under- 
+stand variability across different hardware conﬁgurations and clin- 
+ical settings. Validation data may be obtained from experiments 
+using computer simulation, tissue phantoms, resected tissue, or in 
+vivo measurements. 
+4.1. In silico 
+Monte Carlo models have become the gold standard for pho- 
+ton transport simulations in tissue. Their ﬂexible conﬁguration al- 
+lows for modelling of simple semi-inﬁnite homogeneous media to 
+complex multi-layered tissue ( Prahl et al., 1989 ; Wang et al., 1995 ) 
+with inclusions simulating blood vessels ( Jones et al., 2017b ) or le- 
+sions ( de Jode, 20 0 0 ). This offers advantages in accuracy over com- 
+peting simulation and mathematical modelling techniques such as 
+those based on diffusion theory ( Flock et al., 1989 ) and it has 
+been widely applied in biomedical photon propagation simulation 
+problems ( Zhu and Liu, 2013 ; Periyasamy and Pramanik, 2017 ). In 
+spectrally-resolved imaging studies MC modelling has shown par- 
+ticular utility in estimating the wavelength dependence of the DPF 
+( Ma et al., 2016a ; Thatcher et al., 2016 ) and in generating inverse 
+models to extract quantitative tissue optical properties via error 
+minimisation ( Saccomandi et al., 2016 ; Wirkert et al., 2016 ). 
+More recently, Wirkert et al. (2016) and Ayala et al. (2019) have 
+used MC simulation to quantify the performance of a random for- 
+est estimator using varying noise and SNR conditions, and demon- 
+strated improved accuracy data compared to least-squares re- 
+gression. They were also able to optimise the computationally- 
+expensive training step by demonstrating that the absolute error 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+11 
+stabilised after 10 4 training samples. Jones et al. (2017b) used a 
+mesh-based Monte Carlo model, based on blood and submucosa 
+optical properties, to generate a synthetic reﬂectance dataset. This 
+allowed comparison of an RGB-based oxygen saturation estimation 
+algorithm with a multispectral Beer-Lambert-based regression. The 
+simulation results were convolved with known spectral sensitiv- 
+ity curves of a standard colour camera and an LCTF MSI system 
+to generate digital datacubes, demonstrating an improvement in 
+prediction accuracy of 10% in the RGB result when using Tikhonov 
+regularisation. 
+It is essential that these MC models are capable of encap- 
+sulating the full range of real, physical, variability in tissue if 
+accurate measures of physiological properties can be inferred. 
+Principal component analysis provides a useful measure of as- 
+sessing how well real data can be explained by the model. 
+Wirkert et al. (2017) were able to demonstrate that 97% of the 
+variance in their in vivo data lay on the simulated data’s ﬁrst 
+three principal components. It was also illustrative to see that 
+one particular organ, the gallbladder, was an exception and fell 
+outside this, indicating a limitation in the MC simulation (pos- 
+sibly consideration of bile as a signiﬁcant absorber). Similarly, 
+Styles et al. (2006) showed that simulation results did not encom- 
+pass the space occupied by in vivo data from fundus imaging ex- 
+periments, but a correction in the form of an empirical scaling fac- 
+tor could correct the problem. 
+4.2. Phantom and in vitro 
+A common ﬁrst step in validation of spectral measurement ac- 
+curacy is to test the imaging system against a set of standard- 
+ised targets with varying spectral properties, such as a Macbeth- 
+type colour-checker card ( Clancy et al., 2016b , 2018 ; Wang et al., 
+2018 ). These provide a set of calibrated colour tiles with smoothly- 
+varying reﬂectance spectra. A mean spectrum for a small region- 
+of-interest within each tile is calculated and compared to a gold 
+standard spectrum obtained with a high-resolution spectrometer. 
+This allows researchers to assess the performance of the SSI system 
+across the spectral range. These targets are useful for establishing 
+device baseline spectral accuracy and SNR, although the broad na- 
+ture of the reﬂectance features make them unsuitable for quanti- 
+fying spectral resolution or evaluating spectral unmixing. An esti- 
+mate of an SSI system’s ability to recover chromophore concentra- 
+tions on a diverse background of optical loss mechanisms can only 
+be achieved with more realistic tissue models. 
+In vitro models with tuneable optical properties provide an op- 
+portunity to test more complex functionality of the imaging sys- 
+tem under more realistic, but still controlled, conditions ( Fig. 5 (a)). 
+These so-called phantoms can, in their simplest form, be dye solu- 
+tions to test spectral unmixing methods ( Pichette et al., 2016 ) and 
+the ability of the system to resolve the spatial location of differ- 
+ent chromophores. More complex and physiologically-realistic op- 
+tical properties can be achieved with multi-layer agar-based phan- 
+toms, with absorption and scattering properties set using India ink 
+and intralipid, respectively ( Nishidate et al., 2011 , 2013 ). More rele- 
+vant phantoms incorporate blood or haemoglobin, and include ref- 
+erence gas probes in tandem with temperature, pH, ﬂow and oxy- 
+genation control ( Saito and Yamaguchi, 2015 ; Sakota et al., 2015 ; 
+Tetschke et al., 2016 ; Gehrung et al., 2019 ). Realistic models include 
+both solid and liquid elements, with simulated vessels running 
+through an agarose tissue ( Luthman et al., 2018 ). The simulated 
+vessels can further be formed into complex patterns, using rapid 
+prototyping techniques, based on images of real vascular networks 
+( Ghassemi et al., 2015 ). The phantom material’s temporal stability 
+must be considered if repeat measurements are needed, as agar 
+and gelatine are vulnerable to decay and bacterial growth without 
+specialist storage and treatment ( Pogue and Patterson, 2006 ). Al- 
+ternative materials such as gelwax ( Maneas et al., 2018 ), polyvinyl 
+chloride plastisol ( Fonseca et al., 2016 ), silicone ( de Bruin et al., 
+2010 ) and polymer gels ( Cabrelli et al., 2017 ) are capable of offer- 
+ing long-term stability. The complexity of these models does not 
+typically extend to include confounding absorbers, such as biliru- 
+bin, or complex structures, such as colonic crypts, that may affect 
+measured spectra. Apart from ﬂow, dynamic effects such as peri- 
+stalsis or inﬂammatory response are also diﬃcult to replicate. 
+4.3. Ex vivo 
+Spectral imaging systems are increasingly being looked to as 
+potential tools for optical biopsy . That is, to obtain quantitative di- 
+agnostic information which is currently the preserve of histological 
+analysis. Diagnosis of disease in its early stages or separation of le- 
+sions depending on their malignant potential are examples of such 
+problems. In these cases the lesions may be small and superﬁcial, 
+and their appearance may be indistinguishable from surrounding 
+normal tissue under white light illumination. Investigation of po- 
+tential optical sensitivity to these pathologies, with their myriad 
+biochemical differences, is outside the scope of synthetic models 
+and can only be accomplished in real tissue. The initial step is to 
+form a picture of the optical properties of each tissue type of inter- 
+est. Assuming there is no a priori knowledge this means acquiring 
+high resolution spectral data at as many wavelengths as possible. 
+These data can then be analysed to determine where spectral dif- 
+ferences may lie. 
+However, depending on the tissue in question, the ability to ob- 
+tain in vivo data may be limited due to challenging experimen- 
+tal conditions. In these cases exploratory data is usually acquired 
+from tissue after it has been resected. The advantages of this are 
+that data collection has minimal impact on the surgical work- 
+ﬂow, imaging can be performed in a controlled, motion-free, en- 
+vironment, and the sample will subsequently proceed to pathology 
+for ground truth histological conﬁrmation. This approach has been 
+used to study the spectral characteristics of cancers in head & neck 
+( Akbari et al., 2012 ), colon ( Leavesley et al., 2016 ) and pancreas 
+( Kiris et al., 2015 ). The major limitation is that the blood supply 
+is immediately cut off once the tissue is excised. Given the inﬂu- 
+ence of haemoglobin on tissue reﬂectance, the effect on the optical 
+properties may be signiﬁcant and unpredictable. Disease-speciﬁc 
+signatures based on oxygenation become less distinct. A complex 
+series of events characterise tissue degradation and drift in tissue 
+optical properties in the ﬁrst few hours post excision, including 
+osmosis, shrinkage and ischaemia-induced scattering changes, de- 
+pending on how the sample is stored ( Hsiung et al., 2005 ). 
+Machine perfusion techniques, developed to preserve harvested 
+organs for transplantation, may offer a potential solution to some 
+of the challenges associated with validation of SSI in physiolog- 
+ically realistic scenarios ( Fig. 5 (b)). These machines pump blood 
+through the organ’s vessels while maintaining normothermic con- 
+ditions and can allow oxygenation control ( Tetschke et al., 2016 ). 
+Careful preparation of the organ in question is required, using sim- 
+ilar protocols to transplantation retrieval, to ensure minimal dam- 
+age to the tissue. 
+4.4. In vivo 
+Intraoperative validation remains a challenging task due to the 
+limited control over physiological variables and multiple sources 
+of measurement noise from both biological signals and motion- 
+induced artefacts. Nevertheless this is an essential testbed in the 
+developmental cycle of a surgical imaging system, providing in- 
+sight into its future clinical utility. One approach to mitigating 
+the inﬂuence of the aforementioned complications is to tempo- 
+rally measure relative changes in response to a stimulus, such as a 
+12 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+Fig. 5. Validation. (a) Top: haemoglobin-based liquid phantoms can be temperature and oxygenation controlled and have the gold standard measurement probes placed in 
+situ (top) ( Saito and Yamaguchi, 2015 ). Adapted, with permission, from Saito and Yamaguchi, Optical imaging of haemoglobin oxygen saturation using a small number of 
+spectral images for endoscopic application, J. Biomed. Opt. 20, 2015. Bottom: this blood can be pumped through 3D-printed ﬂow phantoms and used to verify perfusion 
+maps ( Ghassemi et al., 2015 ). Adapted, with permission, from Ghassemi et al., Rapid prototyping of biomimetic vascular phantoms for hyperspectral reﬂectance imaging, 
+J. Biomed. Opt. 20, 2015. (b) Machine perfusion of solid organs enables a very close simulation of in vivo conditions, allowing control over oxygen levels and temperature 
+( Tetschke et al., 2016 ). Image reproduced with permission from the authors. (c) Top: in vivo SSI data can be used to validate hardware optimisation strategies such as 
+band selection techniques, comparing them to a hyperspectral dataset ( Wirkert et al., 2014 ). Reprinted by permission from Springer Nature Customer Service Centre GmbH: 
+Springer Lecture Notes in Computer Science, (Endoscopic Sheﬃeld index for unsupervised in vivo spectral band selection, Wirkert et al.) © (2014). Bottom: blood gas analysis 
+can be used as a gold standard SO 2 reference for samples withdrawn from a corresponding SSI-imaged region-of-interest. Adapted, with permission, from ( Clancy et al., 
+2015 ), Optical Society of America. 
+vessel occlusion, and monitor the instrument’s response. This has 
+been reported in imaging experiments, following mechanical oc- 
+clusion, on the skin ( Nishidate et al., 2013 ), bowel ( Clancy et al., 
+2015 ) and kidney ( Best et al., 2011 ). Similar induction of hypoxia 
+has also been achieved in rodents by restricting the fraction of in- 
+spired oxygen ( Akter et al., 2017 ; Nishidate et al., 2018 ). Estima- 
+tion of in-band noise and camera signal-to-noise ratio were made 
+by Wirkert et al. (2016) during vascular occlusion of a pig bowel 
+segment and correlated to in silico experiments. 
+Absolute quantiﬁcation of tissue constituents in vivo is more 
+diﬃcult due to the lack of gold standard measurement modali- 
+ties that are directly comparable to optical imaging results. Per- 
+haps the most recognisable clinical oxygen saturation device, the 
+pulse oximeter, provides measurements of systemic arterial, rather 
+than local tissue, oxygenation. Machines for biochemical analysis of 
+blood, such as the co-oximeter, are another frequently used clini- 
+cal tool, and can provide detailed biochemical information. This in- 
+cludes gas partial pressures, haemoglobin concentrations and lac- 
+tate levels, which is a surrogate marker of oxygenation. Imaging 
+results have been validated using blood gas analysis from locally- 
+drawn samples ( Clancy et al., 2015 ) and, in an SFDI study, cal- 
+ibrated optical oxygenation probes ( Gioux et al., 2011 ). Interpre- 
+tation of these types of single-point validation measurements is 
+inevitably complicated by the fact that each technique probes a 
+different volume of tissue, leading to some deviation in absolute 
+values, although temporal trends agree. The problem is especially 
+acute for blood gas analysis, where even microlitre-scale samples 
+must be drawn from a comparatively large vessel that is not nec- 
+essarily representative of the mixture of arterial and venous mi- 
+crovessels running through the organ-of-interest. 
+Models for delineating tumour boundaries have been evalu- 
+ated in terms of accuracy ( Panasyuk et al., 2007 ), and true and 
+false positive rates when compared to histological gold standard 
+and manually-segmented images ( Panasyuk et al., 2007 ; Han et al., 
+2016 ). In vivo classiﬁcation accuracy has also been assessed, using 
+leave-one-out cross-validation (LOOCV), for an SVM-based algo- 
+rithm to identify atherosclerotic plaques ( Chihara et al., 2016 ) and 
+deep neural network methods to predict tissue reﬂectance spectra 
+( Lin et al., 2018b ). While diagnostic accuracy in a single lesion can 
+be evaluated in this way, there is still a question over the accuracy 
+of the margin delineation. This is due to the small sample size of 
+the gold standard, which ultimately is derived from a biopsy sec- 
+tion a few millimetres in diameter. 
+Despite the diﬃculties associated with in vivo validation of 
+optical properties, intraoperative MSI and HSI datasets are well- 
+suited to testing the performance of computational RGB-to-SSI ap- 
+proaches. In these cases the spectral datacubes themselves can be 
+treated as the ground truth ( Fig. 5 (c)). Jones et al. (2017a) derived a 
+test set of RGB images from an intraoperative MSI dataset using the 
+spectral sensitivity curves of a standard colour camera. The pro- 
+posed computational method predicted SO 2 with mean error less 
+than 10%, compared to the MSI result. A similar approach was used 
+by Lin et al. (2018b) to test the accuracy of a deep neural network 
+spectral reconstruction algorithm, showing that mean relative er- 
+rors as low as 0.63% between predicted and reference spectra could 
+be achieved. Nishidate et al. (2013) incorporated a beam-splitter 
+in the set-up to obtain reﬂectance spectra from the surface of the 
+skin in parallel with RGB measurements, enabling them to demon- 
+strate qualitative similarity between the spectra with an average 
+relative SO 2 estimation error of 54.5%. 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+13 
+There are some well-known resources for established med- 
+ical imaging modalities such as CT/MRI where researchers 
+may access annotated image data. Examples include The Can- 
+cer Imaging Archive (TCIA; https://www.cancerimagingarchive.net/ ) 
+( Clark et al., 2013 ), open-CAS ( http://opencas.webarchiv.kit.edu ), 
+the EndoVIS challenge ( https://endovis.grand-challenge.org ) and 
+DeepLesion ( https://nihcc.app.box.com/v/DeepLesion ) ( Yan et al., 
+2018 ). The largest of these databases is still 3–4 orders of magni- 
+tude smaller than natural image datasets such as ImageNET ( http: 
+//www.image-net.org ). SSI is lagging much further behind still and 
+there are very few publicly-available datasets. As an initial step re- 
+searchers in the ﬁeld should make their data available on insti- 
+tutional servers, following the example of groups working in en- 
+doscopy ( Yoon et al., 2019a , 2019b ), neuroimaging ( Fabelo et al., 
+2019b , 2019a ), ophthalmology ( A. Gebejes et al., 2016 , 2016 ) and 
+histology ( Awan et al., 2018b , 2018a ). When published, these data 
+should be accompanied by a readme ﬁle containing a brief descrip- 
+tion of the study and associated protocol, links to related publica- 
+tions and a clear statement on any usage restrictions. The key aim 
+is to enable an external researcher to reproduce the results of the 
+original team using the information supplied. 
+While a DICOM-equivalent standard for SSI may still be some 
+way off, metadata, either embedded or stored as a separate ﬁle, 
+should be included with each acquisition. A suggested format 
+is to include Patient/Subject ID (anonymised), timestamp, spec- 
+tral channel information (e.g., central wavelength, band FWHM, 
+pixel-to-wavelength calibration data [for push/whiskbroom sys- 
+tems]), camera/detector settings (exposure time, gain, bit depth), 
+reference reﬂectance spectrum and background intensity measure- 
+ments. For SSI systems where the spectral characteristic of a par- 
+ticular channel is not easily described by a Gaussian shape, the 
+ﬁlter/illumination spectrum data or a link to manufacturer speci- 
+ﬁcations should be provided. A second layer of related information 
+could include image annotations, either in the form of regions- 
+of-interest with deﬁned co-ordinates or binary masks to delin- 
+eate separate organs, tissues or lesions. Labels linked to these spa- 
+tial data would identify the feature in question and/or the results 
+of histological evaluation. Beyond this, future large-scale curated 
+imaging databases will require national or international initiatives 
+with dedicated funding and resources to maintain submissions and 
+ensure quality control. Following the TCIA template this would al- 
+low for rigorous validation, version control and accommodation of 
+corroborating data such as histology slides, clinical information or 
+other medical imaging modalities. 
+5. Discussion 
+Spectral imaging has become recognised as a valuable method 
+of obtaining functional and structural information on tissue non- 
+invasively. It has gained widespread uptake in clinical research, 
+with the list of applications now spanning dermatology, gas- 
+troenterology, gynaecology, otolaryngology, cardiology, haematol- 
+ogy, neurology, ophthalmology, bronchoscopy, nephrology and hep- 
+atology ( Table 1 ). Strong contrast due to haemoglobin has en- 
+abled imaging of blood volume and oxygenation, both important 
+variables in the assessment of tissue perfusion and its ability 
+to recover from injury. Physiological processes, such as tumour- 
+associated angiogenesis or the proliferation of dysplastic cells, can 
+be detected through their impact on the absorption and scatter- 
+ing components of the tissue’s reﬂectance spectrum. Selection of 
+wavelengths that maximise the spectral difference between organs 
+or pathologies can be used to optimise SSI device design, and 
+solve image segmentation and classiﬁcation problems. Statistical 
+and computational tools have allowed this process to be optimised, 
+increasing robustness and resolving differences not appreciable un- 
+der standard white-light illumination, for example, differentiating 
+the thyroid and parathyroid ( Barberio et al., 2018 ). Its usefulness 
+as a collaborative tool has also been demonstrated, providing valu- 
+able context for other imaging modalities and showing potential in 
+assisting guidance and clinical decision-making. 
+Spectral imaging has reached something of a crossroads in 
+the surgical ﬁeld. Although the principles of the technique have 
+long been established the number of attempted clinical stud- 
+ies has recently increased rapidly. Fuelled by growing indus- 
+trial and remote-sensing demand, readily-available computational 
+power and newly-developed software techniques, truly useful SSI 
+devices may soon be ready to make the leap into clinical practice. 
+The main factors for translation of a new imaging modality in- 
+clude three interconnected problems: clinical validation, usability 
+and ease-of-interpretation. While SSI has certainly demonstrated 
+utility across a wide range of specialties and is clearly sensitive 
+to a variety to relevant biological variables ( Table 1 ), it has yet to 
+address the crucial question of whether or not it can improve out- 
+comes for the patient. This is the diﬃcult next step for the ﬁeld 
+as it requires collection of a large amount of data in carefully- 
+designed clinical studies. Despite the number of publications on 
+the subject very few in vivo studies have been conducted ( Shapey 
+et al., 2019 ), most have small sample sizes and are not correlated 
+with surgical outcomes. For example, while many studies show 
+sensitivity to tissue perfusion and oxygenation none can conclu- 
+sively estimate the range of SSI values that represents a ‘healthy’ 
+blood supply. Similarly, there is undoubted applicability in tissue 
+classiﬁcation and disease detection, but no study that proves that 
+SSI can have a signiﬁcant impact on tumour recurrence rates. Clin- 
+ical eﬃcacy studies are needed to answer these questions. 
+Collection of data to answer clinical eﬃcacy questions requires 
+studies on a larger scale than are currently being attempted. This 
+places demands on hardware performance and robustness, and 
+connects to the second of the aforementioned problems, which in- 
+cludes device resolution, speed and mechanical properties. That is, 
+a new technology should not compromise the surgeon’s vision of 
+the tissue, or their ability to navigate the internal anatomy safely, 
+and should have equivalent handling characteristics, i.e., weight, 
+size, rigidity, to standard tools. Acquisition and processing speed 
+are important, to avoid delays to the normal delivery of care to the 
+patient. This problem may be on the cusp of being solved, as the 
+gap between high resolution and high-speed systems is becoming 
+less distinct. Table 2 shows that commercially-available snapshot 
+sensors can now capture MSI datacubes comprising 6–25 spectral 
+bands at up to 90 fps. There are also cameras, such as IMEC’s Snap- 
+scan , that sacriﬁce some speed to achieve hyperspectral detection 
+at megapixel spatial resolution. These devices are monolithic in de- 
+sign, with single sensor snapshot cameras in particular offering a 
+light weight option. This means that they can be integrated in ex- 
+isting surgical optical imaging devices, such as laparoscopes and 
+operating microscopes, in an equivalent manner to standard colour 
+cameras. 
+The third problem emphasises that the processing results 
+should be displayed in a concise and eﬃcient manner. i.e., SSI 
+should not increase the cognitive burden on the surgeon. The solu- 
+tion to this lies in eﬃcient and accurate computation of physiolog- 
+ical variables, delineation of diseased tissue and intuitive display of 
+the information to the clinician. The question of the optimal way to 
+relay this information to the surgeon remains open. Existing scopes 
+with enhanced imaging facilities typically allowing the user to tog- 
+gle between different modes or to choose an overlay. Augmented 
+reality systems ( Bernhardt et al., 2017 ) may be one platform to de- 
+liver this information, allowing the surgeon to seamlessly switch 
+to SSI or another imaging modality overlay during a procedure. 
+The range of acquisition systems summarised in Table 1 and the 
+nuances of their individual characteristics illustrates the full range 
+of complexity open to a researcher in acquiring data for a speciﬁc 
+14 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+need. Unfortunately, it has resulted in a disparate dataset, lacking 
+standardisation, that has hindered development of eﬃcient compu- 
+tational algorithms and independent validation and benchmarking. 
+The robustness of processing algorithms based on learning will de- 
+pend on the reliability of the training data available. This is espe- 
+cially important as the reﬂectance spectral signatures of tissue con- 
+stituents are broad, and the ability of SSI devices to identify ‘ﬁn- 
+gerprints’ of speciﬁc compounds is limited. A well-documented SSI 
+dataset is essential in understanding the applicability and limits of 
+any newly-developed algorithm. Furthermore, built-in algorithmic 
+awareness of variance and uncertainty in a particular model’s per- 
+formance will help to ease safety concerns, by restricting diagnos- 
+tic decisions to those based on ‘high conﬁdence’ measurements. 
+Computational spectral estimation methods using RGB data are 
+an exciting proposition as they have the potential to bridge the gap 
+between high resolution and high-speed devices, and introduce 
+the possibility of software-enabled SSI from conventional cam- 
+eras. Accuracy remains a challenge due to the inherent low spec- 
+tral resolution of RGB which, at ~100 nm, washes out ﬁne spec- 
+tral features that distinguish, for example, oxygenated and deoxy- 
+genated haemoglobin. Model and AI-based approaches will need 
+to be tested across a wider variety of image data to avoid over- 
+ﬁtting to a narrow range of physiological properties. An SSI imag- 
+ing database, from which RGB images can also be synthesised, of 
+multiple test subjects, organs and pathologies matched with histol- 
+ogy is needed. This is a ﬁeld that may become more important as 
+rigid endoscopes begin to transition from rod lenses to chip-on-tip. 
+Some of the major endoscope manufacturers already have products 
+in this area, such as Karl Storz (TIPCAM, C-MAC VS) and Olympus 
+(Endoﬂex 3D), and more can be expected as sensor miniaturisation 
+continues. 
+Idealised databases are challenging to create, requiring mone- 
+tary and resource investment in a multi-centre collaboration. The 
+time taken to design, set up and conduct the required measure- 
+ments is signiﬁcant. However, previous medical imaging work us- 
+ing transfer learning ( Litjens et al., 2017 ) has shown that this task 
+can be simpliﬁed by using networks trained for other tasks or on 
+different sam ples ( Lin et al., 2017 ). This ﬁeld includes methods that 
+can be trained on synthetic data and, with minimal retraining, be 
+reconﬁgured to work on real data or a completely different sce- 
+nario. Thus SSI results could be generalised more easily and each 
+new clinical application would not require a separate large-scale 
+study to obtain suﬃcient annotated training data ( Wirkert et al., 
+2017 ). 
+SSI could also take some inspiration from ﬂuorescence image- 
+guided surgery (FIGS), which has recently enjoyed an explosion of 
+interest, particularly using near-infrared light which does not in- 
+terfere with the standard colour imaging. Despite its relative com- 
+plexity, which requires exogenous agents and use of a specialised 
+camera system, there are now several general systems available 
+for use in open, MIS and robotic-assisted MIS. These clinically- 
+approved devices are being used in several studies to explore the 
+full utility of the technique and determine its eﬃcacy in improv- 
+ing surgical procedures. While clinical spectral imaging systems do 
+exist, aimed principally at dermatology, a MIS-compatible camera 
+is not currently available. This will be needed to instigate long- 
+term clinical studies, especially for applications where the problem 
+is signiﬁcant but the incidence is low. 
+Health economics will play a signiﬁcant role in whether or not 
+SSI devices are widely adopted in practice. Ultimately the new 
+technology will have to demonstrate that its cost can be recov- 
+ered. Miniaturised spectral imaging sensors, although increasingly 
+available, are still approximately ﬁve orders of magnitude more 
+expensive that standard colour sensors. Given the scale of ex- 
+pense associated with some of the clinical problems mentioned 
+here, such as management of patients following anastomotic leaks, 
+transplant failure, or unnecessary removal of hyperplastic lesions, 
+a convincing ﬁnancial case for spectral imaging devices might still 
+be formed despite the high initial outlay. Furthermore, SSI meth- 
+ods can point to a major advantage over current surgical imaging 
+competitors, ﬂuorescence-guidance, in that running costs related to 
+purchase of dyes do not apply. Thus, while SSI devices are unlikely 
+to become similarly priced to RGB hardware due to the economy of 
+scale of manufacturing, they may at least become a realistic com- 
+petitor to FIGS. This remains an open question, and one that re- 
+quires appropriately-structured clinical trials to yield an answer. 
+The above challenges are echoed by recent attempts to 
+formalise the translational route for new optical technologies 
+( Waterhouse et al., 2019 ). This notes, in addition to the points al- 
+ready discussed here, that there is a general problem with a lack 
+of standardisation in optical techniques, including metrics of expo- 
+sure safety limits. 
+6. Conclusions 
+Interest in spectral imaging for clinical applications continues 
+to grow along with the variety and performance of the technology. 
+Potential uses have been found in guidance, viability monitoring 
+and disease-detection, exploiting endogenous contrast in the visi- 
+ble and near-infrared wavelength range. Increased commercial in- 
+terest has seen the development of lightweight, snapshot devices 
+equivalent in size to standard cameras that can now be mounted 
+on endoscopes or operating microscopes, while high-resolution hy- 
+perspectral devices can be mounted on articulated arms. Advances 
+in computational modelling, including the use of statistical tech- 
+niques and deep learning, has augmented the hardware to increase 
+speed and accuracy. Nevertheless, some signiﬁcant challenges re- 
+main. 
+While SSI has seen increased use in research, most studies are 
+small or at proof-of-concept stage and there is still no clinical ap- 
+plication where the technique is used routinely. Clinical trials are 
+required to establish correlations between SSI signals and surgical 
+outcomes. Demonstrating the potential health and economic im- 
+pact of the technology will not be possible without this. 
+To reach this milestone some hardware reﬁnements are still 
+needed to provide seamless switching between real-time colour 
+visualisation and spectral acquisition, avoiding the need for ex- 
+pert set-up and maximising clinical uptake. The system must pro- 
+vide equivalent white light imaging performance to currently-used 
+medical cameras to avoid disruption of the clinical workﬂow and 
+patient care. Current surgical imaging conﬁgurations, particularly 
+in MIS, vary widely, are highly application-speciﬁc and commercial 
+systems are not yet optimised for this task. 
+Creation of standardised databases of SSI sequences, with ac- 
+companying acquisition and calibration metadata, will be essential 
+to allow benchmarking of processing algorithms, development of 
+computational techniques and independent validation of spectral 
+measurements. This will become increasingly important with the 
+growing trend toward data-driven processing. This will help to es- 
+tablish validation of the measurement technique in vivo in addition 
+to any in silico and ex vivo experiments. Computational spectral- 
+from-RGB estimation imaging techniques, which are still in their 
+infancy, would beneﬁt from these databases, allowing researchers 
+to increase their robustness and applicability. 
+These challenges must be met in collaboration with both indus- 
+trial and clinical partners. A consistent and robust hardware set-up 
+will allow reliable data acquisition across multiple hospital depart- 
+ments and sites, maximising the impact of any study that is con- 
+ducted. 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+15 
+Declaration of Competing Interest 
+None. 
+CRediT authorship contribution statement 
+Neil T. Clancy: Writing - original draft, Writing - review & edit- 
+ing, Methodology, Data curation. Geoffrey Jones: Writing - original 
+draft, Writing - review & editing. Lena Maier-Hein: Writing - re- 
+view & editing. Daniel S. Elson: Writing - review & editing. Danail 
+Stoyanov: Writing - review & editing. 
+Acknowledgements 
+This work is supported by the Wellcome /EPSRC Centre for In- 
+terventional and Surgical Sciences (WEISS) (203145Z/16/Z). Many 
+thanks to Leonardo Ayala (DKFZ) for useful discussion and com- 
+ments during preparation of this article . 
+References 
+Adler, T.J., Ardizzone, L., Vemuri, A., Ayala, L., Gröhl, J., Kirchner, T., Wirk- 
+ert, S., Kruse, J., Rother, C., Köthe, U., Maier-Hein, L., 2019. Uncertainty- 
+aware performance assessment of optical imaging modalities with invert- 
+ible neural networks. Int. J. Comput. Assist. Radiol. Surg 1–11. doi: 10.1007/ 
+s11548- 019- 01939- 9 . 
+Akbari, H., Halig, L.V., Zhang, H., Wang, D., Chen, Z.G., Fei, B., 2012. Detection of 
+cancer metastasis using a novel macroscopic hyperspectral method. Proc. SPIE 
+doi: 10.1117/12.912026 , 831711. 
+Akbari, H., Kosugi, Y., Kihara, K., 2008a. A novel method for artery detec- 
+tion in laparoscopic surgery. Surg. Endosc. 22 (7), 1672–1677. doi: 10.1007/ 
+s0 0464-0 07-9688-8 . 
+Akbari, H., Kosugi, Y., Kojima, K., Tanaka, N., 2008b. Wavelet-based compression and 
+segmentation of hyperspectral images in surgery. Med. Img. Aug. Reality (MIAR) 
+142–149. doi: 10.1007/978- 3- 540- 79982- 5 _ 16 . 
+Akter, S., Kawauchi, S., Sato, S., Aosasa, S., Yamamoto, J., Nishidate, I., 2017. In 
+vivo imaging of hepatic hemodynamics and light scattering property during 
+ischemia-reperfusion in rats based on spectrocolorimetry. Biomed. Opt. Express 
+8 (2), 974–992. doi: 10.1364/BOE.8.0 0 0974 . 
+Ardizzone, L. , Kruse, J. , Wirkert, S. , Rahner, D. , Pellegrini, E.W. , Klessen, R.S. , 
+Maier-Hein, L. , Rother, C. , Köthe, U. , 2019. Analyzing inverse problems with in- 
+vertible neural networks. International Conference on Learning Representations 
+(ICLR) . 
+Arnold, T., De Biasio, M., Leitner, R., 2010. High-sensitivity hyper-spectral video en- 
+doscopy system for intra-surgical tissue classiﬁcation. IEEE Sensors 2612–2615. 
+doi: 10.1109/ICSENS.2010.5690205 . 
+Arnold, T., De Biasio, M., Leitner, R., 2011. Hyper-spectral video endoscope for 
+intra-surgery tissue classiﬁcation using auto-ﬂuorescence and reﬂectance spec- 
+troscopy. Proc. SPIE doi: 10.1117/12.889940 , 808711. 
+Avila-Rencoret, F.B., Elson, D.S., Mylonas, G., 2015. Towards a robotic-assisted car- 
+tography of the colon: a proof of concept. In: IEEE International Conference on 
+Robotics and Automation (ICRA), pp. 1757–1763. doi: 10.1109/ICRA.2015.7139425 . 
+Awan, R., Al-Maadeed, S., Al-Saady, R. (2018a). "Multispectral imaging dataset of col- 
+orectal tissue." https://ﬁgshare.com/articles/Multispectral _ Imaging _ Dataset _ of _ 
+Colorectal _ tissue/6224957/1 . 
+Awan, R., Al-Maadeed, S., Al-Saady, R., 2018b. Using spectral imaging for the analy- 
+sis of abnormalities for colorectal cancer: when is it helpful? PLoS ONE 13 (6). 
+doi: 10.1371/journal.pone.0197431 , e0197431. 
+Ayala, L.A., Wirkert, S.J., Gröhl, J., Herrera, M.A ., Hernandez-Aguilera, A ., Ve- 
+muri, A., Santos, E., Maier-Hein, L., 2019. Live monitoring of haemodynamic 
+changes with multispectral image analysis. OR 2.0 Context-Aware Operating 
+Theaters and Machine Learning in Clinical Neuroimaging (MLCN) doi: 10.1007/ 
+978- 3- 030- 32695- 1 _ 5 . 
+Baltussen, E.J.M., Kok, E.N.D., de Koning, S.G.B., Sanders, J., Aalbers, A.G.J., 
+Kok, N.F.M., Beets, G.L., Flohil, C.C., Bruin, S.C., Kuhlmann, K.F.D., Steren- 
+borg, H.J.C.M., Ruers, T.J.M., 2019. Hyperspectral imaging for tissue classiﬁca- 
+tion, a way toward smart laparoscopic colorectal surgery. J. Biomed. Opt. 24 (1). 
+doi: 10.1117/1.JBO.24.1.016002 , 016002. 
+Barberio, M., Maktabi, M., Gockel, I., Rayes, N., Jansen-Winkeln, B., Köhler, H., 
+Rabe, S.M., Seidemann, L., Takoh, J.P., Diana, M., Neumuth, T., Chalopin, C., 2018. 
+Hyperspectral based discrimination of thyroid and parathyroid during surgery. 
+Curr. Directions Biomed. Eng. 4 (1), 399–402. doi: 10.1515/cdbme- 2018- 0095 . 
+Bedard, N., Schwarz, R.A., Hu, A., Bhattar, V., Howe, J., Williams, M.D., Gillenwa- 
+ter, A.M., Richards-Kortum, R., Tkaczyk, T.S., 2013. Multimodal snapshot spectral 
+imaging for oral cancer diagnostics: a pilot study. Biomed. Opt. Express 4 (6), 
+938–949. doi: 10.1364/BOE.4.0 0 0938 . 
+Bélanger, S., de Souza, B.O., Casanova, C., Lesage, F., 2016. Correlation of hemody- 
+namic and ﬂuorescence signals under resting state conditions in mice’s barrel 
+ﬁeld cortex. Neurosci. Lett. 616, 177–181. doi: 10.1016/j.neulet.2016.01.067 . 
+Bernhardt, S., Nicolau, S.A., Soler, L., Doignon, C., 2017. The status of augmented re- 
+ality in laparoscopic surgery as of 2016. Med. Image Anal. 37, 66–90. doi: 10. 
+1016/j.media.2017.01.007 . 
+Best, S.L., Thapa, A., Holzer, M.J., Jackson, N., Mir, S.A., Cadeddu, J.A., Zuzak, K.J., 
+2011. Minimal arterial in-ﬂow protects renal oxygenation and function during 
+porcine partial nephrectomy: conﬁrmation by hyperspectral imaging. Urology 
+78 (4), 961–966. doi: 10.1016/j.urology.2011.06.029 . 
+Bjorgan, A., Randeberg, L.L., 2015. Real-time noise removal for line-scanning hyper- 
+spectral devices using a minimum noise fraction-based approach. Sensors 15 
+(2), 3362–3378. doi: 10.3390/s150203362 . 
+Bolton, F.J., Bernat, A.S., Bar-Am, K., Levitz, D., Jacques, S., 2018. Portable, low-cost 
+multispectral imaging system: design, development, validation, and utilization. 
+J. Biomed. Opt. 23 (12). doi: 10.1117/1.JBO.23.12.121612 , 121612. 
+Bouchard, M.B. , Chen, B.R. , Burgess, S.A. , Hillman, E.M.C. , 2009. Ultra-fast multispec- 
+tral optical imaging of cortical oxygenation, blood ﬂow, and intracellular cal- 
+cium dynamics. Opt. Express 17 (18), 15670–15678 . 
+Cabrelli, L.C., Pelissari, P.I.B.G.B., Deana, A.M., Carneiro, A .A .O., Pavan, T.Z., 2017. Sta- 
+ble phantom materials for ultrasound and optical imaging. Phys. Med. Biol. 62 
+(2), 432–447. doi: 10.1088/1361-6560/62/2/432 . 
+Calin, M.A., Coman, T., Parasca, S.V., Bercaru, N., Savastru, R., Manea, D., 2015. Hy- 
+perspectral imaging-based wound analysis using mixture-tuned matched ﬁlter- 
+ing classiﬁcation method. J. Biomed. Opt. 20 (4). doi: 10.1117/1.JBO.20.4.046004 , 
+046004. 
+Camps-Valls, G., Bruzzone, L., 2005. Kernel-based methods for hyperspectral image 
+classiﬁcation. IEEE T. Geosci. Remote 43 (6), 1351–1362. doi: 10.1109/TGRS.2005. 
+846154 . 
+Chihara, H., Oishi, N., Ishii, A., Munemitsu, T., Arai, D., Ikeda, H., Miyamoto, S., 
+2016. In vivo detection of atherosclerotic plaque using non-contact and label- 
+free near-infrared hyperspectral imaging. Atherosclerosis 250, 106–113. doi: 10. 
+1016/j.atherosclerosis.2016.04.029 . 
+Chin, M.S., Babchenko, O., Lujan-Hernandez, J., Nobel, L., Ignotz, R., Lalikos, J.F., 2016. 
+Hyperspectral imaging for burn depth assessment in an animal model. Plas. Re- 
+constr. Surg. Glob. Open 3 (12), e591. doi: 10.1097/GOX.0 0 0 0 0 0 0 0 0 0 0 0 0558 . 
+Chung, H., Lu, G., Tian, Z., Wang, D., Chen, Z.G., Fei, B., 2016. Superpixel-based spec- 
+tral classiﬁcation for the detection of head and neck cancer with hyperspectral 
+imaging. Proc SPIE doi: 10.1117/12.2216559 , 978813. 
+Clancy, N.T., Arya, S., Qi, J., Stoyanov, D., Hanna, G.B., Elson, D.S., 2014. Po- 
+larised stereo endoscope and narrowband detection for minimal access surgery. 
+Biomed. Opt. Express 5 (12). doi: 10.1364/BOE.5.004108 , 4108-4117. 
+Clancy, N.T., Arya, S., Stoyanov, D., Singh, M., Hanna, G.B., Elson, D.S., 2015. Intraop- 
+erative measurement of bowel oxygen saturation using a multispectral imaging 
+laparoscope. Biomed. Opt. Express 6 (10), 4179–4190. doi: 10.1364/BOE.6.004179 . 
+Clancy, N.T. , Ebner, M. , Crane, J.S. , Corbett, R. , Duncan, N. , Caro, C. , Elson, D.S. , 2013. 
+Multispectral imaging using a fast ﬁlter wheel system during vascular surgery. 
+In: Proceedings of The Hamlyn Symposium on Medical Robotics, pp. 69–70 . 
+Clancy, N.T., Gurusamy, K., Jones, G., Davidson, B., Clarkson, M.J., Hawkes, D.J., Stoy- 
+anov, D., 2018. Spectral imaging of thermal damage induced during microwave 
+ablation in the liver. In: Conference of the Engineering in Medicine and Biology 
+Society (EMBC), pp. 30 01–30 04. doi: 10.1109/EMBC.2018.8512901 . 
+Clancy, N.T., Li, R., Rogers, K., Driscoll, P., Excel, P., Yandle, R., Hanna, G., Copner, N., 
+Elson, D.S., 2012a. Development and evaluation of a light emitting diode endo- 
+scopic light source. Proc. of SPIE doi: 10.1117/12.909331 , 82140R. 
+Clancy, N.T., Saso, S., Stoyanov, D., Sauvage, V., Corless, D.J., Boyd, M., Noakes, D.E., 
+Thum, M.-.Y., Ghaem-Maghami, S., Smith, J.R., Elson, D.S., 2016a. Multispectral 
+imaging of organ viability during uterine transplantation surgery in rabbits and 
+sheep. J. Biomed. Opt. 21 (10). doi: 10.1117/1.JBO.21.10.106006 , 106006. 
+Clancy, N.T., Stoyanov, D., James, D.R.C., Di Marco, A., Sauvage, V., Clark, J., Yang, G.- 
+.Z., Elson, D.S., 2012b. Multispectral image alignment using a three channel en- 
+doscope in vivo during minimally invasive surgery. Biomed. Opt. Express 3 (10), 
+2567–2578. doi: 10.1364/BOE.3.002567 . 
+Clancy, N.T., Teare, J., Hanna, G.B., Elson, D.S., 2016b. Flexible multimode endoscope 
+for tissue reﬂectance and autoﬂuorescence hyperspectral imaging. OSA Techni- 
+cal Digest doi: 10.1364/OTS.2016.OTh2C.3 . 
+Claridge, E. , Hidovi ´c-Rowe, D. , 2014. Model based inversion for deriving maps of his- 
+tological parameters characteristic of cancer from ex-vivo multispectral images 
+of the colon. IEEE Trans. Med. Imaging 33 (4), 822–835 . 
+Claridge, E., Hidovi ´c-Rowe, D., Taniere, P., Ismail, T., 2007. Quantifying mucosal blood 
+volume fraction from multispectral images of the colon. Proc. SPIE doi: 10.1117/ 
+12.709559 , 65110C. 
+Clark, K., Vendt, B., Smith, K., Freymann, J., Kirby, J., Koppel, P., Moore, S., Phillips, S., 
+Maﬃtt, D., Pringle, M., Tarbox, L., Prior, F., 2013. The cancer imaging archive 
+(TCIA): maintaining and operating a public information repository. J. Digit. 
+Imaging 26 (6), 1045–1057. doi: 10.1007/s10278- 013- 9622- 7 . 
+Cockett, W.S., Cockett, A.T.K., 1998. The Hopkins rod-lens system and the Storz 
+cold light illumination system. Urology 51 (5A Suppl), 1–2. doi: 10.1016/ 
+S0 090-4295(98)0 0 060-0 . 
+CRi, I. "VariSpec tunable imaging ﬁlter." Retrieved October 2019, from http://webx. 
+ubi.pt/ ∼hgil/FotoMetria/cri/varispec2.pdf . 
+de Bruin, D.M., Bremmer, R.H., Kodach, V.M., de Kinkelder, R., van Marle, J., van 
+Leeuwen, T.G., Faber, D.J., 2010. Optical phantoms of varying geometry based 
+on thin building blocks with controlled optical properties. J. Biomed. Opt. 15 
+(2). doi: 10.1117/1.33690 03 , 0250 01. 
+de Cunha, D.A., Eadie, L.H., Barbur, J.L., Hawkes, D.J., Seifalian, A.M., 2004. The effect 
+of image colour distortion on evaluation of donor liver suitability for transplan- 
+tation. Comput. Biol. Med. 34 (7), 615–632. doi: 10.1016/j.compbiomed.2003.10. 
+001 . 
+16 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+de Jode, M.L., 20 0 0. Monte Carlo simulations of light distributions in an embedded 
+tumour model: studies of selectivity in photodynamic therapy. Laser. Med. Sci. 
+15 (1), 49–56. doi: 10.10 07/s101030 050 047 . 
+Debie, P., Hernot, S., 2019. Emerging ﬂuorescent molecular tracers to guide intra- 
+operative surgical decision-making. Front. Pharmacol. 10, 510. doi: 10.3389/fphar. 
+2019.00510 . 
+DSouza, A.V., Lin, H., Henderson, E.R., Samkoe, K.S., Pogue, B.W., 2016. Review of 
+ﬂuorescence guided surgery systems: identiﬁcation of key performance capabil- 
+ities beyond indocyanine green imaging. J. Biomed. Opt. 21 (8). doi: 10.1117/1. 
+JBO.21.8.080901 , 080901. 
+Du, X., Clancy, N.T., Elson, D.S., Stoyanov, D., 2015. Robust surface tracking com- 
+bining features, intensity and illumination compensation. Int. J. Comput. Assist. 
+Radiol. Surg. 10 (12), 1915–1926. doi: 10.1007/s11548- 015- 1243- 9 . 
+Fabelo, H., Ortega, S., Lazcano, R., Madroñal, D., Callicó, G.M., Juárez, E., Salvador, R., 
+Bulters, D., Bulstrode, H., Szolna, A., Piñeiro, J.F., Sosa, C., O’Shanahan, A.J., 
+Bisshopp, S., Hernández, M., Morera, J., Ravi, D., Kiran, B.R., Vega, A., Báez- 
+Quevedo, A., Yang, G.-.Z., Stanciulescu, B., Sarmiento, R., 2018. An intraoperative 
+visualization system using hyperspectral imaging to aid in brain tumor delin- 
+eation. Sensors 18 (2), 430. doi: 10.3390/s18020430 . 
+Fabelo, H., Ortega, S., Szolna, A., Bulters, D., Piñeiro, J.F., Kabwama, S., J O’Shanahan, 
+A., Bulstrode, H., Bisshopp, S., Ravi Kiran, B., Ravi, D., Lazcano, R., Madroñal, D., 
+Sosa, C., Espino, C., Marquez, M., de la Luz Plaza, M., Camacho, R., Carrera, D., 
+Hernández, M., Callicó, G.M., Morera Molina, J., Stanciulescu, B., Yang, G.-.Z., Sal- 
+vador, R., Juárez, E., Sanz, C., Sarmiento, R. (2019a). "HSI human brain database." 
+https://hsibraindatabase.iuma.ulpgc.es/ . 
+Fabelo, H., Ortega, S., Szolna, A., Bulters, D., Piñeiro, J.F., Kabwama, S., J 
+O’Shanahan, A., Bulstrode, H., Bisshopp, S., Ravi Kiran, B., Ravi, D., Lazcano, R., 
+Madroñal, D., Sosa, C., Espino, C., Marquez, M., de la Luz Plaza, M., Camacho, R., 
+Carrera, D., Hernández, M., Callicó, G.M., Morera Molina, J., Stanciulescu, B., 
+Yang, G.-.Z., Salvador, R., Juárez, E., Sanz, C., Sarmiento, R., 2019b. In-vivo hy- 
+perspectral human brain image database for brain cancer detection. IEEE Access 
+7. doi: 10.1109/ACCESS.2019.2904788 , 39098-39116. 
+Fawzy, Y., Lam, S., Zeng, H., 2015. Rapid multispectral endoscopic imaging system 
+for near real-time mapping of the mucosa blood supply in the lung. Biomed. 
+Opt. Express 6 (8), 2980–2990. doi: 10.1364/BOE.6.002980 . 
+Firn, K.A., Khoobehi, B., 2015. Novel, noninvasive multispectral snapshot imaging 
+system to measure and map the distribution of human retinal vessel and tissue 
+hemoglobin oxygen saturation. Int. J. Ophthal. Res. 1 (2), 48–58. doi: 10.17554/j. 
+issn.2409-5680.2015.01.17 . 
+Flock, S.J. , Patterson, M.S. , Wilson, B.C. , Wyman, D.R. , 1989. Monte Carlo modeling 
+of light propagation in highly scattering tissues-I: model predictions and com- 
+parison with diffusion theory. IEEE Trans. Biomed. Eng. 36 (12), 1162–1168 . 
+Fonseca, M., Zeqiri, B., Beard, P.C., Cox, B.T., 2016. Characterisation of a phantom for 
+multiwavelength quantitative photoacoustic imaging. Phys. Med. Biol. 61 (13), 
+4 950–4 973. doi: 10.1088/0031-9155/61/13/4950 . 
+Frey, L., Masarotto, L., Armand, M., Charles, M.-.L., Lartigue, O., 2015. Multispectral 
+interference ﬁlter arrays with compensation of angular dependence or extended 
+spectral range. Opt. Express 23 (9). doi: 10.1364/OE.23.011799 , 11799-11812. 
+Gebejes, A., Bednarik, R., Fält, P., Hauta-Kasari, M., 2016. SPEED - spectral eye video 
+database. In: International Joint Conference on Pervasive and Ubiquitous Com- 
+puting (UbiComp), pp. 1666–1675. doi: 10.1145/296 8219.296 8335 . 
+Gebejes, A., Bednarik, R., Fält, P., Hauta-Kasari, M. ". 2016. SPEED: sPectral eye vidEo 
+database." http://www.uef.ﬁ/ﬁ/web/spectral/speed . 
+Gehrung, M., Bohndiek, S.E., Brunker, J., 2019. Development of a blood oxygenation 
+phantom for photoacoustic tomography combined with online pO2 detection 
+and ﬂow spectrometry. J. Biomed. Opt. 24 (12). doi: 10.1117/1.JBO.24.12.121908 , 
+121908. 
+Ghassemi, P., Wang, J., Melchiorri, A.J., Ramella-Roman, J.C., Mathews, S.A., 
+Coburn, J.C., Sorg, B.S., Chen, Y., Pfefer, T.J., 2015. Rapid prototyping of 
+biomimetic vascular phantoms for hyperspectral reﬂectance imaging. J. Biomed. 
+Opt. 20 (12). doi: 10.1117/1.JBO.20.12.121312 , 121312. 
+Giannoni, L., Lange, F., Tachtsidis, I., 2018. Hyperspectral imaging solutions for brain 
+tissue metabolic and hemodynamic monitoring: past, current and future devel- 
+opments. J. Opt. 20. doi: 10.1088/2040-8986/aab3a6 , 044009. 
+Gioux, S., Mazhar, A., Lee, B.T., Lin, S.J., Tobias, A.M., Cuccia, D.J., Stockdale, A., Oke- 
+tokoun, R., Ashitate, Y., Kelly, E., Weinman, M., Durr, N., Moﬃtt, L.A., Durkin, A.J., 
+Tromberg, B.J., Frangioni, J.V., 2011. First-in-human pilot study of a spatial fre- 
+quency domain oxygenation imaging system. J. Biomed. Opt. 16 (8). doi: 10.1117/ 
+1.3614566 , 086015. 
+Gu, X., Han, Z., Yao, L., Zhong, Y., Shi, Q., Fu, Y., Liu, C., Wang, X., Xie, T., 2016. Image 
+enhancement based on in vivo hyperspectral gastroscopic images: a case study. 
+J. Biomed. Opt. 21 (10). doi: 10.1117/1.JBO.21.10.101412 , 101412. 
+Guevara, E., Pouliot, P., Nguyen, D.K., Lesage, F., 2013. Optical imaging of acute 
+epileptic networks in mice. J. Biomed. Opt. 18 (7). doi: 10.1117/1.JBO.18.7.076021 , 
+076021. 
+Hagen, N., Kudenov, M.W., 2013. Review of snapshot spectral imaging technologies. 
+Opt. Eng. 52 (9). doi: 10.1117/1.OE.52.9.090901 , 090901. 
+Halder, A., Banerjee, M., Singh, S., Adhikari, A., Sarkar, P.K., Bhattacharya, A.M., 
+Chakrabarti, P., Bhattacharyya, D., Mallick, A.K., Pal, S.K., 2019. A novel whole 
+spectrum-based non-invasive screening device for neonatal hyperbilirubinemia. 
+IEEE J. Biomed. Health Inform. Adv. Online doi: 10.1109/JBHI.2019.2892946 . 
+Halicek, M., Little, J.V., Wang, X., Chen, A.Y., Fei, B., 2019. Optical biopsy of head and 
+neck cancer using hyperspectral imaging and convolutional neural networks. J. 
+Biomed. Opt. 24 (3). doi: 10.1117/1.JBO.24.3.0360 07 , 0360 07. 
+Halicek, M., Lu, G., Little, J.V., Wang, X., Patel, M., Griﬃth, C.C., El-Deiry, M.W., 
+Chen, A.Y., Fei, B., 2017. Deep convolutional neural networks for classifying 
+head and neck cancer using hyperspectral imaging. J. Biomed. Opt. 22 (6). 
+doi: 10.1117/1.JBO.22.6.060503 , 060503. 
+Han, Z., Zhang, A., Wang, X., Sun, Z., Wang, M.D., Xie, T., 2016. In vivo use of hy- 
+perspectral imaging to develop a noncontact endoscopic diagnosis support sys- 
+tem for malignant colorectal tumors. J. Biomed. Opt 21 (1). doi: 10.1117/1.JBO.21. 
+1.016001 , 016001. 
+Hartwig, V., Marinelli, M., Rocco, F., L’Abbate, A., 2016. Assessment of microvascu- 
+lar function using near-infrared spectroscopic 2D imaging of whole hand com- 
+bined with vascular occlusion test. J. Med. Biol. Eng. 36 (1), 87–95. doi: 10.1007/ 
+s40846- 016- 0114- 3 . 
+Hasnat, M.A., Parkkinen, J., Hauta-Kasari, M. (2016) Spectral video construction from 
+RGB video: application to image guided neurosurgery. arXiv:1612.04809 . 
+Hidovi ´c, D. , Rowe, J.E. , 2004. Validating a model of colon colouration using an evolu- 
+tion strategy with adaptive approximations. In: Genetic and Evolutionary Com- 
+putation (GECCO), pp. 1005–1016 . 
+Hidovi ´c-Rowe, D. , Claridge, E. , 2005. Modelling and validation of spectral reﬂectance 
+for the colon. Phys. Med. Biol. 50 (6), 1071–1093 . 
+Hillman, E.M.C., 2007. Optical brain imaging in vivo : techniques and applications 
+from animal to man. J. Biomed. Opt. 12 (5). doi: 10.1117/1.2789693 , 051402. 
+Hoerenz, P., 1980. The operating microscope III. accessories. J. Microsurg 2 (1), 22–
+26. doi: 10.10 02/micr.1920 020105 . 
+Hohmann, M., Douplik, A., Varadhachari, J., Nasution, A., Mudter, J., Neurath, M., 
+Schmidt, M., 2011. Preliminary results for hyperspectral videoendoscopy diag- 
+nostics on the phantoms of normal and abnormal tissues: towards gastrointesti- 
+nal diagnostics. Proc. SPIE doi: 10.1117/12.889829 . 
+Hohmann, M., Kanawade, R., Klämpﬂ, F., Douplik, A., Mudter, J., Neurath, M.F., Al- 
+brecht, H., 2017. In-vivo multispectral video endoscopy towards in-vivo hy- 
+perspectral video endoscopy. J. Biophotonics 10 (4), 553–564. doi: 10.1002/jbio. 
+20160 0 021 . 
+Holmer, A., Marotz, J., Wahl, P., Dau, M., Kämmerer, P.W., 2018. Hyperspectral 
+imaging in perfusion and wound diagnostics - methods and algorithms for 
+the determination of tissue parameters. Biomed. Tech. (Berl) 63 (5), 547–556. 
+doi: 10.1515/bmt- 2017- 0155 . 
+Holmer, A., Tetschke, F., Marotz, J., Malberg, H., Markgraf, W., Thiele, C., Kulcke, A., 
+2016. Oxygenation and perfusion monitoring with a hyperspectral camera sys- 
+tem for chemical based tissue analysis of skin and organs. Physiol. Meas. 37 
+(11), 2064–2078. doi: 10.1088/0967-3334/37/11/2064 . 
+Hsiung, P.-.L., Nambiar, P.R., Fujimoto, J.G., 2005. Effect of tissue preservation on 
+imaging using ultrahigh resolution optical coherence tomography. J. Biomed. 
+Opt. 10 (6). doi: 10.1117/1.2147155 , 064033. 
+Hu, B., Du, J., Zhang, Z., Wang, Q., 2019. Tumor tissue classiﬁcation based on micro- 
+hyperspectral technology and deep learning. Biomed. Opt. Express 10 (12), 
+6370–6389. doi: 10.1364/BOE.10.006370 . 
+Ignjatovic, A., East, J.E., Suzuki, N., Vance, M., Guenther, T., Saunders, B., 2009. Op- 
+tical diagnosis of small colorectal polyps at routine colonoscopy (Detect inspect 
+characterise resect and discard; discard trial): a prospective cohort study. Lancet 
+Oncol. 10 (12), 1171–1178. doi: 10.1016/S1470-2045(09)70329-8 . 
+Jacques, S.L., 2013. Optical properties of biological tissues: a review. Phys. Med. Biol. 
+58 (11), R37–R61. doi: 10.1088/0031-9155/58/11/R37 . 
+Jansen-Winkeln, B., Holfert, N., Köhler, H., Moulla, Y., Takoh, J.P., Rabe, S.M., 
+Mehdorn, M., Barberio, M., Chalopin, C., Neumuth, T., Gockel, I., 2019. De- 
+termination of the transection margin during colorectal resection with hy- 
+perspectral imaging (HSI). Int. J. Colorectal Dis. 34 (4), 731–739. doi: 10.1007/ 
+s00384- 019- 03250- 0 . 
+Jones, G., Clancy, N.T., Arridge, S., Elson, D.S., Stoyanov, D., 2016. Inference 
+of haemoglobin concentration from stereo RGB. In: International Confer- 
+ence on Medical Imaging and Augmented Reality, pp. 50–58. doi: 10.1007/ 
+978- 3- 319- 43775- 0 _ 5 . 
+Jones, G., Clancy, N.T., Du, X., Robu, M., Arridge, S., Elson, D.S., Stoyanov, D., 2017a. 
+Fast estimation of haemoglobin concentration in tissue via wavelet decomposi- 
+tion. In: Medical Image Computing and Computer-Assisted Intervention (MIC- 
+CAI), pp. 100–108. doi: 10.1007/978- 3- 319- 66185- 8 _ 12 . 
+Jones, G., Clancy, N.T., Helo, Y., Arridge, S., Elson, D.S., Stoyanov, D., 2017b. Bayesian 
+estimation of intrinsic tissue oxygenation and perfusion from RGB images. IEEE 
+Trans. Med. Img. 36 (7), 1491–1501. doi: 10.1109/TMI.2017.2665627 . 
+Kavvadias, V., Epitropou, G., Georgiou, N., Grozou, F., Paschopoulos, M., Balas, C., 
+2013. A novel endoscopic spectral imaging platform integrating k-means clus- 
+tering for early and non-invasive diagnosis of endometrial pathology. In: An- 
+nual International Conference of the IEEE Engineering in Medicine and Biology 
+Society (EMBC), pp. 4 4 42–4 4 45. doi: 10.1109/EMBC.2013.6610532 . 
+Kawauchi, S., Okuda, W., Nawashiro, H., Sato, S., Nishidate, I., 2019. Multispectral 
+imaging of cortical vascular and hemodynamic responses to a shock wave: ob- 
+servation of spreading depolarization and oxygen supply-demand mismatch. J. 
+Biomed. Opt. 24 (3). doi: 10.1117/1.JBO.24.3.035005 , 035005. 
+Kester, R.T., Bedard, N., Gao, L., Tkaczyk, T.S., 2011. Real-time snapshot hyperspectral 
+imaging endoscope. J. Biomed. Opt. 16 (5). doi: 10.1117/1.3574756 , 056005. 
+Khoobehi, B. , Beach, J.M. , Kawano, H. , 2004. Hyperspectral imaging for measurement 
+of oxygen saturation in the optic nerve head. Invest. Ophthalmol. Vis. Sci. 45 (5), 
+1464–1472 . 
+Khoobehi, B., Firn, K., Rodebeck, E., Hay, S., 2014. A new snapshot hyperspectral 
+imaging system to image optic nerve head tissue. Acta Ophthalmol. (Copenh.) 
+92 (3), e241. doi: 10.1111/aos.12288 . 
+Khoobehi, B. , Khoobehi, A. , Fournier, P. , 2012. Snapshot hyperspectral imaging to 
+measure oxygen saturation in the retina using ﬁber bundle and multi slit spec- 
+trometer. Proc. SPIE 82291E . 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+17 
+Khouj, Y., Dawson, J., Coad, J., Vona-Davis, L., 2018. Hyperspectral imaging and k- 
+means classiﬁcation for histologic evaluation of ductal carcinoma in situ . Front. 
+Oncol. 8, 17. doi: 10.3389/fonc.2018.0 0 017 . 
+King, D.R., Li, W., Squiers, J.J., Mohan, R., Sellke, E., Mo, W., Zhang, X., Fan, W., Di- 
+Maio, J.M., Thatcher, J.E., 2015. Surgical wound debridement sequentially char- 
+acterized in a porcine burn model with multispectral imaging. Burns 41 (7), 
+1478–1487. doi: 10.1016/j.burns.2015.05.009 . 
+Kiris, T., Akbulut, S., Kiris, A., Gucin, Z., Karatepe, O., Bölükbasi Ates, G, 
+Tabako ˘glu, H.Ö, 2015. Optical characterization of pancreatic normal and tu- 
+mor tissues with double integrating sphere system. Proc. SPIE doi: 10.1117/12. 
+2082732 , 932116. 
+Kiyotoki, S., Nishikawa, J., Okamoto, T., Hamabe, K., Saito, M., Goto, A., Fujita, Y., 
+Hamamoto, Y., Takeuchi, Y., Satori, S., Sakaidaa, I., 2013. New method for detec- 
+tion of gastric cancer by hyperspectral imaging: a pilot study. J. Biomed. Opt. 18 
+(2). doi: 10.1117/1.JBO.18.2.026010 , 026010. 
+Koh, K.R., Wood, T.C., Goldin, R.D., Yang, G.-.Z., Elson, D.S., 2009. Visible and near 
+infrared autoﬂuorescence and hyperspectral imaging spectroscopy for the in- 
+vestigation of colorectal lesions and detection of exogenous ﬂuorophores. Proc. 
+SPIE doi: 10.1117/12.809313 , 71691E. 
+Köhler, H., Jansen-Winkeln, B., Maktabi, M., Barberio, M., Takoh, J., Holfert, N., 
+Moulla, Y., Niebisch, S., Diana, M., Neumuth, T., Rabe, S.M., Chalopin, C., 
+Melzer, A., Gockel, I., 2019. Evaluation of hyperspectral imaging (HSI) for 
+the measurement of ischemic conditioning effects of the gastric con- 
+duit during esophagectomy. Surg. Endosc. 33 (11), 3775–3782. doi: 10.1007/ 
+s00464- 019- 06675-4 . 
+Kriss, T.C., Kriss, V.M., 1998. History of the operating microscope: from magni- 
+fying glass to microneurosurgery. Neurosurgery 42 (4), 899–907. doi: 10.1097/ 
+0 0 0 06123-1998040 0 0-0 0116 . 
+Kulcke, A ., Holmer, A ., Wahl, P., Siemers, F., Wild, T., Daeschlein, G., 2018. A compact 
+hyperspectral camera for measurement of perfusion parameters in medicine. 
+Biomed. Tech. (Berl) 63 (5), 519–527. doi: 10.1515/bmt- 2017- 0145 . 
+Kumashiro, R. , Konishi, K. , Chiba, T. , Akahoshi, T. , Nakamura, S. , Murata, M. , 
+Tomikawa, M. , Matsumoto, T. , Maehara, Y. , Hashizume, M. , 2016. Integrated en- 
+doscopic system based on optical imaging and hyperspectral data analysis for 
+colorectal cancer detection. Anticancer Res 36 (8), 3925–3932 . 
+Leavesley, S.J., Walters, M., Lopez, C., Baker, T., Favreau, P.F., Rich, T.C., Rider, P.F., 
+Boudreaux, C.W., 2016. Hyperspectral imaging ﬂuorescence excitation scan- 
+ning for colon cancer detection. J. Biomed. Opt. 21 (10). doi: 10.1117/1.JBO.21.10. 
+104003 , 104003. 
+Lin, D., Qiu, S., Huang, W., Pan, J., Xu, Z., Chen, R., Feng, S., Chen, G., Li, Y., Short, M., 
+Zhao, J., Fawzy, Y., Zeng, H., 2018a. Autoﬂuorescence and white light imaging- 
+guided endoscopic Raman and diffuse reﬂectance spectroscopy for in vivo na- 
+sopharyngeal cancer detection. J. Biophoton. 11 (4). doi: 10.10 02/jbio.20170 0251 , 
+e201700251. 
+Li, Q., Lin, J., Clancy, N.T., Elson, D.S., 2019. Estimation of tissue oxygen saturation 
+from RGB images and sparse hyperspectral signals based on conditional gener- 
+ative adversarial network. Int. J. Comput. Assist. Radiol. Surg. 14 (6), 987–995. 
+doi: 10.1007/s11548- 019- 01940- 2 . 
+Lin, J., Clancy, N.T., Hu, Y., Qi, J., Tatla, T., Stoyanov, D., Maier-Hein, L., Elson, D.S., 
+2017. Endoscopic depth measurement and super-spectral-resolution imaging. 
+MICCAI 39–47. doi: 10.1007/978- 3- 319- 66185- 8 _ 5 . 
+Lin, J., Clancy, N.T., Qi, J., Hu, Y., Tatla, T., Stoyanov, D., Maier-Hein, L., Elson, D.S., 
+2018b. Dual-modality endoscopic probe for tissue surface shape reconstruction 
+and hyperspectral imaging enabled by deep neural networks. Med. Image Anal. 
+48, 162–176. doi: 10.1016/j.media.2018.06.004 . 
+Litjens, G., Kooi, T., Bejnordi, B.E., Setio, A .A .A ., Ciompi, F., Ghafoorian, M., van der 
+Laak, J.A.W.M., van Ginneken, B., Sánchez, C.I., 2017. A survey on deep learn- 
+ing in medical image analysis. Med. Image Anal. 42, 60–88. doi: 10.1016/j.media. 
+2017.07.005 . 
+Lu, G., Fei, B., 2014. Medical hyperspectral imaging: a review. J. Biomed. Opt. 19 (1). 
+doi: 10.1117/1.JBO.19.1.010901 , 010901. 
+Lu, G. , Halig, L. , Wang, D. , Chen, Z.G. , Fei, B. , 2014. Hyperspectral imaging for cancer 
+surgical margin delineation: registration of hyperspectral and histological im- 
+ages. Proc. SPIE 90360S . 
+Lu, G., Wang, D., Qin, X., Halig, L., Muller, S., Zhang, H., Chen, A., Pogue, B.W., 
+Chen, Z.G., Fei, B., 2015. Framework for hyperspectral image processing and 
+quantiﬁcation for cancer detection during animal tumor surgery. J. Biomed. Opt. 
+20 (12). doi: 10.1117/1.JBO.20.12.126012 , 126012. 
+Luthman, A.S., Waterhouse, D.J., Ansel-Bollepalli, L., Yoon, J., Gordon, G.S.D., 
+Joseph, J., di Pietro, M., Januszewicz, W., Bohndiek, S.E., 2018. Bimodal re- 
+ﬂectance and ﬂuorescence multispectral endoscopy based on spectrally re- 
+solving detector arrays. J. Biomed. Opt. 24 (3). doi: 10.1117/1.JBO.24.3.031009 , 
+031009. 
+Ma, Y., Shaik, M.A., Kim, S.H., Kozberg, M.G., Thibodeaux, D.N., Zhao, H.T., Yu, H., 
+Hillman, E.M.C., 2016a. Wide-ﬁeld optical mapping of neural activity and brain 
+haemodynamics: considerations and novel approaches. Philos. Trans. R. Soc. 
+Lond. B. Biol. Sci. 371 (1705). doi: 10.1098/rstb.2015.0360 , 20150360. 
+Ma, Y., Shaika, M.A., Kozbergb, M.G., Kima, S.H., Portesa, J.P., Timermana, D., Hill- 
+man, E.M.C., 2016b. Resting-state hemodynamics are spatiotemporally coupled 
+to synchronized and symmetric neural activity in excitatory neurons. Proc. Natl. 
+Acad. Sci. USA. 113 (52). doi: 10.1073/pnas.1525369113 , E8463-E8471. 
+Martin, M.E., Wabuyele, M.B., Chen, K., Kasili, P., Panjehpour, M., Phan, M., Over- 
+holt, B., Cunningham, G., Wilson, D., DeNovo, R.C., Vo-Dinh, T., 2006. De- 
+velopment of an advanced hyperspectral imaging (HSI) system with applica- 
+tions for cancer detection. Ann. Biomed. Eng. 34 (6), 1061–1068. doi: 10.1007/ 
+s10439- 006- 9121- 9 . 
+Maneas, E., Xia, W., Ogunlade, O., Fonseca, M., Nikitichev, D.I., David, A.L., West, S.J., 
+Ourselin, S., Hebden, J.C., Vercauteren, T., Desjardins, A.E., 2018. Gel wax-based 
+tissue-mimicking phantoms for multispectral photoacoustic imaging. Biomed. 
+Opt. Express 9 (3), 1151–1163. doi: 10.1364/BOE.9.001151 . 
+Martin, R., Thies, B., Gerstner, A.O., 2012. Hyperspectral hybrid method classiﬁcation 
+for detecting altered mucosa of the human larynx. Int J Health Geogr 11, 21. 
+doi: 10.1186/1476-072X-11-21 . 
+Mirota, D.J., Ishii, M., Hager, G.D., 2011. Vision-based navigation in image- 
+guided interventions. Annu. Rev. Biomed. Eng. 15 (13), 297–319. doi: 10.1146/ 
+annurev- bioeng- 071910- 124757 . 
+Moccia, S., Wirkert, S.J., Kenngott, H., Vemuri, A.S., Apitz, M., Mayer, B., De Momi, E., 
+Mattos, L.S., Maier-Hein, L., 2018. Uncertainty-aware organ classiﬁcation for sur- 
+gical data science applications in laparoscopy. IEEE Trans. Biomed. Eng. 65 (11), 
+2649–2659. doi: 10.1109/TBME.2018.2813015 . 
+Mori, M., Chiba, T., Nakamizo, A., Kumashiro, R., Murata, M., Akahoshi, T., 
+Tomikawa, M., Kikkawa, Y., Yoshimoto, K., Mizoguchi, M., Sasaki, T., 
+Hashizume, M., 2014. Intraoperative visualization of cerebral oxygenation 
+using hyperspectral image data: a two-dimensional mapping method. Int. J. 
+Comput. Assist. Radiol. Surg. 9 (6), 1059–1072. doi: 10.1007/s11548- 014- 0989- 9 . 
+Mourant, J.R., Marina, O.C., Hebert, T.M., Kaur, G., Smith, H.O., 2014. Hemoglobin 
+parameters from diffuse reﬂectance data. J. Biomed. Opt. 19 (3). doi: 10.1117/1. 
+JBO.19.3.037004 , 037004. 
+Nagaya, T., Nakamura, Y.A., Choyke, P.L., Kobayashi, H., 2017. Fluorescence-guided 
+surgery. Front. Oncol. 7, 314. doi: 10.3389/fonc.2017.00314 . 
+Nighswander-Rempel, S.P. , Shaw, R.A. , Kupriyanov, V.V. , Rendell, J. , Xiang, B. , 
+Mantsch, H.H. , 2003. Mapping tissue oxygenation in the beating heart with 
+near-infrared spectroscopic imaging. Vib. Spectrosc. 32 (1), 85–94 . 
+Nishidate, I., Kawauchi, S., Sato, S., Sato, M., Aizu, Y., Kokubo, Y., 2018. RGB camera- 
+based functional imaging of in vivo biological tissues. Proc. SPIE doi: 10.1117/12. 
+2513306 . 
+Nishidate, I., Maeda, T., Niizeki, K., Aizu, Y., 2013. Estimation of melanin and 
+hemoglobin using spectral reﬂectance images reconstructed from a digital RGB 
+image by the Wiener estimation method. Sensors 13 (6), 7902–7915. doi: 10. 
+3390/s130607902 . 
+Nishidate, I., Sasaoka, K., Yuasa, T., Niizeki, K., Maeda, T., Aizu, Y., 2008. Visualizing 
+of skin chromophore concentrations by use of RGB images. Opt. Lett. 33 (19), 
+2263–2265. doi: 10.1364/OL.33.002263 . 
+Nishidate, I., Tanaka, N., Kawase, T., Maeda, T., Yuasa, T., Aizu, Y., Yuasa, T., Niizeki, K., 
+2011. Noninvasive imaging of human skin hemodynamics using a digital red- 
+green-blue camera. J. Biomed. Opt. 16 (8). doi: 10.1117/1.3613929 , 086012. 
+Olweny, E.O., Faddegon, S., Best, S.L., Jackson, N., Wehner, E.F., Tan, Y.K., Zuzak, K.J., 
+Cadeddu, J.A., 2013. Renal oxygenation during robot-assisted laparoscopic partial 
+nephrectomy: characterization using laparoscopic digital light processing hyper- 
+spectral imaging. J. Endourol. 27 (3), 265–269. doi: 10.1089/end.2012.0207 . 
+Orfanoudaki, I.M., Themelis, G.C., Sifakis, S.K., Fragouli, D.H., Panayiotides, J.G., Vaz- 
+giouraki, E.M., Koumantakis, E.E., 2005. A clinical study of optical biopsy of the 
+uterine cervix using a multispectral imaging system. Gynecol. Oncol. 96 (1), 
+119–131. doi: 10.1016/j.ygyno.2004.09.013 . 
+Ortega, S., Fabelo, H., Iakovidis, D.K., Koulaouzidis, A., Callico, G.M., 2019. Use of hy- 
+perspectral/multispectral imaging in gastroenterology. Shedding some-different- 
+light into the dark. J. Clin. Med. 8 (1), E36. doi: 10.3390/jcm8010036 . 
+Palero, J.A. , Bader, A.N. , de Bruijn, H.S. , van der Ploeg van den Heuvel, A. , Steren- 
+borg, H.J.C.M. , Gerritsen, H.C. , 2011. In vivo monitoring of protein-bound and free 
+NADH during ischemia by nonlinear spectral imaging microscopy. Biomed. Opt. 
+Express 2 (5), 1030 . 
+Paluchowski, L.A., Bjorgan, A., Nordgaard, H.B., Randeberg, L.L., 2016. Spectral-spatial 
+classiﬁcation combined with diffusion theory based inverse modeling of hyper- 
+spectral images. Proc. SPIE doi: 10.1117/12.2212163 , 96890F. 
+Panasyuk, S.V. , Yang, S. , Faller, D.V. , Ngo, D. , Lew, R.A. , Freeman, J.E. , Rogers, A.E. , 
+2007. Medical hyperspectral imaging to facilitate residual tumor identiﬁcation 
+during surgery. Cancer Biol. Ther. 6 (3), 439–446 . 
+Pei, Z., Cao, S., Lu, L., Chen, W., 2019. Direct cellularity estimation on breast can- 
+cer histopathology images using transfer learning. Comput. Math. Methods Med 
+doi: 10.1155/2019/3041250 , 3041250. 
+Periyasamy, V., Pramanik, M., 2017. Advances in Monte Carlo simulation for light 
+propagation in tissue. IEEE Rev. Biomed. Eng. 10, 122–135. doi: 10.1109/RBME. 
+2017.2739801 . 
+Pichette, J., Charles, W., Lambrechts, A., 2017. Fast & compact internal scanning 
+CMOS-based hyperspectral camera: the snapscan. Proc. SPIE doi: 10.1117/12. 
+2253614 , 1011014. 
+Pichette, J., Laurence, A., Angulo, L., Lesage, F., Bouthillier, A., Nguyen, D.K., 
+Leblond, F., 2016. Intraoperative video-rate hemodynamic response assessment 
+in human cortex using snapshot hyperspectral optical imaging. Neurophotonics 
+3 (4). doi: 10.1117/1.NPh.3.4.045003 , 045003. 
+Pogue, B.W., Patterson, M.S., 2006. Review of tissue simulating phantoms for opti- 
+cal spectroscopy, imaging and dosimetry. J. Biomed. Opt. 11 (4). doi: 10.1117/1. 
+2335429 , 041102. 
+Prahl, S.A. (2018, 4 March 1998). "Tabulated molar extinction coeﬃcient for 
+hemoglobin in water." Retrieved June 2009, from http://omlc.ogi.edu/spectra/ 
+hemoglobin/summary.html . 
+Prahl, S.A., Keijzer, M., Jacques, S.L., Welch, A.J., 1989. A monte carlo model of light 
+propagation in tissue. Proc. SPIE doi: 10.1117/12.2283590 , 1030509. 
+Qiu, L. , Pleskow, D.K. , Chuttani, R. , Vitkin, E. , Leyden, J. , Ozden, N. , Itani, S. , Guo, L. , 
+Sacks, A. , Goldsmith, J.D. , Modell, M.D. , Hanlon, E.B. , Itzkan, I. , Perelman, L.T. , 
+2010. Multispectral scanning during endoscopy guides biopsy of dysplasia in 
+Barrett’s esophagus. Nat. Med. 16 (5), 603–607 . 
+18 
+N.T. Clancy, G. Jones and L. Maier-Hein et al. / Medical Image Analysis 63 (2020) 101699 
+Randeberg, L.L. , Larsen, E.L.P. , Svaasand, L.O. , 2010. Characterisation of vascular 
+structures and skin bruises using hyperspectral imaging, image analysis and dif- 
+fusion theory. J. Biophoton. 3 (1), 53–65 . 
+Randeberg, L.L., Roll, E.B., Nilsen, L.N., Christensen, T., Svaasand, L.O., 2005. In vivo 
+spectroscopy of jaundiced newborn skin reveals more than a bilirubin index. 
+Acta Paediatr. 94 (1), 65–71. doi: 10.1080/08035250410023179 . 
+Rees, C.J., Rajasekhar, P.T., Wilson, A., Close, H., Rutter, M.D., Saunders, B.P., East, J.E., 
+Maier, R., Moorghen, M., Muhammad, U., Hancock, H., Jayaprakash, A., MacDon- 
+ald, C., Ramadas, A., Dhar, A., Mason, J.M., 2016. Narrow band imaging optical 
+diagnosis of small colorectal polyps in routine clinical practice: the detect in- 
+spect characterise resect and discard 2 (DISCARD 2) study. Gut 66 (5), 887–895. 
+doi: 10.1136/gutjnl-2015-310584 . 
+Regeling, B., Laffers, W., Gerstner, A.O., Westermann, S., Müller, N.A., Schmidt, K., 
+Bendix, J., Thies, B., 2016. Development of an image pre-processor for opera- 
+tional hyperspectral laryngeal cancer detection. J. Biophotonics 9 (3), 235–245. 
+doi: 10.1002/jbio.201500151 . 
+Saccomandi, P., Larocca, E.S., Rendina, V., Schena, E., D’Ambrosio, R., Crescenzi, A., 
+Di Matteo, F.M, Silvestri, S, 2016. Estimation of optical properties of neu- 
+roendocrine pancreas tumor with double-integrating-sphere system and in- 
+verse Monte Carlo model. Laser. Med. Sci. 31 (6), 1041–1050. doi: 10.1007/ 
+s10103- 016- 1948- 1 . 
+Saito, T., Yamaguchi, H., 2015. Optical imaging of hemoglobin oxygen saturation us- 
+ing a small number of spectral images for endoscopic application. J. Biomed. 
+Opt. 20 (12). doi: 10.1117/1.JBO.20.12.126011 , 126011. 
+Sakota, D., Nagaoka, E., Maruyama, O., 2015. Hyperspectral imaging of vascular anas- 
+tomosis associated with blood ﬂow and hemoglobin concentration. In: Confer- 
+ence of the IEEE Engineering in Medicine and Biology Society (EMBC), pp. 4246–
+4249. doi: 10.1109/EMBC.2015.7319332 . 
+Shadfan, A., Darwiche, H., Blanco, J., Gillenwater, A., Richards-Kortum, R., 
+Tkaczyk, T.S., 2017. Development of a multimodal foveated endomicroscope for 
+the detection of oral cancer. Biomed. Opt. Express 8 (3), 1525–1535. doi: 10. 
+1364/BOE.8.001525 . 
+Shapey, J., Xie, Y., Nabavi, E., Bradford, R., Saeed, S.R., Ourselin, S., Vercauteren, T., 
+2019. Intraoperative multispectral and hyperspectral label-free imaging: a sys- 
+tematic review of in vivo clinical studies. J. Biophotonics 12 (9), e201800455. 
+doi: 10.10 02/jbio.20180 0455 . 
+Shen, B., Kochhar, G., Hull, T.L., 2019. Bridging medical and surgical treatment of 
+inﬂammatory bowel disease: the role of interventional IBD. Am. J. Gastroenterol. 
+114 (4), 539–540. doi: 10.1038/s41395- 018- 0416- x . 
+Shen, D., Wu, G., Suk, H.-.I., 2017. Deep learning in medical image analysis. Annu. 
+Rev. Biomed. Eng. 19, 221–248. doi: 10.1146/annurev- bioeng- 071516- 04 4 4 42 . 
+Shin, H.-.C., Roth, H.R., Gao, M., Lu, L., Xu, Z., Nogues, I., Yao, J., Mollura, D., Sum- 
+mers, R.M., 2016. Deep convolutional neural networks for computer-aided de- 
+tection: CNN architectures, dataset characteristics and transfer learning. IEEE 
+Trans. Med. Img. 35 (5), 1285–1298. doi: 10.1109/TMI.2016.2528162 . 
+Signoroni, A., Savardi, M., Baronio, A., Benini, S., 2019. Deep learning meets hy- 
+perspectral image analysis: a multidisciplinary review. J. Img. 5 (5), 52. doi: 10. 
+3390/jimaging5050052 . 
+Sohaib, A., Robles-Kelly, A., 2015. Exposure time calculation for spectral cameras. J. 
+Electron. Img. 24 (5). doi: 10.1117/1.JEI.24.5.053025 , 053025. 
+Sorg, B.S. , Moeller, B.J. , Donovan, O. , Cao, Y. , Dewhirst, M.W. , 2005. Hyperspectral 
+imaging of hemoglobin saturation in tumor microvasculature and tumor hy- 
+poxia development. J. Biomed. Opt. 10 (4) 044004 . 
+Spott, T., Svaasand, L.O., Anderson, R.E., Schmedling, P.F., 1998. Application of optical 
+diffusion theory to transcutaneous bilirubinometry. Proc. SPIE 234–245. doi: 10. 
+1117/12.297907 . 
+Stigell, P., Miyata, K., Hauta-Kasari, M., 2007. Wiener estimation method in estimat- 
+ing of spectral reﬂectance from RGB images. Pattern Recog. Img. Anal. 17 (2), 
+233–242. doi: 10.1134/S1054661807020101 . 
+Stoyanov, D., Rayshubskiy, A., Hillman, E., 2012. Robust registration of multispec- 
+tral images of the cortical surface in neurosurgery. In: 9th IEEE International 
+Symposium on Biomedical Imaging (ISBI), pp. 1643–1646. doi: 10.1109/ISBI.2012. 
+6235892 . 
+Styles, I.B., Calcagni, A., Claridge, E., Orihuela-Espina, J., Gibson, J.M., 2006. Quantita- 
+tive analysis of multi-spectral fundus images. Med. Image Anal. 10 (4), 578–597. 
+doi: 10.1016/j.media.20 06.05.0 07 . 
+Talo, M., 2019. Automated classiﬁcation of histopathology images using transfer 
+learning. Artif. Intell. Med. 101. doi: 10.1016/j.artmed.2019.101743 , 101743. 
+Tetschke, F., Markgraf, W., Gransow, M., Koch, S., Thiele, C., Kulcke, A., Malberg, H., 
+2016. Hyperspectral imaging for monitoring oxygen saturation levels during 
+normothermic kidney perfusion. J. Sens. Sens. Syst. 5 (2), 313–318. doi: 10.5194/ 
+jsss- 5- 313- 2016 . 
+Thatcher, J.E., Squiers, J.J., Kanick, S.C., King, D.R., Lu, Y., Wang, Y., Mohan, R., 
+Sellke, E.W., DiMaio, J.M., 2016. Imaging techniques for clinical burn assess- 
+ment with a focus on multispectral imaging. Adv. Wound Care 5 (8), 360–378. 
+doi: 10.1089/wound.2015.0684 . 
+Thorlabs Ltd. “Liquid crystal tunable bandpass ﬁlters.” Retrieved October 2019, from 
+https://www.thorlabs.com/newgrouppage9.cfm?objectgroup _ id=3488 . 
+Torti, E., Florimbi, G., Castelli, F., Ortega, S., Fabelo, H., Callicó, G.M., Marrero- 
+Martin, M., Leporati, F., 2018. Parallel k-means clustering for brain cancer de- 
+tection using hyperspectral images. Electronics (Basel) 7 (11), 283. doi: 10.3390/ 
+electronics7110283 . 
+Tuchin, V.V., 2015a. Tissue optics and photonics: biological tissue structures. J. 
+Biomed. Photon. Eng. 1 (1), 3–21. doi: 10.18287/jbpe-2015-1-1-3 . 
+Tuchin, V.V., 2015b. Tissue optics and photonics: light-Tissue interaction. J. Biomed. 
+Photon. Eng. 1 (2), 98–134. doi: 10.18287/jbpe-2015-1-2-98 . 
+Uluç, K., Kujoth, G.C., Ba ¸s kaya, M.K., 2009. Operating microscopes: past, present and 
+future. Neurosurg. Focus 27 (3), E4. doi: 10.3171/2009.6.FOCUS09120 . 
+van Veen, R.L.P., Sterenborg, H.J.C.M., Pifferi, A., Torricelli, A., Cubeddu, R., 2004. 
+Determination of VIS- NIR absorption coeﬃcients of mammalian fat, with 
+time- and spatially resolved diffuse reﬂectance and transmission spectroscopy. 
+Biomed. Topical Meeting doi: 10.1364/BIO.2004.SF4 , SF4. 
+Vemuri, A.S., Wirkert, S., Maier-Hein, L., 2019. Hyperspectral camera selection for 
+interventional health-care. arXiv:1904.02709 . 
+Villringer, A. , Chance, B. , 1997. Non-invasive optical spectroscopy and imaging of 
+human brain function. Trends Neurosci 20 (10), 435–442 . 
+Voaklander, R. , Kim, E. , Brown, W.H. , Kasmin, F.E. , Siegel, J.H. , 2016. An overview 
+of the evolution of direct cholangioscopy techniques for diagnosis and therapy. 
+Gastroenterol. Hepatol. (N Y) 12 (7), 433–437 . 
+Wang, L., Jacques, S.L., Zheng, L., 1995. MCML - Monte Carlo modeling of light trans- 
+port in multi-layered tissues. Comput. Methods Programs Biomed. 47 (2), 131–
+146. doi: 10.1016/0169-2607(95)01640-F . 
+Wang, P., Turcatel, G., Arnesano, C., Warburton, D., Fraser, S.E., Cutrale, F., 2018. Fiber 
+pattern removal and image reconstruction method for snapshot mosaic hyper- 
+spectral endoscopic images. Biomed. Opt. Express 9 (2), 780–790. doi: 10.1364/ 
+BOE.9.0 0 0780 . 
+Waterhouse, D.J., Fitzpatrick, C.R.M., Pogue, B.W., O’Connor, J.P.B., Bohndiek, S.E., 
+2019. A roadmap for the clinical implementation of optical-imaging biomark- 
+ers. Nat. Biomed. Eng. 3, 339–353. doi: 10.1038/s41551- 019- 0392- 5 . 
+Waterhouse, D.J., Luthman, A.S., Bohndiek, S.E., 2017. Spectral band optimization for 
+multispectral ﬂuorescence imaging. Proc. SPIE doi: 10.1117/12.2253069 , 1005709. 
+Wilson, R.H. , Chandra, M. , Scheiman, J. , Simeone, D. , McKenna, B. , Purdy, J. , 
+Mycek, M.-.A. , 2009. Optical spectroscopy detects histological hallmarks of pan- 
+creatic cancer. Opt. Express 17 (20) 17502-17516 . 
+Wirkert, S. , 2018. PhD, Karlsruhe Institute of Technology (KIT) . 
+Wirkert, S., Clancy, N.T., Stoyanov, D., Arya, S., Hanna, G.B., Schlemmer, H.- 
+.P., Sauer, P., Elson, D.S., Maier-Hein, L., 2014. Endoscopic Sheﬃeld in- 
+dex for unsupervised in vivo spectral band selection. Medical Image Com- 
+puting and Computer-Assisted Intervention (MICCAI) - International Work- 
+shop on Computer-Assisted and Robotic Endoscopy (CARE) doi: 10.1007/ 
+978- 3- 319- 13410- 9 _ 11 . 
+Wirkert, S.J., Kenngott, H., Mayer, B., Sauer, P., Clancy, N.T., Elson, D.S., Maier- 
+Hein, L., 2016. Robust near real-time estimation of physiological parameters 
+from megapixel multispectral images with inverse Monte Carlo and random for- 
+est regression. Int. J. Comput. Assist. Radiol. Surg. 11 (6), 909–917. doi: 10.1007/ 
+s11548- 016- 1376- 5 . 
+Wirkert, S.J., Vemuri, A.S., Kenngott, H.G., Moccia, S., Götz, M., Mayer, B.F.B., 
+Maier-Hein, K.H., Elson, D.S., Maier-Hein, L., 2017. Physiological parameter es- 
+timation from multispectral images unleashed. In: Medical Image Comput- 
+ing and Computer-Assisted Intervention (MICCAI), pp. 134–141. doi: 10.1007/ 
+978- 3- 319- 66179- 7 _ 16 . 
+Wisotzky, E.L., Kossack, B., Uecker, F.C., Arens, P.D., S., Hilsmann, A., Eisert, 2019. 
+Validation of two techniques for intraoperative hyperspectral human tissue de- 
+termination. Proc. SPIE doi: 10.1117/12.2512811 , 109511Z. 
+Wisotzky, E.L., Uecker, F.C., Arens, P., Dommerich, S., Hilsmann, A., Eisert, P., 2018. In- 
+traoperative hyperspectral determination of human tissue properties. J. Biomed. 
+Opt. 23 (9). doi: 10.1117/1.JBO.23.9.091409 , 091409. 
+Yan, K., Wang, X., Summers, R.M., 2018. DeepLesion: automated mining of large- 
+scale lesion annotations and universal lesion detection with deep learning. J. 
+Med. Imag. 5 (3). doi: 10.1117/1.JMI.5.3.036501 , 036501. 
+Yoon, J., Joseph, J., Waterhouse, D.J., Luthman, A.S., Gordon, G.S.D., di Pietro, M., 
+Januszewicz, W., Fitzgerald, R.C., Bohndiek, S.E., 2019a. A clinically translatable 
+hyperspectral endoscopy (HySE) system for imaging the gastrointestinal tract. 
+Nat. Commun 10, 1902. doi: 10.1038/s41467- 019- 09484- 4 . 
+Yoon, J. , Joseph, J. , Waterhouse, D.J. , Luthman, A.S. , Gordon, G.S.D. , di Pietro, M. , 
+Januszewicz, W. , Fitzgerald, R.C. , Bohndiek, S.E. . "Research data supporting "A 
+clinically translatable hyperspectral endoscopy (HySE) system for imaging the 
+gastrointestinal tract" . 
+Yoshida, K., Nishidate, I., Ishizuka, T., Kawauchi, S., Sato, S., Sato, M., 2015. Multi- 
+spectral imaging of absorption and scattering properties of in vivo exposed rat 
+brain using a digital red-green-blue camera. J. Biomed. Opt. 20 (5). doi: 10.1117/ 
+1.JBO.20.5.051026 , 051026. 
+Yudovsky, D., Nouvong, A., Schomacker, K., Pilon, L., 2011. Assessing diabetic foot 
+ulcer development risk with hyperspectral tissue oximetry. J. Biomed. Opt. 16 
+(2). doi: 10.1117/1.3535592 , 026009. 
+Zhang, Y., Wirkert, S.J., Iszatt, J., Kenngott, H., Wagner, M., Mayer, B., Stock, C., 
+Clancy, N.T., Elson, D.S., Maier-Hein, L., 2016. Tissue classiﬁcation for laparo- 
+scopic image understanding based on multispectral texture analysis. Proc. SPIE 
+doi: 10.1117/12.2216090 , 978619. 
+Zhou, L. , El-Deiry, W.S. , 2009. Multispectral ﬂuorescence imaging. J. Nucl. Med. 50 
+(10), 1563–1566 . 
+Zhu, C., Liu, Q., 2013. Review of Monte Carlo modeling of light transport in tissues. 
+J. Biomed. Opt. 18 (5). doi: 10.1117/1.JBO.18.5.050902 , 050902. 
+Zhu, Y., Johnson, L.A., Huang, Z., Rubin, J.M., Yuan, J., Lei, H., Ni, J., Wang, X., Hig- 
+gins, P.D.R., Xu, G., 2018. Identifying intestinal ﬁbrosis and inﬂammation by 
+spectroscopic photoacoustic imaging: an animal study in vivo . Biomed. Opt. Ex- 
+press 9 (4), 1590–1600. doi: 10.1364/BOE.9.001590 . 
+Zuzak, K., Francis, R.P., Wehner, E.F., Litorja, M., Cadeddu, J.A., Livingston, E.H., 2011. 
+Active dlp hyperspectral illumination: a noninvasive, in vivo , system character- 
+ization visualizing tissue oxygenation at near video rates. Anal. Chem 83 (19), 
+7424–7430. doi: 10.1021/ac201467v . 
+Zuzak, K. , Schaeberle, M.D. , Lewis, E.N. , Levin, I.W. , 2002. Visible reﬂectance hyper- 
+spectral imaging: characterization of a noninvasive, in vivo system, for deter- 
+mining tissue perfusion. Anal. Chem 74 (9), 2021–2028 . 

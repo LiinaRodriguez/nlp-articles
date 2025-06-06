@@ -1,0 +1,895 @@
+Molecules and Cells
+Minireview
+Single-molecule imaging for investigating the transcriptional 
+control
+Insung Choi1 and Inwha Baek1,2,3,⁎
+1Department of Regulatory Science, Graduate School, Kyung Hee University, Seoul 02447, Korea, 2College of Pharmacy, Kyung Hee 
+University, Seoul 02447, Korea, 3Institute of Regulatory Innovation through Science (IRIS), Kyung Hee University, Seoul 02447, Korea 
+⁎Corresponding author. ibaek@khu.ac.kr
+https://doi.org/10.1016/j.mocell.2025.100179 
+ABSTRACT
+Transcription is an essential biological process involving numerous factors, including transcription factors (TFs), which 
+play a central role in this process by binding to their cognate DNA motifs. Although cells must tightly regulate the kinetics 
+of factor association and dissociation during transcription, factor dynamics during transcription remain poorly char­
+acterized, primarily because of the reliance on ensemble experiments that average out molecular heterogeneity. Recent 
+advances in single-molecule fluorescence imaging techniques have enabled the exploration of TF dynamics at un­
+precedented resolution. Findings on the temporal dynamics of individual TFs have challenged classical models and 
+provided new insights into transcriptional regulation. Single-molecule imaging has also elucidated the assembly kinetics 
+of transcription complexes. In this review, we describe the single-molecule fluorescence imaging methods widely used to 
+determine factor dynamics during transcription. We highlight new findings on TF binding to chromatin, TF target search, 
+and the assembly order of transcription complexes. Additionally, we discuss the remaining challenges in achieving a 
+comprehensive understanding of the temporal regulation of transcription.
+© 2025 The Author(s). Published by Elsevier Inc. on behalf of Korean Society for Molecular and Cellular Biology. This is an 
+open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/).
+Keywords: Chromatin, RNA polymerase II transcription, Single-molecule methods, Temporal dynamics, Transcription factors
+INTRODUCTION
+Transcription is a highly regulated process typically initiated by 
+transcription factors (TFs) or activators that bind to cognate-binding 
+motifs (Lambert et al., 2018). The classic model of transcriptional 
+activation posits that TFs and coactivators recruit chromatin re­
+modelers and histone-modifying enzymes to reorganize nucleo­
+somes, thereby increasing chromatin accessibility (reviewed in 
+Roeder, 2019). Transcriptional activation ultimately facilitates the 
+assembly of the RNA polymerase II (Pol II) preinitiation complex 
+(PIC), which is capable of initiating RNA synthesis at the tran­
+scription start site within the core promoter (reviewed in Hahn, 2004; 
+Orphanides et al., 1996; Schier and Taatjes, 2020; Thomas and 
+Chiang, 2006). The Pol II PIC consists of Pol II and general tran­
+scription factors (GTFs) including TBP, TFIID, TFIIA, TFIIB, TFIIF, 
+TFIIE, and TFIIH. GTFs confer Pol II promoter specificity (reviewed 
+in Schier and Taatjes, 2020; Thomas and Chiang, 2006). The 
+prompt recruitment and release of each factor is crucial for the 
+precise and timely synthesis of transcripts. However, the kinetics of 
+factor association and dissociation during transcription remain lar­
+gely uncharacterized.
+Most models explaining the mechanisms of transcriptional 
+regulation are based on ensemble experiments that measure 
+the population-averaged behavior of heterogeneous molecules. 
+For example, although an invaluable assay for studying TF- 
+chromatin 
+interactions, 
+chromatin 
+immunoprecipita­
+tion quantifies the average signal of TF-DNA interactions across 
+a population of molecules (Park, 2009). This can mask mole­
+cule-to-molecule variability and heterogeneity, which are im­
+portant for understanding stochastic processes, such as 
+transcription (Coulon et al., 2013; Levsky and Singer, 2003; Liu 
+and Tjian, 2018; Swift and Coruzzi, 2017).
+Recent advances in single-molecule fluorescence imaging 
+have revealed the movement dynamics of individual molecules 
+during transcription with unprecedented resolution (Basu et al., 
+2024; Chen et al., 2014; Cisse et al., 2013; Donovan et al., 
+2023; Gebhardt et al., 2013; Lerner et al., 2020; Pomp et al., 
+2024; Tang et al., 2022; Versluis et al., 2024). These findings 
+have challenged the classic view of TF dynamics (Perlmann 
+et al., 1990) and have provided new insights into the mechan­
+isms underlying transcriptional regulation. While TF binding to 
+its cognate DNA sequences is typically viewed as stable, single- 
+molecule fluorescence imaging has uncovered transient inter­
+actions of TFs with chromatin, occurring in the order of seconds 
+(Chen et al., 2014; Dufourt et al., 2018; Loffreda et al., 2017). In 
+this review, we describe in vitro and in vivo single-molecule 
+eISSN: 1016-8478 / © 2025 The Author(s). Published by Elsevier Inc. on behalf of Korean Society for Molecular and Cellular Biology. This is an open 
+access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/). 
+www.sciencedirect.com/journal/molecules-and-cells
+Mol. Cells 2025; 48(2): 100179 1 
+fluorescence imaging techniques that are currently used to 
+elucidate the dynamics of factor association and dissociation 
+during transcription and highlight key findings on TF kinetics. 
+We also address the assembly order of the Pol II PIC, as re­
+vealed by single-molecule fluorescence imaging. We conclude 
+with questions that need to be further investigated to better 
+understand the kinetics of transcriptional regulation.
+SINGLE-MOLECULE METHODS TO VISUALIZE FACTOR 
+DYNAMICS DURING TRANSCRIPTION
+Transcription is a stochastic process that is driven by a het­
+erogeneous population of molecules with dynamic interactions. 
+Single-molecule fluorescence imaging assays enable us to di­
+rectly measure the kinetics of molecular interactions at a single- 
+molecule resolution, allowing us to identify the mechanisms 
+underlying transcriptional regulation (Table 1). Various single- 
+molecule fluorescence imaging assays using total internal re­
+flection fluorescence (TIRF) microscopy have been developed 
+(Kudalkar et al., 2016; Reck-Peterson et al., 2010; Tokunaga 
+et al., 1997). TIRF uses an evanescent wave generated when 
+an excitation light is totally internally reflected at the solid-liquid 
+interface (Axelrod, 2008). The evanescent wave has the same 
+wavelength as the excitation light. Because the intensity of an 
+evanescent wave decays exponentially with the distance from 
+the interface, the thickness of the excitation depth is limited to 
+approximately 100 nm, which restricts the illumination space 
+and thus enhances the signal-to-noise ratio (Reck-Peterson 
+et al., 2010). This background elimination feature of TIRF en­
+ables the acquisition of images at a single-molecule resolution. 
+TIRF is a useful tool for studying cellular processes occurring at 
+or near the plasma membrane, such as cytoskeleton assembly, 
+cell-cell interactions, and vesicle trafficking (Li et al., 2015; 
+Pellinen et al., 2006; Rappoport and Simon, 2003; Yamada and 
+Nelson, 2007). With the development of in vitro systems that 
+recapitulate biological reactions in the nucleus, TIRF has been 
+used to study transcription. One in vitro single-molecule imaging 
+approach utilizing TIRF is colocalization single-molecule spec­
+troscopy (CoSMoS) (Friedman and Gelles, 2015) (Fig. 1A). The 
+CoSMoS measures the interaction kinetics between individual 
+molecules at the single-molecule level. It has been used to 
+elucidate the assembly mechanisms of macromolecular com­
+plexes involved in biological processes such as transcription, 
+cotranscriptional processes, and DNA replication (Baek et al., 
+2021; Friedman and Gelles, 2012; Hoskins et al., 2011; 
+Revyakin et al., 2012; Ticau et al., 2015; Zhang et al., 2016). 
+TIRF has also been used to perform single-molecule fluores­
+cence resonance energy transfer (smFRET) (Ha et al., 1996) 
+(Fig. 1B). The smFRET assay on a TRIF microscope measures 
+the dynamics of the intra- or intermolecular interactions of the 
+surface-immobilized molecules within the 10 nm range (Holden 
+et al., 2010). The smFRET TIRF studies identified the structural 
+dynamics of TFs, Pol II, and nucleosomes during transcription 
+(Andrecka et al., 2008; Chen et al., 2021; Crickard et al., 2017; 
+Kilic et al., 2018; Malkusch et al., 2017; Xiong et al., 2024). 
+Collectively, in vitro single-molecule imaging approaches have 
+provided important kinetic information on the interactions of TFs 
+with chromatin and the assembly of transcription complexes 
+(Table 1).
+To overcome the limitations of limited depth of illumination in 
+TIRF, a single-molecule imaging technique called highly inclined 
+and laminated sheet (HILO) microscopy has been developed 
+(Tokunaga et al., 2008). HILO microscopy illuminates a cell with 
+a thin and inclined sheet of a laser beam, thus enabling the 
+acquisition of single-molecule images of nuclear proteins in 
+living cells. Over the past decade, HILO microscopy has been 
+widely used to perform single-molecule tracking (SMT) (or 
+called single-particle tracking to elucidate the kinetics of TFs 
+and transcription complexes in live cells (reviewed in Dahal 
+et al., 2023). The development of super-resolution microscopy 
+techniques, such as photoactivated localization microscopy and 
+stochastic optical reconstruction microscopy, has further ex­
+panded the capabilities of SMT assays (Betzig et al., 2006; 
+Fujiwara et al., 2023; Klein et al., 2011; Rust et al., 2006; Shroff 
+et al., 2008). In SMT, individual molecules visualized as fluor­
+escent spots are monitored over time, and a temporal sequence 
+of spot locations or a 2D trajectory is generated. Recent ad­
+vances in determining the axial position using feedback-tracking 
+methods have enabled the generation of 3D trajectories (Hou 
+et al., 2020; Nguyen et al., 2023).
+Table 1. Kinetic information obtained from single-molecule fluorescence imaging approaches 
+Approach
+Measurements
+Kinetic information
+CoSMoS
+Colocalization of interacting molecules
+Association/dissociation kinetics 
+Binding orders
+smFRET
+FRET efficiency
+Intra- and intermolecular distance 
+Conformational changes
+SMT
+2D or 3D trajectory of molecules
+Diffusive fraction 
+Diffusion coefficient 
+Residence time 
+Trajectory radius 
+Displacement anisotropy
+FRAP
+Rate of fluorescence recovery (Recovery half-time)
+Diffusion kinetics 
+Mobile and immobile fractions 
+Association/dissociation kinetics
+FCS
+Fluctuations in fluorescence intensity
+Diffusion kinetics
+CoSMoS, colocalization single-molecule spectroscopy; smFRET, single-molecule fluorescence resonance energy transfer; FRET, fluorescence resonance energy transfer; SMT, single- 
+molecule tracking; FRAP, fluorescence recovery after photobleaching; FCS, fluorescence correlation spectroscopy.
+Single-molecule imaging 
+I. Choi and I. Baek 
+www.sciencedirect.com/journal/molecules-and-cells 
+2 Mol. Cells 2025; 48(2): 100179 
+(caption on next page) 
+Single-molecule imaging 
+I. Choi and I. Baek 
+www.sciencedirect.com/journal/molecules-and-cells 
+Mol. Cells 2025; 48(2): 100179 3 
+Multiple types of kinetic information can be obtained from 
+SMT trajectories, including the number of diffusive states, dif­
+fusion coefficients of each state, fractions of each state, re­
+sidence time, trajectory radius, and displacement anisotropy. 
+The type of kinetic information on molecular diffusion depends 
+on the image acquisition parameters. High-speed measure­
+ments with a short interval of milliseconds (fast tracking) capture 
+fast-diffusing molecules, whereas low-speed imaging (slow 
+tracking) measures subpopulations bound to chromatin or other 
+nuclear structures (Fig. 1C). In general, TFs exhibit 3 diffusive 
+states: an unbound state, in which TFs freely diffuse in the 
+nucleoplasm, a nonspecific bound state, in which TFs search 
+for their target via transient interactions with chromatin, and a 
+specific bound state, in which TFs stably bind to chromatin (Lu 
+and Lionnet, 2021). The frequency and duration of TF occu­
+pancy can be extracted from slow-tracking data. Histones in a 
+nucleosome are typically used as references for the static state 
+to measure the average diffusion coefficient of bulk chromatin 
+(Hansen et al., 2017; Izeddin et al., 2014). Evaluating the TF 
+movements under various image acquisition conditions is im­
+portant for avoiding any bias arising from technical limitations. 
+For example, fast tracking can underestimate the residence 
+time owing to photobleaching; whereas slow tracking can lead 
+to overestimation of the residence time of chromatin-bound 
+molecules by missing transiently bound molecules.
+Other widely used single-molecule fluorescence imaging 
+assays for transcriptional studies include fluorescence recovery 
+after photobleaching (FRAP) and fluorescence correlation 
+spectroscopy (FCS) (Axelrod et al., 1976; Magde et al., 1974; 
+Peters et al., 1974). FRAP and FCS typically use confocal mi­
+croscopy (Braeckmans et al., 2007; Kubitscheck et al., 1998; 
+Wedekind et al., 1994; Yu et al., 2021). FRAP measures the 
+diffusion dynamics of fluorescently labeled proteins in living 
+cells (Fig. 1D). Specifically, a small area of interest in the cell is 
+photobleached using a high-power laser, and the fluorescence 
+recovery of the photobleached area is monitored over time. The 
+scanning laser beam and pinhole of a confocal microscope 
+enable photobleaching of a specific area within a cell with high 
+spatial resolution. This precise photobleaching capability is 
+beneficial for FRAP experiments. The rate of fluorescence re­
+covery represents the mobility of the labeled proteins, as de­
+termined by diffusion and binding kinetics (Wachsmuth, 2014). 
+FRAP has been successfully used to quantify the dynamics of 
+TFs and chromatin regulators in living cells, including the im­
+mobile fraction, recovery half-life, diffusion coefficient, and as­
+sociation and dissociation constants (Cheutin et al., 2003; 
+Raccaud et al., 2019; Stenoien et al., 2001; Versluis et al., 2024; 
+Voss et al., 2011). FCS is a complementary approach to FRAP 
+in that it is effective for measuring fast diffusion dynamics ran­
+ging from microseconds to seconds (Elson, 2011). FCS detects 
+fluctuations in the fluorescence intensity within a limited volume 
+at the femtoliter level (Elson, 2011) (Fig. 1E). The diffusion of 
+fluorescently labeled proteins through focused light causes 
+changes in the fluorescence intensity. The confocal beam and 
+pinhole provide a confined detection volume and ensure that 
+only the emission light from this focused detection volume 
+reaches the detector. FCS quantifies the diffusion coefficients 
+and different diffusing populations of proteins from the temporal 
+autocorrelation of the fluorescence intensity over time traces 
+(Singh et al., 2017; White et al., 2016). FRAP and FCS are 
+useful to cross-validate their measurements (Stasevich 
+et al., 2010).
+Each single-molecule fluorescence imaging assay offers 
+unique capabilities for measuring distinct characteristics of 
+factor dynamics during transcription. TIRF-based CoSMoS and 
+smFRET are specialized in measuring the dynamics of mole­
+cular interactions. CoSMoS is useful for studying the assembly 
+kinetics of macromolecular complexes, whereas smFRET is 
+beneficial for detecting conformational and structural dynamics. 
+However, these assays have limited applications in vivo. SMT is 
+a powerful technique for measuring in vivo diffusion kinetics of 
+TF and chromatin interactions. While SMT tracks individual 
+molecules, FRAP and FCS are useful for studying molecular 
+dynamics in a specific region within living cells. A limitation of 
+FRAP is the use of high laser power for photobleaching, which 
+can lead to photodamage. FCS, on the other hand, captures 
+rapid diffusion more effectively but is highly susceptible to 
+background signals.
+REGULATION OF TF BINDING STABILITY ON CHROMATIN
+TFs are master regulators of gene expression. Understanding 
+the high-resolution kinetics of TF behavior can provide me­
+chanistic insights into TF-mediated transcriptional activation. 
+Single-molecule fluorescence imaging techniques have re­
+vealed that TFs interact transiently with chromatin rather than 
+exhibiting stable binding (Callegari et al., 2019; Chen et al., 
+2014; Mir et al., 2018; Paakinaho et al., 2017; Raccaud et al., 
+2019; Sugo et al., 2015). The average residence time of TFs on 
+chromatin is in the order of seconds (Lu and Lionnet, 2021). For 
+example, p53 has an average residence time of 3.1 s (Loffreda 
+et al., 2017). Pioneer factors, such as FoxA1, Sox2, and Oct4, 
+have residence times of approximately 10 s (Chen et al., 2014; 
+Swinstead et al., 2016; Teves et al., 2016). The Drosophila 
+pioneer factor Zelda shows an even more transient interaction 
+with chromatin with a residence time of 0.696 s (Mir et al., 
+2017). However, some TFs remain bound to the chromatin for 
+longer periods. For instance, the GAGA factor (GAF), a Dro­
+sophila pioneer-like factor, has a residence time of 130 s, which 
+is several times longer than the typical TF residence times 
+(Tang et al., 2022). This prolonged residence time is likely at­
+tributable to the multimerization of GAF, which increases the 
+Fig. 1. Single-molecule fluorescence imaging assays for investigating factor dynamics during transcription. (A) Colocalization single-mo­
+lecule spectroscopy (CoSMoS) measures interaction kinetics between individual molecules at the single-molecule level. (B) Single-molecule 
+fluorescence resonance energy transfer (smFRET) measures the distance between donor and acceptor fluorophores. The distance is 
+determined by the FRET efficiency. (C) Single-molecule tracking (SMT) measures the 2D and 3D trajectories of individual molecules over 
+time. (D) Fluorescence recovery after photobleaching (FRAP) measures the fluorescence recovery rate (ROI: region of interest). (E) 
+Fluorescence correlation spectroscopy (FCS) measures fast-diffusive molecules over time scales ranging from microseconds to seconds.
+Single-molecule imaging 
+I. Choi and I. Baek 
+www.sciencedirect.com/journal/molecules-and-cells 
+4 Mol. Cells 2025; 48(2): 100179 
+local concentration of its DNA-binding domain, thereby in­
+creasing binding stability. Similarly, dimerization of c-Fos in 
+MDA-MB-231 cells enhances its binding stability to chromatin 
+(Shao et al., 2021). Transient interactions between individual 
+TFs and their target sites might allow TFs to respond to 
+changes in local concentrations or cellular states with high 
+sensitivity. Although not yet generalizable to all TFs, several 
+studies have demonstrated a positive correlation between TF 
+binding stability and transcriptional output (Donovan et al., 
+2019b; Hipp et al., 2019; Popp et al., 2021). For example, in 
+human U2-OS cells, an increase in VP64 concentration and 
+residence time was associated with higher transcription bursting 
+frequency and transcription output (Popp et al., 2021). Notably, 
+the efficiency of transcription activation was more affected by 
+VP64 residence time rather than by its concentration. Further 
+studies examining the functional consequences of changes in 
+TF dynamics on transcriptional output will provide a more pre­
+cise connection between TF dynamics and function.
+Recent single-molecule imaging studies have demonstrated 
+that TF binding stability is dynamically regulated by cellular 
+states and environmental factors. In mouse fibroblasts, chro­
+matin-bound serum response factor (SRF) is classified into 3 
+populations based on its residence time: short-, intermediate-, 
+and long-bound (Hipp et al., 2019). Each fraction responds 
+differently to upstream signaling pathways. The residence time 
+of long-bound SRF increases upon growth factor stimulation, 
+whereas the inhibition of Rho-GTPase signaling reduces the 
+residence time of the long-bound fraction. Inhibition of MAPK 
+signaling decreases the residence time of intermediate-bound 
+SRF. This differential regulation of SRF dissociation rates by 
+different signaling pathways results in differential gene activa­
+tion (Hipp et al., 2019). Similarly, in mouse mammary carcinoma 
+cells, different types of glucocorticoid differentially affect the 
+residence time of activated glucocorticoid receptors (GRs) on 
+chromatin (Stavreva et al., 2019). Cortisol stimulation leads to a 
+longer residence time of the GR than dexamethasone stimula­
+tion. The glucocorticoid-dependent GR residence time is posi­
+tively correlated with the duration of transcriptional bursting 
+(Stavreva et al., 2019). Additionally, the GR residence times 
+vary depending on the activation phase, being longer during the 
+early phase than during the later phase. Signaling pathways 
+and extrinsic ligand cues dynamically regulate the stability of 
+TF-chromatin interactions to modulate gene expression.
+TFs mediate gene activation in concert with their interacting 
+partners, such as other TFs, cofactors, and coactivators. These 
+interactions influence the binding kinetics of each partner. In 
+mouse embryonic stem cells, an enhanceosome assembles in a 
+stepwise manner, with Esrrb binding after Sox2 and Oct4 (Xie 
+et al., 2017). Sox2 depletion reduced the residence time of 
+Esrrb in chromatin (Xie et al., 2017). Coactivators also influence 
+TF residence times. In the secretory cells of Drosophila larval 
+salivary glands, the TF Scalloped (Sd) interacts with the coac­
+tivator Yorkie (Yki) at active transcription sites (Manning et al., 
+2024). Increased Yki expression doubled the Sd residence time, 
+resulting in higher gene expression than in cells with normal Yki 
+expression.
+Chromatin states surrounding TF binding sites are another 
+factor that regulates TF binding stability. In yeast, the RSC 
+complex remodels chromatin states, thereby destabilizing the 
+interaction between the yeast TF Ace1p and chromatin (Mehta 
+et al., 2018). The RSC-mediated dissociation of Ace1p allows 
+transcription reinitiation, as Ace1p can rebind to the promoter. 
+The knockdown and knockout of Rsc2p, a subunit of the RSC 
+complex, increased the residence time of Ace1p. The delayed 
+exchange between Rsc2p and Ace1p decreased transcription 
+burst frequency. These results suggest that changes in the 
+chromatin state by chromatin remodelers influence TF re­
+sidence times on chromatin, contributing to the dynamic reg­
+ulation of transcription activation. An in vitro study using 
+reconstituted nucleosomes revealed that the position of a cog­
+nate DNA motif influences TF binding stability through position- 
+dependent cooperativity of Sox2 and Oct4 (Li et al., 2019). In 
+the study, when the Sox2:Oct4 motif was positioned at the end 
+of the nucleosomal DNA, Oct4 stabilized Sox2 binding. In 
+contrast, when the Sox2:Oct4 motif was located in the nucleo­
+somal dyad, Oct4 did not affect the residence time of Sox2. To 
+summarize, the binding stability of TFs is regulated at multiple 
+levels, including their intrinsic binding affinities for binding sites, 
+upstream signaling pathways, interacting factors, and chromatin 
+states (Fig. 2A).
+ROLES OF CHROMATIN IN TF TARGET SEARCH
+A current TF target search model proposes that TFs utilize a 
+trial-and-error mechanism that involves a combination of 3D 
+diffusion in the nuclear space and 1D diffusion, either sliding or 
+hopping along the DNA, to locate their binding sites. TFs exhibit 
+distinct 3D and 1D diffusive states depending on the biological 
+conditions. For example, an in vitro single-molecule fluores­
+cence imaging study using naked DNA revealed that upon ac­
+tivation, p53 exhibited a 4-fold reduction in 3D diffusion and a 
+1.5-fold increase in 1D diffusion (Itoh et al., 2016) (Fig. 2B). 
+Activated p53 showed an increased search distance by inter­
+mittent hopping along the DNA groove rather than by con­
+tinuous sliding (Subekti et al., 2020). Additionally, the kinetics of 
+TF target search are influenced by chromatin density (Fig. 2B). 
+Live-cell imaging studies have revealed that TFs such as p53 
+and p65 exhibit distinct behaviors related to chromatin density 
+upon activation (Mazzocca et al., 2023). Specifically, p53 
+showed opposite diffusion patterns in the chromatin-dense and 
+chromatin-poor regions. p53 molecules with slow diffusion, high 
+anisotropy, and compact exploration were more prevalent in 
+chromatin-dense regions than in chromatin-poor regions. These 
+slow-diffusing p53 molecules in chromatin-dense areas had a 
+higher chance of transitioning to the chromatin-bound state. 
+Unlike p53, chromatin enrichment of p65 was not dependent on 
+its diffusion speed, as both slow- and fast-diffusing p65 mole­
+cules were found in chromatin-poor regions.
+The effects of nucleosomes on TF search kinetics are TF- 
+specific. In vitro studies using reconstituted nucleosomes re­
+vealed that the yeast TF Rap1 displays no differences in as­
+sociation rates between naked DNA and nucleosomes, 
+suggesting that Rap1 target search is independent of the nu­
+cleosomal presence (Mivelaz et al., 2020). In the study, unlike 
+Rap1, Reb1 and Cbf1 showed approximately 50- to 100-fold 
+reductions in association rates with reconstituted nucleosomes 
+Single-molecule imaging 
+I. Choi and I. Baek 
+www.sciencedirect.com/journal/molecules-and-cells 
+Mol. Cells 2025; 48(2): 100179 5 
+Fig. 2. Kinetics of transcriptional control and their regulators. (A) Dynamic regulation of the TF-chromatin interaction. (B) Regulation of TF 
+target search. (C) Assembly order of transcription complexes.
+Single-molecule imaging 
+I. Choi and I. Baek 
+www.sciencedirect.com/journal/molecules-and-cells 
+6 Mol. Cells 2025; 48(2): 100179 
+compared with naked DNA, whereas their residence time on 
+nucleosomal DNA increased (Donovan et al., 2019a). The in­
+creased residence time of Cbf1 was attributed to direct inter­
+actions between its basic helix-loop-helix domain and histones 
+(Donovan et al., 2023).
+ASSEMBLY ORDERS OF POL II PIC
+Timely association and dissociation of various regulatory factors is 
+essential for precise transcription processes. Identification of the 
+association kinetics of each factor suggests binding order(s) during 
+transcription complex assembly (Fig. 2C). Recent single-molecule 
+fluorescence imaging studies have provided deeper insights into 
+the stepwise assembly model of Pol II PIC. Sequential binding of 
+TFIIA and TFIIB was confirmed by the in vitro study using a DNA 
+template containing the consensus TATA, initiator motif, and 
+downstream promoter elements, TFIID, TFIIA, TFIIB, TFIIF, and Pol 
+II (Zhang et al., 2016). Interestingly, TFIIB binding was highly tran­
+sient and repetitive, with an interval of 3 s. This transient on/off TFIIB 
+binding was stabilized by the subsequent binding of Pol II and TFIIF. 
+A single-molecule fluorescence imaging study using yeast nuclear 
+extract identified branched pathways of TF-dependent PIC as­
+sembly, where Pol II and TFIIF initially bind to the upstream acti­
+vating sequence (UAS) and then join the PIC at the core promoter 
+(Baek et al., 2021). TFIIE can bind to a Pol II•TFIIF complex, either 
+at the UAS or the core promoter. Additionally, TFIIF can simulta­
+neously associate with or after Pol II binding. The assembly of the 
+Pol II•TFIIF•TFIIE complex does not require a core promoter, but 
+the core promoter makes the complex more stable. Unlike other 
+factors, TFIIH binding to DNA requires the core promoter. This 
+spatiotemporally coordinated PIC assembly has also been ob­
+served in living yeast (Nguyen et al., 2021). TBP, TFIID, TFIIA, and 
+TFIIB reconfigure promoter structures for PIC formation. The 
+mediator controls the recruitment of Pol II, TFIIF, and TFIIE. Inter­
+estingly, the observed association rates of Mediator and TFIID are 
+0.01 s−1 (or 1 event every 100 s) and the average time of asso­
+ciation and dissociation of PIC components is a few seconds. 
+These findings suggest that PIC formation is infrequent but occurs 
+efficiently once TFIID and Mediator are nucleated.
+CONCLUSION
+The development of single-molecule fluorescence imaging techni­
+ques, along with advances in fluorescent dyes and labeling 
+methods, has enabled the identification of the kinetics of molecular 
+interactions during transcription at a single-molecule resolution, 
+providing insights that cannot be obtained from ensemble experi­
+ments. Single-molecule studies have uncovered unexpectedly short 
+residence times of TFs on chromatin, as well as 1D and 3D target 
+search modes, and the hierarchical and branched assembly of Pol 
+II PIC. Additionally, various environmental cues and chromatin 
+states dynamically regulate TF kinetics.
+Despite the significant advances in our understanding of the 
+temporal characteristics of heterogeneous populations of TFs 
+and transcription complexes, several challenges remain un­
+addressed. Single-molecule fluorescence imaging results can 
+vary based on experimental conditions such as dye labeling 
+methods, image acquisition parameters, and experimental 
+specimens. Using orthogonal methods for cross-validation and 
+conducting extensive control experiments concurrently is cru­
+cial. Another challenge involves data analysis and modeling, 
+which can introduce biases in data interpretation. For example, 
+the analysis of TF residence time distribution using a bi-ex­
+ponential model assumes the presence of 2 TF subpopulations: 
+specific and nonspecific binding fractions. However, this model 
+is often too simplistic to capture the stochastic and complex 
+nature of TF behaviors. Instead, a power-law model, which 
+assumes a continuous distribution of TF residence times, could 
+provide a more accurate analysis of TF residence times (Garcia 
+et al., 2021a, 2021b). A comparison of single-particle tracking 
+methods 
+has 
+revealed 
+differences 
+between 
+algorithms 
+(Chenouard et al., 2014). There is no universally best particle 
+tracking method; rather, factor and data-specific approaches 
+are necessary. These approaches should consider particle 
+shape and size, frame rate, background uniformity, and photo­
+bleaching. The recent development of deep learning-assisted 
+methods has enabled more precise analysis, including photo­
+bleaching correction, trajectory generation, and classification of 
+TF diffusion models, allowing for more reliable interpretations of 
+single-molecule imaging data (Liu et al., 2022). Other questions 
+that remain unaddressed include the differential TF dynamics 
+across various cell types and their contributions to gene ex­
+pression variability, the roles of long noncoding RNAs in reg­
+ulating TF dynamics, detailed kinetics of TF-TF interactions in a 
+single enhancer region, and assembly dynamics of transcription 
+elongation and termination complexes.
+AUTHOR CONTRIBUTIONS
+Inwha Baek: Writing – review & editing, Writing – original draft, 
+Funding acquisition, Conceptualization. Insung Choi: Writing – 
+review & editing, Writing – original draft.
+DECLARATION OF COMPETING INTERESTS
+The authors have no potential conflicts of interest to disclose.
+ACKNOWLEDGMENTS
+This work was supported by a grant from the National Research 
+Foundation of Korea (NRF) funded by the Korea government 
+(MSIT) (RS-2023-00278378) to I.B. and a grant from Kyung 
+Hee University (KHU-20233256) to I.B.
+ORCID
+Insung Choi https://orcid.org/0009-0009-2540-4697
+Inwha Baek https://orcid.org/0000-0003-0330-5910
+Received October 21, 2024 
+Revised November 28, 2024 
+Accepted January 6, 2025 
+Available online 13 January 2025.
+REFERENCES
+Andrecka, J., Lewis, R., Bruckner, F., Lehmann, E., Cramer, P., and 
+Michaelis, J. (2008). Single-molecule tracking of mRNA exiting from 
+RNA polymerase II. Proc. Natl. Acad. Sci. U.S.A. 105, 135-140.
+Axelrod, D. (2008). Total internal reflection fluorescence microscopy. 
+Methods Cell Biol. 89, 169-221.
+Single-molecule imaging 
+I. Choi and I. Baek 
+www.sciencedirect.com/journal/molecules-and-cells 
+Mol. Cells 2025; 48(2): 100179 7 
+Axelrod, D., Koppel, D., Schlessinger, J., Elson, E., and Webb, W.W. 
+(1976). Mobility measurement by analysis of fluorescence photo­
+bleaching recovery kinetics. Biophys. J. 16, 1055-1069.
+Baek, I., Friedman, L.J., Gelles, J., and Buratowski, S. (2021). Single-mo­
+lecule studies reveal branched pathways for activator-dependent assembly 
+of RNA polymerase II pre-initiation complexes. Mol. Cell, 81, 3576-3588.
+Basu, S., Shukron, O., Hall, D., Parutto, P., Ponjavic, A., Shah, D., 
+Boucher, W., Lando, D., Zhang, W., Reynolds, N., et al. (2024). 
+Publisher 
+correction: 
+live-cell 
+three-dimensional 
+single-molecule 
+tracking reveals modulation of enhancer dynamics by NuRD. Nat. 
+Struct. Mol. Biol. 31, 390.
+Betzig, E., Patterson, G.H., Sougrat, R., Lindwasser, O.W., Olenych, S., 
+Bonifacino, J.S., Davidson, M.W., Lippincott-Schwartz, J., and Hess, 
+H.F. (2006). Imaging intracellular fluorescent proteins at nanometer 
+resolution. Science, 313, 1642-1645.
+Braeckmans, K., Remaut, K., Vandenbroucke, R.E., Lucas, B., De 
+Smedt, S.C., and Demeester, J. (2007). Line FRAP with the confocal 
+laser scanning microscope for diffusion measurements in small regions 
+of 3-D samples. Biophys. J. 92, 2172-2183.
+Callegari, A., Sieben, C., Benke, A., Suter, D.M., Fierz, B., Mazza, D., 
+and Manley, S. (2019). Single-molecule dynamics and genome-wide 
+transcriptomics reveal that NF-kB (p65)-DNA binding times can be 
+decoupled from transcriptional activation. PLoS Genet. 15, Article 
+e1007891.
+Chen, J., Zhang, Z., Li, L., Chen, B.-C., Revyakin, A., Hajj, B., Legant, 
+W., Dahan, M., Lionnet, T., and Betzig, E. (2014). Single-molecule dy­
+namics of enhanceosome assembly in embryonic stem cells. Cell, 156, 
+1274-1285.
+Chen, W., Lu, W., Wolynes, P.G., and Komives, E.A. (2021). Single- 
+molecule conformational dynamics of a transcription factor reveals a 
+continuum of binding modes controlling association and dissociation. 
+Nucleic Acids Res. 49, 11211-11223.
+Chenouard, N., Smal, I., De Chaumont, F., Maška, M., Sbalzarini, I.F., 
+Gong, Y., Cardinale, J., Carthel, C., Coraluppi, S., and Winter, M. 
+(2014). 
+Objective 
+comparison 
+of 
+particle 
+tracking 
+methods. 
+Nat. Methods, 11, 281-289.
+Cheutin, T., McNairn, A.J., Jenuwein, T., Gilbert, D.M., Singh, P.B., and 
+Misteli, T. (2003). Maintenance of stable heterochromatin domains by 
+dynamic HP1 binding. Science, 299, 721-725.
+Cisse, I.I., Izeddin, I., Causse, S.Z., Boudarene, L., Senecal, A., 
+Muresan, L., Dugast-Darzacq, C., Hajj, B., Dahan, M., and Darzacq, X. 
+(2013). Real-time dynamics of RNA polymerase II clustering in live 
+human cells. Science, 341, 664-667.
+Coulon, A., Chow, C.C., Singer, R.H., and Larson, D.R. (2013). 
+Eukaryotic transcriptional dynamics: from single molecules to cell po­
+pulations. Nat. Rev. Genet. 14, 572-584.
+Crickard, J.B., Lee, J., Lee, T.-H., and Reese, J.C. (2017). The elon­
+gation factor Spt4/5 regulates RNA polymerase II transcription through 
+the nucleosome. Nucleic Acids Res. 45, 6362-6374.
+Dahal, L., Walther, N., Tjian, R., Darzacq, X., and Graham, T.G.W. 
+(2023). Single-molecule tracking (SMT): a window into live-cell tran­
+scription biochemistry. Biochem. Soc. Trans. 51, 557-569.
+Donovan, B.T., Chen, H., Eek, P., Meng, Z., Jipa, C., Tan, S., Bai, L., 
+and Poirier, M.G. (2023). Basic helix-loop-helix pioneer factors interact 
+with the histone octamer to invade nucleosomes and generate nu­
+cleosome-depleted regions. Mol. Cell, 83, 1251-1263.
+Donovan, B.T., Chen, H., Jipa, C., Bai, L., and Poirier, M.G. (2019a). 
+Dissociation rate compensation mechanism for budding yeast pioneer 
+transcription factors. Elife, 8, Article e43008.
+Donovan, B.T., Huynh, A., Ball, D.A., Patel, H.P., Poirier, M.G., Larson, 
+D.R., Ferguson, M.L., and Lenstra, T.L. (2019b). Live-cell imaging re­
+veals the interplay between transcription factors, nucleosomes, and 
+bursting. EMBO J. 38, Article e100809.
+Dufourt, J., Trullo, A., Hunter, J., Fernandez, C., Lazaro, J., Dejean, M., 
+Morales, L., Nait-Amer, S., Schulz, K.N., Harrison, M.M., et al. (2018). 
+Temporal control of gene expression by the pioneer factor Zelda 
+through transient interactions in hubs. Nat. Commun. 9, 5194.
+Elson, E.L. (2011). Fluorescence correlation spectroscopy: past, pre­
+sent, future. Biophys. J. 101, 2855-2870.
+Friedman, L.J., and Gelles, J. (2012). Mechanism of transcription in­
+itiation at an activator-dependent promoter defined by single-molecule 
+observation. Cell, 148, 679-689.
+Friedman, L.J., and Gelles, J. (2015). Multi-wavelength single-molecule 
+fluorescence analysis of transcription mechanisms. Methods, 86, 27-36.
+Fujiwara, T.K., Takeuchi, S., Kalay, Z., Nagai, Y., Tsunoyama, T.A., 
+Kalkbrenner, T., Iwasawa, K., Ritchie, K.P., Suzuki, K.G., and Kusumi, A. 
+(2023). Development of ultrafast camera-based single fluorescent-mole­
+cule imaging for cell biology. J. Cell Biol. 222(8), Article e202110160.
+Garcia, D.A., Fettweis, G., Presman, D.M., Paakinaho, V., Jarzynski, C., 
+Upadhyaya, A., and Hager, G.L. (2021a). Power-law behavior of tran­
+scription factor dynamics at the single-molecule level implies a con­
+tinuum affinity model. Nucleic Acids Res. 49, 6605-6620.
+Garcia, D.A., Johnson, T.A., Presman, D.M., Fettweis, G., Wagh, K., 
+Rinaldi, L., Stavreva, D.A., Paakinaho, V., Jensen, R.A., and Mandrup, 
+S. (2021b). An intrinsically disordered region-mediated confinement 
+state contributes to the dynamics and function of transcription factors. 
+Mol. Cell, 81, 1484-1498.
+Gebhardt, J.C.M., Suter, D.M., Roy, R., Zhao, Z.W., Chapman, A.R., 
+Basu, S., Maniatis, T., and Xie, X.S. (2013). Single-molecule imaging of 
+transcription factor binding to DNA in live mammalian cells. Nat. 
+Methods, 10, 421-426.
+Ha, T., Enderle, T., Ogletree, D.F., Chemla, D.S., Selvin, P.R., and 
+Weiss, S. (1996). Probing the interaction between two single molecules: 
+fluorescence resonance energy transfer between a single donor and a 
+single acceptor. Proc. Natl. Acad. Sci. U.S.A. 93, 6264-6268.
+Hahn, S. (2004). Structure and mechanism of the RNA polymerase II 
+transcription machinery. Nat. Struct. Mol. Biol. 11, 394-403.
+Hansen, A.S., Pustova, I., Cattoglio, C., Tjian, R., and Darzacq, X. 
+(2017). CTCF and cohesin regulate chromatin loop stability with distinct 
+dynamics. elife, 6, Article e25776.
+Hipp, L., Beer, J., Kuchler, O., Reisser, M., Sinske, D., Michaelis, J., 
+Gebhardt, J.C.M., and Knöll, B. (2019). Single-molecule imaging of the 
+transcription factor SRF reveals prolonged chromatin-binding kinetics 
+upon cell stimulation. Proc. Natl. Acad. Sci. 116, 880-889.
+Holden, S.J., Uphoff, S., Hohlbein, J., Yadin, D., Le Reste, L., Britton, 
+O.J., and Kapanidis, A.N. (2010). Defining the limits of single-molecule 
+FRET resolution in TIRF microscopy. Biophys. J. 99, 3102-3111.
+Hoskins, A.A., Friedman, L.J., Gallagher, S.S., Crawford, D.J., 
+Anderson, E.G., Wombacher, R., Ramirez, N., Cornish, V.W., Gelles, J., 
+and Moore, M.J. (2011). Ordered and dynamic assembly of single 
+spliceosomes. Science, 331, 1289-1295.
+Hou, S., Exell, J., and Welsher, K. (2020). Real-time 3D single molecule 
+tracking. Nat. Commun. 11, 3607.
+Itoh, Y., Murata, A., Sakamoto, S., Nanatani, K., Wada, T., Takahashi, 
+S., and Kamagata, K. (2016). Activation of p53 facilitates the target 
+search in DNA by enhancing the target recognition probability. 
+J. Mol. Biol. 428, 2916-2930.
+Single-molecule imaging 
+I. Choi and I. Baek 
+www.sciencedirect.com/journal/molecules-and-cells 
+8 Mol. Cells 2025; 48(2): 100179 
+Izeddin, I., Récamier, V., Bosanac, L., Cissé, I.I., Boudarene, L., 
+Dugast-Darzacq, C., Proux, F., Bénichou, O., Voituriez, R., and 
+Bensaude, O. (2014). Single-molecule tracking in live cells reveals 
+distinct target-search strategies of transcription factors in the nucleus. 
+Elife, 3, Article e02230.
+Kilic, S., Felekyan, S., Doroshenko, O., Boichenko, I., Dimura, M., 
+Vardanyan, H., Bryan, L.C., Arya, G., Seidel, C.A.M., and Fierz, B. 
+(2018). Single-molecule FRET reveals multiscale chromatin dynamics 
+modulated by HP1alpha. Nat. Commun. 9, 235.
+Klein, T., Löschberger, A., Proppert, S., Wolter, S., van de Linde, S., and 
+Sauer, M. (2011). Live-cell dSTORM with SNAP-tag fusion proteins. 
+Nat. Methods, 8, 7-9.
+Kubitscheck, U., Wedekind, P., and Peters, R. (1998). Three-dimen­
+sional diffusion measurements by scanning microphotolysis. J. Microsc. 
+192, 126-138.
+Kudalkar, E.M., Davis, T.N., and Asbury, C.L. (2016). Single-molecule 
+total internal reflection fluorescence microscopy. Cold Spring Harb. 
+Protoc. 2016(5), Article pdb.top077800.
+Lambert, S.A., Jolma, A., Campitelli, L.F., Das, P.K., Yin, Y., Albu, M., 
+Chen, X., Taipale, J., Hughes, T.R., and Weirauch, M.T. (2018). The 
+human transcription factors. Cell, 175, 598-599.
+Lerner, J., Gomez-Garcia, P.A., McCarthy, R.L., Liu, Z., Lakadamyali, 
+M., and Zaret, K.S. (2020). Two-parameter mobility assessments dis­
+criminate diverse regulatory factor behaviors in chromatin. Mol. Cell, 79, 
+677-688.e676.
+Levsky, J.M., and Singer, R.H. (2003). Gene expression and the myth of 
+the average cell. Trends Cell Biol. 13, 4-6.
+Li, D., Shao, L., Chen, B.-C., Zhang, X., Zhang, M., Moses, B., Milkie, 
+D.E., Beach, J.R., Hammer, J.A., III, and Pasham, M. (2015). Extended- 
+resolution structured illumination imaging of endocytic and cytoskeletal 
+dynamics. Science, 349, Article aab3500.
+Li, S., Zheng, E.B., Zhao, L., and Liu, S. (2019). Nonreciprocal and 
+conditional cooperativity directs the pioneer activity of pluripotency 
+transcription factors. Cell Rep. 28, 2689-2703.
+Liu, X., Jiang, Y., Cui, Y., Yuan, J., and Fang, X. (2022). Deep learning in 
+single-molecule imaging and analysis: recent advances and prospects. 
+Chem. Sci. 13, 11964-11980.
+Liu, Z., and Tjian, R. (2018). Visualizing transcription factor dynamics in 
+living cells. J. Cell Biol. 217, 1181-1191.
+Loffreda, A., Jacchetti, E., Antunes, S., Rainone, P., Daniele, T., 
+Morisaki, T., Bianchi, M.E., Tacchetti, C., and Mazza, D. (2017). Live- 
+cell p53 single-molecule binding is modulated by C-terminal acetylation 
+and correlates with transcriptional activity. Nat. Commun. 8, 313.
+Lu, F., and Lionnet, T. (2021). Transcription factor dynamics. Cold 
+Spring Harb. Perspect. Biol. 13, Article a040949.
+Magde, D., Elson, E.L., and Webb, W.W. (1974). Fluorescence corre­
+lation spectroscopy. II. An experimental realization. Biopolymers, 13, 
+29-61.
+Malkusch, N., Dorfler, T., Nagy, J., Eilert, T., and Michaelis, J. (2017). 
+smFRET experiments of the RNA polymerase II transcription initiation 
+complex. Methods, 120, 115-124.
+Manning, S.A., Kroeger, B., Deng, Q., Brooks, E., Fonseka, Y., Hinde, 
+E., and Harvey, K.F. (2024). The Drosophila Hippo pathway transcrip­
+tion factor Scalloped and its co-factors alter each other’s chromatin 
+binding dynamics and transcription in vivo. Dev. Cell, 59(13), 
+1640-1654.e5.
+Mazzocca, M., Loffreda, A., Colombo, E., Fillot, T., Gnani, D., Falletta, 
+P., Monteleone, E., Capozi, S., Bertrand, E., and Legube, G. (2023). 
+Chromatin organization drives the search mechanism of nuclear factors. 
+Nat. Commun. 14, 6433.
+Mehta, G.D., Ball, D.A., Eriksson, P.R., Chereji, R.V., Clark, D.J., 
+McNally, J.G., and Karpova, T.S. (2018). Single-molecule analysis re­
+veals linked cycles of RSC chromatin remodeling and Ace1p tran­
+scription factor binding in yeast. Mol. cell, 72, 875-887.
+Mir, M., Reimer, A., Haines, J.E., Li, X.-Y., Stadler, M., Garcia, H., 
+Eisen, M.B., and Darzacq, X. (2017). Dense Bicoid hubs accentuate 
+binding along the morphogen gradient. Genes Dev. 31, 1784-1794.
+Mir, M., Stadler, M.R., Ortiz, S.A., Hannon, C.E., Harrison, M.M., Darzacq, X., 
+and Eisen, M.B. (2018). Dynamic multifactor hubs interact transiently with 
+sites of active transcription in Drosophila embryos. Elife, 7, Article e40497.
+Mivelaz, M., Cao, A.-M., Kubik, S., Zencir, S., Hovius, R., Boichenko, I., 
+Stachowicz, A.M., Kurat, C.F., Shore, D., and Fierz, B. (2020). 
+Chromatin fiber invasion and nucleosome displacement by the Rap1 
+transcription factor. Mol. Cell, 77, 488-500.
+Nguyen, T.D., Chen, Y.I., Chen, L.H., and Yeh, H.C. (2023). Recent 
+advances in single-molecule tracking and imaging techniques. Annu. 
+Rev. Anal. Chem. 16, 253-284.
+Nguyen, V.Q., Ranjan, A., Liu, S., Tang, X., Ling, Y.H., Wisniewski, J., 
+Mizuguchi, G., Li, K.Y., Jou, V., and Zheng, Q. (2021). Spatiotemporal 
+coordination of transcription preinitiation complex assembly in live cells. 
+Mol. Cell, 81, 3560-3575.
+Orphanides, G., Lagrange, T., and Reinberg, D. (1996). The general 
+transcription factors of RNA polymerase II. Genes Dev. 10, 2657-2683.
+Paakinaho, V., Presman, D.M., Ball, D.A., Johnson, T.A., Schiltz, R.L., 
+Levitt, P., Mazza, D., Morisaki, T., Karpova, T.S., and Hager, G.L. 
+(2017). Single-molecule analysis of steroid receptor and cofactor action 
+in living cells. Nat. Commun. 8, Article 15896.
+Park, P.J. (2009). ChIP-seq: advantages and challenges of a maturing 
+technology. Nat. Rev. Genet. 10, 669-680.
+Pellinen, T., Arjonen, A., Vuoriluoto, K., Kallio, K., Fransen, J.A., and 
+Ivaska, J. (2006). Small GTPase Rab21 regulates cell adhesion and 
+controls endosomal traffic of β1-integrins. J. Cell Biol. 173, 767-780.
+Perlmann, T., Eriksson, P., and Wrange, O. (1990). Quantitative ana­
+lysis of the glucocorticoid receptor-DNA interaction at the mouse 
+mammary tumor virus glucocorticoid response element. J. Biol. Chem. 
+265, 17222-17229.
+Peters, R., Peters, J., Tews, K.H., and Bahr, W. (1974). A microfluori­
+metric study of translational diffusion in erythrocyte membranes. 
+Biochim. Biophys. Acta, 367, 282-294.
+Pomp, W., Meeussen, J.V.W., and Lenstra, T.L. (2024). Transcription 
+factor exchange enables prolonged transcriptional bursts. Mol. Cell, 84, 
+1036-1048 e1039.
+Popp, A.P., Hettich, J., and Gebhardt, J.C.M. (2021). Altering tran­
+scription factor binding reveals comprehensive transcriptional kinetics of 
+a basic gene. Nucleic Acids Res. 49, 6249-6266.
+Raccaud, M., Friman, E.T., Alber, A.B., Agarwal, H., Deluz, C., Kuhn, T., 
+Gebhardt, J.C.M., and Suter, D.M. (2019). Mitotic chromosome binding 
+predicts transcription factor properties in interphase. Nat. Commun. 10, 487.
+Rappoport, J.Z., and Simon, S.M. (2003). Real-time analysis of clathrin- 
+mediated endocytosis during cell migration. J. Cell Sci. 116, 847-855.
+Reck-Peterson, S.L., Derr, N.D., and Stuurman, N. (2010). Imaging 
+single molecules using total internal reflection fluorescence microscopy 
+(TIRFM). Cold Spring Harb. Protoc. 2010(3), Article pdb.top73.
+Revyakin, A., Zhang, Z., Coleman, R.A., Li, Y., Inouye, C., Lucas, J.K., 
+Park, S.R., Chu, S., and Tjian, R. (2012). Transcription initiation by 
+Single-molecule imaging 
+I. Choi and I. Baek 
+www.sciencedirect.com/journal/molecules-and-cells 
+Mol. Cells 2025; 48(2): 100179 9 
+human RNA polymerase II visualized at single-molecule resolution. 
+Genes Dev. 26, 1691-1702.
+Roeder, R.G. (2019). 50+ years of eukaryotic transcription: an expanding 
+universe of factors and mechanisms. Nat. Struct. Mol. Biol. 26, 783-791.
+Rust, M.J., Bates, M., and Zhuang, X. (2006). Sub-diffraction-limit 
+imaging by stochastic optical reconstruction microscopy (STORM). Nat. 
+Methods, 3, 793-796.
+Schier, A.C., and Taatjes, D.J. (2020). Structure and mechanism of the 
+RNA polymerase II transcription machinery. Genes Dev. 34, 465-488.
+Shao, S., Zhang, H., Zeng, Y., Li, Y., Sun, C., and Sun, Y. (2021). 
+TagBiFC technique allows long-term single-molecule tracking of protein- 
+protein interactions in living cells. Commun. Biol. 4, 378.
+Shroff, H., Galbraith, C.G., Galbraith, J.A., and Betzig, E. (2008). Live- 
+cell photoactivated localization microscopy of nanoscale adhesion dy­
+namics. Nat. Methods, 5, 417-423.
+Singh, A.P., Galland, R., Finch-Edmondson, M.L., Grenci, G., Sibarita, 
+J.-B., Studer, V., Viasnoff, V., and Saunders, T.E. (2017). 3D protein 
+dynamics in the cell nucleus. Biophys. J. 112, 133-142.
+Stasevich, T.J., Mueller, F., Michelman-Ribeiro, A., Rosales, T., 
+Knutson, J.R., and McNally, J.G. (2010). Cross-validating FRAP and 
+FCS to quantify the impact of photobleaching on in vivo binding esti­
+mates. Biophys. J. 99, 3093-3101.
+Stavreva, D.A., Garcia, D.A., Fettweis, G., Gudla, P.R., Zaki, G.F., Soni, V., 
+McGowan, A., Williams, G., Huynh, A., and Palangat, M. (2019). 
+Transcriptional bursting and co-bursting regulation by steroid hormone re­
+lease pattern and transcription factor mobility. Mol. Cell, 75, 1161-1177.
+Stenoien, D.L., Patel, K., Mancini, M.G., Dutertre, M., Smith, C.L., O’Malley, 
+B.W., and Mancini, M.A. (2001). FRAP reveals that mobility of oestrogen 
+receptor-α is ligand-and proteasome-dependent. Nat. Cell Biol. 3, 15-23.
+Subekti, D.R.G., Murata, A., Itoh, Y., Takahashi, S., and Kamagata, K. 
+(2020). Transient binding and jumping dynamics of p53 along DNA 
+revealed by sub-millisecond resolved single-molecule fluorescence 
+tracking. Sci. Rep. 10, Article 13697.
+Sugo, N., Morimatsu, M., Arai, Y., Kousoku, Y., Ohkuni, A., Nomura, T., 
+Yanagida, T., and Yamamoto, N. (2015). Single-molecule imaging re­
+veals dynamics of CREB transcription factor bound to its target se­
+quence. Sci. Rep. 5, Article 10662.
+Swift, J., and Coruzzi, G.M. (2017). A matter of time—how transient 
+transcription factor interactions create dynamic gene regulatory net­
+works. Biochim. Biophys. Acta Gene Regul. Mech. 1860, 75-83.
+Swinstead, E.E., Miranda, T.B., Paakinaho, V., Baek, S., Goldstein, I., 
+Hawkins, M., Karpova, T.S., Ball, D., Mazza, D., and Lavis, L.D. (2016). 
+Steroid receptors reprogram FoxA1 occupancy through dynamic chro­
+matin transitions. Cell, 165, 593-605.
+Tang, X., Li, T., Liu, S., Wisniewski, J., Zheng, Q., Rong, Y., Lavis, L.D., and 
+Wu, C. (2022). Kinetic principles underlying pioneer function of GAGA 
+transcription factor in live cells. Nat. Struct. Mol. Biol. 29, 665-676.
+Teves, S.S., An, L., Hansen, A.S., Xie, L., Darzacq, X., and Tjian, R. 
+(2016). A dynamic mode of mitotic bookmarking by transcription factors. 
+Elife, 5, Article e22280.
+Thomas, M.C., and Chiang, C.M. (2006). The general transcription 
+machinery and general cofactors. Crit. Rev. Biochem. Mol. Biol. 41, 
+105-178.
+Ticau, S., Friedman, L.J., Ivica, N.A., Gelles, J., and Bell, S.P. (2015). 
+Single-molecule studies of origin licensing reveal mechanisms ensuring 
+bidirectional helicase loading. Cell, 161, 513-525.
+Tokunaga, M., Imamoto, N., and Sakata-Sogawa, K. (2008). Highly in­
+clined thin illumination enables clear single-molecule imaging in cells. 
+Nat. Methods, 5, 159-161.
+Tokunaga, M., Kitamura, K., Saito, K., Iwane, A.H., and Yanagida, T. 
+(1997). Single molecule imaging of fluorophores and enzymatic reac­
+tions achieved by objective-type total internal reflection fluorescence 
+microscopy. Biochem. Biophys. Res. Commun. 235, 47-53.
+Versluis, P., Graham, T.G., Eng, V., Ebenezer, J., Darzacq, X., Zipfel, 
+W.R., and Lis, J.T. (2024). Live-cell imaging of RNA Pol II and elon­
+gation factors distinguishes competing mechanisms of transcription 
+regulation. Mol. Cell, 84, 2856-2869.
+Voss, T.C., Schiltz, R.L., Sung, M.H., Yen, P.M., Stamatoyannopoulos, 
+J.A., Biddie, S.C., Johnson, T.A., Miranda, T.B., John, S., and Hager, 
+G.L. (2011). Dynamic exchange at regulatory elements during chro­
+matin remodeling underlies assisted loading mechanism. Cell, 146, 
+544-554.
+Wachsmuth, M. (2014). Molecular diffusion and binding analyzed with 
+FRAP. Protoplasma, 251, 373-382.
+Wedekind, P., Kubitscheck, U., and Peters, R. (1994). Scanning mi­
+crophotolysis: a new photobleaching technique based on fast intensity 
+modulation of a scanned laser beam and confocal imaging. J. Microsc. 
+176, 23-33.
+White, M.D., Angiolini, J.F., Alvarez, Y.D., Kaur, G., Zhao, Z.W., 
+Mocskos, E., Bruno, L., Bissiere, S., Levi, V., and Plachta, N. (2016). 
+Long-lived binding of Sox2 to DNA predicts cell fate in the four-cell 
+mouse embryo. Cell, 165, 75-87.
+Xie, L., Torigoe, S.E., Xiao, J., Mai, D.H., Li, L., Davis, F.P., Dong, P., 
+Marie-Nelly, H., Grimm, J., and Lavis, L. (2017). A dynamic interplay of 
+enhancer elements regulates Klf4 expression in naïve pluripotency. 
+Genes Dev. 31, 1795-1808.
+Xiong, Y., Han, W., Xu, C., Shi, J., Wang, L., Jin, T., Jia, Q., Lu, Y., Hu, 
+S., Dou, S.X., et al. (2024). Single-molecule reconstruction of eukaryotic 
+factor-dependent transcription termination. Nat. Commun. 15, 5113.
+Yamada, S., and Nelson, W.J. (2007). Localized zones of Rho and Rac 
+activities drive initiation and expansion of epithelial cell–cell adhesion. J. 
+Cell Biol. 178, 517-527.
+Yu, L., Lei, Y.Z., Ma, Y., Liu, M., Zheng, J.J., Dan, D., and Gao, P. 
+(2021). A comprehensive review of fluorescence correlation spectro­
+scopy. Front. Phys. 9, Article 644450.
+Zhang, Z., English, B.P., Grimm, J.B., Kazane, S.A., Hu, W., Tsai, A., 
+Inouye, C., You, C., Piehler, J., and Schultz, P.G. (2016). Rapid dy­
+namics of general transcription factor TFIIB binding during preinitiation 
+complex assembly revealed by single-molecule analysis. Genes Dev. 
+30, 2106-2118.
+Single-molecule imaging 
+I. Choi and I. Baek 
+www.sciencedirect.com/journal/molecules-and-cells 
+10 Mol. Cells 2025; 48(2): 100179 

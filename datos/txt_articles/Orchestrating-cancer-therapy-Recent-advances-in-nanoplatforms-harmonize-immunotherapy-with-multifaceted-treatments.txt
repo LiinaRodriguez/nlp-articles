@@ -1,0 +1,3332 @@
+Orchestrating cancer therapy: Recent advances in nanoplatforms
+harmonize immunotherapy with multifaceted treatments
+Rongwei Xu a,1, Pei Lin a,1, Jiarong Zheng b, Yunfan Lin a, Zizhao Mai a, Ye Lu a, Xu Chen a,
+Zihao Zhou a, Li Cui a,c,**, Xinyuan Zhao a,*
+a Stomatological Hospital, School of Stomatology, Southern Medical University, Guangzhou, 510280, Guangdong, China
+b Department of Dentistry, The First Affiliated Hospital, Sun Yat-Sen University, Guangzhou 510080, China
+c School of Dentistry, University of California, Los Angeles, Los Angeles, 90095, CA, USA
+A R T I C L E I N F O
+Keywords:
+Nanoplatform
+Immunotherapy
+Synergistic effect
+Cancer therapy
+Oncology
+A B S T R A C T
+Advancements in cancer therapy have increasingly focused on leveraging the synergistic effects of combining
+immunotherapy with other treatment modalities, facilitated by the use of innovative nanoplatforms. These
+strategies aim to augment the efficacy of standalone treatments while addressing their inherent limitations.
+Nanoplatforms enable precise delivery and controlled release of therapeutic agents, which enhances treatment
+specificity and reduces systemic toxicity. This review highlights the critical role of nanomaterials in enhancing
+immunotherapy when combined with chemotherapy, radiotherapy, photodynamic therapy, photothermal ther-
+apy, and sonodynamic therapy. Additionally, it addresses current challenges, including limited in vivo studies,
+difficulties in standardizing and scaling production, complexities of combination therapies, lack of comparative
+analyses, and the need for personalized treatments. Future directions involve refining nanoplatform engineering
+for improved targeting and minimizing adverse effects, alongside large animal studies to establish the long-term
+efficacy and safety of these combined therapeutic strategies. These efforts aim to translate laboratory successes
+into clinically viable treatments, significantly improving therapeutic outcomes and advancing the field of
+oncology.
+1. Introduction
+Immunotherapy represents a transformative frontier in oncology,
+harnessing the body’s immune system to combat cancer. This thera-
+peutic modality capitalizes on the specificity and adaptability of the
+immune response, aiming to enhance its ability to recognize and erad-
+icate cancer cells [1,2]. The strategies employed in immunotherapy
+range from checkpoint inhibitors, which release the brakes on T cells to
+allow them to attack cancer cells more effectively [3,4], to adoptive cell
+transfer, where T cells are engineered ex vivo for enhanced tumor tar-
+geting and then reintroduced into the patient [5]. Additional approaches
+include cancer vaccines that provoke immune responses against
+tumor-specific antigens and immunomodulators that tweak the immune
+environment to tilt the balance in favor of anti-tumor activity [6,7]. By
+reactivating the patient’s immune surveillance, these therapies offer a
+potent means to achieve durable cancer control, potentially leading to
+sustained remission and improved patient outcomes.
+The efficacy of immunotherapy is often limited by a combination of
+biological and clinical factors that can undermine its therapeutic po-
+tential. One of the primary challenges is the inherent heterogeneity of
+tumors, which include a diverse array of cancer cell subtypes within a
+single tumor. This variability not only complicates the immune system’s
+ability to uniformly recognize and attack tumor cells but also fosters
+environments where some cancer cells can escape immune surveillance
+through mutations that alter antigenic profiles [8,9]. Additionally, the
+tumor microenvironment (TME) exerts a potent immunosuppressive
+effect. It often features a high concentration of regulatory cells such as
+regulatory
+T
+cells
+(Tregs)
+and
+myeloid-derived
+suppressor
+cells
+(MDSCs), which suppress effector T cells and natural killer cells (NK
+cells) that are crucial for anti-tumor immunity [10,11]. The TME also
+frequently expresses various immune checkpoint proteins, like PD-L1,
+which bind to receptors on immune cells to deactivate them, thus
+* Corresponding author.
+** Corresponding author. Stomatological Hospital, School of Stomatology, Southern Medical University, Guangzhou, 510280, Guangdong, China.
+E-mail addresses: licui@smu.edu.cn (L. Cui), zhaoxinyuan1989@smu.edu.cn (X. Zhao).
+1 Equal contributors.
+Contents lists available at ScienceDirect
+Materials Today Bio
+journal homepage: www.journals.elsevier.com/materials-today-bio
+https://doi.org/10.1016/j.mtbio.2024.101386
+Received 15 September 2024; Received in revised form 17 November 2024; Accepted 5 December 2024
+Materials Today Bio 30 (2025) 101386 
+Available online 9 December 2024 
+2590-0064/© 2024 The Authors. Published by Elsevier Ltd. This is an open access article under the CC BY license ( http://creativecommons.org/licenses/by/4.0/ ). 
+protecting tumor cells from immune attack [12]. Another limiting factor
+in immunotherapy efficacy is the presence of metabolic barriers within
+the TME, such as hypoxia and nutrient depletion, which can suppress the
+proliferation and function of infiltrating immune cells [13,14]. Addi-
+tionally, patient-specific factors play a critical role; genetic variations
+can affect the expression and function of immune-related genes, influ-
+encing how patients respond to immunotherapy [15,16].
+To overcome these challenges, the field of oncology is actively
+exploring combination therapies that integrate immunotherapy with
+other treatment modalities, such as chemotherapy, radiation, photody-
+namic therapy (PDT), photothermal therapy (PTT), and nanomaterial-
+based systems [17]. These combination strategies aim to modulate the
+TME, enhance tumor immunogenicity, and either restore or boost the
+immune response. Central to these strategies are nanoplatforms, which
+are transforming oncology by enhancing targeted drug delivery with
+high precision [18–21]. These nanoscale platforms not only optimize
+therapeutic efficacy and minimize collateral damage by precisely tar-
+geting tumor cells and reducing systemic side effects, but they also
+enable the integration of multiple therapeutic agents and diagnostic
+markers. This facilitates the development of personalized medicine
+strategies, tailoring treatments to the specific genetic and molecular
+profiles of individual tumors.
+This review explores the integration of immunotherapy with other
+treatment modalities using nanoplatforms to overcome the limitations of
+standalone immunotherapies. It begins by outlining the fundamental
+principles of synergistic interactions between immunotherapy and other
+therapies. The critical role of nanomaterials in facilitating these syn-
+ergies is then highlighted. Importantly, we critically summarize and
+review the significant applications of various nanomaterials in combi-
+nation with PDT, PTT, chemotherapy, radiotherapy (RT) and sonody-
+namic
+therapy
+(SDT),
+underscoring
+their
+potential
+to
+enhance
+immunotherapy efficacy, reduce side effects, and address TME chal-
+lenges. Finally, the review addresses current research challenges and
+future directions, offering valuable perspectives and insights for inno-
+vation and advancement in cancer immunotherapy.
+2. Mechanisms of the synergistic effect of immunotherapy and
+conventional cancer therapies
+Chemotherapy has been shown to augment the efficacy of immu-
+notherapy through several mechanistic pathways that modulate the
+TME. Primarily, chemotherapeutic agents induce immunogenic cell
+death (ICD), which is characterized by the release of damage-associated
+molecular patterns (DAMPs) such as ATP, HMGB1, and calreticulin [22,
+23]. These DAMPs facilitate dendritic cell (DC) recruitment and matu-
+ration, thereby enhancing antigen presentation and T cell priming. For
+instance, paclitaxel (PTX) triggers ICD-associated DAMPs via TLR4
+signaling, activating NF-κB and promoting antitumor immunity [24].
+Additionally, chemotherapy can modulate the expression of immune
+checkpoint molecules, thus sensitizing them to checkpoint inhibitors.
+Platinum-based chemotherapeutics reduce the expression of the T cell
+inhibitory molecule PD-L2 on human DCs and tumor cells, enhancing
+antigen-specific T cell responses and Th1 cytokine secretion [25].
+Moreover, it can selectively deplete immunosuppressive cell pop-
+ulations, reducing local immunosuppression and fostering a more
+permissive environment for immune effector functions. For instance,
+PTX combined with ginsenoside metabolite compound K selectively
+depletes immunosuppressive Tregs and increases T helper cell 17,
+inducing cancer cell pyroptosis via the JAK-STAT pathway. In vivo
+studies confirm significant inhibition of lung cancer progression, high-
+lighting this combination as a promising immunotherapy strategy [26].
+RT, a conventional cancer treatment, has also been increasingly
+recognized for its synergistic potential with immunotherapy [27]. By
+inducing DNA damage and subsequent tumor cell death, RT exposes
+tumor neoantigens and releases immunostimulatory signals. This
+exposure not only enhances antigen presentation but also recruits and
+activates DCs, crucial for initiating T-cell responses [28]. RT upregulates
+immunogenic neoantigens in triple-negative breast cancer (TNBC),
+enhancing their presentation. Vaccination with these neoepitopes elicits
+CD8+ and CD4+ T cells, boosting immunotherapy by targeting irradiated
+cells and promoting Th1 cytokine production and epitope spread [29].
+Furthermore, RT can modulate the expression of immune checkpoints
+on tumor cells or immune cells, making tumors more susceptible to
+checkpoint blockade therapies. For instance, RT upregulates PD-L1
+expression in hepatocellular carcinoma (HCC) via the cGAS-STING
+pathway, leading to immune cloaking and reduced Cytotoxic T
+lymphocyte (CTL) activity. Combining RT with anti-PD-L1 therapy
+augments antitumor immunity, highlighting the synergy between RT
+and immunotherapy in HCC [30].
+Targeted therapy has proven to be an effective complement to
+immunotherapy, enhancing its efficacy through several mechanistic
+pathways. By selectively inhibiting oncogenic pathways, targeted agents
+can modulate the TME to improve immune visibility and responsiveness
+[31]. Additionally, targeted therapies can reduce immunosuppressive
+factors within the TME, facilitating a more robust immune response. For
+instance, targeted therapy using an anti-WNT2 monoclonal antibody
+enhances Immune checkpoint inhibitors (ICI) efficacy in oesophageal
+squamous
+cell
+carcinoma
+and
+colorectal
+cancer
+by
+disrupting
+CAF-mediated immune evasion. Anti-WNT2 restores DC differentiation
+and
+antitumor
+T-cell
+responses
+via
+the
+SOCS3/p-JAK2/p-STAT3
+signaling pathway, promoting antitumor immunity and enhancing ICI
+effectiveness [32].
+Similarly, PDT and PTT have been recognized for their potential to
+enhance the efficacy of immunotherapy by inducing ICD and remodeling
+the TME. PDT involves the activation of photosensitizing agents by light
+to produce reactive oxygen species (ROS), which cause direct tumor cell
+damage and subsequent release of DAMPs [33]. For instance, PDT using
+aluminum-phthalocyanine in nanoemulsion (PDT-AlPc-NE) induces ICD
+in CT26 and 4T1 cancer cells, marked by the emission of DAMPs.
+PDT-treated cells enhance antitumor immunity in vivo, as shown in a
+vaccination-challenge model [34]. Additionally, PTT utilizes photo-
+thermal agents to convert light energy into heat, causing thermal
+destruction of tumor cells. This thermal ablation not only results in the
+release of tumor antigens but also induces a local inflammatory response
+that can overcome the immunosuppressive TME [35].
+SDT enhances the efficacy of immunotherapy by inducing ICD and
+modulating the TME [36]. When activated by ultrasound, sonosensi-
+tizers produce reactive ROS leading to tumor cell apoptosis and necrosis.
+This cell death releases tumor-associated antigens and DAMPs [37].
+Moreover, SDT can increase the expression of heat shock proteins and
+co-stimulatory molecules, further boosting T-cell activation. The resul-
+tant enhanced antigen presentation and T-cell activity contribute to a
+more effective immunotherapeutic response, particularly in conjunction
+with checkpoint inhibitors. For instance, SDT using ultrasound-activated
+IR-780 induces significant ROS production and cancer cell death in
+BxPC-3 pancreatic cancer cells. This process triggers ICD and the release
+of DAMPs, promoting DC activation and an effective immune response
+(Fig.
+1)
+[37].
+In
+summary,
+combining
+conventional
+ther-
+apies—chemotherapy, radiotherapy, targeted therapy, PDT, PTT, and
+SDT—with immunotherapy enhances antitumor immunity by inducing
+ICD, modulating immune checkpoints, and reshaping the TME to favor
+immune activation. This multimodal strategy holds promise for over-
+coming
+immune
+resistance
+and
+achieving
+more
+durable
+cancer
+responses.
+3. Nanomaterial-driven enhancements in synergistic cancer
+therapies
+Nanomaterial-based systems stand at the forefront of innovative
+cancer treatment strategies, particularly due to their potential to
+significantly enhance the synergistic effects of combinative therapies
+[38]. These systems leverage the unique properties of nanomaterials to
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+2 
+overcome several limitations associated with conventional cancer
+therapies. Firstly, nanomaterials, through their intrinsic immunomod-
+ulatory properties, hold substantial promise for cancer treatment by
+reshaping the TME and enhancing immune responses. For instance, the
+FDA-approved iron oxide nanoparticle ferumoxytol exhibits intrinsic
+anti-tumor effects by inducing pro-inflammatory M1 macrophage po-
+larization in tumor tissues. In vitro, ferumoxytol-treated macrophages
+enhanced caspase-3 activity in adenocarcinoma cells and promoted
+Th1-type responses. In vivo, ferumoxytol nanoparticles inhibited tumor
+growth and prevented liver metastasis, highlighting their potential
+’’off-label’’ application in cancer immunotherapy through macrophage
+modulation [39]. In addition, silica nanoparticles (SiNPs) exhibit
+intrinsic anti-tumor effects by promoting M1 macrophage polarization
+within the lung TME. By activating the NF-κB pathway and glycolytic
+mechanisms, SiNPs suppress lung cancer progression and modulate
+pre-metastatic and metastatic niches [40]. Notably, gold nanoparticles
+(AuNPs) exhibit intrinsic therapeutic properties in cancer therapy by
+selectively disrupting NLRP3 inflammasome signaling in macrophages
+through ROS scavenging, thus reducing IL-1β production. When conju-
+gated with the MDSC-targeting peptide H6, AuNPs effectively decrease
+MDSC populations and IL-1β levels within the TME, enhancing T cell
+activation and improving immunotherapy outcomes in PD-1-sensitive
+and -resistant tumor models [41]. Moreover, titanium dioxide NPs
+(TiO₂ NPs) inherently induce a pro-inflammatory response, activating
+M1 macrophages and amplifying cytokine production, which correlates
+with inhibited cancer metastasis. In vivo, TiO₂ NPs trigger immune cell
+infiltration and systemic inflammation in liver and spleen, demon-
+strating their potential to modulate immune activity against metastasis
+through intrinsic immunostimulatory properties [42]. In conclusion,
+these findings underscore the significant role of nanomaterials’ intrinsic
+immunomodulatory properties in revolutionizing cancer treatment
+strategies, fueling the development of nanomaterial-driven synergistic
+cancer therapies.
+Secondly, nanomaterials can be engineered to target tumor cells
+specifically, minimizing off-target effects and enhancing therapeutic
+efficacy. Their surface can be modified with ligands that recognize and
+bind to receptors overexpressed on tumor cells, ensuring that the active
+agents are delivered precisely where needed. For instance, engineered
+NK cell-mimic nanoparticles (NK.NPs) incorporate death ligand TRAIL
+and CD16 peptide for antibody-mediated tumor recognition. Function-
+alized with anti-CD38 antibody, NK.NPs effectively targeted and killed
+CD38-positive acute myeloid leukemia (AML) cells in vitro, ex vivo, and
+in vivo, reducing AML burden in bone marrow [43]. Additionally,
+nanocarriers can encapsulate drugs, protecting them from premature
+degradation and releasing them in a controlled manner at the tumor site.
+This targeted delivery is crucial for therapies like chemotherapy, where
+reducing systemic toxicity is a primary concern [44]. Thirdly, nano-
+materials are uniquely capable of carrying multiple types of therapeutic
+agents simultaneously. This co-delivery capability allows for the direct
+combination
+of
+different
+therapeutic
+modalities
+within
+a
+single
+Fig. 1. Mechanisms of the synergistic effect of immunotherapy and conventional cancer therapies. (A) PTX activates TLR4 signaling in ovarian cancer cells,
+leading to NF-κB-mediated transcription of pro-inflammatory cytokines and exocytotic release of ATP and HMGB1, inducing ICD. (B) Platinum-based drugs inhibit
+STAT6 phosphorylation, reducing PD-L1 expression on DCs and tumor cells. This leads to decreased T cell deactivation and enhances immune surveillance, coun-
+tering tumor immune evasion. (C) Targeted therapy with PTX-CK disrupts JAK2/STAT3 signaling, enhancing CD8+ T cell cytotoxicity and reducing Treg suppression.
+This modulation fosters a pro-inflammatory environment conducive to tumor control by promoting the release of cytolytic proteins like granzyme B and perforin
+from CD8+ T cells. (D) WNT2 antibody therapy inhibits WNT2 signaling, impacting the SOCS3/p-JAK2/p-STAT3 pathway in CAFs and DC precursors. This leads to
+the activation of antigen-presenting DCs and subsequent stimulation of CD8+ T cell responses, enhancing immune surveillance against tumor cells. (E) PDT using the
+photosensitizer AlPc-NE targets CT26 and 4T1 tumor cells in a mouse model, resulting in ICD. The therapy triggers the release of damage- DAMPs from dying tumor
+cells, which stimulate DCs and subsequently activate effector T cells, enhancing anti-tumor immune responses. (F) Radiotherapy induces the cGAS-STING pathway in
+liver cancer cells, leading to increased expression of PD-L1 through activation of IRF3 and TBK1. This modulation facilitates immune evasion by tumor cells but also
+presents potential targets for enhancing the effectiveness of CTL-mediated cytotoxicity against tumor cells. (G) Radiotherapy exposes mutated proteins as neo-
+antigens in tumor cells, enhancing their recognition by T cells. The process involves the upregulation of MHC molecules, facilitating the presentation of these
+neoantigens and promoting T cell-mediated tumor cell targeting through engagement of CD4+ and CD8+ T cells. (H) Sonodynamic therapy with the sonosensitizer IR-
+780 in BXPC-3 tumor cells generates ROS and leads to apoptosis. The dying tumor cells release DAMPs, which activate DCs to promote an adaptive immune response
+against the tumor.
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+3 
+platform. For instance, nanoscale coordination polymer core-shell
+nanoparticles, encapsulating oxaliplatin and pyropheophorbide-lipid
+conjugate
+(pyrolipid),
+enhance
+the
+efficacy
+of
+PD-L1
+anti-
+body-mediated immunotherapy in advanced colorectal cancer [45].
+Fourthly, the TME often presents a significant barrier to effective cancer
+treatment. Nanomaterials can alter the TME to make it more conducive
+to therapy. Nano-Pt/VP@MLipo liposomes leverage platinum nano-
+particles to catalyze oxygen production, altering the TME by reducing
+hypoxia. This enhances verteporfin’s photodynamic effect and nano-
+particle penetration, significantly improving treatment efficacy against
+tumor growth and metastasis [46]. Fifthly, nanomaterials used in PDT
+and PTT can induce ICD, which releases tumor antigens in a context that
+is conducive to immune system activation. This not only helps in the
+direct killing of cancer cells but also turns the tumor itself into a vaccine
+against itself, promoting an adaptive immune response that can target
+tumor
+cells
+systemically.
+For
+instance,
+ER-targeting
+nanosystem
+combining
+FAL-ICG-HAuNS
+and
+hemoglobin
+liposomes
+enhances
+photodynamic and photothermal therapies, inducing ER stress and cal-
+reticulin exposure under near-infrared (NIR) light. This activation
+stimulates DC function and CD8+ T cell responses, boosting ICD and
+anti-tumor efficacy through ROS-mediated mechanisms [47]. Lastly, the
+multi-modal nature of nanomaterial-based systems can help overcome
+mechanisms of drug resistance. Nanoparticles can bypass cellular efflux
+pumps, a common resistance mechanism in chemotherapy, ensuring
+higher intracellular concentrations of chemotherapeutics [48]. More-
+over, the combination of different treatment modalities can attack
+cancer cells via multiple pathways simultaneously, reducing the likeli-
+hood of developing resistance (Fig. 2).
+Accumulating preclinical evidence underscores the efficacy of
+diverse nanoplatforms in enhancing cancer therapy. Through precise
+targeting, improved pharmacokinetics, and reduced systemic toxicity,
+these platforms demonstrate significant therapeutic potential across
+various tumor models, offering a robust foundation for their potential
+clinical application. For instance, mitochondria-targeting nanoparticles
+enhance PDT efficacy in breast cancer by conserving local oxygen within
+tumors. Conjugating 5-aminolevulinic acid to triphenylphosphine and
+coating with folic acid enables precise mitochondrial delivery. In BALB/
+c mice with MCF-7 xenografts, these nanoparticles improve PDT effec-
+tiveness, confirmed by pharmacokinetic and distribution studies,
+underscoring their potential to optimize PDT under anoxic conditions
+[49].
+In
+addition,
+macrophage
+membrane-coated,
+biodegradable
+camptothecin
+nanoprodrugs
+enhanced
+tumor
+accumulation
+and
+Fig. 2. Nanomaterial-driven enhancements in synergistic cancer therapies. Nanomaterials enhance the synergy of combined cancer therapies through targeted
+ligand modification, efficient drug packaging, TME regulation, co-delivery capacity, reduction of drug resistance and induction of ICD. By engineering nanoparticles
+to specifically target cancer cells with apoptosis-inducing ligands and deliver multiple therapeutic agents directly to the tumor site, these strategies reduce drug
+resistance and improve treatment efficacy. Additionally, nanoparticles facilitate the induction of ICD and precisely regulate the TME. These approaches optimize
+local conditions for therapies such as PDT and chemotherapy, bolstering the immune response and disrupting immunosuppressive barriers within the TME,
+significantly enhancing therapeutic outcomes.
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+4 
+suppressed breast cancer growth and metastasis in preclinical murine
+models. Leveraging macrophage cloaking and polymer conjugation, this
+bioadhesive nanoparticle formulation showed high tumor specificity,
+improved pharmacokinetics, and minimal systemic toxicity, under-
+scoring its potential to improve cancer therapeutic efficacy [50].
+Moreover,
+in
+preclinical
+models
+of
+colorectal
+cancer,
+ALKBH5
+mRNA-loaded exosome-liposome hybrid nanoparticles with folic acid
+modification significantly inhibited tumor progression by modulating
+the ALKBH5/JMJD8/PKM2 axis and reducing glycolysis. This nano-
+particle system, tested in colitis-associated tumor models, effectively
+decreased tumorigenesis, demonstrating the therapeutic potential of
+targeting m6A modifications for colorectal cancer treatment [51].
+Similarly, in an orthotopic osteosarcoma murine model, keratin nano-
+particles co-encapsulating Chlorin e6 (Ce6) and PTX achieved a 78 %
+tumor reduction with combined photodynamic and chemotherapy
+significantly outperforming PTX monotherapy’s 32 % reduction. These
+optimized parameters for light delivery, dosing, and treatment sched-
+uling demonstrate the efficacy of nanoplatform-based combination
+therapy in osteosarcoma, advancing its potential for clinical translation
+[52]. Notably, glycol chitosan nanoparticles (CNPs) showed varied ef-
+ficacy across pancreatic tumor models, highlighting the impact of TME
+differences on nanoparticle accumulation. Using non-invasive imaging,
+CNP targeting efficiency was assessed in BxPC3, PDC, and PDX models,
+revealing that vessel density, collagen, and hyaluronic acid content
+influenced CNP delivery. PDX models reflected inter-patient TME het-
+erogeneity, suggesting they may better predict clinical permeation and
+retention
+effects,
+providing
+critical
+insights
+for
+personalized
+nanoparticle-based
+cancer
+therapies
+[53].
+Collectively,
+nanomaterial-based systems represent a transformative approach in
+cancer therapy, enhancing the precision, efficacy, and synergy of
+combinative
+treatments.
+By
+enabling
+targeted
+delivery,
+co-encapsulation of therapeutic agents, modulation of the TME, and
+induction of ICD, these nanosystems address critical limitations of
+conventional therapies. Their multi-modal functionality offers a prom-
+ising avenue to overcome drug resistance, potentially leading to more
+effective and durable anticancer responses.
+4. Enhancing the synergistic effect of PDT and immunotherapy
+with nanotherapeutic platforms
+4.1. Organic-based nanomaterials
+Organic nanoparticle-based PDT has recently been shown to signif-
+icantly increase the efficacy of immunotherapy in cancer treatment. For
+instance, graphdiyne oxide (GDYO) used in PDT increases the mechan-
+ical stiffness of oral squamous cell carcinoma cells, enhancing CTL re-
+sponses and inflammatory cytokine production [54]. Additionally, a
+charge-reversal polymer nano-modulator (SPDMC N), designed for
+PDT, exploits an acidic TME to enhance tumor penetration and release
+the
+immunomodulator
+demethylcantharidin.
+Upon
+NIR
+photo-
+irradiation, SPDMC N facilitates tumor ablation and DC maturation
+while demethylcantharidin modulates the CTL/Treg ratio, significantly
+inhibiting tumor growth and metastasis [55].
+4.2. Hybrid organic-inorganic nanomaterials
+Similarly, various types of hybrid organic-inorganic nanomaterials
+have been developed to enhance PDT efficacy, which in turn amplifies
+the effectiveness of immunotherapy. For instance, a novel immuno-
+therapeutic nanobooster, C9SN, combines a glutaminase inhibitor with
+Ce6 to potentiate PDT against tumors. By inhibiting glutamine meta-
+bolism, C9SN prevents glutathione from neutralizing ROS, enhancing
+cell death and ICD effects. This dual-action not only promotes DC
+maturation and CTL activation but also repolarizes M2-type macro-
+phages to M1-type, effectively targeting both primary and distant tu-
+mors [56]. Similarly, polyethylenimine hybrid thin shell hollow
+mesoporous silica nanoparticles (THMSNs), encapsulating Ce6, syner-
+gize photodynamic and immunotherapy. Enhancing cellular uptake and
+endosomal escape, these nanoparticles increase PDT efficiency, facili-
+tating DC maturation and robust CD8+ T cell activation [36]. Interest-
+ingly,
+a
+nuclear-targeted
+photodynamic
+nanostrategy
+using
+mSiO2-Ion@Ce6-NLS nanoparticles enhances intratumoral enrichment
+and directs therapy to the nucleus. This approach triggers ICD and ac-
+tivates macrophages and DCs, facilitating CD8+ T-cell recruitment and
+strengthening antitumor immunity [57].
+4.3. MOF-based nanomaterials
+MOFs are being employed to improve the synergistic effects of PDT
+and
+immunotherapy.
+Notably,
+a
+metal-organic
+frameworks-based
+nanoagonist, DZ@A7, is engineered for tumor-specific, NIR light-
+enhanced delivery, activating the cGAS-STING pathway with mini-
+mized off-target effects. Under NIR irradiation, it generates ROS, re-
+leases mitochondrial DNA, and triggers zinc ion overload, enhancing
+cGAS activity and boosting DC maturation and T cell infiltration [58].
+Additionally, copper (II) metalated MOF nanosheets enhanced with
+platinum nanoparticles and folate (Cu-TCPP(Al)-Pt-FA) deliver targeted,
+dual-enhanced PDT and mitigate tumor hypoxia. This nanomedicine
+exploits copper’s GSH depletion and platinum’s catalase-like activity,
+boosting ROS levels for effective PDT and triggering ICD. The approach
+not only amplifies oxidative stress and systemic immune response but
+also facilitates the transition of M2 to M1 macrophages, enhancing CTL
+infiltration and demonstrating significant antitumor effects [59].
+4.4. Cell- and bacteria-hitchhiking nanomaterials
+Cell- and bacteria-hitchhiking nanomaterials offer a versatile
+approach for enhancing combination cancer therapies, enabling precise
+targeting and synergistic activation of phototherapy, chemotherapy, and
+immunotherapy within the TME. For instance, red blood cell (RBC)-
+mimicking nanoparticles (M@AP) enhance tumoral photodynamic-
+immunotherapy by combining RBC membrane encapsulation with
+aggregation-induced emission luminogen (AIEgen) for ROS generation
+and Poly(I) as an immune stimulant. Enriched in tumors via the
+enhanced permeability and retention effect and in the spleen through
+RBC homing, M@AP nanoparticles induce ROS under light irradiation,
+releasing tumor antigens and stimulating immune responses [60].
+Notably, cancer cell membrane-coated nanoparticles (CCMV/LTNPs)
+enhance photoimmunotherapy by integrating PDT with TLR7 agonists
+and tumor antigens. These biomimetic nanoparticles specifically kill
+tumor cells via ROS generation from PDT, while the immune adjuvant
+and cancer cell membrane-derived antigens activate host immune re-
+sponses to target residual cells [61]. Additionally, an E. coli Nissle
+1917-based biohybrid (EcN@TTVP) loaded with aggregation-induced
+emission
+photosensitizer
+(AIE-PS)
+enhances
+Cerenkov
+radiation-induced PDT and activates anti-tumor immunity. Targeting
+tumors with both EcN@TTVP and radiopharmaceutical 18F-FDG trig-
+gers ICD and DC maturation, priming CTLs [62]. This synergistic
+approach achieves effective tumor remission with minimal toxicity,
+presenting a promising method for deep-seated tumor treatment.
+4.5. Functional composite nanosystems
+Recently, multifunctional composite nanosystems have been devel-
+oped to boost cooperative enhancement in PDT and immunotherapy.
+ATO/PpIX-SMN nanocubes enhance protoporphyrin IX-mediated PDT in
+TNBC by facilitating ICD and downregulating Wnt/β-catenin signaling.
+Combined with anti-PD-L1, these nanocubes promote DC maturation,
+increase CTL infiltration, and reduce Tregs, effectively improving
+treatment efficacy against primary and distal tumors [63]. Similarly, the
+MB@MSP nanocarrier, integrating a D-peptide antagonist and methy-
+lene blue within a TME-responsive framework, utilizes MMP-2 and
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+5 
+glutathione sensitivity for controlled drug release. This platform en-
+hances tumor penetration, facilitates immune checkpoint blockade
+(ICB), and strengthens PDT-induced CTL responses [64]. Notably,
+Cu3P/1-MT
+nanocomposites
+combine
+PDT
+and
+immunotherapy,
+enhancing tumor ablation and ICD while modulating the immunosup-
+pressive microenvironment. These nanocomposites effectively promote
+DC maturation and CD8+ T cell infiltration, and reduce Tregs and M2
+macrophages,
+significantly
+amplifying
+antitumor
+responses
+in
+photothermal-immunotherapy contexts [65].
+Importantly, various drugs, small molecule compounds, and antigens
+are loaded into composite nanosystems to enhance the combined effects
+of PDT and immunotherapy. For instance, a self-assembled nano-
+medicine, CCXB, combines Ce6 and celecoxib to deliver PDT that
+effectively reduces breast cancer cell proliferation and mitigates
+immunosuppressive environments. This approach enhances ICD, lowers
+PGE2 synthesis, and adjusts T cell populations, significantly amplifying
+in vivo antitumor immunity and reducing metastasis [66]. Similarly, a
+supramolecular prodrug nanoplatform co-delivers a photosensitizer and
+a bromodomain-containing protein 4 inhibitor (BRD4i) JQ1, targeting
+pancreatic cancer. The nanoparticles, formed by host-guest complexa-
+tion
+using
+cyclodextrin-grafted
+hyaluronic
+acid,
+enhance
+PDT’s
+immunogenicity and limit immune evasion by modulating key glycol-
+ysis and evasion regulators [67]. Likewise, a chimeric peptide,
+PpIX-1MT, forms nanoparticles that deliver a photosensitizer PpIX and
+an ICI 1 MT to tumors, utilizing a caspase-responsive linkage for
+cascaded drug release. Upon light irradiation, these nanoparticles
+generate ROS, inducing apoptosis and tumor antigen production, fol-
+lowed by enhanced immune response through the release of 1 MT. This
+innovative approach effectively activates CD8+ T cells, significantly
+inhibiting primary and metastatic tumors [68]. In addition, the devel-
+opment of PheoA-PEI/OVA nanoparticles, which incorporate a photo-
+sensitizer and a model antigen, enhances antigen-specific CD8+ T cell
+responses
+via
+photochemical
+internalization.
+These
+nanoparticles
+improve endocytosis, ROS generation, and cytosolic antigen release in
+DCs upon light stimulation, leading to increased T cell activation and
+notable tumor growth inhibition in vivo (Table 1) (Fig. 3) [69].
+Nanotherapeutic platforms markedly enhance the synergy of PDT
+and immunotherapy by facilitating targeted delivery, modulating im-
+mune responses, and amplifying antitumor efficacy. Leveraging a vari-
+ety of nanomaterials—from organic and hybrid structures to MOFs and
+functional composites—these systems induce ICD, reprogram the TME,
+and activate adaptive immunity. This integrative approach represents a
+Table 1
+Nanoplatforms for enhancing the synergistic effect of PDT and immunotherapy.
+Nanoplatform
+Composition
+Mechanisms
+Immune effects
+Outcomes
+Ref.
+GDYO
+Graphdiyne oxide
+Shifting mechanical forces of
+OSCC cells
+T-cell cytotoxicity↑,
+inflammatory cytokine
+secretion (IFN-γand TNF-α)↑
+Enhancing antitumor
+immunotherapeutic effect
+[54]
+SPDMCN
+Demethylcantharidin,
+photodynamic polymer
+Inhibiting PP2A activity,
+enhancing tumor penetration
+DC maturation↑, Tregs
+differentiation↓
+Inhibiting primary and distant tumors
+in living mice
+[55]
+C9SN
+C968, Chlorin e6 (Ce6)
+Amplifying intracellular oxidative
+stress, remodeling ITM by
+blocking glutamine metabolism
+DC maturation↑, recruiting
+and activating CTLs↑, M2-
+type TAMs↓, M1-type TAMs↑
+Suppressing primary and distant
+tumors
+[56]
+Ce6@THMSNs
+Ce6, polyethylenimine (PEI), thin
+shell hollow mesoporous silica NPs
+(THMSNs)
+Releasing tumor-associated
+antigens
+DC maturation↑, CD8+ CTLs
+activation↑
+Obliterating primary tumors and
+inducing persistent tumor-specific
+immune responses, preventing distant
+metastasis
+[184]
+mSiO2-Ion@Ce6-
+NLS
+Hydrogen Ce6, ionic liquid silicon
+(Ion), nuclear localization signal
+peptide (NLS: PKKKRKV), mSiO2
+Facilitating release of damaged
+double-stranded DNA from tumor
+cells, stimulating interferon gene
+signaling
+Activating macrophages↑,
+recruiting CD8+ T-cells↑
+Inhibiting tumor growth and
+recurrence
+[57]
+DZ@A7
+cGAS-STING nanoagonist, metal-
+organic frameworks
+Generating mitochondria-targeted
+ROS, releasing mtDNA, inhibiting
+repair of nuclear DNA
+Activating cGAS-STING
+pathway↑, DC maturation↑,
+CTLs infiltration↑
+Eradicating primary tumor,
+establishing a long-term anti-tumor
+immunity, suppressing tumor
+metastasis
+[58]
+Cu-TCPP(Al)-Pt-
+FA
+Cu-TCPP(Al), Pt NPs, folate
+Enhancing ROS concentration for
+dual-enhanced PDT, amplifying
+oxidative stress
+ICD↑, stimulating APCs↑,
+CTLs infiltration↑, M2
+macrophage↓, M1
+phenotype↑
+Enhancing antitumor effect of PDT
+and immunotherapy
+[59]
+ATO/PpIX-SMN
+Atovaquone (ATO), protoporphyrin
+IX (PpIX)
+Enhancing PpIX-mediated PDT,
+downregulating Wnt/β-catenin
+signaling
+DC maturation↑, CTLs
+infiltration↑, reducing
+Tregs↓
+Treating primary and distal tumors
+[63]
+MB@MSP
+PDPPA-1, methylene blue
+Blocking immune checkpoint
+Suppression of tumor
+metastasis effect of CD8+
+CTLs↑
+Enhancing therapeutic efficacy of
+combined treatment of metastatic
+tumors
+[64]
+Cu3P/1-MT
+Indoleamine 2, 3-dioxygenase-1
+inhibitors (1-MT), copper (I)
+phosphide
+Promoting TAAs release,
+inhibiting the indoleamine 2, 3-
+dioxygenase-1
+DC maturation↑, antigen
+presentation↑, CD8+ T cells
+infiltration↑, Tregs and M2
+macrophages↓
+Amplifying the antitumor therapeutic
+efficiency
+[65]
+CCXB
+Ce6, celecoxib (CXB)
+Triggering stronger PDT,
+mediating cyclooxygenase 2
+(COX-2) inhibition to decrease
+synthesis of prostaglandin E2
+(PGE2)
+CTLs↑, Tregs↓
+Inhibiting the metastasis of breast
+cancer
+[66]
+HCJSP
+JQ1, photosensitizer, HA-CD,
+adamantine-conjugated
+heterodimers of pyropheophorbide
+a (PPa)
+Recognizing highly expressed
+CD44 on the surface of pancreatic
+tumors, inhibiting expression of c-
+Myc and PD-L1, ICD
+CTLs infiltration↑, activated
+T cells↑
+Enhancing photoimmunotherapy of
+the pancreatic cancer
+[67]
+PpIX-1MT-Asp-
+Glu-Val-Asp
+(DEVD)
+PpIX, 1 MT, caspase-responsive
+peptide sequence DEVD
+Producing ROS, inducing
+apoptosis of cancer cells,
+enhancing caspase-3 and
+production of tumor antigens,
+Activating CD8+ T cells↑
+Inhibiting both primary and lung
+metastasis tumor
+[68]
+PheoA-PEI/OVA
+Polyethylenimine PheoA-PEI,
+ovalbumin (OVA)
+Increasing ROS, enhancing
+cytosolic antigen release
+CD3+CD8+ T lymphocytes↑
+Inhibiting E.G7 tumor growth in mice
+[69]
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+6 
+Fig. 3. Multifaceted role of nanomaterials in enhancing PDT and Immunotherapy synergy. Nanomaterials serve as a pivotal component in advancing the
+synergistic effects of PDT and immunotherapy. Organic-based nanomaterials such as SPDMCN facilitates the generation of singlet oxygen, pivotal in activating
+downstream immune responses, including the modulation of the CTL/Treg ratio favorable for immune activation. Hybrid organic-inorganic nanomaterial C9SN
+target glutamine metabolism pathways, escalating ROS production, and further enhancing the immunogenic environment within tumors. MOF-based nanomaterial
+Cu-TCPP(Al)-Pt-FA catalyzes the conversion of intratumoral hydrogen peroxide to oxygen, mitigating hypoxia and boosting ROS levels to potentiate immune re-
+sponses and PDT efficacy. Functional composite nanosystems, incorporating agents like ATO and PplX, directly impact signaling pathways such as Wnt5a and PLC,
+crucial for sustaining cellular immune responses and enhancing the overall antitumor efficacy. Through these diverse mechanisms, nanomaterials optimize both TME
+manipulation and immune system engagement, substantially improving the combined therapeutic outcomes of PDT and immunotherapy.
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+7 
+promising advancement for combinatorial cancer therapies, providing a
+versatile and potent framework for future treatment strategies.
+5. Enhancing the synergistic effect of PTT and immunotherapy
+with nanotherapeutic platforms
+5.1. Organic-based nanomaterials
+Organic-based nanomaterials are used to enhance the synergistic
+effect of PTT and immunotherapy due to their biocompatibility, biode-
+gradability, and the ease with which they can be functionalized with
+various therapeutic agents, allowing for precise tumor targeting, effi-
+cient heat generation, and robust immune system activation. For
+instance, a novel nanosystem utilizing reduced graphene oxide loaded
+with mitoxantrone and SB-431542, and activated by NIR laser, syner-
+gizes PTT, chemotherapy, and immunotherapy. This approach increases
+cytotoxic CD8+ T cell infiltration while reducing Tregs, offering a
+promising strategy for metastatic cancer therapy [70]. Additionally,
+polydopamine nanoparticles (PDMN-JQ1) provide a novel, multifaceted
+approach for TNBC treatment by synergizing targeted therapy, PTT, and
+immunotherapy. Loaded with JQ1, PDMNs down-regulate PD-L1 and
+inhibit the BRD4-c-MYC axis, enhancing CTL activation and inducing a
+durable
+immune-memory
+effect
+[71].
+Interestingly,
+cuttlefish
+ink-derived nanoparticles (CINPs), rich in melanin and biocompatible
+components, synergize PTT and immunotherapy. Upon NIR irradiation,
+CINPs efficiently convert to heat, promoting tumor cell apoptosis and
+antigen
+release.
+Concurrently,
+these
+nanoparticles
+reprogram
+tumor-associated macrophages from an M2-like suppressive to an
+M1-like antitumor phenotype, enhancing CTL recruitment and activity
+[72].
+5.2. Hybrid organic-inorganic nanomaterials
+Hybrid organic-inorganic nanomaterials are employed to enhance
+the synergistic effect of PTT and immunotherapy due to their ability to
+integrate the high thermal conversion efficiency and stability of inor-
+ganic components with the biocompatibility and functional adaptability
+of organic materials, leading to precise tumor targeting, effective heat
+production, and strong immune system activation. A titanium carbide
+MXene-based nanoplatform linked with Mn2+-contained ovalbumin
+activates both innate and adaptive immunities upon NIR laser irradia-
+tion. This activation leads to efficient antigen presentation and DC
+maturation, significantly enhancing CTL infiltration and antitumor ef-
+ficacy [73]. In addition, a NIR responsive nanoenzyme, PB-Mn/OVA NE,
+was developed by doping manganese into Prussian blue nanoparticles
+templated with ovalbumin. This nanoenzyme alleviates tumor hypoxia,
+enhances photothermal tumor ablation, and triggers ICD. It effectively
+activates the cGAS-STING pathway, enhancing DC function and boost-
+ing cytotoxic and memory T cell responses, thereby offering a compre-
+hensive strategy for photothermal and immunotherapy of tumors [74].
+Moreover, a photothermally activatable polymeric pro-nanoagonist
+(APNA) uses NIR-II light for precise spatiotemporal control in cancer
+immunotherapy. This nanoparticle, constructed from a NIR-II semi-
+conducting transducer and an immunostimulant linked by a thermola-
+bile
+linker,
+triggers
+localized
+tumor
+ablation
+and
+releases
+the
+immunostimulant upon NIR-II irradiation. The result is enhanced cyto-
+toxic and helper T cell infiltration across distant tumors and organs,
+effectively inhibiting metastasis [75]. Notably, combining mesoporous
+organosilica nanoparticles loaded with Fe3+ and indocyanine green, and
+mild PTT efficiently induces oxidative cell death and DC activation in
+vitro. In vivo, it promotes T cell infiltration and robust adaptive im-
+munity, demonstrating significant potential in TNBC treatment without
+notable side effects [76].
+5.3. Metal-based nanomaterials
+Metal-based nanomaterials are used to enhance the combinative ef-
+fects of PTT and immunotherapy because their excellent light absorption
+and conversion efficiency allow for the effective generation of localized
+heat upon NIR irradiation, leading to precise tumor ablation and mini-
+mal damage to surrounding healthy tissues. For example, cerium oxide
+end-deposited gold nanorods (CEG) enhance NIR photoimmunotherapy
+by generating heat and ROS under NIR light, triggering ICD and boosting
+CTL infiltration in TNBC. When combined with PD-1 antibody, CEG
+reverses the immunosuppressive environment, amplifying the immune
+response and demonstrating effective synergy in TNBC treatment [77].
+Similarly,
+a
+supramolecular
+cationic
+gold
+nanorod
+combines
+CRISPR/Cas9-mediated PD-L1 disruption with NIR-II light-induced mild
+hyperthermia for enhanced ICB therapy. This dual-action nanoplatform
+triggers ICD and promotes dendritic-to-T cell conversion, enhancing CTL
+infiltration and reprogramming the TME [78]. Additionally, the
+Au@Pt-based nanosystem, conjugated with an MMP-activated peptide,
+enhances cancer treatment by combining PTT and immunotherapy. This
+dual-function nanosystem effectively delivers photothermal heat and a
+D-peptide antagonist of PD-L1, promoting robust tumor ablation and
+CTL activation [79]. Moreover, AuPtAg-GOx nanomodulators are engi-
+neered to enhance immune responsiveness by integrating mild PTT and
+glucose oxidase-induced starvation. Upon laser irradiation, these
+nanomodulators stimulate T cell activation and modulate the TME,
+while their nanozyme activity reduces hypoxia to boost overall treat-
+ment efficacy. When combined with PD-L1 antibodies, this multifunc-
+tional platform significantly amplifies antitumor effects, demonstrating
+a novel method to combat immunologically "cold" tumors through a
+synergistic approach [80].
+5.4. Cell- and bacteria-hitchhiking nanomaterials
+Interestingly, due to their inherent ability to selectively target tu-
+mors, deliver therapeutic agents, and uniquely interact with the TME,
+bacteria are now being engineered into composite nanosystems to
+significantly enhance therapeutic outcomes. An engineered microbial
+nanohybrid combining Escherichia coli with Cu2O nanoparticles targets
+colon tumors, converting to CuxS under high H2S conditions and
+exhibiting effective photothermal activity. This hybrid triggers ferrop-
+tosis and cuproptosis, reversing immunosuppression and enhancing DC
+and CD8+ T cell responses, particularly when paired with ICI, showing
+promise for precise photothermal-enhanced tumor therapy [81]. Simi-
+larly, decorating bacteria with triple immune nanoactivators, this
+approach
+employs
+polydopamine
+nanoparticles
+to
+conjugate
+tumor-specific antigens and checkpoint blocking antibodies on bacterial
+surfaces. Polydopamine facilitates photothermal macrophage repolari-
+zation,
+antigen-induced
+DC
+maturation,
+and
+checkpoint
+blockade-enhanced T cell activation, offering a multimodal, durable
+cancer immunotherapy platform with potent tumor-specific effects [82].
+Alongside bacterial systems, various cell membranes also serve as
+valuable carriers for nanomaterials in therapeutic applications. For
+instance, a biomimetic nanoparticle coated with a microglia membrane
+(BM@MnP-BSA-aPD-1) effectively crosses the blood-brain barrier to
+target the immunosuppressive TME in glioblastoma. Leveraging the
+membrane’s targeting capabilities, this nanoplatform combines metal-
+loimmunotherapy and PTT to activate interferon pathways, induce ICD,
+and inhibit PD-1/PD-L1 signaling, thereby revitalizing antitumor im-
+munity [83]. Similarly, hybrid cell-membrane-coated nanoparticles
+(Fe3O4-ICG@IRM), combining ovarian cancer cell and RBC membranes,
+offer precise targeting and prolonged circulation for ovarian cancer
+therapy. Using PTT, these biomimetic nanoparticles induce tumor an-
+tigen release, activating CD8+ T cells and reducing Foxp3+ Tregs. This
+synergistic approach enhances both primary and metastatic antitumor
+immune responses, showing promise for effective photothermal-
+immunotherapy in ovarian cancer [84].
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+8 
+5.5. Functional composite nanosystems
+Functional composite nanosystems enhance the synergistic effect of
+PTT and immunotherapy by integrating various therapeutic agents and
+functionalities into one platform, enabling precise targeting, controlled
+drug release, efficient heat generation, and robust immune activation,
+thereby improving treatment efficacy and minimizing side effects. For
+instance, multifunctional nanoparticles (GOP@aPD1) encapsulated
+with anti-PD1 antibodies, iron oxide, and perfluoropentane in a PLGA-
+PEG shell enhance melanoma treatment by synergizing PTT and
+immunotherapy. These nanoparticles specifically deliver anti-PD1 to the
+tumor site, enabling effective release and increased CD8+ T cell infil-
+tration, thereby activating the immune system within the TME [85].
+Similarly, a semiconducting polymeric nanoantagonist (ASPA), incor-
+porating a NIR photothermally activatable component and an adenosine
+A2A receptor antagonist, facilitates precise immunometabolic cancer
+therapy. Under NIR-II irradiation, ASPA promotes tumor ablation,
+triggers antagonist release to inhibit the immunosuppressive pathway,
+and enhances CTL function while reducing regulatory T cell activity
+[86]. In addition, a novel nanoimmunotherapy using Prussian blue
+Table 2
+Nanoplatforms for enhancing the synergistic effect of PTT and immunotherapy with nanotherapeutic platforms.
+Nanoplatform
+Composition
+Mechanisms
+Immune effects
+Outcomes
+Ref.
+rGO/MTX/SB
+Mitoxantrone (MTX), TGF-βinhibitor,
+reduced graphene oxide (rGO)
+Providing an immunogenic antigen
+source
+Infiltration of tumor-
+specific CTLs↑,
+infiltration of Tregs↓
+Destroying local primary tumors
+and inhibiting distant metastases
+in 4T1 mouse mammary tumor
+model
+[70]
+PDMN-JQ1
+JQ1, polydopamine nanoparticles
+(PDMNs)
+Down-regulating the expression of PD-
+L1, inhibiting the BRD4-c-MYC axis
+CTLs↑, immune-memory
+effect↑
+Inhibiting TNBC in mice
+[71]
+CINPs
+/
+Activating MAPK signaling pathway,
+exhibiting high photothermal effect
+Proportion of M1
+macrophages↑,
+recruitment of CTLs↑
+Reducing primary tumor growth
+and lung metastasis
+[72]
+Ti3C2-PEG-OVA-
+Mn2+(TPOM)
+Titanium carbide Mxene, Mn2+-
+contained ovalbumin (OVA)
+Activating innate immunity via the
+cGAS-stimulator of interferon genes
+signaling pathway
+DC maturation↑, CTLs
+infiltration ↑
+Enhancing antimetastasis tumor
+therapy
+[73]
+PB-Mn/OVA NE
+OVA, Prussian blue (PB), manganese
+(Mn)
+Producing oxygen to alleviate tumor
+hypoxic microenvironment, activating
+the cGAS-STING pathway
+DC maturation and
+antigen cross-
+presentation ability↑,
+CTLs↑, memory T
+lymphocytes↑
+Inhibiting tumors
+[74]
+APNA
+Immunostimulant, NIR-II
+semiconducting transducer
+Mediating photothermal effect
+CTLs↑, helper T cell
+infiltration in distal
+tumor, lung and liver↑
+Inhibiting cancer metastasis
+[75]
+IMOFH
+Mesoporous organosilica
+nanoparticles (MONs), Fe3+, HA, ICG
+Resulting in Fe3+-mediated oxidative
+cell death, enhancing DAMPs
+Maturation of DCs↑,
+infiltration of CD8+ T
+cells↑
+Eliminatig TNBC tumors
+[76]
+CEG
+Cerium oxide (CeO2), gold
+Releasing heat, forming ROS,
+combining with PD-1 antibody
+CTLs infiltration↑
+Exhibiting anti-TNBC effect in
+xenograft mouse models
+[77]
+Supramolecular
+cationic gold
+nanorod
+CRISPR/Cas9 targeting PD-L1,
+supramolecular cationic gold nanorod
+Inducing ICD and gene expression of
+Cas9
+Conversion of DCs to T
+cells↑, infiltration of
+CTLs↑
+Inhibiting the activity of primary
+and metastatic tumors
+[78]
+Au@Pt-LMDP
+Au@Pt, peptide (LyP-1-PLGVRG-
+DPPA-1, LMDP)
+Mediating photothermal effect,
+blocking PD-L1
+Stimulating activation of
+CTLs↑
+Eliminating primary tumors,
+inhibiting growth of distal
+tumors and alleviating tumor
+metastasis
+[79]
+AuPtAg-GOx
+GOx, AuPtAg
+Suppressing the production of heat
+shock proteins, improving the GOx
+activity, combining with PD-L1
+antibody
+CTLs↑, immunogenic
+"cold" TME↓
+Killing cancer cells
+[80]
+GOP@aPD1
+Anti-PD1 antibody, iron oxide,
+perfluoropentane, poly ethylene
+glycol (PEG), Gly-Arg-Gly-Asp-Ser
+(GRGDS) peptides, lactic-co-glycolic
+acid (PLGA) shell
+Blocking PD1
+CD8+ T cell infiltration↑
+Enhancing antitumor efficacy
+[85]
+ASPA
+Vipadenant, NIR-II light-absorbing
+semiconducting polymer
+Inducing tumor thermal ablation,
+blocking the immunosuppressive
+adenosinergic pathway
+CTLs functions↑, Tregs
+activities↓
+Inhibiting primary tumor and
+pulmonary metastasis, forming
+long-term immunological
+memory
+[86]
+PBNP-PTT with
+CD137
+Prussian blue nanoparticle (PBNP),
+anti-CD137 monoclonal antibody
+Upregulating markers associated with
+antigen presentation and immune cell
+co-stimulation
+DCs↑, tumor-infiltrating
+CD8+ T cells↑, CD4+and
+CD8+ T cell memory↑
+Eliminating primary melanoma
+tumors in vivo, yielding long-
+term tumor-free survival.
+[87]
+AuNC-CpG-JQ1
+Gold nanocage (AuNC), CpG, JQ1
+Inducing tumor antigen production via
+photothermal ablation, amplifying
+immune responses, suppressing PD-L1
+DCs↑, primed T cells↑,
+CTLs infiltration↑,
+repolarizing TAMs from
+M2 to M1 phenotype↑
+Exhibiting a high therapeutic
+efficacy in the melanoma-
+bearing mice
+[88]
+E. coli@Cu2O hybrid
+E. coli, Cu2O nanoparticles
+Convert Cu2O to CuxS by consuming
+the endogenous H2S, inactivating
+glutathione peroxidase 4 and
+aggregating dihydrolipoamide S-
+acetyltransferase
+Maturation of DCs↑,
+activating T cells↑
+Achieving tumor-specific
+photothermal-enhanced
+ferroptosis/cuproptosis and
+immunosuppression reversion
+[81]
+Triple immune
+nanoactivators
+decorated with
+bacteria
+Polydopamine nanoparticles, tumor-
+specific antigens, checkpoint blocking
+antibodies,
+/
+Pro-inflammatory
+phenotype TAMs↑,
+maturation of DCs↑
+Achieving potent antitumor
+effects in two antigen-
+overexpressing tumor models
+[82]
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+9 
+nanoparticle-based PTT (PBNP-PTT) and systemic anti-CD137 mono-
+clonal antibody enhances melanoma treatment. PBNP-PTT induces ICD
+and boosts antigen presentation, achieving tumor-free survival and
+reducing secondary tumor growth in vivo [87]. Moreover, an innovative
+in situ vaccination strategy utilizes gold nanocage-based photothermal
+effects, CpG oligodeoxynucleotides, and JQ1 to counteract the immu-
+nosuppressive TME. This approach effectively activates DCs, primes T
+cells, enhances CTL infiltration, and repolarizes macrophages towards
+an anti-tumor phenotype (Table 2) (Fig. 4) [88].
+Nanotherapeutic platforms combining PTT and immunotherapy
+offer a transformative approach to cancer treatment, achieving precise
+tumor ablation, immune activation, and modulation of the TME. These
+systems—spanning organic, hybrid, metal-based, and bacterial com-
+posite nanosystems—efficiently harness thermal effects to enhance CTL
+responses, promote immune memory, and convert immunologically
+"cold" tumors into responsive ones. The integration of PTT-specific
+mechanisms provides a unique pathway to potent, adaptable cancer
+immunotherapy, demonstrating promise for both localized and systemic
+tumor control.
+6. Enhancing the synergistic effect of thermotherapy and
+immunotherapy with nanotherapeutic platforms
+In addition to PTT, various nanomaterials have been utilized to
+enhance the combined effects of thermotherapy and immunotherapy.
+For instance, a novel metal-organic framework nanoamplifier facilitates
+microwave-enhanced thermotherapy and immunotherapy by targeting
+mitochondria to release nitric oxide and programmatically upregulating
+HSP70. This multifaceted approach activates CTLs, enhancing antitumor
+immunotherapy with a significant tumor inhibition rate [89]. Addi-
+tionally, biodegradable poly (beta-amino ester) nanoparticles encapsu-
+lating mRNA for co-stimulatory molecules and cytokines, combined
+Fig. 4. Nanomaterial-enhanced PTT as a catalyst for immunotherapy synergy. Nanomaterials critically enhance the synergistic effects of PTT and immuno-
+therapy across multiple platforms. Metal-based nanomaterial CEG, combined with PD-1 blockade therapy, amplify the immune response and enhance treatment
+efficacy against TNBC through the generation of ROS and induction of ICD. Organic-based nanomaterial PDMN-JQ1, carrying c-Myc targeted therapies like JQ1,
+modulate immunological profiles by reducing PD-L1 expression, thereby potentiating immune checkpoint therapy. Hybrid organic-inorganic nanomaterial PB-Mn/
+OVA NE enhances anti-tumor effects by reversing hypoxia within the TME and activating the cGAS-STING pathway, leading to enhanced ICD and improved anti-
+tumor immunity. Additionally, functional composite nanosystems such as Vipadenant-carried ASPA platform modulate immunosuppressive pathways, increasing
+the cytolytic activity of CTLs while Treg interference. Collectively, these nanomaterials enable a multifaceted approach to cancer treatment that integrates PTT with
+advanced immunotherapy strategies, significantly increasing the therapeutic potential against various cancer types.
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+10 
+with a thermoresponsive gel, locally reprogram the TME. This strategy
+enhances lymphocyte recruitment and activation, synergizing with ICB
+to induce significant tumor regression and resistance to rechallenge
+[90]. Notably, a novel nanocatalytic modality, MNP-RGD-TPP, har-
+nesses magnetic hyperthermia to target tumor-associated bacteria,
+inducing oxidative damage via a Fenton reaction. This activity not only
+disrupts bacteria, releasing lipopolysaccharides that polarize macro-
+phages and mature DCs, but also promotes a robust immune response
+against tumors [91]. Moreover, ferrimagnetic vortex-domain iron oxide
+nanorings (FVIO) mediate mild magnetic hyperthermia to enhance ICD
+in breast cancer cells, marked by increased calreticulin expression and
+subsequent phagocytosis by the immune system. This strategy boosts
+CTL infiltration and synergizes with PD-L1 checkpoint blockade,
+reducing metastasis and suppressing MDSCs [92]. Nanomaterial-based
+thermotherapy enhances immunotherapy by inducing immune activa-
+tion, modulating the TME, and increasing checkpoint blockade sensi-
+tivity. These versatile approaches provide a powerful strategy for
+achieving robust, localized, and systemic antitumor effects.
+7. Enhancing the synergistic effect of chemotherapy and
+immunotherapy with nanotherapeutic platforms
+7.1. Organic-based nanomaterials
+Organic-based nanomaterials are effective in enhancing the combi-
+native effect of chemotherapy and immunotherapy due to their ability to
+be precisely engineered for targeted drug delivery, controlled release in
+response to the TME, and capacity to modify surface functionalities for
+improved biocompatibility and immune system engagement. For
+instance, a novel triblock copolymeric micelle (NanoPCPT + PIMDQ)
+efficiently delivers chemotherapeutic and immunotherapeutic agents
+directly to tumors, enabling deep penetration and controlled release
+responsive to the tumor’s acidic and reductive environment. This
+strategy synergistically activates DCs, enhances CTL infiltration, and
+mitigates regulatory T cell and M2 macrophage immunosuppression,
+promisingly advancing chemoimmunotherapy effectiveness [93]. Simi-
+larly,
+amphiphilic
+block
+copolymers,
+TfR-T12-PEG-PLGA
+and
+TATH7-PEG-PLGA,
+self-assemble
+into
+nanocomposite
+micelles
+to
+co-deliver PTX and imiquimod, targeting glioma via TfR-mediated
+Blood-Brain Barrier penetration and pH-sensitive mechanisms. These
+micelles modulate the TME, notably enhancing M1 polarization of TAMs
+and CD8+ T cell activity, contributing to effective glioma treatment
+through a synergistic chemotherapy and immunotherapy approach
+[94]. In addition, cisplatin-loaded poly (l-glutamic acid)-graft-methoxy
+poly (ethylene glycol) nanoparticles (CDDP-NPs) enhance antitumor
+CD8+ T cell responses in tumor-bearing mice by maintaining persistent
+tumor MHC-I overexpression, facilitating MHC-I-TCR interaction, and
+activating TCR signaling. Combined with agonistic OX40 antibody,
+CDDP-NPs significantly suppress tumor growth, underscoring their po-
+tential
+in
+synergistic
+cancer
+immunotherapy
+[95].
+Moreover,
+a
+TME-activable prodrug nanoparticle effectively co-delivers a PD-L1
+antagonist
+and
+doxorubicin
+(DOX)
+for
+enhanced
+chemo-
+immunotherapy in solid tumors. This nanoparticle, featuring PEGylated
+DOX and a D-peptide antagonist, promotes deep tumor penetration and
+releases therapeutic agents in situ. It simultaneously kills tumor cells,
+enhances CTL infiltration and reduces Tregs [96]. Furthermore, a novel
+nanovaccine formulation, employing redox-responsive polymer micelles
+encapsulating DOX and TLR7/8 agonist R848, triggers ICD and initiates
+an immune response. Combined with A2AR antagonist SCH58261, this
+approach suppresses the immunosuppressive adenosinergic pathway,
+enhances NK and CD8+ T cell activation, and inhibits regulatory T cell
+proliferation, thereby generating a robust antitumor immune response
+[97]. Significantly, a pH-responsive polyhydralazine nanoparticle
+(PHDZ/BTZ) effectively delivers bortezomib (BTZ) into tumors, utilizing
+hydralazine-induced vessel dilation to overcome transport barriers
+within the TME. Triggered release in acidic conditions enhances BTZ
+accumulation and efficacy, significantly reducing tumor growth and
+lung metastasis while minimizing side effects. The nanoparticle also
+promotes ICD, boosting CTL infiltration and proinflammatory cytokine
+secretion [98]. Similarly, the pH-responsive PAG/BTZ nanocarrier,
+modified with aminoguanidine, enhances BTZ delivery, promoting ICD
+and antigen uptake by DCs. This activation leads to increased DC
+maturation and CTL infiltration, significantly boosting antitumor im-
+mune responses and synergizing effectively with ICB [99].
+In addition to the above polymer-based materials, various types of
+organic-based nanocarriers have been developed to deliver chemother-
+apeutic agents and enhance immunotherapeutic outcomes. For instance,
+sialic acid-functionalized liposomes, coloaded with decitabine and tri-
+clabendazole, target tumor sites to enhance pyroptosis and CD8+ T cell
+infiltration by upregulating pyroptosis-related proteins and demethy-
+lating mRNA [100]. In addition, pH-responsive nanomicelles loaded
+with PTX, AMD3100, and a PD-1/PD-L1 inhibitor enhance the targeting
+and therapeutic outcomes in TNBC by modulating the TME. This
+configuration significantly reduces tumor growth and metastasis, re-
+programs immunosuppressive conditions, and boosts CD8+ T cell infil-
+tration, thereby revitalizing ICI effectiveness [101]. Similarly, an
+amphiphilic peptide micelle system (Co-LMs) was designed for targeted
+co-delivery of CpG oligodeoxynucleotides and DOX to breast cancer
+tumors, providing pH and redox-sensitive drug release. Demonstrating
+enhanced efficacy against TNBC, Co-LMs significantly increased CTL
+activation
+and
+reduced
+metastasis
+[102].
+Moreover,
+chemotherapy-induced
+tumor
+RNA
+nanoparticles
+enhance
+cancer
+immunotherapy by promoting DC maturation and boosting T cell re-
+sponses. These nanoparticles, formed from RNA extracted from
+chemotherapy-treated cancer cells, improve ICB efficacy by increasing
+CD8+ T cell to Treg ratios and facilitating T cell infiltration within tu-
+mors. Interestingly, a novel carrier-free nanoparticle integrates DOX,
+melittin, and anti-TOX siRNA to modulate T-cell activity in cancer
+therapy. This multifunctional system enhances ICD and CD8+ T-cell
+infiltration while reducing T-cell exhaustion, effectively converting
+"cold" tumors into "hot" ones [103].
+7.2. Hybrid organic-inorganic nanomaterials
+Notably, various types of DOX-loaded organic-inorganic nanomaterials
+are utilized to enhance the efficacy of chemo-immunotherapy. Periodic
+mesoporous organosilica nanoparticles functionalized with TRAIL and
+loaded with DOX enhance antitumor immunity by targeting cancer cells
+and activating DCs. This dual-functional approach triggers ICD, boosts T
+cell activation, and demonstrates superior efficacy in suppressing tumor
+growth in a breast cancer mouse model, offering a promising strategy for
+targeted immunotherapy [104]. Similarly, DOX-loaded silica nanocarriers
+(DOX@HMSPHs)
+with
+hyaluronidase
+functionalization
+enhance
+chemo-immunotherapy by improving tumor drug permeability and
+inducing ICD. These nanocarriers degrade hyaluronic acid in the tumor
+matrix, facilitating controlled DOX release and boosting CTL activity
+[105]. In addition, hyaluronic acid-cisplatin/polystyrene-polymetformin
+(HA-CDDP/PMet) dual-prodrug nanoparticles enable synchronous de-
+livery of cisplatin and metformin, enhancing therapeutic efficacy in lung
+cancer through chemo-immunotherapy. These nanoparticles improve
+intracellular drug delivery, synergistically inhibit tumor growth, and
+enhance survival in lung cancer models by modulating immune responses,
+increasing CD4+ and CD8+ T cells, reducing Treg cells, and activating
+cytokine production(Fig. 5) [106].
+7.3. Metal-based nanomaterials
+Multiple types of manganese-based nanomaterials have been devel-
+oped to enhanced the combinative efficacy of chemotherapy and
+immunotherapy. For instance, a manganese-chelated telodendrimer
+nanodriver, combined with DOX nanoparticles, enhances the STING
+pathway in glioblastoma models, promoting DC maturation and CD8+ T
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+11 
+cell infiltration [107]. In addition, amorphous porous manganese
+phosphate nanoparticles (PL/APMP-DOX NPs), coated with phospho-
+lipid and loaded with DOX, enhance antitumor immunity by releasing
+Mn2+ to activate the cGAS/STING pathway and DOX to induce DNA
+damage. These hybrid nanoparticles boost DC maturation, increase CTL
+and
+NK
+cell
+recruitment,
+and
+elevate
+type
+I
+interferon
+and
+pro-inflammatory cytokine production [108]. Similarly, hydrogenated
+mesoporous manganese oxide nanoparticles (mHMnO-Dox), camou-
+flaged with cancer cell membranes, effectively deliver DOX and activate
+the cGAS-STING pathway. This dual action induces robust DC matura-
+tion, enhances CTL and NK cell recruitment, and promotes ICD, signif-
+icantly inhibiting tumor growth and metastasis while prolonging
+survival in tumor-bearing mice [109]. Moreover, a nanoplatform
+(Mn-HSP) incorporating manganese ions and a PTX prodrug, based on
+hyaluronic acid, enhances tumor immunotherapy by inducing DNA
+damage and pyroptosis for tumor antigen release and activating the
+STING pathway. This dual mechanism promotes antigen presentation
+and CTL infiltration, establishing a self-perpetuating "circulating
+immunotherapy" that effectively suppresses primary breast tumors and
+metastases [110].
+7.4. Cell- and bacteria-hitchhiking nanomaterials
+Cell membranes and bacterial systems, leveraging their inherent
+versatility, serve as potent carriers for nanomaterials in therapeutic
+applications, thereby enhancing the efficacy and delivery of combined
+treatment strategies. For instance, cancer cell membrane-coated nano-
+gels (ADCT@CM NGs) co-loaded with Cu (II) and toyocamycin enable
+targeted, redox-responsive chemodynamic and chemoimmunotherapy.
+These biomimetic nanogels release Cu (II) and Toy in the TME, inducing
+oxidative and endoplasmic reticulum stress that triggers ICD [111].
+Additionally,
+probiotic
+Bifidobacterium
+bifidum
+modified
+with
+DOX-loaded CaP/SiO₂ nanoparticles (DNPs@Bi) combines chemo-
+therapy and immunotherapy for enhanced anti-tumor efficacy. This
+bacteria-hitchhiking system achieves pH-responsive DOX release to
+induce ICD and promotes TAA presentation through gap junctions,
+enhancing DC maturation and T cell infiltration in the TME [112].
+7.5. Functional composite nanosystems
+Notably, various composite nanosystems have been employed to
+enhance the therapeutic outcomes of chemo-immunotherapy. For
+instance, LDH-PAA@DOX nanosheets, serving as both deacidification
+Fig. 5. Integration of nanomaterials to enhance the synergy of chemotherapy and immunotherapy. (A) Periodic mesoporous organosilica nanoparticle(PMO)
+encapsulating DOX and hT(PKC) (a bridging molecule to attach TRAIL to the PMO nanomaterial surface) target tumor sites, where hT(PKC) improves the PMO tumor-
+targeting ability and promotes DOX release. This induces direct cytotoxic effects and promotes ICD, subsequently activating antigen-presenting cells and stimulating
+CD8+ T cell-mediated tumor cell killing. (B) Hollow mesoporous silica nanoparticles (HMSNs) encapsulating DOX and hyaluronidase are injected into tumors rich in
+hyaluronic acid (HA). HAase-mediated degradation of HA facilitates nanoparticle penetration and sustained DOX release, enhancing apoptosis and ICD, followed by
+immune responses through DAMPs and calreticulin exposure. (C) Nanocomplexes of cisplatin (CDDP) and metformin (Met) encapsulated in HA-coated nanoparticles
+target CD44 receptors on tumor cells. Co-delivery of these drugs disrupts cancer cell metabolism and DNA repair pathways, augmenting chemotherapy efficacy and
+promoting favorable immune modulation in the TME. This combination reduces immunosuppressive Tregs and enhances CD8+ and CD4+ T cell responses, syner-
+gistically improving overall tumor control.
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+12 
+agents and chemodynamic therapy vectors, effectively neutralize the
+acidic TME and repolarize TAMs from M2 to M1. This transition en-
+hances CD8+ T cell activation and induces significant tumor cell damage
+through a Fenton reaction-driven oxidative stress mechanism [113].
+Interestingly, twin-like charge-switchable nanoparticles comprising
+shMFN1-NPs and DOX-NPs effectively target TAMs and cancer cells,
+respectively. These pH-responsive nanoparticles facilitate TAM repo-
+larization from M2 to M1 phenotypes and induce ICD, enhancing DC
+maturation
+and
+CD8+
+T
+cell
+activation
+[114].
+Similarly,
+a
+charge-reversal yolk-shell liposome, co-loaded with JQ1 and DOX, en-
+hances the stability and targeted delivery of hydrophobic drugs, effec-
+tively promoting ICD and inhibiting the PD-L1 pathway in tumors. This
+nanoplatform
+significantly
+boosts
+chemo-immunotherapy
+efficacy,
+minimizes systemic toxicity, and increases CTL infiltration [115]. In
+addition, a chemo-gene combinational nanomedicine, integrating DOX
+and siRNA within a ROS and acid-sensitive fluorine assembly, induces
+Table 3
+Nanoplatforms for enhancing the synergy between chemotherapy and immunotherapy.
+Nanoplatform
+Encapsulated drugs
+Mechanisms
+Immune effects
+Outcomes
+Ref.
+NanoPCPT +
+PIMDQ
+Camptothecin, TLR7/8
+agonist
+PH/GSH sequential response
+Foxp3+ Tregs↓, repolarized M2
+macrophages↑, CTL infiltration↑
+Killing tumor cells,
+Inhibiting tumor growth
+[93]
+TfR/TATH7/PTX/
+R837 NMs
+PTX, imiquimod
+TfR-mediated BBB penetration, pH-sensitive
+mechanism
+M1 polarization of TAMs↑, CD8+
+T cell activity↑, TNF-α↑
+Inhibiting tumor growth
+[94]
+CDDP-NPs
+Cisplatin
+Tumor MHC-I overexpression
+TCR↑, costimulatory OX40 on
+CD8+T cells↑
+Inhibiting tumor growth
+[95]
+PEG/DPPA-MMP-
+DOX NPs
+PD-L1 antagonist, DOX
+prodrug, PEGylated
+DOX prodrug
+Transcytosis process
+CTLs↑, Tregs↓
+Killing tumor cells, preventing
+tumor recurrence and metastasis
+[96]
+D/R@RPsP
+DOX, TLR7/8 agonist
+R848
+ICD, inhibit the immunosuppressive
+adenosinergic pathway
+NK and CD8+ T cell activation↑,
+Tregs↓
+Induction of a robust systemic
+antitumor immune response
+[97]
+PHDZ/BTZ
+Hydralazine, BTZ
+Dilate tumor blood vessels, Lewis acid-base
+coordination effect, hypoxia attenuation, ICD
+CTL infiltration↑,
+proinflammatory cytokine
+secretion↑
+Inhibiting tumor growth,
+inhibiting the occurrence of lung
+metastasis
+[98]
+PAG/BTZ
+nanoparticles
+BTZ
+pH-sensitive mechanism, ICD, promote
+antigen uptake
+DC maturation↑, CTL
+infiltration↑
+Enhanced antitumor efficacy
+[99]
+liposome modified
+with sialic acid
+(SLDT)
+Decitabine,
+triclabendazole
+mRNA demethylation, upregulate GSDME
+proteins, induce pyroptosis
+CD8+ T cell infiltration↑
+Enhancing targeting ability to
+cancer cells, Enhancing efficacy
+of ICB therapy
+[100]
+P/A/B@NM
+PTX, AMD3100, PD-1/
+PD-L1 inhibitor
+pH-responsive controlled drug release,
+CXCL12/CXCR4 axis blockade, ICD
+CD8+ T cell infiltration↑
+Inhibiting tumor growth and
+metastasis, enhancing efficacy of
+ICI therapy
+[101]
+Co-LMs
+Immune adjuvant CpG,
+DOX
+pH and redox-sensitive drug release
+CTL、CD4+ T cell activation↑,
+Inhibiting metastasis of
+circulating tumor cells
+[102]
+FD/FM@siTOX NPs
+DOX, melittin, anti-
+TOX siRNA
+ICD
+CD8+ T cell infiltration↑, CD8+ T
+cell exhaustion↓
+Converting "cold" tumors into
+"hot" ones
+[103]
+DOX@PMO-hT
+DOX, TRAIL
+ICD
+DC、CD8+ T cell、CD4+ T cell
+activation↑
+Inhibiting tumor growth
+[104]
+DOX@HMSPHs
+DOX, HAase
+Degradation of HA in the EM, ICD
+Antigen-presentation of DCs↑,
+DC maturation↑, CTL activation↑
+Enhancing efficacy of chemo-
+immunotherapy
+[105]
+HA-CDDP/PMet
+Cisplatin, metformin
+Upregulate cleaved PARP protein to induce
+apoptosis, induce AMPK-αpathway to inhibit
+mTOR, down-regulated ERCC1 protein to
+reduce resistance to CDDP
+CD8+ T cells、CD4+ T cells↑,
+IFN-γ 、TNF-α ↑, Tregs↓
+Inhibiting tumor accumulation
+and tumor growth
+[106]
+PLHM-DOX NPs
+DOX
+Activate the cGAS/STING pathway
+DC maturation↑, CD8+ T cell
+infiltration↑
+Inhibiting tumor growth
+[107]
+PL/APMP-DOX NPs
+DOX
+Release Mn2+ to activate the cGAS/STING
+pathway, induce DNA damage
+DC maturation↑, CD8+ T cell
+infiltration↑, NK cell
+recruitment↑, TNF-α、IL-6↑
+Enhanced antitumor efficacy
+[108]
+mHMnO-Dox
+DOX
+Activate the cGAS-STING pathway, ICD
+DC maturation↑, CD8+ T cell
+infiltration↑, NK cell
+recruitment↑,
+Inhibiting tumor growth and
+metastasis
+[109]
+Mn-HSP
+PTX prodrug based on
+HA
+Induce DNA damage and pyroptosis, activate
+the STING pathway
+Antigen presentation↑, CTL
+infiltration↑
+Suppressing primary breast
+tumors and metastases
+[110]
+LDH-PAA@DOX
+DOX
+Fenton reaction-driven oxidative stress
+mechanism, neutralize the acidic TME
+Repolarization of TAMs to M1
+phenotype, CD8+ T cell
+activation↑,
+Damaging tumor cell
+[113]
+shMFN1-NPs +
+DOX-NPs(MIX-
+NPs)
+Mitofusin 1 specific
+short hairpin RNA,
+DOX
+Inhibit mitochondrial fusion to promote the
+conversion of macrophages, ICD
+Repolarization of TAMs to M1
+phenotype,DC maturation↑,
+CD8+ T cell activation↑,
+MDSCs↓, Tregs↓
+Reversing the
+immunosuppressive TME
+[114]
+JPD@L
+DOX, JQ1
+Blockade PD-L1 pathway, ICD
+CTL infiltration↑
+Boosting chemo-
+immunotherapy efficacy
+[115]
+fPEG-fDOX@siTOX
+Fluorinated DOX
+Downregulate the TOX mRNA expression in
+CD8 T cells, ICD
+Reverse CD8+ T cell exhaustion
+Inhibiting tumor growth and
+metastasis
+[116]
+D/R/C@SiO2-M
+DOX, R848, catalase
+Hydrogen peroxide catalysis, block A2AR in
+Tregs, induce the ICD of tumor cells
+DC maturation↑, CD8+ T cells↑,
+Tregs↓
+Enhancing the antitumor
+immunotherapy by hypoxia
+reverse
+[117]
+hDOX&siCD47
+DOX, CD47-targeting
+siRNA
+Block CD47, ICD
+M1-like macrophages↑, CD8+ T
+cell infiltration↑, MDSCs↓,
+Tregs↓
+Inhibiting tumor growth
+[118]
+αPD-L1/GEM NPs
+Gemcitabine prodrug,
+STING agonists, anti-
+PD-L1 antibodies
+Upregulate PD-L1 expression, induce cancer
+cell apoptosis, activate the STING pathway,
+DC maturation↑, CD8+ T cell
+response↑
+Transforming low-immunogenic
+tumors into inflamed ones,
+durable tumor regression
+[119]
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+13 
+ICD and reverses CD8+ T cell exhaustion. This synergistic approach
+enhances immunotherapy, effectively suppressing tumor growth and
+metastasis in breast cancer and melanoma models [116]. Importantly, a
+core/shell nanoplatform integrating macrophage membrane-coated
+mesoporous silica nanoparticles loaded with catalase, DOX, and resi-
+quimod enhances cancer immunotherapy. It targets tumors via ligand
+binding, modulates the immunosuppressive environment by catalyzing
+hydrogen peroxide to oxygen, blocks A2AR in Treg cells, and activates
+DCs [117]. Moreover, a nanoassembly, PP-(hDOX&siCD47), formed by
+DOX-conjugated polyphosphoester and CD47-targeting siRNA, en-
+hances cancer immunotherapy by blocking CD47 and triggering ICD.
+This dual action promotes macrophage activation and T cell infiltration,
+reducing immunosuppressive cells in the TME and significantly inhib-
+iting tumor growth [118]. Furthermore, a triple-combination nano-
+system
+integrates
+gemcitabine
+prodrug
+nanoparticles
+with
+surface-bound anti-PD-L1 antibodies and encapsulated STING agonists,
+enhancing drug delivery and antitumor efficacy. This design transforms
+poorly immunogenic tumors into inflamed ones, inducing robust CD8+ T
+cell
+responses
+and
+durable
+tumor
+regression
+(Table
+3)
+[119].
+Nanomaterial-based platforms amplify chemo-immunotherapy by pre-
+cisely targeting tumors, modulating immune responses, and inducing
+ICD, offering a robust approach for enhanced cancer treatment and
+immune activation.
+8. Enhancing the synergistic effect of non-chemotherapeutic
+drugs or traditional Chinese medicine and immunotherapy with
+nanotherapeutic platforms
+In addition to the traditionally used chemotherapeutic drugs
+mentioned above, various non-chemotherapeutic drugs and extracts
+from traditional Chinese medicine have been loaded into nanomaterials
+to enhance the efficacy of immunotherapy. A bionic nanoparticle
+(CP@CM), coated with activated murine vascular endothelial cell
+membrane and loaded with the PGE2 inhibitor celecoxib, targets post-
+operative melanoma to prevent recurrence. By adhering to inflamma-
+tory white blood cells and leveraging their natural tropism, CP@CM
+effectively delivers celecoxib to inhibit COX-2, reduce immunosup-
+pressive cell recruitment, and increase CD8+ and CD4+ T cell infiltration
+at the tumor site, reversing the immunosuppressive microenvironment
+and enhancing postoperative immunotherapy outcomes [120]. Addi-
+tionally, engineered "Gemini nanoimmunoregulators" utilize meso-
+porous
+polydopamine
+nanovectors
+to
+co-deliver
+metformin
+and
+resiquimod, wrapped in red blood cell membranes with specific pep-
+tides, to cancer cells and tumor-associated macrophages. These nano-
+regulators amplify ICD, reprogram macrophage phenotype from M2 to
+M1, degrade PD-L1, and enhance CTL function, significantly reducing
+tumor
+growth
+and
+preventing
+metastasis
+[121].
+Similarly,
+self-degradable PMI nanogels loaded with imiquimod and metformin
+remodel the TME by promoting DC maturation, repolarizing M2 mac-
+rophages, and reducing PD-L1 expression. This formulation enhances
+CD8+ T cell infiltration and activation, synergizing with anti-PD-1 an-
+tibodies to amplify antitumor immune responses [122]. Notably, an
+in-situ vaccine utilizing acid-responsive liposome-coated polydopamine
+nanoparticles, modified with mannose and loaded with resiquimod,
+targets DCs for enhanced antigen presentation. This design leverages
+PTT and ICD for effective DC activation, boosting CTL responses and
+inhibiting tumor recurrence and metastasis through long-term immune
+memory,
+offering
+a
+refined
+method
+for
+cancer
+immunotherapy
+enhancement [123]. Moreover, hyaluronidase-responsive biomimetic
+nanoparticles (mCAuNCs@HA), optimized to 150 nm for superior cir-
+culation and tumor targeting, co-deliver pheophorbide A and a
+ROS-responsive PTX prodrug, enhancing on-demand drug release and
+ROS production. Incorporation of an anti-PD-L1 peptide augments this
+platform by mitigating the immunosuppressive tumor environment and
+boosting
+CTL
+activity
+[124].
+Remarkably,
+an
+engineered
+manganese-based metal-organic framework, encapsulating polyphyllin I
+and coated with red blood cell membranes (RBC@Mn-MOF/PPI), en-
+hances cGAS/STING-mediated immunity. This system prolongs circu-
+lation,
+targets
+suppressive
+TMEs,
+and
+activates
+immune
+cells,
+transforming "cold" tumors into "hot" ones, and effectively targeting
+primary and metastatic tumors [125]. Nanomaterial-based delivery of
+non-chemotherapeutic agents and traditional Chinese medicine extracts
+demonstrates a promising strategy for enhancing immunotherapy. By
+precisely targeting the TME, reprogramming immune cell functions, and
+activating CTLs, these platforms transform immune suppression into
+robust antitumor responses, offering an innovative route to advance
+cancer immunotherapy.
+9. Enhancing the synergistic effect of RT and immunotherapy
+with nanotherapeutic platforms
+Nanomaterials can significantly enhance the combined efficacy of RT
+and immunotherapy by not only modulating the TME to increase
+radiosensitivity but also facilitating the release of tumor antigens
+through ICD induced by radiation. This process enhances the tumor’s
+visibility to the immune system, while the targeted delivery of immu-
+nomodulators further amplifies the immune response, leading to a more
+potent anti-tumor effect. For instance, AGuIX nanoparticles, acting as
+radiosensitizers, augment RT by exacerbating DNA damage in B16
+tumor cells, enhancing the ICD and systemic T-cell responses. When
+combined with PD-1 blockade, this synergistic approach significantly
+increases CD8+ T cell infiltration and mitigates the immunosuppressive
+TME [126]. Similarly, biomimetic MnO2 nanoparticles encapsulating
+anti-PD-L1
+(αPDL1@MnO2)
+enhance
+RT
+by
+overcoming
+hypoxia-induced resistance and reprogramming the TME. Released
+Mn2+ ions activate the cGAS-STING pathway, enhancing DC maturation
+and CTL infiltration, thus amplifying systemic antitumor responses and
+inhibiting metastases through a pronounced abscopal effect [127].
+Additionally, multifunctional core-shell R837/BMS@Au8 nanoparticles,
+integrating Au8NCs with an R837/BMS nanocore, enhance RT by
+reducing X-ray dose and boosting antitumor immunity. These nano-
+particles enhance X-ray absorption, activate effector T cells via antigen
+presentation, and inhibit the PD-1/PD-L1 pathway, effectively reducing
+tumor metastasis [128]. Moreover, Phy@PLGdH nanosheets, combining
+physcion
+with
+layered
+gadolinium
+hydroxide, enhance
+radiation
+therapy-induced ICD and boost in situ tumor vaccination. These nano-
+sheets increase X-ray deposition and tumor penetration, leading to
+amplified oxidative stress and DNA damage. This mechanism primes
+CD8+ T-cell-dependent antitumor immunity, enhancing the efficacy of
+checkpoint blockade therapies against primary and metastatic tumors
+[129]. Interestingly, MGTe, a hybrid nanoplatform combining Te
+nanoparticles (GTe) for radiosensitization with fused tumor and bacte-
+rial membranes, enhances RT by producing ROS and inducing ICD under
+X-ray irradiation. This approach amplifies antitumor immunity through
+antigen presenting cells and T cell activation, demonstrating significant
+tumor control and potential as a clinical strategy for effective and
+reduced-side-effect cancer treatment [130]. Nanomaterial-based plat-
+forms significantly enhance the synergy of RT and immunotherapy by
+promoting ICD, overcoming hypoxia, and activating systemic immune
+responses. These approaches amplify radiosensitivity, prime antitumor
+immunity, and support robust T-cell activation, offering a powerful
+strategy to extend the therapeutic impact of RT and achieve durable
+cancer control.
+10. Enhancing the synergistic effect of SDT and immunotherapy
+with nanotherapeutic platforms
+Nanomaterials enhance the synergistic effect of immunotherapy and
+SDT by optimizing the delivery and activation of sonosensitizers within
+the TME. This targeted delivery facilitates ICD, releasing tumor antigens
+and ROS that prime the immune system. The enhanced immune acti-
+vation not only boosts the local immune response but also increases
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+14 
+systemic immune surveillance, leading to a more effective immuno-
+therapeutic outcome. The PFH-Ce6 liposome@O2 nanodroplets enhance
+SDT by generating increased ROS and inducing ICD. When integrated
+with PD-1 blockade post-inadequate radiofrequency ablation, this
+treatment boosts antitumor immunity, reduces Tregs, and promotes DC
+maturation and T cell infiltration, significantly prolonging survival and
+initiating long-term immune memory in a preclinical cancer model
+[131]. Similarly, a biomimetic nanoplatform, Ru-TePt@siRNA-MVs,
+integrates Fenton-like sonosensitization, genetic immunotherapy, and
+oxygen-producing capabilities to enhance tumor oxygenation and pro-
+voke oxidative stress. This system triggers ICD, activates T cells, and
+silences the PD-L1 gene, synergistically augmenting the immune
+response against tumors [132]. Additionally, oxygen-carrying perfluo-
+rocarbon nanoparticles (M@P-SOP) enhance high-intensity focused ul-
+trasound tumor ablation, inducing significant ICD and alleviating
+hypoxia in the TME. This biomimetic strategy, combined with
+anti-PD-L1 immunotherapy, matures DCs and repolarizes macrophages,
+boosting systemic antitumor responses and suppressing distant tumor
+growth [133]. Moreover, titanium diselenide nanosheets, utilized as
+nano-sensitizers under ultrasound, enhance SDT by generating ROS
+under both hypoxic and normoxic conditions. This treatment triggers
+ICD, promoting DC maturation and T-cell activation. In combination
+with anti-PD-1 therapy, it suppresses primary and distant tumor growth
+and prevents lung metastasis [134]. Nanomaterial-enhanced SDT syn-
+ergizes with immunotherapy by inducing ICD and robust oxidative
+stress, priming both local and systemic antitumor immunity. These
+platforms effectively modulate the TME, activate DCs, and enhance
+T-cell infiltration, offering a potent strategy for achieving sustained
+tumor control and preventing metastasis.
+11. Enhancing the synergistic effect of multi-modal therapies
+and immunotherapy with nanotherapeutic platforms
+Enhancing the synergistic effect of multiple therapeutic modalities
+and immunotherapy using nanotherapeutic platforms involves inte-
+grating at least two conventional treatments—such as chemotherapy,
+RT, targeted therapy, PDT, or PTT—with immunotherapy. This
+approach leverages the strengths of each method to improve overall
+therapeutic efficacy, targeting tumor cells more effectively and stimu-
+lating a robust immune response to combat cancer. For instance,
+erythrocyte membrane-encapsulated copper indium selenium nano-
+materials (RNCIS) harness chemodynamic, photodynamic, and photo-
+thermal mechanisms for enhanced T lymphocyte recruitment and
+macrophage M1 polarization. These features, combined with NIR-
+triggered release of NLG919, potentiate targeted photoimmunotherapy
+against primary and metastatic tumors [135]. Similarly, the nanoagent
+Cu9S5@mSiO2-PpIX@MnO2@CpG
+(CSPM@CpG)
+integrates
+photo-
+therapy and immunotherapy for enhanced cancer treatment. This
+strategy leverages the intracellular delivery of CpG to stimulate CTLs,
+boost IFN-γ production, and elevate immune response levels. The syn-
+ergistic
+effect
+of
+PTT,
+PDT,
+and
+immunotherapy
+provided
+by
+CSPM@CpG not only suppresses tumor growth but effectively inhibits
+metastasis, offering a potent approach to mitigate the spread of cancer
+[136]. In addition, supramolecular nanomicelles PolyMN-TO-8, con-
+structed
+from
+MTX-MPEG2000,
+NPX-2S,
+and
+TO-8,
+initiate
+pyroptosis-mediated ICD, enhance DC maturation, and boost CD8+ T
+cell infiltration into tumors. Leveraging laser-triggered photodynamic
+and photothermal therapies alongside chemotherapy, these nano-
+micelles significantly reduce immune escape and tumor metastasis
+[137].
+The BHMDI nanoplatform, a manganese oxide-crosslinked albumin/
+hyaluronic acid construct co-loaded with DOX and indocyanine green,
+enhances PDT for HCC. This approach alleviates tumor hypoxia,
+downregulates M2 macrophages, and induces ICD, boosting DC matu-
+ration and T cell activation. Coupled with PD-1 blockade, it effectively
+eliminates primary tumors and prevents recurrence and metastasis by
+invigorating systemic antitumor immunity [138]. In addition, an
+albumin-based nanoplatform co-delivers IR780, NLG919 dimer, and
+tirapazamine, enhancing PDT and chemotherapy under hypoxic condi-
+tions. This dual action activates tumor-specific CTLs and reduces
+immunosuppression, promoting effective intratumoral CTL infiltration
+and nearly eliminating tumor recurrence and metastasis in breast cancer
+[139]. Moreover, the iron oxide nanoparticle (FGR) integrates photo-
+thermal and chemodynamic therapies with a dextran-conjugated Toll--
+like receptor agonist (R848) for targeted cancer immunotherapy. Upon
+exposure to the acidic TME, FGR releases R848, enhancing DC matu-
+ration and CTL infiltration. This activation, coupled with direct tumor
+cell killing via photothermal and chemodynamic effects, effectively
+suppresses melanoma growth and metastasis [140]. Notably, integrating
+the αOX40 antibody, Ti3C2-MXene-Au nanocomposites deliver a multi-
+functional nanoplatform combining PTT and enzyme dynamic therapy,
+enhanced by photoacoustic and thermal imaging. These treatments
+induce ICD and apoptosis, promoting DC maturation and T-cell infil-
+tration, further enhancing the efficacy of immunotherapy [141].
+Furthermore, the Ag2S QD/DOX/Bestatin@PC10ARGD polypeptide
+hydrogel, incorporating a photosensitizer, chemotherapy drug, and
+immune-adjuvant, serves as a multifunctional platform for mammary
+carcinoma treatment. Triggered by PTT, this hydrogel facilitates sus-
+tained drug release, enhances immune cell infiltration, and significantly
+inhibits tumor growth and metastasis [142]. Interestingly, LINC, a
+light-inducible nanocargo, integrates a photosensitizer and an IDO-1
+inhibitor with a light-activatable prodrug of oxaliplatin, enhancing
+chemoimmunotherapy by ensuring targeted delivery and controlled
+drug release in tumor sites. This dual-light-triggered system enhances
+deep tumor penetration and retention, facilitating increased CTL infil-
+tration and reducing immunosuppression within the TME [143].
+In addition to the above-mentioned phototherapy-involved multi-
+modal therapies, targeted therapy and SDT-involved multi-modal ther-
+apies also improve immunotherapy outcomes. These integrated ap-
+proaches enhance the therapeutic efficacy by leveraging the strengths of
+each method, ultimately boosting the immune response against cancer.
+For instance, a novel biomimetic nanoparticle system enhances solid
+tumor therapy by integrating chemotherapy, targeted therapy and im-
+mune synergy. Mesoporous silica nanoparticles, loaded with DOX and
+coated with cell membranes featuring GPI-anchored anti-HER2 scFv and
+CD80, effectively increase tumor targeting and immune response acti-
+vation. This system improves antitumor efficacy by boosting CD8+ T cell
+activity, enhancing cytokine production, and reducing suppressive cell
+populations in tumor environments [144]. In addition, biocompatible
+nanocarriers targeting MDSCs were developed to combat immunosup-
+pressive chemoresistance in lung cancer. These carriers deliver l-Nor-
+valine and Sunitinib, enhancing apoptosis, reducing tumor volume, and
+increasing drug retention. They significantly boost CD8+ and CD4+ T
+cell infiltration, activate NK cells, and reduce Treg cells and MDSCs in
+the TME. Enhanced tumor ablation under NIR exposure underscores the
+potential of this strategy for effective metastatic cancer treatment [145].
+Interestingly, AIPH/Cu-Cys@Lipo, a sonodynamic-chemodynamic lipo-
+some, effectively depletes glutathione, generating radicals via ultra-
+sound and -OH through Fenton-like reactions. This nanoparticle
+enhances tumor immunotherapy by disrupting mitochondrial function
+and activating CD4+ and CD8+ T cells, thereby increasing IL-2 and
+TNF-α expression, and significantly inhibiting tumor growth (Table 4)
+(Fig. 6) [146]. Multi-modal nanotherapeutic platforms integrating
+phototherapy, chemotherapy, targeted therapy, and SDT with immu-
+notherapy offer a comprehensive strategy to enhance antitumor im-
+munity. By harnessing distinct mechanisms—such as ICD, immune
+modulation, and precise tumor targeting—these platforms amplify im-
+mune responses, reduce tumor escape, and inhibit metastasis. This
+approach represents a powerful advancement for durable and highly
+effective cancer treatments.
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+15 
+12. Comparative analysis of nanoplatforms
+A comparative analysis of nanoplatforms for cancer therapy reveals
+that each type offers distinct structural and physicochemical properties,
+which contribute to their specific therapeutic outcomes and versatility
+in clinical applications. Organic-based nanomaterials, such as poly-
+dopamine and graphene oxide, benefit from high biocompatibility and
+inherent biodegradability due to their organic molecular structures,
+making them ideal for tumor-specific targeting with minimal systemic
+toxicity. Their structure allows efficient functionalization, enabling PTT
+and immune activation that stimulate CTL responses while suppressing
+Tregs to control tumor growth [147,148]. Hybrid organic-inorganic
+nanomaterials, by integrating organic components with inorganic ele-
+ments, exhibit improved stability and multifunctionality. This structure
+supports potent PDT effects while enabling hypoxia reversal in the TME
+and facilitating immune cell infiltration, achieving superior tumor
+ablation compared to single-modality therapies [149].
+Metal-based nanomaterials, including copper sulfide and iron oxide
+nanoparticles, offer unique magnetic and optical properties due to their
+metallic composition. Their structures are conducive to photothermal
+effects and ROS generation, which disrupt hypoxic TME barriers and
+enhance drug delivery precision. These properties not only amplify
+tumor suppression but also improve specificity in immune activation.
+MOF-based nanomaterials leverage their highly porous structures,
+allowing high drug loading and controlled release of therapeutic agents.
+These structural characteristics enhance PDT efficacy and enable sus-
+tained activation of cytotoxic immune responses, leading to better sur-
+vival outcomes in preclinical models while minimizing systemic side
+effects [150]. Cell- and bacteria-hitchhiking nanomaterials, leveraging
+living carriers such as cells or bacteria, enhance the targeted delivery
+and retention of therapeutic agents in the TME through active homing
+mechanisms. These systems provide a natural biocompatible shield,
+improving circulation time and reducing immune clearance while
+facilitating precise delivery to tumor sites. Additionally, their ability to
+penetrate tumor tissues and modulate the TME amplifies therapeutic
+efficacy [151].
+Lastly, functional composite nanosystems combine various thera-
+peutic agents—including chemotherapeutic, immunomodulatory, and
+photothermal components—on a single, multifunctional platform. The
+composite nature of these systems allows for precise targeting,
+controlled drug release, and simultaneous engagement of multiple
+pathways within the TME, maximizing synergistic effects. Their robust
+and adaptable structure has demonstrated an exceptional capacity to
+reduce tumor volume and activate adaptive immunity in multiple cancer
+models, underscoring their significant therapeutic potential. This
+structural and physicochemical comparison of nanoplatforms highlights
+the specific material advantages each type offers, informing the selec-
+tion of nanoplatforms for targeted, effective multimodal cancer
+therapies.
+13. Challenges in nanoplatform applications for cancer
+immunotherapy
+The convergence of nanotherapeutic platforms with traditional
+cancer therapies, such as PDT, PTT, chemotherapy, RT and SDT,
+alongside immunotherapy, represents a promising frontier in oncology.
+By exploiting the unique properties of nanoparticles, these combined
+approaches aim to enhance the precision and potency of cancer treat-
+ment modalities. Nanoparticles can specifically deliver therapeutic
+agents to tumor sites, modulate drug release rates, and even actively
+target TME, thereby amplifying the therapeutic efficacy and minimizing
+systemic toxicity [152]. Additionally, nanoparticles can be engineered
+to carry both cytotoxic drugs and immunomodulatory agents, facili-
+tating a dual attack on cancer cells while simultaneously priming the
+immune system [153]. This synergistic strategy harnesses the strengths
+of each therapy, potentially overcoming the limitations of each when
+used alone. However, despite these promising advances, significant
+challenges remain.
+Table 4
+Nanoplatforms for synergistic multimodal therapies in cancer treatment.
+Nanoplatform
+Composition
+Therapeutic modalities
+Immune effects
+Therapeutic efficacy
+Ref.
+RNCIS NPs
+NLG919, CuInSe2, DSPE-mPEG,
+erythrocyte membrane,
+PTT, PDT,
+chemodynamic therapy,
+immunotherapy
+CTL recruitment↑,
+macrophage M1
+polarization↑
+Killing cancer cells, eliminating
+primary and metastatic tumors
+[135]
+CSPM@CpG
+Cu9S5, mSiO2, PpIX, MnO2, CpG
+PTT, PDT,
+immunotherapy
+CTL infiltration↑, IFN-γ↑
+Inhibiting tumor growth and metastasis
+[136]
+PolyMN-TO-8
+MTX-MPEG2000, NPX-2S, TO-8
+PTT, PDT,
+chemotherapy,
+immunotherapy
+DC maturation↑, CD8+ T
+cell infiltration↑
+Reducing immune escape and tumor
+metastasis
+[137]
+BHMDI
+DOX, indocyanine green,
+hyaluronan, MnO2-crosslinked
+bovine albumin
+PDT, chemotherapy,
+immunotherapy
+DC maturation↑, T cell
+activation↑
+Alleviating tumor hypoxia, eliminating
+primary tumors, preventing tumor
+recurrence and metastasis
+[138]
+IR780-NLG919-TPZ NPs
+IR780, NLG919 dimer,
+tirapazamine
+PDT, chemotherapy,
+immunotherapy
+CTL infiltration↑
+Suppressing primary and distant
+tumors, inhibiting tumor recurrence
+and metastasis
+[139]
+FGR
+Iron oxide, R848
+PTT, chemodynamic
+therapy, immunotherapy
+DC maturation↑, CTL
+infiltration↑
+Killing tumor cells, suppressing
+melanoma growth and metastasis
+[140]
+Ti3C2-MXene-Au
+OX40 mAb, AuNP, Ti3C2-MXene
+PTT, enzyme dynamic
+therapy, immunotherapy
+DC maturation↑, T cell
+activation↑
+Destroying cancer cells, reversing the
+immunosuppressive microenvironment
+[141]
+Ag2S QD/DOX/
+Bestatin@PC10ARGD
+hydrogel
+Ag2S quantum dot, DOX, Bestatin,
+PTT, chemotherapy,
+immunotherapy
+DC maturation↑, CD8+ T
+cell infiltration↑,IL-12p70↑,
+IFN-γ↑
+Inhibiting tumor growth and metastasis
+[142]
+LINC
+Pheophorbide A, NLG919, light-
+activatable prodrug of oxaliplatin
+PTT, chemotherapy,
+immunotherapy
+CTL infiltration↑
+Inhibiting the tumor growth and
+recurrence, inhibiting lung metastasis
+[143]
+MSNs-C
+DOX, anti-HER2 scFv- and CD80-
+modified cell membranes
+Chemotherapy, targeted
+therapy, immunotherapy
+CD8+ T cell activation↑,
+MDSCs↓
+Inhibiting the growth of implanted
+breast tumors
+[144]
+CuS/NorSun NCs
+l-Norvaline, Sunitinib
+PTT, immunotherapy,
+targeted therapy,
+CD8+ and CD4+ T cell
+infiltration↑, NK cell
+activation↑, MDSCs↓,
+Tregs↓
+Enhancing tumor ablation
+[145]
+AIPH/Cu-Cys@Lipo
+2,2-azobis[2-(2-imidazolin-2-yl)
+propane] dihydrochloride (AIPH),
+copper-cysteine, liposome
+Chemodynamic therapy,
+SDT, immunotherapy
+CD8+ and CD4+ T cell
+activation↑, IL-2↑, TNF-α↑
+Inhibiting tumor growth
+[146]
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+16 
+Firstly, current research on nanomaterials predominantly focuses on
+their characterization under in vitro conditions, with only a limited
+number of studies venturing into in vivo evaluations. However, these in
+vivo studies are primarily constrained to small animal models, particu-
+larly mice [154–156], which may not accurately replicate human
+physiological responses due to differences in scale, immune system
+characteristics, and metabolic rates [157]. This limitation significantly
+hampers the translation of nanomedical innovations from the laboratory
+to the clinic. Future investigations need to extend beyond rodent models
+to include larger animal models, such as pigs or non-human primates,
+which offer more comparable anatomical and physiological traits with
+humans. These models could provide more relevant data on the
+Fig. 6. Nanomaterials facilitate synergistic multimodal therapies in cancer treatment. Nanomaterials significantly enhance the synergistic effects of con-
+ventional therapies and immunotherapy by integrating multiple therapeutic modalities on a single platform. Mesoporous silica nanoparticles (MSNs) are engineered
+to deliver DOX while presenting cell membrane proteins and targeted antibodies like GPI-CD80 and HER2 scFv, enhancing targeted therapy and immunogenic
+response. These MSNs facilitate targeted drug delivery directly to tumor cells, promoting apoptosis and necrosis. Additionally, copper sulfide nanoparticles (CuS/
+NorSun NC) incorporate L-norvaline and sunitinib, affecting tumor metabolism in a tumor xenograft mouse model. This combination modulates the TME, influencing
+the proliferation of CD4+ T cells and the activity of MDSCs and Tregs, promoting a more effective immunotherapeutic response. Further, lipid-coated nanoparticles
+(AIPH/Cu-Cys@Lipo) use ultrasound and reactive oxygen species generation to induce apoptosis in breast cancer cells, enhancing sonodynamic and chemodynamic
+therapies. Collectively, these nanoplatforms orchestrate a comprehensive and targeted attack on cancer cells, significantly amplifying the efficacy of combined
+therapeutic strategies and leading to improved treatment outcomes.
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+17 
+biodistribution, pharmacokinetics, and long-term biocompatibility of
+nanomaterials, thereby enhancing the predictability of clinical out-
+comes [158,159]. Such comprehensive animal studies are crucial for
+advancing nanomedicine, enabling more effective and safe therapeutic
+solutions that can be confidently moved into human trials. This expan-
+sion in model diversity will also contribute to a better understanding of
+the nano-bio interactions at play, essential for optimizing the design and
+functionalization of nanomaterials for specific therapeutic applications.
+Secondly, scaling up the production of nanotherapeutics from labo-
+ratory prototypes to industrial-scale manufacturing presents significant
+challenges due to the complex nature of nanomaterial designs and the
+precise requirements for ligand modification and drug loading strate-
+gies. Standardized protocols for the characterization and production of
+these nanomaterials are essential to mitigate variability, which can lead
+to significant discrepancies in experimental and clinical outcomes, thus
+hindering reproducibility essential for clinical translation [160]. In
+response, ongoing efforts in the field are increasingly focused on
+developing uniform standards and optimized production methods to
+enhance consistency and control across the manufacturing process
+[161]. Moreover, it is critical that the scale-up process rigorously ad-
+dresses the stability, quality, and safety of nanomaterials, ensuring each
+batch produced meets stringent criteria. Enhanced predictive models
+and quality assessment frameworks are being integrated into develop-
+ment workflows to systematically evaluate the long-term stability and
+performance of nanomaterials under various conditions [162,163]. This
+level of standardization is crucial not only for maintaining the integrity
+of therapeutic effects but also for complying with the regulatory stan-
+dards set forth by health authorities such as the U.S. Food and Drug
+Administration (FDA) and the European Medicines Agency (EMA). In
+addition, there is a growing emphasis on early engagement with regu-
+latory agencies to facilitate a smoother approval process. Proactive
+collaboration with regulatory bodies helps to clarify specific re-
+quirements and align nanotherapeutic development with regulatory
+expectations from the outset. This approach ensures that all necessary
+data, from manufacturing process details to quality control measures,
+are collected in compliance with established standards [164]. By
+aligning production practices and regulatory considerations early, the
+pathway to clinical trials and market entry is streamlined, ultimately
+ensuring that these innovative treatments are delivered to patients both
+efficiently and safely.
+Thirdly, the design and application of nanoplatforms in medical
+therapies are primarily governed by their biodegradability, excretion,
+toxicity, and non-toxicity profiles, which are essential for ensuring both
+clinical efficacy and minimal environmental impact. Ideally, these
+nanoplatforms should be constructed from materials that degrade into
+biologically benign byproducts naturally metabolized by the body, thus
+preventing long-term accumulation and associated toxicity [165]. The
+physicochemical characteristics of nanoparticles, such as size, shape,
+and surface properties, critically influence their biodistribution, deter-
+mining their clearance mechanisms—smaller nanoparticles are typically
+excreted renally, reducing the risk of bioaccumulation, whereas larger
+particles may require surface modifications, such as pegylation, to
+enhance solubility and promote excretion through the liver and bile
+[166]. Toxicity is a major concern, as nanoparticles can interact with
+cellular and subcellular structures, potentially causing oxidative stress,
+ion release, and other cytotoxic effects. Rigorous toxicity assessments
+through both in vitro and in vivo studies are essential to ensure that
+nanoparticles do not induce harmful biological responses such as
+inflammation or immune reactions. In terms of non-toxicity, it is crucial
+that nanoplatforms are designed to perform their therapeutic roles
+effectively without eliciting any adverse biological interactions. This
+involves engineering nanoparticles with ’stealth’ capabilities that evade
+the immune system, prolonging their circulation time and enhancing
+their delivery efficiency [167].
+Fourthly, combination immunotherapy based on nanomaterials,
+while
+more
+effective
+than
+monotherapies,
+introduces
+a
+greater
+complexity of effects, including an increased risk of autoimmune re-
+actions, toxicity, and adverse events in patients [168–170]. The inter-
+play between different therapeutic modalities leveraged in these
+approaches involves a myriad of potential targets and pathways, each
+contributing uniquely to the therapeutic outcome. Currently, under-
+standing of the synergistic effects between these modalities is primarily
+superficial, with the underlying mechanisms still largely unexplored.
+There is a critical need to delve deeper into these interactions to
+determine whether antagonistic effects exist or if there could be unin-
+tended side effects on normal tissues. Further, while preliminary results
+are promising, rigorous clinical and mechanistic studies are essential to
+elucidate the specific contributions of each component in the combi-
+nation therapy.
+Fifthly, the development of personalized combination therapies is
+essential due to the inherent heterogeneity of tumors and specific ge-
+netic mutations in individual patients. Leveraging nanoplatforms, these
+tailored therapies can deliver targeted treatments more effectively
+[171]. Nanoplatforms can be engineered to transport multiple thera-
+peutic
+agents,
+specifically
+targeting
+tumor
+characteristics
+and
+patient-specific genetic profiles, thereby enhancing precision and effi-
+cacy while minimizing side effects. Notably, advanced genomic and
+proteomic technologies are pivotal in identifying optimal therapeutic
+combinations and treatment sequences that nanoplatforms can facilitate
+[172]. Additionally, the ability to monitor treatment responses in real
+time and dynamically adjust strategies is crucial for effective personal-
+ized therapy. By utilizing nanoplatforms in a patient-centric treatment
+approach, it not only promises enhanced disease management but also
+supports the broader objectives of precision medicine, aiming to tailor
+medical decisions and treatments to individual patient needs.
+Lastly, the economic implications of implementing nanoplatform-
+based cancer therapies are significant and multifaceted, with potential
+long-term impacts on healthcare systems. The development and pro-
+duction
+of
+these
+therapies
+entail
+high
+costs
+due
+to
+complex
+manufacturing processes, quality control, and regulatory compliance.
+These factors can translate to high treatment costs, raising concerns
+about affordability and accessibility. For healthcare systems, this cost
+structure may necessitate increased budget allocations or adjustments in
+resource distribution, potentially impacting the provision of other ser-
+vices [173]. However, nanoplatform-based therapies offer benefits in
+terms of treatment precision and reduced adverse effects, which could
+lower downstream costs associated with managing treatment side ef-
+fects, hospital readmissions, and lengthy recovery times. As production
+methods advance and standardization improves, the cost efficiency of
+these therapies may increase, which could alleviate some economic
+pressures [174]. Overall, a detailed economic assessment is essential to
+evaluate the cost-benefit balance and inform policy decisions on inte-
+grating
+nanoplatform-based
+therapies
+within
+healthcare
+systems,
+ensuring sustainable and effective implementation.
+14. Ongoing and future developments in nanotherapeutics
+The field of nanotherapeutics is experiencing rapid advancements,
+driven by cutting-edge research and technological innovations. A sig-
+nificant area of development is in the engineering of stimuli-responsive
+nanoparticles, designed to react to specific environmental cues within
+the TME, such as pH fluctuations or the presence of specific enzymes.
+These advanced materials are tailored to optimize the targeted delivery
+and controlled release of therapeutic agents, enhancing treatment pre-
+cision while mitigating collateral damage to healthy tissues [152,175,
+176]. Concurrently, the integration of computational tools, notably
+artificial intelligence (AI) and machine learning (ML), is transforming
+nanomedicine [177]. These technologies are instrumental in refining the
+design and functionality of nanoparticles, allowing for the simulation
+and prediction of nanoparticle behavior in complex biological systems
+[178,179]. By leveraging vast datasets to forecast interactions at the
+molecular level, AI and ML are facilitating the creation of nanoparticles
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+18 
+customized to the genetic and molecular profiles of individual patients.
+This approach not only enhances therapeutic efficacy but also ushers in a
+new paradigm of personalized medicine, where treatments are specif-
+ically tailored to the unique characteristics of each patient’s disease.
+Moreover, the development of theranostic nanosystems represents a
+convergence of diagnostic and therapeutic modalities into a single
+platform [180]. These multifunctional systems are designed to detect
+cancer at its earliest stages, monitor the dynamic responses of tumors to
+treatments in real-time, and deliver therapeutic agents precisely where
+needed. By combining imaging and therapeutic capabilities, thera-
+nostics provide a powerful tool for oncologists to optimize treatment
+strategies, adjust dosages, and predict therapeutic outcomes with
+greater accuracy [181,182]. As these technological and scientific ad-
+vancements progress, the need for robust interdisciplinary collaboration
+becomes increasingly evident. The translation of nanotherapeutics from
+the laboratory to the clinic necessitates close cooperation among sci-
+entists, clinicians, and regulatory agencies. Establishing comprehensive
+regulatory frameworks and standards for the approval and clinical use of
+nanotherapeutics is critical [183]. These frameworks must address the
+unique challenges posed by nano-scale materials, ensuring that they
+meet safety and efficacy criteria without stifling innovation.
+15. Conclusions
+The integration of immunotherapy with various treatment modal-
+ities, facilitated by nanoplatforms, represents a significant advancement
+in cancer treatment. Combining immunotherapy with traditional cancer
+therapies, and targeted nanomaterial applications enhances efficacy and
+addresses the limitations of single-modality treatments. Continued
+refinement of nanoplatform specificity and delivery mechanisms is
+essential to minimize off-target effects and toxicity. Future research
+should focus on patient-specific therapeutic combinations to optimize
+treatment outcomes. Comprehensive clinical trials are necessary to
+validate the safety and effectiveness observed in preclinical models and
+to investigate long-term outcomes and immunological effects. These
+efforts are critical for realizing the full potential of nanotechnology in
+revolutionizing cancer therapy.
+CRediT authorship contribution statement
+Rongwei Xu: Writing – original draft, Visualization, Methodology,
+Investigation, Conceptualization. Pei Lin: Writing – original draft,
+Visualization, Methodology, Investigation. Jiarong Zheng: Writing –
+original draft, Visualization, Resources, Methodology, Investigation.
+Yunfan Lin: Writing – original draft, Visualization, Resources, Meth-
+odology, Investigation. Zizhao Mai: Writing – original draft, Visuali-
+zation, Software, Methodology. Ye Lu: Writing – original draft,
+Visualization, Methodology, Investigation. Xu Chen: Writing – original
+draft, Visualization, Methodology, Investigation. Zihao Zhou: Writing –
+original draft, Visualization, Methodology, Investigation. Li Cui:
+Writing – review & editing, Supervision, Project administration, Inves-
+tigation,
+Funding
+acquisition,
+Conceptualization.
+Xinyuan
+Zhao:
+Writing – review & editing, Visualization, Project administration,
+Funding acquisition, Conceptualization.
+Declaration of competing interest
+The authors declare that they have no known competing financial
+interests or personal relationships that could have appeared to influence
+the work reported in this paper.
+Acknowledgements
+This work was supported by National Natural Science Foundation of
+China (81901006, 82372905), Young Top-notch Talent of Pearl River
+Talent
+Plan
+(0920220228),
+Guangdong
+Provincial
+Science
+and
+Technology Project Foundation (2022A0505050038), and Science
+Research Cultivation Program of Stomatological Hospital, Southern
+Medical University (PY2020002, PY2022019).
+Data availability
+No data was used for the research described in the article.
+References
+[1] R. Rui, L. Zhou, S. He, Cancer immunotherapies: advances and bottlenecks, Front.
+Immunol. 14 (2023) 1212476, https://doi.org/10.3389/fimmu.2023.1212476.
+[2] R.D. Schreiber, L.J. Old, M.J. Smyth, Cancer immunoediting: integrating
+immunity’s roles in cancer suppression and promotion, Science 331 (2011)
+1565–1570, https://doi.org/10.1126/science.1203486.
+[3] D.R. Leach, M.F. Krummel, J.P. Allison, Enhancement of antitumor immunity by
+CTLA-4 blockade, Science 271 (1996) 1734–1736, https://doi.org/10.1126/
+science.271.5256.1734.
+[4] A. Ribas, J.D. Wolchok, Cancer immunotherapy using checkpoint blockade,
+Science 359 (2018) 1350–1355, https://doi.org/10.1126/science.aar4060.
+[5] S. Depil, P. Duchateau, S.A. Grupp, G. Mufti, L. Poirot, ’Off-the-shelf’ allogeneic
+CAR T cells: development and challenges, Nat. Rev. Drug Discov. 19 (2020)
+185–199, https://doi.org/10.1038/s41573-019-0051-2.
+[6] M.J. Lin, J. Svensson-Arvelund, G.S. Lubitz, A. Marabelle, I. Melero, B.D. Brown,
+J.D. Brody, Cancer vaccines: the next immunotherapy frontier, Nat Cancer 3
+(2022) 911–926, https://doi.org/10.1038/s43018-022-00418-6.
+[7] J.M. Pitt, A. Marabelle, A. Eggermont, J.C. Soria, G. Kroemer, L. Zitvogel,
+Targeting the tumor microenvironment: removing obstruction to anticancer
+immune responses and immunotherapy, Ann. Oncol. 27 (2016) 1482–1492,
+https://doi.org/10.1093/annonc/mdw168.
+[8] K. Yang, Y. Shi, M. Luo, M. Mao, X. Zhang, C. Chen, Y. Liu, Z. He, Q. Liu,
+W. Wang, C. Luo, W. Yin, C. Wang, Q. Niu, H. Zeng, X.W. Bian, Y.F. Ping,
+Identification of a unique tumor cell subset employing myeloid transcriptional
+circuits to create an immunomodulatory microenvironment in glioblastoma,
+OncoImmunology 11 (2022) 2030020, https://doi.org/10.1080/
+2162402X.2022.2030020.
+[9] M. Lovf, S. Zhao, U. Axcrona, B. Johannessen, A.C. Bakken, K.T. Carm, A.M. Hoff,
+O. Myklebost, L.A. Meza-Zepeda, A.K. Lie, K. Axcrona, R.A. Lothe, R.I. Skotheim,
+Multifocal primary prostate cancer exhibits high degree of genomic
+heterogeneity, Eur. Urol. 75 (2019) 498–505, https://doi.org/10.1016/j.
+eururo.2018.08.009.
+[10] J. Son, J.W. Cho, H.J. Park, J. Moon, S. Park, H. Lee, J. Lee, G. Kim, S.M. Park, S.
+A. Lira, A.N. McKenzie, H.Y. Kim, C.Y. Choi, Y.T. Lim, S.Y. Park, H.R. Kim, S.
+H. Park, E.C. Shin, I. Lee, S.J. Ha, Tumor-infiltrating regulatory T-cell
+accumulation in the tumor microenvironment is mediated by IL33/ST2 signaling,
+Cancer Immunol. Res. 8 (2020) 1393–1406, https://doi.org/10.1158/2326-6066.
+CIR-19-0828.
+[11] Y. Wu, M. Yi, M. Niu, Q. Mei, K. Wu, Myeloid-derived suppressor cells: an
+emerging target for anticancer immunotherapy, Mol. Cancer 21 (2022) 184,
+https://doi.org/10.1186/s12943-022-01657-y.
+[12] S. Chen, G.A. Crabill, T.S. Pritchard, T.L. McMiller, P. Wei, D.M. Pardoll, F. Pan,
+S.L. Topalian, Mechanisms regulating PD-L1 expression on tumor and immune
+cells, J Immunother Cancer 7 (2019) 305, https://doi.org/10.1186/s40425-019-
+0770-2.
+[13] P.D.A. Vignali, K. DePeaux, M.J. Watson, C. Ye, B.R. Ford, K. Lontos, N.K. McGaa,
+N.E. Scharping, A.V. Menk, S.C. Robson, A.C. Poholek, D.B. Rivadeneira, G.
+M. Delgoffe, Hypoxia drives CD39-dependent suppressor function in exhausted T
+cells to limit antitumor immunity, Nat. Immunol. 24 (2023) 267–279, https://
+doi.org/10.1038/s41590-022-01379-9.
+[14] Y. Zhang, R. Kurupati, L. Liu, X.Y. Zhou, G. Zhang, A. Hudaihed, F. Filisio,
+W. Giles-Davis, X. Xu, G.C. Karakousis, L.M. Schuchter, W. Xu, R. Amaravadi,
+M. Xiao, N. Sadek, C. Krepler, M. Herlyn, G.J. Freeman, J.D. Rabinowitz, H.C.
+J. Ertl, Enhancing CD8(+) T cell fatty acid catabolism within a metabolically
+challenging tumor microenvironment increases the efficacy of melanoma
+immunotherapy, Cancer Cell 32 (2017) 377–391, https://doi.org/10.1016/j.
+ccell.2017.08.004, e379.
+[15] X. Chen, D. Wang, J. Liu, J. Qiu, J. Zhou, J. Ying, Y. Shi, Z. Wang, H. Lou, J. Cui,
+J. Zhang, Y. Liu, F. Zhao, L. Pan, J. Zhao, D. Zhu, S. Chen, X. Li, X. Li, L. Zhu,
+Y. Shao, Y. Shu, Genomic alterations in biliary tract cancer predict prognosis and
+immunotherapy outcomes, J Immunother Cancer 9 (2021), https://doi.org/
+10.1136/jitc-2021-003214.
+[16] J. Long, D. Wang, A. Wang, P. Chen, Y. Lin, J. Bian, X. Yang, M. Zheng, H. Zhang,
+Y. Zheng, X. Sang, H. Zhao, A mutation-based gene set predicts survival benefit
+after immunotherapy across multiple cancers and reveals the immune response
+landscape, Genome Med. 14 (2022) 20, https://doi.org/10.1186/s13073-022-
+01024-y.
+[17] S. Zhu, T. Zhang, L. Zheng, H. Liu, W. Song, D. Liu, Z. Li, C.X. Pan, Combination
+strategies to maximize the benefits of cancer immunotherapy, J. Hematol. Oncol.
+14 (2021) 156, https://doi.org/10.1186/s13045-021-01164-5.
+[18] T. Hu, B. Xue, F. Meng, L. Ma, Y. Du, S. Yu, R. Ye, H. Li, Q. Zhang, L. Gu, Z. Zhou,
+R. Liang, C. Tan, Preparation of 2D polyaniline/MoO(3-) (x) superlattice
+nanosheets via intercalation-induced morphological transformation for efficient
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+19 
+chemodynamic therapy, Adv Healthc Mater 12 (2023) e2202911, https://doi.
+org/10.1002/adhm.202202911.
+[19] J. Zhang, Y. Yang, F. Qin, T. Hu, X. Zhao, S. Zhao, Y. Cao, Z. Gao, Z. Zhou,
+R. Liang, C. Tan, Y. Qin, Catalyzing generation and stabilization of oxygen
+vacancies on CeO(2-x) nanorods by Pt nanoclusters as nanozymes for catalytic
+therapy, Adv Healthc Mater 12 (2023) e2302056, https://doi.org/10.1002/
+adhm.202302056.
+[20] Z. Zhou, T. Wang, T. Hu, H. Xu, L. Cui, B. Xue, X. Zhao, X. Pan, S. Yu, H. Li,
+Y. Qin, J. Zhang, L. Ma, R. Liang, C. Tan, Synergistic interaction between metal
+single-atoms and defective WO(3-) (x) nanosheets for enhanced sonodynamic
+cancer therapy, Adv Mater 36 (2024) e2311002, https://doi.org/10.1002/
+adma.202311002.
+[21] Z. Zhou, X. Wang, H. Zhang, H. Huang, L. Sun, L. Ma, Y. Du, C. Pei, Q. Zhang,
+H. Li, L. Ma, L. Gu, Z. Liu, L. Cheng, C. Tan, Activating layered metal oxide
+nanomaterials via structural engineering as biodegradable nanoagents for
+photothermal cancer therapy, Small 17 (2021) e2007486, https://doi.org/
+10.1002/smll.202007486.
+[22] Q. Wang, X. Ju, J. Wang, Y. Fan, M. Ren, H. Zhang, Immunogenic cell death in
+anticancer chemotherapy and its impact on clinical studies, Cancer Lett. 438
+(2018) 17–23, https://doi.org/10.1016/j.canlet.2018.08.028.
+[23] K. Hayashi, F. Nikolos, Y.C. Lee, A. Jain, E. Tsouko, H. Gao, A. Kasabyan, H.
+E. Leung, A. Osipov, S.Y. Jung, A.V. Kurtova, K.S. Chan, Tipping the
+immunostimulatory and inhibitory DAMP balance to harness immunogenic cell
+death, Nat. Commun. 11 (2020) 6299, https://doi.org/10.1038/s41467-020-
+19970-9.
+[24] T.S. Lau, L.K.Y. Chan, G.C.W. Man, C.H. Wong, J.H.S. Lee, S.F. Yim, T.H. Cheung,
+I.A. McNeish, J. Kwong, Paclitaxel induces immunogenic cell death in ovarian
+cancer via TLR4/IKK2/SNARE-dependent exocytosis, Cancer Immunol. Res. 8
+(2020) 1099–1111, https://doi.org/10.1158/2326-6066.CIR-19-0616.
+[25] W.J. Lesterhuis, C.J. Punt, S.V. Hato, D. Eleveld-Trancikova, B.J. Jansen,
+S. Nierkens, G. Schreibelt, A. de Boer, C.M. Van Herpen, J.H. Kaanders, J.H. van
+Krieken, G.J. Adema, C.G. Figdor, I.J. de Vries, Platinum-based drugs disrupt
+STAT6-mediated suppression of immune responses against cancer in humans and
+mice, J. Clin. Invest. 121 (2011) 3100–3108, https://doi.org/10.1172/JCI43656.
+[26] H. Wang, M. Huang, M. Zhu, C. Su, Y. Zhang, H. Chen, Y. Jiang, H. Wang, Q. Guo,
+S. Zhang, Paclitaxel combined with Compound K inducing pyroptosis of non-
+small cell lung cancer cells by regulating Treg/Th17 balance, Chin. Med. 19
+(2024) 26, https://doi.org/10.1186/s13020-024-00904-2.
+[27] S. Kumari, S. Mukherjee, D. Sinha, S. Abdisalaam, S. Krishnan, A. Asaithamby,
+Immunomodulatory effects of radiotherapy, Int. J. Mol. Sci. 21 (2020), https://
+doi.org/10.3390/ijms21218151.
+[28] E. Wennerberg, S. Spada, N.P. Rudqvist, C. Lhuillier, S. Gruber, Q. Chen,
+F. Zhang, X.K. Zhou, S.S. Gross, S.C. Formenti, S. Demaria, CD73 blockade
+promotes dendritic cell infiltration of irradiated tumors and tumor rejection,
+Cancer Immunol. Res. 8 (2020) 465–478, https://doi.org/10.1158/2326-6066.
+CIR-19-0449.
+[29] C. Lhuillier, N.P. Rudqvist, T. Yamazaki, T. Zhang, M. Charpentier, L. Galluzzi,
+N. Dephoure, C.C. Clement, L. Santambrogio, X.K. Zhou, S.C. Formenti,
+S. Demaria, Radiotherapy-exposed CD8+ and CD4+ neoantigens enhance tumor
+control, J. Clin. Invest. 131 (2021), https://doi.org/10.1172/JCI138740.
+[30] S.S. Du, G.W. Chen, P. Yang, Y.X. Chen, Y. Hu, Q.Q. Zhao, Y. Zhang, R. Liu, D.
+X. Zheng, J. Zhou, J. Fan, Z.C. Zeng, Radiation therapy promotes hepatocellular
+carcinoma immune cloaking via PD-L1 upregulation induced by cGAS-STING
+activation, Int. J. Radiat. Oncol. Biol. Phys. 112 (2022) 1243–1255, https://doi.
+org/10.1016/j.ijrobp.2021.12.162.
+[31] F. Wu, J. Yang, J. Liu, Y. Wang, J. Mu, Q. Zeng, S. Deng, H. Zhou, Signaling
+pathways in cancer-associated fibroblasts and targeted therapy for cancer, Signal
+Transduct Target Ther 6 (2021) 218, https://doi.org/10.1038/s41392-021-
+00641-0.
+[32] T.X. Huang, X.Y. Tan, H.S. Huang, Y.T. Li, B.L. Liu, K.S. Liu, X. Chen, Z. Chen, X.
+Y. Guan, C. Zou, L. Fu, Targeting cancer-associated fibroblast-secreted WNT2
+restores dendritic cell-mediated antitumour immunity, Gut 71 (2022) 333–344,
+https://doi.org/10.1136/gutjnl-2020-322924.
+[33] C. Donohoe, M.O. Senge, L.G. Arnaut, L.C. Gomes-da-Silva, Cell death in
+photodynamic therapy: from oxidative stress to anti-tumor immunity, Biochim.
+Biophys. Acta Rev. Canc 1872 (2019) 188308, https://doi.org/10.1016/j.
+bbcan.2019.07.003.
+[34] M.C. Rodrigues, W.T. de Sousa Junior, T. Mundim, C.L.C. Vale, J.V. de Oliveira,
+R. Ganassin, T.J.A. Pacheco, J.A. Vasconcelos Morais, J.P.F. Longo, R.B. Azevedo,
+L.A. Muehlmann, Induction of immunogenic cell death by photodynamic therapy
+mediated by aluminum-phthalocyanine in nanoemulsion, Pharmaceutics 14
+(2022), https://doi.org/10.3390/pharmaceutics14010196.
+[35] H.S. Han, K.Y. Choi, Advances in nanomaterial-mediated photothermal cancer
+therapies: toward clinical applications, Biomedicines 9 (2021), https://doi.org/
+10.3390/biomedicines9030305.
+[36] J. Zheng, Y. Sun, T. Long, D. Yuan, S. Yue, N. Zhang, Z. Yang, Sonosensitizer
+nanoplatform-mediated sonodynamic therapy induced immunogenic cell death
+and tumor immune microenvironment variation, Drug Deliv. 29 (2022)
+1164–1175, https://doi.org/10.1080/10717544.2022.2058653.
+[37] F. Foglietta, P. Panzanelli, R. Pizzo, M. Giacone, C.D. Pepa, G. Durando, L. Serpe,
+R. Canaparo, Evaluation of the cytotoxic and immunomodulatory effects of
+sonodynamic therapy in human pancreatic cancer spheroids, J. Photochem.
+Photobiol., B 251 (2024) 112842, https://doi.org/10.1016/j.
+jphotobiol.2024.112842.
+[38] W. Fan, B. Yung, P. Huang, X. Chen, Nanotechnology for multimodal synergistic
+cancer therapy, Chem Rev 117 (2017) 13566–13638, https://doi.org/10.1021/
+acs.chemrev.7b00258.
+[39] S. Zanganeh, G. Hutter, R. Spitler, O. Lenkov, M. Mahmoudi, A. Shaw, J.
+S. Pajarinen, H. Nejadnik, S. Goodman, M. Moseley, L.M. Coussens, H.E. Daldrup-
+Link, Iron oxide nanoparticles inhibit tumour growth by inducing pro-
+inflammatory macrophage polarization in tumour tissues, Nat. Nanotechnol. 11
+(2016) 986–994, https://doi.org/10.1038/nnano.2016.168.
+[40] M. Xiang, C. Chen, Y. Chen, Y. Zhang, L. Shi, Y. Chen, J. Li, B. Li, B. Zeng, H.
+R. Xing, J. Wang, Z. Zou, Unexpected inhibitory role of silica nanoparticles on
+lung cancer development by promoting M1 polarization of macrophages, Int J
+Nanomedicine 19 (2024) 11087–11104, https://doi.org/10.2147/IJN.S472796.
+[41] Y. Zhu, P. Chen, B. Hu, S. Zhong, K. Yan, Y. Wu, S. Li, Y. Yang, Z. Xu, Y. Lu,
+Y. Ouyang, H. Bao, W. Gu, L. Wen, Y. Zhang, MDSC-targeting gold nanoparticles
+enhance PD-1 tumor immunotherapy by inhibiting NLRP3 inflammasomes,
+Biomaterials 307 (2024) 122533, https://doi.org/10.1016/j.
+biomaterials.2024.122533.
+[42] F. Zhao, C. Wang, Q. Yang, S. Han, Q. Hu, Z. Fu, Titanium dioxide nanoparticle
+stimulating pro-inflammatory responses in vitro and in vivo for inhibited cancer
+metastasis, Life Sci. 202 (2018) 44–51, https://doi.org/10.1016/j.
+lfs.2018.03.058.
+[43] H. Alizadeh Zeinabad, W.J. Yeoh, M. Arif, M. Lomora, Y. Banz, C. Riether,
+P. Krebs, E. Szegezdi, Natural killer cell-mimic nanoparticles can actively target
+and kill acute myeloid leukemia cells, Biomaterials 298 (2023) 122126, https://
+doi.org/10.1016/j.biomaterials.2023.122126.
+[44] M.A. Beach, U. Nayanathara, Y. Gao, C. Zhang, Y. Xiong, Y. Wang, G.K. Such,
+Polymeric nanoparticles for drug delivery, Chem Rev 124 (2024) 5505–5616,
+https://doi.org/10.1021/acs.chemrev.3c00705.
+[45] C. He, X. Duan, N. Guo, C. Chan, C. Poon, R.R. Weichselbaum, W. Lin, Core-shell
+nanoscale coordination polymers combine chemotherapy and photodynamic
+therapy to potentiate checkpoint blockade cancer immunotherapy, Nat. Commun.
+7 (2016) 12499, https://doi.org/10.1038/ncomms12499.
+[46] X.L. Liu, X. Dong, S.C. Yang, X. Lai, H.J. Liu, Y. Gao, H.Y. Feng, M.H. Zhu,
+Y. Yuan, Q. Lu, J.F. Lovell, H.Z. Chen, C. Fang, Biomimetic liposomal
+nanoplatinum for targeted cancer chemophototherapy, Adv. Sci. 8 (2021)
+2003679, https://doi.org/10.1002/advs.202003679.
+[47] W. Li, J. Yang, L. Luo, M. Jiang, B. Qin, H. Yin, C. Zhu, X. Yuan, J. Zhang, Z. Luo,
+Y. Du, Q. Li, Y. Lou, Y. Qiu, J. You, Targeting photodynamic and photothermal
+therapy to the endoplasmic reticulum enhances immunogenic cancer cell death,
+Nat. Commun. 10 (2019) 3349, https://doi.org/10.1038/s41467-019-11269-8.
+[48] G. Iqbal, S. Faisal, S. Khan, D.F. Shams, A. Nadhman, Photo-inactivation and
+efflux pump inhibition of methicillin resistant Staphylococcus aureus using
+thiolated cobalt doped ZnO nanoparticles, J. Photochem. Photobiol., B 192
+(2019) 141–146, https://doi.org/10.1016/j.jphotobiol.2019.01.021.
+[49] X. Bai, Y. Lin, L. Gong, J. Duan, X. Sun, C. Wang, Z. Liu, J. Jiang, X. Zhou,
+M. Zhou, Z. Zhang, Z. Liu, P. Jing, Z. Zhong, Nanoparticles that target the
+mitochondria of tumor cells to restore oxygen supply for photodynamic therapy:
+design and preclinical validation against breast cancer, J Control Release 362
+(2023) 356–370, https://doi.org/10.1016/j.jconrel.2023.07.064.
+[50] K. Ying, Y. Zhu, J. Wan, C. Zhan, Y. Wang, B. Xie, P. Xu, H. Pan, H. Wang,
+Macrophage membrane-biomimetic adhesive polycaprolactone
+nanocamptothecin for improving cancer-targeting efficiency and impairing
+metastasis, Bioact. Mater. 20 (2023) 449–462, https://doi.org/10.1016/j.
+bioactmat.2022.06.013.
+[51] S. Wu, J. Yun, W. Tang, G. Familiari, M. Relucenti, J. Wu, X. Li, H. Chen, R. Chen,
+Therapeutic m(6)A eraser ALKBH5 mRNA-loaded exosome-liposome hybrid
+nanoparticles inhibit progression of colorectal cancer in preclinical tumor models,
+ACS Nano 17 (2023) 11838–11854, https://doi.org/10.1021/acsnano.3c03050.
+[52] E. Martella, B. Dozza, C. Ferroni, C.O. Obeyok, A. Guerrini, D. Tedesco, I. Manet,
+G. Sotgiu, M. Columbaro, M. Ballestri, L. Martini, M. Fini, E. Lucarelli, G. Varchi,
+S. Duchi, Two beats one: osteosarcoma therapy with light-activated and chemo-
+releasing keratin nanoformulation in a preclinical mouse model, Pharmaceutics
+14 (2022), https://doi.org/10.3390/pharmaceutics14030677.
+[53] S. Jeon, E. Jun, H. Chang, J.Y. Yhee, E.Y. Koh, Y. Kim, J.Y. Jung, E.J. Jeong, J.
+W. Lee, M.K. Shim, H.Y. Yoon, S. Chang, K. Kim, S.C. Kim, Prediction the clinical
+EPR effect of nanoparticles in patient-derived xenograft models, J Control Release
+351 (2022) 37–49, https://doi.org/10.1016/j.jconrel.2022.09.007.
+[54] L. Zhang, K. Pan, S. Huang, X. Zhang, X. Zhu, Y. He, X. Chen, Y. Tang, L. Yuan,
+D. Yu, Graphdiyne oxide-mediated photodynamic therapy boosts enhancive T-cell
+immune responses by increasing cellular stiffness, Int J Nanomedicine 18 (2023)
+797–812, https://doi.org/10.2147/IJN.S392998.
+[55] S. He, J. Li, P. Cheng, Z. Zeng, C. Zhang, H. Duan, K. Pu, Charge-reversal polymer
+nano-modulators for photodynamic immunotherapy of cancer, Angew Chem. Int.
+Ed. Engl. 60 (2021) 19355–19363, https://doi.org/10.1002/anie.202106392.
+[56] Z. Mai, J. Zhong, J. Zhang, G. Chen, Y. Tang, W. Ma, G. Li, Z. Feng, F. Li, X.
+J. Liang, Y. Yang, Z. Yu, Carrier-free immunotherapeutic nano-booster with dual
+synergistic effects based on glutaminase inhibition combined with photodynamic
+therapy, ACS Nano (2023), https://doi.org/10.1021/acsnano.2c11037.
+[57] B. Wang, Z.C. Hu, L.J. Chen, H.F. Liang, H.W. Lu, Q. Chen, B. Liang, A. Aji,
+J. Dong, Q.W. Tian, L.B. Jiang, F.F. Xue, Nuclear-targeted nanostrategy regulates
+spatiotemporal communication for dual antitumor immunity, Adv Healthc Mater
+13 (2024) e2302342, https://doi.org/10.1002/adhm.202302342.
+[58] X. Guo, P. Tu, X. Wang, C. Du, W. Jiang, X. Qiu, J. Wang, L. Chen, Y. Chen, J. Ren,
+Decomposable nanoagonists enable NIR-elicited cGAS-STING activation for
+tandem-amplified photodynamic-metalloimmunotherapy, Adv Mater 36 (2024)
+e2313029, https://doi.org/10.1002/adma.202313029.
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+20 
+[59] Z. Chen, Y. Wu, Z. Yao, J. Su, Z. Wang, H. Xia, S. Liu, 2D copper(II) metalated
+metal-organic framework Nanocomplexes for dual-enhanced photodynamic
+therapy and amplified antitumor immunity, ACS Appl. Mater. Interfaces 14
+(2022) 44199–44210, https://doi.org/10.1021/acsami.2c12990.
+[60] J. Dai, M. Wu, Q. Wang, S. Ding, X. Dong, L. Xue, Q. Zhu, J. Zhou, F. Xia, S. Wang,
+Y. Hong, Red blood cell membrane-camouflaged nanoparticles loaded with
+AIEgen and Poly(I : C) for enhanced tumoral photodynamic-immunotherapy,
+Natl. Sci. Rev. 8 (2021) nwab039, https://doi.org/10.1093/nsr/nwab039.
+[61] Y. Chen, S. Zhi, J. Ou, J. Gao, L. Zheng, M. Huang, S. Du, L. Shi, Y. Tu, K. Cheng,
+Cancer cell membrane-coated nanoparticle Co-loaded with photosensitizer and
+toll-like receptor 7 agonist for the enhancement of combined tumor
+immunotherapy, ACS Nano 17 (2023) 16620–16632, https://doi.org/10.1021/
+acsnano.3c02724.
+[62] Z. Zhu, Q. Liu, K. Zhu, K. Wang, L. Lin, Y. Chen, F. Shao, R. Qian, Y. Song, Y. Gao,
+B. Yang, D. Jiang, X. Lan, R. An, Aggregation-induced emission photosensitizer/
+bacteria biohybrids enhance Cerenkov radiation-induced photodynamic therapy
+by activating anti-tumor immunity for synergistic tumor treatment, Acta
+Biomater. 167 (2023) 519–533, https://doi.org/10.1016/j.actbio.2023.06.009.
+[63] X. Feng, J. Zhang, L. Wu, W. Lin, Z. Liu, X. Zhou, Y. Qi, Z. Chen, L. Zeng, C. Zheng,
+X. Hu, Q. Zhang, H. Song, Drug self-delivery nanocubes enhance O(2)
+-economized photodynamic-immunotherapy of triple-negative breast cancer by
+downregulating wnt/beta-catenin signaling, Adv Healthc Mater 12 (2023)
+e2203019, https://doi.org/10.1002/adhm.202203019.
+[64] Y. Feng, X. Xie, H. Zhang, Q. Su, G. Yang, X. Wei, N. Li, T. Li, X. Qin, S. Li, C. Wu,
+C. Zheng, J. Zhu, F. You, G. Wang, H. Yang, Y. Liu, Multistage-responsive
+nanovehicle to improve tumor penetration for dual-modality imaging-guided
+photodynamic-immunotherapy, Biomaterials 275 (2021) 120990, https://doi.
+org/10.1016/j.biomaterials.2021.120990.
+[65] J. He, R. Song, F. Xiao, M. Wang, L. Wen, Cu(3)P/1-MT nanocomposites
+potentiated photothermal-immunotherapy, Int J Nanomedicine 18 (2023)
+3021–3033, https://doi.org/10.2147/IJN.S414117.
+[66] R.J. Kong, Y.M. Li, J.Q. Huang, N. Yan, Y.Y. Wu, H. Cheng, Self-delivery
+photodynamic Re-educator enhanced tumor treatment by inducing immunogenic
+cell death and improving immunosuppressive microenvironments, ACS Appl.
+Mater. Interfaces 15 (2023) 59165–59174, https://doi.org/10.1021/
+acsami.3c13188.
+[67] F. Sun, Q. Zhu, T. Li, M. Saeed, Z. Xu, F. Zhong, R. Song, M. Huai, M. Zheng,
+C. Xie, L. Xu, H. Yu, Regulating glucose metabolism with prodrug nanoparticles
+for promoting photoimmunotherapy of pancreatic cancer, Adv. Sci. 8 (2021)
+2002746, https://doi.org/10.1002/advs.202002746.
+[68] W. Song, J. Kuang, C.X. Li, M. Zhang, D. Zheng, X. Zeng, C. Liu, X.Z. Zhang,
+Enhanced immunotherapy based on photodynamic therapy for both primary and
+lung metastasis tumor eradication, ACS Nano 12 (2018) 1978–1989, https://doi.
+org/10.1021/acsnano.7b09112.
+[69] C. Zhang, J. Zhang, G. Shi, H. Song, S. Shi, X. Zhang, P. Huang, Z. Wang,
+W. Wang, C. Wang, D. Kong, C. Li, A light responsive nanoparticle-based delivery
+system using pheophorbide A graft polyethylenimine for dendritic cell-based
+cancer immunotherapy, Mol. Pharm. 14 (2017) 1760–1770, https://doi.org/
+10.1021/acs.molpharmaceut.7b00015.
+[70] F. Zhou, M. Wang, T. Luo, J. Qu, W.R. Chen, Photo-activated chemo-
+immunotherapy for metastatic cancer using a synergistic graphene nanosystem,
+Biomaterials 265 (2021) 120421, https://doi.org/10.1016/j.
+biomaterials.2020.120421.
+[71] Y. Tian, X. Wang, S. Zhao, X. Liao, M.R. Younis, S. Wang, C. Zhang, G. Lu, JQ1-
+Loaded polydopamine nanoplatform inhibits c-MYC/programmed cell death
+ligand 1 to enhance photothermal therapy for triple-negative breast cancer, ACS
+Appl. Mater. Interfaces 11 (2019) 46626–46636, https://doi.org/10.1021/
+acsami.9b18730.
+[72] R.H. Deng, M.Z. Zou, D. Zheng, S.Y. Peng, W. Liu, X.F. Bai, H.S. Chen, Y. Sun, P.
+H. Zhou, X.Z. Zhang, Nanoparticles from cuttlefish ink inhibit tumor growth by
+synergizing immunotherapy and photothermal therapy, ACS Nano 13 (2019)
+8618–8629, https://doi.org/10.1021/acsnano.9b02993.
+[73] K. Liu, Y. Liao, Z. Zhou, L. Zhang, Y. Jiang, H. Lu, T. Xu, D. Yang, Q. Gao, Z. Li,
+S. Tan, W. Cao, F. Chen, G. Li, Photothermal-triggered immunogenic
+nanotherapeutics for optimizing osteosarcoma therapy by synergizing innate and
+adaptive immunity, Biomaterials 282 (2022) 121383, https://doi.org/10.1016/j.
+biomaterials.2022.121383.
+[74] Q. Li, M. Yang, X. Sun, Q. Wang, B. Yu, A. Gong, M. Zhang, F. Du, NIR responsive
+nanoenzymes via photothermal ablation and hypoxia reversal to potentiate the
+STING-dependent innate antitumor immunity, Mater Today Bio 19 (2023)
+100566, https://doi.org/10.1016/j.mtbio.2023.100566.
+[75] Y. Jiang, J. Huang, C. Xu, K. Pu, Activatable polymer nanoagonist for second
+near-infrared photothermal immunotherapy of cancer, Nat. Commun. 12 (2021)
+742, https://doi.org/10.1038/s41467-021-21047-0.
+[76] B. Yang, H. Fu, R. Kong, G. Zheng, X. Wang, Y. Dong, Z. Yang, Boosting
+immunotherapy of triple negative breast cancer through the synergy of mild PTT
+and Fe-loaded organosilica nanoparticles, J. Mater. Chem. B 10 (2022)
+8490–8501, https://doi.org/10.1039/d2tb01424f.
+[77] Y. Feng, Y. Xu, Z. Wen, X. Ning, J. Wang, D. Wang, J. Cao, X. Zhou, Cerium end-
+deposited gold nanorods-based photoimmunotherapy for boosting tumor
+immunogenicity, Pharmaceutics 15 (2023), https://doi.org/10.3390/
+pharmaceutics15041309.
+[78] H. Tang, X. Xu, Y. Chen, H. Xin, T. Wan, B. Li, H. Pan, D. Li, Y. Ping,
+Reprogramming the tumor microenvironment through second-near-infrared-
+window photothermal genome editing of PD-L1 mediated by supramolecular gold
+nanorods for enhanced cancer immunotherapy, Adv Mater 33 (2021) e2006003,
+https://doi.org/10.1002/adma.202006003.
+[79] Q. Yang, J. Peng, K. Shi, Y. Xiao, Q. Liu, R. Han, X. Wei, Z. Qian, Rationally
+designed peptide-conjugated gold/platinum nanosystem with active tumor-
+targeting for enhancing tumor photothermal-immunotherapy, J Control Release
+308 (2019) 29–43, https://doi.org/10.1016/j.jconrel.2019.06.031.
+[80] M. Wang, M. Chang, P. Zheng, Q. Sun, G. Wang, J. Lin, C. Li, A noble AuPtAg-GOx
+nanozyme for synergistic tumor immunotherapy induced by starvation therapy-
+augmented mild photothermal therapy, Adv. Sci. 9 (2022) e2202332, https://doi.
+org/10.1002/advs.202202332.
+[81] Y. Ruan, H. Zhuang, X. Zeng, L. Lin, X. Wang, P. Xue, S. Xu, Q. Chen, S. Yan,
+W. Huang, Engineered microbial nanohybrids for tumor-mediated NIR II
+photothermal enhanced ferroptosis/cuproptosis and immunotherapy, Adv
+Healthc Mater 13 (2024) e2302537, https://doi.org/10.1002/adhm.202302537.
+[82] J. Li, Q. Xia, H. Guo, Z. Fu, Y. Liu, S. Lin, J. Liu, Decorating bacteria with triple
+immune nanoactivators generates tumor-resident living immunotherapeutics,
+Angew Chem. Int. Ed. Engl. 61 (2022) e202202409, https://doi.org/10.1002/
+anie.202202409.
+[83] Q. Fan, L. Kuang, B. Wang, Y. Yin, Z. Dong, N. Tian, J. Wang, T. Yin, Y. Wang,
+Multiple synergistic effects of the microglia membrane-bionic nanoplatform on
+mediate tumor microenvironment remodeling to amplify glioblastoma
+immunotherapy, ACS Nano 18 (2024) 14469–14486, https://doi.org/10.1021/
+acsnano.4c01253.
+[84] J. Xiong, M. Wu, J. Chen, Y. Liu, Y. Chen, G. Fan, Y. Liu, J. Cheng, Z. Wang,
+S. Wang, Y. Liu, W. Zhang, Cancer-erythrocyte hybrid membrane-camouflaged
+magnetic nanoparticles with enhanced photothermal-immunotherapy for ovarian
+cancer, ACS Nano 15 (2021) 19756–19770, https://doi.org/10.1021/
+acsnano.1c07180.
+[85] N. Zhang, J. Song, Y. Liu, M. Liu, L. Zhang, D. Sheng, L. Deng, H. Yi, M. Wu,
+Y. Zheng, Z. Wang, Z. Yang, Photothermal therapy mediated by phase-
+transformation nanoparticles facilitates delivery of anti-PD1 antibody and
+synergizes with antitumor immunotherapy for melanoma, J Control Release 306
+(2019) 15–28, https://doi.org/10.1016/j.jconrel.2019.05.036.
+[86] C. Xu, Y. Jiang, J. Huang, J. Huang, K. Pu, Second near-infrared light-activatable
+polymeric nanoantagonist for photothermal immunometabolic cancer therapy,
+Adv Mater 33 (2021) e2101410, https://doi.org/10.1002/adma.202101410.
+[87] P.B. Balakrishnan, D.K. Ledezma, J. Cano-Mejia, J. Andricovich, E. Palmer, V.
+A. Patel, P.S. Latham, E.S. Yvon, A. Villagra, R. Fernandes, E.E. Sweeney, CD137
+agonist potentiates the abscopal efficacy of nanoparticle-based photothermal
+therapy for melanoma, Nano Res. 15 (2022) 2300–2314, https://doi.org/
+10.1007/s12274-021-3813-1.
+[88] M. Zhang, Y. Chen, D. Li, Z. He, H. Wang, A. Wu, W. Fei, C. Zheng, E. Liu,
+Y. Huang, Gold nanocage-based photothermal ablation facilitates in situ
+vaccination for melanoma therapy, ACS Appl. Mater. Interfaces 14 (2022)
+38550–38561, https://doi.org/10.1021/acsami.2c10842.
+[89] W. Guo, M. Niu, Z. Chen, Q. Wu, L. Tan, X. Ren, C. Fu, J. Ren, D. Gu, X. Meng,
+Programmed upregulation of HSP70 by metal-organic frameworks nanoamplifier
+for enhanced microwave thermal-immunotherapy, Adv Healthc Mater 11 (2022)
+e2201441, https://doi.org/10.1002/adhm.202201441.
+[90] S.Y. Neshat, C.H.R. Chan, J. Harris, O.M. Zmily, S. Est-Witte, J. Karlsson, S.
+R. Shannon, M. Jain, J.C. Doloff, J.J. Green, S.Y. Tzeng, Polymeric nanoparticle
+gel for intracellular mRNA delivery and immunological reprogramming of
+tumors, Biomaterials 300 (2023) 122185, https://doi.org/10.1016/j.
+biomaterials.2023.122185.
+[91] H. Jiang, Y. Guo, Z. Yu, P. Hu, J. Shi, Nanocatalytic bacteria disintegration
+reverses immunosuppression of colorectal cancer, Natl. Sci. Rev. 9 (2022)
+nwac169, https://doi.org/10.1093/nsr/nwac169.
+[92] X. Liu, J. Zheng, W. Sun, X. Zhao, Y. Li, N. Gong, Y. Wang, X. Ma, T. Zhang, L.
+Y. Zhao, Y. Hou, Z. Wu, Y. Du, H. Fan, J. Tian, X.J. Liang, Ferrimagnetic vortex
+nanoring-mediated mild magnetic hyperthermia imparts potent immunological
+effect for treating cancer metastasis, ACS Nano 13 (2019) 8811–8825, https://
+doi.org/10.1021/acsnano.9b01979.
+[93] X. Ge, Y. Hao, H. Li, H. Zhao, Y. Liu, Y. Liu, X. Li, H. Chen, J. Zou, S. Zhang,
+L. Huang, G. Shan, Z. Zhang, Sequential acid/reduction response of triblock
+copolymeric nanomicelles to release camptothecin and toll-like receptor 7/8
+agonist for orchestrated chemoimmunotherapy, J Nanobiotechnology 20 (2022)
+369, https://doi.org/10.1186/s12951-022-01577-5.
+[94] P. Sun, Z. Wu, Y. Xiao, H. Wu, Q. Di, X. Zhao, J. Quan, H. Tang, Q. Wang,
+W. Chen, TfR-T12 short peptide and pH sensitive cell transmembrane peptide
+modified nano-composite micelles for glioma treatment via remodeling tumor
+microenvironment, Nanomedicine 41 (2022) 102516, https://doi.org/10.1016/j.
+nano.2022.102516.
+[95] H. Yao, N. Shen, G. Ji, J. Huang, J. Sun, G. Wang, Z. Tang, X. Chen, Cisplatin
+nanoparticles promote intratumoral CD8(+) T cell priming via antigen
+presentation and T cell receptor crosstalk, Nano Lett. 22 (2022) 3328–3339,
+https://doi.org/10.1021/acs.nanolett.2c00478.
+[96] X. Zhu, C. Li, Y. Lu, Y. Liu, D. Wan, D. Zhu, J. Pan, G. Ma, Tumor
+microenvironment-activated therapeutic peptide-conjugated prodrug
+nanoparticles for enhanced tumor penetration and local T cell activation in the
+tumor microenvironment, Acta Biomater. 119 (2021) 337–348, https://doi.org/
+10.1016/j.actbio.2020.11.008.
+[97] P. Yan, Y. Luo, X. Li, Y. Li, Y. Wang, J. Wu, S. Zhou, A redox-responsive
+nanovaccine combined with A2A receptor antagonist for cancer immunotherapy,
+Adv Healthc Mater 10 (2021) e2101222, https://doi.org/10.1002/
+adhm.202101222.
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+21 
+[98] R. Wang, X. Xu, D. Li, W. Zhang, X. Shi, H. Xu, J. Hong, S. Yao, J. Liu, Z. Wei,
+Y. Piao, Z. Zhou, Y. Shen, J. Tang, Smart pH-responsive polyhydralazine/
+bortezomib nanoparticles for remodeling tumor microenvironment and
+enhancing chemotherapy, Biomaterials 288 (2022) 121737, https://doi.org/
+10.1016/j.biomaterials.2022.121737.
+[99] X. Xu, R. Wang, D. Li, J. Xiang, W. Zhang, X. Shi, H. Xu, S. Yao, J. Liu, S. Shao,
+Z. Zhou, F. Huang, Y. Shen, J. Tang, Guanidine-modified nanoparticles as robust
+BTZ delivery carriers and activators of immune responses, J Control Release 357
+(2023) 310–318, https://doi.org/10.1016/j.jconrel.2023.04.004.
+[100] J. Hu, Y. You, L. Zhu, J. Zhang, Y. Song, J. Lu, X. Xu, X. Wu, X. Huang, X. Xu,
+Y. Du, Sialic acid-functionalized pyroptosis nanotuner for epigenetic regulation
+and enhanced cancer immunotherapy, Small 20 (2024) e2306905, https://doi.
+org/10.1002/smll.202306905.
+[101] Y. Zhang, X. Han, K. Wang, D. Liu, X. Ding, Z. Hu, J. Wang, Co-delivery
+nanomicelles for potentiating TNBC immunotherapy by synergetically reshaping
+CAFs-mediated tumor stroma and reprogramming immunosuppressive
+microenvironment, Int J Nanomedicine 18 (2023) 4329–4346, https://doi.org/
+10.2147/IJN.S418100.
+[102] F. Gu, C. Hu, W. Cao, C. Li, Q. Xia, Y. Gao, Y. Liu, S. Gao, Tumor
+microenvironment multiple responsive nanoparticles for targeted delivery of
+doxorubicin and CpG against triple-negative breast cancer, Int J Nanomedicine 17
+(2022) 4401–4417, https://doi.org/10.2147/IJN.S377702.
+[103] P. Wu, H. Zhang, M. Sun, S. Mao, Q. He, Y. Shi, Y. Deng, Z. Dong, Q. Xu, C. Zhao,
+W. Zhang, B. Sun, Manipulating offense and defense signaling to fight cold tumors
+with carrier-free nanoassembly of fluorinated prodrug and siRNA, Adv Mater 34
+(2022) e2203019, https://doi.org/10.1002/adma.202203019.
+[104] X. Feng, F. Li, L. Zhang, W. Liu, X. Wang, R. Zhu, Z.A. Qiao, B. Yu, X. Yu, TRAIL-
+modified, doxorubicin-embedded periodic mesoporous organosilica nanoparticles
+for targeted drug delivery and efficient antitumor immunotherapy, Acta
+Biomater. 143 (2022) 392–405, https://doi.org/10.1016/j.actbio.2022.03.001.
+[105] Q. Liu, Y. Sun, X. Yin, J. Li, J. Xie, M. Xie, K. Wang, S. Wu, Y. Li, M. Hussain,
+B. Jiang, Y. Liu, C. Huang, J. Tao, J. Zhu, Hyaluronidase-functionalized silica
+nanocarrier for enhanced chemo-immunotherapy through inducing immunogenic
+cell death, ACS Appl. Bio Mater. 3 (2020) 3378–3389, https://doi.org/10.1021/
+acsabm.0c00299.
+[106] T. Yang, S. Yu, L. Liu, Y. Sun, Y. Lan, X. Ma, R. Zhu, L. Li, Y. Hou, Y. Liu, Dual
+polymeric prodrug co-assembled nanoparticles with precise ratiometric co-
+delivery of cisplatin and metformin for lung cancer chemoimmunotherapy,
+Biomater. Sci. 8 (2020) 5698–5714, https://doi.org/10.1039/d0bm01191f.
+[107] W. Zhang, L. Lu, Z. Zhu, F. Deng, W. Zhang, F. Wang, P. Zeng, H. Shi, T. Wang,
+Y. Chen, Y. Song, Y. Liu, T. Kang, K. Li, J. Mao, Z. Liu, L. Zhang, A manganese-
+based nanodriver coordinates tumor prevention and suppression through STING
+activation in glioblastoma, Adv Healthc Mater (2024) e2400421, https://doi.org/
+10.1002/adhm.202400421.
+[108] L. Hou, C. Tian, Y. Yan, L. Zhang, H. Zhang, Z. Zhang, Manganese-based
+nanoactivator optimizes cancer immunotherapy via enhancing innate immunity,
+ACS Nano 14 (2020) 3927–3940, https://doi.org/10.1021/acsnano.9b06111.
+[109] P. Wang, Y. Wang, H. Li, M. Wang, Y. Wang, X. Wang, L. Ran, H. Xin, J. Ma,
+G. Tian, W. Gao, G. Zhang, A homologous-targeting cGAS-STING agonist
+multimodally activates dendritic cells for enhanced cancer immunotherapy, Acta
+Biomater. 177 (2024) 400–413, https://doi.org/10.1016/j.actbio.2024.02.003.
+[110] B. Wang, T. Wang, T. Jiang, S. Li, L. Zhang, X. Zhao, X. Yang, X. Wang, Circulating
+immunotherapy strategy based on pyroptosis and STING pathway: Mn-loaded
+paclitaxel prodrug nanoplatform against tumor progression and metastasis,
+Biomaterials 306 (2024) 122472, https://doi.org/10.1016/j.
+biomaterials.2024.122472.
+[111] M. Zhan, Y. Xu, L. Jia, H. Yu, H. Wang, M. Shen, X. Shi, Biomimetic copper-
+containing nanogels for imaging-guided tumor chemo-chemodynamic-
+immunotherapy, Acta Biomater. (2024), https://doi.org/10.1016/j.
+actbio.2024.09.030.
+[112] T. He, L. Wang, S. Gou, L. Lu, G. Liu, K. Wang, Y. Yang, Q. Duan, W. Geng,
+P. Zhao, Z. Luo, K. Cai, Enhanced immunogenic cell death and antigen
+presentation via engineered Bifidobacterium bifidum to boost chemo-
+immunotherapy, ACS Nano 17 (2023) 9953–9971, https://doi.org/10.1021/
+acsnano.2c11474.
+[113] C. Chen, W. Zhang, S.Y. Lu, J. Wang, Y. Tan, S. Zhao, Y. Ouyang, L. Xu, B. Zhou,
+X. Yin, H. Ran, H. Liu, Repolarizing tumor-associated macrophages by layered
+double hydroxide-based deacidification agent for tumor chemodynamic therapy
+and immunotherapy, Colloids Surf. B Biointerfaces 223 (2023) 113157, https://
+doi.org/10.1016/j.colsurfb.2023.113157.
+[114] M. Zhao, J. Li, J. Liu, M. Xu, H. Ji, S. Wu, D. Chen, H. Hu, Charge-switchable
+nanoparticles enhance Cancer immunotherapy based on mitochondrial dynamic
+regulation and immunogenic cell death induction, J Control Release 335 (2021)
+320–332, https://doi.org/10.1016/j.jconrel.2021.05.036.
+[115] D. Liu, K. Li, L. Gong, L. Fu, D. Yang, Charge reversal yolk-shell liposome co-
+loaded JQ1 and doxorubicin with high drug loading and optimal ratio for
+synergistically enhanced tumor chemo-immunotherapy via blockade PD-L1
+pathway, Int J Pharm 635 (2023) 122728, https://doi.org/10.1016/j.
+ijpharm.2023.122728.
+[116] Q. Zhang, P. Wu, J. Wu, H. Shou, X. Ming, S. Wang, B. Wang,
+Chemoimmunological cascade cancer therapy using fluorine assembly
+nanomedicine, ACS Nano 17 (2023) 7498–7510, https://doi.org/10.1021/
+acsnano.2c12600.
+[117] X. Wen, X. Xiong, G. Yang, W. Xiao, J. Hou, T. Pan, Y. Hu, S. Zhou, A macrophage
+membrane-coated mesoporous silica nanoplatform inhibiting adenosine A2AR via
+in situ oxygen supply for immunotherapy, J Control Release 353 (2023) 535–548,
+https://doi.org/10.1016/j.jconrel.2022.12.001.
+[118] D. Li, Z. Cao, C. Chen, H. Li, S. He, X. Hou, M. Liang, X. Yang, J. Wang,
+Nanoassembly of doxorubicin-conjugated polyphosphoester and siRNA
+simultaneously elicited macrophage- and T cell- mediated anticancer immune
+response for cancer therapy, Biomaterials 302 (2023) 122339, https://doi.org/
+10.1016/j.biomaterials.2023.122339.
+[119] X. Shi, L. Shu, M. Wang, J. Yao, Q. Yao, S. Bian, X. Chen, J. Wan, F. Zhang,
+S. Zheng, H. Wang, Triple-combination immunogenic nanovesicles reshape the
+tumor microenvironment to potentiate chemo-immunotherapy in preclinical
+cancer models, Adv. Sci. 10 (2023) e2204890, https://doi.org/10.1002/
+advs.202204890.
+[120] Y. Liu, J. He, M. Li, K. Ren, Z. Zhao, Inflammation-driven nanohitchhiker
+enhances postoperative immunotherapy by alleviating prostaglandin E2-
+mediated immunosuppression, ACS Appl. Mater. Interfaces 16 (2024)
+6879–6893, https://doi.org/10.1021/acsami.3c17357.
+[121] H. Huang, N. Li, X. Wei, Q. Li, J. Guo, G. Yang, H. Yang, L. Cai, Y. Liu, C. Wu,
+Biomimetic "Gemini nanoimmunoregulators" orchestrated for boosted
+photoimmunotherapy by spatiotemporally modulating PD-L1 and tumor-
+associated macrophages, Acta Pharm. Sin. B 14 (2024) 1345–1361, https://doi.
+org/10.1016/j.apsb.2023.11.005.
+[122] H. Tian, W. Li, G. Wang, Y. Tian, J. Yan, S. Zhou, X. Yu, B. Li, Y. Dai, Self-
+degradable nanogels reshape immunosuppressive tumor microenvironment via
+drug repurposing strategy to reactivate cytotoxic CD8(+) T cells, Adv. Sci. 10
+(2023) e2301661, https://doi.org/10.1002/advs.202301661.
+[123] Y. Li, Y. Luo, L. Hou, Z. Huang, Y. Wang, S. Zhou, Antigen-capturing dendritic-
+cell-targeting nanoparticles for enhanced tumor immunotherapy based on
+photothermal-therapy-induced in situ vaccination, Adv Healthc Mater 12 (2023)
+e2202871, https://doi.org/10.1002/adhm.202202871.
+[124] W. Yu, X. He, Z. Yang, X. Yang, W. Xiao, R. Liu, R. Xie, L. Qin, H. Gao,
+Sequentially responsive biomimetic nanoparticles with optimal size in
+combination with checkpoint blockade for cascade synergetic treatment of breast
+cancer and lung metastasis, Biomaterials 217 (2019) 119309, https://doi.org/
+10.1016/j.biomaterials.2019.119309.
+[125] M. Xu, Y. Chang, G. Zhu, X. Zhu, X. Song, J. Li, Transforming cold tumors into hot
+ones with a metal-organic framework-based biomimetic nanosystem for enhanced
+immunotherapy, ACS Appl. Mater. Interfaces 15 (2023) 17470–17484, https://
+doi.org/10.1021/acsami.2c21005.
+[126] H. Song, H. Sun, N. He, C. Xu, Y. Wang, L. Du, Y. Liu, Q. Wang, K. Ji, J. Wang,
+M. Zhang, Y. Gu, Y. Zhang, L. Feng, O. Tillement, W. Wang, Q. Liu, Gadolinium-
+based ultra-small nanoparticles augment radiotherapy-induced T-cell response to
+synergize with checkpoint blockade immunotherapy, Nanoscale 14 (2022)
+11429–11442, https://doi.org/10.1039/d2nr02620a.
+[127] Z. Deng, M. Xi, C. Zhang, X. Wu, Q. Li, C. Wang, H. Fang, G. Sun, Y. Zhang,
+G. Yang, Z. Liu, Biomineralized MnO(2) nanoplatforms mediated delivery of
+immune checkpoint inhibitors with STING pathway activation to potentiate
+cancer radio-immunotherapy, ACS Nano 17 (2023) 4495–4506, https://doi.org/
+10.1021/acsnano.2c10352.
+[128] R. Zhang, M. Jia, H. Lv, M. Li, G. Ding, G. Cheng, J. Li, Assembling Au(8) clusters
+on surfaces of bifunctional nanoimmunomodulators for synergistically enhanced
+low dose radiotherapy of metastatic tumor, J Nanobiotechnology 22 (2024) 20,
+https://doi.org/10.1186/s12951-023-02279-2.
+[129] Y. Wang, J. Chen, R. Duan, R. Gu, W. Wang, J. Wu, H. Lian, Y. Hu, A. Yuan, High-
+Z-sensitized radiotherapy synergizes with the intervention of the pentose
+phosphate pathway for in situ tumor vaccination, Adv Mater 34 (2022)
+e2109726, https://doi.org/10.1002/adma.202109726.
+[130] P. Pan, X. Dong, Y. Chen, J.J. Ye, Y.X. Sun, X.Z. Zhang, A heterogenic membrane-
+based biomimetic hybrid nanoplatform for combining radiotherapy and
+immunotherapy against breast cancer, Biomaterials 289 (2022) 121810, https://
+doi.org/10.1016/j.biomaterials.2022.121810.
+[131] T. Huang, W. Wu, J. Wu, Y. Tan, M. Zhang, H. Long, H. Guo, X. Zhang, W. Zhou,
+Q. Zhang, X. Xie, M. Xu, C. Zhang, Perfluorocarbon nanodrug induced oxygen
+self-enriching sonodynamic therapy improves cancer immunotherapy after
+insufficient radiofrequency ablation, Front. Immunol. 14 (2023) 1124152,
+https://doi.org/10.3389/fimmu.2023.1124152.
+[132] S. Wu, J. Zhang, J. Pan, S. Bai, Z. Wang, Y. Chen, D. Xu, Y. An, C. Liu, C. Chu,
+Q. Dai, L. Jiang, Z. Lu, G. Liu, Integrated nanorod-mediated PD-L1
+downregulation in combination with oxidative-stress immunogene therapy
+against cancer, Adv Healthc Mater 12 (2023) e2300110, https://doi.org/
+10.1002/adhm.202300110.
+[133] R. Tang, H. He, X. Lin, N. Wu, L. Wan, Q. Chen, Y. Hu, C. Cheng, Y. Cao, X. Guo,
+Y. Zhou, X. Xiong, M. Zheng, Q. Wang, F. Li, Y. Zhou, P. Li, Novel combination
+strategy of high intensity focused ultrasound (HIFU) and checkpoint blockade
+boosted by bioinspired and oxygen-supplied nanoprobe for multimodal imaging-
+guided cancer therapy, J Immunother Cancer 11 (2023), https://doi.org/
+10.1136/jitc-2022-006226.
+[134] L. Chen, W. Xue, J. Cao, S. Zhang, Y. Zeng, L. Ma, X. Qian, Q. Wen, Y. Hong,
+Z. Shi, Y. Xu, TiSe(2)-mediated sonodynamic and checkpoint blockade combined
+immunotherapy in hypoxic pancreatic cancer, J Nanobiotechnology 20 (2022)
+453, https://doi.org/10.1186/s12951-022-01659-4.
+[135] Y. Chen, Y. Yang, X. He, X. Liu, P. Yu, R. Liu, L. Wei, B. Zhang, T. Zou, H. Liu,
+Y. Li, R. Chen, Y. Cheng, Copper indium selenium nanomaterials for photo-
+amplified immunotherapy through simultaneously enhancing cytotoxic T
+lymphocyte recruitment and M1 polarization of macrophages, Acta Biomater. 171
+(2023) 495–505, https://doi.org/10.1016/j.actbio.2023.09.033.
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+22 
+[136] L. Zhou, L. Chen, X. Hu, Y. Lu, W. Liu, Y. Sun, T. Yao, C. Dong, S. Shi, A Cu(9)S(5)
+nanoparticle-based CpG delivery system for synergistic photothermal-,
+photodynamic- and immunotherapy, Commun. Biol. 3 (2020) 343, https://doi.
+org/10.1038/s42003-020-1070-6.
+[137] X. Wang, Y. Li, K. Hasrat, L. Yang, Z. Qi, Sequence-responsive multifunctional
+supramolecular nanomicelles act on the regression of TNBC and its lung
+metastasis via synergic pyroptosis-mediated immune activation, Small 19 (2023)
+e2305101, https://doi.org/10.1002/smll.202305101.
+[138] G. Hou, J. Qian, M. Guo, W. Xu, J. Wang, Y. Wang, A. Suo, Hydrazide-manganese
+coordinated multifunctional nanoplatform for potentiating immunotherapy in
+hepatocellular carcinoma, J. Colloid Interface Sci. 628 (2022) 968–983, https://
+doi.org/10.1016/j.jcis.2022.08.091.
+[139] M. Wang, M. He, M. Zhang, S. Xue, T. Xu, Y. Zhao, D. Li, F. Zhi, D. Ding,
+Controllable hypoxia-activated chemotherapy as a dual enhancer for synergistic
+cancer photodynamic immunotherapy, Biomaterials 301 (2023) 122257, https://
+doi.org/10.1016/j.biomaterials.2023.122257.
+[140] S. Chen, Y. Lv, Y. Wang, D. Kong, J. Xia, J. Li, Q. Zhou, Tumor acidic
+microenvironment-responsive promodulator iron oxide nanoparticles for
+photothermal-enhanced chemodynamic immunotherapy of cancer, ACS
+Biomater. Sci. Eng. 9 (2023) 773–783, https://doi.org/10.1021/
+acsbiomaterials.2c01287.
+[141] X. Chang, Q. Wu, Y. Wu, X. Xi, J. Cao, H. Chu, Q. Liu, Y. Li, W. Wu, X. Fang,
+F. Chen, Multifunctional Au modified Ti(3)C(2)-MXene for photothermal/enzyme
+dynamic/immune synergistic therapy, Nano Lett. 22 (2022) 8321–8330, https://
+doi.org/10.1021/acs.nanolett.2c03260.
+[142] X.L. Hou, X. Dai, J. Yang, B. Zhang, D.H. Zhao, C.Q. Li, Z.Y. Yin, Y.D. Zhao, B. Liu,
+Injectable polypeptide-engineered hydrogel depot for amplifying the anti-tumor
+immune effect induced by chemo-photothermal therapy, J. Mater. Chem. B 8
+(2020) 8623–8633, https://doi.org/10.1039/d0tb01370f.
+[143] B. Feng, B. Hou, Z. Xu, M. Saeed, H. Yu, Y. Li, Self-amplified drug delivery with
+light-inducible nanocargoes to enhance cancer immunotherapy, Adv Mater 31
+(2019) e1902960, https://doi.org/10.1002/adma.201902960.
+[144] H. Zhu, Y. Liu, X. Yi, C. Zhu, Y. Fu, Z. Huang, K. Zhu, W. Zhang, H. Hou, C. Sun,
+C. Zhong, W. Liu, Z. Li, B. Wang, J. Wo, Novel biomimetic mesoporous silica
+nanoparticle system possessing targetability and immune synergy facilitates
+effective solid tumor immuno-chemotherapy, Biomater. Adv. 144 (2023) 213229,
+https://doi.org/10.1016/j.bioadv.2022.213229.
+[145] K. Domvri, S. Petanidis, D. Anestakis, K. Porpodis, C. Bai, P. Zarogoulidis,
+L. Freitag, W. Hohenforst-Schmidt, T. Katopodi, Dual photothermal MDSCs-
+targeted immunotherapy inhibits lung immunosuppressive metastasis by
+enhancing T-cell recruitment, Nanoscale 12 (2020) 7051–7062, https://doi.org/
+10.1039/d0nr00080a.
+[146] J. Song, C. Tang, Y. Wang, J. Ba, K. Liu, J. Gao, J. Chang, J. Kang, L. Yin,
+Multifunctional nanoparticles for enhanced sonodynamic-chemodynamic
+immunotherapy with glutathione depletion, Nanomedicine (Lond). 19 (2024)
+145–161, https://doi.org/10.2217/nnm-2023-0218.
+[147] M. Zhu, Y. Shi, Y. Shan, J. Guo, X. Song, Y. Wu, M. Wu, Y. Lu, W. Chen, X. Xu,
+L. Tang, Recent developments in mesoporous polydopamine-derived
+nanoplatforms for cancer theranostics, J Nanobiotechnology 19 (2021) 387,
+https://doi.org/10.1186/s12951-021-01131-9.
+[148] A. Gostaviceanu, S. Gavrilas, L. Copolovici, D.M. Copolovici, Graphene-oxide
+peptide-containing materials for biomedical applications, Int. J. Mol. Sci. 25
+(2024), https://doi.org/10.3390/ijms251810174.
+[149] J. Li, W. Lu, Y. Yang, R. Xiang, Y. Ling, C. Yu, Y. Zhou, Hybrid nanomaterials for
+cancer immunotherapy, Adv. Sci. 10 (2023) e2204932, https://doi.org/10.1002/
+advs.202204932.
+[150] J. Cai, Y. Xu, F. Liao, Advances in multifunctional metal-organic framework
+(MOF)-based nanoplatforms for cancer starvation therapy, Expert Rev Mol Med
+26 (2024) e27, https://doi.org/10.1017/erm.2024.28.
+[151] H.Y. Chen, J. Deng, Y. Wang, C.Q. Wu, X. Li, H.W. Dai, Hybrid cell membrane-
+coated nanoparticles: a multifunctional biomimetic platform for cancer diagnosis
+and therapy, Acta Biomater. 112 (2020) 1–13, https://doi.org/10.1016/j.
+actbio.2020.05.028.
+[152] M. Yang, J. Li, P. Gu, X. Fan, The application of nanoparticles in cancer
+immunotherapy: targeting tumor microenvironment, Bioact. Mater. 6 (2021)
+1973–1987, https://doi.org/10.1016/j.bioactmat.2020.12.010.
+[153] Y. Liu, L. Qiao, S. Zhang, G. Wan, B. Chen, P. Zhou, N. Zhang, Y. Wang, Dual pH-
+responsive multifunctional nanoparticles for targeted treatment of breast cancer
+by combining immunotherapy and chemotherapy, Acta Biomater. 66 (2018)
+310–324, https://doi.org/10.1016/j.actbio.2017.11.010.
+[154] L.Y. Liu, X.Z. Ma, B. Ouyang, D.P. Ings, S. Marwah, J. Liu, A.Y. Chen, R. Gupta,
+J. Manuel, X.C. Chen, B.K. Gage, I. Cirlan, N. Khuu, S. Chung, D. Camat,
+M. Cheng, M. Sekhon, K. Zagorovsky, M.A. Abdou Mohamed, C. Thoeni, J. Atif,
+J. Echeverri, D. Kollmann, S. Fischer, G.D. Bader, W.C.W. Chan, T.I. Michalak, I.
+D. McGilvray, S.A. MacParland, Nanoparticle uptake in a spontaneous and
+immunocompetent woodchuck liver cancer model, ACS Nano 14 (2020)
+4698–4715, https://doi.org/10.1021/acsnano.0c00468.
+[155] C. Dubreil, O. Sainte Catherine, Y. Lalatonne, C. Journe, P. Ou, P. van Endert,
+L. Motte, Tolerogenic iron oxide nanoparticles in type 1 diabetes: biodistribution
+and pharmacokinetics studies in nonobese diabetic mice, Small 14 (2018)
+e1802053, https://doi.org/10.1002/smll.201802053.
+[156] P.L. Zadnik, C.A. Molina, R. Sarabia-Estrada, M.L. Groves, M. Wabler, J. Mihalic,
+E.F. McCarthy, Z.L. Gokaslan, R. Ivkov, D. Sciubba, Characterization of
+intratumor magnetic nanoparticle distribution and heating in a rat model of
+metastatic spine disease, J. Neurosurg. Spine 20 (2014) 740–750, https://doi.org/
+10.3171/2014.2.SPINE13142.
+[157] P.A. Chiarelli, R.A. Revia, Z.R. Stephen, K. Wang, M. Jeon, V. Nelson, F.M. Kievit,
+J. Sham, R.G. Ellenbogen, H.P. Kiem, M. Zhang, Nanoparticle biokinetics in mice
+and nonhuman primates, ACS Nano 11 (2017) 9514–9524, https://doi.org/
+10.1021/acsnano.7b05377.
+[158] O.V. Khullar, A.P. Griset, S.L. Gibbs-Strauss, L.R. Chirieac, K.A. Zubris, J.
+V. Frangioni, M.W. Grinstaff, Y.L. Colson, Nanoparticle migration and delivery of
+Paclitaxel to regional lymph nodes in a large animal model, J. Am. Coll. Surg. 214
+(2012) 328–337, https://doi.org/10.1016/j.jamcollsurg.2011.11.006.
+[159] N. Maisha, C. Kulkarni, N. Pandala, R. Zilberberg, L. Schaub, L. Neidert, J. Glaser,
+J. Cannon, V. Janeja, E.B. Lavik, PEGylated polyester nanoparticles trigger
+adverse events in a large animal model of trauma and in naive animals:
+understanding cytokine and cellular correlations with these events, ACS Nano 16
+(2022) 10566–10580, https://doi.org/10.1021/acsnano.2c01993.
+[160] S. Gioria, F. Caputo, P. Urban, C.M. Maguire, S. Bremer-Hoffmann, A. Prina-
+Mello, L. Calzolai, D. Mehn, Are existing standard methods suitable for the
+evaluation of nanomedicines: some case studies, Nanomedicine (Lond). 13 (2018)
+539–554, https://doi.org/10.2217/nnm-2017-0338.
+[161] M.M. Mahmud, N. Pandey, J.A. Winkles, G.F. Woodworth, A.J. Kim, Toward the
+scale-up production of polymeric nanotherapeutics for cancer clinical trials, Nano
+Today 56 (2024), https://doi.org/10.1016/j.nantod.2024.102314.
+[162] S. He, K. Nader, J.S. Abarrategi, H. Bediaga, D. Nocedo-Mena, E. Ascencio, G.
+M. Casanola-Martin, I. Castellanos-Rubio, M. Insausti, B. Rasulev, S. Arrasate,
+H. Gonzalez-Diaz, NANO.PTML model for read-across prediction of nanosystems
+in neurosciences. computational model and experimental case of study,
+J Nanobiotechnology 22 (2024) 435, https://doi.org/10.1186/s12951-024-
+02660-9.
+[163] J. Meneses, M. Gonzalez-Durruthy, E. Fernandez-de-Gortari, A.P. Toropova, A.
+A. Toropov, E. Alfaro-Moreno, A Nano-QSTR model to predict nano-cytotoxicity:
+an approach using human lung cells data, Part. Fibre Toxicol. 20 (2023) 21,
+https://doi.org/10.1186/s12989-023-00530-0.
+[164] F. Caputo, D. Mehn, J.D. Clogston, M. Rosslein, A. Prina-Mello, S.E. Borgos,
+S. Gioria, L. Calzolai, Asymmetric-flow field-flow fractionation for measuring
+particle size, drug loading and (in)stability of nanopharmaceuticals. The joint
+view of European Union Nanomedicine Characterization Laboratory and National
+Cancer Institute - nanotechnology Characterization Laboratory, J. Chromatogr. A
+1635 (2021) 461767, https://doi.org/10.1016/j.chroma.2020.461767.
+[165] A.M. Nystrom, B. Fadeel, Safety assessment of nanomaterials: implications for
+nanomedicine, J Control Release 161 (2012) 403–408, https://doi.org/10.1016/
+j.jconrel.2012.01.027.
+[166] M.J. Mitchell, M.M. Billingsley, R.M. Haley, M.E. Wechsler, N.A. Peppas,
+R. Langer, Engineering precision nanoparticles for drug delivery, Nat. Rev. Drug
+Discov. 20 (2021) 101–124, https://doi.org/10.1038/s41573-020-0090-8.
+[167] W. Qamar, S. Gulia, M. Athar, R. Ahmad, M.T. Imam, P. Chandra, B.P. Singh,
+R. Haque, M.I. Hassan, S. Rahman, An insight into impact of nanomaterials
+toxicity on human health, PeerJ 12 (2024) e17807, https://doi.org/10.7717/
+peerj.17807.
+[168] L. Xuan, Z. Ju, M. Skonieczna, P.K. Zhou, R. Huang, Nanoparticles-induced
+potential toxicity on human health: Applications, toxicity mechanisms, and
+evaluation models, MedComm (2020) 4 (2023) e327, https://doi.org/10.1002/
+mco2.327.
+[169] R.K. Pandey, V.K. Prajapati, Molecular and immunological toxic effects of
+nanoparticles, Int. J. Biol. Macromol. 107 (2018) 1278–1293, https://doi.org/
+10.1016/j.ijbiomac.2017.09.110.
+[170] N. Ozenver, T. Efferth, Immunotoxicity of therapeutic antibodies and
+nanoparticles, Crit. Rev. Immunol. 40 (2020) 53–74, https://doi.org/10.1615/
+CritRevImmunol.2020033236.
+[171] E. Giusto, L. Zarska, D.F. Beirne, A. Rossi, G. Bassi, A. Ruffini, M. Montesi,
+D. Montagner, V. Ranc, S. Panseri, Graphene oxide nanoplatforms to enhance
+cisplatin-based drug delivery in anticancer therapy, Nanomaterials 12 (2022),
+https://doi.org/10.3390/nano12142372.
+[172] M. Su, Z. Zhang, L. Zhou, C. Han, C. Huang, E.C. Nice, Proteomics, personalized
+medicine and cancer, Cancers 13 (2021), https://doi.org/10.3390/
+cancers13112512.
+[173] A. Hafner, J. Lovric, G.P. Lakos, I. Pepic, Nanotherapeutics in the EU: an overview
+on current state and future directions, Int J Nanomedicine 9 (2014) 1005–1023,
+https://doi.org/10.2147/IJN.S55359.
+[174] M. Prasad, U.P. Lambe, B. Brar, I. Shah, M. J, K. Ranjan, R. Rao, S. Kumar,
+S. Mahant, S.K. Khurana, H.M.N. Iqbal, K. Dhama, J. Misri, G. Prasad,
+Nanotherapeutics: an insight into healthcare and multi-dimensional applications
+in medical sector of the modern world, Biomed. Pharmacother. 97 (2018)
+1521–1537, https://doi.org/10.1016/j.biopha.2017.11.026.
+[175] P. Xiao, X. Tao, H. Wang, H. Liu, Y. Feng, Y. Zhu, Z. Jiang, T. Yin, Y. Zhang, H. He,
+J. Gou, X. Tang, Enzyme/pH dual stimuli-responsive nanoplatform co-deliver
+disulfiram and doxorubicin for effective treatment of breast cancer lung
+metastasis, Expert Opin Drug Deliv 20 (2023) 1015–1031, https://doi.org/
+10.1080/17425247.2023.2237888.
+[176] Y. Yin, L. Gao, P. Sun, L. Zeng, Q. Zhao, S. Chen, J. Liu, L. Wang, pH/ROS dual
+stimuli-responsive anionic flexible supramolecular organic frameworks for
+synergistic therapy, Acta Biomater. 172 (2023) 395–406, https://doi.org/
+10.1016/j.actbio.2023.10.019.
+[177] A.V. Singh, M.H.D. Ansari, D. Rosenkranz, R.S. Maharjan, F.L. Kriegel, K. Gandhi,
+A. Kanase, R. Singh, P. Laux, A. Luch, Artificial intelligence and machine learning
+in computational nanotoxicology: unlocking and empowering nanomedicine, Adv
+Healthc Mater 9 (2020) e1901862, https://doi.org/10.1002/adhm.201901862.
+[178] W.C. Chou, Q. Chen, L. Yuan, Y.H. Cheng, C. He, N.A. Monteiro-Riviere, J.
+E. Riviere, Z. Lin, An artificial intelligence-assisted physiologically-based
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+23 
+pharmacokinetic model to predict nanoparticle delivery to tumors in mice,
+J Control Release 361 (2023) 53–63, https://doi.org/10.1016/j.
+jconrel.2023.07.040.
+[179] K. Mi, W.C. Chou, Q. Chen, L. Yuan, V.N. Kamineni, Y. Kuchimanchi, C. He, N.
+A. Monteiro-Riviere, J.E. Riviere, Z. Lin, Predicting tissue distribution and tumor
+delivery of nanoparticles in mice using machine learning models, J Control
+Release 374 (2024) 219–229, https://doi.org/10.1016/j.jconrel.2024.08.015.
+[180] Y. Hu, S. Mignani, J.P. Majoral, M. Shen, X. Shi, Construction of iron oxide
+nanoparticle-based hybrid platforms for tumor imaging and therapy, Chem. Soc.
+Rev. 47 (2018) 1874–1900, https://doi.org/10.1039/c7cs00657h.
+[181] Z. Liu, D. Zhou, X. Yan, L. Xiao, P. Wang, J. Wei, L. Liao, Gold nanoparticle-
+incorporated chitosan nanogels as a theranostic nanoplatform for CT imaging and
+tumour chemotherapy, Int J Nanomedicine 17 (2022) 4757–4772, https://doi.
+org/10.2147/IJN.S375999.
+[182] Q. Liu, L. Liu, C. Mo, X. Zhou, D. Chen, Y. He, H. He, W. Kang, Y. Zhao, G. Jin,
+Polyethylene glycol-coated ultrasmall superparamagnetic iron oxide
+nanoparticles-coupled sialyl Lewis X nanotheranostic platform for
+nasopharyngeal carcinoma imaging and photothermal therapy,
+J Nanobiotechnology 19 (2021) 171, https://doi.org/10.1186/s12951-021-
+00918-0.
+[183] E.B. Souto, C. Blanco-Llamero, K. Krambeck, N.S. Kiran, C. Yashaswini,
+H. Postwala, P. Severino, R. Priefer, B.G. Prajapati, R. Maheshwari, Regulatory
+insights into nanomedicine and gene vaccine innovation: safety assessment,
+challenges, and regulatory perspectives, Acta Biomater. 180 (2024) 1–17, https://
+doi.org/10.1016/j.actbio.2024.04.010.
+[184] Q. Li, Q. Liu, H. Li, L. Dong, Y. Zhou, J. Zhu, L. Yang, J. Tao, Modified hollow
+mesoporous silica nanoparticles as immune adjuvant-nanocarriers for
+photodynamically enhanced cancer immunotherapy, Front. Bioeng. Biotechnol.
+10 (2022) 1039154, https://doi.org/10.3389/fbioe.2022.1039154.
+R. Xu et al.
+Materials Today Bio 30 (2025) 101386 
+24 

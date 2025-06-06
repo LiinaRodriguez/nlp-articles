@@ -1,0 +1,2944 @@
+REVIEW
+Open Access
+© The Author(s) 2025. Open Access  This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, 
+sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and 
+the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this 
+article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included 
+in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will 
+need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://​creativ​ecommon​s.or​g/licenses/by/4.0/. The 
+Creative Commons Public Domain Dedication waiver (http:​//creativecommo​ns.​org/publicdo​main​/​zero/1.0/) applies to the data made available 
+in this article, unless otherwise stated in a credit line to the data.
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+https://doi.org/10.1186/s40364-025-00735-9
+Biomarker Research
+†Prakash Gangadaran, Akanksha Onkar, Ramya Lakshmi Rajendran 
+and Anshika Goenka contributed equally to this work.
+*Correspondence:
+Chae Moon Hong
+cmhong@knu.ac.kr
+Byeong-Cheol Ahn
+abc2000@knu.ac.kr
+Full list of author information is available at the end of the article
+Abstract
+Macrophages are pivotal in the body’s defense and response to inflammation. They are present in significant 
+numbers and are widely implicated in various diseases, including cancer. While molecular and histological 
+techniques have advanced our understanding of macrophage biology, their precise function within the cancerous 
+microenvironments remains underexplored. Enhancing our knowledge of macrophages and the dynamics 
+of their extracellular vesicles (EVs) in cancer development can potentially improve therapeutic management. 
+Notably, macrophages have also been harnessed to deliver drugs. Noninvasive in vivo molecular imaging of 
+macrophages is crucial for investigating intricate cellular processes, comprehending the underlying mechanisms 
+of diseases, tracking cells and EVs’ migration, and devising macrophage-dependent drug-delivery systems in living 
+organisms. Thus, in vivo imaging of macrophages has become an indispensable tool in biomedical research. The 
+integration of multimodal imaging approaches and the continued development of novel contrast agents hold 
+promise for overcoming current limitations and expanding the applications of macrophage imaging. This study 
+comprehensively reviews several methods for labeling macrophages and various imaging modalities, assessing 
+the merits and drawbacks of each approach. The review concludes by offering insights into the applicability of 
+molecular imaging techniques for real time monitoring of macrophages in preclinical and clinical scenarios.
+Keywords  In vivo imaging, Macrophage, Tumors, Optical imaging, MRI, PET, SPECT, Drug resistance
+Noninvasive in vivo imaging of macrophages: 
+understanding tumor microenvironments 
+and delivery of therapeutics
+Prakash Gangadaran1,2,3†, Akanksha Onkar4†, Ramya Lakshmi Rajendran1,2,3†, Anshika Goenka5†, Ji Min Oh2,3, 
+Fatima Khan6, ArulJothi Kandasamy Nagarajan7, Sathish Muthu8,9, Anand Krishnan10, Chae Moon Hong2,3,11* and 
+Byeong-Cheol Ahn1,2,3,11*
+Page 2 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+Introduction
+The activity and profile of immune cell infiltrates in 
+tumors significantly influence cancer outcomes. Non­
+invasive molecular imaging has proven beneficial for a 
+comprehensive understanding of tumor-immune cell 
+interactions. Molecular Imaging utilizes techniques to 
+visualize the cells, either through modification of the 
+cell (i.e. transfection of genetic reporters) or loaded with 
+imaging agents before being injected into subjects. These 
+immune cells then navigate the bloodstream and target 
+specific sites in the tumor microenvironment (TME). 
+Additionally, they can act as therapeutic vehicles due to 
+their intrinsic surface properties, which facilitate chemi­
+cal conjugation and targeted delivery of therapeutic 
+agents [1–3]. Presently, antitumor immunity in cancer 
+patients is assessed using tissue biopsies and blood bio­
+markers. However, these invasive methods lack spatial 
+information and do not provide a comprehensive view 
+of the TME, particularly regarding the tumor’s potential 
+heterogeneity. Thus, as an alternative strategy, noninva­
+sive methods for imaging immunoregulatory cells, such 
+as macrophages and cytotoxic immune cells, are being 
+promoted and have shown promise in preclinical and 
+clinical settings [1, 4].
+Molecular imaging involves noninvasive monitoring 
+and recording of the biological processes at the cellular 
+and molecular levels in intact living cells [5]. It has been 
+widely used in both animal models and clinical settings. 
+Noninvasive molecular imaging methods include fluores­
+cence, bioluminescence, magnetic resonance, and nuclear 
+imaging. Additionally, when coupled with comprehen­
+sive vascular assessment, multimodal imaging provides 
+more accurate information on tumor biology, enhanc­
+ing the clinical value of molecular imaging [6]. Intrigu­
+ingly, molecular imaging of the migration and infiltration 
+of tumor-infiltrating immune cells, including cytotoxic 
+T cells, natural killer (NK) cells, and macrophages, has 
+shown success preclinically and clinically, demonstrating 
+great potential in the field [1, 7, 8]. Activated T cells are 
+major contributors to antitumor immunity, making their 
+tracking of particular interest. For example, upregulated 
+surface protein markers (e.g., OX40, ICOS, and CD25) 
+or secreted markers (e.g., IFN-γ and Granzyme B) are 
+attractive targets for the noninvasive imaging of activated 
+T cells [1]. Additionally, optical imaging of NK cells, 
+either transfected with fluorescence or luminescence 
+genes or labeled with dyes, has facilitated tracking their 
+migration and infiltration in tumors [5, 7].
+Macrophages, the predominant myeloid population of 
+tumor-infiltrating innate immune cells, are categorized 
+into tumor-promoting and tumor-inhibiting macro­
+phages. Both categories have been imaged by targeting 
+the CD11b+ myeloid cells in the TME [9]. The tumor-
+promoting population, known as tumor-associated 
+macrophages (TAMs), is the most abundant myeloid 
+population infiltrating the TME, and their abundance 
+correlates with poor patient survival in most cancers [9–
+11]. TAMs have been implicated in developing resistance 
+to therapies, including resistance to immune checkpoint 
+inhibitors in several cancer types [12, 13]. Hence, track­
+ing macrophages and their function within tumors is 
+crucial for comprehending the TME, elucidating underly­
+ing disease mechanisms, and designing potential macro­
+phage-based therapies and drug-delivery systems.
+Extracellular vesicles (EVs) are nano-sized membra­
+nous vesicles released by almost all cells into extracellular 
+space and invitro into culture media. EVs are generally 
+classified into exosome (small EVs), microvesicles and 
+apoptotic bodies based their biogenesis. Exosomes are 
+released into extracellular space upon fusion of multi­
+vesicular bodies and the plasma membrane are released 
+from the surface of cells. Whereas apoptotic bodies 
+released during the cells undergoing apoptosis. EVs 
+plays a vital role in cell-to-cell communication in adja­
+cent and distance cells as they carry various biologically 
+active materials such as lipids, proteins, and nucleic acids 
+[14, 15]. Recent evidence indicates that EVs play a cru­
+cial role in key physiological and pathological processes, 
+including cellular homeostasis, infection, and cancer. The 
+growing recognition of EVs as potential biomarkers and 
+therapeutic tools has sparked increased interest in their 
+study [14, 16, 17].
+We aim to delve into recent findings regarding the 
+association of TAMs with cancer pathology and pro­
+gression and their utilization in drug-delivery strategies. 
+Barone et al. [18] focused mostly on the EV categories 
+that are utilized for cancer research and TAM-EV based 
+nanomedicines for cancer treatment. In current review, 
+we emphasize the various noninvasive methods for imag­
+ing macrophages and their EVs in cancer. We also portray 
+how these methods hold tremendous potential for broad 
+clinical applications and provide valuable insights into 
+characterizing biomarkers and therapeutic targets. In 
+summary, this review offers a comprehensive analysis of 
+preclinical theranostic approaches for TAMs, highlight­
+ing diverse imaging strategies and their clinical relevance 
+in ongoing human trials. The knowledge gained would 
+help understand the immunosuppressive effects exerted 
+by TAMs on cytotoxic immune cells, thereby contribut­
+ing to the battle against tumor progression.
+Macrophages
+Macrophages are multifunctional immune cells found 
+in mammalian tissues. Initially described by Elie Metch­
+nikoff as phagocytic cells [19], early research focused on 
+their roles in host defense against infections, regulating 
+housekeeping genes to remove apoptotic cells and extra­
+cellular matrix (ECM) remodeling [20]. However, recent 
+Page 3 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+studies have expanded our understanding of macro­
+phages, highlighting their generic roles in metabolism, 
+tissue homeostasis, and development [21, 22]. Tissue-
+resident macrophages are known to be involved in the 
+development of organs such as the brain, bone, and ova­
+ries, as well as in tissue repair by sensing damage signals 
+[20, 23]. They release growth factors that aid in functions 
+like neuronal patterning, branching morphogenesis, 
+bone morphogenesis, angiogenesis, and adipose tissue 
+formation [23]. In addition to their physiological roles, 
+macrophages contribute to the pathology of various dis­
+eases, including osteoporosis, atherosclerosis, fibrosis, 
+and cancer [20]. While macrophage activation through 
+cytokines and bacterial products was initially found to 
+kill cancer cells, later studies revealed that macrophages 
+are often present in leukocyte infiltrates within tumor tis­
+sues. Upon interaction with the TME, these infiltrates are 
+driven toward an immunosuppressive TAM phenotype, 
+facilitating cancer progression and therapy resistance [8, 
+24, 25].
+Classification of macrophages
+Macrophages are classified into two main categories: 
+macrophage 1 (M1) and macrophage 2 (M2). These clas­
+sifications reflect the diversity of macrophages represent­
+ing the extreme states of in vitro polarization [26]. This 
+categorization has also been adopted to classify macro­
+phages in vivo (Fig.  1A). Treatment with proinflamma­
+tory cytokines (e.g., TNF and interferons) or bacterial 
+products (e.g., lipopolysaccharide) induces the polariza­
+tion of macrophages to an M1 phenotype. Meanwhile, 
+immunoregulatory cytokines such as TGFβ, IL-4, and 
+IL-10 induces an M2 phenotype in the macrophages. This 
+M2 polarization promotes the secretion of proangiogenic 
+factors (e.g., VEGF) and tissue-remodeling enzymes (e.g., 
+matrix metalloproteinases), which facilitate tumor pro­
+gression [27–29]. In contrast, M1 macrophages release 
+anti-angiogenic factors, such as IL-12 and CXCL10, and 
+are associated with antitumor immunity [30].
+Interestingly, TAMs do not strictly conform to the M1 
+and M2 phenotypes. Single-cell sequencing has been 
+employed to address this limitation, allowing for a more 
+detailed classification of macrophages into additional 
+subtypes: M2a, M2b, M2c, and M2d [31–33]. Despite the 
+different subtypes’ characterization, understanding each 
+subtype’s precise function in tumor survival and progres­
+sion remains challenging [34]. Moreover, TAM subpopu­
+lations often coexpress both M1 and M2 gene signatures, 
+underscoring the heterogeneity of TAMs [35], thereby 
+suggesting new directions for targeted therapy.
+TAMs
+As mentioned above, TAMs are significant components 
+of the TME and are associated with poor prognosis and 
+drug resistance in tumors [36]. In patients with classic 
+Hodgkin’s lymphoma, an increase in TAMs is strongly 
+associated with shortened survival, highlighting TAMs as 
+biomarkers for risk stratification [37]. Tumor cells secrete 
+growth factors and cytokines that attract macrophages 
+and induce them into a protumorigenic profile, contrib­
+uting to poor clinical outcomes in various cancers [38, 
+39].
+TAMs are derived from two major macrophage popu­
+lations. One population consists of macrophages that dif­
+ferentiate from yolk sac–derived precursors, which can 
+self-renew during a steady state and an infection. The 
+other population originates from bone marrow-derived 
+monocytes (BMDMs), which give rise to macrophages 
+in the intestine and dermis [40]. For example, in glioblas­
+toma, a grade IV lethal form of brain tumor, TAMs are 
+primarily derived from monocytes that extravasate from 
+the blood circulation and infiltrate the inflamed brain tis­
+sue, where they were differentiated from bone marrow-
+derived macrophages [13, 41]. However, understanding 
+the specific origin of macrophages for different cancer 
+subtypes remains limited [40].
+Activated TAMs can produce various factors that gen­
+erate the hallmarks of cancer, including inducing angio­
+genesis, sustaining proliferative signaling, disrupting the 
+immune system, evading growth suppression, enhanc­
+ing metastasis and invasion, and suppressing cell death 
+pathways [42]. For instance, cancer cells secrete suc­
+cinate to polarize macrophages into TAMs, promoting 
+cancer cell migration, invasion, and metastasis through 
+the PI3K-HIFα axis [43]. Similarly, the secretion of the 
+allergic mediator, histamine, by cancer cells and the neu­
+rotransmitter GABA by B cells contributes to the gen­
+eration of tumor-promoting TAMs [44, 45]. Additionally, 
+beyond polarization, cancer cells stimulate TAM ampli­
+fication by secreting colony-stimulating factor 1 (CSF1, 
+a key regulator that sustains the protumorigenic func­
+tions of TAMs), the E3 ligase Cop1, and the metabolite 
+β-glucosylceramide, all of which enhance TAM activity 
+[46–48]. Zhu et al.. recently reviewed the pivotal role of 
+macrophages in the innate immune system and the TME, 
+particularly in thyroid cancer (TC). Their review high­
+lights the dual nature of TAMs in TC progression, exam­
+ining their polarization, gene mutations, and M2-like 
+TAM-centered therapeutic strategies [49]. Finally, intra­
+vital imaging studies have demonstrated long-term phys­
+ical interactions exist between TAMs and CD8+ effector 
+T, leading to T-cell exhaustion [50] (Fig. 1B).
+Macrophages and drug delivery
+Due to the phagocytic activity of macrophages, their 
+tumor homing capability, and their efficacy in killing 
+cancer cells, macrophages especially the M1 subtype, 
+have been widely exploited as carriers or vehicles for 
+Page 4 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+Fig. 1  Types of macrophages and role of TAMs in the TME. (A) Macrophages polarize into M1 and M2 subtypes, which arise from the bone marrow. 
+Tumor-associated macrophages (TAMs) participate in cancer progression. (B) Schematic represents the impact of TAMs in promoting tumor cell metasta­
+sis, angiogenesis, T-cell inactivation, epithelial-mesenchymal transition, invasion, and migration. TAMs promote tumorigenesis by secreting some factors 
+and expressing some proteins. CSF-1: colony-stimulating factor-1; MMPs: matrix metalloproteinases; EGF: epidermal growth factor; FGF: fibroblast growth 
+factor; VEGF: vascular endothelial growth factor; PDGF: platelet-derived growth factor. Created with BioRender.com
+ 
+Page 5 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+drug delivery [51, 52]. These drug-delivery systems uti­
+lize the surface protein markers of macrophages to tar­
+get cancers. Apart from the macrophages themselves, 
+macrophage-derived EVs, the secretory vesicles released 
+from macrophages, play an important role in intercellular 
+communication and are broadly used for drug-delivery 
+vehicles in cancerous diseases. EVs in general are classi­
+fied into the following categories based on their size: (i) 
+exosomes (30–150  nm), (ii) microvesicles or ectosomes 
+(50 nm–1 μm), and (iii) apoptotic bodies (50 nm–5 μm) 
+[53, 54]. Among these, exosomes originate from late 
+endosomes and are secreted by the fusion of late endo­
+somes with the plasma membrane [55]. Therefore, mac­
+rophage derived EVs, especially the exosomes, inherit 
+the phenotypic and functional properties of their par­
+ent macrophage subtype, and could be used in studying 
+TAM function in the TME and in delivering therapeutics. 
+Additionally, macrophage membranes have been used 
+to coat nanoparticles directly, which serve as anticancer 
+drug-delivery vehicles [53].
+Macrophage-mediated drug delivery
+As previously stated, macrophages are efficient and ver­
+satile carriers for anticancer drugs. They can circulate 
+in the bloodstream alongside red blood cells and neu­
+trophils and target cancer cells by binding their α4β1 
+integrins to vascular cell adhesion molecule-1 on cancer 
+cells. M1-like macrophages derived from BMDMs and 
+the macrophage cell line RAW264.7 are widely used for 
+tumor-targeting applications [53, 56]. These direct carri­
+ers of anticancer drugs are generated by incubating the 
+macrophages with the drugs. In one study, doxorubicin 
+(DOX)-loaded RAW 264.7 macrophages prolonged the 
+survival of 4T1 tumor-bearing mice, with DOX-loading 
+not significantly affecting macrophage viability and func­
+tion [57]. Additionally, DOX-loaded M1 macrophages 
+transferred DOX to ovarian cancer cells through a tun­
+neling nanotube pathway, similar to virus transfer, which 
+inhibited tumor invasion more efficiently than liposome-
+DOX [58]. Despite these benefits, the use of RAW 264.7 
+cells remains controversial due to their transformed 
+nature, which means they lack some of the phenotypical 
+and functional characteristics of primary macrophages. 
+Moreover, using primary macrophages presents its chal­
+lenges, including the potential for inflammation, develop­
+ment of a pro-tumorigenic phenotype leading to immune 
+tolerance, and possible off-target effects [59–61].
+Besides the mentioned drawbacks, when macrophages 
+are used as direct carriers, the cytotoxic effects of drugs 
+on macrophages remain a bottleneck and require moni­
+toring [53]. As a result, most applications use macro­
+phages as indirect carriers wherein nanoparticles (NPs) 
+containing drugs are loaded onto macrophages to help 
+reduce drug toxicity and increase the drug dose. For 
+example, macrophages loaded with N-succinyl-N′-octyl 
+chitosan (SOC)-paclitaxel (PTX) demonstrated higher 
+therapeutic efficiency than PTX-loaded macrophages due 
+to their higher drug-loading efficiency [62]. Moreover, 
+NP-loaded M1-like macrophages could cross the blood-
+brain barrier, showing favorable brain distribution and 
+enhanced survival in glioma-bearing mice treated with 
+DOX-loaded M1 macrophages [63]. The macrophages 
+endocytosed and released the loaded drugs; however, 
+most drugs were degraded during this process, which 
+remained the study’s limitation. This issue was potentially 
+overcome by Doshi et al., who developed phagocytosis-
+resistant backpacks, wherein loaded microparticles were 
+attached to the macrophages’ surface rather than the 
+drug being engulfed [64] (Fig. 2).
+Macrophage-derived EVs mediated drug delivery
+As described earlier, M1-like macrophage-derived exo­
+somes (M1-exos) have surface membrane properties like 
+their parent macrophages and could be used as therapeu­
+tic anticancer agents. For instance, a nanoformulation 
+of M1-exos loaded with PTX efficiently treated drug-
+resistant tumors [65]. However, this study used exosomes 
+from RAW 264.7 cells. It remains to be seen if using 
+macrophage exosomes derived from BMDMs would 
+yield better outcomes. Surface receptors could also be 
+targeted, for example, M2-polarized TAMs express 
+higher levels of the interleukin-4 receptor (IL4R) than 
+M1-polarized macrophages [66] In a study by Gunassek­
+aran et al., engineered M1-derived exosomes transfected 
+with NF-κB p50 siRNA and miR-511–3p, termed Exo(si/
+mi), were utilized to promote M1 polarization and tar­
+get IL4R. Whole-body fluorescence imaging revealed 
+that DiD-labeled IL4R-Exo(si/mi) exosomes successfully 
+reprogrammed tumor-associated macrophages (TAMs) 
+into an M1 phenotype, thereby inhibiting tumor growth. 
+IL4R-Exo(si/mi) exosomes were efficiently internalized by 
+M2 macrophages, leading to a decrease in M2 markers, 
+an increase in M1 markers, and more efficient suppres­
+sion of target genes compared to control exosomes. Fur­
+thermore, imaging demonstrated that IL4R-Exo(si/mi) 
+exosomes accumulated in tumors more effectively than 
+untargeted exosomes. Notably, systemic IL4R-Exo(si/
+mi) administration hindered tumor growth, lowered M2 
+cytokines and immune-suppressive cell levels, and ele­
+vated M1 cytokines and immune-stimulatory cell levels, 
+significantly outperforming control exosomes. Despite 
+not thoroughly addressing the polarization mechanisms 
+and their effects on the TME, the study highlights IL4R-
+Exo(si/mi) as a promising cancer immunotherapy strat­
+egy [67].
+Aside from acting as drug carriers, M1-exos release 
+antitumor 
+cytokines, 
+enhancing 
+their 
+cytotoxic 
+effects [68]. M1-exos can also serve as adjuvants for 
+Page 6 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+cancer vaccines; however, the mechanistic understand­
+ing behind this remains limited [69]. Exosome-mediated 
+therapy in tumors also faces cost-benefit due to the low 
+yield. To address this, exosome-mimetic nanovesicles 
+have been developed to overcome the low yield problem 
+in exosome purification. In a study by Choo et al., such 
+M1-exo-mimetics polarized M2-like macrophages to an 
+M1-like phenotype, thereby enhancing the efficacy of 
+anti-programmed death-ligand 1 (PD-L1) therapies [70]. 
+Taken together, macrophage-derived exosomes target 
+malignant tumors and modulate the immunosuppressive 
+TME [53] (Fig. 2).
+Noninvasive in vivo imaging modalities: 
+monitoring macrophage migration and infiltration 
+into tumors
+The utilization of light for visualizing cells and tissues 
+has been a consistently insightful and straightforward 
+method in basic research and medical diagnostic imag­
+ing. In vivo monitoring of macrophage migration and 
+infiltration into tumors can be achieved through the vari­
+ous noninvasive molecular imaging methods discussed 
+below. These techniques facilitate visualization and quan­
+tification of the behavior and dynamics of TAMs in the 
+TME, providing valuable insights into tumor progression 
+and therapeutic responses.
+Fluorescence imaging
+Over the past decade, significant advancements in the 
+engineering and application of fluorescent proteins have 
+expanded their utility in imaging, enabling more precise 
+visualization of biological processes [71, 72]. These pro­
+teins have revolutionized the ability to track and study 
+cellular and molecular processes in real-time, offer­
+ing unprecedented insights into biological systems. In 
+vivo fluorescent imaging with living organisms mirrors 
+the principles of fluorescence microscopy [73], which 
+involves transducing cells of interest with green or red 
+fluorescent proteins or reporter genes for live imaging 
+[74]. Additionally, fluorescent agents such as dyes Cya­
+nine 5, Cyanine 7, and DiR: 1,1’-Dioctadecyl-3,3,3’,3’-
+tetramethylindotricarbocyanine iodide, with appropriate 
+emission wavelength and photostability, are employed for 
+in vivo cell imaging investigation [75, 76]. Overall, fluo­
+rescence imaging offers comparatively lower expenses 
+and high spatial resolution, which is particularly evident 
+when investigating reporter gene systems in small ani­
+mals like rodents. Furthermore, unlike bioluminescence 
+imaging (discussed below), fluorescence imaging does 
+not require a substrate. However, its sensitivity is com­
+promised by autofluorescence issues [77] (Table 1). Flu­
+orescence imaging techniques are widely used to track 
+TAMs in cancer studies. A study by Sun et al. conducted 
+Fig. 2  Drug delivery using macrophages or their EVs. Recent understanding of macrophages seems diverse in terms of functions in many diseases. 
+Macrophages have gained increasing interest as critical therapeutic targets. When developing drug carriers, understanding their biological roles in bio­
+distribution, cellular uptake, intracellular trafficking, and drug release is essential for efficient targeting. Macrophage-derived EVs also play a vital role in 
+tumor progression. Their use as natural nanovesicles for therapeutic drug loading has many benefits in blood-brain barrier penetration, whereas other 
+synthetic nanoparticles showed failed blood-brain barrier penetration. Created with BioRender.com
+ 
+Page 7 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+Imaging modality
+Acronym
+Contrast 
+agent 
+categories
+Advantages
+Disadvantages
+Tumor phenotype 
+evaluation
+Clinical 
+application
+Ref­
+er­
+ences
+Fluorescence
+FLI
+Fluorescent 
+dyes and 
+molecules
+Light sensitive 
+nanoparticles
+Quantum dots
+Photoacous­
+tic contrast 
+agents
+• High sensitiv­
+ity (invitro) and 
+specificity
+• Moderate sensitiv­
+ity (In vivo)
+• Real-time imaging
+• Incorporation of 
+multiple colors
+• Ease of use and 
+accessibility
+• Easy sample 
+preparation, 
+Cost-effective
+• Limited tissue 
+penetration
+• Low image quality 
+due to scattering and 
+absorption
+• Low signal to 
+noise ratio due to 
+autofluorescence
+• Photobleaching and 
+phototoxicity
+• Limited resolution
+• Limited clinical use
+Macro/microstruc­
+ture analysis
+Detection of 
+specific tumor 
+receptors, proteins, 
+or antigens
+Analysis of TME 
+heterogeneity 
+using specific 
+markers for cell 
+types
+Limited
+[78–
+82]
+Bioluminescence
+BLI
+Luciferases and 
+luciferins
+Luciferase sub­
+strate pairs
+Synthetic bio­
+luminescent 
+probes
+Calcium and 
+pH sensitive 
+probes
+• High sensitivity 
+(invitro)
+• and specificity
+• Moderate sensitiv­
+ity (In vivo)
+• Real-time imaging
+• Minimal pho­
+tobleaching and 
+phototoxicity
+• Multiplexing 
+capability
+• Cost-effective
+• Limited tissue 
+penetration
+• Limited imaging 
+depth Dependency 
+on reporter gene 
+expression
+• Requirement of sub­
+strate administration
+• Limited clinical use
+• Potential antigenic­
+ity of the enzymes
+Macro/microstruc­
+ture analysis
+Detection of 
+specific tumor 
+receptors, proteins, 
+or antigens
+Analysis of TME 
+heterogeneity 
+using specific 
+markers for cell 
+types
+Limited
+[81–
+89]
+Magnetic Resonance 
+Imaging
+MRI
+Gadolinium 
+based contrast 
+agents
+Iron-oxide 
+nanoparticles
+Manganese 
+based contrast 
+agents
+Hyperpolarized 
+agents
+¹⁹Flourine 
+based contrast 
+agents
+• Excellent tissue 
+penetration
+• High resolution 
+due to superior soft 
+tissue contrast
+• Used non-ionizing 
+radiations
+• Functional imag­
+ing for e.g. fMRI
+• Broad clinical use
+• High cost and 
+limited availability
+• Time consuming
+• Susceptible to arti­
+facts due to motion 
+sensitivity
+• Risks in patients 
+with contrast agents
+• Less effective for 
+calcified tissues like 
+bone
+• Less sensitivity
+Analysis of TME 
+and its cellular 
+density
+Proliferation 
+analysis
+Analysis of apopto­
+sis and necrosis
+Macro/Microstruc­
+ture analysis
+Yes
+[81, 
+82, 
+90–
+96]
+Magnetic Resonance 
+Spectroscopy
+MRS
+Paramag­
+netic contrast 
+agents
+Oxygen-sensi­
+tive agents
+pH sensitive 
+agents
+Enzyme-
+responsive 
+agents
+• Non-invasive
+• In vivo biochemi­
+cal insights
+• Early disease 
+detection
+• Quantitative in 
+nature
+• No ionizing 
+radiation
+• Complementary 
+to MRI
+• Low sensitivity
+• Complex synthesis 
+of probes
+• Short half-life of the 
+probes
+Metabolic and 
+microenvironment 
+phenotypes
+Analysis of tumor 
+heterogeneity
+Response to 
+therapy
+Yes
+[97–
+100]
+Table 1  Different imaging modalities and their use in assessing tumor microenvironment phenotypes
+Page 8 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+fluorescent imaging of TAM in breast tumor-bearing 
+mice, using CD206 antibody-coated NIR-emitting fluo­
+rescent dye (NIRF) and dye-IgG as controls. Both probes 
+were intravenously injected into the mice. In vivo NIRF 
+imaging revealed that signals were present as early as 2 h 
+post-injection and continued to be detecTables 8 and 24, 
+and 48 h., the time point at which TAMs were detected in 
+the tumors (Table 2). While the control dye-IgG was also 
+detected in the tumors at all the mentioned time points, it 
+was present at significantly lower levels. Ex vivo imaging 
+further confirmed a two-fold greater signal in the tumor 
+following NIRF-CD206 injection than dye-IgG. Addi­
+tionally, the NIRF-CD206 signal colocalized with F4/80+ 
+TAMs, unlike the controls. Therefore, the study showed 
+that CD206-targeted molecular imaging could sensi­
+tively detect the dynamic changes in TAMs. A similar 
+approach was utilized in the study by Zhang et al., where 
+an antibody of CD206-NIRF dye was used to visualize the 
+TAM in the mouse breast tumor. The CD206-NIRF dye 
+was intravenously injected into the mice and imaged after 
+24  h. In vivo fluorescent imaging showed a significant 
+dye accumulation in the tumor region and lymph node 
+(LN) metastasis compared to the free dye. Thus, this 
+study also confirmed that CD206-targeted imaging can 
+sensitively detect TAMs in the tumors and LN metasta­
+sis [112] (Table 2). However, given the heterogeneity of 
+TAMs within and across tumors, the technique utilized 
+in the abovementioned studies offers limited potential 
+for clinical translation. Safety of most of fluorescent dyes 
+(except indocyanine green) is not validated for human 
+use. Moreover, shared markers between immune cells 
+make the method susceptible to a lack of sensitivity.
+Another study by Verdoes et al. employed a non­
+peptidic cathepsin S activity-based probe with Cy5 
+Imaging modality
+Acronym
+Contrast 
+agent 
+categories
+Advantages
+Disadvantages
+Tumor phenotype 
+evaluation
+Clinical 
+application
+Ref­
+er­
+ences
+Magnetic Particle 
+Imaging
+MPI
+Iron oxide 
+nanopar­
+ticles such as 
+magnetite and 
+maghemite
+• High-sensitivity, 
+minimal back­
+ground noise, and 
+superior contrast
+• Real-time and 
+quantitative 
+imaging
+• No exposure to 
+ionizing radiations
+• High scalability
+• Minimal interfer­
+ence with MRI
+• No depth 
+limitation
+• Limited spatial 
+resolution
+• Dependance on 
+synthesis and qual­
+ity of nanoparticle 
+contrast agents
+• Requirement of spe­
+cialized equipment’s 
+for imaging
+• Potential toxicity 
+from non-biocom­
+patible contrast 
+agents
+• Lack of anatomical 
+imaging
+• Limited clinical 
+availability
+Tumor localization, 
+size, vascularity and 
+perfusion
+Tumor targeting 
+and analysis of TME 
+in terms of hypoxia, 
+pH or acidity
+Metastasis 
+detection
+Yes
+[101–
+105]
+Positron Emission 
+Tomography/
+Single Photon 
+Emission Computed 
+Tomography
+PET/SPECT
+Glucose 
+metabolism 
+tracers
+Neurotrans­
+mitter and 
+neuroreceptor 
+tracers
+Perfusion and 
+Hypoxia tracers
+Amino acid, 
+protein, and 
+DNA synthesis 
+tracers
+Inflammation 
+and infection 
+tracers
+Heavy metal 
+labeled agents 
+(SPECT)
+• High sensitivity
+• Functional whole-
+body imaging 
+possible
+• High spatial 
+resolution
+• High tissue 
+penetration
+• Longer half-life of 
+radiotracers
+• Ionizing radiation 
+exposure
+• Limited availability
+• Complex radiotracer 
+development
+• Longer imaging 
+times
+Provides 2D informa­
+tion if not used along 
+MRI
+Analyzing metabol­
+ic reprogramming
+Analysis of condi­
+tions like hypoxia/
+oxygenation
+Analysis of tumor 
+proliferation
+Detection and 
+analysis of tumor-
+related proteins 
+and antigens
+Analysis of 
+angiogenesis
+Yes
+[81, 
+82, 
+106–
+111]
+FLI: Fluorescence Imaging; BLI: Bioluminescence Imaging; MRI: Magnetic Resonance Imaging; MRS: Magnetic Resonance Spectroscopy; MPI: Magnetic Particle 
+Imaging; PET: Positron Emission Tomography; SPECT: Single Photon Emission Computed Tomography; TME: Tumor Microenvironment; fMRI: Functional Magnetic 
+Resonance Imaging; ¹⁹F MRI: Fluorine-19 Magnetic Resonance Imaging; 2D: Two-Dimensional; pH: Power of Hydrogen (acidity/basicity measurement)
+Table 1  (continued)
+ 
+Page 9 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+Imaging
+Imaging 
+modality
+Labeling
+Agent
+Cell type
+Subject
+Injection route
+Duration
+Tumor
+Ref.
+Agent Macrophage
+FLI
+FLI
+CD206-targeting NIRF
+TAM
+BALB/c 
+mice
+IV
+-
+2, 8, 24, and 
+48 h
+Mouse breast cancer [171]
+FLI
+BMV083-Cy5
+TAM
+BALB/c 
+mice
+IV
+-
+10 h
+Mouse breast cancer [113]
+FLI
+Deoxymannose-Cy7
+TAM
+BALB/c 
+nude 
+mice
+IV
+-
+2, 4, 6, and 
+8 h
+Human
+hepatoma cells
+[117]
+FLI
+Dye-αCD206
+TAM
+BALB/c 
+mice
+IV
+-
+24 h
+Mouse breast cancer [112]
+FLI
+DiR
+BMC2
+C57BL/6 
+mice
+-
+IV
+72 h
+Mouse melanoma 
+cells
+[76]
+BLI
+BLI
+Effluc
+RAW 264.7 
+cells
+BALB/c 
+nude 
+mice
+-
+SC
+0 and 7 days Mouse colon cancer
+[128]
+BLI
+Effluc
+RAW 264.7 
+cells
+BALB/c 
+nude 
+mice
+-
+IP
+1–4 days
+Mouse colon cancer
+[128]
+MRI
+MRI
+FIONs
+Peritoneal 
+macrophage
+BALB/c 
+nude 
+mice
+IV
+24 h
+Mouse melanoma 
+tumor, metastatic 
+lymph nodes
+[135]
+MRI
+PG-Gd-NIR813
+TAM
+SD nude 
+rat
+IV
+-
+0 and 48 h
+Rat glioma
+[116]
+MRI
+Ferumoxytol
+TAM
+Human
+IV
+-
+24 h
+Human lymphomas
+or sarcomas
+[139]
+MRI
+Ferumoxytol, P904 or 
+P1133.
+TAM
+FVB 
+mice
+IV
+-
+1 and 24 h
+Mouse mammary 
+adenocarcinomas
+[140]
+MRI
+Dextran coated SPIONs
+TAM
+FVB/N 
+mice
+IV
+-
+24 h
+Mouse mammary 
+adenocarcinomas
+[141]
+MRI
+Ferumoxytol
+TAM
+C57BL/6 
+or 
+BALB/c 
+nude
+IV
+-
+24 h
+Mouse lung 
+carcinoma
+[162]
+MRI
+¹⁹F
+TAM 
+(metastasis-
+associated 
+macrophages)
+Female 
+BALB/c 
+mice
+IV
+-
+12, 24, 36, 
+48 and 60 h
+Mouse breast cancer [142]
+MRI and 
+MRS
+Nitric oxide-targeting 
+USPIO
+TAM
+BALB/c
+IV
+-
+1, 6, 12, 24, 
+and 48 h
+Mouse breast cancer [146]
+MRI and 
+MPI
+Ferumoxytol and 
+Ferucarbotran
+TAM
+Female 
+BALB/c 
+mice
+IV
+Orthotopic 
+injection in 
+mammary fat 
+pad
+24 h
+Mouse breast cancer [105]
+Table 2  Molecular imaging of in vivo monitoring of macrophage migration and infiltration into tumors
+Page 10 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+(BMV083-Cy5) in breast orthotopic tumor-bearing mice 
+for TAM identification. The BMV083-Cy5 probe was 
+intravenously injected into the orthotopic tumor-bear­
+ing mice, and an in vivo fluorescent signal was detected 
+in the tumor 10  h post-injection (Table  2). Since fluo­
+rescence imaging suffers from the limitation of lower 
+sensitivity than bioluminescence (Table  1), the authors 
+labeled the 4T1 tumor cells with luc-GFP to demarcate 
+the tumor boundary using luciferase bioluminescence, 
+while the localization of the BMV083 was determined 
+by Cy5 fluorescence. Interestingly, the BMV083 sig­
+nal primarily colocalized with the F4/80+ macrophages, 
+establishing TAMs as the significant source of cyste­
+ine cathepsin activity in the TME [113]. However, the 
+authors identified F4/80hi as the primary BMV083+ cells 
+and classified them M2-macrophages. This classification 
+remains a shortcoming given the redundancy of F4/80 
+expression on other macrophage subtypes, including 
+M1-macrophages [114]. A potential method to overcome 
+such limitation could involve conjugating fluorescent 
+probes to antibodies or ligands specific to macrophage 
+surface markers or TAM-related antigens, allowing for 
+highly specific targeting [112, 115, 116]. Another study 
+by Zambito et al. utilized a similar combination of fluo­
+rescence and bioluminescence imaging to track TAMs. 
+The authors used engineered macrophages (BMC2) as 
+sensors for metastatic melanoma, demonstrated through 
+dual-color in vivo imaging. Macrophages expressing the 
+green click green luciferase and labelled with the NIR dye 
+were attracted to melanoma cells expressing near-infra­
+red click beetle luciferase, detectable through real-time 
+imaging up to 72  h after injection (Table  2). The study 
+shows potential in early detection and effective treat­
+ment strategy for melanoma, which usually suffers from 
+poor prognosis upon metastasis. Thus, optical imaging 
+can potentially detect noninvasive metastatic melanoma 
+using circulating macrophages [76].
+Imaging
+Imaging 
+modality
+Labeling
+Agent
+Cell type
+Subject
+Injection route
+Duration
+Tumor
+Ref.
+Agent Macrophage
+NI
+PET/CT
+124I-Au@AuCBs
+RAW 264.7 
+cells
+BALB/c 
+nude 
+mice
+-
+IT
+1 and 9 days Mouse colon cancer
+[153]
+PET/CT
+89Zr-PL-HDL & 89Zr-AI-HDL
+TAM
+C57BL/6 
+mice
+IV
+-
+24 h
+Mouse breast cancer [155]
+PET
+Mannose
+coated 64Cu liposomes
+TAM
+FVB 
+mice
+IV
+-
+6 h
+NaCl-induced lung 
+tumor
+[160]
+PET/CT
+18F-FB-antiMMR sdAb
+TAM
+C57BL/6 
+mice
+IV
+-
+60 and 
+180 min
+Mouse lung 
+carcinoma
+[158]
+SPECT-mCT
+99mTc-labeled antiMMR 
+nanobodies
+TAM
+WT or 
+MMR-
+KO-mice
+IV
+-
+3 h
+Mouse lung 
+carcinoma
+[161]
+PET/CT
+64Cu- and VT680-labeled
+Macrin
+TAM
+C57BL/6 
+mice
+IV
+-
+24 h
+Mouse Colon 
+Adenocarci­
+noma/Mouse lung 
+adenocarcinoma
+[159]
+PET/CT
+FDG
+TAM
+Human
+IV
+-
+-
+Human non–small 
+cell lung cancer
+[162]
+PET
+FDG
+TAM
+C57BL/6 
+or 
+BALB/c 
+nude
+IV
+-
+24 h
+Mouse Lung 
+carcinoma
+[162]
+SPECT/CT
+125I-αCD206
+TAM
+BALB/c 
+mice
+IV
+-
+24 h
+Mouse breast cancer [112]
+FLI - Fluorescence Imaging, CD206 - Cluster of Differentiation 206 (a cell surface receptor), NIRF - Near-Infrared Fluorescence, TAM - Tumor-Associated Macrophages, 
+BALB/c mice - A strain of laboratory mice, IV - Intravenous (administration route), BMV083-Cy5 - A specific compound labeled with Cy5 fluorophore, Deoxymannose-
+Cy7 - A compound labeled with Cy7 fluorophore, Dye-αCD206 - A dye-labeled antibody targeting CD206, DiR - A lipophilic near-infrared dye, BMC2 - Engineered 
+macrophage expressing luciferase, C57BL/6 mice - Another strain of laboratory mice, BLI - Bioluminescence Imaging, Effluc - Firefly Luciferase gene, RAW 264.7 cells 
+- A mouse macrophage cell line, SC - Subcutaneous (administration route), IP - Intraperitoneal (administration route), MRI - Magnetic Resonance Imaging, FIONs - 
+Functionalized Iron Oxide Nanoparticles, PG, Gd-NIR813 - A specific contrast agent labeled with Gd and NIR813 fluorophore, Ferumoxytol - An iron supplement used 
+as a contrast agent, P904 or P1133 - Specific compounds used in imaging, Dextran coated SPIONs - Dextran-coated Superparamagnetic Iron Oxide Nanoparticles, 
+NI - Nuclear Imaging, PET/CT - Positron Emission Tomography/Computed Tomography, 124I-Au@AuCBs - Gold-labeled carbon black nanoparticles labeled with 
+iodine-124, 89Zr-PL-HDL & 89Zr-AI-HDL - Zirconium-labeled phospholipid and apolipoprotein A-I high-density lipoprotein, 64Cu - Copper-64, 18F-FB-antiMMR 
+sdAb - Fluorine-18-labeled single-domain antibody against Macrophage Mannose Receptor, SPECT-mCT - Single Photon Emission Computed Tomography/micro 
+Computed Tomography, 99mTc-labeled antiMMR nanobodies - Technetium-99m-labeled nanobodies against Macrophage Mannose Receptor, VT680-labeled 
+Macrin - VT680 fluorophore-labeled Macrophage Receptor with Collagenous Structure, FDG – Fluorodeoxyglucose, 125I-αCD206 - Iodine-125-labeled alpha Cluster 
+of Differentiation 206 antibody
+Table 2  (continued)
+ 
+Page 11 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+In human hepatoma tumor-bearing mice, the in vivo 
+fluorescent imaging of TAM was conducted by intrave­
+nously injecting deoxy mannose (DM), a high-affinity 
+ligand of mannose receptor, labeled with the NIR dye 
+cyanine 7 (Cy7). The authors observed specific signals 
+in the tumor as early as 1 h. post-injection, which gradu­
+ally stabilized at 2, 4, 6, and 8 h (Table 2), and the fluo­
+rescence slightly decreased over time. Ex vivo imaging 
+further confirmed the presence of TAMs in the tumors 
+using DM-Cy7 [117]. Now, mannose receptors may also 
+be present on other immune cells or cell types within the 
+TME [118]. Thus, the specificity of mannose labeling for 
+TAMs must be carefully validated when such methods 
+are translated into clinical studies.
+Thus, fluorescence imaging alone, and in combination 
+with bioluminescence, offers a powerful tool for study­
+ing TAMs in the TME and in monitoring treatment out­
+comes. However, the method suffers from limitations of 
+photobleaching, which shortens the duration of in vivo 
+imaging experiments [5, 7, 119, 120]. Additionally, tissues 
+may exhibit autofluorescence, which can interfere with 
+specific signal detection [78, 121, 122] (Table 1).
+Bioluminescence imaging
+Bioluminescence imaging operates through light produc­
+tion from enzymatic oxidation reactions involving lucif­
+erases such as Firefly luciferase (Fluc), Renilla luciferase 
+(Rluc), Gaussia luciferase (Gluc), and their substrates 
+like D-Luciferin or coelenterazine [123]. These lucifer­
+ase enzymes can function as molecular reporting devices 
+when introduced into a biological system, typically 
+through transfection with their encoding genes [124, 
+125]. In contrast to fluorescence imaging, biolumines­
+cence doesn’t rely on an external light source. This, cou­
+pled with the absence of endogenous bioluminescence in 
+tissues, allows for greater sensitivities and higher signal-
+to-background ratios compared to fluorescence tech­
+niques [83, 126, 127]. However, as mentioned above, the 
+clinical translatability of bioluminescence may be limited 
+by substrate requirements and the spatial resolution for 
+detailed cellular imaging is compromised compared to 
+fluorescence imaging techniques. Moreover, enzymes 
+such as luciferases and their cofactors, which are com­
+monly used in the bioluminescence imaging modality, are 
+of foreign origin and can trigger an immune response in 
+the host [85–87]. This antigenic stimulation may result 
+in the production of neutralizing antibodies, potentially 
+causing hypersensitivity and inflammation, thereby limit­
+ing their use in clinical studies (Table 1).
+In a study by Choi et al., genetically labeled RAW 264.7 
+cells with enhanced firefly luciferase (effluc), referred 
+to as Raw/effluc, were used. The study visualized the 
+intravenously injected Raw/effluc cells in the murine 
+colon (CT26) tumor-bearing mice using bioluminescent 
+imaging in vivo. The findings demonstrated increased 
+prostate cancer targeting of the genetically engineered 
+Raw/effluc cells, resulting in increased tumor size. Con­
+sequently, in mice monitored by bioluminescent imaging, 
+macrophage cells migrated to the colon tumor and trans­
+formed into tumor-associated macrophages (TAMs), 
+thereby promoting tumor growth [128]. While the study 
+was restricted to a preclinical setting and requires further 
+validation in human colon cancer samples, it does dem­
+onstrate the potential of reporter gene-based methods in 
+tracking TAM dynamics in tumors.
+Taken together, bioluminescence imaging offers advan­
+tages such as low background signal and reduced false-
+negative results when imaging macrophages or TAMs. 
+Additionally, it allows for the long-term, longitudinal 
+study of macrophage or TAM behavior without the need 
+for repeated injections [88, 120, 126] (Table 1). Thus, the 
+choice between fluorescence or bioluminescence imag­
+ing techniques or a combination strategy depends on the 
+research question, the biological system under study, and 
+the desired imaging parameters (Table 1).
+Magnetic resonance imaging (MRI)
+Magnetic resonance imaging, or MRI, utilizes strong 
+magnetic fields and radio waves to generate highly 
+detailed images of the body’s internal structures with 
+exceptional clarity and resolution. Unlike X-rays, CT 
+scans, or PET scans, MRI does not involve ionizing radia­
+tion. Instead, it capitalizes on the behavior of hydrogen 
+atoms in the body’s tissues when subjected to magnetic 
+fields(1H-MRI). In MRI cell tracking, iron oxide nanopar­
+ticles are frequently employed as contrast agents. These 
+nanoparticles contain unpaired electrons that align with 
+the applied magnetic field, creating local magnetic field 
+inhomogeneities. These inhomogeneities affect the relax­
+ation times (T1, T2, and T3*) of nearby hydrogen nuclei, 
+enhancing image contrast and enabling precise cell track­
+ing [5, 129–131]. Superparamagnetic iron oxides (SPIOs), 
+ranging from 50 to 100 nm, and ultra-small paramagnetic 
+iron oxides (USPIOs) with diameters less than 50 nm are 
+widely employed in MRI for cell tracking due to their 
+magnetic properties [132]. However, despite high ana­
+tomical resolution, MRI suffers from certain disadvan­
+tages. This includes lower sensitivity compared to PET or 
+SPECT, and longer scanning times [133]. Apart from the 
+mentioned shortcomings, MRI also suffers from chemi­
+cal shift artifacts. These artifacts arise due to differences 
+in the resonance frequencies of hydrogen nuclei in vari­
+ous chemical environments, such as fat and water. The 
+variations in local magnetic fields experienced by protons 
+in these environments cause slight frequency differences, 
+which can distort images and lead to spatial misregistra­
+tion or signal cancellation [92, 93] (Table 1).
+Page 12 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+Where optical imaging (fluorescence and biolumines­
+cence) has limited tissue penetration [7, 120, 134], MRI 
+provides excellent tissue permeation, making MRI more 
+suitable for visualizing macrophages and TAMs in deep 
+tissues [7, 129]. Accordingly, in a study by Cho et al., 
+peritoneal macrophages from BALB/c nude mice were 
+evaluated for viability, phagocytotic capacity, and migra­
+tory activity using the MRI. The T2* of labeled macro­
+phages was assessed using a clinical 1.5 T MR scanner. 
+Specifically, the authors induced metastatic lymph nodes 
+(LNs) in the nude mice and intravenously administered 
+2 × 106 macrophages labeled with 50 mg Fe/mL ferromag­
+netic iron-oxide nanocubes (FIONs). After one day, 3D 
+T2*-weighted gradient-recalled-echo MR images were 
+acquired, and the percentage of pixels below the signal 
+intensity threshold was recorded as FION hypointensity. 
+Though the study did not differentiate between the M1 
+or M2 categories of macrophages in their results, nor did 
+it address the time-dependent changes in the injected 
+macrophages, it did observe that the FION-labeled mac­
+rophages targeted the primary tumors and LN metasta­
+ses (12% FION-macrophage hypointensity compared to 
+2% of FIONs alone). Thus, the study implied that mac­
+rophages could be clinically helpful in delivering thera­
+pies to both tumors and LN metastases [135] (Table 2), 
+although the clinical translation of this method remains 
+underexplored.
+As described earlier, TAMs encompass diverse sub­
+types, including M2 macrophages, which are known to 
+fuel tumor growth and metastasis through proangiogenic 
+and growth factor secretion. Consequently, M2 mac­
+rophage depletion has been widely explored as a novel 
+anticancer strategy [136], for instance, in a study by Mel­
+ancon et al. This study crafted a dual magneto-optical 
+probe, PG-Gd-NIR813, to aid in the noninvasive visual­
+ization of TAMs after intravenous injection. In rats with 
+C6 tumors, PG-Gd-NIR813 showed maximum tumor 
+uptake at 48 h (Table 2), as confirmed by in vivo/ex vivo 
+optical imaging and T1-weighted MRI. The probe accu­
+mulated in necrotic tumor regions and was reduced upon 
+macrophage depletion achieved by clodronate liposomes. 
+Furthermore, immunostaining linked PG-Gd-NIR813 
+with TAM markers CD68, CD163 and CD169. How­
+ever, the probe didn’t efficiently differentiate between 
+the tumor-infiltrating monocytes, as indicated by the 
+CD68 staining, which is a macrophage/monocyte marker. 
+Moreover, monocytes also express CD163 and CD169 
+during inflammation [137, 138], which further under­
+scores the probe’s limitation. Nonetheless, the technique 
+highlights PG-Gd-NIR813’s potential for imaging antitu­
+mor responses and as a carrier for immunotherapeutic 
+targeting TAMs [116].
+In another study by Agighi et al., 20 patients (10 
+lymphoma, 10 bone sarcoma) were examined using 
+ferumoxytol-enhanced MRI 24–48  h after injection, 
+followed by tumor biopsy/resection and macrophage 
+staining. The potential of ferumoxytol-enhanced MRI 
+to distinguish tumors with different TAM content was 
+evaluated by comparing the T2* relaxation times of lym­
+phomas and bone sarcomas. Strikingly, the tumor T2* 
+values positively correlated with the CD68+ (r=-0.68, 
+P = 0.031) and CD163+ (r=-0.76; P = 0.010) TAM quanti­
+ties, as observed by histopathology. Although the authors 
+utilized CD68+ and CD163+ markers for TAMs, which 
+lack a macrophage-specific expression [137, 138]. Addi­
+tionally, both bone sarcomas and lymphomas displayed 
+different MRI enhancements and TAM density (P < 0.05). 
+Now, whether these differences existed due to differences 
+in the tumor composition or TAM phenotypes (M1 or 
+M2) is not commented upon. Nonetheless, the study pro­
+vides clinical evidence of ferumoxytol-enhanced MRI as 
+a useful method for categorizing patients with TAM-rich 
+tumors for immune-targeted treatments and tracking 
+therapy responses [139].
+In another study, the iron-oxide nanoparticle uptake 
+was compared between F4/80- mammary carcinoma 
+cells and F4/80+ TAMs. Remarkably, TAMs phagocy­
+tosed iron-oxide nanoparticles more effectively (dR2 
+TAM > dR2 cells; P < 0.05) than the tumor cells in vitro. 
+The observed MRI enhancements at 1 and 24  h post-
+injection correlated with TAM presence and were hin­
+dered upon TAM depletion by the CSF1 antibody. These 
+results suggest that TAM-mediated uptake of contrast 
+agents acts as a primary source of MRI signal enhance­
+ment and could serve as a new biomarker for progno­
+sis, treatment guidance, and immune-targeted therapy 
+assessment for breast cancer [140]. However, the effects 
+of the probe uptake on the TAM phenotype and whether 
+this uptake is specific to a particular subset of TAM 
+remain unexplained. A similar correlation between 
+TAMs and the MRI-iron oxide probe uptake was 
+reported by Leftin et al. In their study, the authors char­
+acterized TAMs by analyzing iron distribution on MRI 
+with and without the administration of dextran–ultra-
+small superparamagnetic iron oxide (USPIO) in ortho­
+topic MMTV-PyMT murine mammary tumors. The 
+specific experimental details are summarized in Table 2. 
+Notably, the + USPIO group showed increased clusters 
+of iron deposits at the tumor’s outer edges compared 
+to the − USPIO group. This correlated positively with a 
+higher frequency of iron+CD68+ and iron+CD206+ in the 
++ USPIO group than in the − USPIO group. While these 
+results cannot be generalized to different tumor types 
+due to the heterogeneity of the TME and the TAM com­
+position, the authors suggested that spatial iron deposit 
+distributions rather than the average of the region of 
+interest enhance TAM characterization in breast cancer 
+models [141].
+Page 13 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+Intriguingly, despite the many advantages of ¹H-MRI, 
+its relatively low sensitivity has driven the development 
+of various contrast agents. The introduction of a “sec­
+ond color” MRI method has addressed several limita­
+tions associated with traditional contrast agents, such 
+as the need for pre-scans and the potential for artifacts 
+caused by localization ambiguity. This advancement 
+enhances the ability to distinguish between different tis­
+sue types and improves overall imaging accuracy. In this 
+context, ¹⁹F-MRI strategies, alongside ¹H-MRI, have gar­
+nered significant attention. The advantages of ¹⁹F atoms 
+include their absence in the human body and the linear 
+relationship between ¹⁹F concentration and MRI signal, 
+which enables quantitative analysis, compared to SPIO 
+cell tracking which is semi-quantitative in nature. How­
+ever, to achieve an adequate signal-to-noise ratio, high 
+concentrations of ¹⁹F- based contrast agents may be nec­
+essary, which can lead to increased cytotoxicity in vivo. 
+This trade-off between signal strength and potential tox­
+icity remains a challenge in the application of ¹⁹F- based 
+contrast MRI for in vivo imaging. Moreover, the stability 
+of labeled nanoemulsions within the body, including their 
+metabolism and clearance rates, needs to be carefully 
+monitored to ensure reliable tracking over time [94–96]. 
+Nonetheless, given the high sensitivity and specificity of 
+¹⁹F- based contrast MRI, it is often employed in under­
+standing TAMs in multiple tumor models. Makela et al. 
+employed ¹⁹F- based contrast MRI to assess the density 
+and distribution of macrophages within murine breast 
+cancer tumors and associated metastases in vivo. The 
+study involved implanting three murine breast cancer cell 
+lines with varying metastatic potentials (4T1, 168FARN, 
+and 67NR) into the mammary fat pads of mice. In vivo 
+whole-body ¹⁹F- based contrast MRI was performed on 
+tumor-bearing mice 24 h after the intravenous injection 
+of a perfluorocarbon (PFC) agent, which was selectively 
+taken up by macrophages in situ. The results showed 
+that tumor-associated macrophages (TAMs) were pre­
+dominantly located in the periphery of primary tumors, 
+with higher TAM numbers detected in the more aggres­
+sive 4T1 tumors. Interestingly, tumors exhibited sig­
+nificantly greater ¹⁹F signal intensity (spins/mm³) when 
+smaller, suggesting increased TAM infiltration in early-
+stage tumors. Additionally, ¹⁹F signals were observed in 
+lung metastases of 4T1 tumor-bearing mice, and fluores­
+cence microscopy confirmed the presence of PFC-posi­
+tive macrophages. These findings indicate that ¹⁹F-MRI 
+can effectively detect and monitor TAMs in individual 
+tumors, enabling the identification of tumors with sub­
+stantial TAM infiltration. This technique could serve as a 
+potential biomarker for tumor characteristics and might 
+be applicable to other tumor types as well [142]. A recent 
+study by Croci et al. utilized ¹⁹F- nanoparticle MRI to 
+noninvasively track TAMs in glioma models. The authors 
+intravenously injected ¹⁹F-PFC-containing nanoparticles 
+(NPs) into tumor-bearing mice, successfully tracking 
+TAMs over time and in response to radiotherapy. Addi­
+tionally, they employed multispectral MRI with two dif­
+ferent ¹⁹F-PFC-NPs to identify spatially and temporally 
+distinct TAM niches in radiotherapy-recurrent murine 
+gliomas. This approach enabled a deeper understand­
+ing of the dynamic behavior and distribution of TAMs in 
+the context of tumor recurrence and treatment response 
+[143].
+Thus, MRI-based TAM characterizations hold signifi­
+cant implications in the realm of nanoparticle-enhanced 
+macrophage imaging in cancer research. This is primarily 
+due to the increased spatial resolution and contrast that 
+MRI offers over optical imaging methods, as summarized 
+in Table 1.
+Magnetic resonance spectroscopy (MRS)
+Magnetic Resonance Spectroscopy (MRS) is a non-
+invasive imaging technique that complements standard 
+MRI by analyzing the biochemical composition of tis­
+sues. While MRI provides detailed anatomical informa­
+tion, MRS focuses on measuring the concentration of 
+specific metabolites within cells or regions of interest, 
+offering deeper insights into cellular metabolism, pathol­
+ogy, and disease progression. MRS detects signals emit­
+ted by nuclei such as hydrogen (¹H), phosphorus (³¹P), or 
+carbon (¹³C) when exposed to a magnetic field. These sig­
+nals arise from variations in the chemical environment, 
+known as “chemical shifts,” which result in distinct peaks 
+on the MRS spectrum [97, 98]. Table 1 provides an over­
+view of the key features of MRS, along with its advan­
+tages and limitations.
+Given its ability to assess physiological status, MRS 
+has been utilized to investigate metabolic differences 
+between M1 and M2 macrophages [99, 100]. However 
+not many studies have employed MRS to investigate the 
+physiology and detect the composition of TAMs in the 
+TME. Nonetheless, a few studies, in combination with 
+MRI, have incorporated MRS into multi-modal imag­
+ing strategies for macrophages. Liu et al. developed MRI 
+probes designed to assess nitric oxide (NO) in macro­
+phages, enabling real-time monitoring of macrophage 
+phenotypic changes within tumors. Arginine metabolism 
+differs between macrophage phenotypes, with M1 mac­
+rophages producing NO and M2 macrophages generat­
+ing urea [144]. During tumor treatment, the phenotypic 
+shift from M2 to M1 macrophages involves increased 
+expression of inducible NO synthase (iNOS), result­
+ing in the intracellular production of NO from arginine 
+[145]. To exploit this mechanism, the authors created a 
+NO-responsive nanoprobe based on ultrasmall super­
+paramagnetic iron oxide nanoparticles. This molecular 
+imaging nanoprobe was specifically designed to quantify 
+Page 14 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+macrophage repolarization by targeting the redox-active 
+NO as a chemical marker. Equipped with O-phenylene­
+diamine groups, the nanoprobe reacted with intracellular 
+NO during the M2-to-M1 transition, triggering electrical 
+attraction and colloidal aggregation of the nanoparticles. 
+These structural changes lead to significant alterations 
+in T1 and T2 relaxation times in MRI, allowing precise 
+quantification of macrophage polarization. In a 4T1 
+breast cancer model, this MRI nanoprobe effectively 
+visualized macrophage polarization and predicted treat­
+ment outcomes in immunotherapy and radiotherapy 
+settings [146]. Future research could explore the applica­
+bility of this strategy across other tumor models, broad­
+ening its clinical potential. Moreover, identifying key 
+metabolic differences between TAM subtypes could fur­
+ther enhance the design of MRI-based probes, enabling 
+more precise targeting and monitoring of macrophage 
+polarization within the tumor microenvironment.
+Magnetic particle imaging (MPI)
+Magnetic Particle Imaging (MPI) is an advanced imag­
+ing technology that directly detects magnetic nanopar­
+ticles (MNPs), such as iron oxide, with high sensitivity 
+and non-invasiveness. This modality uses superparamag­
+netic iron oxide nanoparticles (SPIONs) as tracers, which 
+exhibit no remanent magnetization after the removal of 
+the magnetic field, making them particularly suitable for 
+imaging applications. The technique applies a spatially 
+varying magnetic field to the imaging region, creating a 
+field-free region (FFR) or field-free point (FFP). When 
+MNPs are exposed to oscillating magnetic fields, they 
+produce harmonics in their response signal. The scan­
+ner detects only these nonlinear signals from the MNPs, 
+effectively ignoring background signals from surround­
+ing tissues or structures, resulting in high specificity 
+[101–103].
+While MRI remains the gold standard for high-res­
+olution, whole-body imaging and superior soft-tissue 
+contrast, the high sensitivity of MPI in detecting even 
+minute concentrations of MNPs, coupled with its ability 
+to avoid background noise, has made it an increasingly 
+popular tool for analysing TAMs in the TME in preclini­
+cal studies (Table  1). The technique was first employed 
+by Yu et al. for in vivo cancer imaging using systemically 
+administered tracers. They developed long-circulating, 
+MPI-tailored SPIOs, which were intravenously injected 
+into tumor-bearing rats. The tumors were distinctly high­
+lighted, achieving a tumor-to-background ratio of up to 
+50. Additionally, the nanoparticle dynamics within the 
+tumor were well characterized, showing an initial wash-in 
+at the tumor rim, peak uptake at 6 h, and eventual clear­
+ance beyond 48 h. Although the authors did not inves­
+tigate whether tumor-associated cells, such as TAMs, 
+contributed to the observed signal, the study effectively 
+demonstrated the quantitative capabilities of MPI using 
+compartmental fitting in vivo [104]. In another study, 
+Makela et al. compared the detection capabilities of MRI 
+and MPI for iron-labelled macrophages associated with 
+cancer. In their study, imaging was conducted on 4T1 
+tumor-bearing mice 16–21 days post-cancer cell implan­
+tation and 24 h after intravenous administration of either 
+Ferucarbotran, a superparamagnetic iron oxide (SPIO), 
+or Ferumoxytol, an ultra-small SPIO. Living mice were 
+imaged using a 3T clinical MRI system (General Electric, 
+n = 6) and an MPI system (Magnetic Insight, n = 10). Fol­
+lowing imaging, tumors and lungs were excised, further 
+imaged using MPI, and analysed through histology. The 
+study concluded that MPI provides quantitative in vivo 
+data on iron labelling of macrophages, a level of informa­
+tion unattainable with MRI. Additionally, Ferumoxytol 
+nanoparticles outperformed Ferucarbotran in enabling 
+the MPI-based detection of macrophages labelled in 
+vivo [105]. Interestingly, in recent years there has also 
+been advancements in generating more optimized SPIO 
+and USPIO for MRI/MPI, which perform better than 
+ferumoxytol, like ferucarbotran as depicted by the study 
+mentioned above [147]. These include gadolinium, iron 
+and manganese-based agents (Table 1) [148], which over­
+come the shortcomings of ferumoxytol.
+Although limited studies have specifically investigated 
+TAM phenotypes and behaviour within tumors using 
+MPI, the technique holds significant future potential. For 
+example, due to its quantitative capabilities, MPI could 
+be utilized for macrophage-mediated tumor therapy and 
+detection. In a notable study, Zu et al. designed a super­
+paramagnetic Fe3O4 nanocluster@poly(lactide-co-gly­
+colide acid) core–shell nanocomposite loaded with the 
+chemotherapy drug doxorubicin. This innovative system 
+served as both a drug delivery platform and an MPI quan­
+tification tracer. The nanocomposite’s degradable nature 
+in a mildly acidic microenvironment (pH = 6.5) facilitated 
+sustained doxorubicin release and gradual decomposition 
+of the Fe3O4 nanocluster, leading to measurable changes 
+in the MPI signal. The study demonstrated a strong linear 
+correlation (R² = 0.99) between MPI signal changes and 
+the doxorubicin release rate over time. Furthermore, in a 
+murine breast cancer model, they monitored drug release 
+and its therapeutic effect on tumor cells through MPI, 
+highlighting the feasibility of in vivo drug release tracking 
+in a cancer therapy context [149]. Future research could 
+focus on leveraging such nanocomposite systems to 
+deliver MPI tracers alongside therapeutic agents within 
+macrophages. This approach could not only enhance 
+tumor cell killing through combined drug action and 
+macrophage-intrinsic tumor-clearing mechanisms but 
+also enable real-time tracking of macrophage dynam­
+ics and efficacy in tumor clearance. Such advancements 
+Page 15 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+could pave the way for improved preclinical and clinical 
+applications of MPI in cancer therapy.
+Nuclear imaging: positron emission tomography (PET) and 
+single-photon emission computed tomography (SPECT)
+PET scanning involves measuring the concentration 
+of positron-labeled molecular probes, like ligands or 
+substrates, attached to specific target proteins or con­
+fined within cells of interest. In contrast, SPECT imag­
+ing agents are labeled with γ-emitting radionuclides 
+(e.g., technetium-99m (99mTc), iodine-123 (123I), and 
+iodine-131 (131I)), whereas PET tracers utilize positron-
+emitting radionuclides (e.g., fluorine-18 (18F), iodine-124 
+(124I), and copper-64 (64Cu)) [5]. Unlike MRI and opti­
+cal imaging methods described above, PET and SPECT 
+require only small quantities of imaging agents (rang­
+ing from nanograms to milligrams) [133]. Consequently, 
+radionuclide-based imaging agents employed in PET or 
+SPECT studies are generally safe, and involve a small 
+amount of radiation, which unlikely to induce pharmaco­
+logical effects; The radiation dose during scanning must 
+be carefully managed to avoid disrupting the biological 
+system and causing toxicity, PET and SPECT studies use 
+very small amounts of tracers, which generally not pro­
+duce pharmacological effects [133, 150, 151].
+Like MRI, nuclear imaging methods offer the advan­
+tage of deep tissue penetration, making them suitable for 
+imaging macrophages or TAMs in deep-seated tumors 
+[152]. Since PET/SPECT primarily provides 3D func­
+tional information about the tissue of interest with rela­
+tively poor resolution, therefore, combining it with MRI 
+or CT, which offers high-resolution structural details, 
+creates a powerful hybrid imaging modality. This inte­
+gration enables simultaneous acquisition of functional/
+metabolic 
+and 
+anatomical/structural 
+information, 
+enhancing diagnostic accuracy and utility [111] (Table 1). 
+Nonetheless both, PET and SPECT alone or in combi­
+nation with MRI is widely used to track TAMs in thera­
+pies. For instance, Lee et al. investigated the delivery of 
+photothermal therapy (PTT) using radioiodine-labeled 
+gold nanoparticles (124I-Au@AuCBs) loaded onto macro­
+phages (Raw 264.7). These 124I-Au@AuCB-labeled mac­
+rophages were then intratumorally injected into murine 
+colorectal carcinoma (CT26/FM) tumors, followed by 
+PET/CT scans (Table 2), which revealed an even distri­
+bution of the probe within the tumor lesions. Upon NIR 
+laser irradiation (6.0 W cm− 2, 808 nm) to the tumor site, 
+the authors reported potent antitumor effects. While the 
+impact of transferred macrophages on the host immune 
+system and long-term effects remain unaddressed, these 
+findings underscored the potential of 124I-Au@AuCBs 
+theranostic materials, highlighting the benefits of mac­
+rophage-mediated drug deliveries coupled with PET/CT 
+for various conditions, including cancer [153].
+Apart from tracking therapeutic macrophages, nuclear 
+imaging techniques are often used to track the behavior 
+of TAMs within the TME. Pérez-Medina et al., two differ­
+ent radiolabeled reconstituted high-density lipoprotein 
+(rHDL) nanoparticles containing 89Zr (called 89Zr-PL-
+HDL and 89Zr-AI-HDL), were intravenously injected into 
+mice bearing the orthotropic breast (4T1) tumors. Quan­
+titative PET imaging and histological analysis, which 
+included ionized calcium-binding adaptor molecule 1 
+(Iba-1) as a macrophage marker [154], demonstrated 
+that 89Zr-PL-HDL displayed significant colocalization 
+with macrophage-rich regions. However, the study also 
+noted an uptake by a cell subtype referred to as mono­
+cyte-derived cells. Consequently, while the technique did 
+not sufficiently separate different immune cell types that 
+take up the probe in tumors nor differentiate between 
+M1 or macrophage M2 subtypes, the use of the 89Zr-
+rHDL imaging agents for quantitative macrophage PET 
+imaging exhibited substantial potential in noninvasively 
+monitoring the complex behaviors, functional states, and 
+interactions of macrophages within the TME [155]. Cou­
+pling macrophage-specific antibodies to PET/CT probes 
+has gained importance due to the specificity it offers. In 
+a previous study, single-domain antibody fragments of 
+the cross-reactive antimacrophage mannose receptor 
+(MMR, CD206), a C-type lectin receptor on M2 mac­
+rophages that plays a critical role in pathogen recogni­
+tion, antigen presentation, and immune regulation [156, 
+157], were linked to the PET tracer 18F-fluorobenzoate 
+(18F-FB). The 18F-FB-antiMMR was injected into mouse 
+lung carcinoma (3LL-R) tumor-bearing mice (both wild 
+type and MMR-deficient), followed by PET imaging 
+at 3  h. (Table  2). Notably, there was significant tumor-
+specific retention in the wild-type mice (3 times higher 
+mean uptake) compared to the MMR-deficient mice. This 
+confirmed the specificity of the 18F tracer specificity for 
+MMR and TAMs, respectively, highlighting its potential 
+for precise macrophage imaging in patients [158]. How­
+ever, the use of short half-life radionuclides (e.g. 18F) in 
+PET/CT makes such approaches unsuitable for longitudi­
+nal studies (Table 1).
+Another study by Kim et al. developed a poly-glucose 
+nanoparticle labeled with 64Cu (referred to as Macrin) 
+for tracking TAMs using a quantitative PET imaging 
+approach. Macrin and its analogs were injected intrave­
+nously into mice bearing murine colon adenocarcinoma 
+(MC38) tumor, a TAM-rich model [12]. PET/CT imaging 
+was acquired 24 h after injection (Table 2), revealing high 
+Macrin accumulation in the cancer. Furthermore, Macrin 
+imaging was utilized to monitor the response of macro­
+phages to chemotherapy and γ-irradiation treatments. 
+While the clinical relevance of Macrin requires validation 
+and potential side effects need assessment in patients, it 
+presents a promising selective and translational method 
+Page 16 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+for quantifying TAMs and guiding therapeutic decisions 
+[159].
+SPECT imaging is also utilized to track TAMs within 
+the TME in combination with macrophage-specific anti­
+bodies. For instance, Zhang et al. developed M2-tar­
+geted probes for SPECT imaging using an anti-CD206 
+monoclonal antibody to track TAMs within the TME. 
+They evaluated the specificity and potential applications 
+of these probes in murine breast (4T1) tumor mod­
+els, including subcutaneous tumors and LN metastasis. 
+Following cyclophosphamide treatment, the authors 
+observed a significant increase in M2 macrophage infil­
+tration in relapsing 4T1 tumors but not in non-relapsing 
+ones. Using the synthesized SPECT probes, they sen­
+sitively detected M2 macrophage infiltration in relaps­
+ing tumors and LN metastasis. Importantly, early tumor 
+relapse prediction through the molecular imaging of 
+M2 macrophages enabled effective tumor eradication 
+when combined with radiotherapy. Therefore, M2 mac­
+rophage–targeted imaging facilitates noninvasive predic­
+tion of post-chemotherapy tumor relapse and sensitive 
+detection of metastatic LNs in vivo, offering insights 
+into cancer progression, early resistance prediction, and 
+implications for cancer therapeutics [112].
+In another study, mannosylated liposomes (MAN-LIPs) 
+were utilized, which specifically accumulated in TAMs in 
+a mouse model of pulmonary adenocarcinoma. These 
+liposomes contained 64Cu for PET imaging, followed by 
+microscopy analysis. Interestingly, MAN-LIPs predomi­
+nantly gathered in TAMs with minimal accumulation in 
+distant lung areas at 6  h. after injection (Table  2). This 
+study demonstrates that MAN-LIPs offer a promising 
+approach for delivering imaging agents to lung TAMs 
+and potentially for therapeutic agent delivery to the TME 
+[160]. However, the clinical implications of this approach 
+and the long-term effects of the probe on TAM pheno­
+type and function require further investigation.
+Tumor hypoxia and aerobic glycolysis are known resis­
+tance factors in cancer treatment. Apart from explicitly 
+targeting TAMs using MMR, this marker can also be uti­
+lized to differentiate the targeting of TAM subsets within 
+the TME. Interestingly, TAMs located in hypoxic regions 
+and exhibiting elevated MMR expression play a substan­
+tial role in shaping the TME due to their strong proangio­
+genic characteristics. A study by Movahedi et al. utilized 
+MMR-specific nanobodies (Nbs) labeled with 99mTc for 
+in vivo TAM imaging. The 99mTc-labeled a-MMR Nb cl1 
+was injected intravenously in lung carcinoma (TS/A and 
+3LL-R) tumor-bearing mice, and SPECT imaging was 
+performed 1 h after injection (Table 2). Both TS/A and 
+3LL-R tumors exhibited substantial uptake of the 99mTc-
+labeled a-MMR Nb cl1 in WT animals (2.02 ± 0.11), 
+compared to the MMR-deficient mice (0.06 ± 0.01). His­
+tology revealed that within tumors, the labeled Nbs were 
+specifically labeled as MMR-positive TAMs (Ly6Cint 
+MHCIIlo). Notably, the anti-MMR Nbs accumulated 
+in hypoxic regions, precisely targeting proangiogenic 
+MMR-positive TAMs. Taken together, anti-MMR nano­
+bodies can be utilized to target selectively and image 
+TAM subpopulations in vivo and study metabolic repro­
+gramming in tumors [161] (Table 1).
+As stated above, TAMs preferentially localize in 
+hypoxic and metabolically distinct regions of the TME, 
+further exacerbating these conditions. For instance, Jeong 
+et al. reported a strong correlation between CD68+ TAM 
+immunostaining and 
+18F-fluoro-deoxyglucose (FDG) 
+uptake on PET imaging (FDG SUVmax; rho = 0.369; 
+P < 0.001 and 40% TLG uptake; rho = 0.355; P < 0.001) 
+in non-small cell lung cancer (NSCLC). The authors 
+suggested that TAMs increase tumor cell glycolysis by 
+secreting TNFα and elevate tumor hypoxia by enhanc­
+ing AMP-activated protein kinase and PPARγ coactivator 
+1-α. Furthermore, depletion of TAMs not only eliminated 
+tumor-associated hypoxia but also increased PD-L1 
+expression on cancer cells and T-cell infiltration, mak­
+ing PD-L1 antibodies more effective. Therefore, TAMs 
+can significantly impact tumor metabolism and compli­
+cate responses to anticancer therapies, including immu­
+notherapy [162]. Although the depletion of TAMs in 
+patients is challenging, the study indicates the potential 
+of developing combination therapies for cancer patients.
+Figure 3; Table 2 offer an overview of research efforts 
+dedicated to visualizing and monitoring macrophage 
+migration and infiltration in the context of tumor biol­
+ogy, showcasing the diverse imaging techniques and their 
+applications in this field.
+In vivo molecular imaging of macrophage-derived 
+extracellular vesicles in targeting tumors: insights 
+from fluorescence imaging modality
+Understanding the fate of macrophage-derived EVs 
+within living organisms, particularly their propensity to 
+accumulate at tumor sites, is crucial for optimizing EV 
+derivation and administration protocols to improve their 
+therapeutic efficacy. EVs, in general, face challenges such 
+as rapid clearance by the body, which limits their ability 
+to target tumors effectively [163–166]. Moreover, given 
+these limitations, the clinical translation of macrophage-
+EV-based therapies remains limited, with most studies 
+still at the preclinical stage. Intriguingly, fluorescence 
+imaging is commonly used to track macrophage-EVs in 
+vitro and in vivo, while other modalities remain under­
+explored. This reliance on fluorescence imaging under­
+scores the need for further research into alternative 
+imaging techniques that could enhance the tracking and 
+efficacy of macrophage-EV-based therapies.
+To address the issue of EV-tumor targeting, various 
+strategies have been developed to monitor and enhance 
+Page 17 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+macrophage-EV targeting for therapeutic purposes. A 
+study by Baek et al. demonstrated that proinflammatory 
+macrophage (M1)-derived nanovesicles (M1-NVs) can 
+boost antitumor effects through a surface modification 
+technique using polyethylene glycol (PEG). The authors 
+labeled both the bare M1-NVs and PEG- M1-NVs with 
+DiR dye and injected them intravenously into colon 
+cancer-bearing mice. They generated M1 macrophages 
+through LPS/IFNγ treatment of RAW 264.7 cells, a 
+method that could modify macrophage behavior but was 
+not addressed in the study. Nonetheless, in vivo fluores­
+cence imaging showed that PEG- M1-NVs targeted the 
+tumor within 3  h., while no signal was detected in the 
+tumors of mice injected with bare M1-NVs, even after 
+24  h. (Table  3). These results indicate that PEG signifi­
+cantly enhances M1-NVs’ ability to target tumors in vivo, 
+Fig. 3  Noninvasive in vivo imaging of macrophages and TAMs. TAM-directed imaging and therapy are interdependent and can improve clinical out­
+comes. In vivo imaging such as optical in vivo imaging system (IVIS), PET/CT, and microscopic analysis can be helpful to monitor and track down the TAM 
+population in tumors noninvasively. In addition, TAM-directed imaging can be designed to target macrophages with drugs, leading to the modulation of 
+TAM, thereby resulting in combined diagnostic and therapeutic effects for better outcomes. Created with BioRender.com
+ 
+Page 18 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+potentially advancing EV-based therapeutics for various 
+diseases, including cancer [167]. However, the generation 
+of M1 cells in vitro and the costly nature of exosome iso­
+lation limit the method’s translational potential.
+Another study that utilized fluorescence imaging to 
+track macrophage-EV-based therapy comes from Li et 
+al., who developed a novel approach using macrophage-
+derived exosomes coated with poly (lactic-co-glycolic 
+acid) for targeted chemotherapy of triple-negative breast 
+cancer (TNBC). TNBC, the most aggressive breast can­
+cer subtype, lacks effective therapeutic targets, leaving 
+chemotherapy and surgery as the primary options. Yet, 
+chemotherapy faces limitations like poor targeting and 
+high toxicity. In vivo, Cy5.5 labeled PL-D (DOX loaded 
+PLGA nanoparticles), EP-D (macrophage exosome 
+coated nanoparticle), and MEP-D (c-Met binding pep­
+tides were decorated on the macrophage exosome) were 
+administered via the tail vein to nude mice with MDA-
+MB-231 tumors. After 4  h., MEP-D exhibited robust 
+fluorescence at the tumor site, indicating its notable 
+targeting efficacy. Notably, MEP-D showed consistently 
+higher fluorescence intensity at the tumor site compared 
+to PL-D or EP-D at various time points up to 24 h. These 
+findings suggest that MEP-D demonstrates a strong abil­
+ity to target tumors [168]. However, similar to the study 
+by Baek et al., this approach requires further valida­
+tion in pre-clinical settings to establish its translational 
+potential. Apart from targeting tumors, macrophage-
+derived EVs have also been utilized to deliver drugs to 
+tumor sites for TNBC. For instance, Gong et al. devel­
+oped a strategy to enhance exosome binding to integrin 
+αvβ3 by creating A15-modified Exo (A15-Exo) for pre­
+cise co-delivery of doxorubicin (Dox) and cholesterol-
+modified miRNA 159 (Cho-miR159) to TNBC cells. 
+Fluorescence imaging showed that 2 h. after IV adminis­
+tration (Table 3) of free Cy5-Cho-miRNA, Exo-Cy5-Cho-
+miRNA, or A15-Exo-Cy5-Cho-miRNA in nude mice 
+with MDA-MB-231 tumors, there was a substantial accu­
+mulation of Cy5 fluorescence in the tumor areas in the 
+A15-Exo-Cy5-Cho-miRNA group, contrasting with liver 
+or kidney accumulation in other groups. Further results 
+demonstrated that A15-Exo-Cy5-Cho-miRNA efficiently 
+suppressed tumor growth and enhanced the survival rate 
+of mice with tumors [169].
+A study by Li et al. coupled tumor targeting with ther­
+apy by employing a straightforward method to encapsu­
+late folate (FA)-modified EVs for targeting tumors. These 
+EVs were loaded with the photosensitizer protoporphyrin 
+IX (PpIX) and doxorubicin (Dox) for therapeutic out­
+comes. Macrophages effectively convert 5-aminolevulinic 
+acid (5-ALA) into protoporphyrin IX (PpIX) through the 
+mitochondrial heme synthesis pathway. Therefore, mac­
+rophages were incubated with Dox, 5-ALA, and DSPE-
+PEG-FA in the culture medium. The macrophages then 
+secreted extracellular vesicles (EVs) with surface modi­
+fications targeting tumors through folate (FA) while also 
+encapsulating biosynthesized PpIX and Dox, referred to 
+as PpIX-DOX@FA-EVs. Free PpIX, PpIX-DOX@EVs, and 
+PpIX-DOX@FA-EVs were intravenously injected into 
+mice bearing 4T1 tumors (Table 3). Fluorescence imag­
+ing revealed that PpIX-DOX@FA-EVs swiftly gathered at 
+the tumor location within 4 h. post-injection, with nota­
+bly lower concentrations observed in healthy organs such 
+as the heart, liver, lungs, and kidneys. This demonstrates 
+the efficient delivery of therapeutic molecules to tumor 
+sites, achieving effective anti-cancer treatment [170].
+Table  3 offers an overview of research efforts dedi­
+cated to visualizing and monitoring macrophage-derived 
+EVs migration and infiltration in the context of tumors. 
+Notable EV studies in clinical trials highlight the diverse 
+therapeutic potential of EVs across various applications, 
+including cancer therapy, neuroprotection, ischemic 
+recovery, and regenerative (Table 4). These studies dem­
+onstrate the translational capabilities of EVs, showcasing 
+their roles in targeted immunotherapy, drug delivery and 
+tissue repair. By leveraging these insights, the transla­
+tional pathway for macrophage-derived EVs can be fur­
+ther advanced, paving the way for their development into 
+Table 3  In vivo molecular imaging of macrophage-derived extracellular vesicles in targeting tumors
+Imaging
+Imaging 
+modality
+Labeling
+Agent
+Cell Source
+EVs type
+Subject
+Injec­
+tion 
+route
+Duration
+Tumor
+Ref.
+FLI
+FLI
+DiR
+RAW 264.7 cells
+M1-NVs
+BALB/c mice
+IV
+0, 3, 12, & 24 h
+Mouse colon cancer
+[167]
+FLI
+DiD
+Primary 
+macrophages
+M1-Exosome
+BALB/c mice
+IV
+2 h
+Mouse breast cancer
+[67]
+FLI
+Cy5.5
+RAW 264.7 cells
+Exosome
+BALB/c nude 
+mice
+IV
+4, 8, 12, & 24 h
+Human breast cancer
+[168]
+FLI
+Cy5
+THP1 cells
+Exosome
+BALB/c nude 
+mice
+IV
+4, 8, 12, & 24 h
+Human breast cancer
+[169]
+FLI
+PpIX
+RAW 264.7 cells
+EVs
+BALB/c mice
+IV
+4, 8, 12, 24 & 
+48 h
+Mouse breast cancer
+[170]
+FLI - Fluorescence Imaging; DiR − 1,1’-Dioctadecyl-3,3,3’,3’-Tetramethylindotricarbocyanine Iodide; DiD − 1,1’-Dioctadecyl-3,3,3’,3’-Tetramethylindodicarbocyanine; 
+PpIX: Protoporphyrin IX; M1-NVs - M1 Macrophage-derived Nanovesicles; I.V – Intravenous
+Page 19 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+clinical applications. Further research into macrophage-
+derived EV visualization is imperative to unlock their full 
+potential in both basic science and clinical applications.
+Clinical implication
+In applying and evaluating macrophage efficacy in 
+humans, tracing and localizing the macrophages are 
+essential. Several studies have assessed the macrophages 
+in humans [139, 162], highlighting their significance and 
+potential therapeutic interventions. These studies have 
+utilized advanced imaging techniques for diagnosis and 
+monitoring of macrophage distribution, behavior, and 
+response to treatments, providing valuable insights into 
+their roles and potential as therapeutic targets in clinical 
+settings (Table 5). For instance, ferumoxytol, developed 
+initially as an iron supplement, can also be used as a T2 
+MRI contrast agent. Given macrophages can engulf that 
+ferumoxytol, it effectively demonstrates the quantity of 
+TAMs [140, 180]. This dual functionality makes feru­
+moxytol a valuable tool for both therapeutic and diag­
+nostic purposes, providing insights into macrophage 
+presence and activity in TME. Indeed, Aghighi et al. 
+conducted a ferumoxytol-enhanced MRI post-contrast 
+versus pre-contrast (P = 0.036) in 25 patients, includ­
+ing 12 with lymphoma and 13 with bone sarcoma. They 
+demonstrated T2* signal enhancement on MR images 
+Table 4  Extracellular vesicle (EV) studies in clinical trials and their translational potential
+NCT
+Type of EVs
+Disease
+Expected Outcomes or Outcomes
+Ref.
+NCT01779583
+Dendritic Cell-derived 
+Exosomes (Dex)
+NSCLC
+• Phase I trials showed the safety and feasibility of Dex vaccines.
+• Phase II trial confirmed the capacity of Dex to boost the NK cell arm of 
+antitumor immunity.
+[172, 
+173]
+NCT05375604
+exoASO-STAT6 (CDK-004)
+Advanced HCC and 
+Liver Metastases (Pri­
+mary Gastric Cancer or 
+Colorectal Cancer)
+• Dose escalation, safety, pharmacodynamic, and PK study.
+[174]
+NCT04388982
+Allogenic Adipose 
+MSC-Exos
+Alzheimer’s disease
+• MSCs-Exos was safe and well tolerated.
+• Recommended dose of at least 4 × 108 particles for further clinical 
+trials.
+[175, 
+176]
+NCT03384433
+Allogenic Placenta 
+MSC-Exos
+Acute Ischemic Stroke
+• No post-interventional adverse effects.
+[177, 
+178]
+NCT05060107
+MSC-Exos
+Knee Osteoarthritis
+• Study the safety and any adverse Event.
+[179]
+Exos – Exosomes; Dex - Dendritic Cell-derived Exosomes; MSC - Mesenchymal Stem Cells; NSCLC - Non-small-cell lung cancer lung carcinoma; HCC - Hepatocellular 
+Carcinoma
+Table 5  Macrophage-based tumor targeting strategies and in vivo imaging modalities in recent clinical trials
+Trial ID
+Macrophage/
+tumor target
+Cancer type
+Imaging 
+modality 
+used
+Drug used
+Ref­
+er­
+ence
+NCT03242993
+Folate receptor 
+on TAM
+Metastatic lung 
+and ovarian 
+cancer
+PET
+[18F]AzaFol
+Folarell
+[185]
+NCT03608618
+Tumor cell 
+mesothelin; 
+CAR-M
+Ovarian cancer 
+and peritoneal 
+mesothelioma
+Fluorescence 
+imaging (in 
+preclinical 
+model)
+Cyclophosphamide
+[186]
+NCT06224738
+Tumor cell-
+associated 
+Her-2;
+CAR-M
+Gastric cancer
+Fluorescence 
+imaging (in 
+preclinical 
+model)
+None
+[187, 
+188]
+NCT05933239
+Mannose-re­
+ceptor express­
+ing TAM
+Non-small cell 
+lung cancer
+PET/CT
+68GaNOTA-Anti-MMR-VHH2
+[189]
+NCT01336803
+CD68+ 
+CD163+ TAMs 
+(diagnostic)
+Bone sarcoma
+Osteomyelitis
+MRI
+Feraheme (Ferumoxytol)
+[139, 
+190]
+NCT01542879
+CD68+CD163+ 
+TAMs 
+(diagnostic)
+Pediatric solid 
+tumor
+WB-DW-MR/
+18FFDG PET
+Feraheme (Ferumoxytol)
+[139, 
+191]
+CAR- Chimeric antigen receptor-Macrophage; TAM- Tumor-associated macrophage; CAR-M- macrophages with CAR; CD- Cluster of differentiation; MRI- Magnetic 
+resonance imaging; PET- Positron emission tomography; CT- Computed tomography; 18F-FDG- 18F-Fludeoxyglucose; WB-DW-MR- Whole body diffusion weighted 
+magnetic resonance imaging; MRI- Magnetic resonance imaging; [18F]AzaFol-3′-aza-2′-[18F]fluorofolic acid; MMR- macrophage mannose receptor
+Page 20 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+correlated significantly with the density of CD68+ and 
+CD163+ TAMs (P < 0.05) [139]. However, whether this 
+approach can be extended to studying other tumor types 
+remains controversial. Intriguingly, ferumoxytol has been 
+associated with MRI artifacts in the brain [181, 182], 
+which limits its utility in understanding TAMs in brain 
+tumors. Additionally, 18F-FDG PET/CT is the most pop­
+ular radiotracer for representing cellular glycolysis. Jeong 
+et al. demonstrated a strong correlation between CD68+ 
+TAM immunostaining and 18F-FDG PET/CT uptake 
+in 98 matched tumors of patients with NSCLC [162]. 
+Indeed, while both 18F-FDG PET/CT tracers correlated 
+well with TAM density, they are not specific for TAMs 
+and have not been tested clinically. As of now, FDA-
+approved specific agents for in vivo macrophage imag­
+ing in humans are still limited. Hence, there is a pressing 
+need for the development of more specific agents tailored 
+to target TAMs selectively.
+Moreover, the limited tissue penetration of optical 
+imaging tracers may pose challenges for clinical transla­
+tion. However, recent advances have shown the utility of 
+fluorescent imaging for evaluating surgical margins in the 
+surgical field [183, 184]. Given that TAMs are one of the 
+constituents of cancer lesions, achieving precise resec­
+tion of TAMs could be a method for complete tumor 
+resection [34]. Fluorescent imaging systems thus offer 
+several advantages in the surgical setting and improve 
+surgical outcomes. Table 5 compiles select clinical trials 
+actively employing fluorescent imaging strategy for track­
+ing TAMs and aiding in cancer diagnosis.
+Future perspectives
+The future of advances in noninvasive, in vivo macro­
+phage imaging holds tremendous potential in further 
+illuminating TME and advancing cellular-based drug-
+delivery systems. As technology continues to evolve, sev­
+eral exciting perspectives emerge that could transform 
+cancer research and therapy. Combining different imag­
+ing modalities, such as MRI, PET, CT, and optical imag­
+ing [112, 160–162], could provide a more comprehensive 
+and nuanced view of macrophage behavior and its inter­
+actions within tumors. This multimodal approach would 
+leverage the strengths of each technique, enhancing 
+spatial and temporal resolutions while mitigating their 
+limitations [192, 193]. The development of more sophis­
+ticated nanoparticle-based contrast agents and molecular 
+probes has the potential to enable ultra-high-resolution 
+imaging at the molecular level. These agents could be 
+engineered to target specific macrophage subsets or 
+markers, allowing for deeper insights into their roles in 
+various disease states. Such advancements hold promise 
+for unraveling the complexities of the TME and identify­
+ing targets for cancer treatment.
+The integration of machine learning and artificial intel­
+ligence (AI) algorithms could revolutionize macrophage 
+image analysis. These tools could facilitate the identifica­
+tion of subtle changes in macrophage behavior, aiding in 
+the early detection of disease progression and providing 
+insights into treatment responses [194, 195]. Advance­
+ments in real-time imaging technologies could offer 
+a dynamic, moment-to-moment view of macrophage 
+behavior within tumors. These developments could lead 
+to a more precise understanding of their responses to 
+therapies, allowing for rapid adjustments in treatment 
+strategies.
+As immunotherapies continue to transform cancer 
+treatment, integrating macrophage imaging with immu­
+notherapeutic strategies could unlock new avenues for 
+synergistic therapies. Monitoring macrophage responses 
+could guide the timing and combination of treatments, 
+maximizing their impact on tumor clearance [12, 112, 
+140, 155, 158, 160]. The ability to track macrophage 
+behavior in real-time could promote personalized treat­
+ment regimens. Multimodal imaging enables a cus­
+tomized approach to assessing TAMs. By tailoring the 
+combination of imaging techniques to a patient’s specific 
+tumor characteristics, clinicians can decide and imple­
+ment optimal treatment strategies, improving patient 
+outcomes while minimizing adverse effects. This inte­
+grated approach has the potential to significantly enhance 
+the efficacy of cancer immunotherapies and improve the 
+precision of treatment protocols.
+The prospects for advances in noninvasive, in vivo 
+macrophage imaging are up and coming. By harnessing 
+the power of evolving imaging technologies, artificial 
+intelligence, and innovative drug-delivery strategies, our 
+understanding of TME may be deepened, revolutionizing 
+cancer treatment. As these visions become realities, they 
+hold the potential to improve precision medicine sig­
+nificantly, enabling therapies to be tailored to the unique 
+characteristics of each patient’s disease.
+Conclusion
+The remarkable advancements in noninvasive, in vivo 
+macrophage imaging have led to a profound understand­
+ing of the TME and catalyzed significant developments 
+in cellular-based drug-delivery systems. By visualizing 
+and monitoring macrophage dynamics within these com­
+plex ecosystems, crucial insights into the intricate inter­
+play between immune cells and cancer cells have been 
+uncovered. This newfound knowledge has not only deep­
+ened our comprehension of tumor progression, immune 
+response, and therapy resistance but has also opened 
+avenues for innovative therapeutic strategies. Moreover, 
+through the development of targeted contrast agents and 
+molecular probes, the specificity and sensitivity of mac­
+rophage imaging have enhanced, improving our ability to 
+Page 21 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+decipher their multifaceted roles within the TME. Fur­
+thermore, the synergy between noninvasive imaging and 
+cellular-based drug-delivery systems have advanced per­
+sonalized medicine. By harnessing the unique properties 
+of macrophages as carriers, therapeutic payloads can be 
+precisely delivered to tumor sites, minimizing off-target 
+effects while maximizing therapeutic outcomes. The ver­
+satility of macrophages in modulating their cargo and 
+response to various stimuli has facilitated the design of 
+multifunctional drug-delivery platforms that can adapt to 
+the dynamic TME. Essentially, the convergence of non­
+invasive in vivo macrophage imaging and cellular-based 
+drug delivery systems holds great promise in enhancing 
+cancer diagnosis, monitoring, and treatment with high 
+precision and efficacy. By elucidating the intricate inter­
+actions within the TME and leveraging the potential of 
+macrophages as therapeutic carriers, we stand at the 
+threshold of a transformative era in cancer research and 
+treatment.
+Acknowledgements
+Not applicable.
+Author contributions
+Prakash Gangadaran, Chae Moon Hong and Byeong-Cheol Ahn contributed 
+to the conception, writing, and discussion of this manuscript. Prakash 
+Gangadaran, Akanksha Onkar, Ramya Lakshmi Rajendran and Anshika Goenka 
+equally contributed and wrote the initial draft of the manuscript. Ji Min Oh, 
+Fatima Khan, ArulJothi Kandasamy Nagarajan, Sathish Muthu and Anand 
+Krishnan contributed to the initial draft of the manuscript. All authors have 
+approved the final version of the manuscript.
+Funding
+This work was supported by the Basic Science Research Program through 
+the National Research Foundation of Korea (NRF) funded by the Ministry of 
+Education (NRF-2022R1I1A1A01068652 and NRF-2022R1I1A3068477). This 
+work was also supported by the National Research Foundation of Korea (NRF) 
+grant funded by the Korea government (MSIT) (NRF-2022R1A2C2005057 and 
+NRF-2022R1C1C2003085).
+Data availability
+No datasets were generated or analysed during the current study.
+Declarations
+Ethics approval and consent to participate
+Not applicable.
+Consent to publish
+Not applicable.
+Competing interests
+The authors declare no competing interests.
+Author details
+1BK21 FOUR KNU Convergence Educational Program of Biomedical 
+Sciences for Creative Future Talents, Department of Biomedical Sciences, 
+School of Medicine, Kyungpook National University, Daegu 41944, Korea
+2Department of Nuclear Medicine, School of Medicine, Kyungpook 
+National University, Daegu 41944, Korea
+3Cardiovascular Research Institute, Kyungpook National University, 
+Daegu 41944, Republic of Korea
+4Department of Laboratory Medicine, University of California San 
+Francisco, San Francisco, CA 94143, USA
+5Department of Hematology and Medical Oncology, Winship Cancer 
+Institute, Emory University, Atlanta, GA 30322, USA
+6Department of Cancer Biology, Lerner Research Institute, Cleveland 
+Clinic, Cleveland, OH 44195, USA
+7Department of Genetic Engineering, SRM Institute of Science and 
+Technology, Kattankulathur, Chengalpattu 603203, Tamilnadu, India
+8Department of Orthopaedics, Government Medical College, 
+Tamil Nadu 639004 Karur, India
+9Department of Biotechnology, Faculty of Engineering, Karpagam 
+Academy of Higher Education, Tamil Nadu 641021 Coimbatore, India
+10Precision Medicine and Integrated Nano-Diagnostics (P-MIND) Research 
+Group, Office of the Dean, Faculty of Health Sciences, University of the 
+Free State, Bloemfontein 9300, South Africa
+11Department of Nuclear Medicine, School of Medicine, Kyungpook 
+National University, Kyungpook National University Hospital, 
+Daegu 41944, Korea
+Received: 22 October 2024 / Accepted: 21 January 2025
+References
+1.	
+Arnouk S, De Groof TWM, Van Ginderachter JA. Imaging and therapeutic 
+targeting of the tumor immune microenvironment with biologics. Adv Drug 
+Deliv Rev. 2022;184:114239.
+2.	
+Love C, Palestro CJ. Radionuclide imaging of infection. J Nucl Med Technol. 
+2004;32:47–57.
+3.	
+Wang S, Han K, Ma S, Qi X, Guo L, Li X. Blood cells as supercarrier systems for 
+advanced drug delivery. Med Drug Discov. 2022;13:100119.
+4.	
+Rakhshandehroo T, Smith BR, Glockner HJ, Rashidian M, Pandit-Taskar N. 
+Molecular immune targeted imaging of tumor microenvironment. Nanother­
+anostics. 2022;6:286–305.
+5.	
+Gangadaran P, Ahn B-C. Molecular imaging: a useful tool for the development 
+of natural killer cell-based immunotherapies. Front Immunol. 2017;8:1090.
+6.	
+Li Z, Tang H, Tu Y. Molecular and nonmolecular imaging of macrophages in 
+atherosclerosis. Front Cardiovasc Med. 2021;8:670639.
+7.	
+Gangadaran P, Rajendran RL, Ahn B-C. Application of in vivo imaging 
+techniques for monitoring natural killer cell migration and tumor infiltration. 
+Cancers. 2020;12:E1318.
+8.	
+Huang T, Song X, Xu D, Tiek D, Goenka A, Wu B, et al. Stem cell programs 
+in cancer initiation, progression, and therapy resistance. Theranostics. 
+2020;10:8721–43.
+9.	
+Yu Y-RA, O’Koren EG, Hotten DF, Kan MJ, Kopin D, Nelson ER, et al. A protocol 
+for the comprehensive flow cytometric analysis of immune cells in normal 
+and inflamed murine non-lymphoid tissues. PLoS ONE. 2016;11:e0150606.
+10.	 Larionova I, Tuguzbaeva G, Ponomaryova A, Stakheyeva M, Cherdyntseva N, 
+Pavlov V, et al. Tumor-associated macrophages in human breast, colorectal, 
+lung, ovarian and prostate cancers. Front Oncol. 2020;10:566511.
+11.	 Goenka A, Khan F, Verma B, Sinha P, Dmello CC, Jogalekar MP, et al. Tumor 
+microenvironment signaling and therapeutics in cancer progression. Cancer 
+Commun Lond Engl. 2023;43:525–61.
+12.	 Arlauckas SP, Garris CS, Kohler RH, Kitaoka M, Cuccarese MF, Yang KS, et al. In 
+vivo imaging reveals a tumor-associated macrophage-mediated resistance 
+pathway in anti-PD-1 therapy. Sci Transl Med. 2017;9:eaal3604.
+13.	 Goenka A, Tiek D, Song X, Huang T, Hu B, Cheng S-Y. The many facets of 
+therapy resistance and tumor recurrence in glioblastoma. Cells. 2021;10:484.
+14.	 Gangadaran P, Khan F, Rajendran RL, Onkar A, Goenka A, Ahn B-C. Unveiling 
+invisible extracellular vesicles: cutting-edge technologies for their in vivo 
+visualization. Wiley Interdiscip Rev Nanomed Nanobiotechnol. 2024;16:e2009.
+15.	 Gregory CD, Rimmer MP. Extracellular vesicles arising from apoptosis: forms, 
+functions, and applications. J Pathol. 2023;260:592.
+16.	 Zhu J, Wang S, Yang D, Xu W, Qian H. Extracellular vesicles: emerging roles, 
+biomarkers and therapeutic strategies in fibrotic diseases. J Nanobiotechnol. 
+2023;21:164.
+17.	 Uddin MJ, Mohite P, Munde S, Ade N, Oladosu TA, Chidrawar VR, et al. Extra­
+cellular vesicles: the future of therapeutics and drug delivery systems. Intell 
+Pharm. 2024;2:312–28.
+18.	 Barone A, d’Avanzo N, Cristiano MC, Paolino D, Fresta M. Macrophage-derived 
+extracellular vesicles: a promising tool for personalized cancer therapy. 
+Biomedicines. 2022;10:1252.
+Page 22 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+19.	 Tauber AI. Metchnikoff and the phagocytosis theory. Nat Rev Mol Cell Biol. 
+2003;4:897–901.
+20.	 Okabe Y, Medzhitov R. Tissue biology perspective on macrophages. Nat 
+Immunol. 2016;17:9–17.
+21.	 Wynn TA, Chawla A, Pollard JW. Macrophage biology in development, 
+homeostasis and disease. Nature. 2013;496:445–55.
+22.	 Gordon S, Plüddemann A, Martinez Estrada F. Macrophage heterogeneity in 
+tissues: phenotypic diversity and functions. Immunol Rev. 2014;262:36–55.
+23.	 Pollard JW. Trophic macrophages in development and disease. Nat Rev 
+Immunol. 2009;9:259–70.
+24.	 Lewis CE, Pollard JW. Distinct role of macrophages in different tumor micro­
+environments. Cancer Res. 2006;66:605–12.
+25.	 Liu L, Li H, Wang J, Zhang J, Liang X-J, Guo W, et al. Leveraging macrophages 
+for cancer theranostics. Adv Drug Deliv Rev. 2022;183:114136.
+26.	 Binnewies M, Roberts EW, Kersten K, Chan V, Fearon DF, Merad M, et al. 
+Understanding the tumor immune microenvironment (TIME) for effective 
+therapy. Nat Med. 2018;24:541–50.
+27.	 Locati M, Curtale G, Mantovani A. Diversity, mechanisms, and significance of 
+macrophage plasticity. Annu Rev Pathol. 2020;15:123–47.
+28.	 Szulzewsky F, Pelz A, Feng X, Synowitz M, Markovic D, Langmann T, et al. 
+Glioma-associated microglia/macrophages display an expression profile 
+different from M1 and M2 polarization and highly express Gpnmb and Spp1. 
+PLoS ONE. 2015;10:e0116644.
+29.	 Zhang Y, Chen H, Mo H, Hu X, Gao R, Zhao Y, et al. Single-cell analyses reveal 
+key immune cell subsets associated with response to PD-L1 blockade in 
+triple-negative breast cancer. Cancer Cell. 2021;39:1578–e15938.
+30.	 Duan Z, Luo Y. Targeting macrophages in cancer immunotherapy. Signal 
+Transduct Target Ther. 2021;6:127.
+31.	 Mantovani A, Sica A, Sozzani S, Allavena P, Vecchi A, Locati M. The chemokine 
+system in diverse forms of macrophage activation and polarization. Trends 
+Immunol. 2004;25:677–86.
+32.	 Murray PJ, Allen JE, Biswas SK, Fisher EA, Gilroy DW, Goerdt S, et al. Macro­
+phage activation and polarization: nomenclature and experimental guide­
+lines. Immunity. 2014;41:14–20.
+33.	 Zhang Q, Sioud M. Tumor-associated macrophage subsets: shaping polariza­
+tion and targeting. Int J Mol Sci. 2023;24:7493.
+34.	 Mantovani A, Allavena P, Marchesi F, Garlanda C. Macrophages as tools and 
+targets in cancer therapy. Nat Rev Drug Discov. 2022;21:799–820.
+35.	 Cheng S, Li Z, Gao R, Xing B, Gao Y, Yang Y, et al. A pan-cancer single-cell tran­
+scriptional atlas of tumor infiltrating myeloid cells. Cell. 2021;184:792–e80923.
+36.	 Kumari N, Choi SH. Tumor-associated macrophages in cancer: recent 
+advancements in cancer nanoimmunotherapies. J Exp Clin Cancer Res CR. 
+2022;41:68.
+37.	 Steidl C, Lee T, Shah SP, Farinha P, Han G, Nayar T, et al. Tumor-associated 
+macrophages and survival in classic hodgkin’s lymphoma. N Engl J Med. 
+2010;362:875–85.
+38.	 Ruffell B, Coussens LM. Macrophages and therapeutic resistance in cancer. 
+Cancer Cell. 2015;27:462–72.
+39.	 Kitano Y, Okabe H, Yamashita Y-I, Nakagawa S, Saito Y, Umezaki N, et al. 
+Tumour-infiltrating inflammatory and immune cells in patients with extrahe­
+patic cholangiocarcinoma. Br J Cancer. 2018;118:171–80.
+40.	 Franklin RA, Liao W, Sarkar A, Kim MV, Bivona MR, Liu K, et al. The cellular and 
+molecular origin of tumor-associated macrophages. Science. 2014;344:921–5.
+41.	 Buonfiglioli A, Hambardzumyan D. Macrophages and microglia: the cerberus 
+of glioblastoma. Acta Neuropathol Commun. 2021;9:54.
+42.	 Pittet MJ, Michielin O, Migliorini D. Clinical relevance of tumour-associated 
+macrophages. Nat Rev Clin Oncol. 2022;19:402–21.
+43.	 Wu J-Y, Huang T-W, Hsieh Y-T, Wang Y-F, Yen C-C, Lee G-L, et al. Cancer-derived 
+succinate promotes macrophage polarization and cancer metastasis via suc­
+cinate receptor. Mol Cell. 2020;77:213–e2275.
+44.	 Zhang B, Vogelzang A, Miyajima M, Sugiura Y, Wu Y, Chamoto K, et al. B 
+cell-derived GABA elicits IL-10 + macrophages to limit anti-tumour immunity. 
+Nature. 2021;599:471–6.
+45.	 Li H, Xiao Y, Li Q, Yao J, Yuan X, Zhang Y, et al. The allergy mediator histamine 
+confers resistance to immunotherapy in cancer patients via activation of the 
+macrophage histamine receptor H1. Cancer Cell. 2022;40:36–e529.
+46.	 Neubert NJ, Schmittnaegel M, Bordry N, Nassiri S, Wald N, Martignier C, et al. T 
+cell-induced CSF1 promotes melanoma resistance to PD1 blockade. Sci Transl 
+Med. 2018;10:eaan3311.
+47.	 Wang X, Tokheim C, Gu SS, Wang B, Tang Q, Li Y, et al. In vivo CRISPR screens 
+identify the E3 ligase Cop1 as a modulator of macrophage infiltration and 
+cancer immunotherapy target. Cell. 2021;184:5357–e537422.
+48.	 Di Conza G, Tsai C-H, Gallart-Ayala H, Yu Y-R, Franco F, Zaffalon L, et al. Tumor-
+induced reshuffling of lipid composition on the endoplasmic reticulum 
+membrane sustains macrophage survival and pro-tumorigenic activity. Nat 
+Immunol. 2021;22:1403–15.
+49.	 Zhu L, Li XJ, Gangadaran P, Jing X, Ahn B-C. Tumor-associated macrophages 
+as a potential therapeutic target in thyroid cancers. Cancer Immunol Immu­
+nother CII. 2023;72:3895–917.
+50.	 Kersten K, Hu KH, Combes AJ, Samad B, Harwin T, Ray A, et al. Spatiotempo­
+ral co-dependency between macrophages and exhausted CD8 + T cells in 
+cancer. Cancer Cell. 2022;40:624–e6389.
+51.	 Madsen SJ, Hirschberg H. Macrophages as delivery vehicles for anticancer 
+agents. Ther Deliv. 2019;10:189–201.
+52.	 Guerra AD, Yeung OWH, Qi X, Kao WJ, Man K. The anti-tumor effects of m1 
+macrophage-loaded poly (ethylene glycol) and gelatin-based hydrogels on 
+hepatocellular carcinoma. Theranostics. 2017;7:3732–44.
+53.	 Xia Y, Rao L, Yao H, Wang Z, Ning P, Chen X. Engineering macrophages for 
+cancer immunotherapy and drug delivery. Adv Mater. 2020;32:e2002054.
+54.	 Onkar A, Khan F, Goenka A, Rajendran RL, Dmello C, Hong CM, et al. Smart 
+nanoscale extracellular vesicles in the brain: unveiling their biology, diag­
+nostic potential, and therapeutic applications. ACS Appl Mater Interfaces. 
+2024;16:6709–42.
+55.	 Bunggulawa EJ, Wang W, Yin T, Wang N, Durkan C, Wang Y, et al. Recent 
+advancements in the use of exosomes as drug delivery systems. J Nanobio­
+technol. 2018;16:81.
+56.	 Cao H, Dan Z, He X, Zhang Z, Yu H, Yin Q, et al. Liposomes coated with 
+isolated macrophage membrane can target lung metastasis of breast cancer. 
+ACS Nano. 2016;10:7738–48.
+57.	 Fu J, Wang D, Mei D, Zhang H, Wang Z, He B, et al. Macrophage mediated 
+biomimetic delivery system for the treatment of lung metastasis of breast 
+cancer. J Control Release. 2015;204:11–9.
+58.	 Guo L, Zhang Y, Yang Z, Peng H, Wei R, Wang C, et al. Tunneling nanotubular 
+expressways for ultrafast and accurate m1 macrophage delivery of anticancer 
+drugs to metastatic ovarian carcinoma. ACS Nano. 2019;13:1078–96.
+59.	 Taciak B, Białasek M, Braniewska A, Sas Z, Sawicka P, Kiraga Ł, et al. Evaluation 
+of phenotypic and functional stability of RAW 264.7 cell line through serial 
+passages. PLoS ONE. 2018;13:e0198943.
+60.	 Zheng H, Li J, Luo X, Li C, Hu L, Qiu Q, et al. Murine RAW264.7 cells as cellular 
+drug delivery carriers for tumor therapy: a good idea? Cancer Chemother 
+Pharmacol. 2019;83:361–74.
+61.	 Guo Q, Qian Z-M. Macrophage based drug delivery: key challenges and 
+strategies. Bioact Mater. 2024;38:55–72.
+62.	 Li S, Feng S, Ding L, Liu Y, Zhu Q, Qian Z, et al. Nanomedicine engulfed by 
+macrophages for targeted tumor therapy. Int J Nanomed. 2016;11:4107–24.
+63.	 Pang L, Zhu Y, Qin J, Zhao W, Wang J. Primary M1 macrophages as multifunc­
+tional carrier combined with PLGA nanoparticle delivering anticancer drug 
+for efficient glioma therapy. Drug Deliv. 2018;25:1922–31.
+64.	 Doshi N, Swiston AJ, Gilbert JB, Alcaraz ML, Cohen RE, Rubner MF, et al. Cell-
+based drug delivery devices using phagocytosis-resistant backpacks. Adv 
+Mater. 2011;23:H105–109.
+65.	 Kim MS, Haney MJ, Zhao Y, Mahajan V, Deygen I, Klyachko NL, et al. Develop­
+ment of exosome-encapsulated paclitaxel to overcome MDR in cancer cells. 
+Nanomed Nanotechnol Biol Med. 2016;12:655–64.
+66.	 Shiao SL, Ruffell B, DeNardo DG, Faddegon BA, Park CC, Coussens LM. TH2-
+polarized CD4(+) T cells and macrophages limit efficacy of radiotherapy. 
+Cancer Immunol Res. 2015;3:518–25.
+67.	 Gunassekaran GR, Poongkavithai Vadevoo SM, Baek M-C, Lee B. M1 macro­
+phage exosomes engineered to foster M1 polarization and target the IL-4 
+receptor inhibit tumor growth by reprogramming tumor-associated macro­
+phages into M1-like macrophages. Biomaterials. 2021;278:121137.
+68.	 Wang P, Wang H, Huang Q, Peng C, Yao L, Chen H, et al. Exosomes from 
+M1-polarized macrophages enhance paclitaxel antitumor activity by activat­
+ing macrophages-mediated inflammation. Theranostics. 2019;9:1714–27.
+69.	 Cheng L, Wang Y, Huang L. Exosomes from M1-polarized macrophages 
+potentiate the cancer vaccine by creating a pro-inflammatory microenviron­
+ment in the lymph node. Mol Ther J Am Soc Gene Ther. 2017;25:1665–75.
+70.	 Choo YW, Kang M, Kim HY, Han J, Kang S, Lee J-R, et al. M1 macrophage-
+derived nanovesicles potentiate the anticancer efficacy of immune check­
+point inhibitors. ACS Nano. 2018;12:8977–93.
+71.	 Chudakov DM, Matz MV, Lukyanov S, Lukyanov KA. Fluorescent proteins 
+and their applications in imaging living cells and tissues. Physiol Rev. 
+2010;90:1103–63.
+Page 23 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+72.	 Campbell BC, Paez-Segala MG, Looger LL, Petsko GA, Liu CF. Chemi­
+cally stable fluorescent proteins for advanced microscopy. Nat Methods. 
+2022;19:1612–21.
+73.	 Leblond F, Davis SC, Valdés PA, Pogue BW. Pre-clinical whole-body fluores­
+cence imaging: review of instruments, methods and applications. J Photo­
+chem Photobiol B. 2010;98:77–94.
+74.	 Binó L, Mikulenková E, Štepánek L, Bernatík O, Vysloužil D, Pejšková P, et al. A 
+protocol for generation and live-cell imaging analysis of primary cilia reporter 
+cell lines. STAR Protoc. 2022;3:101199.
+75.	 Shan L. Near-infrared fluorescence 1,1-dioctadecyl-3,3,3,3-tetramethylin­
+dotricarbocyanine iodide (DiR)-labeled macrophages for cell imaging. Mol 
+Imaging Contrast Agent Database MICAD. Bethesda (MD): National Center 
+for Biotechnology Information (US); 2004 [cited 2024 Jan 4]. Available from: 
+http://​www.ncb​i.nlm.n​ih.g​ov/books/NBK23531/
+76.	 Zambito G, Mishra G, Schliehe C, Mezzanotte L. Near-infrared biolumines­
+cence imaging of macrophage sensors for cancer detection in vivo. Front 
+Bioeng Biotechnol. 2022;10:867164.
+77.	 Choy G, O’Connor S, Diehn FE, Costouros N, Alexander HR, Choyke P, et al. 
+Comparison of noninvasive fluorescent and bioluminescent small animal 
+optical imaging. Biotechniques. 2003;35:1022–6.
+78.	 Rao J, Dragulescu-Andrasi A, Yao H. Fluorescence imaging in vivo: recent 
+advances. Curr Opin Biotechnol. 2007;18:17–25.
+79.	 Cao J, Zhu B, Zheng K, He S, Meng L, Song J, et al. Recent progress in NIR-II 
+contrast agent for biological imaging. Front Bioeng Biotechnol. 2019;7:487.
+80.	 Neto BAD, Correa JR, Spencer J. Fluorescent benzothiadiazole derivatives 
+as fluorescence imaging dyes: a decade of new generation probes. Chem 
+Weinh Bergstr Ger. 2022;28:e202103262.
+81.	 Aerts HJWL, Velazquez ER, Leijenaar RTH, Parmar C, Grossmann P, Carvalho S, 
+et al. Decoding tumour phenotype by noninvasive imaging using a quantita­
+tive radiomics approach. Nat Commun. 2014;5:4006.
+82.	 García-Figueiras R, Baleato-González S, Padhani AR, Luna-Alcalá A, Vallejo-
+Casas JA, Sala E, et al. How clinical imaging can assess cancer biology. Insights 
+Imaging. 2019;10:28.
+83.	 Tung JK, Berglund K, Gutekunst C-A, Hochgeschwender U, Gross RE. Biolumi­
+nescence imaging in live cells and animals. Neurophotonics. 2016;3:025001.
+84.	 Baljinnyam B, Ronzetti M, Simeonov A. Advances in luminescence-based 
+technologies for drug discovery. Expert Opin Drug Discov. 2023;18:25–35.
+85.	 Day C-P, Carter J, Weaver Ohler Z, Bonomi C, El Meskini R, Martin P, et al. 
+Glowing head mice: a genetic tool enabling reliable preclinical image-
+based evaluation of cancers in immunocompetent allografts. PLoS ONE. 
+2014;9:e109956.
+86.	 Petkov SP, Heuts F, Krotova OA, Kilpelainen A, Engström G, Starodubova ES, et 
+al. Evaluation of immunogen delivery by DNA immunization using non-inva­
+sive bioluminescence imaging. Hum Vaccines Immunother. 2013;9:2228–36.
+87.	 Baklaushev VP, Kilpeläinen A, Petkov S, Abakumov MA, Grinenko NF, Yusub­
+alieva GM, et al. Luciferase expression allows bioluminescence imaging but 
+imposes limitations on the orthotopic mouse (4T1) model of breast cancer. 
+Sci Rep. 2017;7:7715.
+88.	 Close DM, Xu T, Sayler GS, Ripp S. In vivo bioluminescent imaging (BLI): 
+noninvasive visualization and interrogation of biological processes in living 
+animals. Sensors. 2011;11:180–206.
+89.	 Buschow C, Charo J, Anders K, Loddenkemper C, Jukica A, Alsamah W, et al. 
+In vivo imaging of an inducible oncogenic tumor antigen visualizes tumor 
+progression and predicts CTL tolerance. J Immunol. 2010;184:2930–8.
+90.	 Zhang C, Liu T, Gao J, Su Y, Shi C. Recent development and application of 
+magnetic nanoparticles for cell labeling and imaging. Mini Rev Med Chem. 
+2010;10:193–202.
+91.	 Grover VPB, Tognarelli JM, Crossey MME, Cox IJ, Taylor-Robinson SD, McPhail 
+MJW. Magnetic resonance imaging: principles and techniques: lessons for 
+clinicians. J Clin Exp Hepatol. 2015;5:246–55.
+92.	 Huang SY, Seethamraju RT, Patel P, Hahn PF, Kirsch JE, Guimaraes AR. Body MR 
+imaging: artifacts, k-space, and solutions. Radiogr Rev Publ Radiol Soc N Am 
+Inc. 2015;35:1439–60.
+93.	 Bydder M, Carl M, Bydder GM, Du J. MRI chemical shift artifact produced by 
+center-out radial sampling of k-space: a potential pitfall in clinical diagnosis. 
+Quant Imaging Med Surg. 2021;11:3677–83.
+94.	 Zhong J, Mills PH, Hitchens TK, Ahrens ET. Accelerated fluorine-19 MRI cell 
+tracking using compressed sensing. Magn Reson Med. 2013;69:1683–90.
+95.	 Srinivas M, Heerschap A, Ahrens ET, Figdor CG, de Vries IJM. (19)F MRI for 
+quantitative in vivo cell tracking. Trends Biotechnol. 2010;28:363–70.
+96.	 Ahrens ET, Bulte JWM. Tracking immune cells in vivo using magnetic reso­
+nance imaging. Nat Rev Immunol. 2013;13:755–63.
+97.	 Canese R, Podo F. Localized nuclear magnetic resonance spectroscopy in 
+vivo. Physical principles and quantitative problems. Ann Ist Super Sanita. 
+1991;27:675–708.
+98.	 Tognarelli JM, Dawood M, Shariff MIF, Grover VPB, Crossey MME, Cox IJ, et al. 
+Magnetic resonance spectroscopy: principles and techniques: lessons for 
+clinicians. J Clin Exp Hepatol. 2015;5:320–8.
+99.	 Qiao K, Le Page LM, Chaumeil MM. Non-invasive differentiation of M1 and M2 
+activation in macrophages using hyperpolarized 13 C MRS of pyruvate and 
+DHA at 1.47 Tesla. Metabolites. 2021;11:410.
+100.	 Fuchs AL, Schiller SM, Keegan WJ, Ammons MCB, Eilers B, Tripet B, et al. 
+Quantitative 1H NMR metabolomics reveal distinct metabolic adapta­
+tions in human macrophages following differential activation. Metabolites. 
+2019;9:248.
+101.	 Bauer LM, Situ SF, Griswold MA, Samia ACS. Magnetic particle imaging tracers: 
+state-of-the-art and future directions. J Phys Chem Lett. 2015;6:2509–17.
+102.	 Wu LC, Zhang Y, Steinberg G, Qu H, Huang S, Cheng M, et al. A review of 
+magnetic particle imaging and perspectives on neuroimaging. AJNR Am J 
+Neuroradiol. 2019;40:206–12.
+103.	 Sehl OC, Gevaert JJ, Melo KP, Knier NN, Foster PJ. A perspective on cell track­
+ing with magnetic particle imaging. Tomogr Ann Arbor Mich. 2020;6:315–24.
+104.	 Yu EY, Bishop M, Zheng B, Ferguson RM, Khandhar AP, Kemp SJ, et al. Mag­
+netic particle imaging: a novel in vivo imaging platform for cancer detection. 
+Nano Lett. 2017;17:1648–54.
+105.	 Makela AV, Gaudet JM, Schott MA, Sehl OC, Contag CH, Foster PJ. Mag­
+netic particle imaging of macrophages associated with cancer: filling the 
+voids left by iron-based magnetic resonance imaging. Mol Imaging Biol. 
+2020;22:958–68.
+106.	 Vaquero JJ, Kinahan P. Positron emission tomography: current challenges and 
+opportunities for technological advances in clinical and preclinical imaging 
+systems. Annu Rev Biomed Eng. 2015;17:385–414.
+107.	 Schwenck J, Sonanini D, Cotton JM, Rammensee H-G, la Fougère C, Zender L, 
+et al. Advances in PET imaging of cancer. Nat Rev Cancer. 2023;23:474–90.
+108.	 Trotter J, Pantel AR, Teo B-KK, Escorcia FE, Li T, Pryma DA, et al. Positron emis­
+sion tomography (PET)/computed tomography (CT) imaging in radiation 
+therapy treatment planning: a review of PET imaging tracers and methods to 
+incorporate PET/CT. Adv Radiat Oncol. 2023;8:101212.
+109.	 Israel O, Pellet O, Biassoni L, De Palma D, Estrada-Lobato E, Gnanasegaran 
+G, et al. Two decades of SPECT/CT - the coming of age of a technology: 
+an updated review of literature evidence. Eur J Nucl Med Mol Imaging. 
+2019;46:1990–2012.
+110.	 Sudarshan VP, Upadhyay U, Egan GF, Chen Z, Awate SP. Towards lower-dose 
+PET using physics-based uncertainty-aware multimodal learning with robust­
+ness to out-of-distribution data. Med Image Anal. 2021;73:102187.
+111.	 Voss SD, SPECT/CT. PET/CT and PET/MRI: oncologic and infectious applica­
+tions and protocol considerations. Pediatr Radiol. 2023;53:1443–53.
+112.	 Zhang C, Yu X, Gao L, Zhao Y, Lai J, Lu D, et al. Noninvasive imaging of CD206-
+positive M2 macrophages as an early biomarker for post-chemotherapy 
+tumor relapse and lymph node metastasis. Theranostics. 2017;7:4276–88.
+113.	 Verdoes M, Edgington LE, Scheeren FA, Leyva M, Blum G, Weiskopf K, et al. A 
+nonpeptidic cathepsin S activity-based probe for noninvasive optical imag­
+ing of tumor-associated macrophages. Chem Biol. 2012;19:619–28.
+114.	 Liu L, Stokes JV, Tan W, Pruett SB. An optimized flow cytometry panel for clas­
+sifying macrophage polarization. J Immunol Methods. 2022;511:113378.
+115.	 Kang H, Kang M-W, Kashiwagi S, Choi HS. NIR fluorescence imaging and treat­
+ment for cancer immunotherapy. J Immunother Cancer. 2022;10:e004936.
+116.	 Melancon MP, Lu W, Huang Q, Thapa P, Zhou D, Ng C, et al. Targeted imaging 
+of tumor-associated M2 macrophages using a macromolecular contrast 
+agent PG-Gd-NIR813. Biomaterials. 2010;31:6567–73.
+117.	 Jiang C, Cai H, Peng X, Zhang P, Wu X, Tian R. Targeted imaging of tumor-
+associated macrophages by cyanine 7-labeled mannose in xenograft tumors. 
+Mol Imaging. 2017;16:1536012116689499.
+118.	 van der Zande HJP, Nitsche D, Schlautmann L, Guigas B, Burgdorf S. The man­
+nose receptor: from endocytic receptor and biomarker to regulator of (meta)
+inflammation. Front Immunol. 2021;12:765034.
+119.	 Lee HW, Gangadaran P, Kalimuthu S, Ahn B-C. Advances in molecular 
+imaging strategies for in vivo tracking of immune cells. BioMed Res Int. 
+2016;2016:1946585.
+120.	 Rajendran RL, Jogalekar MP, Gangadaran P, Ahn B-C. Noninvasive in vivo cell 
+tracking using molecular imaging: a useful tool for developing mesenchymal 
+stem cell-based cancer treatment. World J Stem Cells. 2020;12:1492–510.
+121.	 Frangioni JV. In vivo near-infrared fluorescence imaging. Curr Opin Chem Biol. 
+2003;7:626–34.
+Page 24 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+122.	 Zhang R, Chouket R, Plamont M-A, Kelemen Z, Espagne A, Tebo AG, et al. 
+Macroscale fluorescence imaging against autofluorescence under ambient 
+light. Light Sci Appl. 2018;7:97.
+123.	 Thorne N, Inglese J, Auld DS. Illuminating insights into firefly luciferase 
+and other bioluminescent reporters used in chemical biology. Chem Biol. 
+2010;17:646–57.
+124.	 Oh JM, Kalimuthu S, Gangadaran P, Baek SH, Zhu L, Lee HW, et al. Reverting 
+iodine avidity of radioactive-iodine refractory thyroid cancer with a new 
+tyrosine kinase inhibitor (K905-0266) excavated by high-throughput NIS 
+(sodium iodide symporter) enhancer screening platform using dual reporter 
+gene system. Oncotarget. 2018;9:7075–87.
+125.	 Gangadaran P, Li XJ, Lee HW, Oh JM, Kalimuthu S, Rajendran RL, et al. A new 
+bioluminescent reporter system to study the biodistribution of systemati­
+cally injected tumor-derived bioluminescent extracellular vesicles in mice. 
+Oncotarget. 2017;8:109894–914.
+126.	 Badr CE, Tannous BA. Bioluminescence imaging: progress and applications. 
+Trends Biotechnol. 2011;29:624–33.
+127.	 Kim JE, Kalimuthu S, Ahn B-C. In vivo cell tracking with bioluminescence 
+imaging. Nucl Med Mol Imaging. 2015;49:3–10.
+128.	 Choi YJ, Oh S-G, Singh TD, Ha J-H, Kim DW, Lee SW, et al. Visualization of the 
+biological behavior of tumor-associated macrophages in living mice with 
+colon cancer using multimodal optical reporter gene imaging. Neoplasia N Y 
+N. 2016;18:133–41.
+129.	 Gore JC, Manning HC, Quarles CC, Waddell KW, Yankeelov TE. Magnetic 
+resonance in the era of molecular imaging of cancer. Magn Reson Imaging. 
+2011;29:587–600.
+130.	 Ta HT, Li Z, Hagemeyer CE, Cowin G, Zhang S, Palasubramaniam J, et al. 
+Molecular imaging of activated platelets via antibody-targeted ultra-small 
+iron oxide nanoparticles displaying unique dual MRI contrast. Biomaterials. 
+2017;134:31–42.
+131.	 Koo V, Hamilton PW, Williamson K. Non-invasive in vivo imaging in small 
+animal research. Cell Oncol. 2006;28:127–39.
+132.	 Korchinski DJ, Taha M, Yang R, Nathoo N, Dunn JF. Iron oxide as an MRI con­
+trast agent for cell tracking. Magn Reson Insights. 2015;8:15–29.
+133.	 Lu F-M, Yuan Z. PET/SPECT molecular imaging in clinical neuroscience: recent 
+advances in the investigation of CNS diseases. Quant Imaging Med Surg. 
+2015;5:433–47.
+134.	 Li Y, Liu T-M. Discovering macrophage functions using in vivo optical imaging 
+techniques. Front Immunol. 2018;9:502.
+135.	 Cho HR, Choi SH, Lee N, Hyeon T, Kim H, Moon WK. Macrophages homing 
+to metastatic lymph nodes can be monitored with ultrasensitive ferro­
+magnetic iron-oxide nanocubes and a 1.5T clinical MR scanner. PLoS ONE. 
+2012;7:e29575.
+136.	 Li XJ, Gangadaran P, Kalimuthu S, Oh JM, Zhu L, Jeong SY, et al. Role of 
+pulmonary macrophages in initiation of lung metastasis in anaplastic thyroid 
+cancer. Int J Cancer. 2016;139:2583–92.
+137.	 Tippett E, Cheng W-J, Westhorpe C, Cameron PU, Brew BJ, Lewin SR, et al. 
+Differential expression of CD163 on monocyte subsets in healthy and HIV-1 
+infected individuals. PLoS ONE. 2011;6:e19968.
+138.	 Xu L, Huang C, Zheng X, Gao H, Zhang S, Zhu M, et al. Elevated CD169 
+expressing monocyte/macrophage promotes systemic inflammation and 
+disease progression in cirrhosis. Clin Exp Med. 2024;24:45.
+139.	 Aghighi M, Theruvath AJ, Pareek A, Pisani LL, Alford R, Muehe AM, et al. 
+Magnetic resonance imaging of tumor-associated macrophages: clinical 
+translation. Clin Cancer Res. 2018;24:4110–8.
+140.	 Daldrup-Link HE, Golovko D, Ruffell B, Denardo DG, Castaneda R, Ansari C, et 
+al. MRI of tumor-associated macrophages with clinically applicable iron oxide 
+nanoparticles. Clin Cancer Res. 2011;17:5695–704.
+141.	 Leftin A, Koutcher JA. Quantification of nanoparticle enhancement in 
+polarized breast tumor macrophage deposits by spatial analysis of MRI and 
+histological iron contrast using computer vision. Contrast Media Mol Imag­
+ing. 2018;2018:3526438.
+142.	 Makela AV, Foster PJ. Imaging macrophage distribution and density in mam­
+mary tumors and lung metastases using fluorine-19 MRI cell tracking. Magn 
+Reson Med. 2018;80:1138–47.
+143.	 Croci D, Santalla Méndez R, Temme S, Soukup K, Fournier N, Zomer A, et al. 
+Multispectral fluorine-19 MRI enables longitudinal and noninvasive monitor­
+ing of tumor-associated macrophages. Sci Transl Med. 2022;14:eabo2952.
+144.	 Yurdagul A, Subramanian M, Wang X, Crown SB, Ilkayeva OR, Darville L, et 
+al. Macrophage metabolism of apoptotic cell-derived arginine promotes con­
+tinual efferocytosis and resolution of injury. Cell Metab. 2020;31:518–e53310.
+145.	 Li J, Jiang X, Li H, Gelinsky M, Gu Z. Tailoring materials for modulation of 
+macrophage fate. Adv Mater. 2021;33:e2004172.
+146.	 Liu X, Wang M, Jiang Y, Zhang X, Shi C, Zeng F, et al. Magnetic resonance 
+imaging nanoprobe quantifies nitric oxide for evaluating M1/M2 mac­
+rophage polarization and prognosis of cancer treatments. ACS Nano. 
+2023;17:24854–66.
+147.	 Chen C, Ge J, Gao Y, Chen L, Cui J, Zeng J, et al. Ultrasmall superparamagnetic 
+iron oxide nanoparticles: a next generation contrast agent for magnetic 
+resonance imaging. Wiley Interdiscip Rev Nanomed Nanobiotechnol. 
+2022;14:e1740.
+148.	 Si G, Du Y, Tang P, Ma G, Jia Z, Zhou X, et al. Unveiling the next generation 
+of MRI contrast agents: current insights and perspectives on ferumoxytol-
+enhanced MRI. Natl Sci Rev. 2024;11:nwae057.
+149.	 Zhu X, Li J, Peng P, Hosseini Nassab N, Smith BR. Quantitative drug release 
+monitoring in tumors of living subjects by magnetic particle imaging nano­
+composite. Nano Lett. 2019;19:6725–33.
+150.	 Kapoor M, Kasi A. PET scanning. StatPearls. Treasure Island (FL): StatPearls 
+Publishing; 2024 [cited 2024 Dec 26]. Available from: ​h​t​t​p​:​/​/​w​w​w​.​n​c​b​i​.​n​l​m​.​n​i​
+h​.​g​o​v​/​b​o​o​k​s​/​N​B​K​5​5​9​0​8​9​/​
+151.	 Gawne PJ, Man F, Blower PJ, de Rosales TM. Direct cell radiolabeling for in vivo 
+cell tracking with PET and SPECT imaging. Chem Rev. 2022;122:10266–318.
+152.	 Pérez-Medina C, Teunissen AJP, Kluza E, Mulder WJM, van der Meel R. Nuclear 
+imaging approaches facilitating nanomedicine translation. Adv Drug Deliv 
+Rev. 2020;154–155:123–41.
+153.	 Lee SB, Lee J-E, Cho SJ, Chin J, Kim SK, Lee I-K, et al. Crushed gold shell 
+nanoparticles labeled with radioactive iodine as a theranostic nanoplat­
+form for macrophage-mediated photothermal therapy. Nano-Micro Lett. 
+2019;11:36.
+154.	 Ohsawa K, Imai Y, Sasaki Y, Kohsaka S. Microglia/macrophage-specific protein 
+Iba1 binds to fimbrin and enhances its actin-bundling activity. J Neurochem. 
+2004;88:844–56.
+155.	 Pérez-Medina C, Tang J, Abdel-Atti D, Hogstad B, Merad M, Fisher EA, et al. PET 
+imaging of tumor-associated macrophages with 89zr-labeled high-density 
+lipoprotein nanoparticles. J Nucl Med. 2015;56:1272–7.
+156.	 Modak M, Mattes A-K, Reiss D, Skronska-Wasek W, Langlois R, Sabarth N, et al. 
+CD206 + tumor-associated macrophages cross-present tumor antigen and 
+drive antitumor immunity. JCI Insight. 2022;7:e155022.
+157.	 Ray A, Hu KH, Kersten K, Courau T, Kuhn NF, Zaleta-Linares I, et al. Target­
+ing CD206 + macrophages disrupts the establishment of a key antitumor 
+immune axis. J Exp Med. 2025;222:e20240957.
+158.	 Blykers A, Schoonooghe S, Xavier C, D’hoe K, Laoui D, D’Huyvetter M, et al. 
+PET imaging of macrophage mannose receptor-expressing macrophages in 
+tumor stroma using 18F-radiolabeled camelid single-domain antibody frag­
+ments. J Nucl Med. 2015;56:1265–71.
+159.	 Kim H-Y, Li R, Ng TSC, Courties G, Rodell CB, Prytyskach M, et al. Quantitative 
+imaging of tumor-associated macrophages and their response to therapy 
+using 64Cu-labeled macrin. ACS Nano. 2018;12:12015–29.
+160.	 Locke LW, Mayo MW, Yoo AD, Williams MB, Berr SS. PET imaging of tumor 
+associated macrophages using mannose coated 64Cu liposomes. Biomateri­
+als. 2012;33:7785–93.
+161.	 Movahedi K, Schoonooghe S, Laoui D, Houbracken I, Waelput W, Breckpot 
+K, et al. Nanobody-based targeting of the macrophage mannose receptor 
+for effective in vivo imaging of tumor-associated macrophages. Cancer Res. 
+2012;72:4165–77.
+162.	 Jeong H, Kim S, Hong B-J, Lee C-J, Kim Y-E, Bok S, et al. Tumor-associated 
+macrophages enhance tumor hypoxia and aerobic glycolysis. Cancer Res. 
+2019;79:795–806.
+163.	 Zhao S, Di Y, Fan H, Xu C, Li H, Wang Y, et al. Targeted delivery of extracellular 
+vesicles: the mechanisms, techniques and therapeutic applications. Mol 
+Biomed. 2024;5:60.
+164.	 Creeden JF, Sevier J, Zhang J-T, Lapitsky Y, Brunicardi FC, Jin G, et al. 
+Smart exosomes enhance PDAC targeted therapy. J Controlled Release. 
+2024;368:413–29.
+165.	 Chen P, Wang L, Fan X, Ning X, Yu B, Ou C, et al. Targeted delivery of extracel­
+lular vesicles in heart injury. Theranostics. 2021;11:2263–77.
+166.	 Ma Y, Brocchini S, Williams GR. Extracellular vesicle-embedded materials. J 
+Controlled Release. 2023;361:280–96.
+167.	 Baek S, Jeon M, Jung HN, Lee W, Hwang J-E, Lee JS, et al. M1 macrophage-
+derived exosome-mimetic nanovesicles with an enhanced cancer targeting 
+ability. ACS Appl Bio Mater. 2022;5:2862–9.
+Page 25 of 25
+Gangadaran et al. Biomarker Research           (2025) 13:20 
+168.	 Li S, Wu Y, Ding F, Yang J, Li J, Gao X, et al. Engineering macrophage-derived 
+exosomes for targeted chemotherapy of triple-negative breast cancer. 
+Nanoscale. 2020;12:10854–62.
+169.	 Gong C, Tian J, Wang Z, Gao Y, Wu X, Ding X, et al. Functional exosome-medi­
+ated co-delivery of doxorubicin and hydrophobically modified microRNA 159 
+for triple-negative breast cancer therapy. J Nanobiotechnol. 2019;17:93.
+170.	 Li R, Gong X, Hong C, Wang H, Chen Y, Tan K, et al. An efficient photo­
+chemotherapy nanoplatform based on the endogenous biosynthesis of 
+photosensitizer in macrophage-derived extracellular vesicles. Biomaterials. 
+2021;279:121234.
+171.	 Sun X, Gao D, Gao L, Zhang C, Yu X, Jia B, et al. Molecular imaging of tumor-
+infiltrating macrophages in a preclinical mouse model of breast cancer. 
+Theranostics. 2015;5:597–608.
+172.	 Gustave Roussy C, Campus G, Paris. Phase II trial of a vaccination with tumor 
+antigen-loaded dendritic cell-derived exosomes on patients with unresect­
+able non small cell lung cancer responding to induction chemotherapy. 
+clinicaltrials.gov; 2018 Mar. Report No.: NCT01159288. Available from: ​h​t​t​p​s​:​/​/​
+c​l​i​n​i​c​a​l​t​r​i​a​l​s​.​g​o​v​/​s​t​u​d​y​/​N​C​T​0​1​1​5​9​2​8​8​
+173.	 Besse B, Charrier M, Lapierre V, Dansin E, Lantz O, Planchard D, et al. Dendritic 
+cell-derived exosomes as maintenance immunotherapy after first line che­
+motherapy in NSCLC. Oncoimmunology. 2015;5:e1071008.
+174.	 Codiak BioSciences. Phase 1 study of macrophage reprogramming agent, 
+exoASO-STAT6 (CDK-004), in patients with advanced hepatocellular carci­
+noma (HCC) and patients with liver metastases from either primary gastric 
+cancer or colorectal cancer (CRC). clinicaltrials.gov; 2023 May. Report No.: 
+NCT05375604. Available from: https:/​/clinic​altrial​s.go​v/study/NCT05375604
+175.	 Xie X, Song Q, Dai C, Cui S, Tang R, Li S, et al. Clinical safety and efficacy of 
+allogenic human adipose mesenchymal stromal cells-derived exosomes in 
+patients with mild to moderate Alzheimer’s disease: a phase I/II clinical trial. 
+Gen Psychiatry. 2023;36:e101143.
+176.	 Ruijin H, Open-Label, Single-Center. Phase III clinical trial to evaluate 
+the safety and the efficacy of exosomes derived from allogenic adipose 
+mesenchymal stem cells in patients with mild to moderate dementia due 
+to alzheimers disease. clinicaltrials.gov; 2021 Jun. Report No.: NCT04388982. 
+Available from: https:/​/clinic​altrial​s.go​v/study/NCT04388982
+177.	 Dehghani L, Khojasteh A, Soleimani M, Oraee-Yazdani S, Keshel SH, Saadatnia 
+M, et al. Safety of intraparenchymal injection of allogenic placenta mesen­
+chymal stem cells derived exosome in patients undergoing decompressive 
+craniectomy following malignant middle cerebral artery infarct, a pilot 
+randomized clinical trial. Int J Prev Med. 2022;13:7.
+178.	 Dehghani L. Safety and efficacy of allogenic mesenchymal stem cells derived 
+exosome on disability of patients with acute ischemic stroke: a randomized, 
+single-blind, placebo-controlled, phase 1, 2 trial. clinicaltrials.gov; 2021 Jan. 
+Report No.: NCT03384433. Available from: ​h​t​t​p​s​:​/​/​c​l​i​n​i​c​a​l​t​r​i​a​l​s​.​g​o​v​/​s​t​u​d​y​/​N​C​T​
+0​3​3​8​4​4​3​3​
+179.	 Espinoza F. A phase I study aiming to assess safety and efficacy of a single 
+intra-articular injection of msc-derived exosomes (CelliStem®OA-sEV) in 
+patients with moderate knee osteoarthritis (ExoOA-1). clinicaltrials.gov; 2021 
+Sep. Report No.: NCT05060107. Available from: ​h​t​t​p​s​:​/​/​c​l​i​n​i​c​a​l​t​r​i​a​l​s​.​g​o​v​/​s​t​u​d​y​
+/​N​C​T​0​5​0​6​0​1​0​7​
+180.	 Daldrup-Link H, Coussens LM. MR imaging of tumor-associated macro­
+phages. Oncoimmunology. 2012;1:507–9.
+181.	 Bowser BA, Campeau NG, Carr CM, Diehn FE, McDonald JS, Miller GM, et al. 
+Incidental ferumoxytol artifacts in clinical brain MR imaging. Neuroradiology. 
+2016;58:1087–91.
+182.	 Hanreck JC, Gerasymchuk M, Nayate AP. Head and neck vessel magnetic reso­
+nance angiography appearance and artifacts after therapeutic intravenous 
+ferumoxytol infusion. BJR Case Rep. 2023;9:20230014.
+183.	 Achterberg FB, Sibinga Mulder BG, Meijer RPJ, Bonsing BA, Hartgrink HH, 
+Mieog JSD, et al. Real-time surgical margin assessment using ICG-fluores­
+cence during laparoscopic and robot-assisted resections of colorectal liver 
+metastases. Ann Transl Med. 2020;8:1448.
+184.	 Bellon JM, Filipe G. [Spinal complications encountered in Larsen’s syndrome. 
+Apropos of 3 cases]. Rev Chir Orthop Reparatrice Appar Mot. 1987;73:57–62.
+185.	 Schaefer N. Biodistribution, tumor detection, and radiation dosimentry 
+of [18F]-AZAFOL as positron emission tomography (PET) tracer in folate 
+receptor positive cancer imaging. clinicaltrials.gov; 2020 Feb. Report No.: 
+NCT03242993. Available from: https:/​/clinic​altrial​s.go​v/study/NCT03242993
+186.	 MaxCyte I. A phase 1 study of intraperitoneal MCY-M11 therapy for women 
+with platinum resistant high grade serous adenocarcinoma of the ovary, 
+primary peritoneum, or fallopian tube, or subjects with peritoneal mesothe­
+lioma with recurrence after prior chemotherapy. clinicaltrials.gov; 2021 Aug. 
+Report No.: NCT03608618. Available from: ​h​t​t​p​s​:​/​/​c​l​i​n​i​c​a​l​t​r​i​a​l​s​.​g​o​v​/​s​t​u​d​y​/​N​C​T​
+0​3​6​0​8​6​1​8​
+187.	 Zhang W, Liu L, Su H, Liu Q, Shen J, Dai H, et al. Chimeric antigen receptor 
+macrophage therapy for breast tumours mediated by targeting the tumour 
+extracellular matrix. Br J Cancer. 2019;121:837–45.
+188.	 Dong X, Fan J, Xie W, Wu X, Wei J, He Z, et al. Efficacy evaluation of chimeric 
+antigen receptor-modified human peritoneal macrophages in the treatment 
+of gastric cancer. Br J Cancer. 2023;129:551–62.
+189.	 Xavier C, Blykers A, Laoui D, Bolli E, Vaneyken I, Bridoux J, et al. Clinical transla­
+tion of [68Ga]Ga-NOTA-anti-MMR-sdAb for PET/CT imaging of protumori­
+genic macrophages. Mol Imaging Biol. 2019;21:898–906.
+190.	 Daldrup-Link HE. Pilot differentiation of bone sarcomas and osteomyelitis 
+with ferumoxytol-enhanced MRI. clinicaltrials.gov; 2023 Dec. Report No.: 
+NCT01336803. Available from: https:/​/clinic​altrial​s.go​v/study/NCT01336803
+191.	 Daldrup-Link HE. Development of radiation free whole body MR imaging 
+technique for staging of children with cancer.. clinicaltrials.gov; 2023 Apr. 
+Report No.: NCT01542879. Available from: ​h​t​t​p​s​:​/​/​c​l​i​n​i​c​a​l​t​r​i​a​l​s​.​g​o​v​/​s​t​u​d​y​/​N​C​T​
+0​1​5​4​2​8​7​9​
+192.	 Kobayashi H, Longmire MR, Ogawa M, Choyke PL, Kawamoto S. Multiplexed 
+imaging in cancer diagnosis: applications and future advances. Lancet Oncol. 
+2010;11:589–95.
+193.	 Wu M, Shu J. Multimodal molecular imaging: current status and future direc­
+tions. Contrast Media mol Imaging. 2018;2018:1382183.
+194.	 Rostam HM, Reynolds PM, Alexander MR, Gadegaard N, Ghaemmaghami AM. 
+Image based machine learning for identification of macrophage subsets. Sci 
+Rep. 2017;7:3521.
+195.	 Li Z, Yu Q, Zhu Q, Yang X, Li Z, Fu J. Applications of machine learning in 
+tumor-associated macrophages. Front Immunol. 2022;13:985863.
+Publisher’s note
+Springer Nature remains neutral with regard to jurisdictional claims in 
+published maps and institutional affiliations.

@@ -1,0 +1,1911 @@
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=laps20
+Applied Spectroscopy Reviews
+ISSN: 0570-4928 (Print) 1520-569X (Online) Journal homepage: https://www.tandfonline.com/loi/laps20
+Optical spectroscopy-based imaging techniques
+for the diagnosis of breast cancer: A novel
+approach
+Uttam M. Pal, Mansi Saxena, G. K. Anil Vishnu, Darshan Parsana, B. S. R.
+Sarvani, Manoj Varma, Mahesh Jayachandra, Vishnu Kurpad, Deb Baruah,
+Gayatri Gogoi, Jayant S. Vaidya & Hardik J. Pandya
+To cite this article: Uttam M. Pal, Mansi Saxena, G. K. Anil Vishnu, Darshan Parsana, B. S.
+R. Sarvani, Manoj Varma, Mahesh Jayachandra, Vishnu Kurpad, Deb Baruah, Gayatri Gogoi,
+Jayant S. Vaidya & Hardik J. Pandya (2020): Optical spectroscopy-based imaging techniques
+for the diagnosis of breast cancer: A novel approach, Applied Spectroscopy Reviews, DOI:
+10.1080/05704928.2020.1749651
+To link to this article:  https://doi.org/10.1080/05704928.2020.1749651
+Published online: 09 Apr 2020.
+Submit your article to this journal 
+View related articles 
+View Crossmark data
+REVIEW
+Optical spectroscopy-based imaging techniques for
+the diagnosis of breast cancer: A novel approach
+Uttam M. Pala, Mansi Saxenaa,b, G. K. Anil Vishnua,d, Darshan Parsanaa,
+B. S. R. Sarvania, Manoj Varmac, Mahesh Jayachandrad, Vishnu Kurpade,
+Deb Baruahf, Gayatri Gogoig, Jayant S. Vaidyah, and Hardik J. Pandyaa
+aDepartment of Electronic Systems Engineering, Indian Institute of Science, Bangalore, India; bSignal
+processing and Bio-medical Imaging Lab, Indraprastha Institute of Information Technology Delhi, Delhi,
+India; cCentre for Nano Science and Engineering, Indian Institute of Science, Bangalore, India; dCenter
+for BioSystems Science and Engineering, Indian Institute of Science, Bangalore, India; eDepartment of
+Surgical Oncology, Sri Shankara Cancer Hospital and Research Center, Bangalore, India; fDepartment
+of Radiology, Tezpur Medical College, Assam, India; gDepartment of Pathology, Assam Medical
+College, Dibrugarh, India; hDivision of Surgery and Interventional Science, University College London,
+London, UK
+ABSTRACT
+There have been substantial advancements in optical spectroscopy-
+based imaging techniques in recent years. These developments can
+potentially herald a transformational change in the diagnostic path-
+way for diseases such as cancer. In this paper, we review the clinical
+and engineering aspects of novel optical spectroscopy-based imaging
+tools. We provide a comprehensive analysis of optical and non-optical
+spectroscopy-based
+breast
+cancer
+diagnosis
+techniques
+vis-a-vis
+the current standard techniques such as X-Ray mammography, ultra-
+sonography, and tissue biopsy. The recent advancements in optical
+spectroscopy-based
+imaging
+systems
+such
+as
+Transillumination
+Imaging (TI) and the various types of Diffuse Optical Imaging (DOI)
+systems (parallel-plate, bed-based, and handheld) are examined. The
+engineering aspects, including mechanical, electronics, optics, auto-
+matic interpretation using artificial intelligence (AI), and ergonomics
+are discussed. The abilities of these technologies for measuring
+several cancer biomarkers such as hemoglobin, water, lipid, collagen,
+oxygen saturation (SO2), and tissue oxygenation index (TOI) are
+investigated. This article critically assesses the diagnostic ability and
+practical deployment of these new technologies to differentiate
+between the normal and cancerous tissue.
+KEYWORDS
+Transillumination imaging;
+diffuse optical imaging;
+near-infrared spectroscopy;
+breast cancer; rapid
+diagnosis; machine learning
+Introduction
+Breast cancer is the most common cancer affecting women, with 2 million cases
+diagnosed annually and over 600,000 fatalities.[1,2] In developed countries, the incidence
+is higher compared to developing countries; however, the case fatality rate in developed
+countries is lower than in developing countries.[1,2] Data from Globocan 2018, IARC
+shows that out of 2,088,849 new breast cancer cases reported globally, the incidence rate
+in high income and low-middle income countries was 823,638 (39%) and 444,728 (21%)
+CONTACT Hardik J. Pandya
+hjpandya@iisc.ac.in
+Department of Electronic Systems Engineering, Indian Institute
+of Science, Bangalore, India.
+ 2020 Taylor & Francis Group, LLC
+APPLIED SPECTROSCOPY REVIEWS
+https://doi.org/10.1080/05704928.2020.1749651
+respectively; however, the mortality was 178,554 (8.5%) and 205,691 (9.8%) respect-
+ively.[1,2] A significant reason for this difference is due to the diagnosis of breast cancer
+at an early stage in high-income countries; however, high level of population-based
+screening facilities for early detection of breast cancer in low-middle income countries
+are also materializing.[3,4]
+Currently, the methods for diagnosis of breast cancer, whether in a symptomatic or a
+screening situation are clinical breast examination, imaging with X-ray mammography
+and ultrasound as well as tissue diagnosis using a needle biopsy. The most common
+tool used for screening for breast cancer is X-ray mammography has been reported to
+have sensitivity and specificity of 77% and 97% respectively.[5] However, X-Ray mam-
+mography’s sensitivity and specificity reduce significantly to 67% and 89% respectively
+for mammographically dense (relatively radiopaque) breasts.[5,6] Moreover, X-Ray mam-
+mography is expensive, hospital-based, involves small radiation risks, and is less accur-
+ate in younger women, under 50.[7–12] Contrast enhanced Magnetic Resonance Imaging
+(MRI) is reported to have the highest sensitivity between 93% and 100%;[13,14] but is
+costly, the equipment is bulky and expensive, and needs to be hospital-based.
+Ultrasonography[15–17] does not use ionizing radiation, but requires a skilled operator
+and is less accurate and less reproducible[18,19] compared to X-ray mammography.
+Thermography is highly sensitive to ambient and temperature fluctuation, resulting in
+high false-positive rates,[20–22] low accuracy,[23] and is not used in clinical practice.
+Diverse optical and non-optical spectroscopy techniques are used to diagnose breast
+cancer. The optical spectroscopy techniques involve Transillumination Imaging (TI),
+Diffuse Optical Imaging (DOI), Raman spectroscopy, and Fluorescence spectroscopy,
+while non-optical spectroscopy comprises of microwave spectroscopy, Nuclear Magnetic
+Resonance (NMR) spectroscopy, and molecular mass spectroscopy. The review gives a
+detailed analysis on optical spectroscopy techniques such as Transillumination Imaging
+and Diffuse Optical Imaging, which have the potential to be translated to rapid diagnos-
+tic tools for breast cancer.
+Optical properties of tissue, e.g., absorption and scattering coefficients, have been studied
+thoroughly[24–27] where the differences in optical properties of breast cancer and normal tissue
+could potentially be used to diagnose cancer. Spectroscopy instruments measuring optical
+properties use visible to near-infrared (NIR) light (wavelength from 600nm to 1100nm)
+which propagates through the tissue. As it propagates, there is photon diffusion and scattering
+and the difference in local blood supply that accompanies cancer leads to higher absorption as
+compared to the adjacent normal tissue, resulting in distinguishable contrast between the
+tumor to normal tissue in the acquired image,[25,28] which forms a basis for tumor detection.
+Such optical detection uses spectroscopy techniques such as Transillumination Imaging (TI)
+and Diffuse Optical Imaging (DOI). Transillumination imaging has been studied using a com-
+mercial tool such as Breastlight[29,30] and has been found to have varying sensitivities between
+60% and 93% for breast cancer detection, primarily due to the dependency on the skill of the
+clinician to visually analyze the transillumination images.[28,30–36] Mehnati et al.[37] and Edge
+et al.[38] critically review the transillumination imaging for breast screening and recommended
+performing more clinical trials.
+Spectroscopy based imaging technique such as Diffuse Optical Imaging (DOI) has
+several theoretical advantages over simple transillumination. DOI can map the relative
+2
+U. M. PAL ET AL.
+concentration of different tissue constituents such as oxygenated hemoglobin (HbO),
+deoxygenated hemoglobin (HbR), total hemoglobin (HbT), lipid (L), water (H2O), and
+collagen (C) along with bulk tissue properties such as absorption coefficient (ma),
+reduced scattering coefficient (ms), oxygen saturation (SO2), and tissue oxygenation
+index (TOI). These parameters can be used as multiple biomarkers to improve accuracy
+of delineation between normal and abnormal cases.[39–41] However, DOI techniques are
+still lab-based, expensive, and provide lower resolution images as compared to X-Ray
+mammography due to comparatively higher scattering of infrared photons within the
+breast tissue.[42] Tromberg et al. was the first to review the DOI system as a potential
+diagnostic technique,[43] followed by Godavarty et al., specifically proposing the hand-
+held optical imaging systems as a potential tool for quick diagnosis of breast cancer in
+the field.[44] However, other configurations such as parallel-plate and bed-based techni-
+ques may have a better potential to be translated as a rapid diagnostic tool and are also
+discussed in this review.
+The challenges of such an approach include variation of breast volume between
+patients, acquisition time, and automatic interpretation of results. In this review, we
+assess different cancer biomarkers that could be used to delineate between tumor and
+normal cases. The TI and DOI systems are analyzed with an engineering perspective,
+including its mechanical, electronics, optics, and ergonomic design. Detailed analysis is
+performed on different configurations of the lab based DOI systems giving higher sensi-
+tivity, albeit with a comparatively small patient sample size. The review also discusses
+the application of machine learning techniques in DOI based system for automated
+interpretation of results. Finally, the design of opto-electronics components, which plays
+a vital role in the overall development cost of the DOI system is discussed.
+Low cost rapid diagnosis of breast cancer
+Challenges involved in breast cancer diagnosis at low-resource settings
+Various challenges of application of the diagnostic tool in low-resource settings include
+proficiency in imaging breasts with different volume and density, cost, portability, auto-
+matic interpretation of results, and optimization of parameters, e.g., time to examine
+each patient, adequate sensitivity, and specificity.
+Breast volume and density variation
+One of the pressing challenges when manufacturing a device for breast imaging is its
+adaptability[45] to accommodate the variation of breast volume between 200 and 1500 cc
+and breast surface area varying from 100 to 500cm2[46–48] while maintaining sensitivity.
+Moreover, variation in breast texture between patients,[43,49] or due to the menstrual
+cycle[50] is also a concern.
+Accurate diagnosis of cancer even when the tumor is very small
+The diagnostic tool should have high contrast and resolution to be adequately sensitive to
+detect cancer at an early stage.[51–54] However, the holy grail is the ability to differentiate
+between early cancers that may never grow and those that could potentially spread and
+APPLIED SPECTROSCOPY REVIEWS
+3
+be lethal. Additionally, while detecting these early cancers, the tool should be capable to
+distinguish between breast abnormalities due to the patient’s age, physiological factors,
+hormonal changes and other abnormalities caused by cancer.[55,56] Finally, for a tool to be
+useful, the sensitivity and specificity need to be high and well quantified.[42,44,57–59]
+Reducing human input and cost
+Highly trained human resource is necessary for the current approaches to breast cancer
+diagnosis, including surgeons, radiographers, radiologists, and pathologists. Furthermore,
+the intimate examination may lead to hesitancy in women with some socio-cultural back-
+grounds.[55,60,61] If a diagnostic tool requires much less human input, it may be more
+cost-effective, less time consuming as well as more acceptable in certain cultures.
+Therefore, a machine learning algorithm with segmentation and classification algorithms
+could help to differentiate between normal and abnormal cases automatically.
+Portability
+A tool that is portable and battery operated will facilitate its use in remote locations in
+the developed world as well as in low and middle-income countries.[28,32–35,37]
+The complete wish-list of the requirements of a practical tool for the rapid diagnosis
+of breast cancer is shown in Table 1.
+Spectroscopy based techniques to diagnose breast cancer
+The spectroscopy techniques can be classified as optical and non-optical based on the
+operating wavelength and the type of source used in the technique.
+The optical spectroscopy techniques include Transillumination Imaging (TI), Diffuse
+Optical
+Imaging
+(DOI),
+Raman
+spectroscopy,
+and
+Fluorescence
+spectroscopy.
+Transillumination Imaging has been studied extensively for breast cancer screening in
+Egypt, Iran, Iraq, and Ghana.[28,29,31–35] While DOI is still lab-based, it is touted to be a
+promising technique to be used for breast cancer screening in the future.[43,80] The DOI
+system is classified as parallel plate geometry, bed-based, and handheld probe techni-
+ques, based on the arrangement of the source and detector. Zhao et al.[81] compare bed-
+based DOI images (Figure 1a–e) with MRI T2 images, while Ghartey et al.[28] visually
+analyze the transillumination image for breast cancer detection (Figure 1f). More
+Table 1. List of requirements for breast cancer diagnostic tool.
+SN
+Description
+References
+1
+Ability to adjust breast volume variation
+[45]
+2
+Ability to adjust breast density variation
+[49]
+3
+High contrast and resolution
+[51–54]
+4
+Reducing human intervention
+[55,60,61]
+5
+Low screening fee
+[43,62–70]
+6
+Screening time
+[71,72]
+7
+High sensitivity and specificity
+[42,44,57–59]
+8
+Automatic interpretation of results using machine learning
+[73–79]
+9
+Portable system and lightweight
+[28,32–35,37]
+10
+Battery powered
+[28,32–35,37]
+4
+U. M. PAL ET AL.
+advanced optical
+spectroscopy
+techniques comprise
+of
+Raman
+spectroscopy
+and
+Fluorescence spectroscopy.
+Raman spectroscopy is used to detect the Stokes and anti-Stokes scattered photons to
+quantify chemical composition. This technique is highly sensitive to detect breast can-
+cer; however, it is highly sophisticated and expensive to be deployed at large scale.
+Fluorescence spectroscopy uses endogenous and exogenous chromophores to re-emit
+the absorbed photons with a distinct spectral response. Fluorescence spectroscopy using
+exogenous chromophores such as indocyanine green (ICG) needs to be injected intra-
+venously,[82] which makes the technique invasive, and there are concerns of an allergic
+reaction due to the presence of sodium iodide in ICG.[83] Fluorescence spectroscopy
+using endogenous chromophores such as collagen, elastin, and hemoglobin is noninva-
+sive; however, this technique uses sophisticated optical tools to measure sensitive fluor-
+escence signals, which makes it practically difficult to be used at large scale.[84–86]
+The non-optical spectroscopy techniques used to diagnose breast cancer include
+microwave spectroscopy, Nuclear Magnetic Resonance (NMR)
+spectroscopy, and
+molecular mass spectrometry. The microwave spectroscopy uses non-ionizing micro-
+wave radiation; however, the technique suffers from low contrast between healthy and
+malignant fibroglandular tissues. Additionally, the shorter wavelength and significant
+tissue conductivity limit the penetration depth of the microwave radiation.[87–89] The
+NMR spectroscopy uses non-ionizing radiofrequency radiation to quantify the compos-
+ition of chemical biomarkers within the breast tissue, such as phosphocholine, which is
+about ten times more in cancer tissues as compared to normal tissues. However, the
+NMR technique suffers from lower sensitivity, and the equipment is expensive.[90–92]
+The molecular mass spectrometry with the recent advancement of ambient ionization
+technology provides the molecular signature for differentiating between normal and
+cancerous regions within the breast; however, the technique is destructive and invasive,
+and hence appropriate only for advanced diagnosis of breast cancer, such as intraopera-
+tive margin assessment.[93–95] The complete analysis of different types of spectroscopy
+techniques are showcased in Table 2.
+Figure 1. (a–e) Zhao et al.[81] comparing the MRI T2 images (a–c) with the DOI (d, e) in the bed
+based DOI system. The tumor pointed in the MRI image (c) was quantified with higher hemoglobin
+and lower lipid concentration in DOI image (d, e), reprinted from Zhao et al.[81] with permission of
+The Optical Society, Copyright 2017. (f) Transilluminated view of the breast observed by the clinician
+during the screening process as proposed by Ghartey et al.,[28] where the cancer is represented by
+dark spots, reprinted from Ghartey et al. [28] with permission of Hindwai, Copyright 2018.
+APPLIED SPECTROSCOPY REVIEWS
+5
+Transillumination imaging (TI) systems
+The transillumination method has been extensively studied for breast cancer diagnosis,
+as TI based systems are cost-effective, portable and easy to operate.[28–35] In the trans-
+illumination method, the handheld probe (Figure 2a) consisting of few LEDs, is placed
+under the breast (Figure 2b), while the skilled clinician analyzes the transilluminated
+view of the breast (Figure 1f).[28] The transilluminated view consists of the light propa-
+gating through the breast tissue and the blood vessels. As the LEDs are operated at
+about 620 nm, overlapping with the absorption peak of red blood cells, the blood vessels
+appear as dark and tissue appears as light pink or red. In addition to any abnormality
+of blood vessel diameter, dark patches in the breast tissue due to an abnormality also
+become a basis for tumor detection.
+Vaidya et al.[30] reported the use of Breastlight from a survey of 1500 women, where
+1054 returned with their feedback, out of which 3 had mammogram and 1 was diag-
+nosed with cancer. They found that the use of Breastlight did not raise the anxiety nor
+did it detract women from seeking medical advice. Iwuchukwu et al.[36] screened 300
+women and detected 12 out of 18 malignant cases using Breastlight in a screening per-
+formed in UK with a sensitivity and specificity of 67% and 85% respectively. Labib
+et al.[34] screened 310 women in Egypt, reporting sensitivity as high as 93% and specificity
+of 73.7%. Al-Alwan et al.[31] screened 150 women in Iraq, reported a sensitivity of
+Table 2. Analysis of various spectroscopy techniques for diagnosis of breast cancer.
+Modality
+Spectroscopy techniques
+Principle
+Advantages
+Disadvantages
+Optical
+Transillumination
+Imaging[28,29,31–35]
+Absorption and
+scattering of visible
+light source to
+quantify difference of
+transmittance
+Noninvasive,
+Inexpensive
+Low accuracy, varying
+sensitivity
+Diffuse Optical
+Imaging[43,80]
+Visible and infrared
+absorption
+spectroscopy to
+quantify chemical
+composition
+Noninvasive,
+relatively inexpsive
+Low penetration depth,
+lower
+spatial resolution
+Raman Spectroscopy[96]
+Stokes and anti-Stokes
+scattered photons to
+quantify chemical
+composition
+Noninvasive,
+highly sensitive
+Highly sophisticated,
+expensive and
+difficult to deploy
+Fluorescence
+Spectroscopy[82–86]
+Re-emission of absorbed
+photons to
+differentiate normal
+and tumor regions
+High sensitivity
+Exogenous
+chromophores are
+invasive and can be
+allergic, endogenous
+chromophore
+are expensive
+Non- Optical
+Microwave
+Spectroscopy[87–89]
+Microwave radiation to
+quantify the
+electric properties
+Noninvasive
+Low contrast between
+healthy and
+malignant
+fibroglandular tissue,
+and low
+penetration depth
+Nuclear Magnetic
+Resonance
+Spectroscopy[90–92]
+RF radiation to quantify
+the chemical
+composition
+Noninvasive
+Low sensitivity
+and expensive
+Molecular Mass
+Spectrometry[93–95]
+Ionizing tissue to
+measure
+molecular signature
+Molecular level
+information, high
+sensitivity
+Destructive technique
+and invasive.
+6
+U. M. PAL ET AL.
+80.56%. However, the device reported a low specificity of 53.47% and high false positives
+(46.53%). Shiryazdi et al.[33,35] screened 500 women in Iran, specifically young women
+(<30), for whom the use of mammography is inadvisable. The sensitivity of 60.3% and
+specificity of 92.5% was reported for the device and domiciliary use of the device was
+proposed as an alternative technique to BSE. Aliasghar et al.[32] screened 100 samples in
+Iraq and suggested that the technique shouldn’t be used exclusively due to high false-posi-
+tive (46%) and low sensitivity (66.66%), specificity (51.06%) and accuracy (52%). Ghartey
+et al.[28] screened 2204 women in Ghana and reported a sensitivity of 92.3% with the
+device as compared to 73% with CBE; however, specificity remains unreported
+(Figure5a–c). We agree with other authors[37,38] that there is a need for more clinical tri-
+als before using the transillumination method as a rapid diagnostic tool as it does offer a
+potentially accurate tool that is inexpensive and very easy to use. The varying sensitivity
+showcases the need for the rapid diagnostic tool which can delineate between normal and
+abnormal breast based on biomarkers such as hemoglobin, lipids, collagen, water and tis-
+sue properties such as absorption coefficient, reduced scattering coefficient, oxygen satur-
+ation, and tissue oxygenation index. The sample size, age group of subjects, and
+performance parameters of the studies discussed in this section are tabulated in Table 3.
+Diffuse optical imaging (DOI) systems
+The DOI systems are based on either continuous wave (CW), frequency domain (FD),
+or time-domain (TD) operation. However, considering the cost-effective requirement of
+rapid diagnosis, we only review those CW and FD systems performed on large-scale
+clinical trials, while averting the TD systems due to its comparatively higher develop-
+ment cost.[97] The CW system can be developed with lower instrumentation cost as
+compared to the FD system, primarily due to the requirement of network analyzer,
+advance laser/led driver, and bias network.[98] In this section, we analyze the parallel
+plate, bed-based and handheld DOI systems tested on large sample size in-vivo detection
+of breast cancer with the perspective of rapid diagnosis and summarized in Table 4.
+Figure 2. Transilluminated optical screening system. (a) Breast-I and Breastlight handheld based
+probes, (b) Handheld probe placed under the breast in the screening process as proposed by Ghartey
+et al.,[28] reprinted from Ghartey et al.[28] with permission of Hindwai, Copyright 2018.
+APPLIED SPECTROSCOPY REVIEWS
+7
+Parallel plate-based DOI system
+The parallel plate technique involves an array of source and detectors attached to two
+adjacent parallel plates with a distance separating them for the placement of breast, simi-
+lar to the parallel plate technique of X-Ray mammography. The patient can sit on a chair
+or stand upright while placing the breast within the expanded parallel plate. The parallel
+plate compresses the breast with a specific pressure to begin the acquisition process.
+Carp et al.[99] assessed a total of 17 patients by performing compression induced
+hemodynamic analysis, with the discriminating factor as total hemoglobin (higher in
+tumor), oxygenated hemoglobin, and saturated oxygen. The sensitivity and specificity of
+the system was reported to be 88% and 70% respectively. The bottom plate of the sys-
+tem was fixed, while the upper plate could be moved vertically, with forces ranging
+from 0 to 55 N, to study compression dependent hemodynamics (Figure 3a, b). The
+compression was measured using strain gauge fixed to the upper plate. The system used
+a periodic cycle to perform coupled continuous wave (CW) and frequency domain (FD)
+operation, with a total acquisition time of about 7 mins. Mastanduno et al.[115] dealt
+explicitly with the variation in breast volume by adjusting to breasts with different cup
+sizes. The system involved three parallel plates with 6 degrees of freedom to consider
+different breast volume.
+Anderson et al.[100] specifically developed a cost-effective CW system, most suitable
+for rapid diagnosis of breast cancer. An assessment of 26 patients was reported by
+optical characterization of breast and creation of breast maps. As compared to the sur-
+rounding tissues, the tumor regions had a higher concentration of hemoglobin and
+water, along with lower lipid concentration and oxygen saturation. Anderson et al.[101]
+further assessed 80 patients with oxygenation saturation maps and used the Dice coeffi-
+cient as a main discriminating factor.
+Bed based DOI system
+The bed-based systems are adapted from the parallel plate configuration, where the
+patient lies in a prone position with breast pendant in a chamber enclosed by parallel
+plates. The breast is usually immersed in a scattering fluid, having a similar refractive
+index that of fatty breast tissue.[116] The chamber holding the fluid and breast is sur-
+rounded by an array of sources and detectors, embedded within the plates. The fluid
+mainly consists of intralipid and/or India ink which has a similar refractive index to
+that of breast tissue so that the photons getting scattered within the breast do not
+Table 3. Sensitivity and specificity of transillumination based optical imaging tool.
+Ref
+N
+Age group (years)
+Sensitivity
+Specificity
+Vaidya et al. (2009)[30]
+1054
+543 were less than 50 years and
+511 were pre menopause
+NA
+NA
+Iwuchukwu et al. (2010)[36]
+300
+NA
+67%
+85%
+Labib et al. (2013)[34]
+310
+18–81 (46.3 ± 12.4)
+93.0%
+73.7%
+Al-Alwan et al. (2015)[31]
+150
+10–69
+80.56%
+53.47%
+Shiryazdi et al. (2015)[33,35]
+500
+19–49 (37 ± 4.2)
+60.3%
+92.5%
+Aliasghar et al. (2017)[32]
+100
+NA
+66.66%
+51.06%
+Ghartey et al. (2018)[28]
+2204
+34, 41
+92.3%
+NA
+Mean age in two different demographic groups.
+8
+U. M. PAL ET AL.
+Table 4. Analysis of DOI systems performed on large sample size with rapid diagnostic perspective.
+Ref
+Operation
+type
+Acquisition
+time
+ML
+N
+Sensitivity
+Specificity
+Tissue types
+DF (T/N)
+Comparative analysis
+Parallel plate
+Carp et al., 2013[99]
+CW, FD
+ 7 min
+No
+17
+88%
+70%
+Normal and IDC
+HbT "
+Single biomarker, low
+specificity, and
+high cost
+Anderson et al., 2015[100]
+CW
+4–10 min
+No
+26
+NA
+NA
+IDC, DCIS
+HbT " H2O " L #
+Cost effective and rapid
+acquisition
+Anderson et al., 2016[101]
+CW
+NA
+No
+80
+NA
+NA
+IDC, DCIS, ILC,
+and LCIS
+HbT " H2O " L #
+SO2 #
+Cost effective and
+multiple biomarkers
+Bed based
+Choe et al., 2009[40]
+FD
+8 to 12 mins
+per breast
+No
+51
+98% (95% CI
+¼
+87–100%)
+90% (95% CI
+of wide
+range:
+55–100%)
+IDC, DCIS, ILC, LCIS, FB,
+cyst and FBC.
+HbT " HbO " ms "
+High sensitivity, high
+specificity, but with
+large acquisition time
+and costly
+Iftimia et al., 2003[102]
+and Wang, James
+et al., 2008[103]
+CW
+4 min
+Yes
+33
+81.8 %
+91.7%
+Benign and IDC
+A " ms " g "
+Rapid acquisition, high
+specificity, integrated
+with ML, but costly
+Busch et al., 2010[104]
+FD
+8 to 12 mins
+per breast
+No
+35
+89%
+94%
+Benign, IDC, DCIS,
+and ILC
+HbT "
+High sensitivity, high
+specificity, but large
+acquisition time
+and costly
+Wang, Jia et al., 2010[105]
+FD, CW
+8 min
+No
+9
+RS
+RS
+Normal, DCIS, IDC,
+and IFC
+HbT " H2O " L #
+Reasonable development
+cost, but low
+sample size.
+Zhao et al., 2016[106]
+CW, FD
+90 sec
+No
+11
+RS
+RS
+Normal and IDC
+HbT " H2O "
+Rapid acquisition, but low
+sample size
+Cochran et al., 2018[107]
+CW, FD
+Real-Time
+Yes
+222
+Accuracy
+of 86%
+Benign, IDC, ILC, DCIS,
+and LCIS
+HbR " TOI "
+H2O " SO2 "
+Real time, integrated with
+ML, high accuracy, and
+large sample size.
+Handheld
+Zhu et al., 2003[108]
+FD
+13 min
+No
+19
+NA
+NA
+IC, ADH, LCIS, FB,
+and FBC
+HbT "
+Single biomarker and low
+sample size
+Cheng et al., 2003[109]
+CW
+Real-Time
+No
+50
+92%
+67%
+Benign, IDC, and DCIS
+HbT " SO2 "
+Real time, but low
+specificity
+Chance et al., 2005[110]
+CW
+10 min
+No
+116
+96%
+93%
+Normal and cancer
+HbT " SO2 #
+Large sample size, high
+sensitivity, high
+specificity, but with
+large acquisition time
+(continued)
+APPLIED SPECTROSCOPY REVIEWS
+9
+Table 4. Continued.
+Ref
+Operation
+type
+Acquisition
+time
+ML
+N
+Sensitivity
+Specificity
+Tissue types
+DF (T/N)
+Comparative analysis
+Cerussi et al., 2006[111]
+FD, CW
+20 sec at each
+spatial
+location
+No
+58
+NA
+NA
+Benign and IDC
+H2O " HbO " HbR
+" L # TOI "
+No data on sensitivity and
+specificity and costly
+Kukreti et al., 2009[112]
+FD, CW
+10 sec at each
+spatial
+location
+No
+60
+91%
+94%
+Benign and cancer
+MI "
+High sensitivity, high
+specificity, but costly
+Zhang et al., 2014[113]
+FD
+NA
+No
+67
+95.45%
+73.33%
+FB, FBC, cyst, IDC, CP
+and MC
+HbT " SO2 #
+Low specificity and costly
+Erickson et al., 2015[72]
+CW
+Real-Time
+No
+5
+RS
+RS
+IDC, DCIS, MTC
+HbT "
+Low sample size with no
+data about sensitivity
+and specificity
+Zhu et al., 2016[41]
+NA
+5 sec
+No
+288
+96.6%–100%
+77.3%–83.3%
+Benign, Tis, T1, T2, T3,
+and T4.
+HbT "
+Large sample size, high
+sensitivity, high
+specificity, and rapid
+acquisition
+Mostafa et al., 2017[114]
+FD
+Real-Time
+No
+20
+NA
+NA
+Benign, IDC, DCIS, LC
+HbT "
+Real time, but no data
+about sensitivity and
+specificity
+RS—Retrospective study, DF(T/N)—Discriminating factor with ratio of tumor to normal, IDC—Invasive ductal carcinoma, DCIS—Ductal carcinoma in-situ, LC—Lobular carcinoma, ILC—
+Invasive lobular carcinoma, IC—Invasive carcinoma, FB—Fibroadenoma, ICC—Intracystic carcinoma, MP—malignant phyllodes, FBC—Fibrocystic, IFC—Inflammatory carcinoma, IMC—
+Invasive mammary carcinoma, ADH—Atypical ductal hyperplasia, CP—Cystosarcoma phyllodes, MTC—Metastatic carcinoma, and MC—Mucinous carcinoma, BV—Blood volume,
+g—Refractive index.
+10
+U. M. PAL ET AL.
+refract while propagating away from the breast. Additionally, there are configura-
+tions,[105] replacing the scattering fluid with an arrangement of optical fibers to get dir-
+ect contact with the breast surface.
+The system proposed by Choe et al.[40] consisted of a fixed plate and a movable com-
+pression plate. Based on the size of the breast, the compression plate could be moved
+between 5.5 cm to 7.5 cm (Figure 4d). The total acquisition time for a single breast took
+about 12 mins. The study assessed a total of 51 patients and reported the sensitivity and
+specificity of 98% and 90% respectively. The cancer regions were reported higher total
+hemoglobin, oxygenated hemoglobin, and scattering coefficient as compared to normal
+cases. Busch et al.[104] expanded Choe et al. system[40] and converted the 2D images
+into 3D DOT (Diffuse Optical Tomography) images using multiparameter, multivoxel
+Figure 4. Different configurations of bed-based systems performing in-vivo clinical studies: (a) The
+NIRST imaging system proposed by Zhao et al.,[106] (b) The patient lies in a supine position for taking
+the measurement, and (c) Interface of fiber with the breast surface, reprinted from Zhao et al.[106]
+with permission of The Optical Society, Copyright 2016. (d) Patient lies in the prone position and pla-
+ces the breast in the breast box consisting of intralipid scattering agent and India ink absorption
+agent in the system by Choe et al.,[40] reprinted from Choe et al.[40] with permission of SPIE,
+Copyright 2009.
+Figure 3. Parallel plate based DOI system peforming in-vivo clinical studies: (a) Instrumentation and
+(b) Imaging system of the parallel plate system by Carp et al.,[99] reprinted from Carp et al. [99] with
+permission of The Optical Society, Copyright 2013.
+APPLIED SPECTROSCOPY REVIEWS
+11
+and multisubject statistical analysis to overcome the image artifacts. The study reported
+the assessment of 35 patients with a sensitivity and specificity of 89% and 94%, with
+HbT contrast ratio (T/N) cutoff of 1.2.
+The system proposed by Wang, James et al.[103] reported higher absorption coefficient,
+reduced scattering coefficient, and refractive index in tumor regions as compared to the
+surrounding regions. The system was based on the work by Iftimia et al.,[102] which took
+about 4 minutes for the acquisition of an image. The specificity and accuracy of the sys-
+tem developed by Iftimia et al.,[102] was improved by Wang, James et al.[103] by the
+employment of machine learning algorithm (support vector machine classification) for
+automated delineation of normal and tumor cases. The study[103] assessed a total of 33
+patients and reported the sensitivity and specificity of 81.8% and 91.7% respectively.
+Pogue et al.[24] assessed a total of 39 healthy patients and quantified hemoglobin con-
+centration, oxygen saturation, water, absorption, and scattering coefficient. The system
+used optical fibers to deliver the light source directly to the breast surface. Sixteen
+optical fibers were arranged circularly to cover the breast surface uniformly. The vari-
+ation of breast volume was adjusted by varying the diameter of this circular arrange-
+ment. The acquisition time for a single breast took about 5 mins. Force transducers
+were placed explicitly for safety as well to measure optical images based on different
+applied pressures. Wang, Jia et al.[105] extended this approach by using a coupled fre-
+quency domain (FD) and continuous wave (CW) operation along with a broadband
+light source with a reasonable development cost. The study reported more accurate tis-
+sue constituents with this coupled approach as compared to FD data alone. The study
+assessed 9 patients and reported 1.5 to 2-fold increase in water and hemoglobin concen-
+tration in the tumor as compared to the surrounding normal region. The study also
+reported lower lipid concentration in lipid as compared to the normal region.
+Ban et al.[71] introduced real-time camera-based DOT technique to quantify tissue
+properties along with 3D image reconstruction of the breast. The camera could detect
+any error rising due to motion artifacts. The system was extended by Cochran
+et al.,[107] an assessment of 222 patients was done and the accuracy of 86% was
+reported. The FD system developed by Zhao et al.[106]consisted of a movable football-
+shaped fiber breast interface to facilitate different breast volume. The system reported
+an assessment of 11 patients with hemoglobin and water contrast ratios of 1.4 and 1.2
+respectively (Figure 4a–c). The acquisition time in this system of about 90 sec was
+reduced to 55 sec in the updated system[81] by applying a prospective gain setting
+scheme. The updated system reported an increase of contrast in total hemoglobin to 1.7
+by the inclusion of the collagen concentration in image reconstruction.
+Handheld based DOI system
+Unlike X-Ray mammography, the Diffuse Optical Imaging (DOI) system use smaller
+light sources and detectors that can be configured within a handheld system. The hand-
+held probe is scanned point by point to cover the complete breast surface area. This pro-
+cess increases acquisition time for both breasts, and hence, the handheld device is
+primarily used in conjunction with complementary techniques, e.g., Ultrasound[41,108,117]
+12
+U. M. PAL ET AL.
+and X-Ray.[113] With the help of such complementary techniques, the operator can focus
+on a specific suspicious breast area for higher image contrast and resolution.
+Zhu et al.[108] assessed a total of 19 patients with an ultrasound-guided diffuse optical
+imaging handheld probe. The study reported a 2-fold higher total hemoglobin in the
+tumor as compared to the benign region. The system first localizes the lesion using
+ultrasound and then scans the suspected region at higher resolution using DOI. Chen
+et al.[117] expanded the system proposed by Zhu et al., by reducing the weight and con-
+verting it into a portable system weighing 26.5 lb (12 kg) with an acquisition time of
+about 5 minutes. Cheng et al.[109] assessed a total of 50 patients with a real-time time
+continuous-wave handheld DOI probe, and reported the sensitivity and specificity of
+92% and 67% respectively. The study reported a higher total hemoglobin and oxygen
+saturation in tumor cases as compared to the normal.
+The study by Chance et al.[110] used a multiwavelength LED at the center circularly
+surrounded by eight detectors with a radius of 4 cm. This arrangement gave a circular
+measurement area with a diameter of about 9 cm over the breast. The integration of a
+pressure transducer preserved the accuracy by maintaining the pressure of 3 mmHg
+throughout the measurement process. The study used hemoglobin concentration as a
+main discriminating factor to identify the cancerous region. The system assessed a total
+of 116 patients and reported the sensitivity and specificity of 96% and 93% respectively.
+Cerussi et al.[111]proposed the handheld probe system which consisted of the source
+optical fiber attached to a movable plastic attachment along with the casing of the probe
+consisting of an Avalanche photodiode (APD) detector. This arrangement helped to meas-
+ure data at different source-detector distances. The point by point scan was performed on a
+line with a spacing of 10mm, and source-detector separation of 28mm. The study assessed
+a total of 58 patients, and reported higher water, oxy- and deoxygenated hemoglobin (more
+than 50% each), and lower lipid ( 20%) concentration in the tumor as compared to nor-
+mal region. The study also reported TOI with a 2-fold contrast of malignant tissue as com-
+pared to the surrounding regions. The system required prior knowledge of tumor location
+through X-ray mammography. The system developed by O’Sullivan et al.[98] extended
+Cerussi et al. work, by printing the PCB circuit thereby replacing the network analyzer with
+equivalent accuracy while proving 5x faster acquisition time and 10x less cost (Figure 5d–f).
+Kukreti et al.[112] introduced self-referencing differential spectroscopy technique to
+report an absence or presence of molecular disposition in spectral fingerprint rather
+than the molecular concentration. The study retrospectively assessed a total of 60
+patients and used malignancy index (MI) as a discriminating factor, which was higher
+in the malignant as compared to benign. The study reported a sensitivity and specificity
+of 91% and 94% respectively. The system required the location of the tumor beforehand
+using an ultrasound technique, and the probe was vertically scanned with a spacing of
+10 mm
+across
+the
+tumor.
+The
+acquisition
+time
+for
+each
+spatial
+location
+was
+10 seconds. Zhang et al.[113] compared the DOT with Ultrasound Elastography (UE)
+and X-Ray Mammography. The study assessed a total of 67 patients and reported a sen-
+sitivity and specificity of DOT as 95.4% and 73.44% respectively, UE as 81.82% and
+93.33% respectively, and Mammography as 68.18% and 57.78% respectively. The DOT
+and UE were reported to have higher specificity and accuracy as compared to conven-
+tional mammography. The DOT images were recorded using a scanner (Xinao-MDT,
+APPLIED SPECTROSCOPY REVIEWS
+13
+Beijing, China) and used discriminating factors as total hemoglobin concentration (high
+in tumor) and oxygen saturation (low in tumor).
+Gonzalez et al.[118,119] introduced a fork design (Gen-2 system) which performed
+sequential and simultaneous bilateral reflectance and transmittance measurements. The
+probe head (4  5 cm2) was flexible to conform to breast tissue surfaces with minimal
+compression. The probe head was integrated with 3 source fibers and 96 detector fiber
+connected to the laser source and ICCD camera. Erickson et al.[72] compared the Gen-2
+system proposed by Gonzalez et al.[118,119] with an updated Gen-1 system, using a flex-
+ible probe head (4  9 cm2) with 6 source fibers and 165 detector fibers. Real-time
+images with an updated Gen-1 system were gathered with processing time for each
+image of about 2 seconds. The study by Erickson et al.[72] assessed a total of 5 patients
+using the discriminating factor as total hemoglobin concentration (higher in tumor).
+Zhu et al.[41] assessed a total of 288 patients based on the different stages of breast
+cancer (T1, T2, T4, Tis), and reported a sensitivity and specificity of 96.6%–100% and
+77.3%–83.3% respectively. Mostafa et al.[114] proposed a real-time semi-automated pro-
+cess that automatically identified tumor location and fed to the optical imaging recon-
+struction process. The study assessed a total of 20 patients and reported the
+discriminating factor as total hemoglobin concentration (high in tumor).
+Challenges of different configurations of DOI systems for routine diagnostic
+applications
+The parallel plate techniques were the earliest studied configuration, because of its similarity
+with mammography. The advantage of using this technique is the availability of the sophisti-
+cated mechanical rail system that can facilitate breast volume variation. However, a signifi-
+cant challenge faced by the parallel plate is the breast density variation of the compressed
+breast within the plate area. When the breast is under compression using parallel plates, the
+Figure 5. Different hand-held devices performing in-vivo clinical studies: (a) Broadband DOSI system
+constituting of instrumentation as proposed by O’Sullivan et al.[98] and Cerussi et al.,[111] (b) Handheld
+probe, and (c) Patient lying in supine position for the measurement, reprinted from O’Sullivan
+et al.[98] with permission of SPIE, Copyright 2012.
+14
+U. M. PAL ET AL.
+orthogonal density toward the chest will be relatively high. This gradient in density must be
+taken into consideration while performing image reconstruction. Additionally, the compres-
+sion of the breast causes pain and inconvenience to the patient.[100] Considering a large-scale
+clinical trial, the mechanical parts of the system will be more prone to failure. Moreover,
+due to the mechanical arrangement of the vertical railing, subtle vibration due to motion
+artifacts while taking measurement also induces errors in the acquired image.[99]
+The patient lying in a bed-based system is in a relaxed position, whether in a supine or
+prone position. Moreover, the bed-based system has been reported to have sensitivity and
+specificity of more than 90%.[40,104] However, a significant challenge using a bed based
+system is using matching fluid-based chambers,[82,120] which is susceptible to spilling and
+leakages. Additionally, due to the use of fluid, the issue of hygiene and cleanliness is also
+a concern. Replacing the fluid-based chamber with a motion-based contact technique
+requires maintaining optimal pressure and uniform contact with the breast surface, which
+is a challenge. Additionally, considering large-scale clinical trial for rapid diagnosis, the
+mechanical motion-based contact technique for different breast size is more prone to fail-
+ure. Finally, the requirement of a specialized bed with chambers makes the system bulky
+and decreases portability. The bed-based system can be configured in a modular way to
+be deployed during the rapid diagnosis. Moreover, with the recent advancements of the
+bed-based system, taking less than 1 minute[71,81] to perform imaging, the bed-based tech-
+niques seem to be a promising configuration to be used as a rapid diagnostic tool.
+The handheld system is a highly researched configuration and a promising technique to
+be used in breast cancer diagnosis,[44] especially with the recent advancement of real-time
+imaging of the breast.[72,109,114] The handheld systems are easy to use, portable and have
+been reported with more than 90% sensitivity[41,109,110,112,113] and more than 90% specifi-
+city.[110,112] However, the major challenge is the manual scanning process, where the oper-
+ator has to scan point-by-point over the breast. The diagnosis involving large sample size,
+an operator taking such measurements throughout the day would tend to make mistakes
+and may skip the scanning points due to monotony, which can lead to errors while recon-
+structing the images. Moreover, the non-uniformity of breast density/volume is a challenge
+for handheld devices. As the number of sources is limited and the operator must vary the
+scanning location manually, it is a challenge to automatically vary the intensity of the
+source based on the breast density/volume, i.e., higher density orthogonally toward the
+chest. Besides, the manual scanning process requires firm pressure to be applied by the
+operator (3mm Hg) to obtain the required contact and manual control over this variable
+by the operator can lead to inaccurate image.[110] The handheld system is a promising
+technique to be used for rapid diagnosis; however, due to limited measurement area, the
+tool can be advantageous and reliable along with complementary techniques such as ultra-
+sound[41,108,117] and mammography.[113]
+Automatic interpretation of results using machine learning
+Transillumination imaging (TI) is performed by a visual interpretation of an image by a
+skilled clinician; however, machine learning algorithms are yet to be applied in TI. While,
+the automatic interpretation or detection of breast cancer using DOI has been performed
+by reconstructing optical signals into images by inverse modeling the diffusion effect, as
+showcased in-depth in this section. Segmentation and classification of the reconstructed
+APPLIED SPECTROSCOPY REVIEWS
+15
+images are difficult due to the presence of noise, motion artifacts, and image degradation
+because of short acquisition time. Researchers have used several machine learning meth-
+ods to tackle the above problems and achieve high efficiency while performing different
+segmentation and classification algorithms, as tabulated in Table 5. Considering the rapid
+diagnosis, the machine learning algorithm needs to choose between these methods for
+high quality and low artifact reconstruction of images.
+In the latest development, McKinney et al.[125] used three independent Deep Learning
+Methods (DLM) while training each method with data augmentation applied to each
+image. Each model reported a cancer risk score between 0 and 1, while the final predic-
+tion was based on the mean of the predictions from each of these models. The study
+reported the use of AI resulted in a reduction of 1.21% in false-positive and 2.7% in
+false-negative in datasets from UK. Wang et al.[103] utilized absorption and scattering
+attributes along with a refractive index to isolate the lesion area. Based on mean coeffi-
+cients and lesion area properties, and with the help of Support Vector Machine SVM,
+the classification of the lesion as cancerous or non-cancerous was achieved with an
+accuracy of 88.6%. Entropy and iterative selective methods rather than simple predeter-
+mined threshold methods improved performance. Taroni et al.[39] examined different
+tissue composition, i.e., water, hemoglobin, lipid, collagen, and their absorption parame-
+ters as potential input features to a discrete Adaboost classifier to identify malignant
+invasive ductal carcinomas. The type of collagen and the type of lesion had a significant
+impact on the performance of the Adaboost classifier.[121]
+Cochran et al.[107] used diffuse optical biomarkers’ optical properties in the frequency
+domain as a feature to classify ductal and lobular invasive carcinomas against benign lesions
+using Logistic Regression. According to Breneisen et al.,[122] the Energy Spectral Density
+(ESD) can be used to differentiate malignant and healthy tissue, due to scattering properties
+of the tissue. The respective ESDs of the scattered incident light was fed to a feed-forward
+Neural Network (NN), which determined the grade of the lesion. A secondary NN was
+developed to represent as a “critic” for indecisive cases from the primary feed-forward NN.
+Barbour et al.[123] investigated hemoglobin signals from the tissue to characterize the
+nature of the tissue. The oxygenated state and saturation of hemoglobin were given as
+input features for finite Markov Chain to determine the grade of the lesion. Zhang
+et al.[124] used Diffuse Correlation Spectroscopy (DCS) to estimate the Blood Flow
+Index (BFI), associated with tumors. The study compared three different methods: L1
+norm, L2 Norm, and Support Vector Regression (SVR) to estimate BFI, SVR proved to
+be most efficient with an error rate of 2.23%.
+Electronic design for DOI systems
+The critical aspect of imaging is the contrast, resolution, and penetration depth. The
+contrast and resolution of the image depend on the number and type of sources/detec-
+tors and spacing between them. LASER or LED is used as a light source, the former
+generating narrower beamwidth and bandwidth; however, its thermal reliability is a
+concern. While, LED is comparatively cost-effective, reliable, and robust, but has wider
+beamwidth and bandwidth. Additionally, a critical challenge is the unavailability of a
+16
+U. M. PAL ET AL.
+Table 5. Machine learning used in diffuse optical imaging tools to detect breast cancer.
+Ref
+Features
+Methods
+Classes
+N
+Accuracy (%)
+Sensitivity (%)
+Specificity (%)
+[103]
+Attributes extracted from
+absorption, scattering, and
+refractive index images
+Support Vector Machine
+Cancer and non-cancer
+33
+88.6
+81.8
+91.7
+[39]
+Absorption differences at seven
+wavelengths
+Discrete Boosting algorithm
+Benign and malignant
+84
+NA
+80.5 ± 2.3
+84.1 ± 5.5
+[121]
+Absorption differences at seven
+wavelengths
+Discrete Boosting algorithm
+Benign and malignant
+84
+NA
+88
+79
+[107]
+Absorption and scattering
+properties from the
+frequency domain.
+Logistic Regression
+Benign and malignant
+222
+86
+NA
+NA
+[122]
+Energy Spectral Density
+Feed-forward NN
+Probably benign and highly
+suspicious malignant
+NA
+NA
+NA
+NA
+[123]
+HbO, HbT, SO2, tissue-Hb
+oxygen exchange
+Finite Markov Chain
+Benign and malignant
+NA
+NA
+NA
+NA
+[124]
+Blood Flow Index from
+DCS Signals
+Support Vector Regression
+–
+10
+NA
+ER:2.23%
+NA
+[125]
+Cancer risk score
+Three independent Deep
+Learning Method
+Benign and malignant
+28,953
+NA
+66.66
+96.26
+AI as second reader.
+APPLIED SPECTROSCOPY REVIEWS
+17
+single detector that is capable to detect light of different wavelengths with the same
+absolute sensitivity.
+The choice of the operating wavelength is based on characterizing specific tissue bio-
+marker, for e.g., selective absorption of oxygenated hemoglobin and deoxygenated hemo-
+globin occurs between 635 nm and 785, lipid absorption peak around 920 nm, water
+absorption peak around 975 nm, and collagen absorption peak around 1060 nm.[39,126]
+Additionally, considering rapid diagnosis, the development cost of the system should be
+minimal, while being portable. The TD systems[97,116,127] reportedly have higher cost due
+to expensive detector and source/detector driving system; however, FD[71,81,106,107,112] sys-
+tems are reported as an alternative, still requiring costly instruments such as source modu-
+lation driving circuit and biasing network; while low-cost alternative are considered as
+CW[100–103,115] system albeit with lower information (i.e., no tissue scattering property).
+The electronic design specifications for different configurations, such as parallel plate, bed-
+based, and handheld probes, are tabulated in Table 6.
+Summary
+Breast cancer causes the most cancer deaths in middle-aged women. Diagnosis of breast
+cancer using current tools such as X-Ray mammography, ultrasonography, and MRI,
+Table 6. Electronic design specifications of DOI in-vivo breast cancer imaging system.
+Ref
+Operation
+Source Type
+Source power
+Detector
+Wavelength (nm)
+Parallel plate
+[99]
+FD: 110 MHz
+Laser diode
+2mW (FD),
+10mW (CW)
+PMT
+635, 670, 690, 752, 758,
+810 and 830
+[115]
+CW, FD
+Laser diode
+NA
+PMT
+660 to 850 and 900
+to 950
+[100,101]
+CW
+Arc Lamp
+NA
+CCD
+650 nm–950 nm
+Bed based
+[40]
+FD: 70 MHz
+Laser diode
+NA
+CCD
+FD: 690, 750, 786, and
+830. CW: 650 and 905
+[102,103]
+CW
+Laser diode
+100 mW
+PMT
+785, 808, and 830 nm
+[104]
+FD
+Laser diode
+NA
+CCD
+650–950 nm
+[105]
+FD: 100 MHz
+Laser diode
+NA
+PMT
+FD: 661, 761, 785, 808,
+826, and 849
+CW: 903, 912, and 948
+[71,107]
+CW, FD: 70 MHz
+Laser diode
+16 mW
+CCD
+660, 690, 785, 808,
+and 830 nm
+[81,106]
+CW, FD: 100 MHz
+Laser diode
+<120 mW
+PMT and PD
+661, 785 and 826nm
+Handheld
+[108]
+FD: 140 MHz
+Laser diode
+NA
+PMT
+780 and 830
+[109]
+CW
+Laser diode
+100 mW
+Si PD
+690 and 830 nm
+[110]
+CW
+LED
+10 mA
+Si PD
+760 and 850
+[111]
+FD: 50 to 500 MHz
+Laser diode
+20 mW
+APD
+661, 686, 786, 808, 822,
+and 852
+[112]
+FD, CW
+FD: Laser diode,
+CW: tungsten-
+halogen
+20 mW
+APD, Spectrometer
+FD: 660, 690, 780, 808,
+830, and 850.
+[113]
+NA
+Laser diode
+NA
+NA
+NA
+[72]
+CW
+Laser diode
+< 5 mW
+ICCD
+785
+[41]
+NA
+NA
+NA
+PMT
+740, 780, 808,
+and 830 nm
+[114]
+FD: 140 MHz
+NA
+NA
+PMT
+740, 780, 808,
+and 830 nm
+PMT—Photomultiplier tube, CMOS—Complementary metal-oxide–semiconductor, APD—Avalanche photodiode (APD), Si
+PD—Silicon photodiode, CCD—coupled charge-coupled device), ICCD—Intensified charge-coupled device (ICCD).
+18
+U. M. PAL ET AL.
+while modestly accurate, is complex and expensive. Thermography is not used in clin-
+ical practice, and non-optical spectroscopy techniques such as microwave spectroscopy,
+NMR spectroscopy, and molecular mass spectrometry have inherent or practical disad-
+vantages making them unsuitable as a rapid diagnostic tool. Development of an inex-
+pensive, portable tool that requires the least amount of human expertise to operate
+could greatly improve the accessibility of women to high-quality diagnosis of this
+dreaded disease. Optical spectroscopy-based imaging modalities appear to be eminently
+suitable for the rapid diagnosis of breast cancer. The elementary optical spectroscopy-
+based techniques including Transillumination Imaging (TI) and Diffuse Optical Imaging
+(DOI) are comparatively more practical for rapid diagnosis of breast cancer in the field
+as compared to advanced optical spectroscopy techniques such as Raman spectroscopy
+and Fluorescence spectroscopy. The handheld Transillumination Imaging is inexpensive
+and easy to use, but its accuracy is not high, and a skilled clinician needs to interpret
+the transilluminated image. Diffuse Optical Imaging appears to be most promising. It
+provides a detailed spatial map of relative concentration of different cancer biomarkers
+and could be amenable to be used within a system of a handheld tool in combination
+with AI driven rapid analysis. Currently, DOI is lab-based and expensive to manufac-
+ture and needs improvement in its image resolution.
+The DOI tool is classified as parallel plate, bed-based, and handheld system. The par-
+allel plate system includes both transmission and reflection data and gives results with
+and without the application of pressure with relatively low acquisition time. The parallel
+plate system considers breast volume variation and breast density variation. However,
+due to its mechanical design, it is prone to vibration-induced errors. Additionally, con-
+sidering rapid diagnosis with large sample size, it is more prone to failure due to mech-
+anical motion. The parallel plate-based configuration is more advantageous in systems
+connected to bed-based configuration.
+The bed-based technique involves both transmission and reflection analysis while
+taking breast volume and breast density variation into account. Moreover, the patient is
+comfortable during the acquisition process, with the bed-based system having the sensi-
+tivity and specificity of more than 90%. However, the mechanical design, including a
+specialized bed decreases portability, and the spilling of chamber fluid and its hygiene is
+a concern. The motion-based contact bed-based technique is more favorable but is
+more prone to mechanical failure. With the recent developments in bed-based
+techniques taking the acquisition time to be less than 1 minute, the bed-based technique
+is a promising configuration to be used as a rapid diagnostic tool. However, there is a
+need to configure the bed-based system in a modular approach to improve portability
+and rapidly deploy the system.
+The handheld system primarily provides the reflection data and can compensate
+for breast volume variation by manually changing the number of scanning points. The
+sensitivity and specificity of hand-held systems are reported to be more than 90%.
+However, manually choosing the scanning points makes the process dependent on the
+operator’s skill. Considering an extensive number of tests, the operator can be prone to
+fatigue and reduced accuracies on skipping the scanning points. Hence, the handheld
+probe is more advantageous and reliable when used along with ultrasound or mammo-
+gram, where the location of the tumor is known beforehand.
+APPLIED SPECTROSCOPY REVIEWS
+19
+The FD and CW based rapid diagnosis systems are reported as an alternative to TD
+system, while the CW based system was considered as a low-cost alternative; however,
+with limited information on scattering data. Each of the modalities showcases potential
+to be used as a rapid diagnostic tool; however, there is a critical need to fully resolve all
+the challenges of being proficient in maintaining sensitivity with variation in breast vol-
+ume and density between patients, portable, battery-powered, low-acquisition time, min-
+imum human intervention, and integrated with machine learning techniques for
+automatic interpretation of the results. Additionally, the rapid diagnostic tool should
+quantify the main cancer biomarkers, such as total hemoglobin, water, and lipids.
+Acknowledgment
+Hardik J. Pandya acknowledges Indian Institute of Science, Bangalore for the startup grant to
+establish the research and computational facilities at the Department of Electronic Systems
+Engineering.
+Disclosure statement
+The authors declare no conflicts of interest.
+ORCID
+Hardik J. Pandya
+http://orcid.org/0000-0001-9835-8323
+References
+1.
+World Health Organization. Global Health Observatory; World Health Organization:
+Geneva, 2018. www.who.int/gho/database/en/ (accessed February 5, 2020).
+2.
+Ferlay, J.; Colombet, M.; Soerjomataram, I.; Mathers, C.; Parkin, D. M.; Pi~neros, M.;
+Znaor, A.; Bray, F. Estimating the Global Cancer Incidence and Mortality in 2018:
+GLOBOCAN Sources and Methods. Int. J. Cancer 2019, 144, 1941–1953. doi:10.1002/ijc.
+31937
+3.
+Singh, S.; Shrivastava, J.; Dwivedi, A. Breast Cancer Screening Existence in India: A
+Nonexisting Reality. Indian J. Med. Paediatr. Oncol. 2015, 36, 207–209. doi:10.4103/0971-
+5851.171539
+4.
+Corbex, M.; Burton, R.; Sancho-Garnier, H. Breast Cancer Early Detection Methods for
+Low and Middle Income Countries, a Review of the Evidence. Breast 2012, 21, 428–434.
+doi:10.1016/j.breast.2012.01.002
+5.
+Skaane, P.; Hofvind, S.; Skjennald, A. Randomized Trial of Screen-Film versus Full-Field
+Digital Mammography with Soft-Copy Reading in Population-Based Screening Program:
+Follow-up and Final Results of Oslo II Study. Radiology 2007, 244, 708–717. doi:10.1148/
+radiol.2443061478
+6.
+Carney, P. A.; Miglioretti, D. L.; Yankaskas, B. C.; Kerlikowske, K.; Rosenberg, R.; Rutter,
+C. M.; Geller, B. M.; Abraham, L. A.; Taplin, S. H.; Dignan, M.; et al. Individual and
+Combined Effects of Age, Breast Density, and Hormone Replacement Therapy Use on the
+Accuracy of Screening Mammography. Ann. Intern. Med. 2003, 138, 168–175. doi:10.7326/
+0003-4819-138-3-200302040-00008
+7.
+Goss, P. E.; Sierra, S. Current Perspectives on Radiation-Induced Breast Cancer. JCO.
+1998, 16, 338–347. doi:10.1200/JCO.1998.16.1.338
+20
+U. M. PAL ET AL.
+8.
+Yaffe,
+M.
+J.;
+Mainprize,
+J.
+G.
+Risk
+of
+Radiation-Induced
+Breast
+Cancer
+from
+Mammographic Screening. Radiology 2011, 258, 98–105. doi:10.1148/radiol.10100655
+9.
+Mattsson, A.; Ruden, B. I.; Hall, P.; Wilking, N.; Rutqvist, L. E. Radiation-Induced Breast
+Cancer: Long-Term Follow-up of Radiation Therapy for Benign Breast Disease. J. Natl.
+Cancer Inst. 1993, 85, 1679–1685. doi:10.1093/jnci/85.20.1679
+10.
+Matsumura, S.; Wang, B.; Kawashima, N.; Braunstein, S.; Badura, M.; Cameron, T. O.;
+Babb, J. S.; Schneider, R. J.; Formenti, S. C.; Dustin, M. L.; Demaria, S. Radiation-Induced
+CXCL16 Release by Breast Cancer Cells Attracts Effector T Cells. J. Immunol. 2008, 181,
+3099–3107. doi:10.4049/jimmunol.181.5.3099
+11.
+Lagadec, C.; Vlashi, E.; Della Donna, L.; Dekmezian, C.; Pajonk, F. Radiation-Induced
+Reprogramming of Breast Cancer Cells. Stem Cells 2012, 30, 833–844. doi:10.1002/stem.1058
+12.
+Miglioretti, D. L.; Lange, J.; van den Broek, J. J.; Lee, C. I.; van Ravesteyn, N. T.; Ritley, D.;
+Kerlikowske, K.; Fenton, J. J.; Melnikow, J.; de Koning, H. J.; Hubbard, R. A. Radiation-
+Induced Breast Cancer Incidence and Mortality from Digital Mammography Screening: A
+Modeling Study. Ann. Intern. Med. 2016, 164, 205–214. doi:10.7326/M15-1241
+13.
+Kriege, M.; Brekelmans, C. T. M.; Boetes, C.; Besnard, P. E.; Zonderland, H. M.; Obdeijn,
+I. M.; Manoliu, R. A.; Kok, T.; Peterse, H.; Tilanus-Linthorst, M. M. A.; et al. Efficacy of
+MRI and Mammography for Breast-Cancer Screening in Women with a Familial or
+Genetic Predisposition. N Engl. J. Med. 2004, 351, 427–437. doi:10.1056/NEJMoa031759
+14.
+Lord, S. J.; Lei, W.; Craft, P.; Cawson, J. N.; Morris, I.; Walleser, S.; Griffiths, A.; Parker,
+S.; Houssami, N. A Systematic Review of the Effectiveness of Magnetic Resonance
+Imaging (MRI) as an Addition to Mammography and Ultrasound in Screening Young
+Women at High Risk of Breast Cancer. Eur. J. Cancer 2007, 43, 1905–1917. doi:10.1016/j.
+ejca.2007.06.007
+15.
+Gordon, P. B. Ultrasound for Breast Cancer Screening and Staging. Radiol. Clin. North
+Am. 2002, 40, 431–441. doi:10.1016/S0033-8389(01)00014-8
+16.
+Stavros, A. T.; Thickman, D.; Rapp, C. L.; Dennis, M. A.; Parker, S. H.; Sisney, G. A. Solid
+Breast Nodules: Use of Sonography to Distinguish between Benign and Malignant
+Lesions. Radiology 1995, 196, 123–134. doi:10.1148/radiology.196.1.7784555
+17.
+Kolb, T. M.; Lichy, J.; Newhouse, J. H. Occult Cancer in Women with Dense Breasts:
+Detection with Screening US—Diagnostic Yield and Tumor Characteristics. Radiology
+1998, 207, 191–200. doi:10.1148/radiology.207.1.9530316
+18.
+Elmore, J. G. Screening for Breast Cancer. JAMA 2005, 293, 1245. doi:10.1001/jama.293.
+10.1245
+19.
+Al-Foheidi, M.; Al-Mansour, M. M.; Ibrahim, E. M. Breast Cancer Screening: Review of
+Benefits and Harms, and Recommendations for Developing and Low-Income Countries.
+Med. Oncol. 2013, 30, 471.
+20.
+Sterns, E. E.; Curtis, A. C.; Miller, S.; Hancock, J. R. Thermography in Breast Diagnosis. Cancer
+1982,
+50,
+323–325.
+doi:10.1002/1097-0142(19820715)50:2<323::AID-CNCR2820500226>3.0.
+CO;2-S
+21.
+Kennedy, D. A.; Lee, T.; Seely, D. A Comparative Review of Thermography as a Breast
+Cancer
+Screening
+Technique.
+Integr.
+Cancer
+Ther.
+2009,
+8,
+9–16.
+doi:10.1177/
+1534735408326171
+22.
+Arora, N.; Martins, D.; Ruggerio, D.; Tousimis, E.; Swistel, A. J.; Osborne, M. P.;
+Simmons, R. M. Effectiveness of a Noninvasive Digital Infrared Thermal Imaging System
+in the Detection of Breast Cancer. Am. J. Surg. 2008, 196, 523–526. doi:10.1016/j.amjsurg.
+2008.06.015
+23.
+Omranipour, R.; Kazemian, A.; Alipour, S.; Najafi, M.; Alidoosti, M.; Navid, M.; Alikhassi,
+A.; Ahmadinejad, N.; Bagheri, K.; Izadi, S. Comparison of the Accuracy of Thermography
+and Mammography in the Detection of Breast Cancer. Breast Care (Basel) 2016, 11,
+260–264. doi:10.1159/000448347
+24.
+Pogue, B.; Testorf, M.; McBride, T.; Osterberg, U.; Paulsen, K. Instrumentation and
+Design of a Frequency-Domain Diffuse Optical Tomography Imager for Breast Cancer
+Detection. Opt. Express 1997, 1, 391. doi:10.1364/OE.1.000391
+APPLIED SPECTROSCOPY REVIEWS
+21
+25.
+Colak, S. B.; Van Der Mark, M. B.; ‘T Hooft, G. W.; Hoogenraad, J. H.; Van Der Linden,
+E. S.; Kuijpers, F. A. Clinical Optical Tomography and NIR Spectroscopy for Breast
+Cancer Detection. IEEE J. Select. Topics Quantum Electron. 1999, 5, 1143–1158. doi:10.
+1109/2944.796341
+26.
+Delpy, D. T.; Cope, M.; Van Der Zee, P.; Arridge, S.; Wray, S.; Wyatt, J. Estimation of
+Optical Pathlength through Tissue from Direct Time of Flight Measurement. Phys. Med.
+Biol. 1988, 33, 1433–1442. doi:10.1088/0031-9155/33/12/008
+27.
+Jacques, S. L. Optical Properties of Biological Tissues: A Review. Phys. Med. Biol. 2013,
+58, 5007–5008. doi:10.1088/0031-9155/58/11/R37
+28.
+Ghartey, F. N.; Watmough, D.; Debrah, S.; Morna, M.; Anyanful, A. Breast-i is an
+Effective and Reliable Adjunct Screening Tool for Detecting Early Tumour Related
+Angiogenesis of Breast Cancers in Low Resource Sub-Saharan Countries. Int. J. Breast
+Cancer 2018, 2018, 1–10. doi:10.1155/2018/2539056
+29.
+Breast Cancer Diagnosis. How To Detect Breast Cancer. https://www.breastlightsouthafr-
+ica.co.za/ (accessed October 22, 2019).
+30.
+Vaidya, J.; Thorat, M. Feedback Consumer Research for PWB Health 2008, Study in
+Asymptomatic Women. In 2nd International Meeting Innovations & Progress in
+Healthcare for Women; RCOG: London, 2009.
+31.
+Al-Alwan, N. A. S. Evaluating the Accuracy of the ‘Breast Light’ as a Screening Tool for
+Breast Cancer in Iraq. J. Nurs. Care 2015, 04, 169.
+32.
+Aliasghar, A.; Alwan, N. A. S.; Mohson, K. I.; Azez, E. Accuracy of Hopelight
+(Mammolight) Imaging in Detection of Breast Cancer. Int. J. Sci. Res. 2017, 6, 1731–1734.
+33.
+Shiryazdi, S. M.; Kargar, S.; Taheri-Nasaj, H.; Neamatzadeh, H. BreastLight Apparatus
+Performance in Detection of Breast Masses Depends on Mass Size. Asian Pacific J. Cancer
+Prev. 2015, 16, 1181–1184. doi:10.7314/APJCP.2015.16.3.1181
+34.
+Labib, N. A.; Ghobashi, M. M.; Moneer, M. M.; Helal, M. H.; Abdalgaleel, S. A.
+Evaluation of BreastLight as a Tool for Early Detection of Breast Lesions among Females
+Attending National Cancer Institute. Cairo University. Asian Pacific J. Cancer Prev. 2013,
+14, 4647–4650. doi:10.7314/APJCP.2013.14.8.4647
+35.
+Shiryazdi, S.; Kargar, S.; Nasaj, H.; Neamatzadeh, H.; Ghasemi, N. The Accuracy of
+Breastlight in Detection of Breast Lesions. Indian J. Cancer 2015, 52, 513–516. doi:10.
+4103/0019-509X.178389
+36.
+Iwuchukwu, O.; Keaney, N.; Dordea, M. Analysis of Breastlight Findings in Patients with
+Biopsies. In European Institute of Oncology’s 12th Milan Breast Cancer Conference; City
+Hospital Sunderland, 2010.
+37.
+Mehnati, P.; Tirtash, M. J. Comparative Efficacy of Four Imaging Instruments for Breast
+Cancer Screening. Asian Pacific J. Cancer Prev. 2015, 16, 6177–6186. doi:10.7314/APJCP.
+2015.16.15.6177
+38.
+Edge, J.; Roodt, L. Alternative Modalities Being Promoted for Breast Screening. S Afr.
+Med. J. 2018, 108, 1010–1011. doi:10.7196/SAMJ.2018.v108i12.13679
+39.
+Taroni, P.; Paganoni, A. M.; Ieva, F.; Pifferi, A.; Quarto, G.; Abbate, F.; Cassano, E.;
+Cubeddu, R. Non-Invasive Optical Estimate of Tissue Composition to Differentiate
+Malignant from Benign Breast Lesions: A Pilot Study. Sci. Rep. 2017, 7, 1–11.
+40.
+Choe, R.; Konecky, S. D.; Corlu, A.; Lee, K.; Durduran, T.; Busch, D. R.; Pathak, S.;
+Czerniecki, B. J.; Tchou, J.; Fraker, D. L.; et al. Differentiation of Benign and Malignant
+Breast Tumors by in-Vivo Three-Dimensional Parallel-Plate Diffuse Optical Tomography.
+J. Biomed. Opt. 2009, 14, 24020. doi:10.1117/1.3103325
+41.
+Zhu, Q.; Ricci, A.; Hegde, P.; Kane, M.; Cronin, E.; Merkulov, A.; Xu, Y.; Tavakoli, B.;
+Tannenbaum, S. Assessment of Functional Differences in Malignant and Benign Breast
+Lesions and Improvement of Diagnostic Accuracy by Using Us-Guided Diffuse Optical
+Tomography in Conjunction with Conventional Us1. Radiology 2016, 280, 387–397. doi:
+10.1148/radiol.2016151097
+42.
+Grosenick, D.; Rinneberg, H.; Cubeddu, R.; Taroni, P. Review of Optical Breast Imaging
+and Spectroscopy. J. Biomed. Opt. 2016, 21, 91311. doi:10.1117/1.JBO.21.9.091311
+22
+U. M. PAL ET AL.
+43.
+Tromberg, B. J.; Pogue, B. W.; Paulsen, K. D.; Yodh, A. G.; Boas, D. A.; Cerussi, A. E.
+Assessing the Future of Diffuse Optical Imaging Technologies for Breast Cancer
+Management. Med. Phys. 2008, 35, 2443–2451. doi:10.1118/1.2919078
+44.
+Godavarty, A.; Rodriguez, S.; Jung, Y.-J.; Gonzalez, S. Optical Imaging for Breast Cancer
+Prescreening. Breast Cancer (Dove Med. Press) 2015, 7, 193–209.
+45.
+Kato, I.; Beinart, C.; Bleich, A.; Su, S.; Kim, M.; Toniolo, P. G. A Nested Case-Control
+Study of Mammographic Patterns, Breast Volume, and Breast Cancer (New York City,
+NY, United States). Cancer Causes Control 1995, 6, 431–438. doi:10.1007/BF00052183
+46.
+Liu, Y.-J. Aesthetics of the Female Breast: Correlation of Pluralistic Evaluations with
+Volume and Surface Area. Yale Med. Thesis, Digit. Libr, 2009.
+47.
+Katariya, R. N.; Forrest, A. P.; Gravelle, I. H. Breast Volumes in Cancer of the Breast. Br.
+J. Cancer 1974, 29, 270–273. doi:10.1038/bjc.1974.66
+48.
+Thomson, J. G.; Liu, Y.-J.; Restifo, R. J.; Rinker, B. D.; Reis, A. Surface Area Measurement
+of the Female Breast: Phase I. Validation of a Novel Optical Technique. Plast. Reconstr.
+Surg. 2009, 123, 1588–1596.
+49.
+Sprague, B. L.; Conant, E. F.; Onega, T.; Garcia, M. P.; Beaber, E. F.; Herschorn, S. D.;
+Lehman, C. D.; Tosteson, A. N. A.; Lacson, R.; Schnall, M. D.; et al. Variation in
+Mammographic Breast Density Assessments among Radiologists in Clinical Practice: A
+Multicenter Observational Study. Ann. Intern. Med. 2016, 165, 457–464. doi:10.7326/M15-2934
+50.
+White, E.; Velentgas, P.; Mandelson, M. T.; Lehman, C. D.; Elmore, J. G.; Porter, P.;
+Yasui, Y.; Taplin, S. H. Variation in Mammographic Breast Density by Time in Menstrual
+Cycle among Women Aged 40–49 Years. J. Natl. Cancer Inst. 1998, 90, 906–910. doi:10.
+1093/jnci/90.12.906
+51.
+Wang, L. Early Diagnosis of Breast Cancer. Sensors 2017, 17, 1572. doi:10.3390/s17071572
+52.
+Coleman, C. Early Detection and Screening for Breast Cancer. Semin. Oncol. Nurs. 2017,
+33, 141–155. doi:10.1016/j.soncn.2017.02.009
+53.
+Milosevic, M.; Jankovic, D.; Milenkovic, A.; Stojanov, D. Early Diagnosis and Detection of
+Breast Cancer. THC. 2018, 26, 729–759. doi:10.3233/THC-181277
+54.
+Loud, J. T.; Murphy, J. Cancer Screening and Early Detection in the 21st Century. Semin.
+Oncol. Nurs. 2017, 33, 121–128. doi:10.1016/j.soncn.2017.02.002
+55.
+Vidyarthi, A.; Soumya, A.; Choudhary, S.; Sinha, B. K. Barriers to Breast Cancer Screening
+In Young Indian Women: A Tale of Two Cities. Asian J. Exp. Sci. 2013, 27, 29–35.
+56.
+Onstad, M. Benign Breast Disorders. Obstetrics Gynecol. Clinics 2013, 40, 459–473.
+57.
+Lee, K. Optical Mammography: Diffuse Optical Imaging of Breast Cancer. WJCO. 2011, 2,
+64–72. doi:10.5306/wjco.v2.i1.64
+58.
+Leff, D. R.; Warren, O. J.; Enfield, L. C.; Gibson, A.; Athanasiou, T.; Patten, D. K.; Hebden, J.;
+Yang, G. Z.; Darzi, A. Diffuse Optical Imaging of the Healthy and Diseased Breast: A
+Systematic Review. Breast Cancer Res. Treat. 2008, 108, 9–22. doi:10.1007/s10549-007-9582-z
+59.
+Di Leo, G.; Trimboli, R. M.; Sella, T.; Sardanelli, F. Optical Imaging of the Breast: Basic
+Principles and Clinical Applications. AJR. Am. J. Roentgenol. 2017, 209, 230–238. doi:10.
+2214/AJR.16.17220
+60.
+Bottorff, J. L.; Johnson, J. L.; Bhagat, R.; Grewal, S.; Balneaves, L. G.; Clarke, H.; Hilton,
+B. A. Beliefs Related to Breast Health Practices: The Perceptions of South Asian Women
+Living in Canada. Soc. Sci. Med. 1998, 47, 2075–2085. doi:10.1016/S0277-9536(98)00346-3
+61.
+Kawar, L. N. Barriers to Breast Cancer Screening Participation among Jordanian and Palestinian
+American Women. Eur. J. Oncol. Nurs. 2013, 17, 88–94. doi:10.1016/j.ejon.2012.02.004
+62.
+Sreedevi, A.; Quereshi, M. A.; Kurian, B.; Kamalamma, L. Screening for Breast Cancer in
+a Low Middle Income Country: Predictors in a Rural Area of Kerala, India. Asian Pac. J.
+Cancer Prev. 2014, 15, 1919–1924. doi:10.7314/APJCP.2014.15.5.1919
+63.
+Mishra, G. A.; Dhivar, H. D.; Gupta, S. D.; Kulkarni, S. V.; Shastri, S. S. A Population-
+Based Screening Program for Early Detection of Common Cancers among Women in
+India—Methodology and Interim Results. Indian J. Cancer 2015, 52, 139–145. doi:10.4103/
+0019-509X.175581
+APPLIED SPECTROSCOPY REVIEWS
+23
+64.
+Kumar, J. U.; Sreekanth, V.; Reddy, H. R.; Sridhar, A. B.; Kodali, N.; Prabhu, A. S.
+Screening Mammography: A pilot study on Its Pertinence in Indian Population by Means
+of a Camp. J. Clin. Diagn. Res 2017, 11, TC29–TC32.
+65.
+Gutnik, L.; Lee, C.; Msosa, V.; Moses, A.; Stanley, C.; Mzumara, S.; Liomba, N. G.; Gopal,
+S. Clinical Breast Examination Screening by Trained Laywomen in Malawi Integrated with
+Other Health Services. J. Surg. Res. 2016, 204, 61–67. doi:10.1016/j.jss.2016.04.017
+66.
+Gutnik, L.; Moses, A.; Stanley, C.; Tembo, T.; Lee, C.; Gopal, S. From Community
+Laywomen to Breast Health Workers: A Pilot Training Model to Implement Clinical
+Breast Exam Screening in Malawi. PLoS One 2016, 11, e0151389. doi:10.1371/journal.pone.
+0151389
+67.
+Reddy, N.; Ninan, T.; Tabar, L.; Bevers, T. The Results of a Breast Cancer Screening
+cAMP at a District Level in Rural India. Asian Pac. J. Cancer Prev. 2012, 13, 6067–6072.
+doi:10.7314/APJCP.2012.13.12.6067
+68.
+Sayed, S.; Moloo, Z.; Ngugi, A.; Allidina, A.; Ndumia, R.; Mutuiri, A.; Wasike, R.;
+Wahome, C.; Abdihakin, M.; Kasmani, R.; et al. Breast Camps for Awareness and Early
+Diagnosis of Breast Cancer in Countries with Limited Resources: A Multidisciplinary
+Model from Kenya. Oncologist 2016, 21, 1138–1148. doi:10.1634/theoncologist.2016-0004
+69.
+Sayed, S.; Ngugi, A.; Ochieng, P.; Mwenda, A. S.; Salam, R. A. Training Health Workers
+in Clinical Breast Examination for Early Detection of Breast Cancer in Low- and Middle-
+Income Countries. Cochrane Database Syst. Rev. 2017, 2017, CD012515.
+70.
+Jose, R.; Augustine, P.; Bindhu S, A.; Sebasitan, S. R.; Va, D.; John, S.; Haran, J. C.
+Clinical Breast Examination Campaign: Experience from Thiruvananthapuram, South
+India. JGO. 2018, 4, 137s–137s. doi:10.1200/jgo.18.47900
+71.
+Ban, H. Y.; Schweiger, M.; Kavuri, V. C.; Cochran, J. M.; Xie, L.; Busch, D. R.; Katrasnik,
+J.; Pathak, S.; Chung, S. H.; Lee, K.; et al. Heterodyne Frequency-Domain Multispectral
+Diffuse Optical Tomography of Breast Cancer in the Parallel-Plane Transmission
+Geometry. Med. Phys. 2016, 43, 4383–4395. doi:10.1118/1.4953830
+72.
+Erickson-Bhatt, S. J.; Roman, M.; Gonzalez, J.; Nunez, A.; Kiszonas, R.; Lopez-Penalver,
+C.; Godavarty, A. Noninvasive Surface Imaging of Breast Cancer in Humans Using a
+Hand-Held Optical Imager. Biomed. Phys. Eng. Express 2015, 1, 45001. doi:10.1088/2057-
+1976/1/4/045001
+73.
+Harvey, H.; Karpati, E.; Khara, G.; Korkinof, D.; Ng, A.; Austin, C.; Rijken, T.;
+Kecskemethy, P. The Role of Deep Learning in Breast Screening. Curr. Breast Cancer Rep.
+2019, 11, 17–22. doi:10.1007/s12609-019-0301-7
+74.
+Trister, A. D.; Buist, D. S. M.; Lee, C. I. Will Machine Learning Tip the Balance in Breast
+Cancer Screening? JAMA Oncol. 2017, 3, 1463–1464. doi:10.1001/jamaoncol.2017.0473
+75.
+Alvarez Menendez, L.; de Cos Juez, F. J.; Sanchez Lasheras, F.; Alvarez Riesgo, J. A.
+Artificial Neural Networks Applied to Cancer Detection in a Breast Screening Programme.
+Math. Comput. Model. 2010, 52, 983–991. doi:10.1016/j.mcm.2010.03.019
+76.
+Nattkemper, T. W.; Arnrich, B.; Lichte, O.; Timm, W.; Degenhard, A.; Pointon, L.; Hayes,
+C.; Leach, M. O. Evaluation of Radiological Features for Breast Tumour Classification in
+Clinical Screening with Machine Learning Methods. Artif. Intell. Med. 2005, 34, 129–139.
+doi:10.1016/j.artmed.2004.09.001
+77.
+Sepandi, M.; Taghdir, M.; Rezaianzadeh, A.; Rahimikazerooni, S. Assessing Breast Cancer
+Risk with an Artificial Neural Network. Asian Pacific J. Cancer Prev. 2018, 19, 1017–1019.
+78.
+Nindrea, R. D.; Aryandono, T.; Lazuardi, L.; Dwiprahasto, I. Diagnostic Accuracy of
+Different Machine Learning Algorithms for Breast Cancer Risk Calculation: A Meta-
+Analysis. Asian Pacific J. Cancer Prev. 2018, 19, 1747–1752.
+79.
+Sadoughi, F.; Kazemy, Z.; Hamedan, F.; Owji, L.; Rahmanikatigari, M.; Azadboni, T. T.
+Artificial Intelligence Methods for the Diagnosis of Breast Cancer by Image Processing: A
+Review. BCTT. 2018, 10, 219–230. doi:10.2147/BCTT.S175311
+80.
+Hadjipanayis, C. G.; Jiang, H.; Roberts, D. W.; Yang, L. Current and Future Clinical
+Applications for Optical Imaging of Cancer: From Intraoperative Surgical Guidance to
+Cancer Screening. Semin. Oncol. 2011, 38, 109–118. doi:10.1053/j.seminoncol.2010.11.008
+24
+U. M. PAL ET AL.
+81.
+Zhao, Y.; Burger, W. R.; Zhou, M.; Bernhardt, E. B.; Kaufman, P. A.; Patel, R. R.; Angeles,
+C. V.; Pogue, B. W.; Paulsen, K. D.; Jiang, S. Collagen Quantification in Breast Tissue
+Using a 12-Wavelength near Infrared Spectral Tomography (NIRST) System. Biomed. Opt.
+Express 2017, 8, 4217. doi:10.1364/BOE.8.004217
+82.
+Corlu, A.; Choe, R.; Durduran, T.; Rosen, M. A.; Schweiger, M.; Arridge, S. R.; Schnall,
+M. D.; Yodh, A. G. Three-Dimensional in Vivo Fluorescence Diffuse Optical Tomography
+of Breast Cancer in Humans. Opt. Express 2007, 15, 6696. doi:10.1364/OE.15.006696
+83.
+Alander, J. T.; Kaartinen, I.; Laakso, A.; P€atil€a, T.; Spillmann, T.; Tuchin, V. V.; Venermo,
+M.; V€alisuo, P. A Review of Indocyanine Green Fluorescent Imaging in Surgery. Int. J.
+Biomed. Imaging 2012, 2012, 1–26. doi:10.1155/2012/940585
+84.
+Alchab, L.; Dupuis, G.; Balleyguier, C.; Mathieu, M. C.; Fontaine-Aupart, M. P.; Farcy, R.
+Towards an Optical Biopsy for the Diagnosis of Breast Cancer in Vivo by Endogenous
+Fluorescence Spectroscopy. J. Biophoton. 2009, 3, 373–384. doi:10.1002/jbio.200900070
+85.
+Kandurova, K.; Dremin, V. V.; Zherebtsov, E. A.; Dunaev, A. V.; Mamoshin, A. V.;
+Alyanov, A. L.; Muradyan, V. F.; Potapova, E. V. Application of the Fluorescence
+Spectroscopy for the Analysis of the State of Abdominal Cavity Organs Tissues in mini-
+Invasive
+Surgery.
+In
+Biophotonics:
+Photonic
+Solutions
+for
+Better
+Health
+Care;
+International Society for Optics and Photonics, 2018.
+86.
+Sevick-Muraca, E. M. Translation of near-Infrared Fluorescence Imaging Technologies:
+Emerging Clinical Applications. Annu. Rev. Med. 2012, 63, 217–231. doi:10.1146/annurev-
+med-070910-083323
+87.
+Wang, L. Microwave Sensors for Breast Cancer Detection. Sensors (Switzerland) 2018, 18,
+655–617. doi:10.3390/s18020655
+88.
+Nikolova, N. K. Microwave Imaging for Breast Cancer. IEEE Microwave 2011, 12, 78–94.
+doi:10.1109/MMM.2011.942702
+89.
+Lazebnik, M.; Zhu, C.; Palmer, G. M.; Harter, J.; Sewall, S.; Ramanujam, N.; Hagness,
+S. C. Electromagnetic Spectroscopy of Normal Breast Tissue Specimens Obtained from
+Reduction Surgeries: Comparison of Optical and Microwave Properties. IEEE Trans.
+Biomed. Eng. 2008, 55, 2444–2451. doi:10.1109/TBME.2008.925700
+90.
+Atta-Ur-Rahman; Chaudhary, M. I. Applications of NMR Spectroscopy Volume 7; Bentham
+Science Publishers: UAE, 2019.
+91.
+Shah, N.; Sattar, A.; Benanti, M.; Hollander, S.; Cheuck, L. Magnetic Resonance
+Spectroscopy as an Imaging Tool for Cancer: A Review of the Literature. J. Am.
+Osteopath. Assoc. 2006, 106, 23–27.
+92.
+Bolan, P. J.; Nelson, M. T.; Yee, D.; Garwood, M. Imaging in Breast Cancer: Magnetic
+Resonance Spectroscopy. Breast Cancer Res. 2005, 7, 149–152. doi:10.1186/bcr1202
+93.
+Ifa, D. R.; Eberlin, L. S. Ambient Ionization Mass Spectrometry for Cancer Diagnosis and
+Surgical Margin Evaluation. Clin. Chem. 2016, 62, 111–123. doi:10.1373/clinchem.2014.
+237172
+94.
+Ciocan-Cartita, C. A.; Jurj, A.; Buse, M.; Gulei, D.; Braicu, C.; Raduly, L.; Cojocneanu, R.;
+Pruteanu, L. L.; Iuga, C. A.; Coza, O.; Berindan-Neagoe, I. The Relevance of Mass
+Spectrometry Analysis for Personalized Medicine through Its Successful Application in
+Cancer “Omics”. Int. J. Mol. Sci. 2019, 20, 2576.
+95.
+Mao, X.; He, J.; Li, T.; Lu, Z.; Sun, J.; Meng, Y.; Abliz, Z.; Chen, J. Application of Imaging
+Mass Spectrometry for the Molecular Diagnosis of Human Breast Tumors. Sci. Rep. 2016,
+6, 1–12.
+96.
+Lazaro-Pacheco, D.; Shaaban, A. M.; Rehman, S.; Rehman, I. Raman Spectroscopy of
+Breast Cancer. Appl. Spectrosc. Rev. 2019, 2019, 1–37. doi:10.1080/05704928.2019.1601105
+97.
+Pifferi, A.; Contini, D.; Mora, A. D.; Farina, A.; Spinelli, L.; Torricelli, A. New Frontiers in
+Time-Domain Diffuse Optics, a Review. J. Biomed. Opt. 2016, 21, 91310. doi:10.1117/1.
+JBO.21.9.091310
+98.
+O’Sullivan, T. D.; Cerussi, A. E.; Cuccia, D. J.; Tromberg, B. J. Diffuse Optical Imaging
+Using Spatially and Temporally Modulated Light. J. Biomed. Opt. 2012, 17, 713111. doi:10.
+1117/1.JBO.17.7.071311
+APPLIED SPECTROSCOPY REVIEWS
+25
+99.
+Carp, S. A.; Sajjadi, A. Y.; Wanyo, C. M.; Fang, Q.; Specht, M. C.; Schapira, L.; Moy, B.;
+Bardia, A.; Boas, D. A.; Isakoff, S. J. Hemodynamic Signature of Breast Cancer under
+Fractional Mammographic Compression Using a Dynamic Diffuse Optical Tomography
+System. Biomed. Opt. Express 2013, 4, 2911. doi:10.1364/BOE.4.002911
+100.
+Anderson, P. G.; Kainerstorfer, J. M.; Sassaroli, A.; Krishnamurthy, N.; Homer, M. J.;
+Graham,
+R.
+A.;
+Fantini,
+S.
+Broadband
+Optical
+Mammography:
+Chromophore
+Concentration and Hemoglobin Saturation Contrast in Breast Cancer. PLoS One 2015, 10,
+e0117322–23. doi:10.1371/journal.pone.0117322
+101.
+Anderson, P. G.; Sassaroli, A.; Kainerstorfer, J. M.; Krishnamurthy, N.; Kalli, S.; Makim,
+S. S.; Graham, R. A.; Fantini, S. Optical Mammography: Bilateral Breast Symmetry in
+Hemoglobin Saturation Maps. J. Biomed. Opt. 2016, 21, 101403. doi:10.1117/1.JBO.21.10.
+101403
+102.
+Iftimia, N.; Gu, X.; Xu, Y.; Jiang, H. A Compact, Parallel-Detection Diffuse Optical
+Mammography System. Rev. Sci. Instrum. 2003, 74, 2836–2842. doi:10.1063/1.1568558
+103.
+Wang, J. Z.; Liang, X.; Zhang, Q.; Fajardo, L. L.; Jiang, H. Automated Breast Cancer
+Classification Using near-Infrared Optical Tomographic Images. J. Biomed. Opt. 2008, 13,
+44001. doi:10.1117/1.2956662
+104.
+Busch, D. R.; Guo, W.; Choe, R.; Durduran, T.; Feldman, M. D.; Mies, C.; Rosen, M. A.;
+Schnall, M. D.; Czerniecki, B. J.; Tchou, J.; et al. Computer Aided Automatic Detection of
+Malignant Lesions in Diffuse Optical Mammography. Med. Phys. 2010, 37, 1840–1849.
+doi:10.1118/1.3314075
+105.
+Wang, J.; Jiang, S.; Li, Z.; DiFlorio-Alexander, R. M.; Barth, R. J.; Kaufman, P. A.; Pogue,
+B. W.; Paulsen, K. D. In Vivo Quantitative Imaging of Normal and Cancerous Breast
+Tissue Using Broadband Diffuse Optical Tomography. Med. Phys. 2010, 37, 3715–3724.
+doi:10.1118/1.3455702
+106.
+Zhao, Y.; Pogue, B. W.; Haider, S. J.; Gui, J.; diFlorio-Alexander, R. M.; Paulsen, K. D.;
+Jiang, S. Portable, Parallel 9-Wavelength near-Infrared Spectral Tomography (NIRST)
+System for Efficient Characterization of Breast Cancer within the Clinical Oncology
+Infusion Suite. Biomed. Opt. Express 2016, 7, 2186. doi:10.1364/BOE.7.002186
+107.
+Cochran, J. Diffuse Optical Biomarkers of Breast Cancer. Penn Diss., 2018.
+108.
+Zhu, Q.; Huang, M.; Chen, N.; Zarfos, K.; Jagjivan, B.; Kane, M.; Hedge, P.; Kurtzman,
+S. H. Ultrasound-Guided Optical Tomographic Imaging of Malignant and Benign Breast
+Lesions: Initial Clinical Results of 19 Cases. Neoplasia 2003, 5, 379–388. doi:10.1016/
+S1476-5586(03)80040-4
+109.
+Cheng, X.; Mao, J-m.; Bush, R.; Kopans, D. B.; Moore, R. H.; Chorlton, M. Concentration
+and Oxygen Saturation. Appl. Opt. 2003, 42, 6412. doi:10.1364/AO.42.006412
+110.
+Chance, B.; Nioka, S.; Zhang, J.; Conant, E. F.; Hwang, E.; Briest, S.; Orel, S. G.; Schnall,
+M. D.; Czerniecki, B. J. Breast Cancer Detection Based on Incremental Biochemical and
+Physiological Properties of Breast Cancers: A Six-Year, Two-Site Study. Acad. Radiol.
+2005, 12, 925–933. doi:10.1016/j.acra.2005.04.016
+111.
+Cerussi, A.; Shah, N.; Hsiang, D.; Durkin, A.; Butler, J.; Tromberg, B. J. In Vivo
+Absorption, Scattering, and Physiologic Properties of 58 Malignant Breast Tumors
+Determined by Broadband Diffuse Optical Spectroscopy. J. Biomed. Opt. 2006, 11, 44005.
+doi:10.1117/1.2337546
+112.
+Kukreti, S.; Cerussi, A. E.; Tanamai, W.; Hsiang, D.; Tromberg, B. J.; Gratton, E.
+Characterization of Metabolic Differences between Benign and Malignant Tumors:
+Purpose: Methods: Results: Conclusion. Radiology 2010, 254, 277–284. doi:10.1148/radiol.
+09082134
+113.
+Zhang, H.; Qin, D.; Yang, Z.; Wang, K.; Sun, F.; Li, B.; Cui, G. Comparison of Diffuse Optical
+Tomography, Ultrasound Elastography and Mammography in the Diagnosis of Breast
+Tumors. Ultrasound Med. Biol. 2014, 40, 1–10. doi:10.1016/j.ultrasmedbio.2013.09.008
+114.
+Mostafa, A.; Vavadi, H.; Uddin, K. M. S.; Zhu, Q. Diffuse Optical Tomography Using
+Semiautomated Coregistered Ultrasound Measurements. J. Biomed. Opt. 2017, 22, 1. doi:
+10.1117/1.JBO.22.12.121610
+26
+U. M. PAL ET AL.
+115.
+Mastanduno, M. A.; El-Ghussein, F.; Jiang, S.; DiFlorio-Alexander, R.; Junqing, X.; Hong,
+Y.; Pogue, B. W.; Paulsen, K. D. Adaptable near-Infrared Spectroscopy Fiber Array for
+Improved Coupling to Different Breast Sizes during Clinical MRI. Acad. Radiol. 2014, 21,
+141–150. doi:10.1016/j.acra.2013.09.025
+116.
+Enfield, L. C.; Gibson, A. P.; Everdell, N. L.; Delpy, D. T.; Schweiger, M.; Arridge, S. R.;
+Richardson, C.; Keshtgar, M.; Douek, M.; Hebden, J. C. Three-Dimensional Time-
+Resolved Optical Mammography of the Uncompressed Breast. Appl. Opt. 2007, 46,
+3628–3638. doi:10.1364/AO.46.003628
+117.
+Chen, N. G.; Huang, M.; Xia, H.; Piao, D.; Cronin, E.; Zhu, Q. Portable near-Infrared
+Diffusive Light Imager for Breast Cancer Detection. J. Biomed. Opt. 2004, 9, 504. doi:10.
+1117/1.1695410
+118.
+Gonzalez, J.; Roman, M.; Hall, M.; Godavarty, A. Gen-2 Hand-Held Optical Imager
+towards Cancer Imaging: Reflectance and Transillumination Phantom Studies. Sensors
+2012, 12, 1885–1897. doi:10.3390/s120201885
+119.
+Gonzalez, J. Hand-Held Optical Imager (Gen-2): Improved Instrumentation and Target
+Detectability. J. Biomed. Opt. 2012, 17, 81402. doi:10.1117/1.JBO.17.8.081402
+120.
+Pogue, B. W.; Jiang, S.; Dehghani, H.; Kogel, C.; Soho, S.; Srinivasan, S.; Song, X.;
+Tosteson, T. D.; Poplack, S. P.; Paulsen, K. D. Characterization of Hemoglobin, Water,
+and NIR Scattering in Breast Tissue: Analysis of Intersubject Variability and Menstrual
+Cycle Changes. J. Biomed. Opt. 2004, 9, 541. doi:10.1117/1.1691028
+121.
+Taroni, P.; Pifferi, A.; Cubeddu, R.; Ieva, F.; Paganoni, A. M.; Abbate, F.; Cassano, E.
+Optical Quantification of Collagen and Breast Cancer: Lesion Classification and Risk
+Estimate. In Optical Tomography and Spectroscopy; Optical Society of America, 2018.
+122.
+Breneisen, M. (12) Patent Application Publication (10). Pub. No.: US 2017/0096730 A1. 1
+(19), 2017.
+123.
+Barbour, R. L.; Graber, H. L.; Barbour, S. L. S. Hemoglobin State-Flux: A Finite-State
+Model Representation of the Hemoglobin Signal for Evaluation of the Resting State and
+the Influence of Disease. PLoS One 2018, 13, e0198210.
+124.
+Zhang, P.; Gui, Z.; Guo, G.; Shang, Y. Approaches to Denoise the Diffuse Optical Signals
+for Tissue Blood Flow Measurement. Biomed. Opt. Express 2018, 9, 6170. doi:10.1364/
+BOE.9.006170
+125.
+McKinney, S. M.; Sieniek, M.; Godbole, V.; Godwin, J.; Antropova, N.; Ashrafian, H.; Back, T.;
+Chesus, M.; Corrado, G. C.; Darzi, A.; et al. International Evaluation of an AI System for
+Breast Cancer Screening. Nature 2020, 577, 89–94. doi:10.1038/s41586-019-1799-6
+126.
+Taroni, P.; Pifferi, A.; Quarto, G.; Farina, A.; Ieva, F.; Paganoni, A. M.; Abbate, F.;
+Cassano,
+E.;
+Cubeddu,
+R.
+Time
+Domain
+Diffuse
+Optical
+Spectroscopy:
+In
+Vivo
+Quantification of Collagen in Breast Tissue. Opt. Methods Insp. Charact. Imaging
+Biomater. II 2015, 9529, 952910.
+127.
+Yoshimoto, K.; Ohmae, E.; Yamashita, D.; Suzuki, H.; Homma, S.; Mimura, T.; Wada, H.;
+Suzuki, T.; Yoshizawa, N.; Nasu, H.; et al. Development of Time-Resolved Reflectance
+Diffuse Optical Tomography for Breast Cancer Monitoring. In Optical Tomography and
+Spectroscopy of Tissue; International Society for Optics and Photonics, 2017. doi:10.1117/
+12.2249597
+APPLIED SPECTROSCOPY REVIEWS
+27

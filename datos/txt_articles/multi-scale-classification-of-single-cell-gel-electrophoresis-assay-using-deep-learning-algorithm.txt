@@ -1,0 +1,5433 @@
+Biomedical
+ Signal
+ Processing
+ and
+ Control
+ 56
+ (2020)
+ 101672
+Contents lists available at ScienceDirect
+Biomedical
+ Signal
+ Processing
+ and
+ Control
+journal homepage: www.elsevier.com/locate/bspc
+Multi-scale
+ classiﬁcation
+ of
+ single-cell
+ gel
+ electrophoresis
+ assay
+ using
+deep
+ learning
+ algorithm
+Aykut
+ Erdamar,
+ Mehmet
+ Feyzi
+ Aksahin ∗
+Biomedical
+ Engineering
+ Department,
+ Faculty
+ of
+ Engineering,
+ Baskent
+ University,
+ Baglica
+ Campus,
+ 06790,
+ Etimesgut,
+ Ankara,
+ Turkey
+a
+ r
+ t  i  c  l  e  
+i  n
+ f
+ o
+Article
+ history:
+Received
+ 17
+ June
+ 2019
+Received
+ in
+ revised
+ form
+ 21
+ August
+ 2019
+Accepted
+ 16
+ September
+ 2019
+Keywords:
+Comet
+ assay
+Image
+ classiﬁcation
+Convolution
+ neural
+ network
+a
+ b
+ s  t  r  a  c  t
+Structural  and functional
+ integrity
+ of  deoxyribonucleic
+ acid  (DNA)
+ is crucial  for  the  maintenance
+ of  hered-
+itary
+ information.
+ However,
+ by-products
+ of  cellular
+ metabolism
+ and  physical
+ or  chemical
+ factors
+ may
+cause
+ spontaneous
+ DNA  damage.
+ The  alkaline  single-cell
+ gel  electrophoresis
+ or  comet  assay
+ analysis
+ is
+an
+ easy  and  reliable
+ method
+ for the
+ determination
+ genotoxic
+ effects  of  chemical
+ and  physical
+ factors.
+ Sim-
+ply,
+ it  is  the  electrophoretic
+ analysis
+ of intact/damaged
+ DNA  of  a single
+ cell  on  in  a  thin  layer
+ of  agarose
+gel.
+ The  quantitative
+ analysis
+ of  the  comet
+ assay
+ images  is  performed
+ manually  by  an  expert
+ researcher.
+In
+ visual  scoring,
+ DNA  nuclei
+ are  scored
+ as  0,  1, 2,  3,  and  4;  and  the  correct  scoring
+ is  crucial
+ for
+ the
+determination
+ of  the  DNA  damage.  However,
+ visual
+ scoring  depends
+ on  the  professional
+ experience
+ of
+the
+ researcher
+ and  it is a time  consuming
+ and  exhausting
+ task.  Therefore,
+ this  evaluation
+ is inevitable
+ to
+have
+ subjective
+ results.
+ To  avoid  this  subjectivity
+ and to  show  the  effectiveness
+ of deep  learning
+ algo-
+rithm
+ on cell  images,
+ a Convolution
+ Neural  Network  (CNN)
+ based  deep
+ learning
+ method
+ is  proposed
+ to
+classify
+ comet
+ assay  images.
+ According
+ to the  results,
+ CNN  is  trained
+ and  tested
+ with high accuracy.
+ The
+results
+ show  that  CNN  algorithm
+ can  successfully
+ classify
+ ﬁve  different
+ scores
+ of  comet  assay
+ images,
+ and
+these
+ results
+ can  also  reduce  the  subjectivity.
+©
+ 2019  Elsevier
+ Ltd. All  rights
+ reserved.
+1.
+ Introduction
+Deoxyribonucleic
+ acid
+ (DNA),
+ the
+ hereditary
+ material
+ of
+ the
+ cell,
+is
+ the
+ polymer
+ of
+ deoxyribonucleotide
+ subunits
+ [1].
+ Structural
+ and
+functional
+ integrity
+ of
+ DNA
+ is
+ crucial
+ for
+ the
+ maintenance
+ of
+ heredi-
+tary
+ information.
+ However,
+ by-products
+ of
+ cellular
+ metabolism
+ and
+physical
+ or
+ chemical
+ factors
+ may
+ cause
+ spontaneous
+ DNA
+ damage
+[2].
+ Such
+ DNA
+ lesions
+ can
+ inhibit
+ replication
+ and
+ transcription.
+ In
+consequence,
+ unrepaired
+ lesions
+ may
+ lead
+ to
+ lethal
+ mutations
+ or
+large-scale
+ genomic
+ errors
+ that
+ threaten
+ cellular
+ metabolism
+ and
+organism.
+DNA
+ damage
+ analysis,
+ in
+ addition
+ to
+ information
+ about
+ the
+pathophysiology
+ of
+ the
+ disease,
+ provides
+ important
+ information
+ on
+the
+ early
+ biological
+ effects
+ of
+ exposure
+ to
+ occupationally
+ harmful
+chemicals
+ [3].
+ Besides,
+ DNA
+ damage
+ detection
+ is
+ used
+ in
+ the
+ ﬁelds
+ of
+ecotoxicology,
+ molecular
+ epidemiology,
+ and
+ genotoxicology.
+ There
+are
+ different
+ methods
+ to
+ evaluate
+ DNA
+ damage.
+ Amongst,
+ comet
+assay
+ or
+ single-cell
+ gel
+ electrophoresis
+ is
+ the
+ widely
+ used
+ and
+accepted
+ analysis.
+ The
+ method
+ is
+ based
+ on
+ the
+ microscopic
+ evalua-
+∗Corresponding
+ author.
+E-mail
+ addresses:
+ aerdamar@baskent.edu.tr
+ (A.
+ Erdamar),
+maksahin@baskent.edu.tr
+ (M.F.
+ Aksahin).
+tion
+ of
+ the
+ electrophoretic
+ mobility
+ of
+ DNA
+ obtained
+ from
+ a
+ single
+cell
+ and
+ its
+ nucleus.
+ In
+ general,
+ DNA
+ and/or
+ intact
+ nucleus
+ is
+ iso-
+lated,
+ and
+ embedded
+ in
+ thin
+ layers
+ of
+ agarose
+ gel
+ on
+ a
+ slide.
+ The
+ DNA
+in
+ the
+ agarose
+ gel
+ layers
+ is
+ moved
+ in
+ an
+ alkaline
+ electrophoretic
+environment.
+ In
+ alkaline
+ media,
+ the
+ chromatin
+ structure
+ opens,
+and
+ the
+ DNA
+ is
+ partially
+ denatured.
+ Because
+ of
+ the
+ effect
+ of
+ geno-
+toxic
+ factors,
+ single
+ and/or
+ double-strand
+ DNA
+ breaks
+ and
+ DNA
+fragments
+ of
+ different
+ molecular
+ weights
+ occur.
+ Following
+ elec-
+trophoresis,
+ the
+ DNA
+ in
+ the
+ gel
+ is
+ labeled
+ with
+ a
+ ﬂuorescent
+ DNA
+speciﬁc
+ dye
+ like
+ ethidium
+ bromide
+ or
+ silver-stained
+ and
+ observed
+by
+ a
+ microscope.
+ Intact
+ supercoiled
+ chromatin
+ DNA
+ moves
+ very
+slowly
+ and
+ observed
+ spherical
+ under
+ the
+ microscope.
+ Depending
+on
+ the
+ extent
+ of
+ damage,
+ DNA
+ fragments
+ of
+ varying
+ sizes
+ move
+ at
+differentially
+ with
+ respect
+ to
+ their
+ molecular
+ weight.
+ This
+ results
+in
+ a
+ form
+ similar
+ to
+ a
+ “comet”
+ in
+ ﬂuorescence
+ microscope
+ images
+[2,4,5].
+Comet
+ assay
+ analysis
+ is
+ the
+ most
+ used
+ method
+ in
+ genotoxic
+studies
+ due
+ to
+ its
+ high
+ sensitivity.
+ This
+ method
+ also
+ enables
+ the
+detection
+ of
+ DNA
+ damage
+ in
+ small
+ sample
+ sizes.
+ Besides,
+ it
+ is
+ cheap,
+reproducible
+ method
+ with
+ short
+ protocol
+ duration
+ [3].
+ Comet
+ assay
+images
+ are
+ visually
+ scored
+ by
+ expert
+ researchers
+ from
+ 0
+ to
+ 4
+ accord-
+ing
+ to
+ DNA
+ damage
+ levels.
+ However,
+ this
+ scoring
+ needs
+ personal
+expertise
+ and
+ it
+ may
+ give
+ subjective
+ results.
+https://doi.org/10.1016/j.bspc.2019.101672
+1746-8094/©
+ 2019
+ Elsevier
+ Ltd.
+ All
+ rights
+ reserved.
+2
+ 
+A.
+ Erdamar
+ and
+ M.F.
+ Aksahin
+ / Biomedical
+ Signal
+ Processing
+ and
+ Control
+ 56
+ (2020)
+ 101672
+In
+ recent
+ years,
+ few
+ studies
+ have
+ been
+ made
+ in
+ the
+ literature
+ on
+the
+ classiﬁcation
+ of
+ these
+ images
+ [3,6–15].
+ In
+ the
+ proposed
+ study,
+unlike
+ from
+ the
+ literature,
+ comet
+ scores
+ were
+ classiﬁed
+ using
+ the
+convolution
+ neural
+ network
+ (CNN)
+ method
+ as
+ a
+ deep
+ learning
+ algo-
+rithm.
+ Thus,
+ objective
+ and
+ robust
+ results
+ were
+ tried
+ to
+ be
+ obtained
+by
+ classifying
+ the
+ comet
+ scores
+ successfully.
+ Also,
+ the
+ success
+ of
+the
+ deep
+ learning
+ algorithm
+ in
+ the
+ classiﬁcation
+ of
+ cell
+ images
+ was
+analyzed.
+1.1.
+ Related
+ works
+Detection
+ of
+ DNA
+ damage
+ is
+ a
+ very
+ important
+ issue
+ in
+ comet
+assay.
+ However,
+ there
+ are
+ few
+ studies
+ about
+ fully
+ automated
+computer-aided
+ detection
+ of
+ DNA
+ damage.
+ Furthermore,
+ there
+ is
+no
+ study
+ or
+ developed
+ algorithm
+ for
+ fully
+ automatic
+ segmentation
+and
+ DNA
+ damage
+ scoring
+ using
+ CNN
+ in
+ the
+ literature.
+Turan
+ et
+ al.
+ combined
+ dynamic
+ time
+ warping
+ method
+ and
+ deci-
+sion
+ tree
+ in
+ a
+ software
+ program
+ to
+ measure
+ DNA
+ damage
+ and
+ to
+score
+ it.
+ In
+ their
+ study,
+ each
+ single
+ comet
+ assay
+ was
+ manually
+extracted,
+ then
+ the
+ center
+ of
+ comet
+ head
+ was
+ marked
+ with
+ giv-
+ing
+ different
+ scores
+ (Score
+ 0,
+ Score
+ 1,
+ Score
+ 2,
+ Score
+ 3)
+ [16].
+ Mani
+et
+ al.
+ proposed
+ a
+ standalone
+ tool
+ named
+ “CoMat”
+ for
+ the
+ detection
+and
+ quantiﬁcation
+ of
+ the
+ DNA
+ damage
+ by
+ using
+ a
+ software
+ program
+developed
+ with
+ Visual
+ Studio.
+ CoMat
+ can
+ process
+ different
+ scores
+of
+ image
+ formats
+ such
+ as
+ JPEG,
+ TIFF,
+ BMP,
+ and
+ PNG
+ [17].
+ Ganapa-
+thy
+ et
+ al.
+ proposed
+ an
+ automated
+ software
+ to
+ detect
+ and
+ quantify
+the
+ DNA
+ damage
+ by
+ analyzing
+ comet
+ assay
+ images.
+ Support
+ vec-
+tor
+ machine
+ method
+ is
+ used
+ to
+ classify
+ images
+ into
+ two
+ groups.
+These
+ groups
+ are
+ Class
+ 1
+ and
+ Class
+ 2
+ that
+ are
+ silver-stained
+ images
+with
+ lightly
+ or
+ moderately
+ damaged
+ cells
+ and
+ silver-stained
+ images
+with
+ heavily
+ damaged
+ cells
+ respectively
+ [18].
+ Quintana
+ et
+ al.
+ used
+automated
+ comet
+ assay
+ analysis
+ by
+ using
+ an
+ image
+ processing
+ algo-
+rithm.
+ In
+ preprocessing
+ step
+ unsharp
+ mask
+ is
+ done.
+ Segmentation
+was
+ performed
+ using
+ a
+ learning
+ algorithm.
+ After
+ performing
+ several
+tests,
+ it
+ was
+ determined
+ that
+ the
+ most
+ efﬁcient
+ algorithm
+ was
+ the
+K-Means
+ cluster
+ based
+ on
+ the
+ spatial
+ relationship
+ of
+ neighboring
+pixels
+ and
+ the
+ general
+ techniques
+ of
+ object
+ detection
+ with
+ thresh-
+olding
+ [19].
+ Sreelatha
+ et
+ al.
+ developed
+ an
+ automated
+ algorithm
+ to
+analyze
+ DNA
+ damage
+ using
+ silver-stained
+ comet
+ assay
+ for
+ clinical
+applications.
+ In
+ the
+ preprocessing
+ stage,
+ a
+ contrast
+ enhancement
+method
+ is
+ used.
+ Then
+ Gaussian
+ ﬁltering
+ is
+ applied
+ to
+ the
+ contrast-
+enhanced
+ image.
+ After
+ that
+ Otsu’s
+ method
+ is
+ evaluated
+ for
+ the
+segmentation
+ stage.
+ The
+ comet
+ has
+ separated
+ into
+ three
+ regions.
+These
+ regions
+ are
+ comet
+ head,
+ tail,
+ and
+ background.
+ In
+ this
+ method,
+the
+ edges
+ of
+ this
+ region
+ cannot
+ be
+ deﬁned
+ clearly.
+ Therefore,
+ the
+fuzzy-based
+ algorithm
+ is
+ adopted
+ for
+ clustering
+ [20].
+ Sreelatha
+et.al
+ proposed
+ a
+ shading
+ correction
+ algorithm
+ using
+ morphologi-
+cal
+ bottom-hat
+ or
+ top-hat
+ transformation
+ as
+ a
+ preprocessing
+ step.
+A
+ homomorphic
+ ﬁltering
+ is
+ applied
+ to
+ overcome
+ the
+ problem
+ of
+silver-stained
+ comet
+ assay
+ the
+ tail
+ region
+ that
+ merged
+ with
+ the
+background.
+ Then
+ the
+ Otsu
+ method
+ is
+ used
+ to
+ convert
+ binaries
+image.
+ During
+ morphological
+ ﬁltering
+ operations:
+ morphological
+closing
+ operation
+ is
+ used
+ to
+ ﬁnd
+ highly
+ damaged
+ cells
+ and
+ also
+opening
+ algorithm
+ is
+ evaluated
+ for
+ eliminating
+ noise
+ in
+ the
+ back-
+ground
+ [14].
+ Kızıltan
+ et
+ al.
+ proposed
+ a
+ semi-automatic
+ comet
+ assay
+analysis
+ tool
+ to
+ obtain
+ reliable
+ and
+ accurate
+ measurement
+ results.
+In
+ this
+ analysis,
+ the
+ head
+ of
+ the
+ comet
+ is
+ segmented
+ from
+ the
+ tail
+with
+ using
+ the
+ tail
+ moment
+ [6].
+ Gyori
+ et
+ al.
+ developed
+ a
+ method
+to
+ detect
+ comets
+ based
+ on
+ geometric
+ properties.
+ They
+ also
+ tried
+ to
+segment
+ the
+ comet
+ heads
+ using
+ image
+ intensity.
+ Head
+ segmenta-
+tion
+ of
+ comet
+ is
+ done
+ for
+ lightly
+ damage
+ or
+ no
+ tail
+ DNA
+ since
+ heavily
+damaged
+ cell
+ tail
+ has
+ a
+ geometrically
+ larger
+ area
+ than
+ the
+ head
+ [10].
+Vojnovic
+ et
+ al.
+ focused
+ on
+ algorithms,
+ based
+ on
+ delineating
+ the
+ head
+from
+ the
+ tail
+ of
+ a
+ comet.
+ This
+ procedure
+ allows
+ detecting
+ very
+ low
+level
+ of
+ DNA
+ damage.
+ For
+ this
+ purpose,
+ a
+ threshold
+ level
+ is
+ used
+ on
+the
+ normalized
+ image
+ to
+ determine
+ all
+ bright
+ objects.
+ This
+ thresh-
+old
+ level
+ is
+ calculated
+ from
+ the
+ intensity
+ value
+ of
+ the
+ histogram
+maximum
+ frequency.
+ This
+ procedure
+ can
+ segment
+ the
+ whole
+ area
+ of
+comet
+ including
+ with
+ both
+ heads
+ and
+ tails
+ together
+ [21].
+ Gonzalez
+et
+ al.
+ applied
+ an
+ open-source
+ software,
+ CellProﬁler,
+ to
+ analyze
+ auto-
+matically
+ comet
+ on
+ the
+ digital
+ image.
+ The
+ boundary
+ of
+ the
+ comet
+is
+ determined
+ manually.
+ Then,
+ the
+ CellProﬁler
+ calculate
+ automati-
+cally
+ the
+ measurements
+ of
+ tail
+ and
+ head
+ areas
+ [22].
+ Sansone
+ et
+ al.
+developed
+ a
+ comet
+ assay
+ analysis
+ algorithm
+ for
+ minimizing
+ user
+interaction
+ and
+ for
+ getting
+ more
+ reproducible
+ measurements.
+ The
+developed
+ algorithm
+ is
+ divided
+ into
+ two
+ steps.
+ In
+ the
+ ﬁrst
+ step,
+ the
+comet
+ is
+ detected
+ with
+ Gaussian
+ ﬁltering
+ and
+ morphological
+ opera-
+tor.
+ In
+ the
+ second
+ step,
+ the
+ comet
+ is
+ segmented
+ as
+ head,
+ halo,
+ and
+ tail
+with
+ fuzzy
+ clustering
+ to
+ identify
+ areas
+ [7].
+ Helma
+ et
+ al.
+ proposed
+ an
+open-source
+ program
+ to
+ analyze
+ the
+ comet
+ assay
+ [12].
+ Bocker
+ et
+ al.
+described
+ an
+ automatic
+ image
+ analysis
+ system
+ including
+ software
+and
+ hardware
+ together
+ to
+ get
+ minimum
+ human
+ interactions.
+ The
+comet
+ assay
+ image
+ analysis
+ is
+ evaluated
+ in
+ a
+ two-step.
+ These
+ are
+the
+ automatic
+ comet
+ classiﬁcation
+ and
+ the
+ calculation
+ of
+ related
+parameters
+ [9].
+2.
+ Material
+ and
+ methods
+2.1.
+ Cell
+ and
+ image
+ properties
+The
+ comet
+ assay
+ images
+ used
+ in
+ this
+ study
+ were
+ obtained
+ from
+mammary
+ carcinoma
+ MCF-7
+ cells.
+ Cell
+ images
+ were
+ obtained
+ by
+ﬂuorescence
+ microscopy
+ (Nikon,
+ Eclipse
+ E600).
+ 500
+ comet
+ assay
+cell
+ images
+ at
+ total
+ were
+ analyzed.
+ Each
+ image
+ was
+ in
+ RGB
+ format
+and
+ 150
+ ×
+ 150
+ pixel
+ size.
+ These
+ dimensions
+ were
+ chosen
+ to
+ cover
+the
+ area
+ from
+ the
+ head
+ to
+ the
+ tail
+ end
+ of
+ the
+ Comet
+ in
+ each
+ image.
+2.2.
+ Image
+ analysis
+ algorithm
+The
+ block
+ diagram
+ of
+ the
+ proposed
+ method
+ used
+ in
+ the
+ study
+ is
+shown
+ in
+ Fig.
+ 1. The
+ algorithm
+ was
+ evaluated
+ by
+ MATLAB(R),
+ The
+Math
+ Works
+ Incorporation
+ and
+ software
+ using
+ Intel(R)
+ Core(TM)
+ i7
+CPU
+ at
+ 1.90
+ GHz
+ microprocessor,
+ 8.00GB
+ RAM
+ and
+ 64-bit
+ system.
+2.2.1.
+ Convolution
+ neural
+ networks
+Deep
+ learning
+ techniques
+ enable
+ computers
+ to
+ detect
+ complex
+layouts
+ in
+ large
+ data
+ sets.
+ The
+ main
+ purpose
+ of
+ the
+ mathematical
+models
+ created
+ by
+ deep
+ learning
+ techniques
+ is
+ to
+ disseminate
+ the
+learned
+ expertise
+ and
+ to
+ convey
+ accurate
+ predictions
+ for
+ new
+ and
+unprecedented
+ data.
+ An
+ artiﬁcial
+ neural
+ network
+ consists
+ of
+ con-
+nected
+ and
+ arranged
+ in
+ layers
+ called
+ neurons.
+ These
+ layers
+ can
+ be
+listed
+ as
+ the
+ input
+ layer
+ that
+ the
+ data
+ enter
+ into
+ the
+ network,
+ the
+hidden
+ layers
+ that
+ convert
+ the
+ data,
+ and
+ the
+ output
+ layer
+ that
+ pro-
+duces
+ the
+ predictions
+ of
+ the
+ neural
+ network.
+ One-dimensional
+ node
+graphs
+ of
+ these
+ structures
+ used
+ in
+ medical
+ imaging
+ are
+ shown
+ in
+Fig.
+ 2. The
+ interest
+ of
+ deep
+ learning
+ in
+ medical
+ imaging
+ is
+ usually
+performed
+ by
+ CNN
+ [23].
+ CNN
+ is
+ a
+ type
+ of
+ feed-forward
+ neural
+ net-
+works.
+ CNN
+ is
+ applied
+ to
+ analyze
+ visual
+ imagery.
+ This
+ is
+ because
+CNN
+ is
+ a
+ powerful
+ method
+ for
+ learning
+ the
+ useful
+ representation
+ of
+images
+ and
+ other
+ structured
+ data.
+ The
+ node
+ graph
+ applied
+ to
+ the
+medical
+ images
+ for
+ CNN’s
+ is
+ also
+ shown
+ in
+ Fig.
+ 2d.
+ In
+ this
+ ﬁgure,
+the
+ blue
+ dots
+ represent
+ the
+ entrance,
+ the
+ orange
+ dots
+ are
+ hidden,
+and
+ the
+ green
+ dots
+ represent
+ the
+ output
+ layers
+ [24].
+ CNN,
+ a
+ speciﬁc
+score
+ of
+ artiﬁcial
+ neural
+ networks,
+ aims
+ to
+ maintain
+ spatial
+ rela-
+tionships
+ in
+ the
+ data
+ with
+ very
+ little
+ connection
+ between
+ layers.
+The
+ input
+ of
+ the
+ CNN
+ is
+ set
+ in
+ a
+ grid
+ structure
+ and
+ then
+ sent
+ to
+ the
+layers
+ that
+ protect
+ these
+ relationships.
+ Each
+ layer
+ operation
+ runs
+ in
+a
+ small
+ region
+ of
+ the
+ previous
+ layer
+ (Fig.
+ 3).
+In
+ general,
+ comet
+ images
+ are
+ a
+ two-dimensional
+ matrix.
+ How-
+ever,
+ a
+ large
+ number
+ of
+ parameters
+ are
+ needed
+ to
+ specify
+ a
+ network.
+CNN
+ is
+ proposed
+ to
+ reduce
+ these
+ parameters
+ and
+ to
+ adapt
+ the
+ net-
+A.
+ Erdamar
+ and
+ M.F.
+ Aksahin
+ / Biomedical
+ Signal
+ Processing
+ and
+ Control
+ 56
+ (2020)
+ 101672
+ 
+3
+Fig.
+ 1.
+ Block
+ Diagram
+ of
+ comet
+ assay
+ cell
+ scoring.
+Fig.
+ 2.
+ Node
+ representation
+ of
+ neural
+ networks
+ used
+ in
+ medical
+ imaging
+ a)
+ Auto-encoder,
+ b)
+ Boltzmann
+ model
+ with
+ restriction,
+ c)
+ Recurrent
+ neural
+ networks,
+ d)
+ Convolution
+Neural
+ Networks,
+ e)
+ Multi-ﬂow
+ folding
+ neural
+ networks.
+Fig.
+ 3.
+ Simpliﬁed
+ representation
+ of
+ CNN
+ structure
+ for
+ the
+ proposed
+ study.
+4
+ 
+A.
+ Erdamar
+ and
+ M.F.
+ Aksahin
+ / Biomedical
+ Signal
+ Processing
+ and
+ Control
+ 56
+ (2020)
+ 101672
+work
+ structure.
+ CNN’s
+ are
+ constructed
+ by
+ different
+ layers.
+ These
+layers
+ differ
+ from
+ their
+ functionalities
+ (Fig.
+ 2).
+CNN
+ contains
+ generally
+ three
+ layers.
+ These
+ are
+ input,
+ an
+ output,
+and
+ multiple
+ hidden
+ layers.
+ The
+ hidden
+ layers
+ are
+ typically
+ consist-
+ing
+ of
+ four
+ different
+ types
+ of
+ layers.
+ These
+ are
+ convolution
+ layer,
+activation
+ layer,
+ pooling
+ layer,
+ and
+ fully
+ connected
+ layer
+ [25].
+2.2.1.1.
+ Convolution
+ layer.
+ The
+ general
+ formula
+ of
+ convolution
+operation
+ is
+ shown
+ in
+ Eq.
+ (1).
+s(t)
+ =
+
+x (a) w(t
+ −
+ a)da
+ 
+(1)
+Here
+ x(t)
+ is
+ a
+ continuous-time
+ signal
+ and
+ w(t)
+ is
+ time-domain
+weighted
+ function.
+For
+ the
+ two-dimensional
+ image
+ I,
+ two-dimensional
+ kernel
+ K
+ is
+needed
+ to
+ make
+ a
+ convolution
+ shown
+ in
+ Eq.
+ (2).
+S (i, j) = (I  ∗
+ K)
+ (i,
+ j) =
+
+m
+
+n
+I (m,
+ n) K(i
+ −
+ m,
+ j −
+ n)
+ 
+(2)
+It
+ can
+ also
+ be
+ written
+ in
+ Eq.
+ (3).
+S (i,
+ j) = (K  ∗
+ I)
+ (i,
+ j) =
+
+m
+
+n
+I (i
+ −
+ m,
+ j −
+ n) K(m,
+ n)
+(3)
+The
+ CNN
+ input
+ is
+ a
+ matrix
+ form.
+ The
+ dimension
+ of
+ input
+matrix
+ is
+ (number
+ of
+ images)
+ ×
+ (image
+ width
+ (W))
+ ×
+ (image
+ height
+(H))
+ ×
+ (image
+ depth
+ (D)).
+ Here
+ W
+ and
+ H
+ are
+ the
+ numbers
+ of
+ con-
+volution
+ kernels.
+ W
+ and
+ H
+ are
+ also
+ called
+ hyper-parameters.
+ And
+D
+ is
+ the
+ kernel
+ depth.
+ In
+ these
+ layers,
+ convolution
+ operations
+ are
+applied
+ to
+ the
+ input.
+ Then
+ the
+ result
+ is
+ the
+ input
+ of
+ the
+ next
+ layer.
+Each
+ neuron
+ convolution
+ processes
+ data
+ only
+ for
+ its
+ receptive
+ ﬁeld.
+As
+ a
+ result,
+ huge
+ numbers
+ of
+ neurons
+ are
+ necessary
+ because
+ of
+ the
+large
+ input
+ sizes
+ related
+ to
+ images
+ [26].
+Input
+ size
+ : W1 ×
+ H1 ×
+ D1
+(4)
+Output
+ volume
+ size
+ : W2 ×
+ H2 ×
+ D2
+(5)
+where:
+W2 = (W1 −
+ F
+ +
+ 2P) S
+ +
+ 1
+ 
+(6)
+H2 = (H1 −
+ F
+ +
+ 2P) S
+ +
+ 1
+ 
+(7)
+D2 =
+ K
+ 
+(8)
+Here
+ K
+ is
+ the
+ number
+ of
+ ﬁlters.
+ F
+ is
+ their
+ spatial
+ extent.
+ S
+ is
+ the
+ stride
+and
+ P
+ is
+ the
+ number
+ of
+ zero-padding.
+2.2.1.2.
+ Activation
+ layer.
+ This
+ activation
+ is
+ used
+ for
+ increasing
+ the
+non-linearity
+ of
+ CNN
+ without
+ changing
+ the
+ receptive
+ ﬁelds
+ of
+ con-
+volution
+ layer.
+ In
+ this
+ layer
+ usually
+ Rectiﬁed
+ Linear
+ Unit
+ (ReLU)
+function
+ is
+ preferred
+ because
+ the
+ training
+ time
+ is
+ faster
+ (shown
+in
+ Eq.
+ (9)).
+ There
+ are
+ also
+ Leaky
+ ReLU,
+ Randomized
+ Leaky
+ ReLU,
+Parameterized
+ ReLU,
+ Exponential
+ Linear
+ Units
+ (ELU),
+ Scaled
+ Expo-
+nential
+ Linear
+ Units,
+ Tanh,
+ hardtanh,
+ softtanh,
+ softsign,
+ softmax,
+softplus.
+ In
+ this
+ study,
+ ReLU
+ activation
+ layer,
+ shown
+ in
+ Eq.
+ (9), was
+used.
+ Because,
+ CNN
+ can
+ be
+ trained
+ much
+ faster.
+ And
+ there
+ is
+ no
+signiﬁcant
+ penalty
+ to
+ generalization
+ accuracy
+ [27].
+f (x) = max(0,  x)
+ 
+(9)
+A
+ special
+ activation
+ layer,
+ sofmax,
+ is
+ usually
+ used
+ at
+ the
+ end
+of
+ fully
+ connected
+ layer
+ outputs.
+ This
+ activation
+ layer
+ produces
+ a
+discrete
+ probability
+ distribution
+ vector
+ [26].
+P (y  =
+ jx) =
+exT wj
+K
+k=1exT wk
+(10)
+Here,
+ x
+ is
+ the
+ sample
+ input
+ vector
+ input
+ and
+ wj is
+ vectors
+ weight
+for
+ the
+ predicted
+ probability
+ of
+ y
+ =
+ j.
+2.2.1.3.
+ Pooling
+ layer.
+ CNN’s
+ pooling
+ is
+ a
+ kind
+ of
+ non-linear
+ down-
+sampling.
+ There
+ are
+ lots
+ of
+ operations
+ to
+ evaluate
+ pooling.
+ The
+ most
+commonly
+ used
+ operation
+ is
+ max
+ pooling.
+ In
+ this
+ layer,
+ the
+ input
+is
+ separated
+ into
+ non-overlapping
+ rectangle
+ parts.
+ Therefore
+ the
+pooling
+ layer
+ will
+ reduce
+ the
+ spatial
+ size
+ of
+ the
+ input
+ image.
+ It
+ will
+also
+ reduce
+ the
+ number
+ of
+ parameters,
+ memory
+ footprint,
+ amount
+of
+ computation
+ and
+ control
+ overﬁtting.
+ This
+ layer
+ separately
+ acts
+ on
+every
+ depth
+ slice
+ of
+ the
+ input
+ and
+ resizes
+ it
+ spatially.
+ Generally,
+ the
+ﬁlter
+ sizes
+ are
+ chosen
+ small
+ (size
+ 3
+ ×
+ 3
+ or
+ 5
+ ×
+ 5).
+ Larger
+ ﬁlter
+ sizes
+are
+ also
+ used
+ such
+ as
+ (7
+ ×
+ 7)
+ but
+ rarely
+ and
+ only
+ in
+ the
+ ﬁrst
+ convolu-
+tion
+ layer.
+ Having
+ more
+ small
+ ﬁlters
+ is
+ an
+ easy
+ way
+ to
+ achieve
+ high
+representational
+ power
+ using
+ a
+ smaller
+ number
+ of
+ parameters.
+ It’s
+also
+ suggested
+ to
+ use
+ a
+ small
+ stride
+ to
+ get
+ all
+ useful
+ information
+ in
+the
+ feature
+ maps,
+ and
+ a
+ zero-padding
+ that
+ keeps
+ the
+ output
+ vol-
+ume’s
+ height
+ and
+ width
+ equivalent
+ to
+ the
+ input
+ volume’s
+ height
+and
+ width
+ [26].
+2.2.1.4.
+ Fully
+ connected
+ (FC)
+ layer.
+ The
+ FC
+ layer
+ is
+ a
+ regular
+ struc-
+ture
+ of
+ an
+ artiﬁcial
+ neural
+ network.
+ It
+ is
+ usually
+ seen
+ in
+ the
+ ﬁnal
+learning
+ phase.
+ This
+ layer
+ maps
+ the
+ extracted
+ visual
+ features
+ to
+ the
+desired
+ outputs.
+ Classiﬁcations
+ can
+ be
+ done
+ in
+ this
+ layer.
+ The
+ gen-
+eral
+ output
+ of
+ this
+ layer
+ is
+ a
+ vector.
+ Then
+ the
+ output
+ vector
+ is
+ the
+input
+ of
+ softmax
+ to
+ validate
+ the
+ classiﬁcations.
+2.3.
+ Performance
+ metrics
+The
+ comet
+ assay
+ images,
+ classiﬁed
+ using
+ CNN,
+ were
+ scored
+ by
+expert
+ researchers.
+ The
+ comet
+ assay
+ scores
+ for
+ this
+ classiﬁcation
+are
+ accepted
+ as
+ the
+ gold
+ standard.
+ Therefore
+ the
+ performance
+ of
+the
+ CNN
+ is
+ evaluated
+ according
+ to
+ these
+ scores.
+ The
+ performance
+metrics
+ of
+ the
+ CNN
+ is
+ determined
+ with
+ calculating
+ the
+ sensitiv-
+ity,
+ speciﬁcity
+ and
+ accuracy
+ values.
+ These
+ metrics
+ are
+ deﬁned
+ as
+follows:
+Sensitivity
+ =
+ TP/(TP
+ +
+ FN)
+ 
+(11)
+Speciﬁcity
+ =
+ TN/(TN
+ +
+ FP)
+ 
+(12)
+Accuracy
+ =
+ (TP
+ +
+ TN)/(TP
+ +
+ TN
+ +
+ FP
+ +
+ FN)
+ 
+(13)
+Here,
+ true
+ positive
+ (TP)
+ is
+ the
+ number
+ of
+ true
+ classiﬁed
+ actual
+ comet
+assay
+ score
+ that
+ is
+ scored
+ by
+ researchers.
+ False-negative
+ (FN)
+ is
+ the
+number
+ of
+ wrongly
+ classiﬁed
+ comet
+ assay
+ scores.
+ The
+ false
+ positive
+(FP)
+ is
+ the
+ number
+ of
+ classiﬁcation
+ in
+ case
+ the
+ actual
+ comet
+ assay
+score
+ is
+ determined
+ for
+ different
+ comet
+ assay
+ scores.
+ And
+ true
+ neg-
+ative
+ (TN)
+ is
+ the
+ number
+ of
+ correct
+ scored
+ images
+ while
+ there
+ is
+ no
+actual
+ comet
+ assay
+ score
+ [28].
+3.
+ Results
+In
+ this
+ study,
+ 500
+ single-cell
+ gel
+ electrophoresis
+ assay
+ images
+were
+ used;
+ equally,
+ consist
+ of
+ ﬁve
+ different
+ scores.
+ The
+ representa-
+tive
+ images
+ of
+ ﬁve
+ different
+ comet
+ assay
+ scores
+ are
+ shown
+ in
+ Fig.
+ 4.
+Fifty
+ percent
+ of
+ all
+ images
+ were
+ used
+ for
+ training,
+ and
+ the
+ rest
+ of
+ the
+images
+ were
+ used
+ for
+ testing.
+ The
+ trained
+ images
+ were
+ not
+ used
+ for
+testing.
+ In
+ the
+ training
+ image
+ set,
+ there
+ were
+ 50
+ images
+ of
+ comet
+assay
+ score
+ 0,
+ 50
+ images
+ of
+ comet
+ assay
+ score
+ 1,
+ 50
+ images
+ of
+ comet
+assay
+ score
+ 2,
+ 50
+ images
+ of
+ comet
+ assay
+ score
+ 3,
+ and
+ 50
+ images
+ of
+comet
+ assay
+ score
+ 4.
+ The
+ test
+ image
+ set
+ was
+ also
+ equally
+ distributed.
+Each
+ image
+ has
+ was
+ annotated
+ by
+ the
+ expert
+ researchers
+ as
+ score
+0,
+ score
+ 1,
+ score
+ 2,
+ score
+ 3,
+ and
+ score
+ 4.
+In
+ this
+ research,
+ various
+ ﬁlters
+ sized
+ and
+ numbered
+ CNN
+ struc-
+tures
+ were
+ trained
+ for
+ classiﬁcation
+ of
+ the
+ comet
+ assay
+ scores.
+For
+ all
+ architecture,
+ padding
+ was
+ set
+ to
+ 1,
+ and
+ the
+ stride
+ was
+set
+ to
+ 2.
+ To
+ show
+ the
+ effectiveness
+ of
+ the
+ CNN
+ classiﬁcation,
+ the
+performance
+ metrics,
+ sensitivity,
+ speciﬁcity,
+ and
+ accuracy,
+ were
+calculated.
+ Table
+ 1
+ shows
+ the
+ training
+ results
+ for
+ constant
+ ﬁlter
+A.
+ Erdamar
+ and
+ M.F.
+ Aksahin
+ / Biomedical
+ Signal
+ Processing
+ and
+ Control
+ 56
+ (2020)
+ 101672
+ 
+5
+Fig.
+ 4.
+ Five
+ Different
+ Comet
+ Scores.
+Table
+ 1
+Training
+ results
+ of
+ the
+ overall
+ system
+ accuracy
+ while
+ the
+ number
+ of
+ the
+ ﬁlter
+ is
+ 64.
+Filter
+ size
+ 
+2
+ ×
+ 2
+ 
+3
+ ×
+ 3
+ 
+4
+ ×
+ 4
+ 
+5
+ ×
+ 5
+accuracy
+ 
+98.08
+ 
+100
+ 
+100
+ 
+100
+Table
+ 2
+Test
+ results
+ while
+ the
+ number
+ of
+ the
+ ﬁlter
+ is
+ 64.
+Filter
+ size
+Score
+ of
+ Comet
+ 
+TPR(sens)
+ 
+TNR(spec)
+ 
+ACC(accuracy)
+2
+ ×
+ 2
+comet
+ score
+ 0 
+80.8
+ 
+95.7
+ 
+92.4
+comet
+ score
+ 1
+ 
+85.3
+ 
+93.5
+ 
+91.1
+comet
+ score
+ 2
+ 
+84.7
+ 
+94.7
+ 
+91.1
+comet
+ score
+ 3
+ 
+65.2
+ 
+93.4
+ 
+90.7
+comet
+ score
+ 4
+25.0
+ 
+98.2
+ 
+95.8
+3
+ ×
+ 3
+comet
+ score
+ 0 
+84.6
+ 
+96.7
+ 
+94.1
+comet
+ score
+ 1
+ 
+79.4
+ 
+95.2
+ 
+90.7
+comet
+ score
+ 2
+ 
+85.9
+ 
+94.0
+ 
+91.1
+comet
+ score
+ 3
+ 
+73.9
+ 
+93.0
+ 
+91.1
+comet
+ score
+ 4
+ 
+75.0
+ 
+98.7
+ 
+97.9
+4
+ ×
+ 4
+comet
+ score
+ 0 
+88.5
+ 
+97.3
+ 
+95.3
+comet
+ score
+ 1
+ 
+76.5
+ 
+95.8
+ 
+90.3
+comet
+ score
+ 2
+ 
+89.2
+ 
+91.5
+ 
+90.7
+comet
+ score
+ 3
+ 
+69.6
+ 
+93.4
+ 
+91.1
+comet
+ score
+ 4
+ 
+62.5
+ 
+99.1
+ 
+97.9
+5
+ ×
+ 5
+comet
+ score
+ 0 
+84.6
+ 
+96.2
+ 
+93.6
+comet
+ score
+ 1
+ 
+72.1
+ 
+96.4
+ 
+89.4
+comet
+ score
+ 2
+89.2
+ 
+91.5
+ 
+90.7
+comet
+ score
+ 3
+ 
+69.6
+ 
+93.4
+ 
+91.1
+comet
+ score
+ 4
+ 
+87.5
+ 
+98.2
+ 
+97.9
+Table
+ 3
+Training
+ results
+ of
+ the
+ overall
+ system
+ accuracy
+ while
+ ﬁlter
+ size
+ is
+ 3
+ ×
+ 3.
+Number
+ of
+ ﬁlters
+ 
+8
+ 
+16
+ 
+32
+ 
+64
+ 
+128
+ 
+256
+accuracy
+ 
+93.27
+ 
+100
+ 
+99.04
+ 
+100
+ 
+100
+ 
+100
+number
+ with
+ different
+ ﬁlter
+ size
+ Table
+ 3
+ shows
+ the
+ results
+ for
+ con-
+stant
+ ﬁlter
+ size
+ with
+ different
+ ﬁlter
+ number.
+ CNN
+ was
+ well
+ trained
+with
+ respect
+ to
+ Tables
+ 1
+ and
+ 3. After
+ the
+ training
+ process,
+ CNN
+ was
+tested.
+ Tables
+ 2
+ and
+ 4
+ show
+ the
+ test
+ results
+ for
+ constant
+ ﬁlter
+ num-
+ber,
+ different
+ ﬁlter
+ size,
+ and
+ constant
+ ﬁlter
+ size,
+ the
+ different
+ ﬁlter
+number,
+ respectively.
+As
+ a
+ result,
+ for
+ comet
+ assay
+ score
+ 0,
+ the
+ best
+ sensitivity
+ value
+ is
+obtained
+ as
+ 88.5%
+ for
+ 4
+ ×
+ 4
+ ﬁlter
+ size
+ and
+ 64
+ ﬁlter
+ number,
+ the
+ best
+speciﬁcity
+ is
+ obtained
+ as
+ 99.5%
+ for
+ 3
+ ×
+ 3
+ ﬁlter
+ size
+ and
+ 32
+ ﬁlter
+ num-
+ber,
+ and
+ the
+ best
+ accuracy
+ is
+ obtained
+ as
+ 96.6%
+ for
+ 3
+ ×
+ 3
+ ﬁlter
+ size
+and
+ 32
+ ﬁlter
+ number.
+ For
+ comet
+ assay
+ score
+ 1,
+ the
+ best
+ sensitivity
+value
+ is
+ obtained
+ as
+ 92.6%
+ for
+ 3
+ ×
+ 3
+ ﬁlter
+ size
+ and
+ 8
+ ﬁlter
+ number,
+the
+ best
+ speciﬁcity
+ is
+ obtained
+ as
+ 97.6%
+ for
+ 3
+ ×
+ 3
+ ﬁlter
+ size
+ and
+ 32
+ﬁlter
+ number,
+ and
+ the
+ best
+ accuracy
+ is
+ obtained
+ as
+ 92.8%
+ for
+ 3
+ ×
+ 3
+ﬁlter
+ size
+ and
+ 32
+ ﬁlter
+ number.
+ For
+ comet
+ assay
+ score
+ 2,
+ the
+ best
+sensitivity
+ value
+ is
+ obtained
+ as
+ 94.1%
+ for
+ 3
+ ×
+ 3
+ ﬁlter
+ size
+ and
+ 32
+ ﬁlter
+number,
+ the
+ best
+ speciﬁcity
+ is
+ obtained
+ as
+ 96.0%
+ for
+ 3
+ ×
+ 3
+ ﬁlter
+ size
+Table
+ 4
+Test
+ results
+ while
+ ﬁlter
+ size
+ is
+ 3
+ ×
+ 3.
+Number
+ of
+ ﬁlters
+ 
+Score
+ of
+ Comet
+ 
+TPR(sens)
+ 
+TNR(spec)
+ 
+ACC(accuracy)
+8
+comet
+ score
+ 0
+82.7
+ 
+98.9
+ 
+95.3
+comet
+ score
+ 1
+ 
+92.6
+ 
+90.5
+ 
+91.1
+comet
+ score
+ 2
+ 
+77.6
+ 
+96.0
+ 
+89.4
+comet
+ score
+ 3
+ 
+73.9
+ 
+93.4
+ 
+91.5
+comet
+ score
+ 4
+ 
+62.5
+ 
+99.1
+ 
+97.9
+16
+comet
+ score
+ 0
+ 
+82.7
+ 
+98.4
+ 
+94.9
+comet
+ score
+ 1
+83.8
+ 
+92.9
+ 
+90.3
+comet
+ score
+ 2
+ 
+82.4
+ 
+92.7
+ 
+89.0
+comet
+ score
+ 3
+ 
+56.5
+ 
+96.2
+ 
+92.4
+comet
+ score
+ 4
+ 
+75.0
+ 
+94.3
+ 
+93.6
+32
+comet
+ score
+ 0
+ 
+86.5
+ 
+99.5
+ 
+96.6
+comet
+ score
+ 1
+ 
+80.9
+ 
+97.6
+ 
+92.8
+comet
+ score
+ 2
+94.1
+ 
+89.4
+ 
+91.1
+comet
+ score
+ 3
+ 
+60.9
+ 
+95.3
+ 
+91.9
+comet
+ score
+ 4
+ 
+75.0
+ 
+97.8
+ 
+97.0
+64
+comet
+ score
+ 0
+ 
+84.6
+ 
+96.7
+ 
+94.1
+comet
+ score
+ 1
+ 
+79.4
+ 
+95.2
+ 
+90.7
+comet
+ score
+ 2
+ 
+85.9
+ 
+94.0
+ 
+91.1
+comet
+ score
+ 3
+73.9
+ 
+93.0
+ 
+91.1
+comet
+ score
+ 4
+ 
+75.0
+ 
+98.7
+ 
+97.9
+128
+comet
+ score
+ 0
+ 
+84.6
+ 
+98.4
+ 
+95.3
+comet
+ score
+ 1
+ 
+80.9
+ 
+94.0
+ 
+90.3
+comet
+ score
+ 2
+ 
+87.1
+ 
+90.1
+ 
+89.0
+comet
+ score
+ 3
+ 
+65.2
+ 
+94.8
+ 
+91.9
+comet
+ score
+ 4
+87.5
+ 
+99.1
+ 
+98.7
+256
+comet
+ score
+ 0
+ 
+88.5
+ 
+98.4
+ 
+96.2
+comet
+ score
+ 1
+ 
+82.4
+ 
+92.9
+ 
+89.8
+comet
+ score
+ 2
+ 
+80.0
+ 
+91.4
+ 
+87.3
+comet
+ score
+ 3
+ 
+65.2
+ 
+93.4
+ 
+90.7
+comet
+ score
+ 4
+ 
+75.0
+ 
+98.7
+ 
+97.9
+and
+ 8
+ ﬁlter
+ number,
+ and
+ the
+ best
+ accuracy
+ is
+ obtained
+ as
+ 92.8%
+ for
+3
+ ×
+ 3
+ ﬁlter
+ size
+ and
+ 32
+ ﬁlter
+ number.
+ For
+ comet
+ assay
+ score
+ 3,
+ the
+best
+ sensitivity
+ value
+ is
+ obtained
+ as
+ 73.9%
+ for
+ 3
+ ×
+ 3
+ ﬁlter
+ size
+ and
+64
+ ﬁlter
+ number,
+ the
+ best
+ speciﬁcity
+ is
+ obtained
+ as
+ 96.2%
+ for
+ 3 ×
+ 3
+ﬁlter
+ size
+ and
+ 16
+ ﬁlter
+ number,
+ and
+ the
+ best
+ accuracy
+ is
+ obtained
+ as
+92.4%
+ for
+ 3
+ ×
+ 3
+ ﬁlter
+ size
+ and
+ 16
+ ﬁlter
+ number.
+ And
+ for
+ comet
+ assay
+score
+ 4,
+ the
+ best
+ sensitivity
+ value
+ is
+ obtained
+ as
+ 87.5%
+ for
+ 5 ×
+ 5
+ ﬁlter
+size
+ and
+ 64
+ ﬁlter
+ number,
+ the
+ best
+ speciﬁcity
+ is
+ obtained
+ as
+ 99.1%
+for
+ 4
+ ×
+ 4
+ ﬁlter
+ size
+ and
+ 64
+ ﬁlter
+ number,
+ and
+ the
+ best
+ accuracy
+ is
+obtained
+ as
+ 98.7%
+ for
+ 3
+ ×
+ 3
+ ﬁlter
+ size
+ and
+ 128
+ ﬁlter
+ number.
+4.
+ Discussion
+The
+ quantitative
+ analysis
+ of
+ the
+ comet
+ assay
+ images
+ is
+ per-
+formed
+ manually
+ expert
+ researchers
+ using
+ various
+ image
+ macros
+(ImageJ
+ etc.).
+ Image
+ analysis
+ software
+ is
+ used
+ to
+ calculate
+ the
+amount
+ of
+ DNA
+ in
+ the
+ head
+ and
+ tail,
+ and
+ the
+ length
+ of
+ the
+ tail
+is
+ also
+ measured.
+ Different
+ software
+ metrics
+ are
+ used
+ to
+ quantify
+DNA
+ damage.
+ In
+ visual
+ scoring,
+ a
+ tail
+ moment
+ of
+ DNA
+ is
+ expressed
+6
+ 
+A.
+ Erdamar
+ and
+ M.F.
+ Aksahin
+ / Biomedical
+ Signal
+ Processing
+ and
+ Control
+ 56
+ (2020)
+ 101672
+as
+ arbitrary
+ units
+ (AU).
+ Nuclei
+ are
+ scored
+ as
+ 0,
+ 1,
+ 2,
+ 3,
+ and
+ 4
+ by
+ a
+blinded
+ observer
+ according
+ to
+ the
+ apparent
+ relative
+ proportion
+ of
+DNA
+ in
+ the
+ tail
+ and
+ head.
+ Each
+ counted
+ nucleus
+ is
+ multiplied
+ by
+its
+ score,
+ and
+ total
+ scores
+ are
+ expressed
+ [29].
+ The
+ most
+ important
+point
+ in
+ the
+ analysis
+ is
+ the
+ correct
+ detection
+ of
+ the
+ comet
+ score,
+which
+ determines
+ the
+ DNA
+ damage.
+ This
+ determination
+ depends
+entirely
+ on
+ the
+ visual
+ scoring
+ and
+ professional
+ experience
+ of
+ the
+researcher.
+ Scoring
+ hundreds
+ of
+ images
+ is
+ a
+ very
+ time
+ consuming
+and
+ exhausting
+ task.
+ Therefore,
+ it
+ is
+ inevitable
+ to
+ have
+ subjective
+results.
+The
+ main
+ approach
+ in
+ previous
+ studies
+ is
+ to
+ detect
+ DNA
+ damage,
+to
+ obtain
+ various
+ features
+ from
+ the
+ spatial
+ parameters
+ of
+ the
+ image
+and
+ to
+ make
+ classiﬁcation
+ by
+ using
+ these
+ features.
+ In
+ these
+ studies,
+the
+ methods
+ are
+ negatively
+ affected
+ by
+ the
+ differences
+ in
+ image
+characteristics.
+ For
+ example,
+ a
+ method
+ that
+ is
+ successful
+ in
+ images
+obtained
+ with
+ gray
+ staining
+ does
+ not
+ give
+ the
+ same
+ performance
+in
+ the
+ images
+ obtained
+ by
+ ﬂuorescent
+ staining
+ since
+ the
+ silver-
+stained
+ images
+ are
+ noisier
+ than
+ the
+ ﬂuorescent
+ stained
+ images.
+Hence,
+ regular
+ classiﬁcation
+ methods
+ fail
+ to
+ effectively
+ detect
+ the
+comet
+ scores.
+At
+ the
+ beginning
+ of
+ this
+ study,
+ we
+ noticed
+ that
+ the
+ ﬂuores-
+cent
+ stained
+ comet
+ assay
+ images
+ had
+ variable
+ image
+ properties
+(contrast,
+ brightness,
+ etc.).
+ Differences
+ in
+ experimental
+ setups
+ or
+conditional
+ differences
+ among
+ the
+ laboratories
+ could
+ be
+ the
+ pos-
+sible
+ reasons
+ for
+ these
+ variances.
+ Nevertheless,
+ this
+ is
+ a
+ major
+problem
+ for
+ a
+ conventional
+ classiﬁcation
+ algorithm
+ and
+ has
+ been
+tried
+ to
+ be
+ solved
+ by
+ various
+ pre-processing
+ methods
+ in
+ previous
+studies.
+ Also,
+ agarose
+ gel-based
+ residues
+ cause
+ various
+ artifacts
+ in
+images.
+ These
+ artifacts
+ are
+ another
+ problem
+ that
+ needs
+ to
+ be
+ over-
+come
+ for
+ image
+ analysis
+ algorithms.
+ In
+ order
+ to
+ solve
+ this
+ problem,
+various
+ manual
+ add-ons
+ could
+ be
+ applied.
+In
+ this
+ study,
+ a
+ new
+ computer-aided
+ classiﬁcation
+ method
+ is
+proposed
+ to
+ automatically
+ detect
+ the
+ comet
+ scores
+ using
+ a
+ deep
+learning
+ approach
+ model.
+ It
+ was
+ shown
+ that
+ the
+ ﬁve
+ different
+ comet
+patterns
+ can
+ be
+ characterized
+ by
+ the
+ CNN
+ algorithm.
+ There
+ is
+ no
+need
+ for
+ any
+ image
+ conditioning
+ or
+ pre-processing
+ step.
+ The
+ results
+show
+ that
+ this
+ classiﬁcation
+ method
+ is
+ robust.
+ It
+ also
+ yields
+ repro-
+ducible
+ results
+ for
+ different
+ scores
+ of
+ the
+ comet
+ assay.
+ Besides,
+ there
+is
+ no
+ human
+ interaction
+ during
+ the
+ test
+ procedure.
+ The
+ presented
+method
+ does
+ not
+ need
+ any
+ meta-rules
+ or
+ any
+ kind
+ of
+ threshold
+values.
+A
+ more
+ comprehensive
+ comparative
+ evaluation
+ of
+ this
+ study
+with
+ the
+ previous
+ studies
+ is
+ not
+ feasible
+ since
+ almost
+ all
+ similar
+studies
+ use
+ speciﬁc
+ comet
+ assay
+ images
+ and
+ the
+ researcher
+ per-
+forming
+ comet
+ analysis
+ is
+ considered
+ as
+ the
+ gold
+ standard
+ for
+ the
+validation.
+ Besides,
+ there
+ is
+ not
+ any
+ study
+ using
+ the
+ CNN
+ method
+ in
+the
+ literature.
+5.
+ Conclusion
+In
+ proposed
+ work,
+ a
+ deep
+ learning-based
+ classiﬁcation
+ algo-
+rithm
+ has
+ been
+ developed
+ for
+ comet
+ (single-cell
+ gel
+ electrophore-
+sis)
+ assay
+ images.
+ The
+ CNN
+ algorithm
+ has
+ high
+ sensitivity,
+speciﬁcity,
+ and
+ accuracy
+ results.
+ Scores
+ of
+ comet
+ assay
+ images
+ are
+carried
+ out
+ by
+ expert
+ researchers.
+ This
+ may
+ have
+ subjective
+ conse-
+quences,
+ and
+ also
+ may
+ differ
+ according
+ to
+ the
+ visual
+ abilities
+ of
+ the
+experts.
+ This
+ study
+ shows
+ that
+ with
+ the
+ high-performance
+ scoring
+results,
+ CNN
+ can
+ objectively
+ determine
+ the
+ comet
+ assay
+ scores
+ as
+ a
+deep
+ learning
+ algorithm.
+ Moreover,
+ this
+ study
+ will
+ be
+ a
+ reference
+for
+ the
+ successful
+ application
+ of
+ deep
+ learning
+ techniques
+ to
+ classify
+other
+ kinds
+ of
+ cell
+ images.
+Acknowledgments
+The
+ Department
+ of
+ Molecular
+ Biology
+ and
+ Genetics,
+ Faculty
+ of
+Arts
+ and
+ Science,
+ Baskent
+ University
+ is
+ greatly
+ acknowledged
+ for
+comet
+ assay
+ and
+ images.
+ Prof.
+ Dr.
+ Özlem
+ Darcansoy ˙Is¸
+ eri
+ is
+ greatly
+acknowledged
+ for
+ her
+ contribution.
+Declaration
+ of
+ Competing
+ Interest
+The
+ authors
+ report
+ no
+ declarations
+ of
+ interest.
+References
+[1]
+ B.
+ Alberts,
+ Molecular
+ Biology
+ of
+ the
+ Cell,
+ 6th
+ edition,
+ Garland
+ Science,
+ New
+York,
+ 2015.
+[2]
+ Y.
+ Dincer,
+ S.
+ Kankaya,
+ DNA
+ hasarının
+ belirlenmesinde
+ Comet
+ assay,
+ Turk.
+ Klin.
+J.
+ Med.
+ Sci.
+ 30
+ (4)
+ (2010)
+ 1365–1373.
+[3]
+ G.
+ Sreelatha,
+ P.
+ Rashmi,
+ P.S.
+ Sathidevi,
+ M.  Aparna,
+ P.
+ Chand,
+ R.P.
+ Rajkumar,
+Automatic
+ detection
+ of
+ comets
+ in
+ silver
+ stained
+ comet
+ assay
+ images
+ for
+ DNA
+damage
+ analysis,
+ in:
+ 2014
+ IEEE
+ International
+ Conference
+ on
+ Signal
+ Processing,
+Communications
+ and
+ Computing
+ (ICSPCC),
+ IEEE,
+ 2014,
+ pp.
+ 533–538,
+ August.
+[4]
+ A.F.
+ Fidan,
+ DNA
+ hasar
+ tespitinde
+ tek
+ hücre
+ jel
+ elektroforezi,
+ Afyon
+ Kocatepe
+Üniversitesi
+ Fen
+ Ve
+ Mühendislik
+ Bilimleri
+ Dergisi
+ 8 (1)
+ (2005)
+ 41–52.
+[5]
+ M.
+ Dikilitas,
+ A.
+ Kocyigit,
+ Canlilarda
+ “tek
+ hücre
+ jel
+ elektroforez”
+ yöntemi
+ ile
+DNA
+ hasar
+ analizi
+ (teknik
+ not):
+ comet
+ analiz
+ yöntemi,
+ Harran
+ Tarım
+ ve
+ Gıda
+Bilimleri
+ Dergisi
+ 14
+ (2)
+ (2010)
+ 77–89.
+[6]
+ E.
+ Kiziltan,
+ E.
+ Yurtcu,
+ Semi-automatic
+ scoring
+ tool
+ for
+ comet
+ assay,
+ in:
+ 2015
+IEEE
+ 15th
+ International
+ Conference
+ on
+ Bioinformatics
+ and
+ Bioengineering
+(BIBE),
+ IEEE,
+ 2015,
+ pp.
+ 1–3,
+ November.
+[7]
+ M.
+ Sansone,
+ O.
+ Zeni,
+ G.
+ Esposito,
+ Automated
+ segmentation
+ of
+ comet
+ assay
+images
+ using
+ Gaussian
+ ﬁltering
+ and
+ fuzzy
+ clustering,
+ Med.
+ Biol.
+ Eng.
+ Comput.
+50 (5)
+ (2012)
+ 523–532.
+[8]
+ K.
+ Ko ´nca,
+ A.
+ Lankoff,
+ A.
+ Banasik,
+ H.
+ Lisowska,
+ T.
+ Kuszewski,
+ S.
+ Gó´zd´z,
+ et
+ al.,
+ A
+cross-platform
+ public
+ domain
+ PC
+ image-analysis
+ program
+ for
+ the
+ comet
+assay,
+ Mutat.
+ Res.
+ 534
+ (1–2)
+ (2003)
+ 15–20.
+[9]
+ W.  Böcker,
+ W.  Rolf,
+ T.
+ Bauch,
+ W.U.
+ Müller,
+ C.
+ Streffer,
+ Automated
+ comet
+ assay
+analysis,
+ Cytometry
+ 35
+ (2)
+ (1999)
+ 134–144.
+[10]
+ B.M.
+ Gyori,
+ G.
+ Venkatachalam,
+ P.S.
+ Thiagarajan,
+ D.
+ Hsu,
+ M.V.
+ Clement,
+OpenComet:
+ an
+ automated
+ tool
+ for
+ comet
+ assay
+ image
+ analysis,
+ Redox
+ Biol.
+ 2
+(2014)
+ 457–465.
+[11]
+ J.F.
+ Rivest,
+ M.  Tang,
+ J.
+ McLean,
+ F.
+ Johnson,
+ Automated
+ measurements
+ of
+ tails
+ in
+the
+ single
+ cell
+ gel
+ electrophoresis
+ assay,
+ in:
+ Quality
+ Measurement:
+ The
+Indispensable
+ Bridge
+ between
+ Theory
+ and
+ Reality
+ (No
+ Measurements?
+ No
+Science!
+ Joint
+ Conference-1996:
+ IEEE
+ Instrumentation
+ and
+ Measurement
+Technology
+ Conference
+ and
+ IMEKO
+ Tec,
+ IEEE,
+ 1996,
+ pp.
+ 111–114,
+ vol.
+ 1.
+[12]
+ C.
+ Helma,
+ M.
+ Uhl,
+ A
+ public
+ domain
+ image-analysis
+ program
+ for
+ the
+ single-cell
+gel-electrophoresis
+ (comet)
+ assay,
+ Mutat.
+ Res.
+ 466
+ (1)
+ (2000)
+ 9–15.
+[13]
+ T.
+ Lee,
+ S.
+ Lee,
+ W.Y.
+ Sim,
+ Y.M.
+ Jung,
+ S.
+ Han,
+ C.
+ Chung,
+ et
+ al.,
+ Robust
+ classiﬁcation
+of
+ DNA
+ damage
+ patterns
+ in
+ single
+ cell
+ gel
+ electrophoresis,
+ in:
+ 2013
+ 35th
+Annual
+ International
+ Conference
+ of
+ the
+ IEEE
+ Engineering
+ in
+ Medicine
+ and
+Biology
+ Society
+ (EMBC),
+ IEEE,
+ 2013,
+ pp.
+ 3666–3669,
+ July.
+[14]
+ G.
+ Sreelatha,
+ A.
+ Muraleedharan,
+ P.
+ Chand,
+ R.P.
+ Rajkumar,
+ P.S.
+ Sathidevi,
+ An
+improved
+ automatic
+ detection
+ of
+ true
+ comets
+ for
+ DNA
+ damage
+ analysis,
+Procedia
+ Comput.
+ Sci.
+ 46
+ (2015)
+ 135–142.
+[15]
+ S.
+ Ganapathy,
+ A.
+ Muraleedharan,
+ P.S.
+ Sathidevi,
+ P.
+ Chand,
+ R.P.
+ Rajkumar,
+CometQ:
+ an
+ automated
+ tool
+ for
+ the
+ detection
+ and
+ quantiﬁcation
+ of
+ DNA
+damage
+ using
+ comet
+ assay
+ image
+ analysis,
+ Comput.
+ Methods
+ Programs
+Biomed.
+ 133
+ (2016)
+ 143–154.
+[16]
+ M.K.
+ Turan,
+ E.
+ Sehirli,
+ A
+ novel
+ method
+ to
+ identify
+ and
+ grade
+ DNA
+ damage
+ on
+comet
+ images,
+ Comput.
+ Methods
+ Programs
+ Biomed.
+ 147
+ (2017)
+ 19–27.
+[17]
+ U.
+ Mani,
+ P.
+ Manickam,
+ CoMat:
+ an
+ integrated
+ tool
+ for
+ comet
+ assay
+ image
+analysis,
+ J.
+ Pharm.
+ Sci.
+ Res.
+ 9
+ (6)
+ (2017)
+ 919.
+[18]
+ S.
+ Ganapathy,
+ A.
+ Muraleedharan,
+ P.S.
+ Sathidevi,
+ P.
+ Chand,
+ R.P.
+ Rajkumar,
+CometQ:
+ an
+ automated
+ tool
+ for
+ the
+ detection
+ and
+ quantiﬁcation
+ of
+ DNA
+damage
+ using
+ comet
+ assay
+ image
+ analysis,
+ Comput.
+ Methods
+ Programs
+Biomed.
+ 133
+ (2016)
+ 143–154.
+[19]
+ Y.L.
+ Quintana,
+ J.G.
+ Zuluaga,
+ S.S.
+ Arango,
+ Automatic
+ algorithm
+ for
+ processing
+and
+ analysis
+ of
+ images
+ from
+ the
+ comet
+ assay,
+ World
+ Acad.
+ Sci.
+ Eng.
+ Technol.
+Int.  Sci.
+ Index
+ Biomed.
+ Biol.
+ Eng.
+ 11
+ (5)
+ (2017)
+ 662.
+[20]
+ G.
+ Sreelatha,
+ A.
+ Muraleedharan,
+ P.S.
+ Sathidevi,
+ P.
+ Chand,
+ R.P.
+ Rajkumar,
+Quantiﬁcation
+ of
+ DNA
+ damage
+ by
+ the
+ analysis
+ of
+ silver
+ stained
+ comet
+ assay
+images,
+ IRBM
+ 36
+ (5)
+ (2015)
+ 306–314.
+[21]
+ B.
+ Vojnovic,
+ P.R.
+ Barber,
+ P.
+ Johnston,
+ H.C.
+ Gregory,
+ B.
+ Marples,
+ M.C.
+ Joiner,
+ R.J.
+Locke,
+ A
+ high
+ sensitivity,
+ high
+ throughput,
+ automated
+ single-cell
+ gel
+electrophoresis
+ (‘Comet’)
+ DNA
+ damage
+ assay,
+ Phys.
+ Med.
+ Biol.
+ 58
+ (1)
+ (2013)
+15.
+[22]
+ J.E.
+ González,
+ I.
+ Romero,
+ J.F.
+ Barquinero,
+ O.
+ García,
+ Automatic
+ analysis
+ of
+silver-stained
+ comets
+ by
+ CellProﬁler
+ software,
+ Mutat.
+ Res.
+ 748
+ (1–2)
+ (2012)
+60–64.
+[23]
+ A.S.
+ Lundervold,
+ A.
+ Lundervold,
+ An
+ overview
+ of
+ deep
+ learning
+ in
+ medical
+imaging
+ focusing
+ on
+ MRI,
+ Z.
+ Med.
+ Phys.
+ 29
+ (2)
+ (2019)
+ 102–127.
+[24]
+ G.
+ Litjens,
+ T.
+ Kooi,
+ B.E.
+ Bejnordi,
+ A.A.A.
+ Setio,
+ F.
+ Ciompi,
+ M.
+ Ghafoorian,
+ et
+ al.,
+ A
+survey
+ on
+ deep
+ learning
+ in
+ medical
+ image
+ analysis,
+ Med.
+ Image
+ Anal.
+ 42
+(2017)
+ 60–88.
+[25]
+ A.
+ Karpathy,
+ Cs231n
+ convolutional
+ neural
+ networks
+ for
+ visual
+ recognition,
+Neural
+ Netw.
+ (2016)
+ 1.
+A.
+ Erdamar
+ and
+ M.F.
+ Aksahin
+ / Biomedical
+ Signal
+ Processing
+ and
+ Control
+ 56
+ (2020)
+ 101672
+ 
+7
+[26]
+ N.
+ Buduma,
+ N.
+ Locascio,
+ Fundamentals
+ of
+ Deep
+ Learning:
+ Designing
+Next-generation
+ Machine
+ Intelligence
+ Algorithms,
+ O’Reilly
+ Media,
+ Inc.,
+ 2017.
+[27]
+ A.
+ Krizhevsky,
+ I.
+ Sutskever,
+ G.E.
+ Hinton,
+ Imagenet
+ classiﬁcation
+ with
+ deep
+convolutional
+ neural
+ networks,
+ in:
+ Advances
+ in
+ Neural
+ Information
+Processing
+ Systems,
+ 2012,
+ pp.
+ 1097–1105.
+[28]
+ T.
+ Fawcett,
+ An
+ introduction
+ to
+ ROC
+ analysis,
+ Pattern
+ Recognit.
+ Lett.
+ 27
+ (8)
+(2006)
+ 861–874.
+[29]
+ X.
+ Zhao,
+ G.
+ Aldini,
+ E.J.
+ Johnson,
+ H.
+ Rasmussen,
+ K.
+ Kraemer,
+ H.
+ Woolf,
+ et
+ al.,
+Modiﬁcation
+ of
+ lymphocyte
+ DNA
+ damage
+ by
+ carotenoid
+ supplementation
+ in
+postmenopausal
+ women,
+ Am.
+ J.
+ Clin.
+ Nutr.
+ 83
+ (1)
+ (2006)
+ 163–169.

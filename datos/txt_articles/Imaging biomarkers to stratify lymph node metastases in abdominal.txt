@@ -1,0 +1,916 @@
+European Journal of Radiology Open 10 (2023) 100459
+Available online 9 December 2022
+2352-0477/© 2022 The Author(s). Published by Elsevier Ltd. This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-
+nc-nd/4.0/).
+Original article 
+Imaging biomarkers to stratify lymph node metastases in abdominal CT – Is 
+radiomics superior to dual-energy material decomposition? 
+Scherwin Mahmoudi a,*, Vitali Koch a, Daniel Pinto Dos Santos a,b, J¨org Ackermann c, Leon 
+D. Grünewald a, Inga Weitkamp a, Ibrahim Yel a, Simon S. Martin a, Moritz H. Albrecht a, Jan- 
+Erik Scholtz a, Thomas J. Vogl a, Simon Bernatz a,d 
+a University Hospital Frankfurt, Department of Diagnostic and Interventional Radiology, Theodor-Stern-Kai 7, 60590 Frankfurt, Germany 
+b University Hospital Cologne, Department of Diagnostic and Interventional Radiology, Kerpener Str. 62, 50937 Cologne, Germany 
+c Department of Molecular Bioinformatics, Institute of Computer Science, Johann Wolfgang Goethe-University, Robert-Mayer-Str. 11-15, 60325 Frankfurt am Main, 
+Germany 
+d Dr. Senckenberg Institute for Pathology, University Hospital Frankfurt, Goethe University Frankfurt am Main, 60590 Frankfurt am Main, Germany   
+H I G H L I G H T S  
+• Radiomics and DECT can be used for prediction of abdominal lymph node metastases. 
+• Radiomics seems to be superior to DECT material decomposition analysis. 
+• Quantitative image biomarkers may not be restricted to centers with DECT equipment. 
+• Radiomics may be used to automate stratification of unequivocal lymph nodes.  
+A R T I C L E  I N F O   
+Keywords: 
+Lymph node metastasis 
+Radiomics 
+Machine Learning 
+Dual-energy computed tomography 
+Abdominal imaging 
+Oncology 
+A B S T R A C T   
+Purpose: To assess the potential of radiomic features in comparison to dual-energy CT (DECT) material decom­
+position to objectively stratify abdominal lymph node metastases. 
+Materials and methods: In this retrospective study, we included 81 patients (m, 57; median age, 65 (interquartile 
+range, 58.7–73.3) years) with either lymph node metastases (n = 36) or benign lymph nodes (n = 45) who 
+underwent contrast-enhanced abdominal DECT between 06/2015–07/2019. All malignant lymph nodes were 
+classified as unequivocal according to RECIST criteria and confirmed by histopathology, PET-CT or follow-up 
+imaging. Three investigators segmented lymph nodes to extract DECT and radiomics features. Intra-class cor­
+relation analysis was applied to stratify a robust feature subset with further feature reduction by Pearson cor­
+relation analysis and LASSO. Independent training and testing datasets were applied on four different machine 
+learning models. We calculated the performance metrics and permutation-based feature importance values to 
+increase interpretability of the models. DeLong test was used to compare the top performing models. 
+Results: Distance matrices and t-SNE plots revealed clearer clusters using a combination of DECT and radiomic 
+features compared to DECT features only. Feature reduction by LASSO excluded all DECT features of the com­
+bined feature cohort. The top performing radiomic features model (AUC = 1.000; F1 = 1.000; precision = 1.000; 
+Abbreviations: ADB, AdaBoost; AUC, Area under the curve; CT, Computed tomography; CTDI, Computed tomography dose index; DICOM, Digital Imaging and 
+Communications in Medicine; DLP, Dose-length product; DECT, Dual-energy computed tomography; GLCM, Gray Level Co-occurrence Matrix; GLDM, Gray Level 
+Dependence Matrix; GLRLM, Gray Level Run Length Matrix; GLSZM, Gray Level Size Zone Matrix; HU, Hounsfield Units; ICC, Intra-class correlation coefficient; ID, 
+Iodine density; ID%, Normalized iodine uptake; LR, Logistic Regression; mGy, Milligray; NGTDM, Neighboring Gray Tone Difference Matrix; PET, Positron emission 
+tomography; RF, Random Forest; ROC, Receiver operating characteristics; ROI, Region of interest; SGB, Stochastic Gradient Boosting; VOI, Volume of interest. 
+* Corresponding author. 
+E-mail addresses: scherwin.mahmoudi@kgu.de (S. Mahmoudi), vitali.koch@kgu.de (V. Koch), daniel.pintodossantos@kgu.de (D.P.D. Santos), j.ackermann@ 
+bioinformatik.uni-frankfurt.de (J. Ackermann), leondavid.gruenewald@kgu.de (L.D. Grünewald), ingaweitkamp@gmx.de (I. Weitkamp), ibrahim.yel@kgu.de 
+(I. Yel), simon.martin@kgu.de (S.S. Martin), moritz.albrecht@kgu.de (M.H. Albrecht), jan-erik.scholtz@web.de (J.-E. Scholtz), thomas.vogl@kgu.de (T.J. Vogl), 
+simon.bernatz@kgu.de (S. Bernatz).  
+Contents lists available at ScienceDirect 
+European Journal of Radiology Open 
+journal homepage: www.elsevier.com/locate/ejro 
+https://doi.org/10.1016/j.ejro.2022.100459 
+Received 29 September 2022; Received in revised form 16 November 2022; Accepted 30 November 2022   
+European Journal of Radiology Open 10 (2023) 100459
+2
+Random Forest) was significantly superior to the top performing DECT features model (AUC = 0.942; F1 =
+0.762; precision = 0.800; Stochastic Gradient Boosting) (DeLong < 0.001). 
+Conclusion: Imaging biomarkers have the potential to stratify unequivocal lymph node metastases. Radiomics 
+models were superior to DECT material decomposition and may serve as a support tool to facilitate stratification 
+of abdominal lymph node metastases.   
+1. Introduction 
+Lymphadenopathy has a wide range of differential diagnoses, 
+including infectious disease, benign inflammatory processes or malig­
+nancy [1]. In computed tomography (CT), the assessment of patholog­
+ical lymph nodes is primarily based on lymph node size and the 
+subjective evaluation of morphologic criteria, including shape, internal 
+texture, and presence of fatty hilum [2]. Larger lymph nodes are more 
+likely considered to be suspicious [2,3], but a definite diagnosis of 
+lymph node involvement in suspected or confirmed malignancy remains 
+difficult in cases with equivocal lymph node size and morphology [4,5]. 
+To achieve acceptable levels of specificity and sensitivity (84.4 %; 73.5 
+%), a threshold of 1.5 cm short-axis transverse diameter for pathological 
+lymph nodes is proposed [3]. 
+The early identification of patients with lymph node metastases is 
+crucial and has therapeutic and prognostic relevance. At the same time, 
+radiologists are confronted with an increasing workload as the demand 
+for medical imaging is growing [6]. Quantitative image analysis tools 
+such as dual-energy CT (DECT) post-processing and radiomics may have 
+the potential to non-invasively stratify patients with lymph node me­
+tastases and consequently facilitate clinical decision-making. 
+DECT provides a wide range of post-processing techniques including 
+material decomposition analysis. Some of these methods have been 
+increasingly implemented into clinical routine [7,8]. A potential appli­
+cation of DECT material decomposition is iodine-selective mapping 
+which visualizes the contrast agent iodine in standard DECT series [9]. 
+Iodine-selective imaging allows for further tissue characterization 
+compared to visual-descriptive reporting as the blood supply can be 
+quantitatively depicted in tumor entities [9]. The potential benefits of 
+lymph node iodine quantification have been assessed in recent studies, 
+suggesting lower iodine concentration in lymph node metastases 
+compared to benign lymph nodes [10,11]. Nevertheless, these studies 
+followed a rather comparative approach without applying and testing 
+advanced bioinformatic prediction models. 
+Radiomics is a technique based on high-dimensional quantitative 
+image analysis and has emerged as a non-invasive research tool to 
+characterize tissue morphology beyond visual perception [12]. The 
+computational technique may provide surrogate information on patho­
+physiological and biochemical processes [12]. Particularly in the field of 
+oncology, radiomics seems promising as the features provide additional, 
+high dimensional data that may facilitate non-invasive stratification of 
+tumor subtypes, treatment response and clinical outcome [13–15]. 
+DECT material decomposition and radiomics have shown promising 
+results in the non-invasive characterization of abdominal lymph nodes 
+beyond standard-of-care reading and reporting in patients with gastric 
+cancer, colorectal carcinoma, and pancreatic carcinoma [16–18]. The 
+application of imaging biomarkers may have the potential to aid clinical 
+decision making [12,19]. Yet, it is unclear, whether the combined 
+application of both DECT and radiomics may further improve the 
+diagnostic accuracy for the prediction of lymph node metastases. 
+Therefore, the aim of our study was to analyze the potential of imaging 
+biomarkers to objectively identify unequivocal lymph node metastases 
+in a broad spectrum of patients with different primary tumors. As ra­
+diologists are increasingly confronted with a growing workload, the use 
+of imaging biomarkers as a prioritization tool might enable radiologists 
+to focus on equivocal cases [6]. We aimed to stratify the most reliable 
+radiomic features and DECT features for abdominal lymph node me­
+tastases prediction to improve the interpretability of our models. 
+Further, we hypothesized that a combined application of both tech­
+niques may improve the prediction of lymph node metastases in 
+contrast-enhanced abdominal CT compared to DECT features only. 
+2. Material and methods 
+The local Ethics committee of our institution approved this retro­
+spective study (project number: 20–688) and waived informed written 
+consent. 
+2.1. Study design 
+A total of 81 patients with lymph node metastases (n = 36) and 
+benign lymph nodes (n = 45) who underwent contrast-enhanced 
+abdominal DECT imaging between 06/2015 and 07/2019 were 
+included in the study. 
+Inclusion criteria for the metastasis cohort were: (I) > 18 years of 
+age, (II) confirmation of lymph node metastasis by histopathology 
+(lymphadenectomy or lymph node biopsy), PET-CT or follow-up imag­
+ing, (III) unequivocal lymph node metastasis according to RECIST 
+criteria [3], (IV) abdominal DECT imaging with availability of 1.5 mm 
+low and high kV series. If follow-up imaging was used as 
+reference-standard, lymph nodes were defined as malignant when pro­
+gressive disease was stated in the follow-up according to RECIST criteria 
+and lymph node size was progressive or when partial/complete response 
+was diagnosed according to RECIST criteria and lymph node size was 
+regressive under systemic therapy [3]. 
+Exclusion criteria were: (I) patients with multiple diagnosed malig­
+nancies, (II) imaging artifacts. The inclusion and exclusion criteria for 
+the control (benign) cohort differed in inclusion point (II) and (III) to not 
+have confirmed lymph node metastases. Further, only patients without 
+diagnosis of abdominal malignancy were included into the control 
+cohort. In cases of patients with multiple CT studies, the baseline DECT 
+scan was taken for analysis. 
+All clinical data were obtained in clinical routine. Detailed patient 
+characteristics are depicted in Table 1. Fig. 1 shows the flowchart of 
+patient inclusion following Standards for Reporting Diagnostic Accuracy 
+Studies (STARD). 
+2.2. CT acquisition protocol 
+All examinations were performed using a third-generation, dual- 
+source, dual-energy CT system (Somatom Force, Siemens Healthineers). 
+The acquisition protocol operated the x-ray tubes at different kilovoltage 
+and tube current settings (tube A: 100 kV, 190 mAs; tube B: Sn150 kV, 
+95 mAs). An additional tin filter (Selective Photon Shield II, Siemens 
+Healthineers) was used in tube B to reduce radiation exposure. The dual- 
+energy protocol (craniocaudal direction; rotation time, 0.5 s; pitch, 0.6; 
+collimation, 2 ×192 x 0.6) included automatic attenuation-based tube 
+current modulation (CARE Dose 4D, Siemens Healthineers). Contrast 
+media injection was performed through a peripheral vein of the forearm 
+at a flow of 2–3 ml/s. A non-ionic contrast agent (Imeron® 400 mg 
+iodine/ml; Bracco, Milan, Italy) with a total of 1.2 ml/kg body weight 
+(maximum of 120 ml) was administered. Image acquisition during 
+venous phase of contrast enhancement started 70 s after contrast agent 
+injection in inspiratory breath-hold. CT dose index (CTDI) and dose- 
+length-product (DLP) were recorded. Iterative reconstruction algo­
+rithm (ADMIRE®, Siemens Healthineers, Strength Level 3) was used for 
+S. Mahmoudi et al.                                                                                                                                                                                                                             
+European Journal of Radiology Open 10 (2023) 100459
+3
+image reconstruction. 
+2.3. Image preprocessing 
+DECT images were reconstructed in axial orientation (slice thickness, 
+1.5 mm; increment, 1.2 mm) with a dedicated dual-energy medium-soft 
+convolution kernel (Qr40, advanced model-based iterative reconstruc­
+tion [ADMIRE] level of 3). 
+DECT material decomposition image reconstruction was performed 
+on a 3D multi-modality workstation (syngo.via, version VB10B, Siemens 
+Healthineers). An iodine subtraction algorithm (Liver VNC, Siemens 
+Healthineers) was used for material decomposition including iodine 
+density (ID), normalized iodine uptake (ID%) and fat fraction (FF). ID% 
+was calculated using the following formula: ID% = IDlymph node / IDaorta. 
+Region of interest (ROI) measurements for IDaorta were performed 
+manually in the abdominal aorta at the level of the celiac trunk. For 
+radiomic analysis, the image stack was exported in Digital Imaging and 
+Communications in Medicine (DICOM) format and imported into the 3D 
+Slicer software platform (http://slicer.org, version 4.9.0) to visualize 
+and process the DICOM image stack [20,21]. No further image manip­
+ulation was done as the Imaging Biomarker Standardization does not 
+cover image preprocessing [22]. 
+2.4. Image segmentation 
+One investigator (radiologist in training, 3 years of experience in 
+oncology imaging) who had access to clinical data (histopathology, PET- 
+CT or follow-up imaging) selected and marked three lymph nodes per 
+patient. ROI and spheric volume of interest (VOI) circumscription for 
+segmentation was manually performed by three investigators (I, espe­
+cially trained investigator, 1 year of experience in oncology imaging; II, 
+radiologist in training, 3.5 years of experience in oncology imaging; III, 
+radiologist in training, 2 years of experience in oncology imaging) who 
+were blinded to the clinical records. Each investigator segmented one of 
+the three marked lymph nodes. 
+Three segmentations, each of a different independent lymph node, 
+were obtained per patient. In total, 243 lymph nodes (lymph node me­
+tastases, n = 108; benign lymph nodes, n = 135) were segmented. ROI 
+measurements for DECT analysis (Fig. 2) and VOI measurements for 
+radiomic analysis (Fig. 3) were drawn as large as possible with a 
+maximum diameter of 1.0 cm, carefully avoiding surrounding struc­
+tures, calcifications and visual artifacts. We chose a maximum diameter 
+of 1.0 cm to exclude potential shape bias between enlarged metastatic 
+and small benign lymph nodes. The segmentations were independently 
+reviewed by a board-certified and blinded radiologist (8 years of expe­
+rience in oncology imaging) and no disagreement was stated. 
+2.5. Radiomic analysis 
+We used the open-source extension PyRadiomics within the 3D Slicer 
+software platform to extract the radiomic features [21,23]. With default 
+settings, we extracted all original standard features for each segmenta­
+tion (n = 107, feature classes = 7): Shape, First Order Statistics, Gray 
+Level Co-occurrence Matrix (GLCM), Gray Level Run Length Matrix 
+(GLRLM), Gray Level Size Zone Matrix (GLSZM), Gray Level Depen­
+dence Matrix (GLDM), Neighboring Gray Tone Difference Matrix 
+(NGTDM) [24]. We excluded the shape features (n = 14) for the 
+following analyses as we used spheric VOIs. We calculated the radiomics 
+quality score for our study and yielded a score of 12 (https://radiomics. 
+world/rqs, supplementary material S4) [25]. 
+2.6. Inter-observer robustness and feature redundancy 
+We calculated the intra-class correlation coefficient (ICC) for each 
+feature and DECT material decomposition by defining each of the three 
+independently segmented and measured lymph nodes per patient as one 
+measurement and then calculating the ICC for these three measurements 
+to assess the measurement’s reproducibility [26]. We followed this 
+approach as we aimed to analyze the texture’s robustness on a patient 
+level. We used ICC3 of the Pingouin package in Python [27]. ICC was 
+interpreted with thresholds commonly used in radiomics research: ICC 
+0.75–1 = excellent, ICC 0.60–0.74 = good, ICC 0.40–0.59 = moderate, 
+ICC≤0.39 = poor [26]. For further analysis, we discarded all radiomic 
+features with ICC< 0.6 to include only radiomic features with at least 
+good reproducibility (n = 31) and we excluded DECT features with ICC 
+≤0.39 (poor; Iodine Density) as not a single DECT feature had an 
+ICC≥0.6 (Supplementary Data S1). The robust features were 
+inter-correlated by Pearson method and we excluded all highly corre­
+lated (Pearson > 0.95) redundant features (n = 13) except one (Sup­
+plementary Data S2). 
+2.7. Imaging biomarkers to predict lymph node malignancy 
+We performed all analysis in Python 3.7.6, within Jupyter Notebook 
+[28] and respective open-source packages to ensure transparency and 
+sustainability. We aimed to predict our target variable (lymph node 
+metastasis) either using DECT material decomposition, combined DECT 
+and radiomic features or radiomic features only. Therefore, we stratified 
+our independent variables into three feature groups: I, DECT feature 
+group; II, combined feature group and III, radiomic feature group. First, 
+we performed explorative data analysis on our datasets using euclidean 
+distance matrices to explore the pairwise dataset relations and low 
+dimensional embedding with t-SNE plots to explore cluster distributions 
+(scikit-learn [29]). Next, we used Least absolute shrinkage and selection 
+operator (LASSO) [29] to reduce the amount of features and the risk of 
+overfitting. LASSO excluded all DECT features in the combined feature 
+group, therefore the radiomic feature group and combined feature group 
+yielded identical non-zero LASSO features and we respectively dis­
+missed one redundant feature group (combined feature group) for 
+Table 1 
+Patient characteristics.  
+Parameters 
+Lymph node 
+metastasis 
+Benign lymph 
+nodes 
+Number of patients (n) 
+36 
+45 
+Male / Female (n) 
+25 / 11 
+32 / 13 
+Age (median years) 
+63 (34 – 81) 
+67 (47 – 87) 
+Mean attenuation (HU) and SD of the 
+respective lymph nodes 
+70.54 ± 29.95 
+62.91 ± 31.75 
+Mean CTDI (mGy) 
+8.5 ± 5.0 
+(2.3 – 30.3) 
+8.7 ± 4.0 
+(2.7 – 26.7) 
+Mean DLP (mGy*cm) 
+439.8 ± 330.9 
+(88.6 – 1823.9) 
+592.1 ± 304.2 
+(96.5 – 
+1970.4) 
+Lymph node entity  
+– 
+RCC 
+6  
+Urothelial carcinoma 
+6  
+Prostate cancer 
+4  
+Pancreatic cancer 
+4  
+CRC 
+3  
+Malignant melanoma 
+3  
+CCC 
+2  
+Gastric cancer 
+1  
+HCC 
+1  
+NSCLC 
+1  
+Vaginal squamous cell carcinoma 
+1  
+Testicular cancer 
+1  
+Mammary carcinoma 
+1  
+Ovarian cancer 
+1  
+AEG 
+1  
+If not depicted otherwise, the numbers without parenthesis depict absolute 
+numbers. Data in round parenthesis are the min/max values. AEG, adenocarci­
+noma of esophagogastric junction; CCC, cholangiocellular carcinoma; CTDI, 
+computed tomography dose index; CRC, colorectal cancer; DLP, dose-length 
+product; HCC, hepatocellular carcinoma; mGy, milligray; NSCLC, non-small- 
+cell lung carcinoma; RCC, renal cell carcinoma; SD, standard deviation. 
+S. Mahmoudi et al.                                                                                                                                                                                                                             
+European Journal of Radiology Open 10 (2023) 100459
+4
+further analysis. The DECT-cohort had only two features and we did not 
+perform LASSO for further feature reduction. 
+We drew 70 % random data samples as training set and used the 
+remaining 30 % to test our model. We used StandardScaler [29] to scale 
+the data to uniform variance. Next, we trained and tested four individual 
+and independent machine learning models [29]: I, logistic regression 
+classifier, II, AdaBoost classifier, III, Gradient Boosting classifier and IV, 
+random forest classifier (see Supplementary Data S3 for detailed infor­
+mation on feature selection and machine learning models). For each 
+classifier, we calculated the mean feature importance by repeating a 
+shuffled permutation-based analysis of feature importance 15 times 
+using the test dataset. We calculated the receiver operating character­
+istics (ROC) area under the curve (AUC), F-score and precision-score for 
+each model using the test dataset and depict the respective ROC curves. 
+We used the implementation of the WORC.statistics package [30] for the 
+DeLong’s test [31]. 
+3. Results 
+3.1. Study population 
+The study population comprised 81 patients (57 male; median age 65 
+(interquartile range (IQR), 58.7–73.3) years) who underwent contrast- 
+enhanced abdominal CT on the same DECT scanner. 36 patients (25 
+male; median age 63 (IQR, 55.2 – 72.0) years) were diagnosed with 
+visually unequivocal lymph node metastases. The diagnosis was 
+confirmed with histopathological analysis (lymph node biopsy, n = 7; 
+lymphadenectomy, n = 2), PET/CT (n = 2) or follow-up CT scans 
+Fig. 1. STARD flowchart of study inclusion.  
+S. Mahmoudi et al.                                                                                                                                                                                                                             
+European Journal of Radiology Open 10 (2023) 100459
+5
+(n = 25). The control group consisted of 45 patients who did not have 
+malignant abdominal lymph nodes (32 male; median age 67 (IQR, 59.9 – 
+74.5) years). Detailed patient characteristics are depicted in Table 1. 
+Radiation metrics in venous phase acquisition were 8.6 ± 4.5 mGy 
+(range, 
+2.3–30.3 mGy) 
+for 
+mean 
+volume 
+CTDI 
+and 
+523.6 
+± 323.6 mGy*cm (range, 88.6 mGy*cm – 1970.4 mGy*cm) for mean 
+DLP. 
+3.2. Unsupervised cluster analysis 
+The pairwise euclidean distance for each sample is depicted in the 
+distance matrices (Fig. 4A/B). With DECT features only, a stratification 
+into two clusters might be presumed (Fig. 4A). The combined image 
+post-processing techniques (DECT and radiomic features) revealed two 
+definite distinct clusters (Fig. 4B). We could corroborate the finding in 
+the respective t-SNE plots which depict lymph node metastases in orange 
+(label = 1) and benign lymph nodes in blue (label = 0). The DECT 
+features revealed no definite two clusters with a broad border of un­
+certainty (Fig. 4C). Two distinct clusters were seen in the combined 
+cohort with only two outliers (Fig. 4D). 
+Fig. 2. Illustration of DECT iodine quantification segmentation. Axial DECT based iodine map images with region of interest (ROI) measurements of the respective 
+lymph nodes. Left: 62-year-old female patient without abdominal malignancy. Right: 66-year-old male patient with prostate cancer with lymphogenic metastasis. 
+Fig. 3. Illustration of radiomics segmentation. Axial, coronal, sagittal and scaled up axial DE-CT images with standard volume of interest (VOI) measurements of the 
+respective lymph nodes. Left: 62-year-old female patient without abdominal malignancy. Right: 66-year-old male patient with prostate cancer with lympho­
+genic metastasis. 
+S. Mahmoudi et al.                                                                                                                                                                                                                             
+European Journal of Radiology Open 10 (2023) 100459
+6
+3.3. Feature importance characteristics 
+LASSO was used to reduce the amount of radiomic features from 18 
+robust and non-redundant features (ICC > 0.6 and Pearson ≤0.95, see 
+supplementary data S1 and S2) to our final radiomic features set of 5 
+features. 
+The final features were part of the feature classes firstorder (n = 1), 
+GLDM (n = 2) and GLSZM (n = 2). We calculated the permutated 
+feature importance for each model. Within the DECT features, fat frac­
+tion was superior to ID% in all models. In the radiomics feature group, 
+two features (LargeDependenceEmphasis, LargeAreaEmphasis) yielded 
+non-zero importance values in all four independent models. Details of 
+permutation-based feature importance analysis for each model are 
+depicted in Table 2. 
+Fig. 4. Unsupervised explorative data analysis. Euclidean distance matrices with samples sorted by label (metastasis vs. benign) for the DECT (A) and combined 
+feature cohort (B). White coloring represents smaller euclidean distances. Squarish patterns along the white diagonal reveal cluster with similar pairwise distance. In 
+C) and D) t-SNE plots of the DECT and combined cohort depict the two-dimensional embedding of the joint probabilities (label: 1 (orange), metastasis; 0 (blue), 
+benign). DECT, dual-energy computed tomography; t-SNE, t-distributed stochastic neighbor embedding. 
+Table 2 
+Permutation-based feature importance analysis for each model.   
+Class 
+LR  
+ADB  
+SGB  
+RF  
+Radiomics  
+Imp 
+Std 
+Imp 
+Std 
+Imp 
+Std 
+Imp 
+Std 
+Energy 
+firstorder 
+-0.005  
+0.014  
+0.000  
+0.000  
+0.000  
+0.000  
+0.027  
+0.019 
+Dependence 
+NonUniformity 
+GLDM 
+0.000  
+0.021  
+0.000  
+0.000  
+0.032  
+0.026  
+0.027  
+0.019 
+LargeDependence 
+Emphasis 
+GLDM 
+0.059  
+0.048  
+0.035  
+0.025  
+0.003  
+0.010  
+0.003  
+0.010 
+LargeArea 
+Emphasis 
+GLSZM 
+-0.019  
+0.020  
+0.373  
+0.075  
+0.029  
+0.023  
+0.029  
+0.023 
+LargeAreaHigh 
+GrayLevelEmphasis 
+GLSZM 
+-0.024  
+0.020  
+-0.021  
+0.025  
+0.024  
+0.020  
+0.000  
+0.000 
+DECT                 
+Iodine_Density_% 
+– 
+-0.021  
+0.035  
+-0.003  
+0.042  
+-0.008  
+0.016  
+-0.013  
+0.019 
+Fat_Fraction 
+– 
+0.253  
+0.107  
+0.205  
+0.092  
+0.248  
+0.093  
+0.243  
+0.098 
+Final feature set after LASSO feature reduction of the 18 robust and non-redundant features and DECT feature set. ADB, AdaBoost; GLDM, Gray Level Dependence 
+Matrix; GLSZM, Gray Level Size Zone Matrix. LR, logistic regression; RF, Random Forest; SGB, Stochastic Gradient Boosting. The LR feature importance of 
+DependenceNonUniformity was 1.480e-17 and therefore 0.000 is shown in the table with a non-zero Std. 
+S. Mahmoudi et al.                                                                                                                                                                                                                             
+European Journal of Radiology Open 10 (2023) 100459
+7
+3.4. Model performance differences and best performing model 
+comparison 
+In the DECT feature group, performances from AUC = 0.756 (F1 =
+0.727; ADB) up to AUC = 0.942 (F1 = 0.762; SGB) were achieved 
+(Fig. 5A). 
+The radiomics feature group revealed performances from AUC 
+= 0.919 (F1 = 0.909) (ADB) up to AUC = 1.000 (F1 = 1.000; SGB and 
+RF) (Fig. 5B). 
+In Table 3 we depict detailed performance characteristics. Fig. 6 
+shows the best performing models of each cohort (SGB, DECT; RF, 
+radiomics) with superior performance of the radiomics feature group RF 
+model (DeLong p < 0.001). 
+4. Discussion 
+The aim of this retrospective study was to compare the potential of 
+radiomic features versus DECT-based material decomposition analysis 
+to identify abdominal lymph node metastases and to stratify the best 
+working model and most important features. The results of our study 
+showed that radiomics-based machine learning models of CT images 
+were superior to DECT-based material decomposition analysis tech­
+niques for the identification of abdominal lymph node metastases in 
+contrast-enhanced CT. Therefore, quantitative image biomarkers may 
+not be restricted to centers with DECT equipment as high performing 
+artificial intelligence methodologies are applicable in standard-of-care 
+CT images. 
+Our findings indicate that the automatic stratification of unequivocal 
+lymph node metastases based on radiomic features can serve as a pri­
+oritization support tool to help radiologists focus on unequivocal and 
+critical cases. 
+The identification of patients with lymph node metastases is decisive 
+and has therapeutic and prognostic relevance [32,33]. RECIST criteria 
+give guidance, but follow-up scans may be necessary for diagnosis, 
+potentially causing delayed detection of nodular spread or recurrence of 
+disease. Positron emission tomography (PET) CT may confirm a sus­
+pected nodal involvement but high radiation exposure and costs require 
+restrictive application [34]. Over recent years, the application of DECT 
+post-processing techniques and radiomics has become an evolving 
+research field, leading to improved non-invasive lesion characterization. 
+Particularly in cancer research, radiomics is a rapidly evolving research 
+field [12]. In contrast to basic material decomposition analysis tech­
+niques, radiomics can provide additional, higher dimensional data by 
+extracting a variety of mineable image features. Several studies have 
+investigated the impact of DECT based material decomposition analysis 
+and radiomic features for tissue and tumor characterization [35–37]. In 
+a recent study, the authors investigated the potential of both DECT based 
+iodine quantification and radiomics to differentiate normal liver tissue, 
+hepatic steatosis and liver cirrhosis [38]. In accordance with our results, 
+radiomics showed slightly better performance compared to DECT ma­
+terial decomposition. Similar findings were presented in oncology im­
+aging: In two recently published studies, the authors verified statistical 
+differences of DECT based iodine quantification parameters and radio­
+mic features in benign and malignant liver lesions and pancreatic lesions 
+[36,37]. The findings of these studies are in line with our results, sug­
+gesting a slightly better performance of radiomic features compared to 
+DECT based material decomposition analysis techniques. Furthermore, 
+several studies have specifically investigated the impact of DECT fea­
+tures on the characterization of lymph nodes [39,40]. In accordance 
+with the findings of Rizzo et al. and Li et al., our data confirms lower 
+DECT derived iodine concentration in lymph node metastases compared 
+to benign lymph nodes [39,40]. An efficient predictability for lymph 
+node metastases has also been confirmed for radiomic features. For 
+example, in the field of abdominal imaging, the potential of deep 
+learning radiomics has been validated for the prediction of lymph node 
+metastases in pancreatic cancer and gastric cancer [41,42]. In our study, 
+we revealed superior predictive performance of machine learning 
+models trained with radiomic features compared to training with DECT 
+material decomposition values. Radiomic features showed higher 
+robustness than DECT material decomposition and they seem to have 
+more comprehensive and complementary value in comparison with 
+DECT features. 
+One major advantage of radiomics compared to DECT based algo­
+rithms is that it can be applied in standard-of-care CT scans without the 
+need for DECT equipment. As DECT is not yet as widely used as single- 
+energy CT, DECT material decomposition analysis techniques are 
+restricted to a minor group of well-equipped healthcare centers. How­
+ever, radiomics offers a superior data characterization tool that is 
+accessible to a very wide hospital spectrum. 
+Our study has several limitations, which have to be taken into ac­
+count. As a retrospective single center study, the sample size is modest 
+and may lead to case selection bias. Our study includes 81 patients, and a 
+larger cohort might have been favorable. This might reduce generaliz­
+ability of the result. 
+Even if DECT equipment is accessible, retrospective application of 
+DECT post-processing is limited to cases where particular image series 
+such as DECT raw data (1.5 mm low and high kV series) are available for 
+material decomposition analysis. However, availability of these data is 
+not always given due to storage capacity reasons. This limitation re­
+stricts the use of DECT material decomposition analysis to selected 
+Fig. 5. Performance visualization by receiver operating characteristics curves. 
+Receiver operating characteristics (ROC) curves are depicted for the DECT (A) 
+and radiomics (B) feature group. Each model is color coded. Some models 
+revealed identical performances and respectively identical ROC curves (see 
+Table 3). LR, Logistic regression; RF, Random Forest; ADB, AdaBoost; SGB, 
+Stochastic Gradient Boosting. 
+S. Mahmoudi et al.                                                                                                                                                                                                                             
+European Journal of Radiology Open 10 (2023) 100459
+8
+cases. To be more precise, in the screening process of the current study, a 
+major part of potentially eligible cases had to be excluded due to missing 
+DECT raw data. 
+In all patients with lymph node metastases the diagnosis was histo­
+logically confirmed and the segmented lymph nodes showed unequiv­
+ocal metastatic involvement as defined by RECIST criteria. Yet, 
+histologic confirmation was performed in a location that was clinically 
+feasible to reach and may not be identical to the selected lymph nodes in 
+our study. 
+Last, we restricted the patient inclusion to one dual-energy CT 
+scanner to exclude inter-scanner variability and to include only re­
+constructions with a slice thickness of 1.5 mm and increment of 1.2 mm, 
+nevertheless, intra-scanner variability may have occurred. 
+5. Conclusions 
+In conclusion, we could demonstrate that radiomics models were 
+superior to DECT material decomposition in the objective identification 
+of visually unequivocal abdominal lymph node metastases. Our study 
+gives evidence that an automatic stratification of unequivocal lymph 
+node metastases might be feasible using radiomics-based machine 
+learning models. As the demand for medical imaging is steadily 
+increasing, radiomics may serve as a prioritization support tool to help 
+radiologists focus on equivocal and critical cases. In contrast to DECT 
+material decomposition, high-performing artificial intelligence meth­
+odologies are applicable in standard-of-care CT images. Thus, quanti­
+tative imaging biomarkers are not restricted to medical institutions with 
+DECT equipment. 
+Ethical statement 
+Ethical approval: We obtained institutional review board (IRB) 
+approval of the Ethical Committee at the University Hospital Frankfurt 
+(project-number: 20/688) and written informed consent was waived for 
+this retrospective study. The patient population was not reported 
+previously. 
+Funding statement 
+This research did not receive any specific grant from funding 
+agencies in the public, commercial, or not-for-profit sectors. 
+CRediT authorship contribution statement 
+Scherwin Mahmoudi: Conceptualization, Data curation, Formal 
+analysis, Investigation, Methodology, Project administration, Software, 
+Supervision, Validation, Writing – original draft, Writing – review & 
+editing. Vitali Koch: Data curation, Formal analysis, Methodology, 
+Software, Validation, Writing – review & editing. Daniel Pinto Dos 
+Santos: Conceptualization, Data curation, Formal analysis, Investiga­
+tion, Methodology, Project administration, Software, Supervision, 
+Validation, Visualization, Writing – review & editing. J¨org Ackermann: 
+Formal analysis, Methodology, Software, Validation, Writing – review & 
+editing. Leon D. Grünewald: Data curation, Formal analysis, Method­
+ology, Validation, Writing – review & editing. Inga Weitkamp: Data 
+curation, Methodology, Validation, Visualization, Writing – original 
+draft. Ibrahim Yel: Data curation, Formal analysis, Methodology, 
+Software, Validation, Writing – review & editing. Simon S. Martin: Data 
+curation, Formal analysis, Investigation, Methodology, Software, Su­
+pervision, Validation, Visualization, Writing – review & editing. Moritz 
+Albrecht: Conceptualization, Data curation, Formal analysis, Method­
+ology, Project administration, Supervision, Validation, Writing – review 
+& editing. Jan-Erik Scholtz: Conceptualization, Data curation, Formal 
+analysis, Investigation, Methodology, Project administration, Software, 
+Supervision, Validation, Visualization, Writing – review & editing. 
+Thomas J. Vogl: Data curation, Formal analysis, Investigation, Meth­
+odology, Project administration, Resources, Software, Supervision, 
+Validation, Visualization, Writing – review & editing. Simon Bernatz: 
+Conceptualization, Data curation, Formal analysis, Investigation, 
+Methodology, Project administration, Software, Supervision, Validation, 
+Writing – original draft, Writing – review & editing. 
+Declaration of Competing Interest 
+The authors declare that they have no known competing financial 
+interests or personal relationships that could have appeared to influence 
+the work reported in this paper. 
+Appendix A. Supporting information 
+Supplementary data associated with this article can be found in the 
+online version at doi:10.1016/j.ejro.2022.100459. 
+References 
+[1] J. Heijmans, S. Krausz, J.M. van Es, T.W. Kuijpers, G.J. de Bree, 
+[Lymphadenopathy in general practice], Ned. Tijdschr. Geneeskd. 165 (2021). 
+[2] R.E. Dorfman, M.B. Alpern, B.H. Gross, M.A. Sandler, Upper abdominal lymph 
+nodes: criteria for normal size determined with CT, Radiology 180 (1991) 
+319–322, https://doi.org/10.1148/radiology.180.2.2068292. 
+Table 3 
+Model performance metrics.   
+LR  
+ADB  
+SGB  
+RF   
+Radiomics 
+DECT 
+Radiomics 
+DECT 
+Radiomics 
+DECT 
+Radiomics 
+DECT 
+AUC  
+1.000  
+0.896  
+0.919  
+0.756  
+1.000  
+0.942  
+1.000  
+0.903 
+F1  
+0.900  
+0.783  
+0.909  
+0.727  
+1.000  
+0.762  
+1.000  
+0.762 
+Prec  
+1.000  
+0.750  
+0.909  
+0.727  
+1.000  
+0.800  
+1.000  
+0.800 
+ADB, AdaBoost; AUC, area under the curve; LR, logistic regression; Prec, precision; RF, Random Forest; SGB, Stochastic Gradient Boosting. 
+Fig. 6. Comparison of the top performing models. Receiver operating charac­
+teristics (ROC) curves of the top performing model of the DECT (Stochastic 
+Gradient Boosting, SGB, green) and radiomic (Random Forest, RF, orange) 
+feature group with DeLong test (p-value) for statistical analysis. 
+S. Mahmoudi et al.                                                                                                                                                                                                                             
+European Journal of Radiology Open 10 (2023) 100459
+9
+[3] E.A. Eisenhauer, P. Therasse, J. Bogaerts, L.H. Schwartz, D. Sargent, R. Ford, 
+J. Dancey, S. Arbuck, S. Gwyther, M. Mooney, L. Rubinstein, L. Shankar, L. Dodd, 
+R. Kaplan, D. Lacombe, J. Verweij, New response evaluation criteria in solid 
+tumours: revised RECIST guideline (version 1.1), Eur. J. Cancer 45 (2009) 
+228–247, https://doi.org/10.1016/j.ejca.2008.10.026. 
+[4] T. Horn, T. Zahel, N. Adt, S.C. Schmid, M.M. Heck, M.K. Thalgott, 
+G. Hatzichristodoulou, B. Haller, M. Autenrieth, H.R. Kübler, J.E. Gschwend, 
+K. Holzapfel, T. Maurer, Evaluation of Computed Tomography for Lymph Node 
+Staging in Bladder Cancer Prior to Radical Cystectomy, Urol. Int 96 (2016) 51–56, 
+https://doi.org/10.1159/000440889. 
+[5] R.L. van Heertum, R. Scarimbolo, J.G. Wolodzko, B. Klencke, R. Messmann, 
+F. Tunc, L. Sokol, R. Agarwal, J.A. Strafaci, M. O’Neal, Lugano 2014 criteria for 
+assessing FDG-PET/CT in lymphoma: an operational approach for clinical trials. 
+Drug Des. Devel Ther. 11 (2017) 1719–1728, https://doi.org/10.2147/DDDT. 
+S136988. 
+[6] V. Markoti´c, T. Pojuˇzina, D. Radanˇcevi´c, M. Miljko, V. Pokrajˇci´c, The Radiologist 
+Workload Increase; Where Is the Limit?: Mini Review and Case Study, Psychiatr. 
+Danub 33 (2021) 768–770. 〈http://www.ncbi.nlm.nih.gov/pubmed/34718316〉. 
+accessed April 9, 2022. 
+[7] F. Tatsugami, T. Higaki, Y. Nakamura, Y. Honda, K. Awai, Dual-energy CT: 
+minimal essentials for radiologists, Jpn J. Radio. (2022), https://doi.org/10.1007/ 
+s11604-021-01233-2. 
+[8] C. Liguori, G. Frauenfelder, C. Massaroni, P. Saccomandi, F. Giurazza, F. Pitocco, 
+R. Marano, E. Schena, Emerging clinical applications of computed tomography, 
+Med Devices (Auckl. ) 8 (2015) 265–278, https://doi.org/10.2147/MDER.S70630. 
+[9] H. Chandarana, A.J. Megibow, B.A. Cohen, R. Srinivasan, D. Kim, C. Leidecker, 
+M. Macari, Iodine quantification with dual-energy CT: phantom study and 
+preliminary experience with renal masses, AJR Am. J. Roentgenol. 196 (2011) 
+W693–W700, https://doi.org/10.2214/AJR.10.5541. 
+[10] X. Li, X. Meng, Z. Ye, Iodine quantification to characterize primary lesions, 
+metastatic and non-metastatic lymph nodes in lung cancers by dual energy 
+computed tomography: An initial experience, Eur. J. Radio. 85 (2016) 1219–1223, 
+https://doi.org/10.1016/j.ejrad.2016.03.030. 
+[11] S. Rizzo, D. Radice, M. Femia, P. De Marco, D. Origgi, L. Preda, M. Barberis, 
+R. Vigorito, G. Mauri, A. Mauro, M. Bellomi, Metastatic and non-metastatic lymph 
+nodes: quantification and different distribution of iodine uptake assessed by dual- 
+energy CT, Eur. Radio. 28 (2018) 760–769, https://doi.org/10.1007/s00330-017- 
+5015-5. 
+[12] R.J. Gillies, P.E. Kinahan, H. Hricak, Radiomics: Images Are More than Pictures, 
+They Are Data, Radiology 278 (2016) 563–577, https://doi.org/10.1148/ 
+radiol.2015151169. 
+[13] S. Bedrikovetski, N.N. Dudi-Venkata, H.M. Kroon, W. Seow, R. Vather, G. Carneiro, 
+J.W. Moore, T. Sammour, Artificial intelligence for pre-operative lymph node 
+staging in colorectal cancer: a systematic review and meta-analysis, BMC Cancer 21 
+(2021) 1058, https://doi.org/10.1186/s12885-021-08773-w. 
+[14] M. Kirienko, G. Ninatti, L. Cozzi, E. Voulaz, N. Gennaro, I. Barajon, F. Ricci, 
+C. Carlo-Stella, P. Zucali, M. Sollini, L. Balzarini, A. Chiti, Computed tomography 
+(CT)-derived radiomic features differentiate prevascular mediastinum masses as 
+thymic neoplasms versus lymphomas, Radio. Med 125 (2020) 951–960, https:// 
+doi.org/10.1007/s11547-020-01188-w. 
+[15] Y. Bian, S. Guo, H. Jiang, S. Gao, C. Shao, K. Cao, X. Fang, J. Li, L. Wang, C. Ma, 
+J. Zheng, G. Jin, J. Lu, Radiomics nomogram for the preoperative prediction of 
+lymph node metastasis in pancreatic ductal adenocarcinoma, Cancer Imaging 22 
+(2022) 4, https://doi.org/10.1186/s40644-021-00443-1. 
+[16] J. Li, M. Fang, R. Wang, D. Dong, J. Tian, P. Liang, J. Liu, J. Gao, Diagnostic 
+accuracy of dual-energy CT-based nomograms to predict lymph node metastasis in 
+gastric cancer, Eur. Radio. 28 (2018) 5241–5249, https://doi.org/10.1007/ 
+s00330-018-5483-2. 
+[17] Y. Liu, Y. Dou, F. Lu, L. Liu, A study of radiomics parameters from dual-energy 
+computed tomography images for lymph node metastasis evaluation in colorectal 
+mucinous adenocarcinoma, Medicine 99 (2020), e19251, https://doi.org/ 
+10.1097/MD.0000000000019251. 
+[18] C. An, D. Li, S. Li, W. Li, T. Tong, L. Liu, D. Jiang, L. Jiang, G. Ruan, N. Hai, Y. Fu, 
+K. Wang, S. Zhuo, J. Tian, Deep learning radiomics of dual-energy computed 
+tomography for predicting lymph node metastases of pancreatic ductal 
+adenocarcinoma, Eur. J. Nucl. Med Mol. Imaging (2021), https://doi.org/10.1007/ 
+s00259-021-05573-z. 
+[19] P. Lambin, E. Rios-Velazquez, R. Leijenaar, S. Carvalho, R.G.P.M. Van Stiphout, 
+P. Granton, C.M.L. Zegers, R. Gillies, R. Boellard, A. Dekker, H.J.W.L. Aerts, 
+Radiomics: Extracting more information from medical images using advanced 
+feature analysis, Eur. J. Cancer 48 (2012) 441–446, https://doi.org/10.1016/j. 
+ejca.2011.11.036. 
+[20] V. Kumar, Y. Gu, S. Basu, A. Berglund, S.A. Eschrich, M.B. Schabath, K. Forster, H. 
+J.W.L. Aerts, A. Dekker, D. Fenstermacher, D.B. Goldgof, L.O. Hall, P. Lambin, 
+Y. Balagurunathan, R.A. Gatenby, R.J. Gillies, Radiomics: the process and the 
+challenges, Magn. Reson Imaging 30 (2012) 1234–1248, https://doi.org/10.1016/ 
+j.mri.2012.06.010. 
+[21] A. Fedorov, R. Beichel, J. Kalpathy-Cramer, J. Finet, J.-C. Fillion-Robin, S. Pujol, 
+C. Bauer, D. Jennings, F. Fennessy, M. Sonka, J. Buatti, S. Aylward, J. v. Miller, 
+S. Pieper, R. Kikinis, 3D Slicer as an image computing platform for the Quantitative 
+Imaging Network, Magn. Reson Imaging 30 (2012) 1323–1341, https://doi.org/ 
+10.1016/j.mri.2012.05.001. 
+[22] A. Zwanenburg, S. Leger, M. Valli`eres, S. L¨ock, Image biomarker standardisation 
+initiative, arXiv. arXiv Prep. (2016), https://doi.org/10.17195/candat.2016.08.1. 
+[23] J.J.M. van Griethuysen, A. Fedorov, C. Parmar, A. Hosny, N. Aucoin, V. Narayan, 
+R.G.H. Beets-Tan, J.-C. Fillion-Robin, S. Pieper, H.J.W.L. Aerts, Computational 
+Radiomics System to Decode the Radiographic Phenotype, Cancer Res 77 (2017) 
+e104–e107, https://doi.org/10.1158/0008-5472.CAN-17-0339. 
+[24] S. Bernatz, Y. Zhdanovich, J. Ackermann, I. Koch, P.J. Wild, D. Pinto, T.J. Vogl, 
+B. Kaltenbach, N. Rosbach, Impact of rescanning and repositioning on radiomic 
+features employing a multi-object phantom in magnetic resonance imaging, Sci. 
+Rep. 11 (2021) 1–13, https://doi.org/10.1038/s41598-021-93756-x. 
+[25] P. Lambin, R.T.H. Leijenaar, T.M. Deist, J. Peerlings, E.E.C. de Jong, J. van 
+Timmeren, S. Sanduleanu, R.T.H.M. Larue, A.J.G. Even, A. Jochems, Y. van Wijk, 
+H. Woodruff, J. van Soest, T. Lustberg, E. Roelofs, W. van Elmpt, A. Dekker, F. 
+M. Mottaghy, J.E. Wildberger, S. Walsh, Radiomics: the bridge between medical 
+imaging and personalized medicine, Nat. Rev. Clin. Oncol. 14 (2017) 749–762, 
+https://doi.org/10.1038/nrclinonc.2017.141. 
+[26] S. Bernatz, Y. Zhdanovich, J. Ackermann, I. Koch, P.J. Wild, D. Pinto, T.J. Vogl, 
+B. Kaltenbach, N. Rosbach, Impact of rescanning and repositioning on radiomic 
+features employing a multi-object phantom in magnetic resonance imaging, Sci. 
+Rep. 11 (2021) 1–13, https://doi.org/10.1038/s41598-021-93756-x. 
+[27] R. Vallat, Pingouin: statistics in Python, J. Open Source Softw. 3 (2018) 1026, 
+https://doi.org/10.21105/joss.01026. 
+[28] T. Kluyver, B. Ragan-Kelley, F. P´erez, B. Granger, M. Bussonnier, J. Frederic, K. 
+Kelley, J. Hamrick, J. Grout, S. Corlay, P. Ivanov, D. Avila, S. Abdalla, C. Willing, J. 
+D. Team, Jupyter Notebooks—a publishing format for reproducible computational 
+workflows, Positioning and Power in Academic Publishing: Players, Agents and 
+Agendas - Proceedings of the 20th International Conference on Electronic 
+Publishing, ELPUB 2016. (2016) 87–90. https://doi.org/10.3233/978–1- 
+61499–649-1–87. 
+[29] F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, 
+M. Bondel, P. Prettenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, 
+D. Cournapeau, M. Brucher, M. Perrot, ´E. Duchesnay, Scikit-learn: Machine 
+Learning in Python, J. Mach. Learn. Res. 12 (2011) 2825–2830. 
+[30] M.P.A. Starmans, S.R. Van Der Voort, T. Phil, M.J.M. Timbergen, M. Vos, A. 
+Guillaume, W. Kessels, C. Verhoef, S. Sleijfer, M. Smits, R.S. Dwarkasing, C.J. Els, 
+F. Fiduzi, A. Blazevic, T. Brabander, R.A.H. Van Gils, G.J.H. Franssen, R.A. 
+Feelders, W.W. De Herder, E. Florian, B.G. Koerkamp, L. Angus, A.A.M. Van Der 
+Veldt, A. Rajicic, A.E. Odink, M. Deen, J. Veenland, I. Schoots, M. Renckens, M. 
+Doukas, A. De Man, R.L. Miclea, P.B. Vermeulen, E.E. Bron, M.G. Thomeer, J. 
+Jacob, W.J. Niessen, S. Klein, Reproducible radiomics through automated machine 
+learning validated on twelve clinical applications, (2021). 
+[31] X. Sun, W. Xu, Fast Implement. DeLong ’ S. Algorithm Comp. Areas Correl. Receiv. 
+21 (2014) 1389–1393. 
+[32] J. Choe, M.Y. Kim, J.K. Yun, G.D. Lee, Y.-H. Kim, S. Choi, D.K. Kim, Sublobar 
+Resection in Stage IA Non-Small Cell Lung Cancer: Role of Preoperative CT 
+Features in Predicting Pathologic Lymphovascular Invasion and Postoperative 
+Recurrence, AJR Am. J. Roentgenol. 217 (2021) 871–881, https://doi.org/ 
+10.2214/AJR.21.25618. 
+[33] S.E.M. Ven, L. Suzuki, A.W. Gotink, F.J.C. ten Kate, D. Nieboer, B.L.A.M. Weusten, 
+L.A.A. Brosens, R. Hillegersberg, L. Alvarez Herrero, C.A. Seldenrijk, A. Alkhalaf, F. 
+C.P. Moll, W. Curvers, I.G. Lijnschoten, T.J. Tang, H. Valk, W.B. Nagengast, 
+G. Kats-Ugurlu, J.T.M. Plukker, M.H.M.G. Houben, J.S. Laan, R.E. Pouw, J.J.G.H. 
+M. Bergman, S.L. Meijer, M.I. Berge Henegouwen, B.P.L. Wijnhoven, P.J.F. Jonge, 
+M. Doukas, M.J. Bruno, K. Biermann, A.D. Koch, Lymphovascular invasion 
+quantification could improve risk prediction of lymph node metastases in patients 
+with submucosal (T1b) esophageal adenocarcinoma, U. Eur. Gastroenterol. J. 9 
+(2021) 1066–1073, https://doi.org/10.1002/ueg2.12151. 
+[34] Y. Inoue, Radiation Dose Modulation of Computed Tomography Component in 
+Positron Emission Tomography/Computed Tomography, Semin Nucl. Med (2021), 
+https://doi.org/10.1053/j.semnuclmed.2021.11.009. 
+[35] R. Doda Khera, F. Homayounieh, F. Lades, B. Schmidt, M. Sedlmair, A. Primak, 
+S. Saini, M.K. Kalra, Can Dual-Energy Computed Tomography Quantitative 
+Analysis and Radiomics Differentiate Normal Liver From Hepatic Steatosis and 
+Cirrhosis? J. Comput. Assist Tomogr. 44 (2020) 223–229, https://doi.org/ 
+10.1097/RCT.0000000000000989. 
+[36] S. Ebrahimian, R. Singh, A. Netaji, K.S. Madhusudhan, F. Homayounieh, A. Primak, 
+F. Lades, S. Saini, M.K. Kalra, S. Sharma, Characterization of Benign and Malignant 
+Pancreatic Lesions with DECT Quantitative Metrics and Radiomics, Acad. Radio. 
+(2021), https://doi.org/10.1016/j.acra.2021.07.008. 
+[37] F. Homayounieh, R. Singh, C. Nitiwarangkul, F. Lades, B. Schmidt, M. Sedlmair, 
+S. Saini, M.K. Kalra, Semiautomatic Segmentation and Radiomics for Dual-Energy 
+CT: A Pilot Study to Differentiate Benign and Malignant Hepatic Lesions, AJR Am. 
+J. Roentgenol. 215 (2020) 398–405, https://doi.org/10.2214/AJR.19.22164. 
+[38] R. Doda Khera, F. Homayounieh, F. Lades, B. Schmidt, M. Sedlmair, A. Primak, 
+S. Saini, M.K. Kalra, Can Dual-Energy Computed Tomography Quantitative 
+Analysis and Radiomics Differentiate Normal Liver From Hepatic Steatosis and 
+Cirrhosis? J. Comput. Assist Tomogr. 44 (2020) 223–229, https://doi.org/ 
+10.1097/RCT.0000000000000989. 
+[39] S. Rizzo, D. Radice, M. Femia, P. De Marco, D. Origgi, L. Preda, M. Barberis, 
+R. Vigorito, G. Mauri, A. Mauro, M. Bellomi, Metastatic and non-metastatic lymph 
+nodes: quantification and different distribution of iodine uptake assessed by dual- 
+energy CT, Eur. Radio. 28 (2018) 760–769, https://doi.org/10.1007/s00330-017- 
+5015-5. 
+[40] X. Li, X. Meng, Z. Ye, Iodine quantification to characterize primary lesions, 
+metastatic and non-metastatic lymph nodes in lung cancers by dual energy 
+S. Mahmoudi et al.                                                                                                                                                                                                                             
+European Journal of Radiology Open 10 (2023) 100459
+10
+computed tomography: An initial experience, Eur. J. Radio. 85 (2016) 1219–1223, 
+https://doi.org/10.1016/j.ejrad.2016.03.030. 
+[41] J. Yang, L. Wang, J. Qin, J. Du, M. Ding, T. Niu, R. Li, Multi-view learning for 
+lymph node metastasis prediction using tumor and nodal radiomics in gastric 
+cancer, Phys. Med Biol. (2022), https://doi.org/10.1088/1361-6560/ac515b. 
+[42] C. An, D. Li, S. Li, W. Li, T. Tong, L. Liu, D. Jiang, L. Jiang, G. Ruan, N. Hai, Y. Fu, 
+K. Wang, S. Zhuo, J. Tian, Deep learning radiomics of dual-energy computed 
+tomography for predicting lymph node metastases of pancreatic ductal 
+adenocarcinoma, Eur. J. Nucl. Med Mol. Imaging (2021), https://doi.org/10.1007/ 
+s00259-021-05573-z. 
+S. Mahmoudi et al.                                                                                                                                                                                                                             

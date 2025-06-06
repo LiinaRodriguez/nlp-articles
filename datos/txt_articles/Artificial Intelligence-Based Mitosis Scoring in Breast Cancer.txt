@@ -1,0 +1,1325 @@
+Journal homepage: https://modernpathology.org/
+Research Article
+Artiﬁcial Intelligence-Based Mitosis Scoring in Breast Cancer:
+Clinical Application
+Asmaa Ibrahima,b, Mostafa Jahanifarc, Noorul Wahabc, Michael S. Tossa,d,
+Shorouk Makhloufa, Nehal Atallaha, Ayat G. Lashena, Ayaka Katayamaa, Simon Grahamc,
+Mohsin Bilalc, Abhir Bhaleraoc, Shan E. Ahmed Razac, David Sneade, Fayyaz Minhasc,
+Nasir Rajpootc,*, Emad Rakhaa,f,g,*
+a Academic Unit for Translational Medical Sciences, School of Medicine, University of Nottingham, Nottingham, United Kingdom; b Department of Pathology, Faculty of Medicine,
+Suez Canal University, Egypt; c Tissue Image Analytics Centre, University of Warwick, United Kingdom; d Histopathology Department, Royal Hallamshire Hospital, Shefﬁeld
+Teaching Hospitals NHS Foundation Trust, Shefﬁeld, United Kingdom; e Cellular Pathology, University Hospitals Coventry and Warwickshire NHS Trust, United Kingdom;
+f Nottingham University Hospitals NHS Trust, Nottingham, United Kingdom; g Pathology Department, Hamad Medical Corporation, Doha, Qatar
+A R T I C L E
+I N F O
+Article history:
+Received 16 June 2023
+Revised 27 October 2023
+Accepted 14 December 2023
+Available online 27 December 2023
+Keywords:
+algorithm
+artiﬁcial intelligence
+mitosis
+A B S T R A C T
+In recent years, artiﬁcial intelligence (AI) has demonstrated exceptional performance in mitosis
+identiﬁcation and quantiﬁcation. However, the implementation of AI in clinical practice needs to be
+evaluated against the existing methods. This study is aimed at assessing the optimal method of
+using AI-based mitotic ﬁgure scoring in breast cancer (BC). We utilized whole slide images from a
+large cohort of BC with extended follow-up comprising a discovery (n ¼ 1715) and a validation (n ¼
+859) set (Nottingham cohort). The Cancer Genome Atlas of breast invasive carcinoma (TCGA-BRCA)
+cohort (n ¼ 757) was used as an external test set. Employing automated mitosis detection, the
+mitotic count was assessed using 3 different methods, the mitotic count per tumor area (MCT;
+calculated by dividing the number of mitotic ﬁgures by the total tumor area), the mitotic index (MI;
+deﬁned as the average number of mitotic ﬁgures per 1000 malignant cells), and the mitotic activity
+index (MAI; deﬁned as the number of mitotic ﬁgures in 3 mm2 area within the mitotic hotspot).
+These automated metrics were evaluated and compared based on their correlation with the well-
+established visual scoring method of the Nottingham grading system and Ki67 score, clinicopath-
+ologic parameters, and patient outcomes. AI-based mitotic scores derived from the 3 methods (MCT,
+MI, and MAI) were signiﬁcantly correlated with the clinicopathologic characteristics and patient
+survival (P < .001). However, the mitotic counts and the derived cutoffs varied signiﬁcantly between
+the 3 methods. Only MAI and MCT were positively correlated with the gold standard visual scoring
+method used in Nottingham grading system (r ¼ 0.8 and r ¼ 0.7, respectively) and Ki67 scores (r ¼
+0.69 and r ¼ 0.55, respectively), and MAI was the only independent predictor of survival (P < .05) in
+multivariate Cox regression analysis. For clinical applications, the optimum method of scoring
+mitosis using AI needs to be considered. MAI can provide reliable and reproducible results and can
+accurately quantify mitotic ﬁgures in BC.
+© 2023 THE AUTHORS. Published by Elsevier Inc. on behalf of the United States & Canadian Academy
+of Pathology. This is an open access article under the CC BY license (http://creativecommons.org/
+licenses/by/4.0/).
+These authors contributed equally: Asmaa Ibrahim and Mostafa Jahanifar.
+* Corresponding authors.
+E-mail addresses: emad.rakha@nottingham.ac.uk (E. Rakha), n.m.rajpoot@
+warwick.ac.uk (N. Rajpoot).
+0893-3952/© 2023 THE AUTHORS. Published by Elsevier Inc. on behalf of the United States & Canadian Academy of Pathology. This is an open access article
+under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+https://doi.org/10.1016/j.modpat.2023.100416
+Mod Pathol 37 (2024) 100416
+Introduction
+Tumor proliferation has proven to be one of the most powerful
+prognostic factors, and it is essential for determining a patient’s
+prognostic risk.1-3 In breast cancer (BC), proliferation is assessed
+by counting mitotic ﬁgures in hematoxylin and eosin (H&E)-
+stained sections, which is a critical component of the Nottingham
+grading system and a well-recognized histomorphologic predictor
+of outcome.4-6
+The introduction of digital pathology allowed the use of auto-
+mated tools for quantifying mitotic ﬁgures in scanned slides, which
+can provide an aid to pathologists in routine practice.7,8 In recent
+years, the performance of artiﬁcial intelligence (AI) algorithms has
+shown marked improvement, which is comparable to that of expert
+pathologists, adding more consistency in detecting mitotic ﬁgures.9,10
+However, to validate the use of such algorithms in routine
+practice, not only the sensitivity and speciﬁcity of detecting
+mitotic ﬁgures are essential but also the method of scoring has to
+be established and validated to best represent the proliferative
+activity of the tumor. The identiﬁcation of the most prognostically
+relevant mitosis scoring technique is an area that requires further
+study and investigation.
+Different techniques have been proposed to visually estimate
+mitotic counts, and these include mitotic index (MI), mitotic activity
+index (MAI), and mitotic count per tumor (MCT).8However, MI is
+commonly deﬁned as the ratio of mitotic cells to nonmitotic cells of
+a tumor and is reported as a percentage or the number of mitoses
+per 1000 neoplastic cells.11 Because it is not region-speciﬁc, it
+overcomes challenges associated with differences in tumoral
+cellularity, intratumoral stroma, and cell size; however, its useful-
+ness in routine practice is less well studied and is restricted by the
+fact that it is exceedingly laborious and time-consuming.8 MAI, on
+the other hand, is described as the number of mitotic ﬁgures in a
+speciﬁed area of a tumor, chosen as having the highest number of
+mitotic ﬁgures (hotspot),12 and it is provided as an index (mitotic
+count/area).3,11,13 In BC, using conventional light microscopes, the
+optimal area size is that of 10 high-power ﬁelds (HPF), but it varies
+based on the diameter of the microscope ﬁeld.12 Most modern
+microscopes have a ﬁeld diameter of approximately 0.055 mm,
+with 10 HPF covering an area of 2.37 mm2.8 In a previous study to
+deﬁne the area of mitoses counting, 3 mm2 was reported as the
+optimal area associated with high reproducibility and outcome
+correlation.14 This method is time efﬁcient and often reﬂects the
+most replicative capacity of the tumor,12 despite the interobserver
+variation in the selection of these areas.15 Finally, MCT is often
+expressed as the number of mitoses per area occupied by invasive
+tumor cells, rather than the number of mitoses per speciﬁc area or
+HPF, which could alleviate the subjectivity of area selection.16,17
+Nevertheless, none of these methods has been proven to outper-
+form the others in a large-scale study.
+This study aimed to determine the optimal mitosis scoring
+method in BC and evaluate the performance of the automated
+mitotic score for survival prediction compared with visual scores.
+We provide an insight into the feasibility of using automated
+mitosis counting in clinical practice and its potential advantages
+over visual scoring.
+Material and Methods
+Study Cohorts
+This study includes 2 separate cohortsdone for discovery and
+internal validation and the other one for external multicentric
+validation.
+Nottingham Cohort
+This is a large cohort of primary invasive estrogen receptor-
+positive (ERþ)/human epidermal growth factor receptor 2-
+negative (HER2) BC (n ¼ 2574) cases that were diagnosed and
+treated at the Nottingham City Hospital, Nottingham, United
+Kingdom. Ninety-three percent of the patients received endocrine
+therapy. Classical treatment of cyclophosphamide, methotrexate,
+and 5-ﬂuorouracil was used as a therapy for patients clinically ﬁt
+to receive chemotherapy. None of the patients in the current study
+cohort received neoadjuvant therapy.
+Clinical information and tumor characteristics, including pa-
+tient’s age at diagnosis, histologic tumor type, grade, tumor size,
+lymph node status, Nottingham prognostic index, and lympho-
+vascular invasion were available.18 Data for ER, progesterone re-
+ceptor, HER2, and Ki67 were available as previously published.19-
+22 Hormonal and HER2 statuses were assessed according to the
+American Society of Clinical Oncology and College of American
+Pathologists guidelines.23 The Ki-67 scoring was evaluated visu-
+ally using the global (average) method, following the recom-
+mendations of the International Ki67 in Breast Cancer Working
+Group. A minimum of 3 high-power (40 objective) ﬁelds that
+represented the staining spectrum observed in the entire section
+were selected, with a particular focus on scoring the invasive tu-
+mor edge. Data from hotspots were incorporated into the overall
+score, and only nuclear staining was considered positive, with
+staining intensity not taken into account. Ideally, at least 1000
+malignant invasive cells were considered for scoring24 and were
+deﬁned as high when 14% of tumor cells showed nuclear
+positivity.25
+The outcome data collected for the study included BC-speciﬁc
+survival (BCSS), distant metastasis-free survival (DMFS), and
+recurrence-free survival (RFS), all measured in months. BCSS was
+deﬁned as the time from the date of primary surgical treatment
+until the time of death due to BC, DMFS was deﬁned as the time
+from surgery until the ﬁrst event of distant metastasis, and RFS
+was deﬁned as the time from surgical resection until disease
+recurrence.
+Pseudonymized patient tissue samples were provided. One
+representative
+tissue
+block
+(formalin-ﬁxed
+and
+parafﬁn-
+embedded), with adequate tumor tissue, was chosen per case.
+Four-micrometer-thick, full-face tumor sections were cut and
+stained with H&E. The slides were scanned with a Philips UFS
+scanner with 0.25 mm/pixels at 40 and Pannoramic 250 Flash III:
+3DHistech (0.19 mm/pixel), generating high-quality whole slide
+images (WSIs).
+The Nottingham cases were divided into a discovery set
+(n ¼ 1715) and a validation set (n ¼ 859), based on stratiﬁed
+random distribution of events (Supplementary Fig. S1). In the
+discovery cohort, the median survival duration was 89 months
+(IQR, 37.3-179), whereas in the validation group, the median
+survival duration was 71.3 months (IQR, 51.9-124.9). The cutoff
+values generated in the discovery set were applied to the
+internal validation and external test sets.
+The Cancer Genomic Atlas Breast Cancer Cohort
+In this study, the BC cohort of 757 cases from the Cancer
+Genomic Atlas (https://www.cancer.gov/tcga) was used as an
+external test set The Cancer Genome Atlas of breast invasive car-
+cinoma (TCGA-BRCA).26 H&E images were obtained from excision
+specimens and scanned using various scanners from different
+institutions across the United States. To ensure the reliability of
+our analysis, we implemented a quality control measure and
+excluded images with very low quality, we carefully selected 757
+cases, speciﬁcally focusing on those with the best available image
+Asmaa Ibrahim et al. / Mod Pathol 37 (2024) 100416
+2
+quality. WSIs were downloaded from the genomic data commons
+(GDC) data portal https://portal.gdc.cancer.gov/.27 Clinical data
+were available from the https://portal.gdc.cancer.gov/, https://
+www.cbioportal.org/,
+https://ucsc-xena.gitbook.io/project/.27-30
+Comprehensive clinical data including age, tumor size, grade
+and its components, histologic tumor subtypes, pathological
+stage, ER/progesterone receptor status, lymphovascular invasion,
+and Ki67 score were extracted from the TCGA cohort. Overall
+survival and RFS data were also included in the analysis where
+median survival time was 31 months (IQR, 17-60 months).
+Algorithm Development
+Annotations
+In order to create machine learning (ML) models for mitosis
+detection, cell-level annotations were made. A group of 6
+certiﬁed pathologists from Nottingham were provided with an
+online annotation software, called WASABI.31 This application
+offers specialized modes that are designed to facilitate the
+annotation of WSIs. Pathologists were responsible for per-
+forming the primary annotations of various phases and mor-
+phologies of mitotic ﬁgures (prophase, metaphase, anaphase,
+and telophase, as well as atypical mitotic ﬁgures), in addition to
+identifying mimickers such as lymphocytes, stromal cells, and
+artifacts.
+Two pathologists were assigned to independently annotate
+mitotic ﬁgures for each WSI in a blinded manner, (A.I. and A.K.) as
+previously described.31-33 Any ambiguous cases or disagreements
+were re-evaluated by another pathologist to establish a consensus
+label. Through this approach (as depicted in Fig.1A), a total of 7916
+mitotic ﬁgures were manually annotated.
+Mitosis Detection Algorithm
+The method used for mitosis detection follows a well-
+established 2-stage framework developed by Jahanifar et al.34
+The framework consists of mitosis candidate segmentation and
+candidate reﬁnement stages (Fig. 1B). The ﬁrst stage uses a fast
+and accurate convolutional neural network to segment mitotic
+candidates. To train the segmentation network, a mitosis mask
+was generated based on pathologist point annotations and an
+interactive annotation tool called NuClick.35 In the second stage,
+the candidate reﬁnement is performed using a deeper classiﬁer
+network. Both stages are domain-invariant, making the frame-
+work robust against domain shift.
+The algorithm used in this study has been validated extensively
+for the task of mitosis detection from various cancer images
+(ranked ﬁrst in Mitosis Domain Generalization Challenges 2021-
+20229,10). We have also evaluated the performance of the mitosis
+detection algorithm on a data set of 9200 tile images (512  512
+pixels in size) as an initial part of the study. This data set was
+curated based on visual mitosis and mimicker annotations. Hu-
+man correction has also been implemented, where pathologists
+with experience in the ﬁeld (A.I., M.T., A.K., and A.L.) reviewed,
+corrected, and conﬁrmed the mitotic ﬁgures identiﬁed by the al-
+gorithm in a subset of cases. In cross-validation experiments, the
+utilized algorithm achieved an F1-score of 0.93, sensitivity of 0.89,
+and precision of 0.97, demonstrating high performance in the
+mitosis detection task.
+Artiﬁcial Intelligence-Assisted Identiﬁcation of Mitotic Hotspot
+Regions
+A computational framework was developed to objectively
+identify regions of mitotic hotspots using a greedy search
+algorithm (Fig. 1C). First, the algorithm identiﬁes the tissue region
+within each WSI by employing a tissue segmentation convolu-
+tional neural network from TIAToolbox.36 Next, it extracts 512 
+512 tiles from the tissue region, each with a 50-pixel overlap, at a
+resolution of 0.25 microns-per-pixel (equivalent to a 40 objec-
+tive magniﬁcation). Then, the method described in the previous
+section is applied to detect mitoses in the extracted patches. Once
+the detection of mitosis is complete, the algorithm performs an
+overlapping window search within the WSI to identify the mitotic
+hotspot region, which is deﬁned as the window containing the
+highest number of mitoses. The heatmap overlay shown in
+Figure 1C indicates windows with high- and low-mitotic counts
+with red and blue colors, respectively. Finally, the mitotic score for
+the hotspot is calculated according to the method outlined in the
+next section.
+Mitosis Scoring Approaches
+In order to establish the best mitosis scoring approach, the
+mitosis detection algorithm was run on the discovery cohort (1725
+WSIs), and the number of detected mitotic ﬁgures in each digital
+slide was recorded. MCT was determined by dividing the number
+of mitotic ﬁgures by the whole tumor size in mm2. Additionally,
+MI was computed by ﬁrst utilizing a deep learning-based nuclei
+instance identiﬁcation model called HoVer-Net37 to quantify the
+number of malignant tumor cells present in the entire slide, fol-
+lowed by calculating the average number of mitotic ﬁgures per
+1000 malignant cells. Finally, MAI was calculated by counting the
+number of mitotic ﬁgures within a 3 mm2 hotspot region of the
+slide. The 3 mm2 area was carefully chosen to capture the invasive
+carcinoma cells avoiding the inclusion of noninvasive stromal
+tissue or ductal carcinoma in situ (DCIS). However, if the hotspot
+was near the leading edge, multiple separate annotated areas
+collectively measuring 3 mm2 were used.14
+The study deliberately used the same mitosis detection algo-
+rithm for all 3 scoring systems to ensure an unbiased comparison;
+therefore,
+we
+did
+not
+detect
+systematic
+differences
+when
+comparing different mitosis scoring approaches. The mitosis
+scoring techniques were evaluated and compared based on their
+correlation with clinicopathologic parameters, the established gold
+standard visual scoring method used in clinical practice, Ki67 score,
+patient outcome, and chemotherapy prediction.
+Measuring the Correlation Between Visual and Automated Mitosis
+Detection
+To conﬁrm the reliability and reproducibility of automated
+mitosis detection, a well-trained pathologist visually counted
+mitotic ﬁgures within 3 mm2 in 400 cases from the Nottingham
+validation set and 757 from the external validation set as
+continuous counts following the proposed scoring method.38
+Scoring was carried out blindly. The visual counts were corre-
+lated with their parallel automatically generated mitotic counts.
+Statistical Analysis
+Statistical analyses were performed using SPSS v26 for
+Microsoft Windows. The degree of interobserver agreement was
+assessed by use of the intraclass correlation coefﬁcient for
+continuous data. Cohen’s statistics were used to assess the
+concordance between 2 observers for categorical variables,
+Asmaa Ibrahim et al. / Mod Pathol 37 (2024) 100416
+3
+Figure 1.
+(A) The process of mitosis annotation in whole slide images. (B) Mitosis candidate segmentation and candidate reﬁnement stages. (C) A computational framework showing the
+steps for identifying regions of mitotic hotspots, with the heatmap overlay.
+Asmaa Ibrahim et al. / Mod Pathol 37 (2024) 100416
+4
+whereas Fleiss Kappa was used for more than 2 variables/scores.
+The correlations between categorical variables were analyzed
+using the c2 test. Pearson’s correlation coefﬁcient was used to
+measure the strength of a linear association between 2 contin-
+uous variables. Association with mitosis count and BCSS was
+performed after classiﬁcation of expression into high, interme-
+diate, and low groups based on the cutoff point obtained from
+the
+x-tile.39
+Survival
+rates
+were
+determined
+using
+the
+KaplaneMeier method and compared by the log-rank test.
+Multivariate analysis using the Cox regression model determined
+the inﬂuence of each mitosis scoring technique on survival when
+compared with one another. All tests were 2-tailed, and a P value
+of <.05 was considered statistically signiﬁcant. Finally, the
+automated MAI scores were incorporated with the other 2
+components of the Nottingham grading system (tubule forma-
+tion and pleomorphism) to develop a grade based on the auto-
+mated MAI score.
+Results
+Evaluating Mitosis Scoring Techniques
+Automatically derived mitotic counts using the 3 methods
+(MCT, MI, and MAI) were different, and all showed unimodal
+distribution. These distributions showed signiﬁcant varia-
+tions in the mitotic count of individual cases. The median
+mitoses
+count
+for
+each
+method
+is
+presented
+in
+Supplementary Table S1. These counts were converted into 3
+scores with different cutoff values based on BCSS, using
+x-tiles as follows:
+MCT  Score ¼
+8
+<
+:
+1ðlowÞ;
+MCT  110
+2ðIntermediateÞ;
+110 < MCT  284
+3ðhighÞ;
+MCT > 284
+(1)
+MI  Score ¼
+8
+<
+:
+1ðLowÞ;
+MI  2:9
+2ðIntermediateÞ;
+2:9 < MI  5:5
+3ðHighÞ;
+MI > 5:5
+(2)
+MAI  Score ¼
+8
+<
+:
+1ðLowÞ;
+MAI  23
+2ðIntermediateÞ;
+23 < MAI  50
+3ðHighÞ;
+MAI > 50
+(3)
+Correlation With Clinicopathologic Parameters
+As reported in Supplementary Tables S2-S4, high values of all
+automatically derived mitotic scores (MAI, MCT, and MI) were
+signiﬁcantly associated with characteristics of aggressive tumor
+behavior including less tubule formation, high nuclear pleomor-
+phism, large tumor size, and high Nottingham prognostic index
+scores (P < .001).
+The same results were observed in the validation cohort when
+the same cutoff values (derived from the discovery cohort) were
+applied.
+Correlation With Ki67 Score
+A signiﬁcant positive linear correlation was observed between
+the Ki-67 score and both MAI (r ¼ 0.69; P < .001) and MCT (r ¼
+0.55; P < .001), but no such correlation was found with MI. Similar
+results were observed in the internal validation cohort and
+external validation set (Fig. 2).
+Correlation With the Well-Established Visual Scoring Method Used
+in Clinical Practice (Gold Standard)
+As shown in Figure 3A and B, statistically signiﬁcant correla-
+tions were observed between pathologist mitotic counts (visual
+MAI used in clinical practice) and automated MAI for both the
+Nottingham cohort and the TCGA-BRCA cohort (r ¼ 0.8; P < .001),
+respectively.
+Furthermore, automated MCT showed a signiﬁcant corre-
+lation with pathologist mitoses counts (visual MAI, derived
+from visually identiﬁed hotspots in clinical practice) with a
+Pearson’s correlation coefﬁcient of 0.7 (P < .001). This implies
+that the automated mitosis detection algorithm performed
+reliably on the WSI level as the number of detected mitoses
+correlates with the visual mitosis count in the mitotic hotspot
+(which is an indicator of mitotic activity in the whole tumor)
+(Fig. 3C). On the other hand, there was no signiﬁcant corre-
+lation between pathologist mitoses counts and automated MI
+(as seen in Fig. 3D)
+Prediction of Patient Outcome
+Univariate survival analysis revealed that high MCT, MAI, and
+MI scores were signiﬁcantly associated with worse BCSS and
+shorter DMFS (Supplementary Table S5).
+However, high MAI and MCT scores were predictive of BC
+recurrence, whereas MI was not (P ¼.07). Detailed results and
+Kaplan-Meier survival plots for mitosis scoring methods across
+different survival analyses can be found in Figure 4.
+Furthermore, a multivariate Cox regression model adjusted for
+other prognostic covariates (nuclear pleomorphism, tubule for-
+mation, nodal stage, and Ki67 score) revealed that MAI, MCT, and
+MI scores were independent predictors of survival as reported in
+Table 1, highlighting the signiﬁcance of mitosis score in predicting
+the tumor behavior and patient survival.
+A multivariate analysis that included all 3 mitosis-related
+scores as continuous variables was also conducted. The results
+are reported in Table 2, which showed that MAI was an inde-
+pendent predictor of survival in terms of BCSS, DMFS, and RFS,
+whereas the other 2 scores (MCT and MI) were not.
+When various AI-based mitosis scoring methods were evalu-
+ated for predicting outcomes in the context of adjuvant chemo-
+therapy, all 3 methods were strongly associated with outcomes in
+chemotherapy-naive patients. In patients who were given adju-
+vant chemotherapy, only MAI remained associated with outcome
+(HR, 2.35; 95% CI, 1.88-2.93; P < .001), whereas MCT and MI lost
+their signiﬁcance (Supplementary Fig. S2).
+Additionally, as seen from the survival curve, patients with a MAI
+score of 2 who received chemotherapy demonstrated improved
+outcomes compared with those with a score of 1, whereas patients
+with a score of 3 continued to show the worst prognosis.
+The results suggest that MAI would be an effective approach in
+scoring mitosis during routine diagnosis. Therefore, the following
+sections will focus on the use of MAI for clinicopathologic pa-
+rameters correlation and survival prediction.
+Visual Versus Automated Mitotic Activity Index for
+Clinicopathologic Correlation and Survival Prediction
+The results from the external test set (Table 3) and the
+Nottingham cohort (Supplementary Table S6) revealed a sig-
+niﬁcant correlation between aggressive tumor characteristics
+and high visual and automated MAI values. Regarding asso-
+ciation with the outcome, both automated and visual MAI
+were predictors of survival in the Nottingham and TCGA co-
+horts,
+as
+depicted
+in
+the
+Kaplan-Mayer
+survival
+plots
+in
+Supplementary Figure S3.
+Asmaa Ibrahim et al. / Mod Pathol 37 (2024) 100416
+5
+Automated Mitotic Activity Index and Nottingham Grading System
+The addition of automated MAI to the tubule formation and
+pleomorphism scores in the Nottingham grade was found to have a
+signiﬁcant association with BCSS, exhibiting a slightly higher
+hazard ratio (HR, 3.305; 95% CI, 2.59-4.21; P < .001) than the
+original grade with visual MAI score (HR, 2.8; 95% CI, 2.29-3.64; P
+< .001) as shown in Figure 5. A cross-comparison between new
+grade and conventional grade was conducted using c2 tests, and
+we found that they were strongly correlated (c2 ¼ 2990; P < .001).
+These results highlight the reliability of using AI-assisted mitosis
+scores in clinical practice.
+Discussion
+Digital pathology (DP) is an emerging ﬁeld that involves
+scanning glass slides used for diagnosis into digital images in
+clinical settings. Whole slide scanners are used to generate high-
+resolution images that can be navigated and analyzed using
+specialized software and automated algorithms. DP has the po-
+tential to improve the accuracy and efﬁciency of diagnostic pro-
+cesses and is being increasingly adopted in medical practice.7 The
+introduction of these algorithms has led to numerous attempts by
+researchers to enhance and integrate this new technology into
+diagnostic processes. As this ﬁeld advances, AI is gradually moving
+from a research tool to a clinical application.40 The laborious task
+of visually counting mitotic ﬁgures during grading, coupled with
+the low level of agreement among pathologists has made it a
+suitable target for computer-assisted detection algorithms.41
+These detection methods are continually improving at a rapid
+pace. However, the ﬁrst priority should be the adoption of
+evidence-based and clinically approved protocols. In BC histopa-
+thology, mitosis detection on H&E slides has been extensively
+researched due to the prognostic value of mitotic density.22
+Because it is an essential part of the grading system, accurate
+detection of mitotic ﬁgures is crucial for patient care. Several
+studies have shown that AI can count mitoses with great preci-
+sion,42 which makes it a promising solution to overcome the
+challenges of the labor-intensive and subjective nature of visual
+mitosis counting. Despite several ways to count mitosis have been
+offered in clinical settings, their challenging applicability has
+limited their use.8 The adoption of AI-assisted mitosis counting
+can improve diagnostic accuracy and reproducibility and facilitate
+the incorporation of mitotic density into the grading system.
+To the best of our knowledge, this is the ﬁrst large-scale study
+that has evaluated different mitosis scoring methods with the help
+Figure 2.
+The correlation between Ki67 score and 3 measures of mitotic activity. (A) The correlation between Ki67 score and mitotic activity index (MAI). (B) The correlation between Ki67
+score and mitotic count per the whole tumor (MCT). (C) The correlation between Ki67 score and mitotic index (MI) in the discovery cohort, in addition to (D) the correlation
+between Ki67 score and MAI. (E) The correlation between Ki67 score and MCT, and (F) the correlation between Ki67 score and MI in the internal validation cohort. (G) Finally, the
+correlation between Ki67 score and MAI in the external validation set.
+Asmaa Ibrahim et al. / Mod Pathol 37 (2024) 100416
+6
+of an AI mitosis detection algorithm in a clinical setting including 2
+separate large BC cohorts. The current study, conducted on a large
+cohort of patients, demonstrates that the automated MAI has the
+same and, in some cases, greater ability to measure BC proliferative
+capacity compared with conventional mitotic count (MCT) and MI.
+This ﬁnding is consistent with the results of several other studies,
+including those conducted by Diest et al,13 Bostock,43 Wilcock and
+Peiffer,44 Baak et al,6 and Jannink et al,45 which have established
+mitotic count as a reliable predictor of tumor behavior.
+The visual counting of mitotic ﬁgures throughout the whole
+tumor has been challenging to implement in practice. As an alter-
+native, the MAI has been proposed as a more feasible parameter.45
+MAI represents the total number of mitotic ﬁgures counted within a
+speciﬁed area, enabling rapid and accurate assessment of tumor
+mitotic activity, without considering cellularity. Moreover, in uni-
+variate and multivariate analyses of human breast tumors, MAI was
+found to be signiﬁcantly associated with prognosis.45
+Previous studies concluded that MAI is the preferred index due
+to its ease of application, time efﬁciency, and its prognostic value
+compared with other indices.
+The challenges associated with the manual counting of mitotic
+ﬁgures in histopathology have recently come to light as AI tools
+are being used to count mitoses in digital WSI.16,19,46
+Our results were similar to those of Jannink et al,45 where both
+mitotic count and mitoses per area were signiﬁcantly associated in
+linear regression with the other proliferation parameters.
+The only parameter that takes cellularity into account is MI,
+which expresses the number of mitoses as a percentage or
+referenced to a speciﬁc number (1000) of cells.47-51 However, it
+has been widely criticized for supposed irreproducibility.52
+Another drawback of MI is the time-consuming task of counting
+cells in each ﬁeld.53 Although there are quicker alternatives such
+as speciﬁc formulas54 or image analysis techniques,55 these still
+have limitations in their application. With the aid of AI, counting
+mitotic ﬁgures can be more easily and accurately performed on a
+large number of cases, as demonstrated in our study. However,
+tumors with similar values of cellularity do not necessarily need
+correction because equal areas may contain similar numbers of
+cells, and mitotic activity is only due to the proliferative state, not
+cell content. Other studies suggest that correcting the mitotic
+count is otherwise unnecessary.45 On the contrary, a correction
+might be helpful for those tumors characterized by a high degree
+of variability in cellularity.
+Our study found that MCT, MI, and MAI scores were all corre-
+lated with survival. However, the multivariate Cox regression
+analysis revealed that MAI was an independent predictor of sur-
+vival. Moreover, only MAI was capable of predicting the outcome
+in patients receiving chemotherapy in ERþ/HER2 patients.
+Furthermore, the visual evaluation of pathologists was highly
+correlated with the mitotic ﬁgure counts obtained by the auto-
+mated algorithm.
+The 3 parameters expressing mitotic activity were compared
+with Ki67, which is a widely accepted proliferation marker, to
+assess their performance. The Ki67 score was strongly correlated
+with MAI and MCT, but not with MI. We found that both auto-
+mated and visual MAI values showed a signiﬁcant correlation with
+Figure 3.
+The correlation between the visual scoring method used in clinical practice with (A) automated MAI in Nottingham cohort, (B) automated MAI in TCGA cohort, (C) MCT in
+Nottingham cohort, and (D) MI in the Nottingham cohort. TCGA, The Cancer Genome Atlas.
+Asmaa Ibrahim et al. / Mod Pathol 37 (2024) 100416
+7
+aggressive breast tumor characteristics and were associated with
+survival. Additionally, adding automated MAI to the Nottingham
+grading system improved the association with BCSS and high-
+lighted the reliability of AI-assisted mitosis scores in clinical
+practice. Additionally, a recent study found strong correlations
+between different mitotic scoring modalities, including light mi-
+croscopy, WSI, and AI in both biopsy and resection samples with a
+Figure 4.
+KaplaneMeier survival plots for mitosis scoring methods across different survival analysis tasks, such as association of breast cancer-speciﬁc survival (BCSS) with (A) MAI, (B)
+MCT, and (C) MI. The association between these scoring methods and distant metastasis-free survival (DMFS) is presented for (D) MAI, (E) MCT, and (F) MI, respectively. (G-I)
+Association between the same mitosis scoring methods and recurrence-free survival (RFS).
+Table 1
+Multivariate Cox regression analysis for predictors of BCSS after adding (A) MCT, (B)
+MAI and (C) MI
+Parameters
+Nottingham cohort
+Hazard ratio (HR)
+95% CI for HR
+P value
+Lower
+Upper
+MCT
+Tumor size
+1.358
+0.938
+1.965
+.105
+Tubular formation
+1.836
+1.276
+2.640
+.001a
+Nuclear pleomorphism
+1.713
+1.120
+2.620
+.013a
+Nodal stage
+1.757
+1.225
+2.520
+.002a
+Ki67 score
+0.989
+0.663
+1.474
+.956
+MCT
+1.627
+1.262
+2.099
+<.001a
+MAI
+Tumor size
+1.304
+.897
+1.895
+.165
+Tubular formation
+1.822
+1.267
+2.620
+.001a
+Nuclear pleomorphism
+1.780
+1.167
+2.716
+.007a
+Nodal stage
+1.800
+1.253
+2.586
+.001a
+Ki67 score
+0.939
+0.615
+1.435
+.773
+MAI
+1.631
+1.217
+2.186
+.001a
+MI
+Tumor size
+1.350
+.924
+1.974
+.121
+Tubular formation
+1.972
+1.350
+2.879
+<.001a
+Nuclear pleomorphism
+1.973
+1.294
+3.008
+.002a
+Nodal stage
+1.673
+1.153
+2.429
+.007a
+Ki67 score
+1.318
+0.893
+1.946
+.165
+MI
+1.416
+1.051
+1.909
+.022
+a P < .05
+BCSS, breast cancer speciﬁc survival; MAI, mitotic activity index; MCT, mitosis
+count per the tumor area; MI, mitotic index.
+Table 2
+Multivariate Cox regression model including the 3 scoring methods (MAI, MCT, and
+MI) against BCSS, DMFS, and RFS in the discovery cohort
+Hazard ratio (HR)
+95% CI for HR
+P value
+Lower
+Upper
+BCSS
+MAI
+1.010
+1.003
+1.017
+.007a
+MCT
+1.001
+0.988
+1.013
+.934
+MI
+1.000
+1.000
+1.001
+.315
+DMFS
+MAI
+1.011
+1.004
+1.018
+.001a
+MCT
+1.002
+0.991
+1.013
+.774
+MI
+1.000
+0.999
+1.001
+.558
+RFS
+MAI
+1.008
+1.003
+1.014
+.005a
+MCT
+1.004
+0.996
+1.012
+.302
+MI
+1.000
+0.999
+1.001
+.974
+a P < .05
+BCSS, breast cancer speciﬁc survival; DMFS, distant metastasis-free survival; MAI,
+mitotic activity index; MCT, mitosis count per tumor area; MI, mitotic index; RFS,
+recurrence-free survival.
+Asmaa Ibrahim et al. / Mod Pathol 37 (2024) 100416
+8
+high level of agreement. These ﬁndings highlight the reliability
+and consistency of these modalities for mitotic counting and BC
+grading in clinical practice.56
+The use of AI technology for evaluating BC poses the challenge of
+standardizing the method for mitosis scoring, which requires
+evidence-based studies to determine the best strategy. As AI-based
+algorithms for counting mitosis in WSI continue to evolve, they
+have the potential to revolutionize the assessment of mitotic ﬁgures
+and grading in BC and other diagnostic pathology ﬁelds. To ensure
+the effectiveness and reliability of these algorithms, developers
+must be familiar with established scoring methods used in BC and
+adjust their techniques accordingly to provide the same prognostic
+value when incorporated into the ﬁnal histologic grade.
+The decision to train AI to produce results similar to human vi-
+sual assessment could be perceived as a potential limitation of the
+approach taken in this study and that the algorithm never will be
+better than human visual assessment. However, the current study
+evaluated AI algorithms for mitosis counting not only to achieve
+automation and consistency but also the AI algorithm does not
+replicate the pathologist error. The algorithm has been trained on a
+data set of mitosis annotations that are obtained from the consensus
+of multiple pathologists and has demonstrated strong generaliza-
+tion to data from different sources. This has been investigated in
+Aubreville et al,9 where the proposed mitosis detection algorithm
+performed better than 5 individual pathologists in the detection
+task. The similarity of AI and visual assessment of mitoses counts is
+only an indicator of reliability of using AI-assisted MAI scores in
+clinical practice to the same level of pathologist-driven scores.
+In the current study, we evaluated the optimal method of
+mitosis detection in BC using AI as one of the well-known prog-
+nostic markers and is a component of BC grade. DP is increasingly
+used and AI algorithms for assessing several morphologic features
+including mitosis will become commonplace soon. Our proposed
+mitosis scoring pipeline can be encapsulated into a single software
+package, and we have implemented a toolbox that accepts the
+input from the WSI and runs the whole pipeline on it to detect
+mitotic hotspots and estimate MAI. At this stage, MAI can be
+combined with visual assessment of tubule formation and pleo-
+morphism to form the new grade. However, there is ongoing work
+on automated assessment of tubule formation and nuclear pleo-
+morphism as well, which can be combined with MAI in our score
+(digital grade), but this still needs further reﬁning and validation.
+Table 3
+Association between automated and visual MAI with the clinicopathologic parameters in the external validation set (TCGA), (n ¼ 757)
+Automated MAI
+Visual MAI
+Low score
+No (%)
+Intermediate
+score
+No (%)
+High score
+No (%)
+c2
+P value
+Low score
+No (%)
+Intermediate
+score
+No (%)
+High score
+No (%)
+c2
+P value
+Patient age (y)
+<50
+132 (26.0)
+42 (25.8)
+33 (37.9)
+5.549
+87 (24.9)
+38 (23.3)
+82 (33.5)
+6.985
+50
+375 (74.0)
+121 (74.2)
+54 (62.1)
+.062
+262 (75.1)
+125 (76.7)
+163 (66.5)
+.03a
+Tumor size
+<2
+113 (31.3)
+21 (16.5)
+10 (14.3)
+16.248
+67 (27.5)
+36 (29.0)
+41 (21.6)
+2.795
+2
+248 (68.7)
+106 (83.5)
+60 (85.7)
+<.001a
+177 (72.5)
+88 (71.0)
+149 (78.4)
+.247
+Tumor grade
+1
+70 (31.5)
+2 (2.8)
+0 (0.0)
+174.159
+65 (41.4)
+5 (7.5)
+2 (1.6)
+198.338
+2
+117 (52.7)
+15 (21.1)
+0 (0.0)
+<.001a
+85 (54.1)
+30 (44.8)
+17 (13.8)
+<.001a
+3
+35 (15.8)
+54 (76.1)
+54 (100.0)
+7 (4.5)
+32 (47.8)
+104 (84.6)
+Tubular formation
+1
+12 (3.8)
+0 (0.0)
+0 (0.0)
+16.159
+12 (5.6)
+0 (0.0)
+0 (0.0)
+22.569
+2
+61 (19.6)
+15 (13.8)
+3 (5.0)
+.003a
+41 (19.2)
+21 (20.0)
+17 (10.5)
+<.001a
+3
+239 (76.6)
+94 (86.2)
+57 (95.0)
+161 (75.2)
+84 (80.0)
+145 (89.5)
+Pleomorphism
+1
+26 (8.7)
+0 (0.0)
+0 (0.0)
+127.653
+24 (12.2)
+2 (1.9)
+0 (0.0)
+141.584
+2
+173 (58.1)
+16 (15.1)
+4 (7.0)
+<.001a
+124 (63.3)
+46 (44.7)
+23 (14.2)
+<.001a
+3
+99 (33.2)
+90 (84.9)
+53 (93.0)
+48 (24.5)
+55 (53.4)
+139 (85.8)
+Histologic subtypes
+Non-speciﬁc type (NST)
+315 (62.1)
+145 (88.3)
+77 (87.4)
+90.675
+199 (57.7)
+120 (77)
+218 (90)
+118.240
+Invasive lobular
+139 (27.4)
+8 (4.9)
+5 (5.7)
+<.001a
+116 (33.6)
+24 (15.3)
+12 (5)
+<.001a
+Mixed NST and special type
+13 (2.6)
+1 (0.6)
+0 (0.0)
+19 (5.5)
+10 (6.4)
+11 (4.6)
+Other special typesb
+32 (6.4)
+6 (6.2)
+5 (6.9)
+11 (3.2)
+2 (1.3)
+1 (0.4)
+Lymph node involvement
+74 (21.2)
+30 (18.4)
+42 (17.1)
+Negative
+114 (22.5)
+22 (13.5)
+10 (11.5)
+12.160
+194 (55.6)
+97 (59.5)
+146 (59.6)
+1.902
+Positive
+277 (54.6)
+100 (61.3)
+60 (69.0)
+.016a
+81 (23.2)
+36 (22.1)
+57 (23.3)
+.754
+Lymphovascular invasion
+Negative
+351 (69.2)
+86 (52.8)
+58 (66.7)
+14.855
+249 (71.3)
+99 (60.7)
+147 (60.0)
+10.177
+Positive
+156 (30.8)
+77 (47.2)
+29 (33.3)
+.001a
+100 (28.7)
+64 (39.3)
+98 (40.0)
+.006a
+Progesterone receptor
+Negative
+113 (23.0)
+71 (45.5)
+60 (74.1)
+94.503
+69 (20.3)
+45 (29.4)
+130 (55.1)
+77.154
+Positive
+379 (77.0)
+85 (54.5)
+21 (25.9)
+<.001a
+271 (79.7)
+108 (70.6)
+106 (44.9)
+<.001a
+Ki67 index
+Low
+384 (75.7)
+99 (60.7)
+37 (42.5)
+44.198
+281 (80.5)
+107 (65.6)
+132 (53.9)
+48.393
+High
+123 (24.3)
+64 (39.3)
+50 (57.5)
+<.001a
+68 (19.5)
+56 (34.4)
+113 (46.1)
+<.001a
+a P < .05
+b Other special types: mucinous, tubylar, and papillary.
+MAI, mitotic activity index; TCGA, The Cancer Genome Atlas.
+Asmaa Ibrahim et al. / Mod Pathol 37 (2024) 100416
+9
+Based on our study, it can be concluded that the application of
+ML algorithms in the quantiﬁcation of mitotic ﬁgures is a prom-
+ising approach that provides a practical and efﬁcient method for
+mitosis scoring in BC patients. The use of these algorithms not
+only overcomes the limitations of visual counting, such as inter-
+observer variability, but also offers the potential for high-
+throughput and automated analysis of large data sets.
+In addition, we have found that the updated algorithms pro-
+vide valid measures of scoring in BC patients. The performance of
+the ML algorithms in the validation cohort demonstrated their
+ability to accurately detect mitotic ﬁgures in a manner that is
+consistent with visual counting by expert pathologists. This con-
+ﬁrms the potential for the use of ML algorithms as a reliable
+alternative to visual counting for mitotic scoring in BC.
+Acknowledgments
+The authors are part of the PathLAKE digital pathology con-
+sortium. These new centers are supported by the Data to Early
+Diagnosis and Precision Medicine strand of the government’s In-
+dustrial Strategy Challenge Fund, managed and delivered by UK
+Research and Innovation (UKRI). A.I., S.M., N.A., and A.L. are sup-
+ported and funded by the Egyptian Ministry of Higher Education
+and Scientiﬁc Research.
+Author Contributions
+A.I. wrote the manuscript draft, data analysis, and interpreta-
+tion. M.J. devised the mitosis detection algorithm and did the data
+extraction and helped with manuscript writing. A.I., M.T., A.K., and
+A.L. helped in annotation. N.R., M.J., A.I., S.M., N.A., M.T., S.G., A.L.,
+W.L., S.G., A.K., M.B., A.B., M.F., S.R., and D.S. critically reviewed the
+article and agree with manuscript results and conclusions. E.R.
+conceived and planned the study, contributed to data interpreta-
+tion, made critical revisions, and approved the ﬁnal version.
+Data Availability
+All data used in this study are available and can be accessed
+upon reasonable request.
+Funding
+AI is funded by the Egyptian Ministry of Higher Education and
+Scientiﬁc Research.
+Declaration of Competing Interest
+All the authors declare that they have no conﬂict of interest.
+Ethical Approval and Consent to Participate
+Ethical approval was obtained for this study and approved by
+REC (REF. no. 19/SC/0363) under the title “PathLAKE.” All cases
+included in the study were fully anonymized.
+Figure 5.
+KaplaneMeier survival plots show breast cancer-speciﬁc survival according to (A) modiﬁed grade after replacing mitosis score with automated MAI, (B) conventional Nottingham
+tumor grade in the whole cohort, in addition to the distant metastasis-free survival according to (C) modiﬁed grade after replacing mitosis score with automated MAI, and (D)
+conventional Nottingham tumor grade in the whole cohort.
+Asmaa Ibrahim et al. / Mod Pathol 37 (2024) 100416
+10
+Supplementary Material
+The online version contains supplementary material available
+at https://doi.org/10.1016/j.modpat.2023.100416
+References
+1. Halabi S, Owzar K. The importance of identifying and validating prognostic
+factors
+in
+oncology.
+Semin
+Oncol.
+2010;37(2):e9ee18.
+https://doi.org/
+10.1053/j.seminoncol.2010.04.001
+2. van Diest PJ, van der Wall E, Baak JP. Prognostic value of proliferation in
+invasive breast cancer: a review. J Clin Pathol. 2004;57(7):675e681. https://
+doi.org/10.1136/jcp.2003.010777
+3. van Diest PJ, Brugal G, Baak JP. Proliferation markers in tumours: interpre-
+tation and clinical value. J Clin Pathol. 1998;51(10):716e724. https://doi.org/
+10.1136/jcp.51.10.716
+4. Rakha EA, Reis-Filho JS, Baehner F, et al. Breast cancer prognostic classiﬁca-
+tion in the molecular era: the role of histological grade. Breast Cancer Res.
+2010;12(4):207. https://doi.org/10.1186/bcr2607
+5. Rakha EA, El-Sayed ME, Lee AH, et al. Prognostic signiﬁcance of Nottingham
+histologic grade in invasive breast carcinoma. J Clin Oncol. 2008;26(19):
+3153e3158. https://doi.org/10.1200/JCO.2007.15.5986
+6. Baak JP. Mitosis counting in tumors. Hum Pathol. 1990;21(7):683e685.
+https://doi.org/10.1016/0046-8177(90)90026-2
+7. Jahn SW, Plass M, Moinfar F. Digital pathology: advantages, limitations and
+emerging perspectives. J Clin Med. 2020;9(11). https://doi.org/10.3390/
+jcm9113697
+8. Cree IA, Tan PH, Travis WD, et al. Counting mitoses: SI(ze) matters. Mod
+Pathol. 2021;34(9):1651e1657. https://doi.org/10.1038/s41379-021-00825-7
+9. Aubreville M, Stathonikos N, Bertram CA, et al. Mitosis domain generalization
+in histopathology imagesdthe MIDOG challenge. Med Image Anal. 2023;84,
+102699. https://doi.org/10.1016/j.media.2022.102699
+10. Wang X, Zhang J, Yang S, et al. A generalizable and robust deep learning
+algorithm for mitosis detection in multicenter breast histopathological im-
+ages. Med Image Anal. 2023;84:102703. https://doi.org/10.1016/j.media.
+2022.102703
+11. Sarli G, Benazzi C, Preziosi R, et al. Evaluating mitotic activity in canine and
+feline
+solid
+tumors:
+standardizing
+the
+parameter.
+Biotech
+Histochem.
+1999;74(2):64e76. https://doi.org/10.3109/10520299909066480
+12. Tan PH, Ellis I, Allison K, et al. WHO classiﬁcation of tumours editorial board
+the 2019 World Health Organization classiﬁcation of tumours of the breast.
+Histopathology. 2020;77(2):181e185. https://doi.org/10.1111/his.14091
+13. van Diest PJ, Baak JP, Matze-Cok P, et al. Reproducibility of mitosis counting
+in 2,469 breast cancer specimens: results from the Multicenter Morpho-
+metric Mammary Carcinoma Project. Hum Pathol. 1992;23(6):603e607.
+https://doi.org/10.1016/0046-8177(92)90313-r
+14. Ibrahim A, Lashen AG, Katayama A, et al. Deﬁning the area of mitoses
+counting in invasive breast cancer using whole slide image. Mod Pathol.
+2022;35(6):739e748. https://doi.org/10.1038/s41379-021-00981-w
+15. Yadav KS, Gonuguntla S, Ealla KK, et al. Assessment of interobserver vari-
+ability in mitotic ﬁgure counting in different histological grades of oral
+squamous cell carcinoma. J Contemp Dent Pract. 2012;13(3):339e344. https://
+doi.org/10.5005/jp-journals-10024-1148
+16. Balkenhol MC, Tellez D, Vreuls W, et al. Deep learning assisted mitotic
+counting for breast cancer. Lab Invest. 2019;99(11):1596e1606. https://
+doi.org/10.1038/s41374-019-0275-0
+17. Tabata K, Uraoka N, Benhamida J, et al. Validation of mitotic cell quantiﬁca-
+tion via microscopy and multiple whole-slide scanners. Diagn Pathol.
+2019;14(1):65. https://doi.org/10.1186/s13000-019-0839-8
+18. Rakha EA, Martin S, Lee AHS, et al. The prognostic signiﬁcance of lympho-
+vascular invasion in invasive breast carcinoma. Cancer. 2012;118(15):
+3670e3680. https://doi.org/10.1002/cncr.26711
+19. Aleskandarany MA, Abduljabbar R, Ashankyty I, et al. Prognostic signiﬁcance
+of androgen receptor expression in invasive breast cancer: transcriptomic
+and protein expression analysis. Breast Cancer Res Treat. 2016;159(2):
+215e227. https://doi.org/10.1007/s10549-016-3934-5
+20. Rakha EA, Agarwal D, Green AR, et al. Prognostic stratiﬁcation of oestrogen
+receptor-positive HER2-negative lymph node-negative class of breast cancer.
+Histopathology. 2017;70(4):622e631. https://doi.org/10.1111/his.13108
+21. Rakha EA, Elsheikh SE, Aleskandarany MA, et al. Triple-negative breast can-
+cer: distinguishing between basal and nonbasal subtypes. Clin Cancer Res.
+2009;15(7):2302e2310. https://doi.org/10.1158/1078-0432.CCR-08-2132
+22. Muftah AA, Aleskandarany MA, Al-Kaabi MM, et al. Ki67 expression in
+invasive breast cancer: the use of tissue microarrays compared with whole
+tissue sections. Breast Cancer Res Treat. 2017;164(2):341e348. https://
+doi.org/10.1007/s10549-017-4270-0
+23. Wolff AC, Hammond MEH, Hicks DG, et al. Recommendations for human
+epidermal growth factor receptor 2 testing in breast cancer: American So-
+ciety of Clinical Oncology/College of American Pathologists Clinical Practice
+Guideline Update. J Clin Oncol. 2013;31(31):3997e4013. https://doi.org/
+10.1200/JCO.2013.50.9984
+24. Urruticoechea A, Smith IE, Dowsett M. Proliferation marker Ki-67 in early
+breast cancer. J Clin Oncol. 2005;23(28):7212e7220. https://doi.org/10.1200/
+JCO.2005.07.501
+25. Goldhirsch A, Wood WC, Coates AS, et al. Strategies for subtypes–dealing
+with the diversity of breast cancer: highlights of the St. Gallen International
+Expert Consensus on the Primary Therapy of Early Breast Cancer 2011. Ann
+Oncol. 2011;22(8):1736e1747. https://doi.org/10.1093/annonc/mdr304
+26. Wang Z, Jensen MA, Zenklusen JC. A practical guide to the cancer genome
+atlas (TCGA). Methods Mol Biol. 2016;1418:111e141. https://doi.org/10.1007/
+978-1-4939-3578-9_6
+27. Jensen MA, Ferretti V, Grossman RL, Staudt LMe. The NCI Genomic Data
+Commons as an engine for precision medicine. Blood. 2017;130(4):453e459.
+https://doi.org/10.1182/blood-2017-03-735654
+28. Kent WJ, Sugnet CW, Furey TS, et al. The human genome browser at UCSC.
+Genome Res. 2002;12(6):996e1006. https://doi.org/10.1101/gr.229102
+29. Karolchik D, Kuhn RM, Baertsch R, et al. The UCSC genome browser database:
+2008 update. Nucleic Acids Res. 2008;36(Database issue):D773eD779. https://
+doi.org/10.1093/nar/gkm966
+30. Cerami E, Gao J, Dogrusoz U, et al. The cBio cancer genomics portal: an open
+platform for exploring multidimensional cancer genomics data. Cancer
+Discov.
+2012;2(5):401e404.
+https://doi.org/10.1158/2159-8290.CD-12-
+0095
+31. Wahab N, Miligy IM, Dodd K, et al. Semantic annotation for computational
+pathology: multidisciplinary experience and best practice recommendations.
+J Pathol Clin Res. 2022;8(2):116e128. https://doi.org/10.1002/cjp2.256
+32. Ibrahim A, Lashen A, Toss M, Mihai R, Rakha E. Assessment of mitotic activity
+in breast cancer: revisited in the digital pathology era. J Clin Pathol.
+2022;75(6):365e372. https://doi.org/10.1136/jclinpath-2021-207742
+33. Lashen A, Ibrahim A, Katayama A, et al. Visual assessment of mitotic ﬁgures in
+breast cancer: a comparative study between light microscopy and whole
+slide images. Histopathology. 2021;79(6):913e925. https://doi.org/10.1111/
+his.14543
+34. Jahanifar M, Shephard A, Zamanitajeddin N, et al. Stain-robust mitotic
+ﬁgure detection for MIDOG 2022 challenge. arXiv preprint arXiv. 2022,
+2208.12587.
+35. Koohbanani NA, Jahanifar M, Tajadin NZ, Rajpoot N. NuClick: a deep learning
+framework for interactive segmentation of microscopic images. Med Image
+Anal. 2020;65, 101771. https://doi.org/10.1016/j.media.2020.101771
+36. Pocock J, Graham S, Vu QD, et al. TIAToolbox as an end-to-end library for
+advanced tissue image analytics. Commun Med (Lond). 2022;2:120. https://
+doi.org/10.1038/s43856-022-00186-5
+37. Graham S, Vu QD, Raza SEA, et al. Hover-Net: simultaneous segmentation and
+classiﬁcation of nuclei in multi-tissue histology images. Med Image Anal.
+2019;58, 101563. https://doi.org/10.1016/j.media.2019.101563
+38. Salgado R, Denkert C, Demaria S, et al. The evaluation of tumor-inﬁltrating
+lymphocytes (TILs) in breast cancer: recommendations by an International
+TILs Working Group 2014. Ann Oncol. 2015;26(2):259e271. https://doi.org/
+10.1093/annonc/mdu450
+39. Camp RL, Dolled-Filhart M, Rimm DL. X-tile: a new bio-informatics tool for
+biomarker assessment and outcome-based cut-point optimization. Clin
+Cancer
+Res.
+2004;10(21):7252e7259.
+https://doi.org/10.1158/1078-
+0432.CCR-04-0713
+40. Davenport T, Kalakota R. The potential for artiﬁcial intelligence in healthcare.
+Future Healthc J. 2019;6(2):94e98. https://doi.org/10.7861/futurehosp.6-2-94
+41. Ibrahim A, Gamble P, Jaroensri R, et al. Artiﬁcial intelligence in digital breast
+pathology: techniques and applications. Breast. 2020;49:267e273. https://
+doi.org/10.1016/j.breast.2019.12.007
+42. Pantanowitz L, Hartman D, Qi Y, et al. Accuracy and efﬁciency of an artiﬁcial
+intelligence tool when counting breast mitoses. Diagn Pathol. 2020;15(1):
+80e80. https://doi.org/10.1186/s13000-020-00995-z
+43. Bostock DE. Prognosis after surgical excision of canine melanomas. Vet Pathol.
+1979;16(1):32e40. https://doi.org/10.1177/030098587901600103
+44. Wilcock BP, Peiffer Jr RL. Morphology and behavior of primary ocular mela-
+nomas in 91 dogs. Vet Pathol. 1986;23(4):418e424. https://doi.org/10.1177/
+030098588602300411
+45. Jannink I, Risberg B, Van Diest PJ, Baak JP. Heterogeneity of mitotic activity in
+breast cancer. Histopathology. 1996;29(5):421e428. https://doi.org/10.1046/
+j.1365-2559.1996.d01-509.x
+46. Wang M, Aung PP, Prieto VG. Standardized method for deﬁning a 1-mm2
+region of interest for calculation of mitotic rate on melanoma whole slide
+images. Arch Pathol Lab Med. 2021;145(10):1255e1263. https://doi.org/
+10.5858/arpa.2020-0137-OA
+47. Quinn CM, Wright NA. Mitosis counting. In: Hall PA, Levison DA, Wright NA, eds.
+Assessment of Cell Proliferation in Clinical Practice. Springer Japan; 1992:83e94.
+48. Woosley JT. Measuring cell proliferation. Arch Pathol Lab Med. 1991;115(6):
+555e557.
+49. Hall PA, Levison DA. Review: assessment of cell proliferation in histological
+material.
+J
+Clin
+Pathol.
+1990;43(3):184e192.
+https://doi.org/10.1136/
+jcp.43.3.184
+50. Amin MB, Ma CK, Linden MD, Kubus JJ, Zarbo RJ. Prognostic value of prolif-
+erating cell nuclear antigen index in gastric stromal tumors. Correlation with
+mitotic count and clinical outcome. Am J Clin Pathol. 1993;100(4):428e432.
+https://doi.org/10.1093/ajcp/100.4.428
+Asmaa Ibrahim et al. / Mod Pathol 37 (2024) 100416
+11
+51. Graem N, Helweg-Larsen K. Mitotic activity and delay in ﬁxation of tumour
+tissue. The inﬂuence of delay in ﬁxation on mitotic activity of a human
+osteogenic sarcoma grown in athymic nude mice. Acta Pathol Microbiol Scand
+A 87a:375-8. 1979;87A(5):375e378.
+52. O'Leary TJ, Steffes MW. Can you count on the mitotic index? Hum Pathol.
+1996;27(2):147e151. https://doi.org/10.1016/s0046-8177(96)90367-6
+53. Saldanha G, Ali R, Bakshi A, et al. Global and mitosis-speciﬁc interobserver
+variation in mitotic count scoring and implications for malignant melanoma
+staging.
+Histopathology.
+2020;76(6):803e813.
+https://doi.org/10.1111/his.
+14052
+54. Simpson JF, Dutt PL, Page DL. Expression of mitoses per thousand cells and
+cell density in breast carcinomas: a proposal. Hum Pathol. 1992;23(6):
+608e611. https://doi.org/10.1016/0046-8177(92)90314-s
+55. Chieco P, Pagnoni M, Romagnoli E, Melchiorri C. A rapid and simple staining
+method, using toluidine blue, for analysing mitotic ﬁgures in tissue sections.
+Histochem J. 1993;25(8):569e577. https://doi.org/10.1007/BF02388065
+56. van Bergeijk SA, Stathonikos N, Ter Hoeve ND, et al. Deep learning supported
+mitoses counting on whole slide images: a pilot study for validating breast
+cancer grading in the clinical workﬂow. J Pathol Inform. 2023;14, 100316.
+https://doi.org/10.1016/j.jpi.2023.100316
+Asmaa Ibrahim et al. / Mod Pathol 37 (2024) 100416
+12

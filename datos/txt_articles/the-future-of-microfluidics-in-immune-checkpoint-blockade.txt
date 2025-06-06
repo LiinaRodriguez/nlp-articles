@@ -1,0 +1,1554 @@
+Cancer Gene Therapy
+https://doi.org/10.1038/s41417-020-00248-7
+REVIEW ARTICLE
+The future of microﬂuidics in immune checkpoint blockade
+Jonathan Briones1
+●Wilfred Espulgar1
+●Shohei Koyama2
+●Hyota Takamatsu2
+●Eiichi Tamiya3,4
+●Masato Saito
+1,3
+Received: 2 June 2020 / Revised: 2 October 2020 / Accepted: 9 October 2020
+© The Author(s) 2020. This article is published with open access
+Abstract
+Recent advances in microﬂuidic techniques have enabled researchers to study sensitivities to immune checkpoint therapy, to
+determine patients’ response to particular antibody treatment. Utilization of this technology is helpful in antibody discovery
+and in the design of personalized medicine. A variety of microﬂuidic approaches can provide several functions in processes
+such as immunologic, genomic, and/or transcriptomic analysis with the aim of improving the efﬁcacy and coverage of
+immunotherapy, particularly immune checkpoint blockade (ICB). To achieve this requires researchers to overcome the
+challenges in the current state of the technology. This review looks into the advancements in microﬂuidic technologies
+applied to researches on immune checkpoint blockade treatment and its potential shift from proof-of-principle stage to
+clinical application.
+Introduction
+Cancer immunotherapy (CIT) is a promising anticancer
+treatment strategy with more efﬁcient survival rate and
+lesser adverse effect than conventional treatments such as
+surgery, radiotherapy, chemotherapy, and molecular tar-
+geted therapy [1]. The increasing demand for immu-
+notherapeutics in clinical research as well as in hospital and
+clinics has fueled a market growth with a USD 242.86
+billion forecast by 2026 [2]. The immune system has the
+ability to recognize and kill cancer cells without toxicity to
+normal and healthy ones [3]. This treatment approach dates
+back to the late 1800s but immunotherapy’s major break-
+throughs in understanding the mechanisms in full T-cell
+activation and tumor-induced immunosuppression came
+about in the last decade [1, 4]. At present, immunotherapy is
+an established strategy and has become a new standard of
+care in clinical treatments with unprecedented survival
+improvements to patients with advanced-stage tumors
+[5, 6].
+Although signiﬁcant responses have been recorded, not
+all patients beneﬁt from the treatment approach because of
+the immune system’s diversity and dynamic nature, together
+with inter- and intratumor heterogeneity. Tumors can adapt,
+mutate, and escape immune surveillance [3]. The efﬁcacy of
+immunotherapeutics in modulating cancer progression is
+still lacking for most human cancers [4]. The small number
+of success of CIT agents poses a challenge to clinicians and
+researchers [7–9]. For instance, only 12.46% of US patients
+were reported in 2018 to respond to checkpoint inhibitor
+drugs [10]. Overall, about 20–40% of cancer patients were
+found to respond to immunotherapy [11]. To further
+improve the treatment effectiveness and patient response
+rates, more speciﬁc biomarkers and immune checkpoint
+inhibitors are needed to be identiﬁed. This would require
+better predictive tools and assays for careful screening of
+responders to immunotherapy [1].
+Microﬂuidic platforms have the capacity to address the
+needs and challenges facing CIT. These tools are capable of
+single-cell
+analysis,
+mimic
+tumor
+microenvironment
+(TME), and perform real-time measurement. Microﬂuidic
+technology provides high precision of liquid manipulation
+that conventional bench-top approaches cannot perform
+[12, 13]. Among other advantages include reduced size of
+operating systems, reagent consumption, waste production,
+and power requirement, while at the same time having more
+speed in analysis and ﬂexibility in design. For example, a
+* Masato Saito
+saitomasato@ap.eng.osaka-u.ac.jp
+1
+Graduate School of Engineering, Osaka University, Suita,
+Osaka 565-0871, Japan
+2
+Graduate School of Medicine, Osaka University, Suita,
+Osaka 565-0871, Japan
+3
+AIST PhotoBIO-OIL, Osaka University, Suita, Osaka 565-0871,
+Japan
+4
+The Institute of Scientiﬁc and Industrial Research, Osaka
+University, Suita, Osaka 565-0871, Japan
+1234567890();,:
+1234567890();,:
+microﬂuidic platform for exosome analysis can increase the
+assay sensitivity and reduce assay time and sample
+requirement by at least two orders of magnitude [14].
+Conventional bulk methods, meanwhile, are limited in
+terms of depth and dimensionality of data, as it does not
+take into account the phenotypic and functional states of
+heterogenous cells [3, 15]. On the other hand, microﬂuidics
+technology for single-cell analysis has the ability to address
+complex immunological issues. Thus, it is capable of
+identifying rare cell subsets and resolution between cells
+with identical expression patterns.
+A variety of microﬂuidic approaches can provide several
+functions in processes such as immunologic, genomic, and/
+or transcriptomic analysis with the aim of improving the
+efﬁcacy and coverage of immunotherapy. These devices
+have shown great promise in proﬁling TME, identifying
+biomarkers in biopsies and revealing the biomarkers’ role in
+triggering
+or
+arresting
+antitumor
+immune
+response.
+Advancements in microﬂuidic techniques have also enabled
+researches to study sensitivities to immune checkpoint
+blockade (ICB) and help clinicians design personalized
+medicine [12].
+In this review, we highlight immune checkpoint block-
+ade in CIT and particularly discuss various microﬂuidic
+platforms, both clinically approved and proof-of-concept
+devices, and their applications in disease monitoring. We
+look into the platforms’ capability in single-cell proﬁling
+and small conditional RNA (scRNA) sequencing. We also
+talk about microﬂuidic technologies developed to discover
+and evaluate immune checkpoint inhibitors, test the efﬁcacy
+of immune checkpoint blockade therapies, and monitor
+treatment response. Finally, we discuss the future outlook of
+microﬂuidic technology applications in immune checkpoint
+blockade and its potential shift from proof-of-principle
+stage to clinical application.
+Immunotherapy and the TME
+CIT is a promising cancer treatment strategy that utilizes the
+body’s ability to launch an immune response, primarily
+targeting the immune system or TME [16]. At present,
+immunotherapy is an established strategy and has become a
+new standard of care in clinical treatments with unprece-
+dented survival improvements to patients with advanced
+stage tumors [5, 6]. For example, signiﬁcant results have
+been reported on metastasis reduction in melanoma and
+kidney cancer patients under immunotherapies. Complete
+response was also achieved with the use of high-dose
+interleukin (IL)-2 [7, 17]. Use of CTLA‑4 antibody-based
+drug has also been reported to clear 22% of patients with
+advanced late‑stage melanoma [18].
+Although signiﬁcant responses have been recorded, not
+all patients beneﬁt from the treatment approach because of
+the immune system’s diversity and dynamic nature together
+with inter- and intratumor heterogeneity. These limitations
+lead to the use of combination strategies and quest for
+biomarkers and receptor routes that can destroy a wide
+range of cancers in all patients [5, 6, 19]. Novel biomarkers
+including speciﬁc mutations and immune function markers,
+together with monitoring and evaluation of the TME
+through new strategies, can improve early diagnosis and
+therapeutic efﬁcacy prediction that are necessary to select
+the patients who can get the therapeutic beneﬁt.
+Targeting or modulating the TME has caught the atten-
+tion of clinicians, as this microenvironment plays an
+important role in suppressing antitumor immunity with its
+signiﬁcant heterogeneity [16]. This cellular niche, which is
+made up of tumor cells, ﬁbroblasts, tumor-inﬁltrating
+immune
+cells,
+signaling
+molecules,
+cancer-associated
+ﬁbroblasts, tumor vasculature, and extracellular matrix,
+takes part in tumor development, progression, and recur-
+rence. This makes proﬁling TME an important topic for
+research in regulating tumor response for improved immu-
+notherapy efﬁcacy for multiple types of cancers [16, 20].
+There are several therapeutic strategies being used and/or
+explored to date. Some Immunotherapies block inhibitory
+pathways and immunosuppressive cells in the TME to
+intensify antitumor immunity. This is done with the use of
+monoclonal antibodies (mAbs) and checkpoint inhibitors
+(i.e., anti-cytotoxic T-lymphocyte-associated antigen 4
+(CTLA-4), anti-programmed cell death protein 1 (PD-1),
+and anti-programmed death ligand 1 (PD-L1)), as well as
+genetically modiﬁed immune cells via adoptive cell transfer
+(i.e., chimeric antigen receptor, T-cell receptor engineered
+T cells). Other therapies kill cancer cells by boosting the
+immune system using cytokines (i.e., IL-2, Janus kinase
+inhibitors), cancer vaccines (i.e., cancer cell antigen, peptide
+vaccines, and genetic or viral vaccines), or a combination of
+therapies [3].
+Even though immunotherapy strategies have delivered
+unprecedented responses from patients with advanced-stage
+tumors, the problem with limited clinical response persists.
+The small number of success of CIT agents poses a chal-
+lenge to clinicians and researchers [7–9]. For example,
+immune checkpoint antagonists targeting the PD-1 pathway
+has a response rate of about 20–30% across tumor types.
+Positive objective response rates (ORRs) from patients
+under immune checkpoint blockade treatment were reported
+on malignancies, 20% on gastric cancer, 12–25% on head
+and neck squamous cell carcinoma, 20% on ovarian cancer,
+15% on small-cell lung cancer, 20% on triple-negative
+breast cancer, 25% on urothelial carcinoma, and 65–85%
+on Hodgkin’s lymphoma [7, 21, 22]. Combination of
+J. Briones et al.
+CTLA-4- and PD-1-blocking antibodies resulted in 40%
+ORR across all doses [11].
+Monitoring cell heterogeneity
+To have a more potent therapy and achieve complete
+response, it is necessary to study the immune cell compo-
+nents, its heterogeneity, and interaction with cancer in
+arresting or promoting the latter’s progression, so as to
+understand the immune effector mechanisms. Conventional
+technologies that uses bulk samples are limited in terms of
+depth and dimensionality of data. This is because bulk
+analysis of immune cell populations only gives information
+on the average immune response without taking into
+account the phenotypic and functional states of these het-
+erogenous cells and its intercellular signaling with other cell
+subsets [3, 15]. This means that identiﬁcation of rare cell
+types and resolution between cells with identical expression
+patterns are not covered [15].
+Monitoring the behavior of each immune cells has
+resulted to discoveries of several biological functions that
+were not observed in bulk analysis. This single-cell analysis
+provides information on genotype, phenotype, protein
+secretion, proliferation, maturation, activation, signaling
+pathways of each activated cell, and the intercellular com-
+munication among different immune cells [3, 13]. For
+example, proﬁling individual tumor cells can provide
+insights into its cellular behavior, which could result to
+identiﬁcation of more potent drugs and improve the
+response rates of patients to therapies [23].
+At present, many researches are being conducted on
+single-cell analysis with focus on technology development
+to provide new tools for novel immunotherapies, point-of-
+care diagnostics, cell proﬁling and drug screening. These
+approaches address complex immunological issues that
+conventional bulk methods fail to address. The design and
+development of point-of-care devices, serving as alternative
+clinical tools, allows for monitoring and proﬁling of com-
+plex heterogenous cellular and molecular activities with the
+aim of improving response prediction and treatment opti-
+mization [13, 24].
+Microﬂuidic technology
+Among these technologies, the use of microﬂuidic plat-
+forms is popular. For the past several years, it has shown
+advantages by providing miniaturized devices with fast
+isolation speeds and high efﬁciency that allows acquisition
+of more information from single cells at higher resolution. It
+can be integrated into multiple workﬂows, which allows
+parallelization and streamlining of complex protocols with
+minimal sample and reagent volume requirement. Micro-
+ﬂuidic
+technology
+provides
+high
+precision
+of
+liquid
+manipulation that conventional bench-top approaches can-
+not perform [12, 13]. Automation and control of analytical
+functions, manipulation of cells, its environment and
+intercellular activity, mapping distinct immune cell subsets,
+as well as simultaneous detection and quantiﬁcation of a
+number of secreted molecules (multiplexing) are possible in
+the design of these platforms [13, 22].
+For instance, the microﬂuidic platform developed by
+Merouane et al. [25] called time-lapse imaging microscopy
+in nanowell grids uses sub-nanoliter wells and live-cell
+microscopy to dynamically monitor cell-to-cell interactions
+between immune effector cells and tumors cells, as well as
+its cytotoxicity, cell motility, and cell survival. Using
+ﬂuorescent labeled human T cells, natural killer (NK) cells
+and target cells (NALM6, K562, and EL4), the said plat-
+form was able to do automated quantiﬁcation of cell loca-
+tion, morphology, movement, and death without manual
+proofreading [22, 25]. Such high-throughput operation is
+advantageous over conventional techniques, which handles
+10–100 representative cell pairs, as many biologically sig-
+niﬁcant cellular subpopulations and biotechnologically
+relevant protein secreting cells are rare.
+Another microﬂuidic platform used for monitoring of
+single-cell pair activity and protein secretion is the single-
+cell barcoding chip (SCBC) that was developed by the
+Heath group. SCBC contains arrays of microwells and sets
+of immobilized barcode-like patterned capture antibody for
+proteins and other detections. This chip is capable of mul-
+tiple protein quantiﬁcation from the same cell using ﬂuor-
+escent sandwich immunoassay readout [26, 27]. Requiring
+only a small amount of sample, the SCBC can accom-
+modate up to around 40 plex protein detection from a
+single-cell [22]. A similar concept is the beads-on-barcode
+antibody microarray (BOBarray) by Yang et al. [22, 28] and
+the work of Armbrecht et al. [23] on single-cell protein
+proﬁling with barcode beads. In these works, ﬂuorescently
+barcoded beads are either immobilized on glass surface and
+positioned on top of microwell (BOBarray) or co-captured
+in a microwell, together with the cell of interest, using a
+magnet. The BOBarray made use of different bead sizes and
+colors to encode 12 different proteins and characterize the
+organ-of-origin and drug targets of rare tumor cells isolated
+from blood samples. Meanwhile, the platform of Armbrecht
+et al. [23] was able to perform on-chip immunoassay and
+multiplexed
+single-cell protein
+quantiﬁcation
+of three
+mammalian cell lines (MCF-7, HEK-293T, and SK-BR-3
+cells). In using the barcoded beads, the limits on ﬂexibility,
+processing time, and occurrence of background signal when
+unprocessed are avoided.
+The future of microﬂuidics in immune checkpoint blockade
+Applications in therapy assessment and disease
+monitoring
+Currently, there are a number of ﬂuidic devices that have
+been developed and/or clinically approved for pre-screen-
+ing, diagnostic, prognostic, therapy assessment, and mon-
+itoring of the disease. One of the Food and Drug
+Administration (FDA)-approved ﬂuidic technologies is
+CellSearch (Menarini-Silicon Biosystems, Bologna, Italy),
+shown in Fig. 1-I. A gold standard for circulating tumor cell
+(CTC) enrichment, this device detects and quantiﬁes CTCs
+of epithelial origin (CD45−, EpCAM+, and cytokeratins 8,
+18+, and/or 19+) in the whole blood of metastatic breasts,
+prostate, and colorectal cancer patients. Using antibody
+coated magnetic particles to target epithelial cell adhesion
+molecule (EpCAM), the amount of detected CTC, against a
+predetermined threshold, can be used to predict prognosis
+and assess progression-free survival and overall survival
+J. Briones et al.
+[12, 29, 30]. Janning et al. [31] and Nicolazzo et al. [32],
+e.g., have used CellSearch in investigating the role of PD-
+L1+ CTCs in the clinical setting. The group of Janning
+compared EpCAM-based (CellSearch®) system to epitope-
+independent method (ParsortixTM system) in assessing PD-
+L1 expression of CTCs from non-small-cell lung carcinoma
+(NSCLC) patients. Meanwhile, Nicolazzo et al. [32] used
+CellSearch in analyzing CTCs from NSCLC patient treated
+with Nivolumab [31–33].
+Another microﬂuidic device for CTC enrichment is the
+IsoFlux system (Fluxion Biosciences, Alameda, California,
+USA), shown in Fig. 1-II. Combining antibody-based
+magnetic bead separations with ﬂow cytometry precision,
+Isoﬂux claims to have higher sensitivity in CTC identiﬁ-
+cation from carcinoma patients as compared to CellSearch
+[12, 34]. For instance, Isoﬂux enrichment system and CTC
+isolation platform were used by Po et. [35] to aid their study
+on screening PD-L1 levels induced from liquid biopsies
+(melanoma CTCs), though targeted CTC isolation and
+speciﬁc immunostaining-based CTC identiﬁcation com-
+bined with PD-L1 detection.
+Similarly, NanoVelcro (Fig. 1-III) is a microﬂuidic chip
+for CTC identiﬁcation, capture, and release. The device,
+however, makes use of nanowires coated with anti-EpCAM
+antibody where the tumor cells stick on. Once captured,
+cytokeratin/ CD45/4′,6-diamidino-2-phenylindole staining
+can be performed to determine putative CTCs. The Nano-
+Velcro device allows the analysis of tumor speciﬁc RNA
+markers by purifying CTC without damaging RNA tran-
+scripts [12, 36]. Antibody-based Nanovelcro microﬂuidic
+chip have been used by Winograd et al. [37] to evaluate the
+feasibility of isolating and detecting CTC-expressing PD-L1
+in patients with HCC. With the aid of the multi-marker
+antibody-based CTC capture device, they evaluated the PD-
+L1 expression in HCC CTCs and its association with HCC
+tumor stage, and the prognostic impact and predictive
+ability of PD-L1+ CTCs to immunotherapy treatment
+response [37].
+Other than CTC, immune-afﬁnity microﬂuidic devices
+have been applied to capture exosomes in liquid biopsy, as
+it is believed to promote remodeling of distant, metastasis
+organs. One of these is the ExoSearch chip (Fig. 1-IV),
+which is capable of capturing blood plasma exosomes and
+perform multi-marker probing for ovarian cancer. The
+microﬂuidic method allows enriched blood plasma exosome
+preparation for in situ, multiplexed detection and measure-
+ment of exosomal tumor markers (CA-125, EpCAM,
+CD24) using immunomagnetic beads [12, 38]. Likewise,
+ExoChip (functionalized with antibodies against CD63) is
+capable of on-chip isolation, detection, quantiﬁcation, as
+well as recovery of exosomes with intact RNA for
+exosomal-microRNA proﬁling via openarray analysis (Fig.
+1-V)
+[39].
+nPLEX-
+nano-plasmonic
+exosome
+sensor
+(functionalized CD24, CD63, and EpCAM) can perform
+simultaneous isolation and surface plasmon resonance
+(SPR)-based multiplexed detection of ovarian cancer-
+derived EpCAM (+) and CD24 (+) relative to CD63(+)
+exosomes (Fig. 1-VI) [40, 41].
+Capture and measurement of exosomes or exosomal
+tumor markers (i.e., exosomal PD-L1) using these micro-
+ﬂuidic platforms would be beneﬁcial in identifying response
+to therapeutics that block exosome production. For instance,
+exosomes derived from lung cancer cells that expresses PD-
+L1 has a role in immune escape and tumor growth pro-
+motion [42]. This is because exosomes have the ability to
+impair immune functions through cytokine production
+reduction and CD8+ T-cell apoptosis induction [43]. Thus,
+use of this technology and clinical application would pro-
+vide useful insight in cancer management and immune
+checkpoint blockade, in particular.
+Microﬂuidics and scRNA sequencing
+One of the great challenges in cancer therapy is the intra-
+tumoral heterogeneity, which allows cancer evolution and
+therapeutics evasion. Analysis of CTCs in blood, e.g., has
+the potential to use DNA as clinical diagnostic marker.
+Fig. 1 Microﬂuidic devices developed for therapy assessment and
+disease monitoring. I Schematic diagram of the CellSearch system
+technology for detection and enumeration of CTCs from peripheral
+blood. Magnetic iron nanoparticles coated with anti-EpCAM antibody
+are used to give magnetic properties to epithelial cells. Anti-CK and
+anti-CD45 ﬂuorescent antibodies are used to discriminate target cells.
+CTC are separated using a strong magnetic ﬁeld and counted by digital
+ﬂuorescent microscopy [Reproduced from ref. [30] with permission
+from the Frontiers in Oncology, Frontiers Research Foundation]. II
+Illustration of the IsoFlux device for CTC isolation, showing its parts
+and ﬂow path [Reprinted from ref. [34], Copyright (2013), with per-
+mission from Elsevier]. III Diagram of the NanoVelcro CTC chip
+showing the features and improvements through four generations
+[Reprinted from ref. [36], Copyright (2018), with permission from
+Elsevier]. IV Image of ExoSearch and illustration of its workﬂow:
+mixing, isolation, and in situ, multiplexed detection of circulating
+exosomes [Reproduced from Ref. [32] with permission from the Royal
+Society of Chemistry]. V ExoChip design and features (A). Illustration
+of single channel and its dimensions (B). A twelve-channel chip for
+simultaneous analysis of multiple samples (C). Image of the poly-
+dimethylsiloxane (PDMS)-based ExoChip prototype showing the ﬂow
+of serum for exosomes capture [Republished with permission of Royal
+Society of Chemistry, from ref. [36]; permission conveyed through
+Copyright Clearance Center, Inc.]. VI nPLEX technology for label-
+free detection of exosomes (A). A graph illustrating the changes in
+transmission spectra showing exosome detection with nPLEX. Anti-
+body conjugation and speciﬁc exosome binding were monitored by
+transmission spectral shifts (B). Enhanced electromagnetic ﬁelds
+tightly conﬁned near a periodic nanohole surface shown as ﬁnite-
+difference time-domain simulation (C). SEM image of the periodic
+nanoholes (diameter = 200 nm, periodicity = 450 nm) in the nPLEX
+sensor (D). Image of nPLEX imaging system [Reprinted by permission
+from Springer Nature Customer Service Centre GmbH: Springer
+Nature, Nature Biotechnology (ref. [41], Copyright (2014)].
+The future of microﬂuidics in immune checkpoint blockade
+In these cases, scRNA-seq can be applied to discover
+unknown tumor features and generate cancer evolution
+models through assessment of transcriptional heterogeneity
+and analysis of expression proﬁles for speciﬁc pathways.
+With these means, coding mutations and fusion genes can
+be discovered from CTCs and other phenotypic con-
+sequences of DNA and RNA variants [44]. Therefore,
+CTCs are important noninvasive source of clinical infor-
+mation, which can provide access to complete transcriptome
+and proteome, as well as insights into biomarker char-
+acterization, early cancer diagnostics and cancer develop-
+ment
+evaluation,
+and
+therapeutic
+efﬁcacy
+prognosis
+[45, 46]. In contrast, conventional biopsy is invasive, poses
+a challenge in accessing tumor sites (i.e., inside lungs or
+brain), and may have negative impact on patient compliance
+[46]. The development of microﬂuidic platforms, mean-
+while, provides a noninvasive means for CTC isolation. It is
+more convenient, accurate, and harmless to patients [45].
+Integration of multistep isolation procedures and advanced
+nanotechnologies can be done for higher-performance of
+CTC isolation.
+However, scRNA-seq has some limitations, such as low
+capture efﬁciency and high dropouts, which misses weakly
+expressed genes. The data produced are also nosier and
+more variable in comparison to bulk RNA sequencing
+(RNA-seq). Improving the RNA capture efﬁciency and
+transcript coverage could minimize the noise in scRNA-seq
+protocols [47].
+Advances in microﬂuidics technology has enabled inte-
+gration of scRNA-seg in its platforms. Single-cell isolation
+platforms have attracted researchers because of its low
+sample consumption and analysis cost, as well as its precise
+ﬂuid control, which allows single-cell gene expression
+proﬁles to be quantiﬁed in a highly parallel manner [44].
+Together with the developments in cellular barcoding,
+throughput of scRNA-seq has signiﬁcantly increased with
+microﬂuidics integration [47]. This throughput increase was
+achieved with the improvements in cell-capture techniques
+like in droplet microﬂuidics.
+For example, droplet microﬂuidics was employed by
+Demaree et al. [48] for a high-throughput and low -deviation
+single-cell sequencing (SiC-seq) platform (Fig. 2-I), which is
+capable of separation, ampliﬁcation, and barcoding of the
+single-cell genome [49]. Another high-throughput scRNA-
+seq platform is the Microwell-seq (Fig. 2-II) by Han et al.
+[50]. The said platform improved the detection abundance at
+a lower cost as compared to oil droplet techniques [49, 50].
+Meanwhile, Habib et al. [51] developed a droplet micro-
+ﬂuidic platform (DroNc-seq) integrated with single-cell
+nuclear RNA-seq, which provides a low-cost, high-sensi-
+tive, and high-efﬁciency cell classiﬁcation (Fig. 2-III) [49].
+Future microﬂuidic platforms should also be capable of
+not only CTC isolation but also ctDNA and exosome
+enrichment, as it enables complementary approaches to
+cancer heterogeneity understanding and development of
+personalized treatments. For example, measurement of
+ctDNA and exosome levels could be used as predictive
+biomarker in patients under ICB treatment [52]. The
+advancements in microﬂuidic technologies mentioned above
+can provide automated and high-throughput clinical valida-
+tion needed for a more effective personalized medicine.
+Role of microﬂuidics in immune checkpoint
+blockade
+Immune checkpoint blockade
+The discovery of the underlying mechanisms that prevents
+the immune system from attacking tumors by Dr. James
+Allison and Dr. Tasuku Honjo, 2018 Nobel Prize awardees
+in Physiology or medicine, has led to a cancer therapy by
+inhibition of negative immune regulation [3, 18]. Allison,
+who worked on CTLA-4, a protein that is a negative reg-
+ulator of T-cell activation, discovered that blocking its
+inhibitory effect enhances immune response against tumor
+cells resulting in a signiﬁcant growth reduction or even
+complete tumor rejection. This was demonstrated in an
+in vivo antibody-mediated CTLA-4 blockade using murine
+models. Honjo, on the other hand, discovered PD-1, a
+member of the immunoglobulin gene superfamily [18]. The
+PD-1 receptor is expressed on activated T cells, regulatory
+T cells, B cells, macrophages, and NK cells. Its binding to its
+ligand, PD-L1 or PD-L2 results in the repression of T-cell
+proliferation and cytokine secretion. This mechanism enables
+tumors to evade antigen-speciﬁc T-cell immune response [8].
+Therefore, blocking these proteins with mAbs or immune
+checkpoint inhibitors can enhance antitumor activity of
+T cells, normalize TME, and prevent hematogenous spread
+of tumor cells [7, 16, 51]. Clinical trials have shown the
+potency of this treatment strategy to patients with different
+types of metastatic cancers and have led to approval of
+therapeutic drugs by FDA for use in numerous cancer types,
+consequently conﬁrming the immunotherapy-targeted TME.
+Recent studies on immune checkpoint blockade are
+investigating on antibody-based therapies that target mul-
+tiple inhibitory receptors and other T-cell inhibitory recep-
+tors such as T-cell immunoglobulin domain and mucin
+domain-3, lymphocyte-activation gene 3 (LAG-3), V-
+domain immunoglobulin suppressor of T-cell activation,
+and B- and T-lymphocyte attenuator [53, 54].
+Microﬂuidics in ICB treatment
+From here on, this review will focus on microﬂuidic tech-
+nologies applied to immune checkpoint blockade treatment
+J. Briones et al.
+strategies and how these technologies are helping to shape
+the future of the immune-treatment approach.
+The use of microchannels and chambers in microﬂuidic
+devices enable the precise control of ﬂow and cell distribu-
+tion, which can establish physical (i.e., interstitial pressure) or
+chemical (i.e., cytokines) gradients. This make it a powerful
+tool to study longitudinal monitoring of tumor cell interac-
+tions by mimicking metastatic environment [17]. Replicating
+these environments in vitro, using patient-derived cells, can
+provide information on targeted therapeutic approaches [55].
+Here, microﬂuidic assays can be designed to test the efﬁcacy
+of immune checkpoint blockade therapies or in combination
+with drugs to target immune regulatory pathways in order to
+shed light on the mechanisms that trigger or arrest antitumor
+response. At present, there are a number of studies using
+microﬂuidic tools to evaluate the sensitivity of immu-
+notherapies, particularly on immune checkpoint blockade, as
+well as identify immune cell subsets responsible for the
+antitumor response [23, 55, 56].
+Many researches are focused on the discovery and/or
+evaluation of anti-PD-1 antibodies and the corresponding
+immunotherapy. For example, Adler et al. [57] made use of
+an emulsion droplet microﬂuidic device to screen and dis-
+cover new anti-PD-1 antibodies in wild-type mice. Here,
+single-cell suspension of B cells, ﬂuorocarbon oil, and
+oligo-DT beads were made to ﬂow in a co-ﬂow emulsion
+droplet chip as shown in Fig. 3-I. They identiﬁed 269
+molecules, expressed as yeast single-chain fragment (scFv),
+which bind to PD-1 protein and screened the high-afﬁnity
+binders. This device presents an alternative to hybridoma-
+Fig. 2 Microﬂuidic tools with integration of single-cell RNA
+sequencings and analysis. I Single-cell genome sequencing (SiC-seq)
+is a high-throughput microﬂuidic platform that uses droplets to isolate,
+amplify, and barcode the genomes of single cells (A). Illustration of
+single-cell encapsulation in microgels via a dropmaker device (B).
+Workﬂow for bacterial genomic DNA puriﬁcation and microgel tag-
+mentation (C). Merging a digital PCR barcode, a tagmented microgel
+genome, and an ampliﬁcation mix at a rate >1 kHz. The SOE-PCR
+splices a unique single-cell barcode onto the tagmented genome and
+selectively ampliﬁes fully barcoded constructs off-chip [Adapted from
+ref. [48]]. II Illustration of the basic workﬂow for Microwell-seq.
+[Reprinted from ref. [50], Copyright (2018), with permission from
+Elsevier]. III Overview of DroNc-seq and schematic illustration of the
+microﬂuidic device [Reprinted by permission from Springer Nature
+Customer Service Centre GmbH]: ref. [51], Copyright (2017)].
+The future of microﬂuidics in immune checkpoint blockade
+Fig. 3 Microﬂuidic tools for the evaluation of the efﬁcacy and
+sensitivity of immunotherapies. I Droplet microﬂuidics platform
+used for scFv library generation to identify PD-1-binding molecules.
+(A) Workﬂow for B-cell encapsulation with oligo-dT beads and lysis
+solution for library generation. Droplets with mRNA-bound beads are
+puriﬁed and injected into second emulsion with an OE-RT-PCR
+ampliﬁcation mix that generates DNA amplicons that encode scFv
+with native pairing of heavy and light chain Ig. (B) Image of the
+channel junction that generates droplets [Reproduced from ref. [47]
+with permission from mAbs, Taylor & Francis]. II Multiplexed
+immune checkpoint biosensor (MICB) uses electrodes functionalized
+with target-speciﬁc nanoyeast ScFvs for parallel detection of PD-1,
+PD-L1, and LAG-3 in human serum [Republished with permission of
+Royal Society of Chemistry, from ref. 58]; permission conveyed
+through Copyright Clearance Center, Inc.]. III A valve-based micro-
+ﬂuidic device for single-cell compartmentalization and granzyme b
+proﬁling. (A) Image of the chip with parts magniﬁed. (B) Device
+mounted on the microscope stage connected to ﬂuid and air pumps.
+(C) Image of the chambers with ﬂuorescence signal. [Reproduced from
+ref. [46] with permission from Ivyspring International]. IV 3D
+microﬂuidic cell culture chip to evaluate the immune-checkpoint
+sensitivity of MDOTS/PDOTS. (A) Chip is injected with 40–100 μm
+(S2) tumor fraction for ex vivo culture (scale bars: 100 μm). (B)
+Schematic diagram showing the center gel region with posts separating
+the gel region from the anti-parallel side channels [Reproduced from
+ref. [51] with permission from the Royal Society of Chemistry].
+V SOFUSATM Nanotopographical device (schematic) for anti-CTLA-
+4 infusion into sub-epidermal space to determine antitumor response of
+checkpoint blockade therapy [Reproduced from ref. [57] with per-
+mission from the Ivyspring International]. VI Microﬂuidic enrichment
+of CTCs in digital CTC assays using CTC-iChip where whole blood
+specimens are depleted with normal hematopoietic cells to generate
+highly enriched CTC population. RNA isolated from these cells is
+reverse transcribed into cDNA, within lipid droplets, and subjected to
+ddPCR, quantifying the number of transcripts for each gene [Repro-
+duced from ref. [49] with permission from PNAS].
+J. Briones et al.
+based antibody discovery but leads on comprehensiveness
+and turnaround time as compared to conventional well-plate
+screening. Although, humanizing these synthesized mAbs
+and subjecting to in vitro afﬁnity maturation are needed in
+order to be used in anti-PD-1 therapies [57]. Wuethrich
+et al. [58], on the other hand, developed a multiplexed
+immune checkpoint biosensor, a combination of micro-
+ﬂuidic sandwich immunoassay and in situ nanoﬂuidic
+mixing that is capable of parallel detection of PD-1, PD-L1,
+and LAG-3 in human serum. The device is composed of 28
+circular gold electrodes serving as alternating current elec-
+trohydrodynamic mixer via electric ﬁeld application, which
+stimulates the immune checkpoint interaction with the
+nanoyeast ScFv functionalized electrodes (Fig. 3-II). The
+said device can do simultaneous analysis of up to 28 sam-
+ples from a single sample drop (about 20 µL) per target
+immune checkpoint using high-afﬁnity yeast cell-derived
+chain variables [58, 59]. In our work, we developed a
+microﬂuidic platform to measure single-cell granzyme B
+(GrB) expression as potential biomarker for evaluating anti-
+PD-1 antibody therapy response. The said platform, shown
+in Fig. 3-III, is integrated with pneumatic valves to com-
+partmentalized trapped human peripheral blood mono-
+nuclear cells (PBMCs) from healthy donor and anti-PD-1
+antibody-treated lung cancer patients. The expressed GrB
+molecules from individual cells were quantiﬁed ﬂuorome-
+trically through the cleaving of a peptide substrate (Ac-
+IEPD-AFC), which was introduced in the microchambers.
+Fluorescent immunostaining was also performed to distin-
+guish speciﬁc cell subsets producing GrB. Here we
+observed a marked increase in GrB expression in the anti-
+PD-1-treated lung cancer patient sample as compared to the
+PBMC from healthy donor. Within the patient cell expres-
+sion proﬁle, TCR+ Ig-G4+ cells were found to have
+high activity, which signiﬁes PD-1 blockade treatment
+response [56].
+Several groups have made use of a three-dimensional
+(3D) microﬂuidic cell culture system (Fig. 3-IV) to evaluate
+the immune-checkpoint sensitivity of murine or patient-
+derived organotypic tumor spheroids (MDOTS/PDOTS).
+The use of this tool arises from the need of a convenient and
+easily accessible ex vivo diagnostic systems that can reca-
+pitulate patient-speciﬁc tumor biology for immunotherapy
+response prediction (i.e., response of patient tumors to ICB
+treatment) [60]. Conventional culture methods that model
+the efﬁcacy of immunotherapies are often faced with a
+challenge to accurately recapitulate in vivo models. Using
+murine models to circumvent this challenge is time and
+resource intensive, not to mention the inconsistencies
+between murine and human immune systems. Thus, it is a
+poor predictor of clinical performance [61]. The use of
+mouse models does not also permit mechanistic studies to
+monitor real-time tumor progression and assay as function
+of local environment parameters [62, 63]. With resistance to
+PD-1 blockade still a challenge and biomarkers to guide
+treatment lacking, new model systems adaptable to mouse
+cancer models and human cancer can advance the ﬁeld of
+immunotherapy. The 3D microﬂuidic culture systems can
+provide a greater level of precision in interrogating the
+tumor immune microenvironment and evaluating other
+complex biological phenomena. For the past years, there
+have been an increasing interests to using MDOTS/PDOTS
+in proﬁling response to PD-1 blockade to demonstrate
+immune-checkpoint
+sensitivity
+and
+evaluation
+of
+tumor–immune interactions via RNA-seq to better under-
+stand changes in TME and develop therapeutic combina-
+tions [60].
+The group of Jenkins et al. [63] cultured tumor spheroid
+in collagen hydrogels suspended in 3D chambers where the
+response to PD-1 blockade was proﬁled. Fluorescence live/
+dead staining using dyes was performed to demonstrate the
+CD8 T-cell mediated killing on tumor spheroids treated
+with isotype control IgG antibody or anti-PD-1 antibody.
+Direct immunoﬂuorescence labeling was also done using
+MDOTS and/or PDOTS. The CD8 staining enables identi-
+ﬁcation of the effector CD8+ T cells present in PDOTS
+following anti-PD-(L)1 antibody treatment. In the case of
+Cañadas et al. [64], multiplexed immunoﬂuorescence
+staining of cytokeratin, CD8 and CD4 was also performed
+in the platform. Their works showed that the 3D micro-
+ﬂuidic culture maintains sensitivity to PD-1 blockade,
+whereas 2D culture using well plates are unable to detect
+the said response [60, 63–65]. Meanwhile, Sade-Feldman
+et al. [66] tried to determine which of the CD8+ T-cell
+state, CD8+CD39−TIM3−(DN, double negative) and
+CD8+CD39+TIM3+ (DP, double positive), can be used as
+a predictor for the success or failure of checkpoint immu-
+notherapy. They isolated MDOTS from CT26GFP+ tumors
+of BALB/cJ mice, suspended it in collagen, and injected it
+into the gel region of the 3D microﬂuidic culture device.
+CD8+ T-cell DN and/or DP state were incubated as sole
+population or mixed one in the device together with
+MDOTS and anti-PD-1 (or anti-IgG control antibodies) for
+5 days. The results showed that DN cells supports antitumor
+activity of the ex vivo checkpoint blockade [63, 64, 66].
+The group of Rashidian et al. [67], on the other hand, made
+use of the system to aid in modeling TME and determine the
+distinction between responders and non-responders to anti-
+PD-1 treatment (anti-PD-1 IgG or an isotype control IgG)
+via CD8 immuno-positron emission tomography (PET).
+MC38 cancer cells, ﬁbroblasts, and immune cells were used
+in the culture with the number of dead MC38 accounted for
+after 6 days. The effectiveness of the treatment, however,
+was assessed using PET with the distribution of the CD8+
+T cells. Together with single-cell RNA-seq from intratu-
+moral CD45+ and CD11b+ cells in responders and non-
+The future of microﬂuidics in immune checkpoint blockade
+responders, it was shown that anti-PD-1 treatment affects
+interaction of CD8+ T cells with tumor as well as impacts
+the intratumoral myeloid compartment [67]. Further work
+and development on these microﬂuidic platforms using
+MDOTS/PDOTS in aid or in combination with other tech-
+niques could lead to the selection and optimization of the
+best combinations of treatments, whether of small mole-
+cules, chemotherapy, or other immune agents in combina-
+tion with ICB.
+Other microﬂuidic platforms that were developed to
+monitor checkpoint blockade treatment response were
+designed as antibody delivery system or for CTC isolation.
+One example is the microneedle-array in a microﬂuidic
+chamber device assembly (SOFUSATM, Fig. 3-V), which
+was used by Kwon et al. [68], to deliver anti-CTLA-4
+antibody to an orthotopic mammary carcinoma murine
+model and to human volunteers. The use of the said device
+allows the researchers to compare the antitumor response of
+the checkpoint blockade treatment strategy to that of the
+conventional IV Infusion approach. Here, near-infrared
+ﬂuorescence imaging was utilized to image the lymphatic
+delivery of indocyanine green. The nanotopographic infu-
+sion capability of the device results to a better inhibition of
+tumor growth, arrest of metastases, increase in tumor-
+inﬁltrating lymphocytes, and complete response, as com-
+pared to the conventional systemic administration [68, 69].
+Meanwhile the CTC-iChip (Fig. 3-VI) was used by Hong
+et al. [70] to isolate melanoma CTCs from whole blood of
+patients undergoing immune checkpoint inhibition therapy.
+Using microﬂuidics to enrich CTC and RNA-based droplet
+PCR for early tumor response quantiﬁcation, melanoma
+cells in blood can be identiﬁed and accounted for through its
+19-gene digital RNA signature (CTC score). This enables a
+highly sensitive, noninvasive, and blood-based monitoring
+of tumor burden. The results showed a decrease in CTC
+score and an improvement in progression-free survival and
+overall survival of the patient cohort under immune
+checkpoint inhibition therapy [70]. A summary of the
+advantages and disadvantages of the discussed microﬂuidic
+technologies in ICB treatment and related clinical applica-
+tion is presented in Table 1.
+The use of microﬂuidic systems for ICB has several
+advantages, some of which have already been mentioned in
+the preceding discussions. Aside from being a noninvasive
+technique, integration of several technologies, such as sur-
+face enhanced Raman scattering for speciﬁc and multiplex
+detection of immune checkpoint proteins has already been
+demonstrated. Compared to conventional methods, the use
+of microﬂuidic systems allows direct perfusion of vascu-
+larized structures, increased control of microenvironment,
+and real-time and improved imaging capabilities [59]. Thus,
+it can provide greater insight and precision than existing
+preclinical tools. It is of small size, requires fewer samples
+and drugs, and can be mass-produced, thereby being cost-
+effective and reproducible [17]. The incorporation of
+microﬂuidic systems in clinical pipeline can reduce time
+and cost for personalized treatments in immunotherapy.
+This is exempliﬁed by successful start-ups to commercialize
+microﬂuidic devices for single-cell analysis such as the
+C1 system (Fluidigm) and chromium system (10× Geno-
+mics) [71]. Advancement in microﬂuidic platforms are
+continuously being sought to improve the immunotherapy
+outcomes, particularly in immune checkpoint blockade.
+These advancements have transformed the way researchers
+and clinicians conduct research with great improvements in
+technique efﬁciency, data collection, analysis, and repro-
+ducibility. This has also led to collaborations with other
+ﬁelds of science and engineering as interest in automation
+and robotics, cloud computing, machine learning, and arti-
+ﬁcial intelligence builds.
+Future of microﬂuidics in immune
+checkpoint blockade
+The potential of immune checkpoint blockade therapy to
+induce durable responses across multiple types of cancer is
+undeniable as shown by its progression for the past years.
+However, it has been demonstrated that only ≤20–30% of
+tumor patients (melanoma, NSCLC, and renal cell carci-
+noma) have beneﬁted from PD-1 or CTLA-4 antibody
+treatment. With a number of cancer patient populations still
+uncured, in addition to the high cost of treatment and
+toxicities that the unresponsive patient has to endure, better
+therapeutic solutions are needed [7, 11]. To predict the
+response of the patients and determine who can be saved by
+the immunotherapy, speciﬁc prognostic indicators requires
+urgent identiﬁcation. This shifts the focus on identifying
+robust biomarkers in biopsies via immunological analysis.
+To help realize these, many researchers have turned to the
+use of various technology platforms.
+It has been shown in high-dimensional single-cell ana-
+lysis that immuno-proﬁling can predict response rates of
+patients treated with PD-1 inhibitors [11, 72]. Microﬂuidics
+platforms has the potential to aid clinicians and researchers
+in this search. A number of studies have already shown the
+capability of these tools to do single-cell proﬁling and
+analysis which can elucidate the role of the biomarkers in
+triggering
+or
+arresting
+antitumor
+immune
+responses
+[11, 23, 73, 74]. Integration of microﬂuidic techniques such
+as antibody barcoding and multiplexing, RNA-based dro-
+plet digital PCR quantiﬁcation, indexing droplets, micro-
+chamber/well multiple displacement ampliﬁcation, etc. can
+be used to inspect biopsies through genomic and/or tran-
+scriptomic analysis, provide information on the mechanisms
+that restrict the efﬁcacy of the treatment, and give insight
+J. Briones et al.
+Table 1 Advantages and disadvantages of microﬂuidic devices for therapy assessment and disease monitoring.
+Microﬂuidic platform
+Discussed application
+Advantages
+Disadvantages
+References
+Emulsion droplet microﬂuidic device
+Screen and discover new anti-PD-1 antibodies in
+wild-type mice
+Ultra-high throughput
+Can identify and isolate hits in an
+automated manner using ﬂuorescence-
+activated sorting
+More comprehensive and less turnaround
+time as compared to conventional well-plate
+screening
+Can achieve native Ig pairing, capable of
+rare antibodies discovery, lower false
+negative
+Require high number of starting material
+(>10,000 cells)
+Media exchange is difﬁcult or not possible
+Difﬁcult to perform assays requiring proliferation
+due to limited nutrients present in each droplet
+Does not allow long-term culture or complicated
+long-term culture process
+[57, 82]
+Valve-based microﬂuidic chip for single-cell
+compartmentalization
+Quantiﬁcation of single-cell granzyme B protein
+expression
+Require small volume of samples and
+reagents
+High level of control, capable of media
+exchange and complex washing steps
+Capable of single-cell analysis, long-term
+and multiplexed monitoring
+Limited throughput
+Bulky and complex external control equipments
+(i.e., motor pump)
+[56, 82]
+Nanotopographical microneedle-array in a
+microﬂuidic chamber device assembly
+(SOFUSA)
+Deliver anti-CTLA-4 antibody to an orthotopic
+mammary carcinoma murine model and to human
+volunteers as well
+Direct and controlled intracellular delivery
+of agents/drugs
+Can deliver very small amounts of drugs
+Sustained drug release, ease of use, and
+painlessness
+Cost prohibitive and difﬁcult to scaleup
+Limited dosing
+[68, 69, 83]
+Multiplexed immune checkpoint
+biosensor (MICB)
+Parallel detection of PD-1, PD-L1, and LAG-3 in
+human serum
+Parallel detection and simultaneous analysis
+Requires small sample volume
+Multiplexing capability, sensitivity, and
+relative assay simplicity
+Does not require expensive instrumentation
+Low throughput
+Limited sample Volume
+Complex fabrication
+[58, 84]
+3D microﬂuidic cell culture system
+To evaluate the immune-checkpoint sensitivity of
+murine or patient-derived organotypic tumor
+spheroids (MDOTS/PDOTS)
+Requires small sample and reagent volume,
+Micro-scale dimensions compatible with
+in vivo system environments
+Real-time imaging
+Greater level of precision in TME
+interrogation and complex biological
+phenomena evaluation
+Variability in number of spheroids within device
+Low reproducibility and data variability (PDOTS);
+high cost (MDOTS/PDOTS)
+Difﬁcult to dispense cells in hydrogels and change
+growth media
+Difﬁcult to collect cells after 3D formation; needs
+cell sorting to collect protein lysate and RNA from
+each cell population
+Needs experienced operators
+[60, 85]
+CTC-iChip
+(microﬂuidic positive immunocapture)
+CTC isolation from the blood of ICB therapy
+patient
+Whole-blood processing, high throughput
+Fast, high CTC count, low CTC burdens
+Various CTC-speciﬁc antigens can be used
+Cells are unaltered and viable after capture
+Low purity of captured CTC
+Requires advanced knowledge on microfabrication
+[86–88]
+CellSearch
+(immunoafﬁnity based)
+CTC detection, quantiﬁcation, and enrichment in
+patient’s blood
+FDA-approved technique
+Multi-day specimen preservation, suitable
+for central laboratory testing
+Can predict the prognosis, for metastatic
+breast, prostate, and colorectal cancers
+patients
+Cannot process whole blood
+Limited imaging and image analysis (intensity-
+based image analysis is not feasible)
+Low cell recovery, diminished viability
+EpCAM-positivity dependent
+[12, 34, 87, 89]
+IsoFlux system
+(microﬂuidic, immunomagnetic capture)
+CTC enrichment and isolation
+Higher sensitivity in CTC identiﬁcation (as
+compared to CellSearch)
+Automated, continuous ﬂow, low volume
+transfer requirement
+Intact viable CTCs, capable of cell retrieval,
+high recovery rate
+Requires sample preprocessing to reduce volume
+Long, time-consuming process
+[34, 87, 90]
+The future of microﬂuidics in immune checkpoint blockade
+Table 1 (continued)
+Microﬂuidic platform
+Discussed application
+Advantages
+Disadvantages
+References
+NanoVelcro
+(nanomaterial-embedded diagnostic platform)
+CTC identiﬁcation, capture, and release
+Enhanced afﬁnity and contact frequency
+with CTCs
+Scalable, reproducible, cost effective
+High sample-processing capacity, high-
+efﬁciency capture and release
+Can purify CTC without damaging RNA
+transcripts
+Requires sample preprocessing to reduce volume
+Long, time-consuming process
+Less informative about EpCAM-low cells
+[12, 90–92]
+ExoSearch chip
+(microﬂuidic continuous ﬂow platform)
+Exosome capture and multi-marker probing
+High ﬂow rate and rapid isolation of
+exosomes
+High speciﬁcity in isolation of circulating
+exosomes
+Sensitive multiplexed exosomal marker
+detection
+Simple, cost-effective, robust
+Requires sample pretreatment
+Can only separate exosomes that contain the
+targeted protein
+[12, 38, 93, 94]
+ExoChip
+(functionalized (CD63) multi-chamber/channel
+device)
+On-chip exosome isolation, detection,
+quantiﬁcation, and recovery
+Increased exosomes’ retention time,
+Can perform minimally invasive exosome-
+based quick diagnostic test
+Capable of simultaneous processing of
+multiple samples
+Design suitable for standard readout
+instruments
+Low fabrication complexity
+Requires sample pretreatment
+Difﬁcult to release
+captured exosomes Intact and label-free for
+downstream analysis
+[39, 95]
+nPLEX-nano-plasmonic exosome sensor
+(periodic nanohole arrays)
+Simultaneous isolation and surface plasmon
+resonance (SPR)-based multiplexed detection
+Scalable, high sensitivity, label-free
+proﬁling of exosomal proteins
+Fast, high-throughput, parallel exosome
+analysis
+Limited to detecting transmembrane or lipid-bound
+proteins
+Expensive and sophisticated fabrication of
+nanostructures
+[41, 95, 96]
+J. Briones et al.
+into the wide spectrum of patients and their response
+[11, 75, 76]. From here on, target cell extraction can be
+incorporated to retrieve cells of interest, which can be fur-
+ther expanded or cloned for additional investigation, to have
+a broader understanding of the T-cell cytotoxic property and
+tumor immune evasion mechanisms, leading to persona-
+lized immunotherapy and overcoming of treatment resis-
+tance [24, 56].
+These platforms could provide high volume and parallel
+throughput for rapid characterization at the time of diag-
+nosis that can possibly tell how the patient will respond to a
+potential mAb treatment or ﬁne-tune the desired immune
+response. Thus, future developments of this technology can
+provide solution to the challenge of effective and efﬁcient
+assessment of the immunotherapy or therapy combinations
+in early-phase clinical studies. For instance, this can bring
+clarity and understanding of the differential effects of
+agents, such as PD-1/PD-L1 inhibitors, on the inhibition
+removal of exhausted effector T cells in the TME, the lifting
+of restraints from cancer-speciﬁc T-cell proliferation in
+draining lymph nodes, and on the effects on T-cell priming
+and activation [77].
+The 2D and 3D microﬂuidic platforms for in vitro tumor
+models have the ability to replicate physical and spatial
+characteristics of TME [78]. The use of tumor organoids to
+these platforms allows the recapitulation of the immune
+checkpoint inhibitor response (i.e., anti-PD-1 antibody). It
+has the potential to optimize the efﬁcacy of immu-
+notherapies, test therapeutic combinations, as well as
+assess novel approaches. In particular, MDOTS/PDOTS in
+3D microﬂuidic cultures can mimic the therapeutic sensi-
+tivity and resistance in vivo to PD-1 blockade via the
+assessment of tumor-inﬁltrating lymphocyte against tumor
+cells [79].
+Although conventional approach using Matrigel culture
+for patient-derived organoids is promising for evaluating
+functional responses, limitations arises with the need for
+reproducing validation cohorts, effects of tumor hetero-
+geneity, rapid real-time analysis, and correlation against
+patient response and overall survival [79]. Meanwhile,
+microﬂuidic culture for PDOTS-retaining tumor cells and
+autologous immune components provides a short term (i.e.,
+1 week) evaluation of cytokine proﬁling and T-cell cyto-
+toxicity against tumor cell [79]. Organoid vascularization
+can be achieved in compartmentalized microﬂuidic chip,
+which is difﬁcult to do in ordinary culture dish. Thus,
+represents the potential to predict patient’s response to ICB
+therapy and possibly clinical translation from identiﬁcation
+of
+optimally
+responsive
+cohorts.
+Furthermore,
+future
+developments and optimizations of these platforms could
+increase modeling sensitivity to reveal underlying resistance
+pathways that could lead to real-time resolution of patient
+sensitivity to ICB or combination of treatments.
+This means that these new tools must be able to improve
+the efﬁcacy of existing immunotherapy or identify more
+potent approach, at the same time reduce toxicity and
+adverse effects. For instance, microﬂuidic technology can
+provide novel and accelerated intracellular delivery strategy
+for macromolecules using nanoparticles, hydrogels, etc., to
+accommodate different therapeutic agents, based on patient-
+speciﬁc target, which can improve the efﬁcacy of immu-
+notherapy [80]. In addition, these devices must be able to
+provide ultrasensitive, accurate, and comprehensive assays
+for patient monitoring, before treatment, after treatment, and
+during remission. It must be able to conduct multiple tests in
+a singular chip. Furthermore, these tools must allow
+immunotherapy to reach a greater number of patients by
+being low cost and easy to use [12, 17, 53].
+However, to realize these possibilities, several limitations
+and technical challenges of the current technology must be
+addressed. One big challenge is how to make microﬂuidic
+technology a mainstream in biological and clinical research,
+particularly its application to ICB therapy. Microﬂuidic
+devices are envisioned to facilitate the development of
+personalized medicine. However, many research works on
+microﬂuidic platforms are mainly proof-of concept studies
+and mostly published in engineering journals as opposed to
+clinical
+journals.
+Increased
+collaboration
+and
+inter-
+disciplinary approach between engineers, scientists, clin-
+icians, as well as organizations from the CIT community are
+needed to produce devices that are clinically relevant. This
+would require validation of the ﬁndings from models by
+comparing it to in vivo results and conversion to automated
+data analysis and readouts for routine clinical use.
+To achieve this, microﬂuidic platforms have to diverge
+from heavy dependence on high-resolution imaging and
+time-consuming image analysis. Clinicians could use this
+technology to build patient-speciﬁc platforms using patient
+tumor and immune cells, and asses the efﬁcacy of the
+immunotherapy prior to treatment. A high-throughput and
+automated microﬂuidic device integrated with various
+components (i.e., CTC isolation and diagnostic test in one
+device) could be readily available for physicians to use in
+the future.
+Another challenge for this technology is mass production.
+Majority of the microﬂuidic devices are made up of poly-
+dimethylsiloxane (PDMS), which is limited in terms of
+manufacturability and durability. There are, however, alter-
+native materials that can be used. Current designs and fab-
+rication techniques are time consuming. Platform operation is
+still bench-top that needs external equipments (i.e., pumps,
+pressure gauges, microscope), several tubing and wirings,
+and a lot of human supervision. Although the integration of
+artiﬁcial intelligence such as machine learning and compu-
+tational modeling could make analysis faster, most of the
+microﬂuidic platforms are still far from clinical application.
+The future of microﬂuidics in immune checkpoint blockade
+Continued advancement in the technology should be made
+to create integrated chips that includes more portable external
+devices and smart procedures that requires less human
+operation. External systems should be limited whenever
+possible [81]. For example, laboratory hardware like syringe
+pumps can be removed by incorporating gravity driven ﬂow
+or capillary action in the design. Likewise, end-user experi-
+ence must be improved for ease of use in the clinical setting.
+The realization of organs-on-chip or body-on-chip that mimic
+multiple organs in different compartments of a single device
+would not only allow us to predict responses to immu-
+notherapies but could enable discovery of drugs or treatments
+that can cure majority if not all types of cancer, in the future.
+In addition, commercialization of these diagnostic devi-
+ces is also a challenge, as a balance must be sought between
+the scope and depth of its impact in immunotherapy, par-
+ticularly in ICB, and the revenue that it can generate.
+Microﬂuidic devices can be pitched as a consumable in
+which multiple laboratories can integrate in several single-
+cell analysis applications. For example, droplet microﬂuidic
+chips sold by Dolomite and Fluigent, and used in labora-
+tories for research applications still have to be integrated
+with downstream analytical methods. On the other hand,
+some companies such as μFluidix and microﬂuidic Chip-
+Shop provide facilities for customized microﬂuidic device
+fabrication, whereas others such as Sphere Fluidics provide
+complete integrated analytical solutions. Meanwhile, 10×
+Genomics allows proﬁling of immune cells at single-cell
+level with high automation and parallelization [13]. These
+are few examples of the many companies that have com-
+mercialized microﬂuidic technology for research purposes.
+Future endeavors would allow commercialization of these
+devices as a ready-to-use product that will suit the needs of
+immunotherapy research and clinical applications.
+Conclusion
+Finding a cure for cancer has gone a long way. From
+conventional chemotherapy and radiotherapy to the use of
+immune checkpoint inhibitors in immunotherapy. However
+unprecedented, the search for the cure is still a long way, as
+the efﬁcacy and response rates of the treatment strategies
+are still low. Combination therapies, new biomarkers, and
+inhibitory receptors could potentially provide better results
+and greater coverage. The use of microﬂuidic devices for
+studies in immune checkpoint blockade provides new pos-
+sibilities for an effective CIT. Microﬂuidic platforms can
+potentially evolve from a bulky laboratory setup to a more
+portable instrument that can be implemented on a larger
+scale outside of lab benches and into clinical bedsides. The
+continued innovation in this ﬁeld could allow a shift from
+proof-of-concept stage to clinical application.
+Acknowledgements We acknowledge the ﬁnancial support provided by
+the Core Research for Evolutionary Science and Technology (CREST)
+Program with JST CREST Grant Number JPMJCR16G2, Japan.
+Compliance with ethical standards
+Conﬂict of interest The authors declare that they have no conﬂict of
+interest.
+Publisher’s note Springer Nature remains neutral with regard to
+jurisdictional claims in published maps and institutional afﬁliations.
+Open Access This article is licensed under a Creative Commons
+Attribution 4.0 International License, which permits use, sharing,
+adaptation, distribution and reproduction in any medium or format, as
+long as you give appropriate credit to the original author(s) and the
+source, provide a link to the Creative Commons license, and indicate if
+changes were made. The images or other third party material in this
+article are included in the article’s Creative Commons license, unless
+indicated otherwise in a credit line to the material. If material is not
+included in the article’s Creative Commons license and your intended
+use is not permitted by statutory regulation or exceeds the permitted
+use, you will need to obtain permission directly from the copyright
+holder. To view a copy of this license, visit http://creativecommons.
+org/licenses/by/4.0/.
+References
+1. Sambi M, Bagheri L, Szewczuk MR. Current challenges in cancer
+immunotherapy: multimodal approaches to improve efﬁcacy and
+patient response rates. J Oncol. 2019;2019:4508794.
+2. Reports and Data. Antibodies, Vaccines, Cytokines), By Appli-
+cations (Lung Cancer, Breast Cancer, Liver Cancer, Head & Neck
+Cancer), By End Users (Hospitals, Cancer Research Centers,
+Clinics), And Segment Forecasts, 2016-2026. Available from:
+https://www.reportsanddata.com/report-detail/cancer-immunothera
+py-market. Accessed 1 May 2020.
+3. Chao M, Harris J, Morales RT, Chen W. Microﬂuidics for
+immuno-oncology. In: Jiang X, editor. Nanoﬂuidics and micro-
+ﬂuidics. 1st edn. Wiley-VCH; 2020. p. 149–76.
+4. Mitchell DA, Sampson JH. Toward effective immunotherapy for
+the treatment of malignant brain tumors. Neurotherapeutics.
+2009;6:527–38.
+5. Nixon NA, Blais N, Ernst S, Kollmannsberger C, Bebb G, Butler
+M, et al. Current landscape of immunotherapy in the treatment of
+solid tumours, with future opportunities and challenges. Curr
+Oncol. 2018;25:e373–84.
+6. Li L, Yan S, Lin B, Shi Q, Lu Y. Single-cell proteomics for cancer
+immunotherapy. In: Broome AM, editor. Cancer nanotechnology.
+Elsevier; 2018. p. 185–207.
+7. Ventola CL. Cancer immunotherapy, part 2: efﬁcacy, safety, and
+other clinical considerations. P T. 2017;42:452–63.
+8. Gong J, Chehrazi-Rafﬂe A, Reddi S, Salgia R. Development of
+PD-1 and PD-L1 inhibitors as a form of cancer immunotherapy: a
+comprehensive review of registration trials and future considera-
+tions. J Immunother Cancer. 2018;6:8.
+9. Kretschmer A, Schwanbeck R, Valerius T, Rösner T. Antibody
+isotypes for tumor immunotherapy. Transfus Med Hemother.
+2017;44:320–6.
+10. Haslam A, Prasad V. Estimation of the percentage of US patients
+with cancer who are eligible for and respond to checkpoint inhi-
+bitor immunotherapy drugs. JAMA Netw Open. 2019;2:e192535.
+J. Briones et al.
+11. Park YJ, Kuen DS, Chung Y. Future prospects of immune
+checkpoint blockade in cancer: from response prediction to
+overcoming resistance. Exp Mol Med. 2018;50:109.
+12. Kulasinghe A, Wu H, Punyadeera C, Warkiani M. The use of
+microﬂuidic technology for cancer applications and liquid biopsy.
+Micromachines. 2018;9:397.
+13. Sinha N, Subedi N, Tel J. Integrating immunology and microﬂuidics
+for single immune cell analysis. Front Immunol. 2018;9:2373.
+14. Lu C, Verbridge S, editors. Microﬂuidic methods for molecular
+biology. Cham: Springer; 2016.
+15. Chuah S, Chew V. High-dimensional immuneproﬁling in cancer:
+implications for immunotherapy. J Immunother Cancer. 2020;8:
+e000363.
+16. Yu Y, Cui J. Present and future of cancer immunotherapy: a tumor
+microenvironmental perspective. Oncol Lett. 2018;16:4105–13.
+17. Boussommier-Calleja A, Li R, Chen MB, Wong SC, Kamm RD.
+Microﬂuidics: a new tool for modeling cancer-immune interac-
+tions. Trends Cancer. 2016;2:6–19.
+18. Fares J, Fares MY, Fares Y. Immune checkpoint inhibitors:
+advances and impact in neuro-oncology. Surg Neurol Int. 2019;10:9.
+19. Bird L. MR1-restricted pan-cancer T cells. Nat Rev Immunol.
+2020;20:141.
+20. Zhang J, Shi Z, Xu X, Yu Z, Mi J. The inﬂuence of micro-
+environment on tumor immunotherapy. FEBS J. 2019;286:4160–75.
+21. Jain P, Jain C, Velcheti V. Role of immune-checkpoint inhibitors
+in lung cancer. Ther Adv Respir Dis. 2018;12:1–13.
+22. An X, Varadarajan N. Single-cell technologies for proﬁling T cells
+to enable monitoring of immunotherapies. Curr Opin Chem Eng.
+2018;19:142–52.
+23. Armbrecht L, Müller RS, Nikoloff J, Dittrich PS. Single-cell
+protein proﬁling in microchambers with barcoded beads. Micro-
+syst Nanoeng. 2019;5:55.
+24. Jiang X, editor. Nanotechnology and microﬂuidics. 1st edn.
+Wiley-VCH; 2020.
+25. Merouane A, Rey-Villamizar N, Lu Y, Liadi I, Romain G, Lu J,
+et al. Automated proﬁling of individual cell–cell interactions from
+high-throughput time-lapse imaging microscopy in nanowell grids
+(TIMING). Bioinformatics 2015;31:3189–97.
+26. Lu Y, Yang L, Wei W, Shi Q. Microchip-based single-cell
+functional proteomics for biomedical applications. Lab Chip.
+2017;17:1250–63.
+27. Wei W, Shin YS, Ma C, Wang J, Elitas M, Fan R, et al. Microchip
+platforms for multiplex single-cell functional proteomics with
+applications to immunology and cancer research. Genome Med.
+2013;5:75.
+28. Yang L, Wang Z, Deng Y, Li Y, Wei W, Shi Q. Single-cell,
+multiplexed protein detection of rare tumor cells based on a beads-
+on-barcode antibody microarray. Anal Chem. 2016;88:11077–83.
+29. Mathur L, Ballinger M, Utharala R, Merten C. Microﬂuidics as an
+enabling technology for personalized cancer therapy. Small.
+2020;16:1904321.
+30. Truini A, Alama A, Dal Bello MG, Coco S, Vanni I, Rijavec E,
+et al. Clinical applications of circulating tumor cells in lung cancer
+patients by CellSearch system. Front Oncol. 2014;4:242.
+31. Janning M, Kobus F, Babayan A, Wikman H, Velthaus JL,
+Bergmann S, et al. Determination of pd-l1 expression in circu-
+lating tumor cells of NSCLC patients and correlation with
+response to PD-1/PD-L1 inhibitors. Cancers 2019;11:835.
+32. Nicolazzo C, Raimondi C, Mancini M, Caponnetto S, Gradilone
+A, Gandini O, et al. Monitoring pd-l1 positive circulating tumor
+cells in non-small cell lung cancer patients treated with the pd-1
+inhibitor nivolumab. Sci Rep. 2016;6:31726.
+33. Kloten V, Lampignano R, Krahn T, Schlange T. Circulating tumor
+cell PD-L1 expression as biomarker for therapeutic efﬁcacy of
+immune checkpoint inhibition in NSCLC. Cells. 2019;8:809.
+34. Harb W, Fan A, Tran T, Danila DC, Keys D, Schwartz M, et al.
+Mutational analysis of circulating tumor cells using a novel
+microﬂuidic collection device and qPCR assay. Transl Oncol.
+2013;6:528–38.
+35. Po JW, Ma Y, Balakrishna B, Brungs D, Azimi F, de Souza P,
+et al. Immunomagnetic isolation of circulating melanoma cells and
+detection of PD-L1 status. PLoS ONE. 2019;14:e0211866.
+36. Jan YJ, Chen JF, Zhu Y, Lu YT, Chen SH, Chung H, et al.
+NanoVelcro rare-cell assays for detection and characterization of
+circulating tumor cells. Adv Drug Deliv Rev. 2018;125:78–93.
+37. Winograd P, Hou S, Court CM, Lee YT, Chen PJ, Zhu Y, et al.
+Hepatocellular carcinoma–circulating tumor cells expressing PD-
+L1 are prognostic and potentially associated with response to
+checkpoint inhibitors. Hepatol. Commun. 2020. https://doi.org/10.
+1002/hep4.1577.
+38. Zhao Z, Yang Y, Zeng Y, He M. A microﬂuidic ExoSearch chip
+for multiplexed exosome detection towards blood-based ovarian
+cancer diagnosis. Lab Chip. 2016;16:489–96.
+39. Kanwar SS, Dunlay CJ, Simeone DM, Nagrath S. Microﬂuidic
+device (ExoChip) for on-chip isolation, quantiﬁcation and char-
+acterization of circulating exosomes. Lab Chip. 2014;14:1891–900.
+40. Iliescu FS, Vrtačnik D, Neuzil P, Iliescu C. Microﬂuidic tech-
+nology for clinical applications of exosomes. Micromachines
+2019;10:392.
+41. Im H, Shao H, Park YI, Peterson VM, Castro CM, Weissleder R,
+et al. Label-free detection and molecular proﬁling of exosomes
+with a nano-plasmonic sensor. Nat Biotechnol. 2014;32:490–5.
+42. Daassi D, Mahoney KM, Freeman GJ. The importance of exo-
+somal PD-L1 in tumour immune evasion. Nat Rev Immunol.
+2020;20:209–15.
+43. Kim DH, Kim H, Choi YJ, Kim SY, Lee JE, Sung KJ, et al.
+Exosomal PD-L1 promotes tumor growth through immune escape
+in non-small cell lung cancer. Exp Mol Med. 2019;51:1–13.
+44. Hwang B, Lee JH, Bang D. Single-cell RNA sequencing tech-
+nologies and bioinformatics pipelines. Exp Mol Med. 2018;50:96.
+45. Zou D, Cui D. Advances in isolation and detection of circulating
+tumor
+cells
+based
+on
+microﬂuidics.
+Cancer
+Biol
+Med.
+2018;15:335–53.
+46. Cho H, Kim J, Song H, Sohn KY, Jeona MH, Han KH. Micro-
+ﬂuidic technologies for circulating tumor cell isolation. Analyst
+2018;143:2936–70.
+47. Chen G, Ning B, Shi T. Single-cell RNA-Seq technologies and
+related computational data analysis. Front Genet. 2019;10:317.
+48. Demaree B, Weisgerber D, Lan F, Abate AR. An ultrahigh-
+throughput microﬂuidic platform for single-cell genome sequen-
+cing. J Vis Exp. 2018;135:e57598.
+49. Tang X, Huang Y, Lei J, Luo H, Zhu X. The single-cell
+sequencing: new developments and medical applications. Cell
+Biosci. 2019;9:53.
+50. Han X, Wang R, Zhou Y, Fei L, Sun H, Lai S, et al. Mapping the
+mouse cell atlas by microwell-seq. Cell 2018;172:1091–107.
+51. Habib N, Avraham-Davidi I, Basu A, Burks T, Shekhar K, Hofree
+M, et al. Massively parallel single-nucleus RNA-seq with DroNc-
+seq. Nat Methods. 2017;14:955–8.
+52. Bratman SV, Yang, SYC, Iafolla MAJ, Liu Z, Hansen AR,
+Bedard PL, et al. Personalized circulating tumor DNA analysis as
+a predictive biomarker in solid tumor patients treated with pem-
+brolizumab. Nat Cancer. 2020. https://doi.org/10.1038/s43018-
+020-0096-5.
+53. Jeanbart L, Swartz M. Engineering opportunities in cancer
+immunotherapy. PNAS. 2015;112:14467–72.
+54. Thurin M, Cesano A, Marincola F, editors. Biomarkers for
+immunotherapy of cancer. Humana; 2020.
+55. Jamalian S, Jafernejad M, Aref A. Microﬂuidics and future of
+cancer diagnostics. In: Aref A, Barbie D, editors. Ex vivo
+The future of microﬂuidics in immune checkpoint blockade
+engineering of the tumor microenvironment. Cancer drug dis-
+covery and development. Cham: Humana; 2016.
+56. Briones J, Espulgar W, Koyama S, Yoshikawa H, Park J, Naito Y,
+et al. A microﬂuidic platform for single cell ﬂuorometric gran-
+zyme B proﬁling. Theranostics. 2020;10:123–32.
+57. Adler A, Mizrahi R, Spindler M, Adams M, Asensio M, Edgar R,
+et al. Rare, high-afﬁnity mouse anti-PD-1 antibodies that function
+in checkpoint blockade, discovered using microﬂuidics and
+molecular genomics. mAbs. 2017;9:1270–81.
+58. Wuethrich A, Rajkumar AR, Shanmugasundaram KB, Reza K,
+Dey S, Howard C, et al. Single droplet detection of immune
+checkpoints on a multiplexed electrohydrodynamic biosensor.
+Analyst 2019;144:6914–21.
+59. Reza KK, Sina AII, Wuethrich A, Grewal Y, Howard C, Korbie D,
+et al. A SERS microﬂuidic platform for targeting multiple soluble
+immune checkpoints. Biosens Bioelectron. 2018;126:178–86.
+60. Aref AR, Campisi M, Ivanova E, Portell A, Larios D, Piel BP,
+et al. 3D microﬂuidic ex vivo culture of organotypic tumor
+spheroids to model immune checkpoint blockade. Lab Chip.
+2018;18:3129–43.
+61. Balko JM, Sosman JA. A critical need for better cancer immu-
+notherapy models: are organotypic tumor spheroid cultures the
+answer? Cancer Discov. 2018;8:143–5.
+62. Jeffrey T. Borenstein - microﬂuidic techniques for cancer thera-
+pies. Eur Pharm Rev. Available from: https://www.europeanpha
+rmaceuticalreview.com/article/62865/microﬂuidic-techniques-for-
+cancer-therapies. Accessed 1 Aug 2020.
+63. Jenkins RW, Aref AR, Lizotte PH, Ivanova E, Stinson S, Zhou
+CW, et al. Ex vivo proﬁling of PD-1 blockade using organotypic
+tumor spheroids. Cancer Discov. 2018;8:196–215.
+64. Cañadas I, Thummalapalli R, Kim JW, Kitajima S, Jenkins RW,
+Christensen CL, et al. Tumor innate immunity primed by speciﬁc
+interferon-stimulated
+endogenous
+retroviruses.
+Nat
+Med.
+2018;24:1143–50.
+65. Jenkins RW, Barbie DA, Flaherty KT. Mechanisms of resistance
+to immune checkpoint inhibitors. Br J Cancer. 2018;118:9–16.
+66. Sade-Feldman M, Yizhak K, Bjorgaard SL, Ray JP, de Boer CG,
+Jenkins RW, et al. Deﬁning T cell states associated with response
+to
+checkpoint
+immunotherapy
+in
+melanoma.
+Cell.
+2018;
+175:998–1013.
+67. Rashidian M, LaFleur M, Verschoor V, Dongre A, Zhang Y,
+Nguyen T, et al. Immuno-PET identiﬁes the myeloid compartment
+as a key contributor to the outcome of the antitumor response
+under PD-1 blockade. PNAS. 2019;116:16971–80.
+68. Kwon S, Velasquez FC, Rasmussen JC, Greives MR, Turner KD,
+Morrow JR, et al. Nanotopography-based lymphatic delivery for
+improved anti-tumor responses to checkpoint blockade immu-
+notherapy. Theranostics. 2019;9:8332–43.
+69. Walsh L, Ryu J, Bock S, Koval M, Mauro T, Ross R, et al.
+Nanotopography facilitates in vivo transdermal delivery of high
+molecular weight therapeutics through an integrin-dependent
+mechanism. Nano Lett. 2015;15:2434–41.
+70. Hong X, Sullivan R, Kalinich M, Kwan TT, Giobbie-Hurder A,
+Pan S, et al. Molecular signatures of circulating melanoma cells
+for monitoring early response to immune checkpoint therapy.
+PNAS. 2018;115:2467–72.
+71. Jammes FC, Maerkl SJ. How single-cell immunology is beneﬁting
+from microﬂuidic technologies. Microsyst Nanoeng. 2020;6:45.
+72. Krieg C, Nowicka M, Guglietta S, Schindler S, Hartmann FJ,
+Weber LM, et al. High-dimensional single-cell analysis predicts
+response to anti-PD-1 immunotherapy. Nat Med. 2018;24:144–53.
+73. Armbrecht L, Gabernet G, Kurth F, Hiss JA, Schneider G, Dittrich
+PS. Characterisation of anticancer peptides at the single-cell level.
+Lab Chip. 2017;17:2933–40.
+74. Buder-Bakhaya K, Hassel J. Biomarkers for clinical beneﬁt of
+immune checkpoint inhibitor treatment—a review from the mel-
+anoma perspective and beyond. Front Immunol. 2018;9:1474.
+75. Ma S, Murphy T, Lu C. Microﬂuidics for genome-wide studies
+involving next generation sequencing. Biomicroﬂuidics. 2017;
+11:021501.
+76. Matula K, Rivello F, Huck W. Single‐cell analysis using droplet
+microﬂuidics. Adv Biosys. 2020;4:1900188.
+77. H PS, Chen DS. Top 10 challenges in cancer immunotherapy.
+Immunity. 2020;52:17–35.
+78. Adriani G, Pavesi A, Tan AT, Bertoletti A, Theiry JP, Kamm RD.
+Microﬂuidic models for adoptive cell-mediated cancer immu-
+notherapies. Drug Discov Today. 2016;21:1472–8.
+79. Yuki K, Cheng N, Nakano M, Kuo CJ. Organoid models of tumor
+immunology. Trends Immunol. 2020;41:652–64.
+80. Zhao Z, Zheng L, Chen W, Weng W, Song J, Ji J. Delivery
+strategies of cancer immunotherapy: recent advances and future
+perspectives. J Hematol Oncol. 2019;12:126.
+81. Sackmann E, Fulton A, Beebe D. The present and future role of
+microﬂuidics in biomedical research. Nature. 2014;507:181–9.
+82. Seah YFS, Hu H, Merten CA. Microﬂuidic single-cell technology in
+immunology and antibody screening. Mol Asp Med. 2018;59:47–61.
+83. Cote B, Rao D, Alany RG, Kwon GS, Alani AWG. Lymphatic
+changes in cancer and drug delivery to the lymphatics in solid
+tumors. Adv Drug Deliv Rev. 2019;144:16–34.
+84. Wuethrich A, Howard CB, Trau M. Geometric optimisation of
+electrohydrodynamic
+ﬂuid
+ﬂows
+for
+enhanced
+biosensing.
+Microchem J. 2018;137:231–7.
+85. Joshi P, Lee MY. High content imaging (HCI) on miniaturized
+three-dimensional (3D) cell cultures. Biosensors. 2015;5:768–90.
+86. Bankó P, Lee SY, Nagygyörgy V, Zrínyi M, Chae CH, Cho DH,
+et al. Technologies for circulating tumor cell separation from
+whole blood. J Hematol Oncol. 2019;12:48.
+87. Ferreira MM, Ramani VC, Jeffrey SS. Circulating tumor cell
+technologies. Mol Oncol. 2016;10:374–94.
+88. Ozkumur E, Shah AM, Ciciliano JC, Emmink BL, Miyamoto DT,
+Brachtel E, et al. Inertial focusing for tumor antigen-dependent
+and -independent sorting of rare circulating tumor cells. Sci Transl
+Med. 2013;5:179ra47.
+89. Wang L, Balasubramanian P, Chen AP, Kummar S, Evrard YA,
+Kinders RJ. Promise and limits of the CellSearch platform for
+evaluating pharmacodynamics in circulating tumor cells. Semin
+Oncol. 2016;43:464–75.
+90. Li X, Li Y, Shao W, Li Z, Zhao R, Ye Z. Strategies for enrichment
+of circulating tumor cells. Transl Cancer Res. 2020;9:3.
+91. Rao Q, Zhang Q, Zheng C, Dai W, Zhang B, Zanetti CI, et al.
+Detection of circulating tumour cells in patients with epithelial
+ovarian cancer by a microﬂuidic system. Int J Clin Exp Pathol.
+2017;10:9599–606.
+92. Lu YT, Delijani K, Mecum A, Goldkorn A. Current status of
+liquid biopsies for the detection and management of prostate
+cancer. Cancer Manag Res. 2019;11:5271–91.
+93. Contreras-Naranjo JC, Wu HJ, Ugaz VM. Microﬂuidics for exo-
+some isolation and analysis: enabling liquid biopsy for persona-
+lized medicine. Lab Chip. 2017;17:3558–77.
+94. Yang F, Liao X, Tian Y, Li G. Exosome separation using
+microﬂuidic
+systems:
+size‐based,
+immunoafﬁnity‐based
+and
+dynamic methodologies. Biotechnol J. 2017;12:1600699.
+95. Jia Y, Ni Z, Sun H, Wang C. Microﬂuidic approaches toward the
+isolation and detection of exosome nanovesicles. IEEE Access.
+2019;7:45080–98.
+96. Kordasht HK, Hasanzadeh M. Biomedical analysis of exosomes
+using biosensing methods: recent progress. Anal Methods.
+2020;12:2795–811.
+J. Briones et al.

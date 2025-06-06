@@ -1,0 +1,930 @@
+RECASNET: IMPROVING CONSISTENCY WITHIN THE
+TWO-STAGE MITOSIS DETECTION FRAMEWORK
+A PREPRINT
+Chawan Piansaddhayanon1,2
+Sakun Santisukwongchote3
+Shanop Shuangshoti3
+Qingyi Tao4
+Sira Sriswasdi2,5,6
+Ekapol Chuangsuwanich1,2,6
+1Department of Computer Engineering, Faculty of Engineering, Chulalongkorn University
+2Chula Intelligent and Complex Systems, Faculty of Science, Chulalongkorn University
+3Department of Pathology, King Chulalongkorn Memorial Hospital and Faculty of Medicine, Chulalongkorn University
+4NVIDIA AI Technology Center, Singapore
+5Computational Molecular Biology Group, Faculty of Medicine, Chulalongkorn University
+6Center of Excellence in Computational Molecular Biology, Faculty of Medicine, Chulalongkorn University
+schwan46494@gmail.com, boomskuun@gmail.com, shanop@gmail.com
+QTAO002@e.ntu.edu.sg, sira.sr@chula.ac.th, ekapol.c@chula.ac.th
+March 1, 2022
+ABSTRACT
+Mitotic count (MC) is an important histological parameter for cancer diagnosis and grading, but the
+manual process for obtaining MC from whole-slide histopathological images is very time-consuming
+and prone to error. Therefore, deep learning models have been proposed to facilitate this process.
+Existing approaches utilize a two-stage pipeline: the detection stage for identifying the locations of
+potential mitotic cells and the classiﬁcation stage for reﬁning prediction conﬁdences. However, this
+pipeline formulation can lead to inconsistencies in the classiﬁcation stage due to the poor prediction
+quality of the detection stage and the mismatches in training data distributions between the two stages.
+In this study, we propose a Reﬁne Cascade Network (ReCasNet), an enhanced deep learning pipeline
+that mitigates the aforementioned problems with three improvements. First, window relocation
+was used to reduce the number of poor quality false positives generated during the detection stage.
+Second, object re-cropping was performed with another deep learning model to adjust poorly centered
+objects. Third, improved data selection strategies were introduced during the classiﬁcation stage to
+reduce the mismatches in training data distributions. ReCasNet was evaluated on two large-scale
+mitotic ﬁgure recognition datasets, canine cutaneous mast cell tumor (CCMCT) and canine mammary
+carcinoma (CMC), which resulted in up to 4.8% percentage point improvements in the F1 scores
+for mitotic cell detection and 44.1% reductions in mean absolute percentage error (MAPE) for MC
+prediction. Techniques that underlie ReCasNet can be generalized to other two-stage object detection
+networks and should contribute to improving the performances of deep learning models in broad
+digital pathology applications.
+Keywords Mitotic count · Whole slide image · Object detection · Image classiﬁcation · Multi-stage deep learning
+1
+Introduction
+Mitotic count is an important histologic parameter for cancer diagnosis and grading. Traditionally, mitotic count is
+obtained by manually counting mitotic ﬁgures through a light microscope. The hotspot area, usually spanning 10
+high-power microscopic ﬁelds, that contain the highest density of mitotic ﬁgures in the whole histologic section(s)
+is identiﬁed and the number of mitotic ﬁgures in this area is reported as mitotic count. With the increasing use of
+arXiv:2202.13912v1  [cs.CV]  28 Feb 2022
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+digital pathology, whole slide image (WSI) is now routinely generated in several pathology laboratories. Nonetheless,
+mitotic count is still obtained by manual counting of mitotic ﬁgures on screen. Conventionally, the manual process of
+obtaining MI is tedious and error-prone (1). Thus, several studies (2) have utilized machine learning algorithms to assist
+pathologists by automatically recognizing mitotic ﬁgures in the WSI and proposing the hotspot area. Recently, deep
+learning has gained popularity due to its impressive image recognition performance compared to traditional approaches
+and is now widely used in a wide range of digital pathology applications, including histopathological image analysis
+(3).
+Errors in mitotic ﬁgure detection by machine learning models can be attributed to the quality of data collection process
+and the ambiguity between mitotic ﬁgures in different cell division stages and other mitotic-like objects. First, each
+WSI is scanned on a single focal plane that could not be readjusted. As a result, many cells are out-of-focus and produce
+poor texture information. Additionally, the mitotic ﬁgures themselves can have diverse appearances across cell division
+stages and may be confused with other cell types or non-cell objects. Consequently, the classiﬁcation of some mitotic
+ﬁgures could be highly subjective, which leads to drastically different mitotic counts reported by different experts (4).
+Despite these problems, automated mitotic ﬁgure detection and mitotic count prediction is still considered as a crucial
+task in digital pathology and is an active area of research.
+To develop models for automatic mitotic ﬁgure detection, datasets with expert annotations, such as the ICPR MITOS-
+2012 (5), AMIDA 2013 (6), ICPR MITOS-ATYPIA-2014 (7), and TUPAC16 (8) challenges, can be used. However, as
+these datasets contain mitotic ﬁgure annotations only in the high power ﬁelds (HPF) corresponding to the hotspot ares,
+the model cannot fully learn from majority of the WSIs that were unannotated. Moreover, the number of the annotated
+mitotic ﬁgures in these datasets are low, often less than one thousand objects each. Recently, two large-scale mitotic
+ﬁgure datasets with annotations covering the whole slides have been released: the canine cutaneous mast cell tumor
+(CCMCT) (9) dataset and the canine mammary carcinoma (CMC) (10) dataset. The availability of these new datasets
+allow the model to learn from greatly increased mitotic ﬁgure and background diversity, which immediately improved
+the model’s performance (9). Nonetheless, it should be noted that these datasets were annotated with ﬁxed size circular
+bounding box with a radius of 25 pixels which do not perfectly capture the shape of mitotic ﬁgures and would lead to
+noises and errors during the training process.
+Not only imperfection in data acquisition and annotation, but also the formulation of deep learning approach to solve
+the task plays an important role in the model’s performance. Existing models for mitosis recognition often break the
+task into two stages: detection and classiﬁcation (11, 12, 13). A main reason for this is because the sheer size of WSI
+prevents the model from operating directly on it. Instead, the WSI has to be broken down into smaller patches with a
+sliding window on which the inference is then performed to extract the locations of mitotic ﬁgures. The detection stage
+proposes the locations of mitotic ﬁgures in the WSI by using deep object detection or segmentation models. After the
+mitotic ﬁgures are proposed, the classiﬁcation stage then reﬁnes the prediction results by ﬁrst extracting the position of
+each predicted mitotic ﬁgure and revising the corresponding image patch to make it center around the mitotic ﬁgure
+and to ensure that only one mitotic ﬁgure is contained within the patch. Each revised image patch is then fed to a
+deep object classiﬁer to obtain a conﬁdence score. The classiﬁcation stage signiﬁcantly improves the mitotic ﬁgure
+recognition performance because it overcomes the drawback of the detection stage which has to handle a much broader
+variety of image patches, some with no mitotic ﬁgure and some with multiple mitotic ﬁgures.
+Despite the aforementioned beneﬁts, a multi-stage pipeline also comes with a critical drawback; the classiﬁcation
+stage suffers from inconsistency in the input data received from the detection stage and training distribution mismatch.
+As an inference is being performed at the detection stage, its outputs would inevitably consist of inaccurate object
+locations and poor quality bounding boxes, leading to inconsistently positioned objects at the image patch of the
+subsequent stage. The inconsistency results in classiﬁcation stage performance degradation because most convolutional
+neural networks do not possess the shift-invariant property to properly handle the changes in distributions of object
+locations and bounding boxes produced by the detection stage (14). The situation is further worsened with the use of
+a sliding window as it may split an object into pieces across multiple patches, which leads to additional poor-quality
+false positives. Inconsistency in training data distributions between the two stages is also non-negligible. While the
+detection stage learns the entire data distribution of the WSI, the classiﬁcation stage mostly observes only mitotic ﬁgures
+and other similar-looking objects. This training distribution mismatch causes the classiﬁcation stage to suffer from
+out-of-distribution problem when it receives inputs with no mitotic ﬁgure. DeepMitosis(12) mitigates this problem by
+using all predictions, including low conﬁdence ones, from the detection stage to train the classiﬁcation stage. However,
+this method is impractical on large-scale datasets where hundreds of thousands of objects are proposed by the detector.
+To address all of the aforementioned problems, we introduce Reﬁne Cascade Network (ReCasNet), an enhanced
+deep learning pipeline to improve the recognition performance on large-scale mitotic ﬁgure recognition datasets. Our
+pipeline improves the performance of the classiﬁcation stage by increasing the consistency of input data distribution
+and exposing the model to more informative data. First, we propose Window Relocation, a simple, effective method
+2
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+that overcomes the weakness of an overlapping sliding window by removing objects around the window border and
+re-evaluating them as the center of newly extracted patches. This method seeks to eliminate poor bounding boxes
+while requiring less computation cost than the overlapping sliding window. Second, we introduce an Object Center
+Adjustment Stage, a deep learning model responsible for bridging the gap between the classiﬁcation stage and the
+detection stage. It generates new image patches that center on mitotic ﬁgures predicted by the detection stage and feed
+them to the classiﬁcation stage to reduces the variance in input translation. Third, we improve the training data sampling
+process of the veriﬁcation model (i.e., classiﬁcation stage) of DeepMitosis by focusing on a subset of informative
+samples from the proposed objects on which the detector and the classiﬁer disagree with each other the most.
+We evaluated the performance of ReCasNet on the CCMCT and CMC datasets, two public large-scale datasets for
+mitotic ﬁgure assessment. ReCasNet achieved 83.2% test F1 on the CCMCT dataset and 82.3% test F1 on the CMC
+dataset, which correspond to +1.2 and +4.8 percentage point improvements over the baseline, respectively (9, 10). An
+end-to-end evaluation on both datasets by comparing the HPF and mitotic count (MC) produced by ReCasNet to the
+ground truth annotation showed that the mitotic count proposed by our pipeline on a fully-automated setting produced
+44.1%, and 28.2% less mean absolute percentage error (MAPE) compared to the baseline on the CCMCT and CMC
+datasets, respectively.
+2
+Related Work
+To perform automatic mitosis detection, many detection algorithms have been proposed to solve this problem. Early on,
+hand-crafted based object detection was a popular approach for automatic mitosis detection (15, 16, 17, 18, 19, 20, 21,
+22). It was also widely used in a general computer vision tasks before the resurgence of the deep learning approach.
+In this approach, the object candidates were proposed ﬁrst by using traditional computer vision techniques to assign
+the probability of each pixel being a mitotic ﬁgure, and a threshold was then applied. After that, the shape, texture,
+and statistical features of the mitotic ﬁgure candidates were extracted based on pathologist’s knowledge. Finally, the
+extracted features were fed to a classiﬁer to distinguish objects of interest from background. This approach achieved
+competitive performances compared to deep object detection on the ICPR MITOS-2012, AMIDA 2013, and ICPR
+MITOS-ATYPIA-2014 dataset. Nevertheless, this approach does not scale well to large-scale datasets, since manually
+designing features that could explain all the mitotic ﬁgures would be extremely labor-intensive and would not generalize
+well to new datasets.
+Another approach for solving the problem is deep learning. It uses a convolutional neural network (CNN) to learn
+important features from training images. This paradigm achieves a state-of-the performance on many general computer
+vision tasks such as image classiﬁcation, object detection, and semantic segmentation. Moreover, it could also be
+applied to medical imaging tasks, leading to widespread adoption (23). Malon et al. (24) used image processing to
+propose the location of the candidate for mitotic cells, then used hand-crafted and CNN features to recognize mitotic
+ﬁgures. Cire¸san et al. (25) trained a single-stage pixel-level classiﬁer based on CNN to recognize mitotic ﬁgures
+on an image patch and perform inference in a sliding window manner, removing the need for hand-crafted features.
+CasNN (11) started using a two-stage pipeline to perform mitosis detection. The ﬁrst stage was a semantic segmentation
+network trained to coarsely propose the location of mitotic cells. After that, the classiﬁcation network was used to reﬁne
+the prediction result observing it in ﬁne detail. DeepMitosis (12) changed the detection algorithm of the ﬁrst stage from
+semantic segmentation to object detection, leading to a signiﬁcant performance gain. In the dataset without pixel-level
+annotation, the bounding box was estimated using a semantic segmentation network. MitosisNet (13) changed the
+ﬁrst stage by posing the problem as multi-task learning by training both segmentation and detection tasks in parallel.
+Though signiﬁcant progress has been made, the benchmarks are mainly performed on small-scale datasets.
+An introduction of large-scale mitosis detection dataset (9, 10) opened up the possibility of evaluating model performance
+on a whole slide level. Aubreville et al. (26) compared three deep learning-based methods for identifying the location
+with the highest mitotic density in the WSI of canine cutaneous mast cell tumor. (CCMCT). It was found that a
+two-stage pipeline, which contains a dedicated object detector, achieved the highest correlation between the predicted
+and the ground truth mitotic count. In addition, the prediction proposed by the models generally performed better than
+individual expert. Later, Bertram et al. (27) showed that the use of a model to assist human expert by pre-selecting
+the region of interest led to a consistently more accurate mitotic count. In terms of speed, Fitzke et al. (28) proposed
+a high-throughput deep learning system that could perform mitosis detection on the WSI with an inference time of
+0.27 minutes per slide. Most importantly, their system led to a change in tumor grading compared to human expert
+evaluation in some cases.
+3
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+Figure 1: A brief overview of our proposed pipeline. Our contributions are highlighted in the green dashed box. Two
+new stages, namely window relocation and object center adjustment are introduced in our pipeline. Window Relocation
+is used to remove superﬂuous poor quality predictions around the sliding window borders. The object center adjustment
+stage is responsible for aligning the center of the predicted positive class object from the detection stage to the image
+patch center. Data selection is used to ﬁlter training examples from the WSI to improve the model in the classiﬁcation
+stage.
+3
+Methods
+In this section, we explain each component of our proposed pipeline in full detail. An overview of our pipeline is shown
+in Figure 1. The pipeline consists of four stages. First, a detection stage proposes the location of the mitotic ﬁgures in
+the WSI using an object detection algorithm. After that, a window relocation algorithm reevaluates poor quality false
+positive predictions around the image border. Then, an object center adjustment stage reﬁnes the quality of the extracted
+object to be more aligned to the patch center. Finally, a classiﬁcation stage rescores the object conﬁdence of each patch.
+In the classiﬁcation stage, an additional technique is used to select training examples from the WSI to boost the model
+performance by using disagreement between the detection and classiﬁcation stage. The subsections provide a detailed
+explanation of each stage.
+3.1
+Detection Stage
+The detection stage is the ﬁrst component of the pipeline responsible for proposing the location of the mitotic ﬁgures
+from the image. It is a deep object detector that receives an image as an input and return a set of bounding boxes {(x1,
+y1, w1, h1, S1), ..., (xn, yn, wn, hn, Sn)}, where each tuple in the set represents the center of the predicted object,
+object width, object height, an positive object conﬁdence, respectively. Due to the sheer size of the WSI, the slide is
+broken down into smaller patches in a sliding window manner. The sliding window algorithm breaks down the slide
+with the dimension of W ×H into ⌈W
+K ⌉×⌈H
+K ⌉image patches (window) with the window size of K ×K. The detection
+stage then performs inference on every patch to extract the location of the mitotic ﬁgures inside it. To train the detector,
+we follow the data sampling strategy of the CCMCT and CMC baseline (9, 10). To stabilize the model performance, we
+slightly modify the training process by sampling training images beforehand instead of querying them on the ﬂy.
+The use of the sliding window algorithm leads to overproduced poor quality false positive predictions. This is because
+the object around the window boundary might be partially split into multiple objects in multiple sliding windows. Thus,
+an overlapping sliding window is performed to mitigate this issue by allowing the patches to be overlapped with the
+former one. This results in partially split boxes around the window border getting fully covered, though redundant
+predictions are also excessively produced. Therefore, non-maximum suppression (NMS) is used as a post-processing
+method to remove redundant objects. The NMS suppresses the bounding box when there exist nearby bounding boxes
+4
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+Figure 2: An illustration of the window relocation algorithm. An object of interest (orange box) resides within
+non-overlapping sliding windows A and B. As a result, patches A and B each produce a poor-quality box whose center
+is the point P1, and P2 respectively. Since both centers are in the relocation area, they are valid candidates for relocating.
+The window relocation algorithm starts by discarding the two boxes in both patches. Then, patches A’ and B’ are newly
+created with the points P1 and P2 at the patch center. Finally, the newly created patches are fed to the detector, which
+returns two blue boxes.
+of which an intersection over union (IOU) is over a certain threshold and has higher conﬁdence. The use of NMS results
+in a reduction of false-positive predictions as low-quality, low conﬁdence boxes are mostly removed while retaining the
+good quality, high conﬁdence ones. Despite the advantage, the overlapping windows increased the number of patches
+to perform inference to ⌈
+W
+K(1−σ)⌉× ⌈
+H
+K(1−σ)⌉, where σ is an overlapping ratio. Moreover, though the problem is
+mitigated, this method does not guarantee good performance at the borders.
+3.2
+Window Relocation
+Window Relocation is a simple algorithm used to remove poor quality predictions around the sliding window border.
+This method aims to eliminate the two main weaknesses of the overlapping sliding window. The ﬁrst weakness is
+that poor quality predictions around the window border still exist when the IOU is not high enough for the NMS to
+suppress, which results in an increased number of false positives during the ﬁnal evaluation. Another weakness is that
+the computation resource is wasted when the window and its surroundings do not contain any object, especially for this
+task where mitotic ﬁgures are often sparsely populated across the WSI.
+Figure 2 illustrates the process of the window relocation algorithm. Window relocation mitigates both problems by
+performing three steps. First, a relocation area is deﬁned around the border of each patch (the yellow area in Figure 2).
+All positive objects whose center resides in the area are then discarded. After that, for each discarded object, the new
+window whose center is the center of the discarded object is created (patch A’ and B’ in Figure 2). Finally, the detector
+performs inference on the newly created windows. By performing these steps, the focus of the object is moved from
+the window border to the newly-created window center. This algorithm provides us with three advantages. First, it
+would reduce the poor quality predictions around the window border as most of them are removed. Second, having a
+relocated object positioned at the window center results in a more consistent detection result. Third, this method does
+not increase computation cost in the area that does not contain any object. Though this method might incur redundant
+predictions, it does not pose a signiﬁcant impact on the whole pipeline as the new consistently produced boxes could be
+easily removed by using NMS.
+Next, we deﬁne a clear deﬁnition of a relocation area. The ith object in each window could be considered to be in the
+relocation area if the condition below is satisﬁed.
+(min(xi, yi, K −xi, K −yi) ≤M) ∧(Si ≥D))
+(1)
+In other words, the center of the object that is less than equal to M pixel from the window border in any axis and has
+higher positive object conﬁdence than D is in a relocation area and is eligible for window relocation.
+M is a hyperparameter determining a distance threshold from a window border, affecting the number of re-observed
+objects. If M is set to a low value, window relocation would act as a non-overlapping sliding window. In contrast,
+a high value of M would allow more objects to be re-scored. Setting M to a high value would also come with a
+trade-off because it would result in an increased computation cost since the detector has to re-inference more objects.
+Nevertheless, the use of window relocation is expected to have less computation costs than the overlapping sliding
+window. This is because it would only try to re-inference the objects around the window border, and the objects in the
+5
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+datasets are often sparse. D is a positive conﬁdence threshold used for discarding obvious negative objects produced by
+the detector. It is set to 0.05 for both datasets.
+Since we know beforehand during the annotation process that the mitotic ﬁgure often has a form of circular shape with
+a radius around 25 pixels, we also follow this assumption and set M to 25 pixels. It should be noted that this method
+would not work efﬁciently on general object detection tasks as the object shape could not be known beforehand.
+3.3
+Object Center Adjustment Stage
+Figure 3: An overview of an object center adjustment stage. The object center adjustment stage learns to estimate the
+distance from the extracted patch center (red dot) to the ground truth positive class object center (green dot) and its class.
+During inference, the model estimated the location of object center (yellow dot) and generates a new image patch at the
+predicted location if the predicted object is recognized as a positive class. The blue box is a bounding box predicted by
+the detection stage.
+Although many false-positive samples around the border of the sliding window are reevaluated after window relocation,
+there is still the problem of poor-quality bounding boxes that cause input inconsistency at the classiﬁcation stage. The
+input inconsistency could make extracted object not being positioned at the image patch center, leading to classiﬁcation
+stage performance degradation due to input translation variance. Therefore, we introduce an object center adjustment
+stage as a reﬁnement process after window relocation to reduce position inconsistency of the positive class objects in
+the image patch by making the object center more aligned to the center of the patch to reduce input translation variance.
+The object center adjustment stage is a model which learns to locate the center of the positive object by estimating
+the distance from the image patch center to the ground truth positive class object center. Then, during an inference,
+it predicts the object center location and generates a new patch of which the center is the predicted location if the
+object class is positive. The negative class objects are refrained from adjustment because the concept of object center is
+ambiguous for non-cell background and broad tissue texture areas. Figure 3 shows an overview of the object center
+adjustment stage.
+To train the model to estimate the position of the object center, we generate the data representing the object center at
+different locations in the patch as an input to the model. The generation process starts by randomly sampling positive
+and negative objects from the dataset and extracting them in an image patch. By doing so, the image center of the
+sampled object is always at the same position as the ground truth object center. Then, random geometric transformations,
+which are random image shifting, ﬂipping, rotation, are applied to the sampled image. As a result, the ground truth
+center is shifted from the image center by (dX, dY ) pixels. After the image is transformed, the model learns to predict
+the position of the object center by predicting (dX, dY ). The value of dX, dY is drawn from a normal distribution and
+is limited to a small value (dX, dY ≤12 pixels) because we assume that the center of the predicted object should be
+close to the ground truth object center.
+Since the objective of this stage is to relocate the center of the positive object, the class of the object has to be known
+beforehand, which is not practical in a real-world situation. Therefore, the object class has to be inferred from the
+model. We could straightforwardly obtain the class by using object conﬁdence from the detection stage. The detected
+6
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+object could be inferred as a positive class when the conﬁdence is above a certain threshold. However, using detector
+conﬁdence might not be ideal as the conﬁdence produced by the poor bounding boxes might be inaccurate. Therefore,
+we added an auxiliary task for the object center adjustment stage to classify the object class. Since the input to this
+stage is just an extracted patch, it allows the model to observe a single object at a time, removing an unnecessary
+distraction from other objects. As a result, the conﬁdence produced by this improvement should be superior to the
+detector conﬁdence because it inherits the advantage of the limited observation like the classiﬁcation stage, and it also
+has information of the annotated object center.
+The object center adjustment stage is a deep convolutional neural network (CNN) that outputs two prediction heads:
+the main regression head to estimate the distance from the image center to the ground truth center (dX, dY ), and the
+auxiliary classiﬁcation head to predict the object class. The model is optimized using relocation loss Lrel as shown
+below.
+Lrel = λregLreg + (1 −λreg)Lcls.
+(2)
+The relocation loss Lrel is a combination of the regression loss Lreg and classiﬁcation loss Lcls weighted by the
+parameter λreg. The classiﬁcation loss is a standard cross-entropy loss calculated between the predicted and the ground
+truth object class. The regression loss is a L1 loss calculated between the predicted and the ground truth object center
+distance. To prevent a regression noise, the regression loss calculation is ignored when the ground truth class is negative.
+During inference, the model receives an extracted object as input then returns the object class and location of its center
+by estimating the distance from the object center to the patch center as an output. If the predicted object conﬁdence
+is above a certain threshold, the object would be considered a positive object, and a new patch of which the center is
+the predicted location is generated. On the other hand, the model does nothing if the object’s conﬁdence is below the
+threshold.
+3.4
+Classiﬁcation Stage
+After the object center adjustment stage is performed, the center of the extracted object moves closer to the patch center
+and is ready to be fed to the classiﬁcation stage. A classiﬁcation stage is a model that resembles the object center
+adjustment stage but is dissimilar in its functionality. In contrast to the previous stage, this stage is a CNN that only
+outputs a classiﬁcation head. The classiﬁcation stage receives an extracted object from the object center adjustment
+stage as an input and returns the object’s conﬁdence. It could be argued that this stage might be redundant as the object
+center adjustment stage could also return the conﬁdence. However, the main difference from the previous stage is
+that the object is consistently positioned at the image center. This means that the importance of having the model
+captured object translation variance is lessened. As a result, data augmentation strategies that could change the location
+of the object center are not included during training, leading to an increase in training stability and better recognition
+performance.
+The training process of this stage is similar to the object center adjustment model. First, positive and negative objects
+are randomly sampled from the dataset in an isolated area. The samples are then augmented and fed to the classiﬁer,
+which predicts the object conﬁdence. We follow DeepMitosis (12) for the ﬁnal object conﬁdence calculation. The ﬁnal
+object conﬁdence S is weighted between the conﬁdence produced by the detection stage Sdet and the classiﬁcation
+stage Scls using the weight ω as shown below.
+S = ωSdet + (1 −ω)Scls.
+(3)
+3.5
+Active Learning Data Selection
+Though the proposed pipeline yields a amiable performance, the dataset is still not fully utilized. This is because the
+classiﬁcation stage only observes annotated objects, and the unannotated ones are left untouched. DeepMitosis(12)
+tackled this issue by using the detector to extract image regions from the original WSI to to train the classiﬁcation stage.
+However, this method became less effective in a large-scale dataset because it would generate an enormous number of
+objects from the negative class from the WSIs. Inclusion of these additional data would introduce not only a severe
+class imbalance but also the issue of negative class’s uninformativeness. Therefore, active learning techniques should
+be used to select only the informative subset of proposed objects.
+To quantify the informativeness of a proposed object, we use an L1 distance between the positive class conﬁdence of
+the detector and the classiﬁer. This criterion offers us two advantages. First, it would encourage the classiﬁer to correct
+its mistake by learning from the detector which generally performs better at ﬁltering out negative objects. Second,
+it discourages the selection of noisy annotations, since it is possible that many objects of the positive class were not
+annotated as such. In these cases, both the detector and the classiﬁer would return high positive class conﬁdences and
+7
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+discard them. Here, we select top N (N = 20,000) negative objects which has the highest informativeness as additional
+queries for retraining the classiﬁcation model.
+4
+Experimental Setup
+4.1
+Dataset
+The datasets chosen for benchmarking of our method were the ODAEL variant of the CCMCT dataset (9) and the
+CODAEL variant of the CMC (10) dataset. The prominent characteristic of the two datasets was the availability of a
+complete mitotic ﬁgure annotation on the WSI level using algorithm-aided annotation and the consensus of experts. In
+addition, hard negative objects (mitosis ﬁgures lookalikes) were also annotated, which improve training information.
+The CCMCT dataset contains an annotation of 44,800 mitotic ﬁgures on 32 WSIs, of which 11 of them were held
+out for testing. The CCMCT dataset consists of four classes: Mitosis, Mitosislike, Granulocyte, and Tumorcell. The
+ﬁrst class is a positive class while the rest are considered negative. In the same manner, the CMC dataset contained
+an annotation of 13,907 mitotic ﬁgures on 21 WSIs, of which 7 of them were held out for testing. The CMC dataset
+consists of two classes: Mitosis, and Nonmitosis.
+4.2
+Detection Stage
+The training was conducted using Faster R-CNN (29) with ResNet-50 (30) as a network backbone with an input training
+resolution of 512 × 512. The network backbone was initialized using ImageNet pre-trained weights (31). We did not
+modify the base detection algorithm except for the number of output classes. We sampled 5,000 image patches from
+each training slide using the same data sampling strategy as the baseline. The training framework was based on an
+object detection framework MMDetection (32). The model was trained using a batch size of 8 and SGD as an optimizer.
+The model was trained with an initial learning rate of 10−3 for 8 epochs which were divided by 10 after 5 and 7 epochs.
+Random ﬂip and standard photometric augmentation were used during training.
+4.3
+Object Center Adjustment Stage
+The training was conducted using EfﬁcientNet-B4 (33) as a network backbone with an input training resolution of
+128 × 128. The network backbone was initialized using ImageNet (31) pre-trained weights. The model was trained
+using a batch size of 64 and Adam as an optimizer. The model was trained with an initial learning rate of 10−4 for
+30,000 iterations which were divided by 10 after 22,500 and 27,000 iterations. λreg was set to 0.95 for every experiment.
+Random image geometric and standard photometric augmentation was used during training. The positive class threshold
+was set to 0.2, and 0.5 for CMC and CCMCT datasets, respectively.
+4.4
+Classiﬁcation Stage
+The training was conducted using EfﬁcientNet-B4 (33) as a network backbone with an input training resolution of
+128 × 128. The network was initialized using ImageNet pre-trained weights. The model was trained using a batch size
+of 64 and Adam as an optimizer. For the CCMCT dataset, the model was trained with an initial learning rate of 5×10−4
+for 30,000 iterations which were divided by 10 after 22,500 and 27,000 iterations. For the CMC dataset without data
+selection, the model was trained with an initial learning rate of 5 × 10−4 for 15,000 iterations which were divided by
+10 after 10,000 and 13,000 iterations. For the CMC dataset with data selection, the model was trained with an initial
+learning rate of 5 × 10−4 for 24,000 iterations which were divided by 10 after 15,000 and 21,000 iterations. Random
+image geometric and standard photometric augmentation except for random translation were used during training.
+5
+Results
+In this section, we evaluated the performance of the proposed method on the CCMCT (9) and CMC (10) datasets. We
+followed the prior study (9) by using F1 (%) as a primary metric and using the same train-test split. We reported an
+average of three splits with standard deviations. The models used for evaluation were the checkpoints at the last training
+step.
+The result shown in table 1 summarized the performance of our method. Ultimately, the performance of the proposed
+pipeline improved from 82.0% to 83.2% on the CCMCT dataset and 77.5% to 82.6% on the CMC dataset. The main
+contributing factors were data selection and object center adjustment stage, which contributed 2.6% and 4.2% absolute
+performance improvement. The result suggested that input consistency and exposure of additional unannotated data at
+the classiﬁcation stage was crucial for performance improvement.
+8
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+Table 1: The test F1 (%) performance of the proposed method evaluated on the CCMCT and CMC datasets. ± denotes
+standard deviation.
+Method
+CCMCT test F1(%)
+CMC test F1(%)
+Baseline (9, 10)
+82.0
+77.5 1
+Reproduced baseline (ω = 0)
+79.9 ± 0.3
+77.6 ± 0.2
++ Data selection
+81.8 ± 0.1
+80.3 ± 0.1
++ Object center adjustment
+82.5 ± 0.1
+81.8 ± 0.1
++ Weighted conﬁdence (ω = 0.4)
+83.0 ± 0.1
+82.1 ± 0.1
++ Window relocation
+83.2 ± 0.1
+82.3 ± 0.1
+(a)
+(b)
+Figure 4: Multiple Bar charts showing the frequency of easy and hard false positive (FP) errors on the CCMCT and
+CMC dataset. Our method greatly reduced the number of easy false positive predictions, yet confusion between positive
+and hard-negative samples still remained in high quantity.
+We then investigated the mispredictions produced by our pipeline by observing false-positive errors and categorized
+them as easy and hard errors. The hard errors are the hard-negative object that is confused as a positive class, while
+the easy error is confusion between the positive class and a non-hard negative object or background image. Figure 4
+shows a visualization of false-positive errors of our method. Our method greatly reduced the number of easy false
+positive predictions compared to the baseline. Nevertheless, the confusion between positive and hard-negative samples
+persists. This indicated that input translation variance was not the only factor for the confusion between hard-negative
+and positive objects.
+5.1
+Effect of Object Center Adjustment Stage
+In this subsection, we study the effect of the object center adjustment stage on the proposed pipeline. First, we show
+that the presence of this stage leads to an improvement of the proposed object center quality. Then, we provide ablation
+studies to conﬁrm the choice of our design. For every experiment, ω was set to zero, and window relocation was
+excluded.
+One metric that can measure the performance of the object center adjustment stage is the distance between the patch
+center and the original location. The false positives were not included in this metric as it was irrelevant for this stage.
+The object center adjustment stage reduced the average distance from 3.59 to 3.17 on the CCMCT dataset and 3.61 to
+3.40 on the CMC dataset. The result suggested that the use of the object center adjustment stage clearly reduces the
+input translation variance.
+Figure 5 shows examples of the predicted object center produced by the object center adjustment stage. The model
+often correctly located the position of the actual object center as shown in Figure 5a. However, falsely adjusted objects
+were also present. Some common mispredictions came from confusion of cells in the late telophase stage which can
+look like two separate mitotic ﬁgures. As a result, the model aligned to one of the spindles instead of the actual center.
+1The number was based on the erratum in their Github.
+9
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+Table 2: The result of the ablation study on the importance of the object center adjustment stage conducted on the
+CMC dataset. The use of an object center adjustment stage outperformed the classiﬁcation stage with translation
+augmentation. In addition, the removal of translation augmentation at the classiﬁcations stage was crucial for the
+performance improvement of the whole pipeline.
+Method
+CMC test F1(%)
+Classiﬁcation stage
+80.3 ± 0.1
+Classiﬁcation stage w/ translation augmentation
+80.5 ± 0.3
+Object center adjustment stage
+81.3 ± 0.1
+Object center adjustment stage+Classiﬁcation stage
+81.8 ± 0.1
+Object center adjustment stage+Classiﬁcation stage w/ translation augmentation
+81.5 ± 0.1
+Table 3: The result of the ablation study of the object center adjustment stage conducted on the CMC dataset. The use
+of an auxiliary head improved the stage performance while the inclusion of negative class for relocation loss resulted in
+reduced performance.
+Negative class relocation loss
+Auxiliary head
+CMC test F1(%)
+-
+-
+81.5 ± 0.2
+✓
+-
+81.1 ± 0.1
+-
+✓
+81.8 ± 0.1
+Others causes of misprediction came from the model’s inability to precisely locate the object center when the predicted
+object center is too far from the ground truth center, object center ambiguity, and silly mistakes.
+Next, we justify the exclusion of negative class in the regression loss and the presence of auxiliary head. Table 3 shows
+that the model performance reduced from 81.8% test F1 to 81.1% when the negative class was included in the regression
+loss. The result indicates that the ambiguity of object center in the negative class object led to a regression noise during
+training, eventually leading to reduced performance. Moreover, the auxiliary head improves the model performance
+from 81.5% to 81.8%, showing the importance of multi-task learning.
+We also conducted ablation studies on the choice of pipeline design and the removal of data augmentation strategies that
+could change the location of the object center. Table 2 shows that translation augmentation improved the performance of
+the classiﬁcation stage of the base pipeline. However, the object center adjustment training scheme, which formulated
+the problem as a multi-task problem, is more efﬁcient than data augmentation. We conﬁrmed this by replacing a
+classiﬁcation stage with an object center adjustment stage and using its classiﬁcation head to produce object conﬁdence.
+It was found that, by only using the object center adjustment stage, the performance of the whole pipeline improved
+from 80.5% to 81.3% test F1 on the CMC dataset. By stacking the relocation and classiﬁcation stage, the performance
+was further increased to 81.8%. However, having a translation augmentation in the classiﬁcation stage of the stacked
+pipeline degraded the performance. The result also indicated that translation augmentation hampered the performance
+when the translation variance of the object center was controlled.
+5.2
+Effect of Window Relocation
+This subsection aimed to measure the effect of window relocation on the whole pipeline. Table 4 shows a comparison
+between window relocation and the sliding window method. The use of overlapping sliding windows did not improve the
+performance of our pipeline as most of the overproduced samples could be removed using the object center adjustment
+stage and non-maximum suppression. By using window relocation, the performance of the pipeline was better than the
+non-overlapping sliding window and the overlapped one with 0.2% test F1 absolute improvement on the CMC dataset.
+The result suggested that some produced errors could not be mitigated through the method above. This is because the
+center of the overproduced object might be too far for the object center adjustment stage to adjust back to the actual
+center. In addition, we also found that window relocation only incurs a small amount of additional inference time over
+non-overlapping sliding window in a practical setting. This is because mitotic ﬁgures in the WSI generally have low
+density. Moreover, unlike overlapping sliding windows, window relocation could ignore most of the background image
+as it did not contain any objects in the ﬁrst place.
+Since both window relocation and object center adjustment stage have a similar objective of improving poor quality
+predictions for the detection stage, we conducted an ablation study to observe the effect of each component separately.
+Table 5 shows a comparison of the two components on the CMC dataset. Window relocation improved the test F1 from
+10
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+(a) Successful cases of object center adjustment stage.
+(b) Failure cases of object center adjustment stage.
+Figure 5: Example prediction results produced by the object center adjustment stage on the CMC dataset. (a) shows
+a successful examples. (b) shows failure examples. The ﬁrst four images of are failures at the telophase stage. Red,
+yellow, and green dots indicate original, relocated, and ground truth object center, respectively. The red boxes are the
+bounding box produced by the detection stage.
+Table 4: A comparison of different sliding window algorithms on the CMC dataset. Window relocation outperformed
+overlapping sliding windows while incurring less computation cost.
+Method
+CMC test F1(%)
+Number of test inference window
+done in the detection stage
+Non-overlapping sliding window
+82.1 ± 0.1
+211482 (+0%)
+Overlapping sliding window
+82.1 ± 0.1
+261909 (+23.8%)
+Window relocation
+82.3 ± 0.1
+217368 (+2.7%)
+80.3% to 81.1%. Nevertheless, the performance was inferior to the object center adjustment stage, which achieved
+81.8%. This is because window relocation mostly affects the objects positioned around the sliding window border.
+5.3
+The effect of the detection algorithm
+We conducted an ablation study on the detection algorithm on the CMC dataset by changing the base detection algorithm
+and found that our method reduced the dependence on the strength of the detection model. We compared the chosen
+detection algorithm, Faster-RCNN-ResNet50, to the RetinaNet-ResNet18 (34), which is a detection algorithm in
+both CCMCT and CMC paper. We also observed the effect of different model backbones by comparing them with
+Faster-RCNN-ResNet101. Every experiment was trained using the same set of data and training schedule, and ω was
+set to 0. Table 6 shows that the choice of detection algorithm had a signiﬁcant impact on the base pipeline. The use of
+RetinaNet-ResNet18 as a detection algorithm reduced the test F1 on the CMC dataset by 9.0% on the detection stage
+and 2.2% on the classiﬁcation stage compared to Faster-RCNN-ResNet50. The presence of object center adjustment
+stage and data selection helped mend the performance gap from 2.2% to 0.5% test F1 difference. The result suggested
+that the performance of the detection algorithm has a direct impact on the quality of the predicted bounding box, leading
+to worse classiﬁcation stage performance, and the object center adjustment stage is an essential component for the
+object center correction. It could also be implied that, by emphasizing the classiﬁcation stage, it allowed us to use a fast
+detection algorithm to potentially greatly reduce the inference time of the detection stage while not suffering a sharp
+performance reduction.
+Table 5: The comparison between window relocation and object center adjustment stage on the CMC dataset. Window
+relocation could partially mitigate the problem of input translation variance.
+Window relocation
+Object center adjustment stage
+CMC test F1(%)
+-
+-
+80.3 ± 0.1
+✓
+-
+81.1 ± 0.2
+-
+✓
+81.8 ± 0.1
+✓
+✓
+82.1 ± 0.1
+11
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+Table 6: A comparison of different detection algorithms on the CMC dataset. The choice of different detection
+algorithms led to drastically different results on the classiﬁcation stage. However, an introduction of the object center
+adjustment stage and data selection greatly mitigated this problem.
+Detection algorithm
+detection
+test F1(%)
++classiﬁcation
+stage
++data selection
++object center
+adjustment
+RetinaNet-ResNet18
+61.4 ± 0.8
+75.4 ± 0.2
+78.8 ± 0.4
+81.3 ± 0.2
+Faster-RCNN-ResNet50
+70.4 ± 0.3
+77.6 ± 0.2
+80.3 ± 0.1
+81.8 ± 0.1
+Faster-RCNN-ResNet101
+71.3 ± 0.1
+78.1 ± 0.2
+80.2 ± 0.1
+81.8 ± 0.1
+Figure 6: Scatter plots illustrating the predicted mitotic count and the ground truth on the CCMCT and CMC dataset on
+GA setting. Compared to the baseline, our method clearly changed the predicted MC when the object appeared in high
+density, though the effect become less noticeable on the slides with low mitotic ﬁgures.
+5.4
+End-to-End evaluation
+We further extended an evaluation of our method to an end-to-end setting by comparing the mitotic count (MC) produced
+by our method to the ground truth mitotic count. We follow Meuten et al.(35) by counting mitotic ﬁgures at 10 HPF
+(2.37 mm2) with an aspect ratio of 4:3 at the area with the highest mitotic ﬁgures density. The HPF area was calculated
+by selecting the rectangle window size of 7110/5333 pixels which contains the highest number of mitotic ﬁgures (4).
+We evaluated the proposed pipeline on two settings: GA, and GB. The GA setting directly compared the mitotic count
+from the HPF proposed by our pipeline to the ground truth mitotic count. In contrast, the GB setting only used the
+proposed HPF, but the mitotic count was instead obtained by counting the ground truth mitotic cell. The GA setting
+could be considered as a fully automated mitosis counting while the GB was a human-in-the-loop setting where the
+optimal pathologist, who always correctly recognized mitotic ﬁgures, was also included in the pipeline. Moreover, the
+GB setting put an importance on the quality of the proposed HPF over the predicted mitotic count, which was mainly
+focused on the GA setting. We reported mean absolute percentage error (MAPE) and mean absolute error (MAE) at the
+prediction threshold which yielded the lowest MAPE. For a baseline comparison, we used the prediction results on the
+test set in their GitHub. Table 7 shows the result of GA and GB settings on the CCMCT and CMC dataset. Our method
+signiﬁcantly reduced the MAPE and MAE on the CCMCT and CMC datasets in both settings. Figure 6 shows a relation
+between the predicted mitotic count and the ground truth. Compared to the baseline, our method clearly changed the
+mitotic count when the object appeared in high density, though the impact was lessened in a low-density case.
+Table 7: The end-to-end performance of the proposed method evaluated on the CCMCT and CMC datasets. Our method
+consistently outperformed the baseline in both settings.
+Dataset
+Method
+GA
+GB
+MAPE
+MAE
+MAPE
+MAE
+CCMCT
+Baseline
+18.8
+10.5
+11.2
+4.4
+Ours
+10.5
+8.3
+6.8
+1.9
+CMC
+Baseline
+7.8
+3.1
+8.1
+2.4
+Ours
+5.6
+1.9
+5.6
+1.6
+12
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+6
+Conclusion
+We propose ReCasNet, an enhanced deep learning pipeline that introduces three improvements to the two-stage mitosis
+detection pipeline. First, we introduced window relocation, a method used to reduce the number of false positives
+introduced by the sliding window algorithm by removing predictions around the window border and assigning them to
+a new window for re-performing inference. Second, we proposed the object center adjustment stage, a deep learning
+model responsible for adjusting the center of the mitotic cell predicted from the detection stage. This improves the
+consistency of inputs for the classiﬁcation stage. Third, we utilized an active learning technique to alleviate the
+inconsistency in training data by identifying additional informative examples, based on the disagreement between the
+two stages, to train the classiﬁcation stage. Our proposed method signiﬁcantly increases the performance of the whole
+pipeline on both detection of individual mitotic ﬁgures and end-to-end region-of-interest proposal and mitotic count
+predictions on the CCMCT and CMC dataset.
+Acknowledgment
+This work was supported by the Thailand Program Management Unit (PMU-B) Grant for Multi-Institutional AI
+Development in Digital Pathology (to S.Sa., S.Sh., and S.Sr.) and the Grant for Supporting Research Unit, Ratchadapisek
+Sompoch Endowment Fund, Chulalongkorn University (to C.P., S.Sr., and E.C.).
+Code availability
+All used code in the experiments is available at https://github.com/cmb-chula/ReCasNet. The implementation is based
+on MMDetection(32) and tensorﬂow (36).
+References
+[1] Mitko Veta, Paul Diest, Mehdi Jiwa, Shaimaa Al-Janabi, and Josien Pluim. Mitosis Counting in Breast Cancer:
+Object-Level Interobserver Agreement and Comparison to an Automatic Method. PLOS ONE, 11:e0161286, 08
+2016. doi:10.1371/journal.pone.0161286.
+[2] Xipeng Pan, Yinghua Lu, Rushi Lan, Zhenbing Liu, Zujun Qin, Huadeng Wang, and Zaiyi Liu. Mitosis detection
+techniques in H&E stained breast cancer pathological images: A comprehensive review. Computers & Electrical
+Engineering, 91:107038, 2021. ISSN 0045-7906. doi:https://doi.org/10.1016/j.compeleceng.2021.107038. URL
+https://www.sciencedirect.com/science/article/pii/S0045790621000586.
+[3] Chetan L. Srinidhi, Ozan Ciga, and Anne L. Martel. Deep neural network models for computational histopathology:
+A survey. Medical Image Analysis, 67:101813, Jan 2021. ISSN 1361-8415. doi:10.1016/j.media.2020.101813.
+URL http://dx.doi.org/10.1016/j.media.2020.101813.
+[4] C. Bertram, M. Aubreville, C. Gurtner, A. Bartel, S. Corner, M. Dettwiler, O. Kershaw, E. Noland, Anja Schmidt,
+D. Sledge, R. Smedley, T. Thaiwong, M. Kiupel, A. Maier, and R. Klopﬂeisch. Computerized calculation of
+mitotic count distribution in canine cutaneous mast cell tumor sections: Mitotic count is area dependent. Veterinary
+Pathology, 57:214 – 226, 2019.
+[5] Ludovic Roux, Daniel Racoceanu, Nicolas Lomenie, Maria Kulikova, Humayun Irshad, Jacques Klossa, Frédérique
+Capron, Catherine Genestie, Gilles Le Naour, and Metin Gurcan. Mitosis detection in breast cancer histological
+images an icpr 2012 contest. Journal of pathology informatics, 4:8, 05 2013. doi:10.4103/2153-3539.112693.
+[6] Mitko Veta, Paul Diest, Stefan Willems, Haibo Wang, Anant Madabhushi, Angel Cruz-Roa, Fabio González,
+Anders Larsen, Jacob Vestergaard, Anders Dahl, Dan Cire¸san, Jürgen Schmidhuber, Alessandro Giusti, Luca Maria
+Gambardella, F. Tek, Thomas Walter, Ching-Wei Wang, Satoshi Kondo, Bogdan Matuszewski, and Josien Pluim.
+Assessment of algorithms for mitosis detection in breast cancer histopathology images. Medical Image Analysis,
+11 2014. doi:10.1016/j.media.2014.11.010.
+[7] MITOS-ATYPIA-14-dataset. https://mitos-atypia-14.grand-challenge.org/dataset/, 2014.
+Accessed: 2021-08-14.
+[8] Mitko Veta, Yujing J. Heng, Nikolas Stathonikos, Babak Ehteshami Bejnordi, Francisco Beca, Thomas Wollmann,
+Karl Rohr, Manan A. Shah, Dayong Wang, Mikael Rousson, and et al. Predicting breast tumor proliferation from
+whole-slide images: The tupac16 challenge. Medical Image Analysis, 54:111–121, May 2019. ISSN 1361-8415.
+doi:10.1016/j.media.2019.02.012. URL http://dx.doi.org/10.1016/j.media.2019.02.012.
+13
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+[9] Marc Aubreville, Christof Bertram, Christian Marzahl, Andreas Maier, and Robert Klopﬂeisch. A large-scale
+dataset for mitotic ﬁgure assessment on whole slide images of canine cutaneous mast cell tumor. Scientiﬁc Data,
+6:1–9, 11 2019. doi:10.1038/s41597-019-0290-4.
+[10] Marc Aubreville, Christof Bertram, Taryn Donovan, Christian Marzahl, Andreas Maier, and Robert Klopﬂeisch.
+A completely annotated whole slide image dataset of canine breast cancer to aid human breast cancer research.
+Scientiﬁc Data, 7, 11 2020. doi:10.1038/s41597-020-00756-z.
+[11] Hao Chen, Qi Dou, Xi Wang, Jing Qin, and Pheng Heng. Mitosis detection in breast cancer histology images via
+deep cascaded networks. Proceedings of the AAAI Conference on Artiﬁcial Intelligence, 30(1), Feb. 2016. URL
+https://ojs.aaai.org/index.php/AAAI/article/view/10140.
+[12] Chao Li, Xinggang Wang, Wenyu Liu, and Longin Jan Latecki. Deepmitosis: Mitosis detection via deep
+detection, veriﬁcation and segmentation networks. Medical Image Analysis, 45:121–133, 2018. ISSN 1361-8415.
+doi:https://doi.org/10.1016/j.media.2017.12.002. URL https://www.sciencedirect.com/science/articl
+e/pii/S1361841517301834.
+[13] Md Zahangir Alom, Theus Aspiras, Tarek M. Taha, Tj Bowen, and Vijayan K. Asari.
+Mitosis-
+net:
+End-to-end mitotic cell detection by multi-task learning.
+IEEE Access, 8:68695–68710, 2020.
+doi:10.1109/ACCESS.2020.2983995.
+[14] Logan Engstrom, Dimitris Tsipras, Ludwig Schmidt, and Aleksander Madry. A rotation and a translation sufﬁce:
+Fooling CNNs with simple transformations. ArXiv, abs/1712.02779, 2017.
+[15] M. Veta, P. J. van Diest, and J. P. W. Pluim. Detecting mitotic ﬁgures in breast cancer histopathology images. In
+Metin N. Gurcan and Anant Madabhushi, editors, Medical Imaging 2013: Digital Pathology, volume 8676, pages
+70 – 76. International Society for Optics and Photonics, SPIE, 2013. URL https://doi.org/10.1117/12.2
+006626.
+[16] Adnan M. Khan, Hesham El-Daly, and Nasir M. Rajpoot. A gamma-gaussian mixture model for detection of
+mitotic cells in breast cancer histopathology images. In Proceedings of the 21st International Conference on
+Pattern Recognition (ICPR2012), pages 149–152, 2012.
+[17] Christoph Sommer, Luca Fiaschi, Fred A. Hamprecht, and Daniel W. Gerlich. Learning-based mitotic cell
+detection in histopathological images. In Proceedings of the 21st International Conference on Pattern Recognition
+(ICPR2012), pages 2306–2309, 2012.
+[18] Angshuman Paul and Dipti Prasad Mukherjee. Mitosis detection for invasive breast cancer grading in histopatholog-
+ical images. IEEE Transactions on Image Processing, 24(11):4041–4054, 2015. doi:10.1109/TIP.2015.2460455.
+[19] F. Tek. Mitosis detection using generic features and an ensemble of cascade adaboosts. Journal of pathology
+informatics, 4:12, 05 2013. doi:10.4103/2153-3539.112697.
+[20] Chao-Hui Huang and Hwee-Kuan Lee. Automated mitosis detection based on exclusive independent component
+analysis. In Proceedings of the 21st International Conference on Pattern Recognition (ICPR2012), pages
+1856–1859, 2012.
+[21] Ramin Nateghi, Habibollah Danyali, and Mohammad Helfroush. Maximized inter-class weighted mean for fast
+and accurate mitosis cells detection in breast cancer histopathology images. Journal of Medical Systems, 41, 08
+2017. doi:10.1007/s10916-017-0773-9.
+[22] Angshuman Paul, Anisha Dey, Dipti Prasad Mukherjee, Jayanthi Sivaswamy, and Vijaya Tourani. Regenerative
+random forest with automatic feature selection to detect mitosis in histopathological breast cancer images. In Nassir
+Navab, Joachim Hornegger, William M. Wells, and Alejandro Frangi, editors, Medical Image Computing and
+Computer-Assisted Intervention – MICCAI 2015, pages 94–102, Cham, 2015. Springer International Publishing.
+ISBN 978-3-319-24571-3.
+[23] Geert Litjens, Thijs Kooi, Babak Ehteshami Bejnordi, Arnaud Arindra Adiyoso Setio, Francesco Ciompi,
+Mohsen Ghafoorian, Jeroen A.W.M. van der Laak, Bram van Ginneken, and Clara I. Sánchez.
+A survey
+on deep learning in medical image analysis. Medical Image Analysis, 42:60–88, 2017. ISSN 1361-8415.
+doi:https://doi.org/10.1016/j.media.2017.07.005. URL https://www.sciencedirect.com/science/articl
+e/pii/S1361841517301135.
+[24] Christopher Malon and Eric Cosatto. Classiﬁcation of mitotic ﬁgures with convolutional neural networks and
+seeded blob features. Journal of pathology informatics, 4:9, 05 2013. doi:10.4103/2153-3539.112694.
+[25] Dan C. Cire¸san, Alessandro Giusti, Luca M. Gambardella, and Jürgen Schmidhuber. Mitosis detection in breast
+cancer histology images with deep neural networks. In Kensaku Mori, Ichiro Sakuma, Yoshinobu Sato, Christian
+Barillot, and Nassir Navab, editors, Medical Image Computing and Computer-Assisted Intervention – MICCAI
+2013, pages 411–418, Berlin, Heidelberg, 2013. Springer Berlin Heidelberg. ISBN 978-3-642-40763-5.
+14
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+[26] Marc Aubreville, Christof Bertram, Christian Marzahl, Corinne Gurtner, Martina Dettwiler, Anja Schmidt, Florian
+Bartenschlager, Sophie Merz, Marco Fragoso, Olivia Kershaw, Robert Klopﬂeisch, and Andreas Maier. Deep
+learning algorithms out-perform veterinary pathologists in detecting the mitotically most active tumor region.
+Scientiﬁc Reports, 10, 10 2020. doi:10.1038/s41598-020-73246-2.
+[27] Christof A. Bertram, Marc Aubreville, Taryn A. Donovan, Alexander Bartel, Frauke Wilm, Christian Marzahl,
+Charles-Antoine Assenmacher, Kathrin Becker, Mark Bennett, Sarah Corner, Brieuc Cossic, Daniela Denk,
+Martina Dettwiler, Beatriz Garcia Gonzalez, Corinne Gurtner, Ann-Kathrin Haverkamp, Annabelle Heier, Annika
+Lehmbecker, Sophie Merz, Erica L. Noland, Stephanie Plog, Anja Schmidt, Franziska Sebastian, Dodd G. Sledge,
+Rebecca C. Smedley, Marco Tecilla, Tuddow Thaiwong, Andrea Fuchs-Baumgartinger, Don J. Meuten, Katharina
+Breininger, Matti Kiupel, Andreas Maier, and Robert Klopﬂeisch. Computer-assisted mitotic count using a deep
+learning-based algorithm improves inter-observer reproducibility and accuracy in canine cutaneous mast cell
+tumors. bioRxiv, 2021. doi:10.1101/2021.06.04.446287. URL https://www.biorxiv.org/content/early/
+2021/06/05/2021.06.04.446287.
+[28] Michael Fitzke, D. Whitley, W. Yau, Fernando Rodrigues, V. Fadeev, C. Bacmeister, Chris Carter, Jeffrey Edwards,
+M. Lungren, and Mark Parkinson. Oncopetnet: A deep learning based ai system for mitotic ﬁgure counting on
+h&e stained whole slide digital images in a large veterinary diagnostic lab setting. ArXiv, abs/2108.07856, 2021.
+[29] Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun. Faster R-CNN: Towards real-time object detection
+with region proposal networks. In C. Cortes, N. Lawrence, D. Lee, M. Sugiyama, and R. Garnett, editors,
+Advances in Neural Information Processing Systems, volume 28. Curran Associates, Inc., 2015. URL https:
+//proceedings.neurips.cc/paper/2015/file/14bfa6bb14875e45bba028a21ed38046-Paper.pdf.
+[30] Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning for image recognition, 2015.
+[31] J. Deng, W. Dong, R. Socher, L. Li, Kai Li, and Li Fei-Fei. Imagenet: A large-scale hierarchical image
+database.
+In 2009 IEEE Conference on Computer Vision and Pattern Recognition, pages 248–255, 2009.
+doi:10.1109/CVPR.2009.5206848.
+[32] Kai Chen, Jiaqi Wang, Jiangmiao Pang, Yuhang Cao, Yu Xiong, Xiaoxiao Li, Shuyang Sun, Wansen Feng, Ziwei
+Liu, Jiarui Xu, Zheng Zhang, Dazhi Cheng, Chenchen Zhu, Tianheng Cheng, Qijie Zhao, Buyu Li, Xin Lu,
+Rui Zhu, Yue Wu, Jifeng Dai, Jingdong Wang, Jianping Shi, Wanli Ouyang, Chen Change Loy, and Dahua Lin.
+Mmdetection: Open mmlab detection toolbox and benchmark, 2019.
+[33] Mingxing Tan and Quoc V. Le. Efﬁcientnet: Rethinking model scaling for convolutional neural networks, 2020.
+[34] Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár. Focal loss for dense object detection,
+2018.
+[35] D. Meuten, F. Moore, and Jeanne George. Mitotic count and the ﬁeld of view area: Time to standardize. Veterinary
+Pathology, 53:7–9, 01 2016. doi:10.1177/0300985815593349.
+[36] Martín Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen, Craig Citro, Greg S. Corrado, Andy
+Davis, Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael
+Isard, Yangqing Jia, Rafal Jozefowicz, Lukasz Kaiser, Manjunath Kudlur, Josh Levenberg, Dandelion Mané, Rajat
+Monga, Sherry Moore, Derek Murray, Chris Olah, Mike Schuster, Jonathon Shlens, Benoit Steiner, Ilya Sutskever,
+Kunal Talwar, Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Viégas, Oriol Vinyals, Pete Warden,
+Martin Wattenberg, Martin Wicke, Yuan Yu, and Xiaoqiang Zheng. TensorFlow: Large-scale machine learning on
+heterogeneous systems, 2015. URL https://www.tensorflow.org/. Software available from tensorﬂow.org.
+[37] Burr Settles. Active learning literature survey. 2009.
+[38] Ozan Sener and Silvio Savarese. Active learning for convolutional neural networks: A core-set approach, 2018.
+15
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+Appendix
+A
+Additional training details
+A.1
+Detection stage data preparation strategy
+We followed the data preparation strategy of the CCMCT and CMC baseline. 50% of the cropped patches were
+randomly acquired from the training slide. 40% were sampled to contained at least one mitotic ﬁgure in the cropped
+image. 10% contained at least one mitotic ﬁgure-lookalike in the cropped image (class MitosisLike and NonMitosis in
+the CCMCT, and CMC dataset respectively).
+A.2
+Data augmentation strategies
+Table 8 shows a detailed list of augmentation strategies of the object center adjustment and classiﬁcation stages. Random
+rotation was still allowed in the classiﬁcation stage because the relocated object center patch can still rotate.
+B
+Additional ablation studies
+B.1
+Effect of relocation loss weight
+We investigated the effect of λreg, a hyperparameter determining an importance of the regression task in the relocation
+loss on the performance of the whole pipeline. We compared the effect by using different sets of λreg and measured the
+performance of the whole pipeline. Table 9 shows that the performance does not vary much when λreg is set at the high
+value. However, there was a degradation of the object center adjustment stage’s ability to locate object center when the
+value of λreg was below a certain threshold.
+B.2
+Effect of data selection algorithm for the classiﬁcation stage
+In this section, we show that our criterion of informativeness is effective for this task. Thus, we provided a comparison
+of our method against three baselines. The ﬁrst baseline is DeepMitosis (12) query strategy, which queries every
+negative object proposed by the classiﬁcation stage from the training slides. The second baseline is uncertainty sampling,
+a strong baseline in the Active Learning ﬁeld (37). This method measures the uncertainty produced by the model as a
+selection criterion for data acquisition. We used entropy as an uncertainty measurement and used classiﬁcation stage
+conﬁdence to produce model uncertainty. The third baseline is K-Center-greedy (38), a query strategy based on the core
+set approach. It aims to select the samples that provide the most coverage over the training distribution by minimizing
+the distance between a data point and its nearest chosen samples. We also follow their work by using the output after
+the last convolutional layer of the classiﬁcation stage to represent the data point and L2 as a distance function. We used
+the same classiﬁcation model for data acquisition for every baseline. Window Relocation and object center adjustment
+stage were excluded during the experiments.
+Table 8: List of augmentation strategy of the the classiﬁcation and object center adjustment stage.
+Augmentation strategy
+Classiﬁcation stage
+Object center
+adjustment stage
+Intensity
+probability
+Random ﬂip
+0.5
+0.5
+-
+Random brightness
+0.5
+0.5
+(0.8, 1.2)
+Random contrast
+0.5
+0.5
+(0.8, 1.2)
+Random gaussian blur
+0.25
+0.25
+(3,3) and (5, 5) kernel
+Random hue
+1
+1
+(-0.1, 0.1)
+Random rotation
+1
+1
+(-90, 90)
+Random translation
+0
+1
+dx, dy ∼N(0, 62)
+16
+ReCasNet: Improving consistency within the two-stage mitosis detection framework
+A PREPRINT
+Table 9: The of λreg on the performance of the pipeline on the CMC dataset.
+λreg
+CMC test F1(%)
+1
+81.5 ± 0.2
+0.99
+81.7 ± 0.1
+0.95
+81.8 ± 0.1
+0.9
+81.8 ± 0.1
+0.8
+81.8 ± 0.1
+0.7
+81.6 ± 0.4
+0.6
+80.3 ± 1.6
+Table 10: The effect of data selection algorithm on the performance of the pipeline on the CMC dataset.
+Query method
+CMC test F1(%)
+Baseline (no query)
+77.6 ± 0.2
+DeepMitosis (query all)
+80.0 ± 0.2
+K-Center greedy
+79.0 ± 0.1
+Uncertainty sampling
+79.8 ± 0.1
+Disagreement (Ours)
+80.3 ± 0.1
+Table 10 shows the result of our experiment. It was found that our method outperformed DeepMitosis’s querying
+strategy and Active Learning baselines, and every Active Learning baseline is better than not selecting any data at all.
+The result supported our claim that overexposure of negative samples led to sub-optimal performance but still better
+than not querying any additional data at all.
+17

@@ -1,0 +1,3053 @@
+Host-pathogen protein-nucleic acid interactions: A comprehensive
+review
+Anuja Jain a, Shikha Mittal a,f, Lokesh P. Tripathi b,c, Ruth Nussinov d,e,⇑, Shandar Ahmad a,⇑
+a School of Computational and Integrative Sciences, Jawaharlal Nehru University, New Delhi 110067, India
+b National Institutes of Biomedical Innovation, Health and Nutrition, Ibaraki, Osaka, Japan
+c Riken Center for Integrative Medical Sciences, Tsurumi, Yokohama, Kanagawa, Japan
+d Computational Structural Biology Section, Basic Science Program, Frederick National, Laboratory for Cancer Research, Frederick, MD 21702, USA
+e Department of Human Molecular Genetics and Biochemistry, Sackler School of Medicine, Tel Aviv University, Israel
+f Department of Biotechnology and Bioinformatics, Jaypee University of Information Technology, Waknaghat, Solan, Himachal Pradesh, 173234, India
+a r t i c l e
+i n f o
+Article history:
+Received 30 March 2022
+Received in revised form 1 August 2022
+Accepted 1 August 2022
+Available online 04 August 2022
+Keywords:
+Host pathogen interactions
+Protein-nucleic acid interactions
+Structural biology
+Immunological response
+Drug design
+Toll-like receptors
+a b s t r a c t
+Recognition of pathogen-derived nucleic acids by host cells is an effective host strategy to detect patho-
+genic invasion and trigger immune responses. In the context of pathogen-speciﬁc pharmacology, there is
+a growing interest in mapping the interactions between pathogen-derived nucleic acids and host pro-
+teins. Insight into the principles of the structural and immunological mechanisms underlying such inter-
+actions and their roles in host defense is necessary to guide therapeutic intervention. Here, we discuss the
+newest advances in studies of molecular interactions involving pathogen nucleic acids and host factors,
+including their drug design, molecular structure and speciﬁc patterns. We observed that two groups of
+nucleic acid recognizing molecules, Toll-like receptors (TLRs) and the cytoplasmic retinoic acid-
+inducible gene (RIG)-I-like receptors (RLRs) form the backbone of host responses to pathogen nucleic
+acids, with additional support provided by absent in melanoma 2 (AIM2) and DNA-dependent activator
+of Interferons (IFNs)-regulatory factors (DAI) like cytosolic activity. We review the structural, immuno-
+logical, and other biological aspects of these representative groups of molecules, especially in terms of
+their target speciﬁcity and afﬁnity and challenges in leveraging host-pathogen protein-nucleic acid inter-
+actions (HP-PNI) in drug discovery.
+ 2022 The Author(s). Published by Elsevier B.V. on behalf of Research Network of Computational and
+Structural Biotechnology. This is an open access article under the CC BY-NC-ND license (http://creative-
+commons.org/licenses/by-nc-nd/4.0/).
+Contents
+1.
+Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4416
+2.
+Types of HP-PNIs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4416
+3.
+Specificity and structural basis of pathogen nucleic acid recognition by host PRRs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4418
+4.
+Target recognition, drug design and resistance against HP-PNI . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4421
+4.1.
+TLR3 pharmacological agents . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4421
+4.2.
+TLR7/8 pharmacological agents . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4426
+4.3.
+TLR9 pharmacological agents: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4426
+4.4.
+RLRs pharmacological agents . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4427
+4.5.
+cGAS-STING pharmacological agents . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4427
+4.6.
+Common agonists . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4428
+4.7.
+Common antagonists. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4428
+4.8.
+PRR agonist or adjuvant mechanism . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4428
+5.
+Computational approaches to HP-PNIs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4428
+5.1.
+Predicting foreign (pathogenic) nucleotide sequences interacting with host . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4429
+5.2.
+Gene regulatory networks . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4429
+https://doi.org/10.1016/j.csbj.2022.08.001
+2001-0370/ 2022 The Author(s). Published by Elsevier B.V. on behalf of Research Network of Computational and Structural Biotechnology.
+This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/).
+⇑Corresponding authors.
+E-mail addresses: nussinor@mail.nih.gov (R. Nussinov), shandar@jnu.ac.in (S. Ahmad).
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+journal homepage: www.elsevier.com/locate/csbj
+5.3.
+Databases related to HP-PNIs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4429
+6.
+Current trends and evolving perspectives . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4429
+7.
+Conclusion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4430
+Declaration of Competing Interest . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4430
+Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4430
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4430
+1. Introduction
+Decoding the detailed mechanisms of infections and immune-
+related diseases can be helped by investigating the interactions
+between the molecules of the invading species (pathogens) and
+the cellular machinery of the invaded (host) organism tasked with
+counteracting them. These so-called, host-pathogen interactions
+involves the molecules from the pathogen cell called Pathogen-
+Associated Molecular Patterns (PAMPs) with those of the hosts
+called Pattern Recognition Receptors (PRRs). The interactions
+between PRRs and PAMPs enable the host immune system to dis-
+criminate between the self and a foreign body before the stimula-
+tion of adaptive immunity. PRRs are either present on the surface
+or in the interior compartments of various host cell types such as
+dendritic cells (DCs), epithelial cells, mast cells, monocytes and
+granulocytes [1]. They are primarily germline-encoded receptors
+recognizing PAMPs [2], closely associated with danger-associated
+molecular patterns (DAMPs) [3]. They are also involved in activat-
+ing transcription factors, acting in the regulation of cytokine
+expression. There are many different groups of PRRs among which,
+the most studied are TLRs, NOD-like Receptors (NLRs) and RLRs, C-
+type lectin receptors (CLRs) and AIM2-like receptors (ALRs) [4,5].
+These PRRs either recognize PAMPs in the nucleus and cytoplasm
+(such as cyclic GMP-AMP synthase (cGAS)–stimulator of interferon
+genes (STING) and the RLRs) [6] or an extracellular environment
+(such as TLRs) [7–9]. As both of these interactions occur at the
+onset of the disease, they are attractive targets for potential pre-
+ventive and therapeutic interventions.
+The early PRRs recognition of PAMPs is aimed at eliminating the
+pathogen, preventing its entry into the host cells and triggering an
+adaptive immune response [9]. The PRR-PAMP host-pathogen
+interactions trigger a cascade of innate immune response reac-
+tions, including kinase pathway activation, production of effector
+molecules, and selective transcription factor stimulation. These
+events guide the immune system toward mounting either anti-
+inﬂammatory or pro-inﬂammatory responses [10]. From the
+molecular standpoint, PRR-PAMP host-pathogen molecular inter-
+actions include proteins, nucleic acids, carbohydrates and metabo-
+lites. Of these, protein–protein interactions (PPIs) have been widely
+studied and reviewed [11–13]. Host-virus and host-bacteria (mi-
+crobe) interactions such as those involving non-coding RNAs and
+metabolites have also been well-documented [14–17]. On the
+other hand, although many protein-nucleic acid interactions, cru-
+cial to the host defence, immune response and pathogen life cycle
+have been investigated across different species, the information is
+widely scattered and sometimes incoherent. Analysis and in-depth
+structure-based understanding of host-pathogen recognition via
+pathogen nucleic acid fragments or more broadly their genomic
+DNA is generally lacking in the literature. Although the ﬁeld of
+protein-nucleic acid interactions is one of the most actively pur-
+sued topics in computational and experimental biology, dominant
+studies on the subject have largely focused on host–host dynamics
+[18–20].
+In this review, we aim to provide a comprehensive overview of
+studies on host-pathogen interactions from the perspective of
+pathogen nucleic acids and their recognition by host proteins.
+We observed that an extensive body of literature is available that
+may provide deep insights into target speciﬁcity, systems-level
+responses and drug targeting of nucleic acid recognition machin-
+ery. Currently, most of it is reported in a focused and domain-
+speciﬁc manner, making it inconvenient to develop a holistic
+assessment, integrating immunological, therapeutic and structural
+perspectives. Here, we ﬁrst provide an overview of the nature of
+the interactions and the diseases in which speciﬁc HP-PNIs are
+implicated. Next, we examine the disease and cellular speciﬁcity
+of common pathogens and their receptors and the therapeutic
+interventions that are available and being actively pursued. We
+also survey sequence, structural and expression level studies in
+the context of individual interactions and high throughput analy-
+sis. Finally, we discuss potential applications and future directions
+in the study of pathogen nucleic acid sensing by proteins.
+2. Types of HP-PNIs
+Given the diversity of the interaction sites that pathogen mole-
+cules encounter upon gaining cellular entry, we ﬁrst review the lit-
+erature on the spatial regulation of pathogen recognition.
+Nucleic acids (DNA or RNA) are polyanionic molecules. They are
+intracellular but upon cell death or injury, they are released to the
+extracellular environment and can stimulate or inhibit host
+immune response by binding to PRRs. In general, PRRs are protein
+molecules that interact with a nucleic acid through different types
+of inter-molecular forces. These include electrostatic interactions
+(e.g., salt bridges), dipolar interactions (such as hydrogen bonding,
+van der waals interactions), entropic effects (hydrophobic interac-
+tions) and dispersion forces (base stacking) [21]. Often water mole-
+cules also facilitate the binding, for example by screening the
+electrostatic repulsion between similar charges on complementary
+molecules [22]. The interactions can be sequence-speciﬁc (tight) or
+non-speciﬁc (loose) manner [21,23–25]. Speciﬁc protein–DNA
+interactions are commonly mediated by an a-helical motif in the
+protein that inserts itself into the major groove of the DNA, thereby
+recognizing and interacting with a speciﬁc nucleotide sequence.
+The interactions are typically facilitated by H-bonds and salt
+bridges [26]. However, concomitant conformational changes in
+the
+DNA,
+sequence-dependent
+kinking,
+helical
+dislocation,
+untwisting, intercalation, etc., can contribute signiﬁcantly to this
+recognition process [27].
+Proteins that recognize DNA act through independently folded
+binding domains such as.
+ Winged helix-turn-helix proteins, composed of two roughly
+perpendicular a-helices linked by a b-turn or loop;
+ Zinc coordinating proteins, which entail the tetrahedral coordi-
+nation of 1–2 zinc ions with conserved cysteine and histidine
+residues in a-helix and 2-stranded b-sheet;
+ Zipper type proteins, such as the leucine zipper, which has an a-
+helix with a leucine at every 7th amino acid);
+ Other a-helix proteins e.g., those using a-helices as the main
+binding motif;
+ Other b-sheet proteins, which use b-strands as recognition and
+binding motifs and
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4416
+ b-hairpin/ribbon proteins, which contain small 2- and 3-
+stranded b-sheets or hairpin motifs that binds with DNA major
+or minor grooves [28].
+Interestingly, some non-enzymatic proteins that do not have a
+well-deﬁned secondary structural motif use multi-domain sub-
+units for DNA recognition. An enzyme is another group of proteins
+that recognizes DNA based on their biological function rather than
+structure. It mainly uses combinations of a-helices, b-strands, and
+loops to form domains such as DNA-recognition domain that reads
+sequence, a catalytic domain with the enzyme’s active site; where
+applicable, a dimerization domain [27,28].
+While the interactions of RNA to proteins are similar to those of
+DNA, their complex secondary and tertiary structures provide an
+important additional mechanism. At the detailed structural level,
+RNA molecule is recognized by RNA-binding modules such as.
+ RNA recognition motifs (RRM): a four-stranded anti-parallel b-
+sheet with two helices packed in babbab topology and interacts
+with 4 nucleotides of ssRNA through stacking, electrostatics and
+hydrogen bonding;
+ hnRNP K homology domain (KH domain): a three-stranded b-
+sheet packed against three a–helices. It recognizes 4 nucleo-
+tides of ssRNA through hydrophobic interactions between
+non-aromatic residues. Based on its topology it can be further
+grouped into two subfamilies, type I (baabba topology) and
+type II (abbaab topology);
+ Double-stranded RNA-binding domain (dsRBD), with a shape-
+speciﬁc dsRNA minor-major-minor groove pattern interacting
+with the sugar-phosphate backbone;
+ Zinc ﬁngers motifs: typically classiﬁed based on the residues
+used to coordinate zinc, cysteine and histidine. For example,
+ZnF-C2H2, which contains nine C2H2 zinc ﬁngers of which ﬁn-
+gers 1–3, 5 and 7–9 interact with DNA through hydrogen bind-
+ing in the major groove, while ﬁngers 4–6 interact with the 5S
+RNA through electrostatic contacts to two RNA loops. Another
+group of Zinc Fingers (ZnF-CCCH) has a stacking interaction
+between aromatic residues and bases, and
+ Sterile alpha motif (SAM domain) has a shape-dependent recog-
+nition of RNA stem-loop, mainly through interactions with
+sugar-phosphate backbone and a single base in loop [29–35].
+In general HP-PNI are affected by neighboring proteins, small
+molecules, and physical conditions such as temperature or pH.
+Such interactions are important to fully understand the physiolog-
+ical processes and pathology of the host, and drug design [21].
+When it comes to ﬁrst line of defense in terms of protein-
+nucleic interactions, the The TLR family of receptors is the best
+characterized group of PRRs and most of its members can recog-
+nize intracellular as well as extracellular pathogen molecules. Most
+TLRs have been conserved through evolution [36]. Of these, TLR3,
+TLR7, TLR8 and TLR9 can recognize extracellular (pathogen)
+nucleic acids in the endosome [37]. Currently, 13 members are
+known in the mammalian TLR family [4]. Among those TLR1–
+TLR9 are conserved between humans and mice, TLR10 is not func-
+tional in mice because of a retrovirus insertion, and TLR11, TLR12
+and TLR13 are lost in human genomes [380]. Even though the
+speciﬁc association between TLRs or other PRRs towards each
+pathogen is not fully understood, a broad range of pathways that
+they activate have been reported. Studies focused on characteriz-
+ing (1) the nature of the immune response towards the types of
+involved diseases, (2) sub-cellular location in which the interaction
+occurs, and (3) types of pathogen molecules recognized by each
+PRR. For example, extracellular CpG-DNA and RNA have been
+responsible for the pathogenicity in rheumatoid arthritis, SLE, toxic
+shock and bacterial sepsis [38–40]. Blood coagulation under severe
+tissue damage conditions, caused by secreted nucleic acids has
+been presented as a possible mechanism of pathogenesis in these
+diseases [40].
+Apart from the extracellular recognition, host-pathogen interac-
+tions also take place in various subcellular locations. The most
+studied cytosolic PRRs are DAI, AIM2, protein kinase receptor
+(PKR) and the RIG-I [41]. Speciﬁcally, TLR3 is reported to recognize
+dsRNA [42], TLR7 and TLR8 bind to ssRNA [43,44] and TLR9 identi-
+ﬁes DNA-containing unmethylated CpGs [44]. Further DAI and
+AIM2 recognize dsDNA while PKR and RIG-I respond to single
+and double-stranded viral RNAs [41].
+Aberrations arising due to an under-performing PRR-based
+recognition system pose a grave threat to hosts against a wide
+range of pathogens, whereas their hyperactivity poses a potential
+threat of autoimmune diseases [45]. Some nucleic acid-sensing
+hyperactivity
+autoimmune
+disorders
+include
+SLE,
+Aicardi-
+Goutieres syndrome, spondyloenchondrodysplasia, and STING-
+associated vasculopathy with onset in infancy [38,46,47]. The roles
+of host-pathogen interactions in some of these diseases are
+reviewed below.
+SLE is an autoimmune disease involving HP-PNIs. TLR7 and
+TLR9 have been implicated with stimulation of type I IFNs in SLE
+[48]. The role of TLR7 has been clearly established by showing that
+its overexpression in lupus in mouse models leads to SLE; its
+absence protects from the disease [49]. On the other hand, the role
+of TLR9 in SLE is not as well understood. It is known that theTLR9
+plays a signiﬁcant role in SLE by producing auto antibodies in mice
+models [50] and its overexpression is observed in SLE patients [51].
+However, in contrast to TLR7, deletion of TLR9 in mice results in a
+more severe disease phenotype suggesting a protective role of
+TLR9 [52]. The exact synergy or competition between TRL7 and
+TLR9 and their detailed mechanism of molecular recognition in
+SLE is still not fully understood.
+Another autoimmune disease involving protein-nucleic acid
+interactions is Type-1 diabetes. Among the animal models, studies
+have shown that in the transgenic rat, insulin promoter (RIP)-B7.1
+or RIP-LCMV mice, administration of TLR3 or TLR7 is required for
+stimulation of Type-1 diabetes [53]. Conversely, TLR3 was shown
+to protect against the disease occurrence in some studies [54].
+TLR9 is also involved in the stimulation of Type 1 diabetes [55].
+Again, a complete picture of various TLRs conferring or protecting
+from this disease remains to be completely understood.
+Another autoimmune disease involving protein-nucleic acids is
+Rheumatoid arthritis, mediated by synovial ﬁbroblast’s hyper-
+activation [56] in synovial tissues and the overexpression of
+TLR3, TLR7, TLR9 together with TLR2 and TLR4 [57,58]. TLR3 and
+TLR4 are hyper-activated during the onset and the end stages, indi-
+cating their roles in disease pathogenesis [57,59–61]. However, the
+role of TLR9 appears contradictory in Rheumatoid arthritis [62],
+with TLR9 expression shown to have triggered the disease [63].
+Injection of CpG DNA into mice produced an anti-inﬂammatory
+response and prevented arthritis [64,65]. These studies highlight
+how TLRs target speciﬁc types of nucleic acids to misunderstand
+self as a DAMP and how the introduction of a competitive DNA
+can intervene in this process.
+Inﬂammatory bowel diseases (IBD) known as Crohn’s disease
+and ulcerative colitis in the gastrointestinal tract involve TLR2
+and TLR4, wherein TLR3 and TLR9 have a protective role [66,67].
+Similar to SLE protection, CpG injections in the murine model
+reduce the severity of the disease through a pro-inﬂammatory
+secretion [67].
+TLR9 overexpression is involved in the onset of multiple sclero-
+sis, characterized by immune response and inﬂammation that
+leads to neuronal injury [68]. Mice models deﬁcient in MyD88 of
+the TLR pathways are resistant to experimental autoimmune
+encephalitis (EAE) whereas mice deﬁcient in TLR9 develop disease
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4417
+with decreased severity suggesting a synergistic role for EAE,
+MyD88 and TLR9 [69].
+cGAS, is also involved in autoinﬂammatory diseases [70–74],
+with the cGAS-STING pathway triggering an anti-tumor immune
+response [75,76]. DNA derived cGAS recognizes endogenous
+tumour cells, triggers the cGAS-STING pathway, production of
+IFN and acts on CD8+ cells to kill tumour cells [77–79].
+In summary, protein-nucleic acid host-pathogen interactions,
+are primarily driven by TLRs which are involved in either protect-
+ing against or triggering auto-immune diseases due to defective
+regulation of the immune system. Treatments may include inject-
+ing nucleic acid PAMP-like molecules and blocking the interaction
+of TLRs that recognize nucleic acids. The challenge lies in clearly
+deciphering the roles of individual TLRs in a disease before we
+use them as targets. The critical aspect of characterization is
+whether a TLR is protective against or serves as a promoter of
+autoimmune response and exact quantiﬁcation of the conse-
+quences of a speciﬁc intervention. This leads to the question of
+the molecular speciﬁcity of PRRs beyond the animal models and
+available clinical data. Such issues can best be investigated by look-
+ing at the detailed atomic structures of involved molecules in iso-
+lation or complexity with their targets. In the next section, we
+review the status of knowledge on these very issues.
+3. Speciﬁcity and structural basis of pathogen nucleic acid
+recognition by host PRRs
+In the last section, we took a disease-level view of various PRR-
+PAMP interactions. At the molecular level, nucleic acids from dif-
+ferent pathogens are recognized by endosomal and cytoplasmic
+PRRs. Nucleic-acid recognizing PRRs include endosomal TLRs and
+cytoplasmic DNA sensors like cGAS, DAI, IFN-c-inducible protein
+(IFI16), AIM2 as well as RLRs (RIG-I, Melanoma differentiation-
+associated protein 5 (MDA5)) and NLRs. Each PRR recognizes a
+speciﬁc class of pathogen nucleic acids. For example, TLR3 recog-
+nizes dsRNA [80], TLR7 and TLR8 detect viral ssRNA [81,82] and
+TLR9 recognizes CpG motifs in viral and non-viral pathogens
+[83–85]. Similarly, cytoplasmic PRRs namely RIG-I, MDA-5 and
+LGP2 detect dsRNAs, whereas other cytoplasmic DNA sensors rec-
+ognize dsDNAs highly specialized nucleic acid sensing PRR, the
+TLR13 recognizes a speciﬁc sequence in bacterial rRNA giving it a
+unique anti-bacterial function [86]. In general, PRR’s actions are
+mediated by cell-speciﬁc and condition-speciﬁc adaptors, leading
+to different downstream host defence pathways. A summary of
+PAMPs recognizing their respective PRRs, key adaptors involved
+in PRRs and their, downstream signaling events issignalling,
+cross-talks and response especially some of representative agonist
+responses are provided in Fig. 1.
+Although TLRs detect different types of PAMPs, most are found
+to have a common horseshoe-shaped structure. They are composed
+of ectodomain (also called leucine-rich repeat (LRR) domain),
+transmembrane domain and Toll/IL-1 receptor (TIR) domain
+(Fig. 2). It is actually the extracellular LRR domain that recognizes
+the PAMPs, and other ligands directly and hence is used as a drug
+target. Transmembrane Typically, the LRR domain is composed of
+19–25 tandem copies of LRR motifs that contain the ‘xLxxLxLxx’
+as well as ‘xUxxUxxxxUxxLx (U: hydrophobic)’ motif sequences.
+Generally, it is 20–30 amino acids long and contains a b-strand
+and an a-helix linked by loops, causing the horseshoe-like struc-
+ture of the LRR [380]. Other, transmembrane and the intracellular
+TIR domains are responsible for the signal transduction. Domain
+wise availability of PDB structures for all domains of PRRs in
+humanhumans and mousemice are providedlisted in Table 1.
+Domain structures need to be listed separately. Although PDB
+structures are available for PRRs, the reported crystal data are only
+for a single domain or its fragment and does not tell us about the
+PRR’s complete folding. We discuss below nucleic acid recognition
+by speciﬁc TLRs areas known from the literature.
+TLR3, an endosomal PRR, recognizes polyinosinic-polycytidylic
+poly(I:C). Earlier reports depicted TLR3 as involved in recognition
+of viral dsRNA such as reovirus [76], respiratory syncytial virus
+Fig. 1. Nucleic acids are recognized by the pattern recognition receptors (PRRs) through key adaptors. Speciﬁc adaptors propagate the downstream signalling and cross-talk
+with other proteins, leading to the production of Type-I and Type-II IFNs, inﬂammatory cytokines and chemokines in the nucleus. Colours of dashed lines represents different
+key adaptors i.e., TRIF (black), MAVS (dark green), MyD88 (brown) and STING (purple). Representative agonists binding with their targets are shown through different shape
+(bright green). Common agonist shares same shape.
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4418
+[87], west nile virus [88], dengue virus [89], Inﬂuenza A virus [90],
+epstein-barr virus [91], hepatitis C virus (HCV) [92] and herpes
+simplex virus (HSV) [93]. The TLR3-dsRNA complex has a horse-
+shoe shaped structure with dsRNA bound to the amino and car-
+boxyl termini on the lateral convex surfaces of the TLR3 ectodo-
+mains [94,95]. Synthetic poly(I:C) is an important ligand used to
+study this system. A typical structure of poly(I:C) and TLR3 inter-
+acting residues and their hydrogen-bond and non-bonded contacts
+to dsRNA (<3.35A) are shown in Fig. 3.
+In contrast to TLR3, which recognizes dsRNA, TLR7 and TLR8
+recognize ssRNA in viruses and certain bacteria, which are also
+U-rich [77,78]. Although TLR7 and TLR8 share high sequence sim-
+ilarity, TLR7 prefers GU-rich ssRNA whereas TLR8 prefers AU-rich
+ssRNA in humans [96] although, interestingly such a behaviour is
+not observed in mice. TLR7 and TLR8 contain two ligand-binding
+sites. In TLR8, the ﬁrst site binds U while the second site binds to
+an oligonucleotide like UG; both sites are required for activation
+of signal transduction [97]. TLR7 is a dual receptor as it can bind
+G and U-rich ssRNA. The structures of the ssRNA-binding sites of
+TLR7 and TLR8 differ [98]. TLR7 recognizes a 3-mer UUU motif of
+a long poly-U ssRNA. Crystal structure of TLR8-dsRNA complex
+revealed that it undergoes large conformational changes upon
+ligand binding, bringing the carboxyl terminals close to enable
+dimerization with TIR domain and stimulate downstream signaling
+[99].
+The third TLR group with nucleic acid recognition function is
+TLR9, which recognizes ssDNA having an unmethylated CpG motif
+in bacteria and viruses [100]. TLR9 CpG hexamer motif was ﬁrst
+described as ‘‘RRCGYY”, where R and Y represent purine and
+pyrimidine respectively [101]. Following additional ﬁne tuning
+by other researchers, the CpG motif, GTCGTT and GACGTT have
+been proposed to be the optimal TLR9 ligands for humans and mice
+respectively [102,103]. Notably, TLR9 primarily recognizes the
+hexamer consensus sequence of ssDNA [104]. Water-mediated
+hydrogen bonding and vanderWaals interaction are required for
+the recognition of the CpG motif by TLR9 although TLR9 also recog-
+nizes DNA:RNA hybrids, with the ssDNA isolated from DNA:RNA
+hybrids unable to activate TLR9 [105]. Furthermore, TLR9 recog-
+nizes the CpG motif in viruses, including Human Papillomavirus
+(HPV) [106], Herpes simplex virus (HSV) [107] and also in several
+bacteria such as salmonella Typhimurium [108] and Mycobac-
+terium tuberculosis (MTB) [109].
+Unlike humans, mice express TLR13, an endosomal TLR that
+recognizes its ligand in a sequence-speciﬁc manner, sensing a
+highly conserved bacterial 23S rRNA sequence that contains 50-
+GAAAGACC-30 [86,110]. Interestingly, a 13-nt ssRNA derived from
+23S rRNA and a viral-derived 16-nt ssRNA, containing the same
+sequence that bound to TLR13 and folds into a stem-loop-like
+structure that is responsible for activation of TLR13 [111]. Notably,
+this sequence is found within a region of RNA targeted by certain
+antibiotics, and clinical isolates of Staphylococcus aureus resistant
+to these antibiotics are unable to stimulate mouse TLR13 [86].
+Overall, TLR13 functions as a sequence- and conformation-
+speciﬁc PRR [112].
+Apart from TLRs, RIG-I, MDA5 and LPG2 receptors are the best-
+studied cytoplasmic receptors. The domain structure of most RLRs
+consists of a Caspase recruitment domain (CARD) at the N-
+terminal, a central ATPase/Dead-box helicase domain and a C-
+terminal regulatory domain, with some notable omissions in speci-
+ﬁc groups as shown in Fig. 4. For example, in contrast to RIG-I,
+LGP2 lacks an N-terminal CARD domain and hence functions as a
+regulator in the signalling of RIG-I and MDA5 [113]. Crystal and
+NMR structures revealed the presence of a groove within the C-
+terminal
+domain,
+which
+represents
+the
+ligand
+binding
+site
+Fig. 2. Schematic representation of TLR structure (Assembled structure of TLR3) with highly conserved nucleic acid (dsRNA) sensing LRRs on TLR surface. A number of Leucine
+enriched, so called Leucine Repeat Regions (LRRs) are observed in the ectodomain (extracellular) in all TLRs. LRR-NT and LRR-CT referred to as the N- and C-terminal of the
+ectodomain.
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4419
+[114,115]. RIG-I, MDA5 and LGP2 recognize different ligands
+because of the differences in the residues at the bottom of the
+groove. A crystal structure of LGP2-dsRNA indicated that the initial
+contacts are made with the 30- OH whereas RIG-I and LGRP2 NMR
+data pointed to secondary structural elements in ligand binding
+[114].
+RIG-I recognizes either viral dsRNA (>200 bp) or a base-paired
+region of 18–20 nucleotides with a 50 triphosphate end [116]. Pre-
+vious studies reported that in the hepatitis c virus, RIG-I detected
+the poly-U/UC motif in the 30 untranslated region whereas in the
+50-triphosphate in the case of the hantaan virus [117,118]. Modiﬁ-
+cations in the sequences of the RNA ligand stimulate the activation
+of RIG-I [119,120]. Next-generation sequencing (NGS) in viral
+infection has shown that RIG-I and MDA5 prefer binding to AU-
+rich RNAs in viral genomes [121–123]. Structural analysis of RIG-
+I indicated that for the recognition of the 50-ppp end of RNA, the
+C-terminal binding site of RIG-I must be acidic. MDA5 detects dis-
+tinct groups of viral RNAs. It has been shown that some viruses are
+speciﬁcally sensitive to RIG-I and MDA-5 while others are sensitive
+to both RIG-I or MDA5. For example, RIG-I recognizes the New-
+castle disease virus, Sendai virus, Inﬂuenza virus and Japanese
+encephalitis
+virus
+and
+MDA5
+detects
+Picorna
+viruses
+like
+Encephalomyocarditis virus, and Theiler’s virus. Viruses sensitive
+to both RIG-I and MDA5 include the West Nile virus and the Den-
+gue virus [124–129]. Previous studies had identiﬁed LGP2 as a neg-
+ative regulator of RIG-I and MDA5 signalling [130,131]. However,
+more recent studies showed that LGP2 positively regulates these
+signalling pathways. For example, in LGP2 deﬁcient mice, impaired
+type-I IFNs production was observed revealing the role of LGP2 as a
+positive regulator [113]. Structural studies have also suggested
+that the un-liganded RIG-I and MDA5 have a closed conformation
+[131] but ligand binding induces open active conformation that
+oligomerizes in an ATP-dependent manner [132].
+In contrast to RNA PAMPs, it was initially believed that the DNA
+PAMPs are primarily recognized by TLR9 only. However, recent
+studies have identiﬁed additional cytoplasmic receptors which rec-
+ognize either microbial DNA or self-DNA during cell damage lead-
+ing to infection and stimulating production of Type I IFNs, Type III
+IFNs or IL-1b. For example, DAI [133,134], leucine-rich repeat
+ﬂightless-interacting protein 1 (LRRFIP1) [135], RNA polymerase
+III [136,137], IFI16 [138], extrachromosomal histone H2B [139],
+DNA-PK [140], and MRE11[141] recognize dsDNA to induce type-
+I IFNs production. Similarly, DHX9, DHX36 and DDX41 is involved
+in recognition of DNA with different microbial speciﬁcities [142].
+Finally, AIM2 and IFI16 have also been established as recognizing
+cytosolic DNA [143,144].
+The cGAS-STING is another critical dsDNA-sensing PRR that pro-
+vides an innate immune response to infections, inﬂammations, and
+cancers [145,146]. The dsDNA interacts with cGAS in a sequence-
+independent manner [147], promoting a conformational change
+of cGAS to catalyze the formation of 20,30-cyclic GMP-AMP
+(cGAMP). It is a cyclic dinucleotide from ATP and GTP, containing
+the phosphodiester linkages of both 20–50 and 30–50 [148]. Acti-
+vated cGAS and cGAMP synthase activate the STING, comprising
+an N-terminal transmembrane domain with four helices (aa 1–
+154), an acidic C-terminal tail (aa 342–379), and a central globular
+Table 1
+List of known PDB structures (A) for all domain of 10 TLRs in Human and Ectodomain of 13 TLRs in Mouse. No structure is available for transmembrane and cytoplasmic domain of
+any TLRs in Mouse. (B) for speciﬁc domain of other PRRs. ‘‘_” represent the data are not available.
+(A)
+Humans
+Mouse
+TLRs
+Extracellular Domain
+Transmembrane Domain
+Cytoplasmic Domain
+All-Domain
+Extracellular Domain
+TLR1
+6NIH (2.3 Å)
+_
+1FYV (2.9 Å)
+_
+2Z81 (1.8 Å)
+TLR2
+6NIG (2.3 Å)
+_
+1FYW (3.0 Å)
+_
+3A7C (2.4 Å)
+TLR3
+1ZIW (2.1 Å)
+2MKA (NMR)
+_
+7C76 (3.4 Å) EM
+3CIG (2.6 Å)
+TLR4
+3FXI (3.1 Å)
+5NAM (NMR)
+_
+_
+3VQ2 (2.4 Å)
+TLR5
+_
+_
+_
+3j0A (26 Å) EM
+_
+TLR6
+_
+_
+4OM7 (2.2 Å)
+_
+3A79 (2.9 Å)
+TLR7
+_
+_
+_
+7CYN (4.2 Å) EM
+_
+TLR8
+3W3G (2.3 Å)
+_
+_
+_
+4QDH (2.3 Å)
+TLR9
+_
+_
+_
+_
+3WPF (1.9 Å)
+TLR10
+_
+_
+2 J67 (2.2 Å)
+_
+_
+TLR11
+_
+_
+_
+_
+_
+TLR12
+_
+_
+_
+_
+_
+TLR13
+_
+_
+_
+_
+4Z0C (2.3 Å)
+(B)
+Human
+Mouse
+Other PRRs
+Speciﬁc Domain
+Speciﬁc Domain
+NLR
+2NSN (2 Å) CARD Domain4EWI (2.2 Å)
+Pyrin Domain
+4KXF (3.2 Å) CARD Domain
+RIG-I
+2LWD (NMR) CARD Domain2QFD (2.7 Å) Regulatory
+Domain 3LRR (2.1 Å)
+C-terminal Domain5F9F (2.6 Å)
+Helicase Domain
+6BZH (2.5 Å) CARD Domain3TBK (2.1 Å)
+ATPase Domain
+CLR
+4RWF (1.7 Å) Extracellular Domain
+_
+AIM2
+3VD8 (2.0 Å) Pyrin Domain3RN5 (2.5 Å)
+Cytoplasmic Domain
+2N00 (NMR) Pyrin Domain
+MDA5
+4GL2 (3.5 Å) RNA binding Domain3B6E (1.6 Å)
+Helicase Domain3GA3 (1.4 Å)
+C-terminal Domain
+6G19 (3.6 Å) RNA binding Domain3TS9 (2.0 Å)
+Helicase Domain
+LGP2
+3EQT (2 Å) Cytoplasmic Domain2w4R (2.6 Å)
+Rgulatory Domain
+_
+DAI
+3EYI (1.4 Å) DNA binding Domain
+cGAS
+6CT9 (2.2 Å) DNA binding Domain4LEV (1.9 Å)
+Ctalytic Domain
+4O6A (1.8 Å) DNA binding Domain
+DHX9
+3VYX (2.2 Å) DNA binding Domain
+_
+LRRFIP1
+4H22 (2.89 Å) Coiled-coil Domain
+_
+IFI16
+3RNU (2.502Å) DNA binding Domain
+_
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4420
+domain (aa 155–341) [149]. This cytosolic DNA sensing by cGAS-
+STING can induce type-I IFNs production, inﬁltration of T cells
+and natural killer (NK) cells [150,151].
+Thus, we conclude that cell surface as well as cytosolic nucleic
+acid PRRs recognize speciﬁc pathogenic genomes. The primary
+grouping of these PAMPs and PRRs depends on whether the nucleic
+acid is single-stranded, double-stranded, RNA or DNA, methylated
+or unmethylated, rich in AU, GU and CpG etc. As we discuss below,
+these PAMPs’ speciﬁc attributes are crucial for designing therapeu-
+tic strategies against pathogen-speciﬁc PAMPs.
+4. Target recognition, drug design and resistance against HP-
+PNI
+Invading pathogens often hijack the cellular machinery of the
+host cells and subvert their immune system leading to disease
+[152]. Evidence indicates that under many conditions, correcting
+the aberrant nucleic acid sensors can be a robust therapeutic inter-
+vention [153]. However, obstacles such as drug resistance can arise
+[153]. Nonetheless, nucleic acid sensors remain attractive targets
+[154]. In Table 2, we have listed some representative agonists
+and antagonists, their mechanisms and effect on HP-PNI targets.
+Below, we review the status of designing molecular interventions
+in nucleic acid PRRs.
+4.1. TLR3 pharmacological agents
+Multiple drugs have been proposed for targeting host-pathogen
+interactions between proteins and nucleic acids. Most prominent
+among them is arguably the poly(I:C), a synthetic analogue of
+dsRNA used as a TLR3 agonist (a potent adjuvant) that is locally
+administered for viral prophylaxis and therapeutic anticancer vac-
+Fig. 3. Ligand bound ectodomain structure of TLR3. Center panel shows the dsRNA bound to TLR3 at N and C terminals through both its chains (A: brown and B: cyan
+respectively). Inset view shows the middle part of the interaction site, whereas residue-wise interactions of N and C-terminals are shown in the left and right-side panels
+respectively. (For interpretation of the references to colour in this ﬁgure legend, the reader is referred to the web version of this article.)
+Fig. 4. Domain structure of RIG-I (925aa), MDA5 (1025aa) and LGP2 (678aa) receptors. Both RIG-I and MDA-5 have similar structures consisting of a CARD domain, RNA
+helicase domain and C-terminal domain but LGP2 consists of only RNA helicase and C-terminal domain and lacks CARD domain.
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4421
+Table 2
+Pharmacological agents mechanism and effects, targeting nucleic acid sensing PRRs: (A) for agonist and (B) for antagonist. ‘‘_” represent the data are not available.
+(A)
+Target
+Agonist
+Agonist mechanism
+Agonist effects
+Other agonist bound
+structure
+TLR3
+Poly(I:C)
+Recruits NK cells and tumor speciﬁc CTL cells through
+maturation of DCs; TNF-related apoptosis of tumor
+growth.
+Therapeutic agent for chronic fatigue syndrome, adjuvant to cancer vaccines,
+antiviral response in human immunodeﬁciency virus
+3QOQ (TLR3/C1068)
+3ULV
+(TLR3/TLR3ecd-2)
+3ULU
+(TLR3/TLR3ecd-1)3ULS
+(TLR3/Fab12)
+ARNAX
+Target immune checkpoint blocker; Promotes cross-
+priming of DCs
+overcome resistance to agents targeting Programmed cell death in mice
+TLR7
+Imiquimod
+(R-837)
+Reverse the local immunosuppression; Induce secretion of
+pro-inﬂammatory cytokines, IFN- a, TNF-a and IL-12
+Antiviral agent in cytomegalo virus & herpes simplex virus-2, genital warts,
+superﬁcial basal cell carcinoma & actinic keratosis treatment
+4QC0
+(TLR8/compound53)
+4QBZ
+(TLR8/compound9)
+3W3K (TLR8/CL075)
+3W3J
+(TLR8/CL097)
+6KYA (TLR8/TH1027)
+4R07
+(TLR8/ORN06)
+4R08 (TLR8/ssRNA40)
+4R09 (TLR8/ORN06S)
+4R0A
+(TLR8/uridine)3WN4
+(TLR8/DS-877)
+6WML
+(TLR8/GS-9688)7CRF
+(TLR8/CU-CPD107)
+5AWC (TLR8/MB-564)
+5AWA
+(TLR8/MB-568)
+TLR8
+Motolimod
+(VTX-2337)
+Improve NK cells ability to mediate antibody-dependent
+cellular toxicity
+Used in head and neck cancer and in chemotherapy with platinum-resistant ovarian
+cancer
+TLR7/8
+Resiquimod
+(R-848)
+# 3W3N
+Stimulates DCs maturation by IL-12 and other Th1
+cytokines; Generate CD8 + T cell responses
+Limits viral replication in monocytes isolated from human immunodeﬁciency virus-
+1 infected individuals; treatment of herpes simplex virus-2 infection or hepatitis c
+virus infection;
+TLR9
+Leﬁtolimod
+Increase the expression of surface markers, such as CD86,
+CD40, HLA-DR, CD169 and CD69 along with cytokines IL-6
+and IL-8
+Antiviral agent for human immunodeﬁciency virus-1; suppress IL-33 driven airway
+hyperreactivity in mice
+5ZLN (TLR9/CpG DNA)
+CpG-1018
+Induces B-cell proliferation and cytokines production
+Provide seroprotective responses against hepatitis b virus
+Agatolimod
+Develop the Th2 and Th17 cell responses; Mediate
+superior immunostimulatory effects
+Adjuvant for prophylactic hepatitis b virus vaccination
+RIG-I
+SB-9200
+Culminates in type-I and type-III IFNs secretion and IL-1b
+release
+Antiviral agents for hepatitis b virus and hepatitis c virus infected patients
+_
+BO-112
+Releasing type-I IFN, IFN-c and CD8 + T lymphocytes
+Used for tumor cell apoptosis; Activate systemic immunity against distant lesions
+50-pppRNA
+# 3OG8
+# 3LRR
+# 5F9F
+Stimulates the innate antiviral response including IRF3,
+IRF7; STAT1 activation
+Provide resistance against both RNA (dengue, chikungunya) and DNA (stomatitis,
+vaccinia) viruses
+cGAS-STING
+DMXAA
+# 4QXR
+# 4QXQ
+# 4QXP
+# 4QXO
+# 4LOL
+Potent vascular disrupting agent; Induce TNF-a and IFN-b
+production
+Mediate antiviral activity in hepatitis b and herpes simplex virus infection
+7SSM
+(hSTING/compound11)
+5VDV
+(cGAS/compoundF3)
+5VDU
+(cGAS/compoundF2)
+20,30-cGAMP
+# 4LOJ
+# 4LOH
+Natural STING agonists; Enhanced type-I IFN signaling,
+Cxcl10, Ccl5, and T-cell migration
+Effectively used in immunotherapy such as the combination with antigen-speciﬁc
+vaccinations
+ADU-S100
+# 7Q3B
+Promote PBMC; Generate pro-inﬂammation cytokines
+Tumour regressor in B16 melanoma, CT26 colon, and 4 T1 breast cancer murine
+models
+Note: In this table additional available PDB structures for human and mouse agonist not included in the text are included.
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4422
+Table 2 (continued)
+(B)
+Target
+Antagonist
+Antagonist mechanism
+Antagonist effects
+Other antagonist
+bound structure
+TLR3
+CNTO2424
+Recognize extracellular domain of TLR3; Down-regulates
+the production of IL6, IL8, MCP-1 and IP-10
+Reduce NFjB activation in sepsis, bowel disease and diabetes etc.
+_
+Compound 4a
+Competitive inhibitors of dsRNA binding to TLR3;
+Repressed the expression of TNF-R and IL-1b
+Ameliorate the radiation-induced gastrointestinal syndrome
+TLR7
+20-O-ribose-methylated
+RNA
+Abrogates cytokine production; Potent inhibitor of
+immunostimulatory RNA
+Therapeutic tools for the management of SLE
+6LVX (TLR7/Cpd-1)
+6LVY
+(TLR7/Cpd-2)6LVZ
+(TLR7/Cpd-3)6LW0
+(TLR7/Cpd-6)6LW1
+(TLR7/Cpd-7)6ZJZ
+(TLR7/M5049)6V9U
+(TLR8/compound17c)
+6TY5
+(TLR8/compound11)
+7R54
+(TLR8/compound4)
+R53
+(TLR8/compound15)
+7R52
+(TLR8/compound2)
+5WYZ
+(TLR8/CU-CPT9b)
+5WYX
+(TLR8/CU-CPT8m)5Z15
+(TLR8/CU-CPT9c)5Z14
+(TLR8/CU-CPT9a)
+TLR8
+ODN-1411
+Limits the deregulation of cytokines secretion and TNF
+production
+Reduce disease progression in mouse model of psoriasis and human model of
+Rheumatoid Arthritis
+TLR9
+COV08-0064 (MP-3964)
+Blocked mRNA upregulation of TNF-a, IL-1b, NLRP3
+Effective approach in liver surgeries including transplantation
+3WPG (TLR9/
+DNA4084)
+RIG-I
+VP35
+# 3L26
+# 4LG2
+# 3KS8
+Suppress the DCs maturation followed by impaired
+expression of a/b-IFN
+May be counteract to ebola virus immune evasion
+_
+Vpg
+Block the 50ppp RNA motif associated with RIG-I
+activation
+Block the downstream signaling in mammalian cells as well as in avian cells
+cGAS-STING
+C-176 &
+H-151
+Bind to Cys91 of STING; Reduced elevated levels of type-I
+IFNs and IL-6
+Recapitulating autoantibody production; Aberrant T-cell activation in AGS patients
+5V8O (cGAS/PF-
+06928215)5XZG
+(cGAS/RU521)5XZE
+(cGAS/RU332)5XZB
+(cGAS/RU365)
+Astin C
+Exhibits anti-inﬂammatory activity; Blocks IRF3
+recruitment
+Used in STING-mediated cancer and autoimmune diseases
+Note: We have mentioned available PDB structures for only human and mouse for antagonist that are not describe in this review.
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4423
+cination [155]. However, abundant preclinical data demonstrated
+that poly(I:C) is unstable with side effects including shock, renal
+failure, hypersensitivity reactions and limited therapeutic efﬁcacy
+in early clinical trials with leukaemia patients [156], leading to
+the
+termination
+of
+its
+clinical development
+(source:
+http://
+www.clinicaltrials.gov). At least two poly(I:C) derivatives have
+been attempted to address some of the issues. First, poly(I:C12U)
+(rintatolimod or Ampligen) that contains uridylic acid in a
+12:1 M ratio in the poly(C) strand for chronic fatigue syndrome
+[157], and shown to reduce the concentration of antiretroviral
+agents in human immunodeﬁciency virus-1 control [158] as an
+adjuvant to cancer vaccines in mice [159]. Second, poly-ICLC (Hil-
+tonol) is stabilized with poly(l-lysine) and carboxymethylcellulose
+[153]. Poly(I:C) has been shown to have a signiﬁcant potential to
+boost the immune system [160–162] by mediating antitumor NK
+cell and tumor-speciﬁc cytotoxic T lymphocyte (CTL) activities
+through maturation of DCs [163–165]. Therefore, Clinical trials
+suggested its effectiveness in combination with cancer vaccines
+Fig. 5. The four critical locations on TLR3-dsRNA complex where TLR3 agonist poly-ICLC are dock (represented by arrows in panel A and their inset views in panel B). These
+ﬁrst to fourth locations refer to C-terminal chain B, C-terminal chain A, N-terminal chain A and N-terminal chain B of the TLR3-dsRNA complex respectively. A two
+dimensional poly-ICLC structure with yellow color coding at the center. Both strands of dsRNA are colored red and blue. And, brown and cyan colours correspond to chains A
+and B of TLR3.
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4424
+and chemotherapeutics for haematological conditions [166,167],
+solid
+malignancies
+[168–170],
+brain
+[171,172]
+and
+antiviral
+responses
+in
+human
+immunodeﬁciency-1-positive
+individuals
+[173]. Since, TLR3 is frequently expressed by various types of
+malignant cells and can directly trigger tumor cell apoptosis,
+poly(I:C) has been used to induce potent anti-tumor activity
+against various tumors [379]. Along these lines, it has been
+reported that poly(I:C) inhibits tumor growth in a TNF-related
+apoptosis inducing ligand (TRAIL)-dependent manner [174]. Both
+(poly(I:C12U) and poly-ICLC) favour cross-priming in human and
+mouse experimental systems [146,147]. Clinically, poly(I:C) has
+been used as an adjuvant to enhance cancer vaccine protocols
+[175]. Even though poly(I:C) was downgraded as a candidate drug
+for TLR3-targeted treatments, if suitably remodeled, it may emerge
+as a promising candidate in the future. Both (poly(I:C12U) and
+poly-ICLC) favour cross-priming in human and mouse experimen-
+tal systems [176,177]. Clinically, poly(I:C) has been used as an
+adjuvant to enhance cancer vaccine protocols [175]. Even though
+poly(I:C) was downgraded as a candidate drug for TLR3-targeted
+treatments, if suitably remodeled, it may emerge as a promising
+candidate in the future. Our in silico docking study (previously
+unpublished) suggested that poly-ICLC can bind to both TLR3 resi-
+dues and dsRNA bases at four different locations. These are the
+locations
+where
+dsRNA
+electrostatically
+interacts
+with
+TLR3
+[178]. Potential interactions of TLR3 with its ligands have been
+shown in Fig. 5 and Fig. 6 and the detailed results are presented
+in Table 3. Strong binding energy also suggested that it may stabi-
+lize the TLR3-dsRNA complex. Another TLR3 agonist, ARNAX (a
+novel synthetic DNA–dsRNA hybrid molecule), also promotes
+robust cross-priming by DCs. ARNAX with cancer vaccine and a
+programmed cell death 1 ligand 1 (PD-L1)-targeting immune
+checkpoint blocker overcame resistance to agents targeting pro-
+grammed cell death 1 in mice [179].
+TLR3 Antagonist CNTO2424 is a monoclonal antibody (mAb)
+that recognizes the extracellular domain of human TLR3 in a
+conformation-dependent manner and down-regulates poly(I:C)-
+Fig. 6. The interactions and key residues of TLR3 and important nucleic acids positions of dsRNA at four locations of the binding pocket in TLR3-dsRNA complex. Purple
+arrows illustrate hydrogen bonds (distance closer than 2.5 Å) between Poly-ICLC and TLR3-dsRNA complex.
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4425
+induced production of IL-6, IL-8, MCP-1, and IP-10 in human lung
+epithelial cells [180]. Additionally, CNTO4685 (rat anti-murine
+TLR3) and CNTO5429 (CDRs grafted onto mouse IgG1 scaffolds
+from CNTO4685) mAbs were also worked in a similar manner
+and reduced poly(I:C)-induced production of CCL2 and CXCL10 in
+primary mouse embryonic ﬁbroblasts [181]. The compound4a or
+CU-CPT4a was another potent agonist of TLR3, recognized as a
+competitive inhibitor of dsRNA binding to TLR3 with high afﬁnity
+and speciﬁcity. After binding to the target, it repressed the expres-
+sion of downstream signaling pathways mediated by the TLR3/
+dsRNA complex, including TNF-R and IL-1b. Docking studies
+showed that CU-CPT4a forms hydrogen bonds with Asn541 resi-
+dues to target asparagine glycosylation and prevent dsRNA binding
+to TLR3 in murine macrophage RAW 264.7 cells with an IC50 of
+3.44 lM at TLR3-dsRNA interface [182,183].
+4.2. TLR7/8 pharmacological agents
+Some TLR7 agonists have been used for developing novel antivi-
+ral agents [184]. These are mostly imidazoquinoline and adenine
+derivatives [185]. Imiquimod or R-837 is a prototypic imidazo-
+quinoline that shared resemblance with nucleoside analogue but
+lacks the fourth nitrogen atom present in purines. Imiquimod bind-
+ing with TLR7 induces secretion of pro-inﬂammatory cytokines,
+predominantly IFN-a, TNF-a and IL-12. This creates a local cyto-
+kine milieu biased towards a Th1-type response, with the genera-
+tion of cytotoxic effectors [186,187]. Therefore, originally attracted
+attention for its antiviral effects in animal models of cytomegalo
+virus and herpes simplex virus 2 infection [188] but failed long-
+term efﬁcacy trials in patients with standard chemotherapeutic
+regimens [189,190]. Imiquimod mediates several therapeutic
+effects alone or in combination with other drugs. Another study
+reported that imiquimod combined with monobenzone (an ICB
+targeting cytotoxic T lymphocyte-associated protein 4) reverses
+the local immunosuppression in nivolumab resistant melanoma
+patients [191]. This drug has now been approved for the treatment
+of some skin tumours involving genital warts, superﬁcial basal cell
+carcinoma and actinic keratosis [192].
+Another TLR7 agonist is S-28463 that has been shown to reduce
+airway resistance, leukocyte inﬁltration and IgE levels in mouse
+models of allergic sensitization to ovalbumin [193].
+Motolimod or VTX-2337 is imidazoquinoline-derived agonist,
+targeting TLR8 [194]. Motolimod administration to white blood
+cells improves the ability of NK cells to mediate antibody-
+dependent cellular cytotoxicity [195]. It is currently tested in com-
+bination with ICB speciﬁc for PD-1 and/or cetuximab in head and
+neck cancer as well as together with durvalumab plus chemother-
+apy in women with platinum-resistant ovarian cancer.
+Resiquimod (also known as R-848) and CL075 are other agonists
+that target both TLR7 and TLR8. In vitro studies have demonstrated
+that resiquimod stimulates DC maturation by inducing a Th1 cyto-
+kine proﬁle. This leads to a more efﬁcient cross-presentation of
+exogenous antigens and stronger antigen-speciﬁc CD8+ T cell
+responses [187,196]. It also favors IL-12 secretion and limits the
+viral replication in monocytes isolated from human immunodeﬁ-
+ciency virus-1-infected individuals [197]. Resiquimod is currently
+in phase II clinical trials and has been proposed for the treatment
+of patients with herpes simplex virus-2 or hepatitis c virus infec-
+tion [198]. Accumulating evidence indicates that Resiquimod acts
+as immunological adjuvant and can be combined with peptide-
+based vaccines such as recombinant cancer/testis antigen 1B
+(CTAG1B or NY-ESO-1) to CD8+ cytotoxic T lymphocyte responses
+against melanoma, or can be used to reverse immunosuppression
+in cervical carcinoma linked to human papillomavirus 16 infec-
+tions [199].
+TLR7 antagonists can be generated through a robust chemical
+approach using 20-O-ribose methylation in the sense or anti-
+sense strand [200] or selective incorporate into siRNA which abro-
+gates cytokine production without reduction of gene silencing
+activity [201] and therefore, acts as a potent inhibitor of immunos-
+timulatory RNA in both human and murine systems and used as a
+therapeutic tools for the management of SLE [202]. The ODN-1411
+is TLR8 antagonist that competitively binds to its ectodomain. It
+limits the deregulation of cytokines secretion and TNF production
+in human models of Rheumatoid Arthritis [203] and decelerates
+disease progression in mouse models of psoriasis [204].
+4.3. TLR9 pharmacological agents:
+TLR9 has been targeted by potent antiviral agents that may act
+via viral interference or immunostimulation [184,205]. One such
+synthetic
+immunomodulatory
+oligonucleotide
+(IMO)
+is
+tilso-
+tolimod (IMO-2125), which incorporates cytosine or guanine ana-
+logues and shows increased stability, species-independent activity
+and a clear structure activity relationship. It has been evaluated in
+clinical trials for toxicity in severely hepatitis c virus-infected
+patients resistant to recombinant IFNa [206]. Another TLR9 agonist
+is leﬁtolimod, a CpG-rich ODN with a covalently closed dumbbell
+shape structure and also known as MGN1703. According to struc-
+tural and preclinical studies, MGN1703 showed limited interac-
+tions with molecules outside its target structure [207]. Although,
+MGN1703 signiﬁcantly increased the expression of surface activa-
+Table 3
+The docking study provides information regarding the binding free energy and interaction of TLR3 agonist poly-ICLC with TLR3-dsRNA complex at four different locations.
+S. No
+Location of binding pocket
+Binding energy (kcal/mol)
+Interacting nucleic acid bases
+Interacting protein residues
+1
+C-terminal of Chain B
+5.485
+U-D:26
+U-D:27
+LYS:ChainB:467
+ALA:ChainB:519
+2
+C-terminal of Chain A
+5.76
+A-C:26
+ASN:ChainA:494
+VAL:ChainA:495
+ASN:ChainA:520
+ALA:ChainA:519
+ASN:ChainA:517
+3
+N-terminal of Chain A
+6.03
+None
+GLH:ChainA:110
+HIS:ChainA:156
+LYS:ChainA:182
+HIE:ChainA:136
+4
+N-terminal of Chain B
+5.17
+G-D:4
+HIE:ChainB:136
+LYS:ChainB:182
+GLY:ChainB:158
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4426
+tion markers, such as CD86, CD40, HLA-DR, CD169 and CD69, as
+well as the release of a variety of cytokines and chemokines,
+including IFN-*, IFN-*, IL-6, and IL-8 [208]. MGN1703 was investi-
+gated in combination with chemotherapy or immunotherapy in
+cancer patients [209–211]. Only a single clinical study has tested
+leﬁtolimod as an antiviral agent for human immunodeﬁciency
+virus-1-positive patients treated with human immunodeﬁciency
+virus-1-speciﬁc antibodies. It indicates that this drug is safe even
+as it induces robust virus-speciﬁc humoral and cellular immunity
+and prolonged control of viraemia [212]. It was further conﬁrmed
+to efﬁciently suppress IL-33-driven airway hyperreactivity in mice
+[213]. Furthermore, MGN1703 was evaluated as an adjuvant for
+the treatment against infectious diseases [187].
+One of the most important TLR9 agonists that were formulated
+in licensed vaccine (Heplisav-B) for Hepatitis B is CpG-1018,
+derived from nucleotide backbone sequence modiﬁcation of CpG-
+ODN to produce immunostimulatory activity. CpG-1018 is a type
+B CpG-ODN that contains a phosphorothiolate backbone through-
+out their entire sequence with one or several CpG-hexamer motifs
+[214,215]. It induces strong B-cell proliferation, cytokines produc-
+tion, and has some effect on the maturation and activation of plas-
+macytoid DCs, monocytes, and NK cells [216–218]. Administration
+of two doses of heplisav-b induced higher seroprotective responses
+against hepatitis b virus with a faster onset rate compared with the
+administration of three doses of Engerix-B vaccine with similar
+safety proﬁles [219,220].
+Agatolimod (CpG-7909 or PF-3512676) is another synthetic
+CpG-rich ODN tested as an adjuvant for prophylactic hepatitis b
+virus vaccination [221]. It is wrapped with non–agonistic ligands
+for DC receptors such as C-type lectin domain containing 7A
+(CLEC7A) that mediate the superior immune stimulatory effects
+and develop the Th2 and Th17 cell responses [222] while clinical
+development of agatolimod as an anti-cancer agent has been dis-
+continued (source https://www.clinicaltrials.gov).
+TLR9 antagonist COV08-0064 (MP-3964) limited neurodegener-
+ation in mice exposed to Parkinson’s disease [223] (source: http://
+www.clinicaltrials.gov).
+Also, selectively blocked mRNA upregulation of TNF-a, IL-1b,
+NLRP3 and MCP-1 in macrophages and IFN-b mRNA in dendritic
+cells induced by the TLR9 agonist CpG-ODNT. This leads to inhibi-
+tion of JNK and ERK phosphorylation. TLR9 signaling inhibition by
+COV08-0064 may be an effective approach in liver surgeries
+including transplantation [224].
+4.4. RLRs pharmacological agents
+Several agonists have been developed to target RLRs. Some have
+effectively cleared the clinical trials and were used for the treat-
+ment of severe diseases. Mostly, RIG-I agonists are being explored
+in a diverse range of cancers. RIG-I activation in cancer patients
+could stimulate three distinct immune responses: 1.) direct activa-
+tion of tumor apoptosis and pyroptosis that is programmed necro-
+sis; 2.) IFNs and cytokine-mediated activation and maturation of
+macrophages, DCs, natural killer cells, and 3.) increased recruit-
+ment
+and
+cross
+priming
+of
+adaptive immune
+effectors
+e.g.
+CD8 + T-lymphocytes and enhanced activity of APCs [225–227].
+The SB-9200 (inarigivir soproxil or GS-9992) is an orally avail-
+able prodrug of a dinucleotide agonist that targets RIG-I with
+cytosolic
+PRR
+nucleotide-binding
+oligomerization
+domain-
+containing protein 2 (NOD2) for the elimination of invading patho-
+gens [228,229]. It also culminates in type-I and type-III IFNs secre-
+tion and IL-1b release downstream of inﬂammasome activation
+[230]. SB 9200 mediated robust antiviral effects and tested in clin-
+ical trials as a stand-alone agent or combined with entecavir in
+chronically hepatitis b virus and hepatitis c virus-infected patients
+[228,231]. In addition, it is known that poly(I:C) mimics the dsRNA
+and also acts as a RIG-I and MDA5 agonist. The BO-112 is another
+agonist based on a nanoplexed formulation of poly(I:C) complexed
+with polyethylenimine. It is used for tumour cell apoptosis and
+activation of systemic immunity against distant lesions via releas-
+ing type-I IFN, IFN-c and CD8+ T lymphocytes [232]. A clinical trial
+just commenced testing the activity of BO-112 in adults with
+aggressive solid tumours (source https://www.clinicaltrials.gov).
+Natural
+RIG-I
+agonist
+50-triphosphate
+RNA
+(50-pppRNA)
+acquires resistance against infection of some RNA viruses such as
+dengue and chikungunya virus [233] as well as DNA viruses such
+as vesicular stomatitis and vaccinia virus [234]. But, 50-pppRNA is
+unstable and unable to cross the plasma membrane. To resolve this
+issue, short stem–loop RNA molecules that present a single duplex
+terminus and a triphosphorylated 50 end (and hence retain strong
+RIG-I-binding capacity) have been developed. It stimulates innate
+antiviral response including IRF3, IRF7 and STAT1 activation in
+human lung epithelial A549 cells [235].
+Only a few RIG-I agonists such as RTG100 and MK-4621 entered
+clinical stage but their development was ultimately terminated
+[153]. According to a 2017 report, KIN1000 is a benzobisthiazole
+compound
+identiﬁed
+as
+a
+potent
+RLR
+inducer
+via
+high-
+throughput screening-based approach. It was developed as an
+immunological adjuvant. Another compound having adjuvant-
+like activity for RLRs is KIN1148 as a prophylactic mice vaccination
+against a pandemic human inﬂuenza virus [236].
+RIG-I antagonist such as ebola virus VP35 is a dsRNA binding
+protein that suppresses DCs maturation followed by impaired
+expression of a/b-IFN and proinﬂammatory cytokines, abnormal
+upregulation of costimulatory markers, and inhibition of naive T
+cells activation. It may be possible to counteract EBOV immune
+evasion by using treatments that bypass the VP35-imposed block
+to DC maturation [237]. Another is picorna viruses Vpg protein that
+serve to block the 50ppp RNA motif associated with RIG-I activation
+thus preventing RIG-I recognition and signaling. The V proteins of
+several paramyxo viruses have been shown to directly bind MDA5
+and block its downstream signaling actions mainly IFN-b induction
+in a range of mammalian cells as well as in avian cells [238,239].
+4.5. cGAS-STING pharmacological agents
+The most important function of cGAS–STING is to direct cancer
+cell
+senescence
+through
+the
+secretion
+of
+chemokines,
+pro-
+inﬂammatory cytokines, growth factors, and proteases, thus medi-
+ating oncosuppressive effects either by autonomously controlling
+tumor cells or by stimulating immune cells (CD8+ T cells cross-
+priming via DCs) against tumors [240,241].
+STING agonists were modelled on their natural partner cGAS.
+Among them, 5,6-Dimethylxanthine-4-acetic acid (DMXAA, vadi-
+mezan or ASA404) developed as potent vascular disrupting agent
+and induce production of cytokines like TNF-a and IFN-b [242].
+Study suggests that it presented therapeutic efﬁcacy in preclinical
+models of acute myeloid leukemialeukaemia and mammary carci-
+noma and was shown to be safe in chemotherapy [243,244
+245,246], and was shown to be safe in chemotherapy [247,248].
+However, later structural studies suggested that it binds to STING
+protein in mice but not in humans [73,249]. Cyclic GMP–AMP
+(cGAMP) 20,30-Cyclic GMP–AMP (20,30-cGAMP) and other cyclic din-
+ucleotide (CDNs) of bacterial origins are natural STING agonists
+that enhanced the type-I IFN signaling, Cxcl10, Ccl5, and T-cell
+migration into the brain of glioma-bearing mice and effectively
+used in immunotherapy such as the combination with antigen-
+speciﬁc vaccinations [74,250] successful in mouse tumor models
+[251] and combinatorial therapeutics [252].
+Second-generation STING agonists are synthetic CDNs that
+include 20-30-cGSASMP and ADU-S100. Both are potent inducers
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4427
+of IFN-b secretion from THP-1 cells. 20-30-cGSASMP is phospho-
+rothioate analogue of 20,30-cGAMP and 40 times more resistant
+to
+ENPP1
+hydrolysis
+[382].
+On
+the
+other
+hand,
+ADU-S100
+(MIW815 or ML RR-S2 CDA) showed improved stability, lipophilic-
+ity, and comparable activity toward mouse and human STING,
+making it the ﬁrst candidate to move to early clinical studies
+[381]. ADU-S100 could promote human peripheral blood mononu-
+clear cell (PBMC) to generate pro-inﬂammation cytokines such as
+IFN-b and resulted in profound tumour regression in B16 mela-
+noma,
+CT26
+colon,
+and
+4T1
+breast
+cancer
+murine
+models
+[110,253-255].
+Pharmaceutical companies are actively exploring multiple
+cGAS–STING antagonists [256]. Among other actively pursued
+compounds are Astin C, C-176 and H-151. C-176 and H-151 occupy
+the CDN binding site at transmembrane domain and prevent STING
+from acquiring an ‘‘active” conformation in human and mouse,
+thus acting as competitive antagonists of STING activators. It irre-
+versibly binds to Cys91 of STING and markedly reduces the ele-
+vated
+levels
+of
+type-I
+IFNs
+and
+IL-6,
+inhibits
+TBK1
+phosphorylation and suppresses Cys91 palmitoylation in various
+cellular assays of Trex1/ mice. These inhibitions are capable of
+reversing
+the
+strong
+tissue
+inﬂammation,
+recapitulating
+the
+autoantibody
+production
+and
+aberrant
+T-cell
+activation
+in
+Aicardi-Goutieres syndrome (AGS) patients [257–259]. Another
+antagonist is Astin C, a cyclopeptide from Aster tataricus that exhi-
+bits anti-inﬂammatory activity and blocks the recruitment of IRF3
+to the STING signalosome. Therefore, it is used in STING-mediated
+cancer and autoimmune diseases [258,260].
+4.6. Common agonists
+A novel TLR7, TLR8 and RIG-I agonist (CV8102) was used alone
+or with doses of a rabies vaccine to test its safety, tolerability and
+immunogenicity for various types of cancers such as melanoma
+and hepatocellular carcinoma with a PD-1 blocker [261]. NAB2 is
+an agonist of TLR3 and MDA5 that is a dsRNA molecule isolated
+from yeast. It is complexed with a cationic agent and effectively
+acts as an adjuvant to a prophylactic cancer vaccine [252].
+Although, MDA5 stands out as a promising cancer therapy, its
+agonists and adenosine deaminase RNA (ADAR) inhibitors may
+be combinatorial partners in immunotherapy for ICB-resistant
+tumours [252]. IC31 is ODN based poly(I:C), combined with
+antimicrobial peptide KLKL5KLK, to develop the agonist effect of
+both TLR9 and TLR3. Studies in mice demonstrated that IC31
+helped
+to
+induce
+potent
+antigen-speciﬁc
+CTL
+cells,
+strong
+protein-speciﬁc humoral responses and T cell proliferation and dif-
+ferentiation [377]. IC31 has been used as potent adjuvant against
+infectious disease mostly in the candidate tuberculosis vaccine
+H56:IC3. It is a novel vaccine consisting of a triple antigen
+(Ag85B, ESAT-6 and Rv2660c), demonstrated tolerability and
+immunogenicity, inducing antigen-speciﬁc IgG and persistent
+H56-speciﬁc CD4+ T cell responses [378].
+4.7. Common antagonists
+Above, we reviewed drugs that can induce or inhibit host
+nucleic acid-sensing efﬁcacy of PRRs on a one-on-one basis. More
+recently, antagonists were used to effectively target multiple
+nucleic acid-recognizing PRRs. For example, inhibitory ODNs
+(INH-ODNs) are mixed TLR3 and TLR9 antagonists that mediate
+therapeutics in an experimental model of SLE. IMO-8400 is a com-
+bined TLR7, TLR8 and TLR9 antagonist that demonstrates efﬁcacy
+in
+placebo-controlled
+moderate-
+to-
+severe
+plaque
+psoriasis
+[262]. Another TLR7, TLR8 and TLR9 antagonist is CPG-52364,
+quinazoline derivative which inhibits the disease progression of
+SLE and other autoimmune diseases in animal models [263]. Like-
+wise, IMO-3100 blocks the TLR7 and TLR9 and reduce the expres-
+sion of inﬂammatory genes such as IL-17A, b-defensin, CXCL1,
+keratin 16, TNF-a and IFNa [264].
+Thus, we conclude that drugs targeting various protein-nucleic
+acid interactions are a highly pursued ﬁeld and hold great promise
+in combating infectious diseases. Among them, multi-target ago-
+nists
+appear
+promising
+for
+multi-disease
+vaccination
+and
+treatments.
+4.8. PRR agonist or adjuvant mechanism
+When PRRs recognize an agonist or an adjuvant that helps to
+promote immune responses within a few hours of stimulus, an
+agonist mechanism is activated through the development of innate
+immunity [265,266]. In this ﬁrst phase, adjuvant-induced antigen-
+independent innate immune responses are critical for the subse-
+quent development of antigen-speciﬁc immune responses. During
+this phase, gene expression increases; chemokines and proinﬂam-
+matory cytokines are released from TLR-expressing cells; and
+innate immune cells including monocytes, macrophages, DCs, NK
+cells, and neutrophils are recruited to the site of injection. The
+expression of cell surface molecules, including the cluster of differ-
+entiation 80 (CD80), CD86, and molecules of the major histocom-
+patibility complex (MHC) are increased. The APCs at the injection
+sites uptake the agonist antigen and migrate to the lymph node
+or primary lymphocytes [267,268].
+These TLR agonist-activated early immune responses are fol-
+lowed by a second phase of adaptive immune responses that occur
+several days later. During this second phase, activated APCs pro-
+duce cytokines to shape the differentiation of naïve CD4+ T cells
+into different T helper (Th) cell. TNF-a, IL-12, and IFNs promote
+Th1 polarization and IL-1, IL-6, and IL-23 promote Th17 polariza-
+tion. Th1 cells produce IFN-c and proinﬂammatory cytokines,
+and Th17 cells are the major source of IL-17. The second phase of
+adaptive immune responses results in the expansion of antigen-
+speciﬁc CD8+ T cells that recruits B cells. In this way, TLRs regulate
+the development and differentiation of B cells and increase the
+production of antigen-speciﬁc antibodies. The class switching
+recombination process in the B cells further differentiate it into
+antibody-secreting plasma cells and memory B cells, which are
+long-lived and provide the adaptive immunity for later life [269-
+273].
+Despite the fact that different TLR ligands share a common
+mechanism to develop the immune responses, their immunologi-
+cal inducing proﬁles are not entirely the same. TLRs have overlap-
+ping but different cell-type expression proﬁles [274,275]. Their
+adjuvant effects are also distinct. These TLR adjuvants preferen-
+tially utilize different signal transductions and transcription factors
+activities for controlling gene expression. Studies involving human
+blood also revealed the differences in the cytokine-inducing pro-
+ﬁles of the TLR7/8, and TLR9 agonists [276,277]. The speciﬁc mech-
+anisms of PRR agonist are noted in Table 2.
+5. Computational approaches to HP-PNIs
+Advancements in high-throughput omics technologies has facil-
+itated large-scale mapping of the highly complex and rapidly
+evolving host-pathogen interactions. Computational methods have
+emerged as primary tool for the analysis of the voluminous exper-
+imental host-pathogen interaction data. Most of them aim to iden-
+tify the key pathogen and host targets in infection, generate and
+test new hypotheses and help develop novel anti-pathogen drugs
+[278,279].
+PPIs are deemed to be most important among the host-
+pathogen interactions hence, and have been the most widely stud-
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4428
+ied [280,281]. Computational systems biology approaches evolved
+to investigate, analyze, predict and model host-pathogen PPI net-
+works
+[207].
+These
+include
+interface
+structural
+mimicry
+[280,282–285], structure-based mimicry, or homology [286–296]
+and interactome-based and systems biology [278,297–302].
+In addition to encouraging progress in PPI modeling of host-
+pathogen interactions, the roles of immune cell receptors in sens-
+ing
+pathogen-derived
+nucleic
+acids
+have
+also
+been
+widely
+acknowledged. Consequently, there is a growing interest in imple-
+menting computational approaches to predict and analyze protein-
+nucleic
+acid
+interactions.
+Below
+we
+review
+some
+of
+these
+approaches and strategies.
+5.1. Predicting foreign (pathogenic) nucleotide sequences interacting
+with host
+Knowledge of the molecular interactions between hosts and
+their pathogens is critical to the understanding the mechanisms
+of infections and identifying potential targets for therapeutics. In
+that respect, structural approaches predict not only which patho-
+gen protein interacts with which host protein, but also deﬁne the
+drug target. The same rationale holds for pathogen nucleic acids
+host protein interaction. However, the task is challenging, with a
+greater likelihood of false-positive predictions. Yet, the technical
+challenges in experimental identiﬁcation on a large scale are
+daunting, emphasizing a pressing need for efﬁcient and powerful
+computational approaches for the analysis and prediction of
+host-pathogen interactions [301]. Speedy and accurate sensing of
+pathogen-derived nucleic acids by host TLRs is the ﬁrst line of
+defense for the host innate immune system. The two key aspects
+of this strategy are a) identifying the pathogenic nucleic acid
+sequence and b) identiﬁcation of host elements i.e., the sequence
+and structural motifs in host receptors [112,303,304]. The initial
+set of computational approaches focused on distinguishing patho-
+genic DNA from the host DNA, which later evolved into more com-
+plex algorithms to pinpoint the patterns that discriminate the
+invading pathogenic from the host genomes [305].
+Statistical approaches to identifying sequence and structure
+motifs, which may inform us about the speciﬁcity and viability of
+PRR-PAMP interactions, have been outperformed by machine
+learning-based approaches such as semi-supervised [306], and
+supervised learning [307], random forest and Support Vector
+Machine based classiﬁers. Some research has adopted specialized
+techniques including transfer and multitask learning [308], domain
+and motifs models [309], and sequence homology combined with
+others [310,311]. Other machine learning-based methods such as
+multiple linear regression partial least squares analysis [312] and
+Gradient Boosting Regressor [313] were also reported. More
+recently, deep learning-based Artiﬁcial Neural Network [314] and
+Convolution Neural Network [315] methods have been used for
+binding
+afﬁnity
+prediction.
+Chemical
+feature-based
+pharma-
+cophore models used the HypoGen algorithm for TLR7 agonist pre-
+diction [316]. Similarly, mouse TLR9 agonists have been predicted
+through a random forest approach [317]. In summary, machine
+learning methods provided a better mapping of the sequence and
+structural features in PRRs and PAMPs that contribute to the host’s
+ability to defend against a pathogen.
+Machine learning and closely related statistical approaches
+have also provided much data on protein-nucleic acid interactions,
+which will help understand scenarios for host-pathogen pairs. Our
+work in these directions relates to the study of speciﬁcity, thermo-
+dynamics and clustering patterns [318,319], sequence-based pre-
+dictions of protein-nucleic acid interactions [320,321], patterns of
+electrical moments of nucleic acids binding proteins [322] and
+co-operativity between gene expression and sequence [323]. Some
+of the purely data-driven and computational approaches can pro-
+vide deep insights into the biological and mechanistic nature of
+protein-nucleic acid interactions, including host-pathogen interac-
+tions. This belief is borne out by the broad literature on the predic-
+tion of DNA binding sites and afﬁnities and the key principles
+which are involved, recently including cooperativity [324–333].
+On the technical side, the prediction of DNA-binding sites and
+the proteins that speciﬁcally interact with them is a non-trivial
+task. Strategies can be sequence-based DNA-binding site predic-
+tion, structure-based DNA-binding site prediction, and homology
+modelling.
+Structurally,
+protein
+recognition
+may
+take
+place
+through positively charged amino acids, primarily lysine and argi-
+nine, and hydrophobic residues that interact with the bases. GC-
+rich regions are often recognized by arginine side chains through
+hydrogen bonding and cation-p interactions; AT-rich regions are
+often recognized via minor groove contacts that sterically exclude
+the N2 atom of GC base pairs. Recognition may involve the major
+and minor grooves; it may also involve Hoogstein base pairs.
+DNA binding speciﬁcity arises from all of the above. The shape is
+also a key factor, and recently a database that annotated transcrip-
+tion factor binding sites based on shape was described [334]. Algo-
+rithms for RNA binding sites have also been constructed [335].
+Large-scale prediction of nucleic acid-host protein interactions,
+particularly structural predictions can serve as targets in drug
+discovery.
+5.2. Gene regulatory networks
+Systems-level approach for studying HP-PNIs is based on mod-
+elling of signalling and gene regulatory networks, which can also
+provide considerable insight into the interactions between the host
+and pathogen in infectious diseases [336]. This, the so-called
+network-based analysis of host-pathogen interactions is highly
+useful in improving our understanding of pathogenesis and pin-
+pointing novel experimental and drug targets [279]. While sig-
+nalling networks are driven primarily through PPIs, the gene
+regulatory networks (GRNs), i.e. a network of regulatory relation-
+ships between transcription factors and their targets are also cru-
+cial and gaining more attention recently. These networks are
+based on the time-series gene expression data and have been par-
+ticularly effective both in predicting host-pathogen interactions
+and in understanding the mechanistic basis of the underlying PHI
+networks [337]. One of the most widely used tools for this purpose
+is NetGenerator, a computational tool to infer small-scale GRNs,
+that has been used to predict PHI networks [337,338]. More
+recently, Castro and colleagues proposed Gene regulatory net-
+works of transfer entropy (GRNTE), to examine the transcriptional
+regulatory network of the plant pathogen Phytophthora infections
+as it infected two different host organisms [339].
+5.3. Databases related to HP-PNIs
+Several web-based databases provide quick references on
+protein-nucleic interactions between host and pathogen, either
+exclusively or as part of a broader theme. Most signiﬁcant among
+them are (1) LRRML: a conformational database and an XML
+description of LRRs [340], (2) TollML: a database of TLRs structural
+motifs [341], and (3) PRRDB 2.0: a comprehensive database of
+pattern-recognition receptors and their ligands [342], and (4) Pro-
+NIT database that uses structural and quantitative binding interac-
+tion data to elucidate the molecular mechanism of protein-nucleic
+acid recognition [343]. The sequence arrangement of amino acid or
+base pairs and stable conformation of protein or DNA/RNA mole-
+cules indicates speciﬁcity towards each other.
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4429
+6. Current trends and evolving perspectives
+With the emergence of genomic technologies, host-pathogen
+genetic studies have transitioned from single candidate gene stud-
+ies to whole-genome studies of hosts and pathogens [344]. NGS
+techniques have enabled us to identify and feature the regulatory
+mechanism through which hosts and pathogens interact with each
+other either in a diseased or in a healthy state. Such studies have
+pointed out that host-pathogen interactions not only depend on
+the host and pathogen genomic sequences but also on the ecolog-
+ical, immunological and epigenetic context in which the genomic
+data are collected [345]. For example, in a study of mucus, it was
+revealed that in addition to genetic factors, post-translational mod-
+iﬁcation plays a signiﬁcant role in defence against pathogens
+[346,347].
+Pathogens represent a major portion of the biomass and diver-
+sity of several ecosystems [348–352]. PCR-based technologies and
+recently high throughput technologies have helped in the identiﬁ-
+cation of novel pathogens especially viral sensing pathogens [353–
+358]. Metagenomics approaches have further exposed pathogen-
+and host-associated microbial communities playing a signiﬁcant
+role in infection and disease development suggesting that a patho-
+gen may not occur alone but may belong to a larger community
+[359–362]. Several immune gene families including TLRs, IFNs
+and
+antimicrobial
+peptides
+have
+gained
+attention
+in
+host-
+pathogen interaction studies [363–370]. These studies have high-
+lighted the positive selection and rapid evolution of these immune
+genes in the innate immune system [371–373]. Metagenomics
+studies have also provided key insights into host-pathogen interac-
+tions. For example, several metagenomics studies unearthed the
+links between the gut microbiome and diseases like RA, diabetes,
+and depression [374–376]. Thus, multi-target drug discovery,
+metagenomics, NGS and identiﬁcation of better derivates of natu-
+ral agonists are likely to remain the focus areas of research in
+HP-PNIs for the foreseeable future.
+7. Conclusion
+Investigations into the detailed interactions and recognition of
+pathogen nucleic acids by host factors such as TLRs, RLRs and NLRs
+have yielded common as well as speciﬁc insights into the mecha-
+nisms underlying such interactions. However, signiﬁcant chal-
+lenges remain in deciphering the full spectrum of host-pathogen
+interactions and their potential implications in countering infec-
+tion and in therapeutics. A deeper understanding of these interac-
+tions will help in identiﬁcation of new drug targets and clinical and
+therapeutic strategies to manipulate them and counter infectious
+diseases. Such associations also offer a means to explore alterna-
+tive approaches such as targeting host proteins instead of patho-
+genic components to bypass the vexing pathogenic variability
+and genetic mutations. Further studies will improve strategies to
+inhibit host-pathogen interactions and clinical outcomes.
+Declaration of Competing Interest
+The authors declare that they have no known competing ﬁnan-
+cial interests or personal relationships that could have appeared
+to inﬂuence the work reported in this paper.
+Acknowledgements
+This research was supported by a research grant (no. BT/PR24208/
+BID/7/801/2017) from the Department of Biotechnology, Govern-
+ment of India, India awarded to SA.
+This project has been funded in whole or in part with federal
+funds from the National Cancer Institute, National Institutes of
+Health, under contract HHSN261201500003I. The content of this
+publication does not necessarily reﬂect the views or policies of
+the Department of Health and Human Services, nor does mention
+of trade names, commercial products, or organizations imply
+endorsement by the U.S. Government. This Research was sup-
+ported [in part] by the Intramural Research Program of the NIH,
+National Cancer Institute, Center for Cancer Research.
+This work was also supported in part by a Senior Research Fel-
+lowship by Indian Council of Medical Research to A.J. (Grant no.
+ICMR-SRF:2020-8554).
+References
+[1] Basset C et al. Innate immunity and pathogen-host interaction. Vaccine
+2003;21(Suppl 2):S12–23.
+[2] Janeway CAJ, Medzhitov R. Innate immune recognition. Annu Rev Immunol
+2002;20:197–216.
+[3] Matzinger P. Tolerance, danger, and the extended family. Annu Rev Immunol
+1994;12:991–1045.
+[4] Akira S, Uematsu S, Takeuchi O. Pathogen recognition and innate immunity.
+Cell 2006;124(4):783–801.
+[5] Osorio F, Sousa CR. Myeloid C-type lectin receptors in pathogen recognition
+and host defense. Immunity 2011;34(5):651–64.
+[6] Chan YK, Gack MU. Viral evasion of intracellular DNA and RNA sensing. Nat
+Rev Microbiol 2016;14(6):360–73.
+[7] Medzhitov R, Preston-Hurlburt P, Janeway CAJ. A human homologue of the
+Drosophila Toll protein signals activation of adaptive immunity. Nature
+1997;388(6640):394–7.
+[8] Dambuza IM, Brown GD. C-type lectins in immunity: recent developments.
+Curr Opin Immunol 2015;32:21–7.
+[9] Takeuchi O, Akira S. Pattern recognition receptors and inﬂammation. Cell
+2010;140(6):805–20.
+[10] Mogensen TH. Pathogen recognition and inﬂammatory signaling in innate
+immune defenses. Clin Microbiol Rev 2009;22(2):240–73.
+[11] Stebbins CE. Structural microbiology at the pathogen-host interface. Cell
+Microbiol 2005;7(9):1227–36.
+[12] Zoraghi R, Reiner NE. Protein interaction networks as starting points to
+identify novel antimicrobial drug targets. Curr Opin Microbiol 2013;16
+(5):566–72.
+[13] Korkin D, et al., Mining Host-Pathogen Interactions. 2011: IntechOpen.
+[14] Gottwein E, Cullen BR. Viral and cellular microRNAs as determinants of viral
+pathogenesis and immunity. Cell Host Microbe 2008;3(6):375–87.
+[15] Skalsky RL, Cullen BR. Viruses, microRNAs, and host interactions. Annu Rev
+Microbiol 2010;64:123–41.
+[16] Eisenreich W. et al., Metabolic host responses to infection by intracellular
+bacterial pathogens. Front Cell Infect Microbiol 2013. 9: p. 3:24.
+[17] Saayman
+S
+et
+al.
+An
+HIV-encoded
+antisense
+long
+noncoding
+RNA
+epigenetically regulates viral transcription. Mol Ther 2014;22(6):1164–75.
+[18] Steitz TA. Structural studies of protein–nucleic acid interaction: the sources
+of sequence-speciﬁc binding | Quarterly Reviews of Biophysics | Cambridge
+Core. Q Rev Biophys 1990;23(3):205–80.
+[19] Ahmad S et al. Protein–DNA interactions: structural, thermodynamic and
+clustering patterns of conserved residues in DNA-binding proteins. Nucleic
+Acids Res 2008;36(18):5922–32.
+[20] Pandey
+P,
+Hasnain
+S,
+Ahmad
+S.
+Protein-DNA
+Interactions.
+Encycl
+Bioinformatics Comput Biol 2018;2:142–54.
+[21] Valuchova S et al. A rapid method for detecting protein-nucleic acid
+interactions
+by
+protein
+induced
+ﬂuorescence
+enhancement.
+Sci
+Rep
+2016;6:39653.
+[22] Jayaram B, Jain T. The role of water in protein-DNA recognition. Annu Rev
+Biophys Biomol Struct 2004;33:343–61.
+[23] Cozzolino
+F
+et
+al.
+Protein–DNA/RNA
+interactions:
+an
+overview
+of
+investigation methods in the -omics era. J Proteome Res 2021;20(6):3018–30.
+[24] Luscombe NM, Laskowski RA, Thornton JM. Amino acid-base interactions: a
+three-dimensional analysis of protein-DNA interactions at an atomic level.
+Nucleic Acids Res 2001;29(13):2860–74.
+[25] Y., Z., et al., Predicting indirect readout effects in protein-DNA interactions.
+Proc Natl Acad Sci USA 2004; 101(22): 8337-41.
+[26] C., S.N., J.M. Rosenberg, Rich, Sequence-speciﬁc recognition of double helical
+nucleic acids by proteins. Proc Natl Acad Sci USA 1976; 73(3): 804-08.
+[27] Olson WK. Protein-nucleic acid interactions. 2009.
+[28] Luscombe NM et al. An overview of the structures of protein-DNA complexes.
+Genome Biol 2000;1(1):1–37.
+[29] Oubridge C et al. Crystal structure at 1.92 Å resolution of the RNA-binding
+domain of the U1A spliceosomal protein complexed with an RNA hairpin.
+Nature 1994;372(6505):432–8.
+[30] Lewis HA et al. Sequence-speciﬁc RNA binding by a Nova KH domain:
+implications for paraneoplastic disease and the fragile X syndrome. Cell
+2000;100(3):323–32.
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4430
+[31] Ramos A et al. RNA recognition by a Staufen double-stranded RNA-binding
+domain. EMBO J 2000;19(5):997–1009.
+[32] Lu D, Searles MA, Klug. Crystal structure of a zinc-ﬁnger-RNA complex reveals
+two modes of molecular recognition. Nature 2003;426(6962):96–100.
+[33] P., H.B., et al., Recognition of the mRNA AU-rich element by the zinc ﬁnger
+domain of TIS11d. Nat Struct Mol Biol 2004; 11(3): 257-64.
+[34] Oberstrass FC et al. Shape-speciﬁc recognition in the structure of the Vts1p
+SAM domain with RNA. Nat Struct Mol Biol 2006;13(2):160–7.
+[35] Lunde BM, Moore C, Varani G. RNA-binding proteins: modular design for
+efﬁcient function. Nat Rev Mol Cell Biol 2007;8(6):479–90.
+[36] Netea MG, Meer JWMVd, Kullberg B-J. Toll-like receptors as an escape
+mechanism
+from
+the
+host
+defense.
+Trends
+Microbiol
+2004;12(11):
+484–8.
+[37] Megumi T et al. Extracellular RNA sensing by pattern recognition receptors. J
+Innate Immun 2018;10(5–6):398–406.
+[38] Barrat FJ et al. Nucleic acids of mammalian origin can act as endogenous
+ligands
+for
+Toll-like
+receptors
+and
+may
+promote
+systemic
+lupus
+erythematosus. J Exp Med 2005;202(8):1131–9.
+[39] Cavassani KA et al. TLR3 is an endogenous sensor of tissue necrosis during
+acute inﬂammatory events. J Exp Med 2008;205(11):2609–21.
+[40] Hajizadeh S et al. Extracellular mitochondrial DNA and oxidatively damaged
+DNA in synovial ﬂuid of patients with rheumatoid arthritis. Arthritis Res Ther
+2003;5(5):R234–40.
+[41] Ranjan P et al. Cytoplasmic nucleic acid sensors in antiviral immunity. Trends
+Mol Med 2009;15(8):359–68.
+[42] Guillot L et al. Involvement of toll-like receptor 3 in the immune response of
+lung epithelial cells to double-stranded RNA and inﬂuenza A virus. J Biol
+Chem 2005;280(7).
+[43] Gorden KB et al. Synthetic TLR agonists reveal functional differences between
+human TLR7 and TLR8. J Immunol 2005;174(3):1259–68.
+[44] Zucchini N et al. Cutting edge: overlapping functions of TLR7 and TLR9 for
+innate
+defense
+against
+a
+herpesvirus
+infection.
+J
+Immunol
+2008;180
+(9):5799–803.
+[45] Marshak-Rothstein A, Rifkin IR. Immunologically active autoantigens: the
+role of toll-like receptors in the development of chronic inﬂammatory
+disease. Annu Rev Immunol 2007;25:419–41.
+[46] Barton GM, Kagan JC, Medzhitov R. Intracellular localization of Toll-like
+receptor 9 prevents recognition of self DNA but facilitates access to viral DNA.
+Nat Immunol 2006;7(1):49–56.
+[47] Bernardo ME, Fibbe WE. Safety and efﬁcacy of mesenchymal stromal cell
+therapy in autoimmune disorders. Ann N Y Acad Sci 2012;1266:107–17.
+[48] Christensen SR et al. Toll-like receptor 7 and TLR9 dictate autoantibody
+speciﬁcity and have opposing inﬂammatory and regulatory roles in a murine
+model of lupus. Immunity 2006;25(3):417–28.
+[49] Guiducci
+C
+et
+al.
+Autoimmune
+skin
+inﬂammation
+is
+dependent
+on
+plasmacytoid dendritic cell activation by nucleic acids via TLR7 and TLR9. J
+Exp Med 2010;207(13):2931–42.
+[50] Nündel K et al. Cell-intrinsic expression of TLR9 in autoreactive B cells
+constrains BCR/TLR7-dependent responses. J Immunol 2015;194(6):2504–12.
+[51] Lamphier M et al. Novel small molecule inhibitors of TLR7 and TLR9:
+mechanism of action and efﬁcacy in vivo. Mol Pharmacol 2014;85(3):429–40.
+[52] Nickerson
+KM
+et
+al.
+TLR9
+regulates
+TLR7-
+and
+MyD88-dependent
+autoantibody production and disease in a murine model of lupus. J
+Immunol 2010;184(4):1840–8.
+[53] Lang KS et al. Toll-like receptor engagement converts T-cell autoreactivity
+into overt autoimmune disease. Nat Med 2005;11(2):138–45.
+[54] Hron JD, Peng SL. Type I IFN protects against murine lupus. J Immunol
+2004;173(3):2134–42.
+[55] Zipris D et al. TLR9-signaling pathways are involved in Kilham rat virus-
+induced autoimmune diabetes in the biobreeding diabetes-resistant rat. J
+Immunol 2007;178(2):693–701.
+[56] Davis MLR et al. Associations of toll-like receptor (TLR)-4 single nucleotide
+polymorphisms
+and
+rheumatoid
+arthritis
+disease
+progression:
+an
+observational cohort study. Int Immunopharmacol 2015;24(2):346–52.
+[57] Goh FG, Midwood KS. Intrinsic danger: activation of Toll-like receptors in
+rheumatoid arthritis. Rheumatology 2012;51(1):7–23.
+[58] Bhinder G et al. Intestinal epithelium-speciﬁc MyD88 signaling impacts host
+susceptibility to infectious colitis by promoting protective goblet cell and
+antimicrobial responses. Infect Immun 2014;82(9):3753–63.
+[59] Radstake TRDJ et al. Expression of toll-like receptors 2 and 4 in rheumatoid
+synovial tissue and regulation by proinﬂammatory cytokines interleukin-12
+and
+interleukin-18
+via
+interferon-gamma.
+Arthritis
+Rheum
+2004;50
+(12):3856–65.
+[60] Roelofs MF et al. Identiﬁcation of small heat shock protein B8 (HSP22) as a
+novel TLR4 ligand and potential involvement in the pathogenesis of
+rheumatoid arthritis. J Immunol 2006;176(11):7021–7.
+[61] Ospelt C et al. Overexpression of toll-like receptors 3 and 4 in synovial tissue
+from patients with early rheumatoid arthritis: toll-like receptor expression in
+early and longstanding arthritis. Arthritis Rheum 2008;58(12):3684–92.
+[62] Batsford S, Dunn J, Mihatsch M. Induction of experimental arthritis by
+borrelial lipoprotein and CpG motifs: are toll-like receptors 2, 4, 9 or CD-14
+involved? Open Rheumatol J 2011;5:18–23.
+[63] Herman S et al. A TLR 9 antagonist diminishes arthritis severity in a rat model
+of rheumatoid arthritis. Ann Rheum Dis 2011;70(2):A39.
+[64] Wu H-J et al. Inﬂammatory arthritis can be reined in by CpG-induced DC-NK
+cell cross talk. J Exp Med 2007;204(8):1911–22.
+[65] Thwaites R, Chamberlain G, Sacre S. Emerging role of endosomal toll-like
+receptors in rheumatoid arthritis. Front Immunol 2014.
+[66] Vijay-Kumar M et al. Activation of toll-like receptor 3 protects against DSS-
+induced acute colitis. Inﬂamm Bowel Dis 2007;13(7):856–64.
+[67] Rose WA, Sakamoto K, Leifer CA. TLR9 is important for protection against
+intestinal damage and for intestinal repair. Sci Rep 2012;2:p. 2:574.
+[68] Derkow K et al. Multiple sclerosis: modulation of toll-like receptor (TLR)
+expression by interferon-b includes upregulation of TLR7 in plasmacytoid
+dendritic cells. PLoS One 2013;8(8):e70626.
+[69] Miranda-Hernandez S et al. Role for MyD88, TLR2 and TLR9 but not TLR1,
+TLR4 or TLR6 in experimental autoimmune encephalomyelitis. J Immunol
+2011;187(2):791–804.
+[70] Maelfait J et al. Restriction by SAMHD1 limits cGAS/STING-dependent innate
+and adaptive immune responses to HIV-1. Cell Rep 2016;16(6):1492–501.
+[71] Jackson AP et al. Ribonuclease H2 mutations induce a cGAS/STING-dependent
+innate immune response. The EMBO J 2016;35(8):831–44.
+[72] Gray EE et al. Cutting edge: cGAS is required for lethal autoimmune disease in
+the trex1-deﬁcient mouse model of aicardi-goutières syndrome. J Immunol
+2015;195(5):1939–43.
+[73] Gao D et al. Activation of cyclic GMP-AMP synthase by self-DNA causes
+autoimmune diseases. PNAS 2015;112(42):E5699–705.
+[74] Ablasser A et al. cGAS produces a 2’-5’-linked cyclic dinucleotide second
+messenger that activates STING. Nature 2013;498(7454):380–4.
+[75] Ng KW et al. cGAS-STING and cancer: dichotomous roles in tumor immunity
+and development. Trends Immunol 2018;39(1):44–54.
+[76] Li S et al. The cyclopeptide Astin C speciﬁcally inhibits the innate immune
+CDN sensor STING. Cell Rep 2018;25(12):3405–21.
+[77] Deng L et al. STING-dependent cytosolic DNA sensing promotes radiation-
+induced type I interferon-dependent antitumor immunity in immunogenic
+tumors. Immunity 2014;41(5):843–52.
+[78] Harding SM et al. Mitotic progression following DNA damage enables pattern
+recognition within micronuclei. Nature 2017;548(7668):466–70.
+[79] Woo SR et al. STING-dependent cytosolic DNA sensing mediates innate
+immune recognition of immunogenic tumors. Immunity 2014;41(5):830–42.
+[80] Alexopoulou L et al. Recognition of double-stranded RNA and activation of
+NF-kappaB by Toll-like receptor 3. Nature 2001;413(6857):732–8.
+[81] Diebold SS et al. Innate antiviral responses by means of TLR7-mediated
+recognition of single-stranded RNA. Science 2004;303(5663):1529–31.
+[82] Heil F et al. Species-speciﬁc recognition of single-stranded RNA via toll-like
+receptor 7 and 8. Science 2004;303(5663):1526–9.
+[83] Lund J et al. Toll-like receptor 9-mediated recognition of Herpes simplex
+virus-2 by plasmacytoid dendritic cells. J Exp Med 2003;198(3):513–20.
+[84] Bauer S et al. Human TLR9 confers responsiveness to bacterial DNA via
+species-speciﬁc CpG motif recognition. Proc Natl Acad Sci USA 2001;98
+(16):9237–42.
+[85] Hemmi H et al. A Toll-like receptor recognizes bacterial DNA. Nature
+2000;408(6813):740–5.
+[86] Hochrein
+H
+et
+al.
+TLR13
+recognizes
+bacterial
+23S
+rRNA
+devoid
+of
+erythromycin
+resistance-forming
+modiﬁcation.
+Science
+2012;337
+(6098):1111–5.
+[87] Bagnaud-Baule A et al. The human metapneumovirus matrix protein
+stimulates the inﬂammatory immune response in vitro. PLoS One 2011;6
+(6):e17818.
+[88] Wang T et al. Toll-like receptor 3 mediates West Nile virus entry into the
+brain causing lethal encephalitis. Nat Med 2004;10(12):1366–73.
+[89] Nasirudeen AM et al. RIG-I, MDA5 and TLR3 synergistically play an important
+role in restriction of dengue virus infection. PLoS NeglTrop Dis 2011;5(1):
+e926.
+[90] Gofﬁc RL et al. Detrimental contribution of the toll-like receptor (TLR)3 to
+Inﬂuenza A virus-induced acute pneumonia. PLoS Pathog 2006;2(6):e53.
+[91] Iwakiri D et al. Epstein-Barr virus (EBV)-encoded small RNA is released from
+EBV-infected cells and activates signaling from Toll-like receptor 3. J Exp Med
+2009;206(10):2091–9.
+[92] Li K et al. Activation of chemokine and inﬂammatory cytokine response in
+hepatitis C virus-infected hepatocytes depends on Toll-like receptor 3 sensing
+of hepatitis C virus double-stranded RNA intermediates. Hepatology 2012;55
+(3):666–75.
+[93] Bernuth
+HV
+et
+al.
+TLR3
+deﬁciency
+in
+patients
+with
+herpes
+simplex
+encephalitis. Science 2007;317(5844):1522–7.
+[94] Liu L et al. Structural basis of toll-like receptor 3 signaling with double-
+stranded RNA. Science 2008;320(5874):379–81.
+[95] Choe J, Kelker MS, Wilson IA. Crystal structure of human toll-like receptor 3
+(TLR3) ectodomain. Science 2005;309(5734):581–5.
+[96] Forsbach A et al. Identiﬁcation of RNA sequence motifs stimulating sequence-
+speciﬁc
+TLR8-dependent
+immune
+responses.
+J
+Immunol
+2008;180
+(6):3729–38.
+[97] Tanji H et al. Toll-like receptor 8 senses degradation products of single-
+stranded RNA. Nat Struct Mol Biol 2015;22(2):109–15.
+[98] Zhang Z et al. Structural analysis reveals that toll-like receptor 7 is a dual
+receptor
+for
+guanosine
+and
+single-stranded
+RNA.
+Immunity
+2016;45
+(4):737–48.
+[99] Tanji H et al. Structural reorganization of the Toll-like receptor 8 dimer
+induced by agonistic ligands. Science 2013;339(6126):1426–9.
+[100] Ashman RF et al. Optimal oligonucleotide sequences for TLR9 inhibitory
+activity in human cells: lack of correlation with TLR9 binding. Int Immunol
+2011;23(3):203–14.
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4431
+[101] Krieg AM et al. CpG motifs in bacterial DNA trigger direct B-cell activation.
+Nature 1995;374(6522):546–9.
+[102] Hartmann G, Krieg AM. Mechanism and function of a newly identiﬁed CpG
+DNA
+motif
+in
+human
+primary
+B
+cells.
+J
+Immunol
+2000;164(2):
+944–53.
+[103] Verthelyi D et al. Human peripheral blood cells differentially recognize and
+respond to two distinct CPG motifs. J Immunol 2001;166(4):2372–7.
+[104] Ohto U et al. Structural basis of CpG and inhibitory DNA recognition by Toll-
+like receptor 9. Nature 2015;520(7549):702–5.
+[105] Rigby RE et al. RNA:DNA hybrids are a novel molecular pattern sensed by
+TLR9. EMBO J 2014;33(6):542–58.
+[106] Barbalat R et al. Nucleic acid recognition by the innate immune system. Annu
+Rev Immunol 2011;29:185–214.
+[107] Hochrein H et al. Herpes simplex virus type-1 induces IFN-alpha production
+via Toll-like receptor 9-dependent and -independent pathways. PNAS
+2004;101(31):11416–21.
+[108] Arpaia N et al. TLR signaling is required for Salmonella typhimurium
+virulence. Cell 2011;144(5):675–88.
+[109] Saiga H, Shimada Y, Takeda K. Innate immune effectors in mycobacterial
+infection. Clin Dev Immunol 2011;2011:347594.
+[110] Li XD, Chen ZJ. Sequence speciﬁc detection of bacterial 23S ribosomal RNA by
+TLR13. eLife 2012;1:e00102.
+[111] W., S., et al., Structural basis for speciﬁc recognition of single-stranded RNA
+by Toll-like receptor 13. Nat Struct Mol Biol 2015; 22(10): 782-7.
+[112] Vabret N, Bhardwaj N, Greenbaum BD. Sequence-speciﬁc sensing of nucleic
+acids. Trends Immunol 2017;38(1):53–65.
+[113] Satoh T et al. LGP2 is a positive regulator of RIG-I– and MDA5-mediated
+antiviral responses. PNAS 2010;107(4):1512–7.
+[114] Takahasi, K., et al., Solution Structures of Cytosolic RNA Sensor MDA5 and
+LGP2 C-terminal Domains.
+[115] Identiﬁcation OF. The, RNA Recognition, LOOP IN RIG-I-LIKE RECEPTORS. J
+Biol Chem 2009;284(26):17465–74.
+[116] Cui S et al. The C-terminal regulatory domain is the RNA 5’-triphosphate
+sensor of RIG-I. Mol Cell 2008;29(2):169–79.
+[117] Hornung V et al. 5’-Triphosphate RNA is the ligand for RIG-I. Science
+2006;314(5801):994–7.
+[118] Lee MH et al. RNA helicase retinoic acid-inducible gene I as a sensor of
+Hantaan virus replication. J General Virol 2011;92(Pt 9):2191–200.
+[119] Saito T et al. Innate immunity induced by composition-dependent RIG-I
+recognition of hepatitis C virus RNA. Nature 2008;454(7203):523–7.
+[120] Chiang JJ, Davis ME, Gack MU. Regulation of RIG-I-like receptor signaling by
+host and viral proteins. Cytokine Growth Factor Rev 2014;25(5):491–505.
+[121] Uzri D, Gehrke L. Nucleotide sequences and modiﬁcations that determine
+RIG-I/RNA binding and signaling activities. J Virol 2009;83(9):4174–84.
+[122] Runge S et al. In vivo ligands of MDA5 and RIG-I in measles virus-infected
+cells. PLoS pathogens 2014;10(4):ev10.i04.
+[123] Y., s.d.r., et al. Comparative analysis of viral RNA signatures on different RIG-
+I-like receptors. eLife 2016;5:e11275.
+[124] Baum A, Sachidanandam R, García-Sastre A. Preference of RIG-I for short viral
+RNA molecules in infected cells revealed by next-generation sequencing.
+PNAS 2010;107(37):16303–8.
+[125] Kato H et al. Length-dependent recognition of double-stranded ribonucleic
+acids by retinoic acid-inducible gene-I and melanoma differentiation-
+associated gene 5. J Exp Med 2008;205(7):1601–10.
+[126] Rehwinkel J et al. RIG-I detects viral genomic RNA during negative-strand
+RNA virus infection. Cell 2010;140(3):397–408.
+[127] Gitlin
+L et al.
+Essential role
+of mda-5 in type
+I IFN responses to
+polyriboinosinic:polyribocytidylic
+acid
+and
+encephalomyocarditis
+picornavirus. PNAS 2006;103(22):8459–64.
+[128] Fredericksen BL et al. Establishment and maintenance of the innate antiviral
+response to West Nile Virus involves both RIG-I and MDA5 signaling through
+IPS-1. J Virol 2008;82(2):609–16.
+[129] Loo YM et al. Distinct RIG-I and MDA5 signaling by RNA viruses in innate
+immunity. J Virol 2008;82(1):335–45.
+[130] Lu C et al. The structural basis of 5’ triphosphate double-stranded RNA
+recognition by RIG-I C-terminal domain. Structure 2010;18(8):1032–43.
+[131] Yoneyama M et al. Shared and unique functions of the DExD/H-box helicases
+RIG-I, MDA5, and LGP2 in antiviral innate immunity. J Immunol 2005;175
+(5):2851–8.
+[132] Saito T et al. Regulation of innate antiviral defenses through a shared
+repressor domain in RIG-I and LGP2. PNAS 2007;104(2):582–7.
+[133] Scott I. The role of mitochondria in the mammalian antiviral defense system.
+Mitochondrion 2010;10(4):316–20.
+[134] Takaoka A et al. DAI (DLM-1/ZBP1) is a cytosolic DNA sensor and an activator
+of innate immune response. Nature 2007;448(7152):501–5.
+[135] Ishii KJ et al. TANK-binding kinase-1 delineates innate and adaptive immune
+responses to DNA vaccines. Nature 2008;451(7179):725–9.
+[136] Yang P et al. The cytosolic nucleic acid sensor LRRFIP1 mediates the
+production of type I interferon via a beta-catenin-dependent pathway. Nat
+Immunol 2010;11(6):487–94.
+[137] Ablasser A et al. RIG-I-dependent sensing of poly(dA:dT) through the
+induction of an RNA polymerase III-transcribed RNA intermediate. Nat
+Immunol 2009;10(10):1065–72.
+[138] Chiu YH, Macmillan JB, Chen ZJ. RNA polymerase III detects cytosolic DNA
+and induces type I interferons through the RIG-I pathway. Cell 2009;138
+(3):576–91.
+[139] Unterholzner L et al. IFI16 is an innate immune sensor for intracellular DNA.
+Nat Immunol 2010;11(11):997–1004.
+[140] Kobiyama K et al. Extrachromosomal histone H2B mediates innate antiviral
+immune responses induced by intracellular double-stranded DNA. J Virol
+2010;84(2):822–32.
+[141] Ferguson BJ et al. DNA-PK is a DNA sensor for IRF-3-dependent innate
+immunity. eLife 2012;1:e00047.
+[142] Kondo T et al. DNA damage sensor MRE11 recognizes cytosolic double-
+stranded DNA and induces type I interferon by regulating STING trafﬁcking.
+PNAS 2013;110(8):2969–74.
+[143] Kim T et al. Aspartate-glutamate-alanine-histidine box motif (DEAH)/RNA
+helicase A helicases sense microbial DNA in human plasmacytoid dendritic
+cells. PNAS 2010;107(34):15181–6.
+[144] Fernandes-Alnemri T et al. The AIM2 inﬂammasome is critical for innate
+immunity to Francisella tularensis. Nat Immunol 2010;11(5):385–93.
+[145] Kerur N et al. IFI16 acts as a nuclear pathogen sensor to induce the
+inﬂammasome
+in
+response
+to
+Kaposi
+Sarcoma-associated
+herpesvirus
+infection. Cell Host Microbe 2011;9(5):363–75.
+[146] Dhanwani R, Takahashi M, Sharma S. Cytosolic sensing of immuno-
+stimulatory DNA, the enemy within. Curr Opin Immunol 2018;50:82–7.
+[147] Jiang M et al. cGAS-STING, an important pathway in cancer immunotherapy. J
+Hematol Oncol 2020;13(1):1–11.
+[148] Civril F et al. Structural mechanism of cytosolic DNA sensing by cGAS. Nature
+2013;498(7454):332–7.
+[149] Ablasser A et al. cGAS produces a 2’-5’-linked cyclic dinucleotide second
+messenger that activates STING. Nature 2013;498(7454):380–4.
+[150] Gao P et al. Structure-function analysis of STING activation by c[G(2’,5’)pA
+(3’,5’)p] and targeting by antiviral DMXAA. Cell 2013;154(4):748–62.
+[151] Harlin H et al. Chemokine expression in melanoma metastases associated
+with CD8+ T-cell recruitment. Cancer Res 2009;69:3077–85.
+[152] Marcus A et al. Tumor-derived cGAMP triggers a STING-mediated interferon
+response in non-tumor cells to activate the NK cell response. Immunity
+2018;49(4):754–763.e4.
+[153] Junt T, Barchet W. Translating nucleic acid-sensing pathways into therapies.
+Nat Rev Immunol 2015;15(9):529–44.
+[154] Vanpouille-Box C, Hoffmann JA, Galluzzi L. Pharmacological modulation of
+nucleic acid sensors - therapeutic potential and persisting obstacles. Nat Rev
+Drug Discovery 2019;18(11):845–67.
+[155] Zuany-Amorim C, Hastewell J, Walker C. Toll-like receptors as potential
+therapeutic targets for multiple diseases. Nat Rev Drug Discovery 2002;1
+(10):797–807.
+[156] Cheng L et al. Human innate responses and adjuvant activity of TLR ligands
+in vivo in mice reconstituted with a human immune system. Vaccine 2017;35
+(45):6143–53.
+[157] Robinson RA et al. A phase I-II trial of multiple-dose polyriboinosic-
+polyribocytidylic acid in patieonts with leukemia or solid tumors. J Natl
+Cancer Inst 1976;57(3):599–602.
+[158] Strayer DR et al. A controlled clinical trial with a speciﬁcally conﬁgured RNA
+drug, poly(I).poly(C12U), in chronic fatigue syndrome. Clinical infectious
+diseases : an ofﬁcial publication of the Infectious Diseases Society of America
+1994;18(Suppl 1):S88–95.
+[159] Mitchell WM et al. Mismatched double-stranded RNA (ampligen) reduces
+concentration of zidovudine (azidothymidine) required for in-vitro inhibition
+of
+human
+immunodeﬁciency
+virus.
+Lancet
+(London,
+England)
+1987;1
+(8538):890–2.
+[160] Navabi H et al. A clinical grade poly I:C-analogue (Ampligen) promotes
+optimal DC maturation and Th1-type T cell responses of healthy donors and
+cancer patients in vitro. Vaccine 2009;27(1):107–15.
+[161] Pauwels P et al. Poly(I:C) primes primary human glioblastoma cells for an
+immune response invigorated by PD-L1 blockade. Oncoimmunology 2018;7
+(3):e1407899.
+[162] C., K., et al., Therapeutic Immune Modulation against Solid Cancers with
+Intratumoral Poly-ICLC: A Pilot Trial. Clinical cancer research : an ofﬁcial
+journal of the American Association for Cancer Research, 2018; 24(20): 4937-
+48.
+[163] Zhang J et al. Anti-tumor macrophages activated by ferumoxytol combined or
+surface-functionalized with the TLR3 agonist poly (I : C) promote melanoma
+regression. Theranostics 2018;8(22):6307–21.
+[164] Matsumoto M et al. Toll-like receptor 3 signal in dendritic cells beneﬁts
+cancer immunotherapy. Front Immunol 2017;8:p. 8:1897.
+[165] Takeda Y et al. Tumoricidal efﬁcacy coincides with CD11c up-regulation in
+antigen-speciﬁc CD8+ T cells during vaccine immunotherapy. J Exp Clin
+Cancer Res 2016;35(1):1–16.
+[166] Han HD et al. Toll-like receptor 3-induced immune response by poly(d, l-
+lactide-co-glycolide)
+nanoparticles
+for
+dendritic
+cell-based
+cancer
+immunotherapy. Int J Nanomed 2016;11:5729–42.
+[167] Hammerich L et al. Systemic clinical tumor regressions and potentiation of
+PD1 blockade with in situ vaccination. Nat Med 2019;25(5):814–24.
+[168] Lampkin
+BC
+et
+al.
+Phase
+II
+trial
+of
+a
+complex
+polyriboinosinic-
+polyribocytidylic acid with poly-L-lysine and carboxymethyl cellulose in
+the treatment of children with acute leukemia and neuroblastoma: a report
+from
+the Children’s
+Cancer Study Group.
+Cancer Res
+1985;45(11 Pt
+2):5904–9.
+[169] Mehrotra S et al. Vaccination with poly(IC:LC) and peptide-pulsed autologous
+dendritic cells in patients with pancreatic cancer. J Hematol Oncol 2017;10
+(1):82.
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4432
+[170] Dillon PM et al. A pilot study of the immunogenicity of a 9-peptide breast
+cancer vaccine plus poly-ICLC in early stage breast cancer. J ImmunoTher
+Cancer 2017;5(1):1–10.
+[171] Berraondo P et al. Combined immunotherapy encompassing intratumoral
+poly-ICLC, dendritic-cell vaccination and radiotherapy in advanced cancer
+patients. Ann Oncol 2018;29(5):1312–9.
+[172] Okada H et al. ROBUST INDUCTION OF TYPE-1 CD8+ T-CELL RESPONSES IN
+WHO GRADE II LOW-GRADE GLIOMA PATIENTS RECEIVING PEPTIDE-BASED
+VACCINES IN COMBINATION WITH POLY-ICLC. Neuro-Oncology 2022;16
+(suppl_3):iii39.
+[173] Pollack IF et al. Antigen-speciﬁc immune responses and clinical outcome
+after vaccination with glioma-associated antigen peptides and polyinosinic-
+polycytidylic acid stabilized by lysine and carboxymethylcellulose in children
+with newly diagnosed malignant brainstem and nonbrainstem gliomas. J Clin
+Oncol 2014;32(19):2050–8.
+[174] Saxena M et al. Poly-ICLC, a TLR3 agonist, induces transient innate immune
+responses in patients with treated HIV-infection: a randomized double-
+blinded placebo controlled trial. Front Immunol 2019;10:725.
+[175] Y., c., et al. IL-27 enhances the expression of TRAIL and TLR3 in human
+melanomas and inhibits their tumor growth in cooperation with a TLR3
+agonist poly(I:C) partly in a TRAIL-dependent manner. PLoS One 2013;8(10):
+e76159.
+[176] Seya T, Takeda Y, Matsumoto M. Toll-like receptor 3 (TLR3) agonist ARNAX
+for therapeutic immunotherapy. Adv Drug Deliv Rev 2019;147:37–43.
+[177] Field AK et al. Inducers of interferon and host resistance. II. Multistranded
+synthetic
+polynucleotide
+complexes.
+Proc
+Natl
+Acad
+Sci
+USA
+1967;58
+(3):1004–10.
+[178] Gresser I et al. Role of endogenous interferon in the anti-tumor effect of poly
+I-C and statolon as demonstrated by the use of anti-mouse interferon serum.
+Int J Cancer 1978;21(1):72–7.
+[179] Zhang Z, Ohto U, Shimizu T. Toward a structural understanding of nucleic
+acid-sensing Toll-like receptors in the innate immune system. FEBS Lett
+2017;591(20):3167–81.
+[180] Takeda Y et al. A TLR3-speciﬁc adjuvant relieves innate resistance to PD-L1
+blockade without cytokine toxicity in tumor vaccine immunotherapy. Cell
+Rep 2017;19(9):1874–87.
+[181] Duffy KE et al. Down modulation of human TLR3 function by a monoclonal
+antibody. Cell Immunol 2007;248(2):103–14.
+[182] Bunting RA et al. Novel antagonist antibody to TLR3 blocks poly(I:C)-induced
+inﬂammation in vivo and in vitro. Cell Immunol 2011;267(1):9–16.
+[183] Cheng K, Wang X, Yin H. Small molecule inhibitors of the TLR3/dsRNA
+complex. J Am Chem Soc 2011;133(11):3764–7.
+[184] Wang Y et al. Small-molecule modulators of toll-like receptors. Acc Chem Res
+2020;53(5):1046–55.
+[185] Thomas A et al. Investigating Toll-like receptor agonists for potential to treat
+hepatitis
+C
+virus
+infection.
+Antimicrob
+Agents
+Chemother
+2007;51
+(8):2969–78.
+[186] Scribner LS et al. Synthesis and structure-activity-relationships of 1H-
+imidazo[4,5-c]quinolines that induce interferon production. J Med Chem
+2005;48(10):3481–91.
+[187] Stanley MA. Imiquimod and the imidazoquinolones: mechanism of action
+and therapeutic potential. Clin Exp Dermatol 2002;27(7):571–7.
+[188] Luchner M, Reinke S, Milicic A. TLR agonists as vaccine adjuvants targeting
+cancer and infectious diseases. Pharmaceutics 2021;13(2):142.
+[189] Harrison CJ et al. Modiﬁcation of immunological responses and clinical
+disease during topical R-837 treatment of genital HSV-2 infection. Antiviral
+Res 1988;10(4–5):209–23.
+[190] Salazar LG et al. Topical imiquimod plus nab-paclitaxel for breast cancer
+cutaneous metastases: a phase 2 clinical trial. JAMA Oncol 2017;3(7):
+969–73.
+[191] N., H.C., et al., Recurrence of vulval intraepithelial neoplasia following
+treatment
+with
+cidofovir
+or
+imiquimod:
+results
+from
+a
+multicentre,
+randomised, phase II trial (RT3VIN). BJOG 2018; 125(9): 1171-7.
+[192] Fujimura T et al. Successful treatment of nivolumab-resistant multiple in-
+transit melanomas with ipilimumab and topical imiquimod. Case Rep Oncol
+2018;11(1):1–5.
+[193] Hanna E, Abadi R, Abbas O. Imiquimod in dermatology: an overview. Int J
+Dermatol 2016;55(8):831–44.
+[194] Moisan
+J
+et
+al.
+TLR7
+ligand
+prevents
+allergen-induced
+airway
+hyperresponsiveness and eosinophilia in allergic asthma by a MYD88-
+dependent and MK2-independent pathway. Am J Physiol. Lung Cell Mol
+Physiol 2006;290(5):L987–95.
+[195] Lu H et al. VTX-2337 is a novel TLR8 agonist that activates NK cells and
+augments ADCC. Clin Cancer Res 2012;18(2):499–509.
+[196] Stephenson RM et al. TLR8 stimulation enhances cetuximab-mediated
+natural killer cell lysis of head and neck cancer cells and dendritic cell
+cross-priming of EGFR-speciﬁc CD8+ T cells. Cancer immunol Immunother
+2013;62(8):1347–57.
+[197] Sabado RL et al. Resiquimod as an immunologic adjuvant for NY-ESO-1
+protein vaccination in patients with high-risk melanoma. Cancer Immunol
+Res 2015;3(3):278–87.
+[198] Nian H et al. R-848 triggers the expression of TLR7/8 and suppresses HIV
+replication in monocytes. BMC Infect Dis 2012;12(1):1–11.
+[199] Pockros PJ et al. Oral resiquimod in chronic HCV infection: safety and efﬁcacy
+in 2 placebo-controlled, double-blind phase IIa studies. J Hepatol 2007;47
+(2):174–82.
+[200] Fahey LM et al. A major role for the minor capsid protein of human
+papillomavirus type 16 in immune escape. J Immunol 2009;183(10):6151–6.
+[201] Hamm S et al. Alternating 2’-O-ribose methylation is a universal approach for
+generating
+non-stimulatory
+siRNA
+by
+acting
+as
+TLR7
+antagonist.
+Immunobiology 2010;215(7):559–69.
+[202] Robbins M et al. 2’-O-methyl-modiﬁed RNAs act as TLR7 antagonists. Mol
+Ther 2007;15(9):1663–9.
+[203] Lenert P et al. DNA-like class R inhibitory oligonucleotides (INH-ODNs)
+preferentially block autoantigen-induced B-cell and dendritic cell activation
+in vitro and autoantibody production in lupus-prone MRL-Fas(lpr/lpr) mice
+in vivo. Arthritis Res Ther 2009;11(3):R79.
+[204] Sacre S et al. Oligodeoxynucleotide inhibition of Toll-like receptors 3, 7, 8,
+and 9 suppresses cytokine production in a human rheumatoid arthritis
+model. Eur J Immunol 2016;46(3):772–81.
+[205] Lai CY et al. Natural modulators of endosomal toll-like receptor-mediated
+psoriatic skin inﬂammation. J Immunol Res 2017;2017:7807313.
+[206] Hennessy EJ, Parker AE, O’Neill LAJ. Targeting Toll-like receptors: emerging
+therapeutics? Nat Rev Drug Discovery 2022;9(4):293–307.
+[207] Sarasin-Filipowicz M et al. Interferon signaling and treatment outcome in
+chronic hepatitis C. PNAS 2008;105(19):7034–9.
+[208] Schmoll HJ et al. Maintenance treatment with the immunomodulator
+MGN1703, a Toll-like receptor 9 (TLR9) agonist, in patients with metastatic
+colorectal carcinoma and disease control after chemotherapy: a randomised,
+double-blind, placebo-controlled trial. J Cancer Res Clin Oncol 2014;140
+(9):1615–24.
+[209] Wittig B et al. MGN1703, an immunomodulator and toll-like receptor 9 (TLR-
+9) agonist: from bench to bedside. Crit Rev Oncol/Hematol 2015;94
+(1):31–44.
+[210] Lonsdorf AS et al. Intratumor CpG-oligodeoxynucleotide injection induces
+protective antitumor T cell immunity. J Immunol 2003;171(8):3941–6.
+[211] Heckelsmiller K et al. Peritumoral CpG DNA elicits a coordinated response of
+CD8 T cells and innate effectors to cure established tumors in a murine colon
+carcinoma model. J Immunol 2002;169(7):3892–9.
+[212] Houot R, Levy R. T-cell modulation combined with intratumoral CpG cures
+lymphoma in a mouse model without the need for chemotherapy. Blood
+2009;113(15):3546–52.
+[213] Denton PW et al. Effects of 24-week Toll-like receptor 9 agonist treatment in
+HIV type 1+ individuals. AIDS 2019;33(8):1315–25.
+[214] Thio CL et al. Toll-like receptor 9-dependent interferon production prevents
+group 2 innate lymphoid cell-driven airway hyperreactivity. J Allergy Clin
+Immunol 2019;144(3):682–97.
+[215] Krieg AM. CpG motifs in bacterial DNA and their immune effects. Annu Rev
+Immunol 2002;20:p. 20:709.
+[216] Pisetsky DS. Mechanisms of immune stimulation by bacterial DNA. Springer
+Semin Immunopathol 2000;22(1):21–33.
+[217] Gürsel M et al. Differential and competitive activation of human immune
+cells by distinct classes of CpG oligodeoxynucleotide. J Leukoc Biol 2002;71
+(5):813–20.
+[218] Vollmer J et al. Characterization of three CpG oligodeoxynucleotide classes
+with
+distinct
+immunostimulatory
+activities.
+Eur
+J
+Immunol
+2004;34
+(1):251–62.
+[219] Samulowitz
+U
+et
+al.
+A
+novel
+class
+of
+immune-stimulatory
+CpG
+oligodeoxynucleotides uniﬁes high potency in type I interferon induction
+with preferred structural properties. Oligonucleotides 2010;20(2):93–101.
+[220] Hyer RN, Janssen RS. Immunogenicity and safety of a 2-dose hepatitis B
+vaccine, HBsAg/CpG 1018, in persons with diabetes mellitus aged 60–70
+years. Vaccine 2019;37(39):5854–61.
+[221] Champion CR. Heplisav-B: A Hepatitis B vaccine with a novel adjuvant. Ann
+Pharmacother 2021;55(6):783–91.
+[222] Cooper CL et al. CPG 7909 adjuvant plus hepatitis B virus vaccination in HIV-
+infected adults achieves long-term seroprotection for up to 5 years. Clin
+Infect Dis 2008;46(8):1310–4.
+[223] Ito T et al. Dectin-1 plays an important role in house dust mite-induced
+allergic airway inﬂammation through the activation of CD11b+ dendritic
+cells. J Immunol 2017;198(1):61–70.
+[224] Maatouk L et al. TLR9 activation via microglial glucocorticoid receptors
+contributes to degeneration of midbrain dopamine neurons. Nat Commun
+2018;9(1):2450.
+[225] Shaker ME, Trawick BN, Mehal WZ. The novel TLR9 antagonist COV08-0064
+protects from ischemia/reperfusion injury in non-steatotic and steatotic mice
+livers. Biochem Pharmacol 2016;112:90–101.
+[226] Besch R et al. Proapoptotic signaling induced by RIG-I and MDA-5 results in
+type I interferon-independent apoptosis in human melanoma cells. J Clin
+Investig 2009;119(8):2399–411.
+[227] Neumann H et al. Targeting the cytosolic innate immune receptors RIG-I and
+MDA5 effectively counteracts cancer cell heterogeneity in glioblastoma. Stem
+Cells (Dayton, Ohio) 2013;31(6):1064–74.
+[228] Elion DL, Cook RS. Harnessing RIG-I and intrinsic immunity in the tumor
+microenvironment for therapeutic cancer treatment. Oncotarget 2018;9
+(48):29007–17.
+[229] Korolowicz KE et al. Antiviral Efﬁcacy and host innate immunity associated
+with SB 9200 treatment in the woodchuck model of chronic Hepatitis B. PLoS
+One 2016;11(8):e0161313.
+[230] Philpott DJ et al. Nod1 and Nod2 direct autophagy by recruiting ATG16L1 to
+the plasma membrane at the site of bacterial entry. Nat Immunol 2010;11
+(1):55–62.
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4433
+[231] Mariathasan S et al. Cryopyrin activates the inﬂammasome in response to
+toxins and ATP. Nature 2006;440(7081):228–32.
+[232] Suresh M et al. Antiviral efﬁcacy and host immune response induction during
+sequential treatment with SB 9200 followed by Entecavir in woodchucks.
+PLoS One 2017;12(1):e0169631.
+[233] Teijeira A et al. Immunotherapeutic effects of intratumoral nanoplexed poly
+I:C. J ImmunoTher Cancer 2019;7(1):116.
+[234] Olagnier D et al. Inhibition of dengue and chikungunya virus infections by
+RIG-I-mediated type I interferon-independent stimulation of the innate
+antiviral response. J Virol 2014;88(8):4180–94.
+[235] Lamarre A et al. Systems analysis of a RIG-I agonist inducing broad spectrum
+inhibition of virus infectivity. PLoS Pathog 2013;9(4):e1003298.
+[236] Linehan MM et al. A minimal RNA ligand for potent RIG-I activation in living
+mice. Sci Adv 2018;4(2):e1701854.
+[237] Probst P et al. A small-molecule IRF3 agonist functions as an inﬂuenza
+vaccine adjuvant by modulating the antiviral immune response. Vaccine
+2017;35(15):1964–71.
+[238] Yen B et al. Molecular basis for ebolavirus VP35 suppression of human
+dendritic cell maturation. J Virol 2014;88(21):12500–10.
+[239] Childs K et al. mda-5, but not RIG-I, is a common target for paramyxovirus V
+proteins. Virology 2007;359(1):190–200.
+[240] Ramos HJ, Gale JM. RIG-I like receptors and their signaling crosstalk in the
+regulation of antiviral immunity. Curr Opin Virol 2011;1(3):167–76.
+[241] Dou Z et al. Cytoplasmic chromatin triggers inﬂammation in senescence and
+cancer. Nature 2017;550(7676):402–6.
+[242] Ranoa DRE et al. STING promotes homeostasis via regulation of cell
+proliferation and chromosomal stability. Cancer Res 2019;79(7):1465–79.
+[243] Prantner D et al. 5,6-Dimethylxanthenone-4-acetic acid (DMXAA) activates
+stimulator of interferon gene (STING)-dependent innate immune pathways
+and is regulated by mitochondrial membrane potential. J Biol Chem 2012;287
+(47):39776–88.
+[244] Guo F et al. STING agonists induce an innate antiviral immune response
+against
+hepatitis
+B
+virus.
+Antimicrob
+Agents
+Chemother
+2015;59
+(2):1273–81.
+[245] Cerón S et al. The STING agonist 5,6-dimethylxanthenone-4-acetic acid
+(DMXAA) stimulates an antiviral state and protects mice against herpes
+simplex virus-induced neurological disease. Virology 2019;529:23–8.
+[246] Curran E et al. STING pathway activation stimulates potent immunity against
+acute myeloid leukemia. Cell Rep 2016;15(11):2357–66.
+[247] Weiss JM et al. The STING agonist DMXAA triggers a cooperation between T
+lymphocytes
+and
+myeloid
+cells
+that
+leads
+to
+tumor
+regression.
+Oncoimmunology 2017;6(10):e1346765.
+[248] McKeage MJ et al. 5,6-Dimethylxanthenone-4-acetic acid in the treatment of
+refractory tumors: a phase I safety study of a vascular disrupting agent. Clin
+Cancer Res 2006;12(6):1776–84.
+[249] Pili R et al. Phase II study on the addition of ASA404 (vadimezan; 5,6-
+dimethylxanthenone-4-acetic acid) to docetaxel in CRMPC. Clin Cancer Res
+2010;16(10):2906–14.
+[250] Conlon J et al. Mouse, but not human STING, binds and signals in response to
+the
+vascular
+disrupting
+agent
+5,6-dimethylxanthenone-4-acetic
+acid.
+J
+Immunol 2013;190(10):5216–25.
+[251] Burdette DL et al. STING is a direct innate immune sensor of cyclic di-GMP.
+Nature 2011;478(7370):515–8.
+[252] Ohkuri T et al. STING contributes to antiglioma immunity via triggering type I
+IFN signals in the tumor microenvironment. Cancer Immunol Res 2014;2
+(12):1199–208.
+[253] Chandra D et al. STING ligand c-di-GMP improves cancer vaccination against
+metastatic breast cancer. Cancer Immunol Res 2014;2(9):901–10.
+[254] Aval LM et al. Challenges and opportunities in the clinical development of
+STING agonists for cancer immunotherapy. J Clin Med 2020;9(10):3323.
+[255] Corrales L et al. Direct activation of STING in the tumor microenvironment
+leads to potent and systemic tumor regression and immunity. Cell Rep
+2015;11(7):1018–30.
+[256] Morales A et al. Design of amidobenzimidazole STING receptor agonists with
+systemic activity. Nature 2018;564(7736):439–43.
+[257] Sheridan C. Drug developers switch gears to inhibit STING. Nat Biotechnol
+2019;37(3):199–201.
+[258] N., x., et al. cGAS activation causes lupus-like autoimmune disorders in a
+TREX1 mutant mouse model. J Autoimmun 2019;100:84–94.
+[259] Decout A et al. The cGAS-STING pathway as a therapeutic target in
+inﬂammatory diseases. Nat Rev Immunol 2021;21(9):548–69.
+[260] Lima C et al. Natterin-induced neutrophilia is dependent on cGAS/STING
+activation via type I IFN signaling pathway. Int J Mol Sci 2022;25(7):3600.
+[261] Y., G., et al., The cGAS/STING pathway: a novel target for cancer therapy.
+Front Immunol 2022; 12: 12:795401.
+[262] Tang CHA et al. Agonist-mediated activation of STING induces apoptosis in
+malignant B cells. Cancer Res 2016;76(8):2137–52.
+[263] Balak DMW et al. IMO-8400, a toll-like receptor 7, 8, and 9 antagonist,
+demonstrates clinical activity in a phase 2a, randomized, placebo-controlled
+trial in patients with moderate-to-severe plaque psoriasis. Clin Immunol
+2017;174:63–72.
+[264] Hennessy EJ, Parker AE, O’Neill LAJ. Targeting Toll-like receptors: emerging
+therapeutics? Nat Rev Drug Discovery 2010;9(4):293–307.
+[265] Patinote, C., et al., Agonist and antagonist ligands of toll-like receptors 7 and
+8: Ingenious tools for therapeutic purposes. Eur J Med Chem 2020;
+193:112238.
+[266] Hou B, Reizis O, DeFranco AL. Toll-like receptor-mediated dendritic cell-
+dependent and -independent stimulation of innate and adaptive immunity.
+Immunity 2008;29(2):272–82.
+[267] Akira S, Takeda K, Kaisho T. Toll-like receptors: critical proteins linking innate
+and acquired immunity. Nat Immunol 2001;2(8):675–80.
+[268] Medzhitov, R., Toll-like receptors and innate immunity. 2001, European
+Association for Cardio-Thoracic Surgery. p. 135-145.
+[269] Kaisho T, Akira S. Toll-like receptors as adjuvant receptors. BBA 2002;1589
+(1):1–13.
+[270] Iwasaki A, Medzhitov R. Toll-like receptor control of the adaptive immune
+responses. Nat Immunol 2004;5(10):987–95.
+[271] Owen AM et al. TLR agonists as mediators of trained immunity: mechanistic
+insight
+and
+immunotherapeutic
+potential
+to
+combat
+infection.
+Front
+Immunol 2021;11:622614.
+[272] Hua Z, Hou B. TLR signaling in B-cell development and activation. Cell Mol
+Immunol 2013;10(2):103–6.
+[273] Hua Z, Hou B. TLR signaling in B-cell development and activation. Cell Mol
+Immunol 2013;10(2):103–6.
+[274] Browne EP. Regulation of B-cell responses by Toll-like receptors. Immunology
+2012;136(4):370–9.
+[275] McGettrick AF, O’Neill LA. Localisation and trafﬁcking of Toll-like receptors:
+an important mode of regulation. Curr Opin Immunol 2010;22(1):20–7.
+[276] Gay NJ et al. Assembly and localization of Toll-like receptor signalling
+complexes. Nature Publishing Group; 2014. p. 546–58.
+[277] Kwissa M et al. Distinct TLR adjuvants differentially stimulate systemic and
+local innate immune responses in nonhuman primates. Blood 2012;119
+(9):2044–55.
+[278] van Haren SD et al. In vitro cytokine induction by TLR-activating vaccine
+adjuvants
+in
+human
+blood
+varies
+by
+age
+and
+adjuvant.
+Cytokine
+2016;83:99–109.
+[279] Durmus S et al. A review on computational systems biology of pathogen-host
+interactions., 6. Front Microbiol.; 2015. p. 235.
+[280] Tripathi LP et al. Network-Based Analysis of Host-Pathogen Interactions.
+Encyclopedia
+of
+Bioinformatics
+and
+Computational.
+In:
+Biology. Oxford: Academic Press; 2019. p. 932–7.
+[281] Guven-Maiorov
+E
+et
+al.
+Prediction
+of
+host-pathogen
+interactions
+for
+helicobacter pylori by interface mimicry and implications to gastric cancer.
+J Mol Biol 2017;429(24):3925–41.
+[282] Brito AF, Pinney JW. Protein-protein interactions in virus-host systems. Front
+Microbiol 2017;8(AUG):1557.
+[283] Guven-Maiorov
+E,
+Tsai
+CJ,
+Nussinov
+R.
+Pathogen
+mimicry
+of
+host
+protein-protein interfaces modulates immunity. Academic Press; 2016. p.
+136–45.
+[284] Guven-Maiorov E et al. HMI-PRED: a web server for structural prediction of
+host-microbe interactions based on interface mimicry. J Mol Biol 2020;432
+(11):3395–403.
+[285] Guven-Maiorov E et al. Interface-based structural prediction of novel host-
+pathogen interactions. Humana Press Inc.; 2019. p. 317–35.
+[286] Guven-Maiorov E, Tsai CJ, Nussinov R. Oncoviruses can drive cancer by
+rewiring
+signaling
+pathways
+through
+interface
+mimicry.
+Front
+Oncol
+2019;9:1236.
+[287] Mariano R, Wuchty S. Structure-based prediction of host–pathogen protein
+interactions. Elsevier Ltd.; 2017. p. 119–24.
+[288] Doxey AC, McConkey BJ. Prediction of molecular mimicry candidates in
+human pathogenic bacteria. Virulence 2013;4(6).
+[289] Huo T et al. Prediction of host - pathogen protein interactions between
+Mycobacterium tuberculosis and Homo sapiens using sequence motifs. BMC
+Bioinf 2015;16(1):1–9.
+[290] Eid FE, Elhefnawi M, Heath LS. DeNovo: virus-host sequence-based protein-
+protein interaction prediction. Bioinformatics 2016;32(8):1144–50.
+[291] Lee SA, et al. Ortholog-based protein-protein interaction prediction and its
+application to inter-species interactions. 2008. BioMed Central.
+[292] Beltrán JF, Brito IL. Host-microbiome protein-protein interactions reveal
+mechanisms in human disease. bioRxiv 2019:821926.
+[293] Evans P et al. Prediction of HIV-1 virus-host protein interactions using virus
+and host sequence motifs. BMC Med Genomics 2009;2.
+[294] Becerra A, Bucheli VA, Moreno PA. Prediction of virus-host protein-
+protein interactions mediated by short linear motifs. BMC Bioinf 2017;18
+(1):163.
+[295] Davis FP et al. Host-pathogen protein interactions predicted by comparative
+modeling. Protein Sci 2007;16(12):2585–96.
+[296] Doolittle JM, Gpmez SM. Structural similarity-based predictions of protein
+interactions between HIV-1 and Homo sapiens. Virol J 2010;7:82.
+[297] Mahajan G, Mande SC. Using structural knowledge in the protein data bank to
+inform the search for potential host-microbe protein interactions in sequence
+space: application to Mycobacterium tuberculosis. BMC Bioinf 2017;18
+(1):1–14.
+[298] Segura-Cabrera A et al. A viral-human interactome based on structural motif-
+domain interactions captures the human infectome. PLoS One 2013;8
+(8):71526.
+[299] Arnold R et al. Computational analysis of interactomes: current and future
+perspectives for bioinformatics approaches to model the host–pathogen
+interaction space. Methods 2012;57(4):508–18.
+[300] Bose T, Venkatesh KV, Mande SS. Computational analysis of host-pathogen
+protein
+interactions
+between
+humans
+and
+different
+strains
+of
+enterohemorrhagic Escherichia coli. Front Cell Infect Microbiol 2017;7:128.
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4434
+[301] Durmus S, Ulgen KO. Comparative interactomics for virus-human protein-
+protein interactions: DNA viruses versus RNA viruses. FFBS Open Bio 2017;7
+(1):96–107.
+[302] Nourani E, Khunjush F, DurmuÅŸ S. Computational approaches for prediction
+of pathogen-host protein-protein interactions. Front Microbiol 2015;6:94.
+[303] Nourani E, Khunjush F, Durmus S. Computational prediction of virus-human
+protein-protein interactions using embedding kernelized heterogeneous
+data. Mol BioSyst 2016;12:1976–86.
+[304] Tan X et al. Detection of microbial infections through innate immune sensing
+of nucleic acids. Annu Rev Immunol 2018;72:447–78.
+[305] Miyake K et al. Mechanisms controlling nucleic acid-sensing Toll-like
+receptors. Int Immunol 2018;30(2):43–51.
+[306] Schulze S et al. Computational prediction of molecular pathogen-host
+interactions based on dual transcriptome data. Front Microbiol 2015;6(65).
+[307] Qi Y et al. Semi-supervised multi-task learning for predicting interactions
+between HIV-1 and human proteins. Bioinformatics 2010;26:i645–52.
+[308] Tastan O et al. Prediction of interactions between HIV-1 and human proteins
+by information integration. Pac Symp Biocomput 2009:516–27.
+[309] Singh AP, Gordon GJ. Relational learning via collective matrix factorization |
+Proceedings of the 14th ACM SIGKDD international conference on Knowledge
+discovery and data mining. ACM Press, New York, USA., 2008: 650-8.
+[310] Schleker S et al. Prediction and comparison of Salmonella-human and
+Salmonella-Arabidopsis
+interactomes.
+Chem
+Biodivers
+2012;9(5):
+991–1018.
+[311] Zhou H et al. Stringent homology-based prediction of H. sapiens-M.
+tuberculosis H37Rv protein-protein interactions. Biol Direct 2014;9:5.
+[312] Doolittle JM, Gomez SM. Mapping Protein interactions between dengue virus
+and its human and insect hosts. PLoS NeglTrop Dis 2011;5(2):e954.
+[313] Sotriffer CA et al. SFCscore: scoring functions for afﬁnity prediction of
+protein-ligand complexes. Proteins 2008;73(2):395–419.
+[314] Cang Z, Wei GW. Integration of element speciﬁc persistent homology and
+machine learning for protein-ligand binding afﬁnity prediction. Int J Numer
+Methods Biomed Eng 2018;34(2):e2914.
+[315] Durrant JD, McCammon JA. NNScore: a neural-network-based scoring
+function for the characterization of proteinligand complexes. J Chem Inf
+Model 2010;50(10):1865–71.
+[316] Zheng L, Fan J, Mu Y. OnionNet: a multiple-layer intermolecular-contact-
+based convolutional neural network for protein-ligand binding afﬁnity
+prediction. ACS Omega 2019;4(14):15956–65.
+[317] Yu DJ et al. Designing template-free predictor for targeting protein-ligand
+binding sites with classiﬁer ensemble and spatial clustering. IEEE/ACM Trans
+Comput Biol Bioinf 2013;10(4):994–1008.
+[318] Khanna V et al. Prediction of novel mouse TLR9 agonists using a random
+forest approach. BMC Mol Cell Biol 2019;20(2):1–14.
+[319] Ahmad S, et al., CCRXP: Exploring clusters of conserved residues in protein
+structures. Nucleic Acids Res, 2010; 38(Web Server issue): W398–W401.
+[320] Ahmad S et al. Protein-DNA interactions: structural, thermodynamic and
+clustering patterns of conserved residues in DNA-binding proteins. Nucleic
+Acids Res 2008;36(18):5922–32.
+[321] Ahmad S, Sarai A. PSSM-based prediction of DNA binding sites in proteins.
+BMC Bioinf 2005;6:33.
+[322] Andrabi M, Mizuguchi K, Ahmad S. Conformational changes in DNA-binding
+proteins: relationships with precomplex features and contributions to
+speciﬁcity and stability. Proteins 2014;82(5):841–57.
+[323] Ahmad S, Sarai A. Moment-based prediction of DNA-binding proteins. J Mol
+Biol 2004;341(1):65–71.
+[324] Ahmad S et al. Integrating sequence and gene expression information
+predicts genome-wide DNA-binding proteins and suggests a cooperative
+mechanism. Nucleic Acids Res 2018;46(1):54–70.
+[325] Veprintsev DB, Fersht AR. Algorithm for prediction of tumour suppressor p53
+afﬁnity for binding sites in DNA. Nucleic Acids Res 2008;36(5):1589–98.
+[326] Rohs R et al. The role of DNA shape in protein-DNA recognition. Nature
+2009;461(7268):1248–53.
+[327] Pabo CO, Sauer RT. Transcription factors: structural families and principles of
+DNA recognition. Annu Rev Biochem 1992;61:1053–95.
+[328] Chiu TP et al. Genome-wide prediction of minor-groove electrostatic
+potential enables biophysical modeling of protein-DNA binding. Nucleic
+Acids Res 2017;45(21):12565–76.
+[329] Höllerer S et al. Large-scale DNA-based phenotypic recording and deep
+learning enable highly accurate sequence-function mapping. Nat Commun
+2020;11(1):1–15.
+[330] Kopp W et al. Deep learning for genomics using Janggu. Nat Commun
+2020;11(1):1–7.
+[331] Beer MA, Shigaki D, Huangfu D. Enhancer predictions and genome-wide
+regulatory circuits. Annu Rev Genomics Hum Genet 2020;21:37–54.
+[332] Corsi F et al. Multiple protein-DNA interfaces unravelled by evolutionary
+information, physico-chemical and geometrical properties. PLoS Comput Biol
+2020;16(2):e1007624.
+[333] Phuycharoen M et al. Uncovering tissue-speciﬁc binding features from
+differential deep learning. Nucleic Acids Res 2020;48(5):e27.
+[334] Yang W, Deng L. PreDBA: a heterogeneous ensemble approach for predicting
+protein-DNA binding afﬁnity. Sci Rep 2020;10(1):1–11.
+[335] Chiu TP et al. TFBSshape: an expanded motif database for DNA shape features
+of transcription factor binding sites. Nucleic Acids Res 2020;48(D1):
+D246–55.
+[336] Polishchuk M et al. SMARTIV: combined sequence and structure de-novo
+motif discovery for in-vivo RNA binding data. Nucleic Acids Res 2018;46
+(W1):W221–8.
+[337] Raman K, Bhat AG, Chandra N. A systems perspective of host-pathogen
+interactions: predicting disease outcome in tuberculosis. Mol BioSyst 2010;6
+(3):516–30.
+[338] Schulze S et al. Computational prediction of molecular pathogen-host
+interactions based on dual transcriptome data. Front Microbiol 2015;6:65.
+[339] Weber M et al. Inference of dynamical gene-regulatory networks based on
+time-resolved multi-stimuli multi-experiment data applying NetGenerator
+V2.0. BMC Syst Biol 2013;7(1):1–16.
+[340] Castro JC et al. Gene regulatory networks on transfer entropy (GRNTE): a
+novel approach to reconstruct gene regulatory interactions applied to a case
+study for the plant pathogen Phytophthora infestans. Theor Biol Med Modell
+2019;16(1):1–15.
+[341] Wei T et al. LRRML: a conformational database and an XML description of
+leucine-rich repeats (LRRs). BMC Struct Biol 2008;8(1):1–9.
+[342] Gong J et al. TollML: a database of toll-like receptor structural motifs. J Mol
+Model 2010;16(7):1283–9.
+[343] Kaur D et al. PRRDB 2.0: a comprehensive database of pattern-recognition
+receptors and their ligands. Database 2019;2019:baz076.
+[344] Prabakaran P et al. Thermodynamic database for protein-nucleic acid
+interactions (ProNIT). Bioinformatics 2001;17(11):1027–34.
+[345] Näpﬂin K et al. Genomics of host-pathogen interactions: challenges and
+opportunities across ecological and spatiotemporal scales. PeerJ 2019;7:
+e8013–e.
+[346] Kratochwil CF, Meyer A. Closing the genotype-phenotype gap: emerging
+technologies for evolutionary genetics in ecological model vertebrate
+systems. BioEssays 2015;37(2):213–26.
+[347] Linden SK et al. Mucins in the mucosal barrier to infection. Mucosal Immunol
+2008;1(3):183–97.
+[348] Lindén S et al. Role of ABO secretor status in mucosal innate immunity and H.
+pylori infection. PLoS Pathog 2008;4(1):e2.
+[349] Windsor DA. Controversies in parasitology, most of the species on earth are
+parasites. Int J Parasitol 1998;28(12):1939–41.
+[350] Dobson A et al. Homage to Linnaeus: how many parasites? How many hosts?
+PNAS 2008;105(Suppl. 1):11482–9.
+[351] Talhouk NL et al. Ecosystem energetic implications of parasite and free-living
+biomass in three estuaries. Nature 2008;454(7203):515–8.
+[352] Poulin R. Parasite biodiversity revisited: Frontiers and constraints. Elsevier
+Ltd.; 2014. p. 581–9.
+[353] Padra M et al. Helicobacter suis binding to carbohydrates on human and
+porcine gastric mucins and glycolipids occurs via two modes. Virulence
+2018;9(1):898–918.
+[354] Woo PC et al. Then and now: use of 16S rDNA gene sequencing for bacterial
+identiﬁcation and discovery of novel bacteria in clinical microbiology
+laboratories. Clin Microbiol Infect 2008;14(10):908–34.
+[355] Lipkin WI. The changing face of pathogen discovery and surveillance. Nat Rev
+Microbiol 2013;11(2):133–41.
+[356] Bullman S, Meyerson M, Kostic AD. Emerging concepts and technologies for
+the discovery of microorganisms involved in human disease. Ann Rev Pathol
+2017;12:217–44.
+[357] Titcomb G, Jerde C, Young H. High-throughput sequencing for understanding
+the ecology of emerging infectious diseases at the wildlife-human interface.
+Front Ecol Evol 2019;7:126.
+[358] Chiu CY. Viral pathogen discovery. Curr Opin Microbiol 2013;16(4):468–78.
+[359] Datta S et al. Next-generation sequencing in clinical virology: Discovery of
+new viruses. World J Virol 2015;4(3):265–76.
+[360] Sekirov I et al. Gut microbiota in health and disease. Physiol Rev 2010;90
+(3):859–904.
+[361] Kamada N et al. Control of pathogens and pathobionts by the gut microbiota.
+Nat Immunol 2013;14(7):685–90.
+[362] Robinson CJ, Bohannan BJM, Young VB. From structure to function: the
+ecology of host-associated microbial communities. Microbiol Mol Biol Rev
+2010;74(3):453–76.
+[363] Gregory AC et al. Marine DNA viral macro- and microdiversity from pole to
+pole. Cell 2019;177(5):1109–1123.e14.
+[364] Tschirren B et al. Polymorphisms at the innate immune receptor TLR2 are
+associated with Borrelia infection in a wild rodent population. Proc Biol Sci
+2013;280(1759):20130364.
+[365] Zhang Y, Lun CY, Tsui SK. Metagenomics: a new way to illustrate the crosstalk
+between infectious diseases and host microbiome. Int J Mol Sci 2015;16
+(11):26263–79.
+[366] Zhang J et al. Toll-like receptor recognition of bacteria in ﬁsh: ligand
+speciﬁcity and signal pathways. Fish Shellﬁsh Immunol 2014;41(2):380–8.
+[367] Shan S et al. Non-mammalian Toll-like receptor 18 (Tlr18) recognizes
+bacterial pathogens in common carp (Cyprinus carpio L.): indications for a
+role of participation in the NF-jB signaling pathway. Fish Shellﬁsh Immunol
+2018;72:187–98.
+[368] Clark AG, Wang L. Molecular population genetics of Drosophila immune
+system genes. Genetics 1997;147(2):713–24.
+[369] Tennessen
+JA.
+Molecular
+evolution
+of
+animal
+antimicrobial
+peptides:
+widespread moderate positive selection. J Evol Biol 2005;18(6):1387–94.
+[370] Franzenburg S et al. Distinct antimicrobial peptide expression determines
+host species-speciﬁc bacterial associations. PNAS 2013;110(39):E3730–8.
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4435
+[371] Carlin AF et al. Deconvolution of pro- and antiviral genomic responses in Zika
+virus-infected
+and
+bystander
+macrophages.
+PNAS
+2018;115(39):
+E9172–81.
+[372] S´widerská Z et al. Avian Toll-like receptor allelic diversity far exceeds human
+polymorphism: an insight from domestic chicken breeds. Sci Rep 2018;8
+(1):1–11.
+[373] Harpur BA et al. Integrative genomics reveals the genetics and evolution of
+the
+honey
+bee’s
+social
+immune
+system.
+Genome
+Biol
+Evol
+2022;11
+(3):937–48.
+[374] Adrian J et al. Adaptation to host-speciﬁc bacterial pathogens drives rapid
+evolution of a human innate immune receptor - SEARCH. Curr Biol 2019;29
+(4):616–630.e5.
+[375] Scher JU, Abramson SB. The microbiome and rheumatoid arthritis. Nat Rev
+Rheumatol 2011;7(10):569–78.
+[376] Foster JA, Neufeld KA. Gut-brain axis: how the microbiome inﬂuences anxiety
+and depression. Trends Neurosci 2013;36(5):305–12.
+[377] Schellack C et al. IC31, a novel adjuvant signaling via TLR9, induces potent
+cellular and humoral immune responses. Vaccine 2006;24:5461–72.
+[378] Luchner M et al. TLR Agonists as Vaccine Adjuvants Targeting Cancer
+andInfectious Diseases. Pharmaceutics 2021;13(2):142.
+[379] Cheng YS, Xu F. Anticancer function of polyinosinic-polycytidylic acid. Cancer
+Biol Ther 2010;10(12):1219–23.
+[380] Kawai T, Akira S. The roles of TLRs, RLRs and NLTs in pathogen recognition. Int
+Immunol 2009;21(4):317–37.
+[381] Guerini D. STING agonist/antagonist: their potential as therapeutics and
+future developments. Cells 2022;11(7):1159.
+[382] Aval LM et al. Challenges and Opportunities in the Clinical Development of
+STING Agonists for Cancer Immunotherapy. J Clin Med 2020;9(10):3323.
+A. Jain, S. Mittal, L.P. Tripathi et al.
+Computational and Structural Biotechnology Journal 20 (2022) 4415–4436
+4436

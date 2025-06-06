@@ -1,0 +1,1468 @@
+European Journal of Cell Biology 102 (2023) 151365
+Available online 16 October 2023
+0171-9335/©
+2023
+The
+Author(s).
+Published
+by
+Elsevier
+GmbH.
+This
+is
+an
+open
+access
+article
+under
+the
+CC
+BY-NC-ND
+license
+(http://creativecommons.org/licenses/by-nc-nd/4.0/).
+Call to action to properly utilize electron microscopy to measure organelles 
+to monitor disease 
+Kit Neikirk a,1, Edgar-Garza Lopez b,1, Andrea G. Marshall a, Ahmad Alghanem c, 
+Evan Krystofiak d, Bartosz Kula e, Nathan Smith e, Jianqiang Shao f, Prasanna Katti g,2, 
+Antentor Hinton Jr. a,*,2 
+a Department of Molecular Physiology and Biophysics, Vanderbilt University, Nashville, TN, USA 
+b Department of Internal Medicine, University of Iowa, Iowa City, IA 52242, USA 
+c King Abdullah International Medical Research Center (KAIMRC), Ali Al Arini, Ar Rimayah, Riyadh 11481, Saudi Arabia 
+d Department of Cell and Developmental Biology, Vanderbilt University, Nashville, TN 37232, USA 
+e Del Monte Institute for Neuroscience, Department of Neuroscience, University of Rochester, School of Medicine and Dentistry, Rochester 14642, USA 
+f Central Microscopy Research Facility, University of Iowa, Iowa City, IA, USA 
+g National Heart, Lung and Blood Institute, National Institutes of Health, 9000 Rockville Pike, Bethesda, MD 20892, USA   
+A R T I C L E  I N F O   
+Keywords: 
+Quantification 
+Mitochondria 
+MERCs 
+3D EM 
+TEM 
+A B S T R A C T   
+This review provides an overview of the current methods for quantifying mitochondrial ultrastructure, including 
+cristae morphology, mitochondrial contact sites, and recycling machinery and a guide to utilizing electron mi­
+croscopy to effectively measure these organelles. Quantitative analysis of mitochondrial ultrastructure is 
+essential for understanding mitochondrial biology and developing therapeutic strategies for mitochondrial- 
+related diseases. Techniques such as transmission electron microscopy (TEM) and serial block face-scanning 
+electron microscopy, as well as how they can be combined with other techniques including confocal micro­
+scopy, super-resolution microscopy, and correlative light and electron microscopy are discussed. Beyond their 
+limitations and challenges, we also offer specific magnifications that may be best suited for TEM analysis of 
+mitochondrial, endoplasmic reticulum, and recycling machinery. Finally, perspectives on future quantification 
+methods are offered.   
+1. Introduction 
+Mitochondria are essential organelles responsible for energy pro­
+duction, regulation of cell signaling, and apoptosis (Brown et al., 2017). 
+The intricate structure and dynamic behavior of mitochondria play 
+critical roles in cellular homeostasis and have been implicated in 
+numerous diseases, including cancer, neurodegenerative diseases, and 
+cardiovascular disorders (Alston et al., 2017). Given the intrinsic linkage 
+between mitochondrial structure and function (Glancy, 2020), under­
+standing the morphology, distribution, and organization of mitochon­
+drial structures is essential for advancing our understanding of 
+mitochondrial biology and the development of therapeutic strategies. 
+Mitochondrial quantifications remain crucial to understanding 
+mitochondrial gross structure and function. Fluorescence techniques are 
+commonly used to understand mitochondrial content, and emerging 
+techniques, including two-photon microscopy, allow for quantification 
+of mitochondrial area (Su Lim et al., 2015). MitoTracker is commonly 
+used for mitochondrial counts, however, it has some commonly reported 
+issues that should be considered, including cross-organelle reactivity, 
+membrane potential-dependent retention, and the potential for oxidant 
+burden to influence MitoTracker uptake (Buckman et al., 2001; Klier 
+et al., 2022; Neikirk et al., 2023a). Thus, shadow electro­
+chemiluminescence, a method in which negative optical contrast allows 
+for precise visualization of mitochondria, is also an emerging technique 
+for counting functional mitochondria (Ma et al., 2021). While mtDNA is 
+a poor biomarker of mitochondria content, Complex IV amount has been 
+* Correspondence to: Vanderbilt University Department of Molecular Physiology and Biophysics, 750 Robinson Research Building, 2200 Pierce Ave, Nashville, TN 
+37232-0615, USA. 
+E-mail address: antentor.o.hinton.jr@Vanderbilt.Edu (A. Hinton).   
+1 These authors share co-first authorship.  
+2 These authors share senior authorship. 
+Contents lists available at ScienceDirect 
+European Journal of Cell Biology 
+journal homepage: www.elsevier.com/locate/ejcb 
+https://doi.org/10.1016/j.ejcb.2023.151365 
+Received 16 August 2023; Received in revised form 14 October 2023; Accepted 15 October 2023   
+European Journal of Cell Biology 102 (2023) 151365
+2
+found to be indicative of mitochondrial oxidative capacity (Larsen et al., 
+2012). However, to accurately capture mitochondrial morphology and 
+area, electron microscopy has continuously served as a useful tool 
+(Fig. 1) (Gu et al., 2019; Vaillant-Beuchot et al., 2021; Ruegsegger et al., 
+n.d.). 
+Quantitative analysis of mitochondrial ultrastructure through elec­
+tron microscopy has become increasingly important for understanding 
+mitochondrial dynamics and function, with a variety of techniques, 
+including transmission electron microscopy (TEM) (Lam et al., 2021), 
+serial block face-scanning electron microscopy (SBF-SEM) (Marshall 
+et al., 2023c), and focused ion beam-scanning electron microscopy 
+(FIB-SEM) (Marshall et al., 2023a) being used to visualize and quantify 
+mitochondrial morphology, including cristae structure, the folds of the 
+inner mitochondrial membrane. These quantitative measures provide 
+insight into mitochondrial connectivity, energy metabolism, and 
+signaling, and can facilitate the identification of potential targets for 
+disease interventions (Lam et al., 2021). Beyond this, other technologies 
+including confocal microscopy and correlative light-electron micro­
+scopy (CLEM) allow for these EM techniques to be combined with 
+super-resolution microscopy and other emerging techniques (Sun et al., 
+2007; Cook et al., 2014; Jakobs and Wurm, 2014). 
+In this review, we provide an overview of the current methods for the 
+quantification of mitochondrial ultrastructure, including the measure­
+ment of cristae morphology, mitochondrial contact sites, recycling ma­
+chinery, as well as measurements specific to striated muscle. We also 
+offer specific TEM magnifications which can aid optimization of these 
+quantifications. We discuss the limitations and challenges of each 
+method and provide recommendations for future research to advance 
+our 
+understanding 
+of 
+mitochondrial 
+biology. 
+Ultimately, 
+the 
+development of improved techniques for the quantification of mito­
+chondrial ultrastructure is essential for advancing our understanding of 
+mitochondrial biology. Even with the latest advancements in research 
+technologies and techniques, there are still many limitations that do not 
+allow for the most accurate quantification. 
+2. Fixation considerations 
+Prior to quantification, it is important to ensure proper fixation, as 
+improper techniques may bias morphology, especially in the context of 
+mitochondria (Liang et al., 2021; Kim et al., 2022; Hinton et al., 2023). 
+Non-chemical-based fixation techniques, including high-pressure 
+freezing and freeze substitution, quickly stop cell activity, thus avoid­
+ing the formation of artifacts (Ayache et al., 2010; Hess et al., 2010), but 
+are resource-intensive and may interfere with membrane integrity 
+(Walther and Ziegler, 2002), therefore chemical fixation techniques 
+remain popular (Hinton et al., 2023). Notably, when employing chem­
+ical fixation for cell-based studies, fixing cells directly on a plate for at 
+least 30 min without scraping preserves ultrastructure (Hinton et al., 
+2023). Beyond this, hypoxic conditions in mitochondrial fixation can 
+cause the formation of artifacts including nanotunnels-like protrusions 
+(Hinton et al., 2023). Given that mitochondrial nanotunnels can be 
+indicative of pathological states (Vincent et al., 2019), hypoxic condi­
+tions may bias results (Kim et al., 2022). To minimize hypoxic condi­
+tions, we have found that ketamine/xylazine or 5% isoflurane/oxygen 
+are effective anesthetics, avoiding CO2, phosphate-buffered saline 
+flushes in cardiac perfusion, and tissue sizes exceeding 1 mm in thick­
+ness during immersion fixation (Hinton et al., 2023). Similarly, it is 
+important to utilize sufficient perfusion and immersion fixation with 
+Fig. 1. Representative transmission electron microscopy images from murine liver, spleen, cardiac, lung, and kidney tissue at a variety of magnifications. 
+While different tissues and cell types can present different phenotypes, common morphology remains intact and we found the magnification specified in the text to be 
+effective across a range of sample types. Red arrows represent representative mitochondria and green represents MERCs. These arrows are not comprehensive and 
+additional guidance in identifying organelles can be found (Eskelinen, 2008; Martinet et al., 2014; McMillan and Eisenback, 2018; Lam et al., 2021; Neikirk et al., 
+2023b). All TEM images are original and mice age and gender varies among micrographs. Top two rows, scale bar represents 2 µm, while bottom row scale bars 
+represent 10 µm. 
+K. Neikirk et al.                                                                                                                                                                                                                                 
+European Journal of Cell Biology 102 (2023) 151365
+3
+coverage of tissue area, otherwise extensive damage may occur (Liang 
+et al., 2021). Other studies have found that paraformaldehyde alone for 
+fixation induces hypoxic conditions, with direct perfusion alongside 
+glutaraldehyde or oxygen supplementation avoiding these issues (Kim 
+et al., 2022). Once proper fixation is achieved through previously pub­
+lished methods (Liang et al., 2021; Kim et al., 2022; Hinton et al., 2023), 
+quantification of micrographs may then be proposed. 
+3. TEM measurements and quantifications of mitochondria 
+Lam and colleagues demonstrate that when using ImageJ, a free 
+open-source software from the National Institutes of Health (Rasband, 
+2011; Schneider et al., 2012), mitochondria can be easily quantified by 
+parameters including Feret’s Diameter, length, width, area, circularity 
+index, and the number of mitochondria (Fig. 2A-D) (Lam et al., 2021). 
+Given that TEM is relatively less time-consuming than 3D methods 
+(Chaffey, 2001; Curry et al., 2006), it can easily allow for quantifications 
+such as the total cell area occupied by mitochondria, which varies 
+among tissue types. Thus, TEM needs to be normalized to cellular or 
+tissue area. Past literature generally shows that ten digital images in a 
+randomized 
+manner 
+with 
+a 
+mixture 
+of 
+longitudinally 
+and 
+cross-sectional-oriented fibers allow an independent party to quantify 
+subsarcolemmal and myofibrillar fibers mitochondria in striated muscle 
+(Basse et al., 2021; Lam et al., 2021). 
+We believe that for TEM, a magnification to reach 93.9 pixels/µm 
+(21.81 µm by 21.81 µm image size) should be used to measure bulk 
+mitochondrial properties, allowing determination of mitochondrial 
+length, mitochondrial width, the mitochondrial number, circularity 
+index, mitochondrial volume, mitochondrial area, mitochondrial 
+perimeter, aspect ratio, and mitochondrial interactions with other or­
+ganelles, distance, and interface (Fig. 2A-I). Generally, this will remain 
+constant across commonly used cell and tissue types, but depending on 
+cell size, mitochondria area per cell area may need to be utilized as 
+opposed to mitochondria area per cell. After quantifying all mitochon­
+dria at a magnification of 93.9 pixels/µm (21.81 µm by 21.81 µm image 
+size), a higher magnification [such as 235 pixels/µm (8.70 µm by 
+8.70 µm)] can better show the mitochondrial morphology (Fig. 1). When 
+quantifying data, it is crucial to keep in mind that mitochondria can 
+have varied structure that is influenced by cell type (Fig. 1), metabolic 
+need, and cellular stress, amongst other things (Rube and van der Bliek, 
+2004; Chaanine et al., 2019; Vincent et al., 2019; Garza-Lopez et al., 
+2022). Beyond this, since images should be collected in a randomized 
+manner, a system should be set up to avoid the reanalysis of any mito­
+chondria, either by ensuring no regions of interest are imaged multiple 
+times or by stereologically selecting mitochondria for analysis. 
+When analyzing the width of a mitochondrion with complex 
+morphology, a simple solution is measuring three locations in the 
+mitochondria and averaging these measurements to obtain width 
+(Fig. 2B). To achieve this, orient the mitochondrion along the z-axis, and 
+measure from the tip of the furthest projection to the center (like 
+measuring a radius) or the tip of the furthest projection past the 
+midpoint along that plane (like a diameter). Repeat this in alignment 
+along the x- and y- planes, as previously described (Lam et al., 2021). 
+However, when an investigator determines the length of hyperfused 
+mitochondria, or other abnormal mitochondrial phenotypes, a line must 
+be drawn from the end of one mitochondrial extension until the center 
+point where they fuse. Equally, this must be repeated for all sides of the 
+hyperfused mitochondria and averaged together for the final length. 
+Moreover, one can also right-click on a straight line in ImageJ and select 
+a "segmented line" to create a continuous line. The technique can be 
+chosen based on the shape of hyperfused mitochondria. 
+To measure the mitochondrial area, circularity index, or perimeter, 
+all mitochondria in a cell of interest may be identified and circled using 
+the freehand tool of ImageJ (Fig. 2C) (Lam et al., 2021). These values are 
+then averaged to obtain one representative parameter per cell. These 
+averages can then be inserted into statistical software, affording one 
+data point. This is then repeated on different cells. The mitochondrial 
+number can be calculated by counting the number of mitochondria 
+within a cell and normalizing it to the total area of the cell (Fig. 2D). 
+Similarly, to calculate mitochondrial volume density, all mitochondrial 
+area in one cell area divided by the total area of a given cell, yielding 
+relative mitochondrial outer membrane space in comparison to overall 
+cellular volume(Fig. 2F). 
+2D TEM for mitochondrial volume should ideally be confirmed by 
+SBF-SEM or FIB-SEM for 3D confirmation. 3D reconstruction is impor­
+tant as mitochondria can take on numerous phenotypes in response to 
+their environment (Glancy, 2020). For example, the prioritization of 
+ATP synthesis can result in greater volumes, while surface area can be 
+prioritized for organelle contact sites (Glancy, 2020). 3D quantifications 
+include volume, surface area, mitochondrial complexity index, sphe­
+ricity, and mitochondrial branching index (Vincent et al., 2019). 
+Confocal imaging and software analysis by Imaris, a software that allows 
+you to visualize data in 3D, or other data analysis software can further 
+confirm 2D TEM calculations for mitochondrial volume (Taguchi et al., 
+2021). 
+While we focus on this specific workflow in the context of ImageJ, a 
+free and widely available open-source software, other protocols have 
+also demonstrated the practicability of other software, such as Image Pro 
+Analyzer 6.3 (Cataldo et al., 2010). Additionally, alternatives to manual 
+tracing, such as stereology or point counting have previously been dis­
+cussed and can expedite mitochondrial area measurements. However, 
+these techniques are potentially limited in measuring abnormal mito­
+chondrial structures (Weibel, 1979; Basse et al., 2021). 
+4. TEM measurements of mitochondrial cristae 
+Mitochondrial cristae are membrane invaginations that play a crucial 
+role in mitochondrial function, including oxidative phosphorylation, 
+protein import, and calcium signaling (Cogliati et al., 2016). Cristae 
+typically exist as tubular junctions which house ATP synthases (Man­
+nella, 2006). However, under certain conditions, including gene dele­
+tion and cellular stress, cristae assume other morphologies including flat 
+and tubulo-vesicular formations (P´anek et al., 2020). The quantification 
+of cristae morphology is therefore important for understanding the 
+structure-function relationship of these organelles (Fig. 3). 
+Cristae can have several phenotypes (Fig. 4A). Tubular cristae pre­
+sent, as the name implies, like tubes with a higher base surface area to 
+volume ratio, whereas lamellar cristae are shaped as flat sac-like struc­
+tures and are more capable of expansion and have a higher oxidative 
+phosphorylation potential (Mannella, 2020; Afzal et al., 2021). Impor­
+tantly, while both pathways employ the MICOS complex, recent findings 
+suggest that tubular cristae form independent from mitochondrial fusion 
+proteins such as OPA1 (Harner et al., 2016). Lamellar cristae, in 
+contrast, can reach high ATP requirements and are more dependent on 
+the MICOS complex, while being slightly less common (Prince, 2002; 
+P´anek et al., 2020; Stephan et al., 2020). Mitochondria exhibit a mixture 
+of these forms and predominately only show these types in normal 
+conditions; yet, cristae also exist in less common forms including 1 
+membrane cristae (which appears as a single lamellar crista), arc-shaped 
+cristae (which appears as a single curved crista), and 2 membranes 
+(which appear as only two lamellar cristae (Stephan et al., 2020). Sep­
+ta/onion cristae have also been observed, named for multiple-ringed 
+cristae, and have been associated with complex-V dimerization, which 
+is required for the proper ordering of cristae (P´anek et al., 2020). 
+Similarly, various literature has also referred to vesicular cristae, how­
+ever, definitions vary, ranging to more tubular structures. Commonly, 
+however, vesicular cristae are recognized as deficient shapes that exist in 
+disease states and resemble small spheres (Mannella, 2006; Stephan 
+et al., 2020). Recent literature has also proposed simplifying these 
+various morphologies into flat, which include lamellar and stacks, and 
+tubulo-vesicular (P´anek et al., 2020). 
+Currently, the principal way of quantifying cristae involves using 
+K. Neikirk et al.                                                                                                                                                                                                                                 
+European Journal of Cell Biology 102 (2023) 151365
+4
+(caption on next page) 
+K. Neikirk et al.                                                                                                                                                                                                                                 
+European Journal of Cell Biology 102 (2023) 151365
+5
+TEM (Lam et al., 2021) or fluorescence microscopy (Segawa et al., 
+2020). TEM offers advantages as it allows for the specific structures of 
+cristae to be observed with some of the best-in-class x- and y- resolu­
+tions. Multiple methods exist for analyzing cristae. The cristae score—a 
+qualitative scoring system for cristae quantity and form that ranges from 
+0 (worst) to 4 (best)—may be an appropriate measurement for use in 
+tissue. The cristae score is effective as it allows for an understanding of 
+whether the cristae structure is intact or has been degraded (Eisner et al., 
+2017). However, the cristae score is a subjective judgment that does not 
+incorporate the number of cristae (Eisner et al., 2017). Thus, the most 
+reliable measurements are cristae volume density, cristae surface area, 
+and cristae number, which are direct measures of changes in the cristae 
+folds or cristae membranes after gene deletion or treatment (Parra et al., 
+2014; Patra et al., 2016). These findings can be scored using 2D TEM by 
+examining changes in the typical morphology (Parra et al., 2014; Patra 
+et al., 2016; Eisner et al., 2017). 
+Although mitochondria are well-studied organelles, there is no uni­
+form consensus regarding how to analyze cristae morphology. Several 
+mitochondrial cristae measurements are required to determine if the 
+experimental condition such as gene of interest, treatment, or pathology 
+alters the morphology or depletes the cristae. Measurements of different 
+areas within the inner membrane are necessary to capture all possible 
+changes in cristae morphology. First, the crista junction diameter is the 
+length of the invagination of the inner membrane (Fig. 3A). Next, the 
+Fig. 2. Model of dimensions associated with mitochondria and mitochondria-lipid interactions. A. Cartoon depicting mitochondrial length, the major axis of 
+the mitochondrion. B. Measurement of mitochondrial width, the minor axis of the mitochondrion. C. Representation of mitochondrial area, circularity index, and 
+perimeter. The area is the space occupied by a mitochondrion. Perimeter is the outer boundary of a mitochondrion. The circularity index is the ratio between the 
+areas of an inscribed circle to the area of a circumscribed circle fitted to the outline of a funnel-shaped depression. D. Mitochondrial number using the average of total 
+mitochondrial area and area of the entire cell. E. Mitochondria-lipid distance is the space between the outer mitochondrial membrane and the lipid droplet. F Cartoon 
+depicting the mitochondrial volume density, measured by dividing the average total outer mitochondrial membrane area by the area of the entire cell. G. Lipid 
+distance interaction with mitochondria is calculated by subtracting the lipid distance contact length from the mitochondria perimeter, then dividing by the per­
+centage of the lipid distance perimeter. H. Mitochondrial interaction with lipid droplets is calculated by subtracting the lipid distance contact length from the 
+mitochondrial perimeter, then dividing by the percentage of the mitochondrial perimeter. I. Mitochondria-lipid interface, indicated by the peridroplet mitochondria 
+(PDM), is equivalent to the percentage of mitochondria in contact with lipid. 
+Fig. 3. Model of dimensions associated with mitochondrial cristae. A. Depiction of crista junction diameter. Cristae are formed by finger-like folds that project 
+from the mitochondrial inner membrane. Crista junctions project out from the cristae, where the membrane aligns. The crista junction diameter is the length of a 
+crista junction from the top to the bottom of the crista crypt. The crista crypt starts at the base of the membrane and ends at the tip of the crista junction. B. The 
+intermembrane space is the space between the inner mitochondrial membrane sides. The intermembrane space diameter is the width of a crista. C. The intracristae 
+space width is the distance between two cristae junctions. D. The cristae junction width is the distance between the edges of the same cristae junction. E. Depiction of 
+cristae number calculated by identifying and counting all cristae within a mitochondrion. F. Depiction of cristae surface area (CSA), which starts at the base of the 
+cristae junction and ends at its tip, and wraps around the junction in 3D. The CSA is the average surface area of all cristae in a mitochondrion. G. Depiction of cristae 
+volume density (CVD), a percentage calculated by dividing the CSA by the surface area of the outer mitochondrial membrane (OMM). 
+K. Neikirk et al.                                                                                                                                                                                                                                 
+European Journal of Cell Biology 102 (2023) 151365
+6
+intermembrane space diameter can be between the mitochondria’s inner 
+and outer membranes (Fig. 3B). Lastly, the intra-cristae space width is 
+the distance between two consecutive invaginations of the inner mem­
+brane (Fig. 3C). The crista junction width is the distance between each 
+end of the invagination (Fig. 3D). It is important to note that the cristae 
+junction diameter (Fig. 3A) and the intermembrane space diameter 
+(Fig. 3B) can tighten due to the oligomerization of mitochondrial inner 
+proteins (Frezza et al., 2006; Patra et al., 2016). Substrates such as in­
+sulin can change cristae width morphology (Parra et al., 2014; 
+Castro-Sepulveda et al., 2023); therefore, we recommend using the 
+crista space width (Fig. 3C) and crista junction width (Fig. 3D). 
+To identify general cristae morphology, such as cristae number, use a 
+93.9 l/µm (21.81 µm by 21.81 µm) magnification and measure all 
+mitochondria in the field of view (Fig. 1). After calculating the number 
+of cristae for each mitochondrion, average the measurements together 
+from all mitochondria within a single experimental group. The cristae 
+network’s representative images can be collected at magnifications be­
+tween 282 pixels/µm (7.27 µm by 7.27 µm) to 564 pixels/µm (3.64 µm 
+by 3.64 µm) (Fig. 3E). Additionally, the cristae surface area (Fig. 3F) and 
+volume density (Fig. 3G) can be measured at magnifications between 
+375 pixels/µm (5.46 µm by 5.46 µm) to 750 pixels/µm (2.73 µm by 
+2.73 µm) (Fig. 1). Finally, at these same magnifications, cristae can be 
+classified as lamellar, tubular, septa, vesicular, or other aforementioned 
+phenotypes (Fig. 4A). 
+5. Other EM techniques to measure cristae 
+FIB-SEM allows for the 3D reconstruction of the cristae folds, which 
+can be used to distinguish between lamellar and tubular cristae with 
+greater resolution than can be obtained using 2D TEM (Parra et al., 
+2014; Patra et al., 2016; Eisner et al., 2017; Marshall et al., 2023a). 
+Based on this, the relative ratio between these types of cristae may be 
+measured and compared. Beyond this 3D reconstruction can be applied 
+to evaluate similar 3D-equivalent measurements of cristae. For example, 
+the surface area and volume of cristae can be measured to estimate the 
+capacity for oxidative phosphorylation. Additionally, the curvature of 
+cristae membranes can be quantified to assess the degree of membrane 
+remodeling in response to changes in mitochondrial metabolism or dy­
+namics. Finally, cristae score has similarly been adapted to 3D EM 
+techniques (Crabtree et al., 2023). However, FIB-SEM is limited in our 
+experience as the protocol to stain the samples can heavily stain certain 
+cell types of mitochondria which makes visualizing the cristae difficult. 
+Correlative light electron microscopy (CLEM) offers an important 
+potential mechanism to expand studies on cristae. CLEM is a unique 
+technique that combines light microscopy techniques, such as fluores­
+cence, with electron microscopy (Marshall et al., 2023b). This allows for 
+fluorescence or techniques such as immunogold labeling to guide spe­
+cific areas or aid in identification for subsequent EM imaging (Marshall 
+et al., 2023b). While specific cristae structure is important in their 
+function, live-cell imaging allows for the real-time structure of cristae to 
+be understood (Segawa et al., 2020). Importantly, this can allow for the 
+quantification of changes in the spatial orientation of cristae immedi­
+ately following mitochondrial fusion and fission events. Similarly, 
+cristae have their own independent fusion and fission events which may 
+shape wider mitochondrial bioenergetics (Kondadi et al., 2020). While 
+mitochondria have membrane potentials that are related to a variety of 
+their functional processes, individual cristae have distinct membrane 
+potentials that can be quantified using super-resolution imaging (Wolf 
+et al., 2019, 2020). Using TMRE fluorescence, these insulated membrane 
+potentials can be measured, and using CLEM techniques may aid in 
+elevating our understanding of why certain structural, experimental, or 
+pathophysiology conditions affect the specific membrane potential of 
+mitochondria (Wolf et al., 2019, 2020). While the functional impact of 
+cristae membrane potential remains poorly elucidated, it has been 
+Fig. 4. Model of Cristae Ratio and Model of Endoplasmic Reticulum. A. Depiction of cristae ratio between lamellar and tubular cristae. B. Depiction of 
+endoplasmic reticulum (ER) interacting with other organelles. C. Depiction of mitochondria–ER contact (MERC) percentage coverage, which is measured by 
+measuring the contact length of the MERC and dividing the surface area of the ER or mitochondria. 
+K. Neikirk et al.                                                                                                                                                                                                                                 
+European Journal of Cell Biology 102 (2023) 151365
+7
+observed that mitochondrial membrane potential is an important factor 
+in powering the proton pump in oxidative phosphorylation while also 
+having other biochemical functions (Zorova et al., 2018). Therefore, 
+combining forms of fluorescence microscopy with EM, through CLEM, 
+offers an important mechanism to quantify cristae through multiple 
+methods. 
+6. TEM measurement of mitochondria endoplasmic reticulum 
+contact sites (MERCs) 
+Mitochondria often dynamically associate with other cellular struc­
+tures, including the endoplasmic reticulum (ER), peroxisomes, lipid 
+droplets (Fig. 1), nucleus, and lysosomes (Benhammouda et al., 2021). 
+The quantification of contact sites between mitochondria and these or­
+ganelles is important for understanding the regulation of mitochondrial 
+dynamics and metabolism. Due to the small size and dynamic nature of 
+these structures, the identification of contact sites between mitochon­
+dria and other organelles can be challenging. A key target to study is the 
+contact sites between mitochondria and the ER known as MERCs, or 
+their biochemically isolated counterparts Mitochondrial Associated 
+Membranes (MAMs) (Missiroli et al., 2018). ER are known to associate 
+with a variety of organelles (Fig. 4B), but MERCs are the best studied of 
+these contact sites generally (Giacomello and Pellegrini, 2016). MERCs 
+constitute regions where the mitochondria and ER are separated by 
+distances of ~10 to ~50 nm and are well understood to be involved in 
+various pathways including lipid and calcium (Ca2+) homeostasis 
+(Giacomello and Pellegrini, 2016). First discovered in the 1950 s (Her­
+rera-Cruz and Simmen, 2017), MERC formations today are now under­
+stood to be involved in various pathologies including Alzheimer’s 
+Disease, highlighting the importance of their study especially for 
+Fig. 5. Models of Electron Microscopy and Quantification of MAMs. A. Cartoon depiction of proteins associated with mitochondria-associated membranes 
+(MAMs): MFN1, MFN2, SLC25A46, GRP75. Mitochondrial proteins: OPA1 and MICOS; ER proteins: PERK, MFN2, STARD7, EMC, ORP5/8, SIGMAR1, BiP, IP3R3, 
+PACS-2, and VAPB; OMM proteins. VDAC1, DRP-1, BAP31, ATAD3A, PTPIP51, and FIS1. The SIGMAR1–BiP–IP3R3–GRP75–VDAC1 complex facilitates the 
+ER–mitochondria transfer of Ca2+. B. Illustration depicting the connection of outer mitochondrial membrane to rough ER (ribo-MERCs) with a generic Ca2+ channel 
+and the protein RRBP1 facilitating ER translocation. C. Connection of outer mitochondrial membrane to smooth ER (smooth MERCs). D. MAM distance is the space 
+between the outer membrane of the mitochondria and adjacent ER. E. Illustrates mitochondria–ER contact sites (MERCs), including measurements of smooth and 
+ribo-MERC distances, depicting interaction lengths along the mitochondria and the ER. F. Depiction of ER–mitochondria contact coefficient (ERMICC). ERMICC 
+computes the MAM distance, MERC length, and mitochondria perimeter involved in the interaction. ERMICC is equal to length divided by perimeter and multiplied 
+by distance. 
+K. Neikirk et al.                                                                                                                                                                                                                                 
+European Journal of Cell Biology 102 (2023) 151365
+8
+therapeutics (Gӧbel et al., 2020; Leal et al., 2020). The full functions of 
+these structural contacts which regularly constitute about 20% of all 
+mitochondrial area, have previously been reviewed (Prudent and 
+McBride, 2017); however, there are several important considerations for 
+quantification of structural aspects of MERCs. 
+Equally important in evaluating MERCs are their thickness or sepa­
+ration distance, and their percent coverage or length of contact between 
+mitochondria and ER (Fig. 4C). Notably, MERC percent coverage can 
+allow for relative MERCs to be considered independent from potential 
+changes in mitochondrial or ER volume. Beyond coverage, MERC 
+thickness must be precisely maintained to ensure normal inter- 
+organellar Ca2+ transport (Ainbinder et al., 2015; Bustos et al., 2017; 
+Carreras-Sureda et al., 2019). Insufficient MERC distance can result in 
+steric hindrance between the components of the Ca2+ transporter ma­
+chinery (Ainbinder et al., 2015; Bustos et al., 2017; Carreras-Sureda 
+et al., 2019). Ca2+ uptake between the ER and mitochondria is more 
+likely to occur when the organelles are in close proximity, with an ideal 
+distance ranging from 15 to 30 nm (Giacomello and Pellegrini, 2016; 
+Csord´as et al., 2018; Thoudam et al., 2019). For example, smaller MERC 
+coverage due to larger MERC distances suggests that changes in response 
+to metabolic conditions would be negligible (Glancy et al., 2015; 
+Tsushima et al., 2018). However, increased MERC coverage associated 
+with increased MERC distance may suggest greater perturbations in the 
+Ca2+ uptake or mobilization (the Ca2+ transfer effect) (Giacomello and 
+Pellegrini, 2016). Additionally, smaller MERC distances can allow for 
+the occurrence of lipid transfer (Giacomello and Pellegrini, 2016). Loss 
+of MFN2 or DRP-1 can increase ER stress, which can result in ER 
+ballooning due to an increase in eukaryotic translation initiation factor 
+2-alpha kinase (eIF2AK) and protein kinase R (PKR)-like ER kinase 
+(PERK) activity, which is involved in global protein translation attenu­
+ation and chaperone expression (Mu˜noz et al., 2013). MFN2 deletion has 
+been reported to increase MERC distance and decrease the 
+ER–mitochondria contact coefficient (ERMICC), a measure of coverage 
+(Naon et al., 2016). Based on these dynamics, there are a multitude of 
+MERC proteins that can be measured (Fig. 5A-C). 
+Notably, studies have suggested that measurement of these contact 
+sites may be limited or have systematic errors if using techniques such as 
+fluorescence microcopy (Giamogante et al., 2020). Thus, it is necessary 
+to have a standardized and systematic method for measuring MERCs and 
+quantifying MERC distance, ERMICC, and percent coverage, which can 
+be measured easily using TEM (Lam et al., 2021; Hinton et al., 2023) 
+(Fig. 5D-F). To quantify ER structures within a cell, the surface area and 
+length characteristics should be measured at a magnification of 235 
+pixels/µm (8.70 µm by 8.70 µm) and 93.9 pixels/µm (21.81 µm by 
+21.81 µm) (Fig. 5E), respectively. The ER can appear in various shapes 
+and forms throughout the cell, which can be typically differentiated at 
+235 pixels/µm (8.70 µm by 8.70 µm). Using different magnifications can 
+reveal similarities and differences between ER. MERC proteins are 
+usually observed between magnifications of 4400 pixels/µm (425 nm by 
+425 nm) to 7500 pixels/µm (273 nm by 273 nm) (Filadi et al., 2015a; 
+Hirabayashi et al., 2017; Kowaltowski et al., 2019). These magnifica­
+tions reveal an electron-dense area between a mitochondrion and an ER, 
+which constitutes the MAM area (Fig. 5A) and the MERCs (Fig. 5C) 
+(Filadi et al., 2015a; Hirabayashi et al., 2017; Kowaltowski et al., 2019). 
+Dormant rough MERCs distances range from 30 nm to 50 nm while 
+active rough MERCs distance transporting calcium are roughly around 
+20–30 nm (Fig. 5B) (Filadi et al., 2015a; Hirabayashi et al., 2017; 
+Kowaltowski et al., 2019). In contrast, smooth MERCs length are typi­
+cally between 8 nm and 15 nm (Fig. 5C) (Filadi et al., 2015a; Hir­
+abayashi et al., 2017; Kowaltowski et al., 2019). To quantify smooth or 
+rough MERCs distances (Fig. 5D), MERC length (Fig. 5E), or 
+ER–Mitochondria Contact Coefficient (ERMICC) (Fig. 5F), a complete 
+view of the cell is necessary, which can be acquired with low 
+magnification. 
+Generally, cells can fit within a 93.9 pixels/µm (21.81 µm by 
+21.81 µm) image; however, a lower magnification or a reconstruction of 
+multiple images can be used to view the entire cell. Each cell must have 
+the same units; therefore, some cells must undergo a conversion. At this 
+magnification, quadrants can be randomized and selected to obtain a 
+sufficient sample size for the data. Following the initial quantification of 
+the contact sites at 93.9 pixels/µm (21.81 µm by 21.81 µm) magnifica­
+tion, a higher magnification is employed to discriminate the detailed 
+morphology of the MERCs (Fig. 1). MERCs can be discerned at magni­
+fications between 235 pixels/µm (8.70 µm by 8.70 µm) to 564 pixels/µm 
+(3.64 µm by 3.64 µm) (Fig. 5D-4 F), but detailed MERCs morphology is 
+best analyzed at magnifications between 750 pixels/µm (2.73 µm by 
+2.73 µm) to 1125 pixels/µm (1.82 µm by 1.82 µm). A lower and higher 
+magnification image should be collected for any region of interest. 
+Although measuring distance is an essential parameter for character­
+izing MERC interactions, we recommend reporting both the MERC 
+length and ERMICC (Fig. 5D-4 F). MERC length is the distance where the 
+ER-mitochondria interface begins and ends (Fig. 5E). Additionally, the 
+ERMICC is calculated by measuring the distance within and the interface 
+length along the ER and the mitochondria (Fig. 5F). Finally, MAM dis­
+tance and percentage of ER-mito coverage can also be used to quantify 
+MERCs. 
+7. Other measurements for MERCs 
+MERCs are especially well suited to be studied using 3D EM tech­
+niques as these techniques can capture many of the specific details of 
+MERCs (Hinton et al., 2023). For example, the 3D distance between 
+organelles, as well as MERCs can be uncovered, while 3D volume and 
+contact length can both be methods to measure the total space shared 
+with contact sites. To measure the percentage of ER-mito coverage, the 
+ER and mitochondrion surface area in proximity is determined and 
+normalized to the distance between the two organelles at the MERCs 
+site. In conclusion, three graphs will be generated: the size of the con­
+tact, the percentage of contact covering the ER surface, and the per­
+centage of contact covering the mitochondrial surface area. Both the 
+MERC distance and the percent coverage are vital to understanding 
+MERC morphology. Besides the percent coverage, it is vital to under­
+stand MERCs based on distance. After obtaining all three calculations, 
+ERMICC is equal to interface length divided by mitochondria perimeter 
+multiplied by ER-Mito distance. If the ERMICC is lower than the control, 
+this suggests a reduced mitochondrial surface in contact with ER, and an 
+increased ER-mito distance. The inverse is also true for a greater 
+ERMICC. 
+For the measurement of MERCs, complementary methods such as 
+utilizing CLEM can be highly relevant to capture other properties. 
+Quantification alongside can also be performed by looking at the spatial 
+orientation of different contact site proteins, as well as the organelles of 
+the contact sites, such as through using mass spectrometry imaging 
+(Hogan et al., 2023). Moreover, the analysis of protein-protein in­
+teractions at contact sites can provide insight into the molecular 
+mechanisms underlying mitochondrial dynamics and function and can 
+be used to evaluate MERC tethering, namely through proximity ligation 
+assay (PLA). PLA permits the detection of protein-protein interactions in 
+situ at distances of less than 40 nm at endogenous protein levels. 
+Co-immunoprecipitation (Co-IP), ER Tracker, and MitoTracker analyses 
+can also be used to examine changes in MERC colocalization in the 
+absence or presence of genes of interest and treatment conditions (Filadi 
+et al., 2015b; Galmes et al., 2016; Hirabayashi et al., 2017; Tubbs et al., 
+2018). ER Tracker is an ER-specific dye that shares some overlap with 
+mitochondria. Mitochondrial staining can be used to confirm differences 
+in ER/mitochondrial colocalization with changes in TEM analyses. 
+MERC distance can be measured by examining the ER–mitochondria 
+contact space distance or coverage using FIB-SEM (Glancy et al., 2015), 
+or electron tomography (Tsushima et al., 2018). Immunogold labeling 
+(Galmes et al., 2016) can also be used by individually staining proteins 
+known to be associated with MERC tethering or mitochondria. The 
+colocalization of these immunogold-labeled dots can also be examined. 
+K. Neikirk et al.                                                                                                                                                                                                                                 
+European Journal of Cell Biology 102 (2023) 151365
+9
+This technique can also be harnessed to validate changes in MERC 
+tethering proteins content (Tsushima et al., 2018), analogous to insights 
+gained from PLA (Tubbs et al., 2018; Thoudam et al., 2019). CLEM has 
+also increasingly been performed with live cell imaging and immuno­
+gold labeling, making this a relevant future technique to study 
+mitochondria (van Rijnsoever et al., 2008). Together, these mechanisms 
+offer several ways to study and quantify MERCs or MAMs as well as the 
+spatial orientation of their proteins. 
+Fig. 6. Model of dimensions associated with lysosomes, autophagosomes, lysosome-autophagosomes, autolysosome, and peroxisomes. Cartoon depicting 
+lysosome and autophagosomes 3D quantifications, fluorescence measurements of peroxisomes and lysosomes, and 2D measurements of peroxisomes and autoly­
+sosomes or autophagosome-autolysosome fusions. A. Depiction of lysosomal rendering, which can be measured in both the 3D and 2D space in EM. The total size of 
+lysosome points toward their functional capacity. B. Lysosomes can also be measured through more traditional fluorescence technique. C. Autophagosomes appear as 
+double membrane structures with are carrying surrounding cell cargo. D. Lysosomes and autophagosomes can undergo fusion. At the midpoint where the bi- 
+membraned structure of the autophagosome is still intact, these can be measured separately. E. Autolysosomes are an end result of the autophagic process. F. 
+Peroxisomes, similar to lysosomes, contain the reducing enzyme catalase and usually some oxidases. TEM can be utilized to measure internal bodies. G. Fluorescence 
+can be utilized to measure the intensity and proximity of peroxisomes. H. Similar to the endoplasmic reticulum, the Golgi apparatus can be measured on the basis of 
+total size. I. Cisternae, or the inner compartments of Golgi apparatus, can be measured both in area, as well as the amount of budding which may be representative 
+of secretion. 
+K. Neikirk et al.                                                                                                                                                                                                                                 
+European Journal of Cell Biology 102 (2023) 151365
+10
+8. Other notable mitochondria organelle-organelle contact sites 
+Beyond MERCs, mitochondrial organelle-to-organelle contacts 
+include mito-lipid, mito-nuclear, mito-autophagosome, mito-peroxi­
+somes, and mito-Golgi (Klecker et al., 2014; Murley and Nunnari, 2016). 
+The contact percentage of each respective organelle, as well as the dis­
+tance between them to elucidate tethering, can be determined for each 
+of these contacts. Additionally, contacts with more cellular structures 
+such as the cytoskeleton and plasma membrane can be measured. 
+Importantly, 3D reconstruction also allows for contacts between more 
+than two organelles to be elucidated. For instance, wrappER is a type of 
+specialized form of MERCs occurring in the liver that involves high 
+percentages, upwards of 50%, of mitochondria being in contact with ER, 
+which is also associated with peroxisomes (Ilacqua et al., 2021). Thus, 
+3D reconstruction can serve as an important avenue to begin uncovering 
+how multiple organelles can contact each other, or even begin analyzing 
+the entire connectome of cellular spaces to better understand how the 
+inter-dependent spatial organization of all organelles may remain rele­
+vant, which has been done a limited number of times (Jiang et al., 2021; 
+Midorikawa et al., 2022). When quantifying these other organelles, 
+proper capturing and analysis also allow for quantification of their 
+various parameters. Thus, the next sections of this review will be focused 
+on brief considerations of quantifying these organelles, so their inde­
+pendent quantification may be considered, alongside their quantifica­
+tion in relation to mitochondrial contacts. 
+9. Measurement of recycling machinery 
+The quantification of recycling machinery, such as endosomes and 
+lysosomes, is essential for understanding cellular homeostasis and the 
+regulation of cellular processes, including protein turnover and mem­
+brane trafficking (Ryter et al., 2019). Macroautophagy – which involves 
+endosomes, autolysosomes, and lysosomes (Fig. 6A-E) – is linked to 
+various disease states, but also mitochondrial and endoplasmic reticu­
+lum stress (Kamat et al., 2014; Rashid et al., 2015). Recycling machinery 
+can be visualized and quantified using various techniques, including 
+TEM and super-resolution microscopy (Eskelinen, 2008). TEM can 
+provide high-resolution images of endosomes and lysosomes and enable 
+the quantification of their size, shape, and distribution (Eskelinen et al., 
+2011). Methods for quantification have been discussed extensively by 
+previous publications (Neikirk et al., 2023b). Importantly, lysosomes, 
+autophagosomes, autophagosome-lysosome fusions, and autolysosomes 
+should be differentiated through previously validated methods (Klion­
+sky et al., 2007, 2008; Eskelinen, 2008; Eskelinen et al., 2011; Neikirk 
+et al., 2023b), as difficulties can arise in their proper identification. 
+TEM or 3D reconstruction both serve as viable methods for 
+measuring the distance of mitochondria to lipid droplets (Fig. 2G-I). 3D 
+reconstruction can also allow for volumetric observations of recycling 
+machinery to be made (Fig. 6) (Neikirk et al., 2023b). All these organ­
+elles can best be measured in 3D, as 3D capacity of lysosomes and 
+autophagosomes may demonstrate their autophagic potential. It is vital 
+to measure the mitochondria lipid distance, percent coverage of the lipid 
+droplet, and lipid interface (Fig. 2G-I), as these may have roles in ste­
+roidogenesis (Jarc and Petan, 2019; Anastasia et al., 2021). However, 2D 
+methods such as TEM allow for them to be easily identified due to the 
+greater resolution allowed, yet they are more limited, offering similar 
+metrics as mitochondria. Generally, we have found that identification is 
+difficult at 93.9 pixels/µm (21.81 µm by 21.81 µm) (Fig. 1), so methods 
+such as immunogold should also be performed. Alternatively, a higher 
+magnification, such as 235 pixels/µm (8.70 µm by 8.70 µm) can allow 
+for multiple recycling machinery organelles to be considered in a single 
+region of interest, while also allowing for reliable and accurate identi­
+fication. Since they require the same magnification as mitochondria, it is 
+very possible to quantify them alongside mitochondria. Similarly, 
+measurement techniques for lysosomes (Fig. 6A), autophagosomes 
+(Fig. 6C), and autolysosomes (Fig. 6D-E) rely on measuring area, 
+circularity, and diameter through TEM (Neikirk et al., 2023b). 
+10. Alternative methods of quantification of recycling 
+machinery 
+Given that the functional capacity of recycling machinery is not as 
+directly related to their area as may be the case for mitochondria, 
+additional CLEM studies may allow for functional details to better to be 
+understood (Sherratt, 1991; Henry et al., 2015; Qiao et al., 2022; Neikirk 
+et al., 2023b). Super-resolution microscopy, such as stimulated emission 
+depletion (STED) microscopy and structured illumination microscopy 
+(SIM), can provide even higher resolution images of recycling machin­
+ery (Phillips et al., 2020; Bhattacharya et al., 2023). These techniques 
+can be used to visualize and quantify the ultrastructure of endosomes 
+and lysosomes, as well as the dynamic behavior of these organelles. One 
+approach to quantifying recycling machinery using super-resolution 
+microscopy is to use fluorescent markers to label specific proteins or 
+structures associated with endosomes or lysosomes (Fig. 6B). For 
+example, using the lysosomal membrane protein LAMP1 as a marker, 
+past studies have visualized lysosome size, distribution, and lysosomal 
+tubules using STED microscopy (Bhattacharya et al., 2023). Another 
+approach is to use genetically encoded fluorescent proteins, such as GFP 
+or mCherry, to label endosomes or lysosomes in live cells (Fig. 6B). This 
+approach allows for the visualization and quantification of the dynamics 
+of these organelles in real-time. For example, using GFP-tagged Rab5, a 
+protein associated with early endosomes, one can track the fusion and 
+fission events of early endosomes and measure their size and distribution 
+(Falk et al., 2014). Fluorescence correlation spectroscopy (FCS) can be 
+used to measure the diffusion of fluorescently labeled proteins within 
+endosomes or lysosomes, providing information on their size and in­
+ternal structure (Wissner et al., 2018). The continued development of 
+new techniques for imaging and quantifying recycling machinery is 
+likely to lead to new discoveries in the field of cellular biology (Neikirk 
+et al., 2023b). 
+11. Measurement of peroxisomes 
+Peroxisomes are essential organelles involved in lipid metabolism, 
+reactive oxygen species detoxification, β-oxidation of fatty acids, and 
+other critical cellular processes (Smith and Aitchison, 2013). Through 
+contact sites with mitochondria, peroxisomes carry out many of the 
+processes critical to the cell through shared metabolic pathways, which 
+may also link to the ER in a 3-organelle contact system (Shai et al., 
+2016). Although peroxisomes and lysosomes can present similarly, ly­
+sosomes are only found in animal cells and derived from Golgi appa­
+ratus, while peroxisomes are derived from the endoplasmic reticulum 
+(Kendall, 1992). Peroxisomes are thus important in lipids biosynthesis in 
+addition to other functions in autophagy. Quantifying the ultrastructure 
+and contact sites of peroxisomes is crucial for understanding their 
+function and regulation in cellular homeostasis. 
+Peroxisomes can change in size and number in response to various 
+cellular conditions, such as alterations in lipid metabolism or exposure 
+to oxidative stress (Smith and Aitchison, 2013). The creation of new 
+peroxisomes can be induced through the principal processes of de novo 
+biogenesis and fission, while peroxisomes also have their own inde­
+pendent fusion dynamics as well (Smith and Aitchison, 2013). To study 
+these dynamic changes, TEM can reveal the number and distribution of 
+peroxisomes within a cell, providing insights into their biogenesis and 
+turnover (Fig. 6F) (Smith and Aitchison, 2013). Beyond this, SBF-SEM as 
+a 3D electron microscopy technique provides a more comprehensive 
+view of peroxisomes in their native environment, revealing their in­
+teractions with other organelles (Jiang et al., 2021). SBF-SEM can be 
+used to quantify changes in peroxisome size (Yamane et al., 2018), 
+number, circularity, and distribution (Fig. 6F). Importantly, past studies 
+with 3D have found that peroxisomes can organize in tubular formations 
+or rows of spherical peroxisomes (Grabenbauer et al., 2000), along with 
+K. Neikirk et al.                                                                                                                                                                                                                                 
+European Journal of Cell Biology 102 (2023) 151365
+11
+aggregated peroxisomes, which together can correlate with their current 
+growth stage. Therefore, distribution and phenotyping of peroxisomes 
+can similarly be very important. 
+Recent research has also demonstrated that peroxisome’s internal 
+membranes can differ greatly (Wright and Bartel, 2020). Peroxisomes 
+contain several types of inclusions that can be observed using TEM and 
+SBF-SEM. These cores can be important to quantify, as they are related 
+to the organelle’s metabolic functions, such as the breakdown of fatty 
+acids and the detoxification of reactive oxygen species, and their relative 
+ratio and size may be relevant. Most commonly, peroxisomes have urate 
+oxidase crystalloid cores, which are composed of tightly packed, ordered 
+arrays of enzymes, which may be quantified as a measure of fatty acid 
+oxidation (Smith and Aitchison, 2013). These cores can be isolated and 
+their individual volumes may be quantified through metrics including 
+volume (Heinze et al., 2000). However, peroxisomes are quite hetero­
+geneous, and matrix proteins within them can show uneven distribution 
+during development, and may be dependent on the type of development 
+(Islinger et al., 2018). These crystalline cores can be hexagonal or 
+triangular (Schrader et al., 2014), yet the exact roles of these shapes 
+remain unknown. Therefore, importantly, while the gross structure of 
+peroxisomes should be quantified, so too should the inclusions to better 
+understand how they are involved in lipid metabolism or other enzy­
+matic functions. Since these structures can be difficult to observe, we 
+found two independent magnifications must be employed: peroxisomes 
+count, volume, area, circularity index, diameter, and sphericity can be 
+determined at a magnification of 235 pixels/µm (8.70 µm by 8.70 µm) 
+while specific internal structures and core inclusion bodies may require 
+a magnification of 470 pixels/µm (4.4 by 4.4 µm) or higher (Fig. 1). 
+CLEM enables the visualization and quantification of organelle 
+contacts in living cells and can be used to study the dynamic nature of 
+these interactions (Lucas et al., 2012). By measuring the distance and 
+contact points between organelles, researchers can gain valuable insight 
+into the regulation of organelle interactions and their implications for 
+cellular metabolism and signaling. Beyond this, fluorescence micro­
+scopy, coupled with live-cell imaging, can be used to monitor the growth 
+and dynamics of peroxisomes in real-time (Fig. 6G) (Barton et al., 2013). 
+By expressing fluorescently-tagged peroxisomal proteins or using spe­
+cific fluorescent markers that target peroxisomes (Wright and Bartel, 
+2020), researchers can visualize and quantify changes in peroxisome 
+size, shape, and number over time. As peroxisomes increase in size, such 
+as in Arabidopsis (Wright and Bartel, 2020), traditional methods of EM 
+may be limiting in measuring their area. Thus, the proteins associated 
+with peroxisomes may be measured. While traditionally this can be done 
+through immunogold labeling (Usuda et al., 1991), by isolating perox­
+isomes from cells and analyzing their protein content, researchers can 
+study changes in the abundance of key peroxisomal proteins involved in 
+organelle biogenesis and growth. For example, mass spectrometry-based 
+approaches can be applied to investigate the changes in peroxisome 
+protein and lipid composition which can aid in showing peroxisome 
+activity, as well as biogenesis, fusion, and expansion (Gronemeyer et al., 
+2013). 
+12. Measurement of golgi apparatus 
+Mitochondria and the Golgi apparatus are two important organelles 
+within eukaryotic cells, and although they have distinct functions, they 
+are linked in structure and function. The Golgi apparatus is responsible 
+for modifying and sorting proteins and lipids for transport to various 
+parts of the cell, including the mitochondria (Lowe, 2011). The Golgi 
+apparatus consists of a stack of flattened membranous sacs called 
+cisternae, 
+while 
+mitochondria 
+are 
+characterized 
+by 
+their 
+double-membrane structure, with an outer membrane and an inner 
+membrane that forms a series of folds called cristae (Lowe, 2011; 
+Cogliati et al., 2016). Interestingly, recent research has suggested that 
+the Golgi apparatus and mitochondria are physically and functionally 
+connected, with the Golgi playing a role in regulating mitochondrial 
+dynamics, including fission and fusion (Valm et al., 2017). Recent 
+studies have suggested that changes in the structure of the Golgi appa­
+ratus can impact mitochondrial morphology and function, through the 
+formation of contact sites (Dolman et al., 2005). The quantification of 
+Golgi morphology, thus, is important for understanding its role in 
+mitochondrial quality control and cellular homeostasis. 
+The size, shape, and organization of the Golgi apparatus can be 
+quantified using TEM and 3D EM. Beyond only gross structure, FIB-SEM 
+and TEM can be used to measure the number and length of cisternae 
+(Vidavsky et al., 2016). Specifically, the volume and surface area of the 
+Golgi apparatus can be quantified using 3D EM. Golgi-Mitochondria 
+length can (Dolman et al., 2005) be accessed using similar methods 
+employed for measuring MERC distance, length, and volume separation 
+(Fig. 5), with TEM-based techniques measuring relative contact sites the 
+same as MERCs are measured (See Section TEM Measurement of 
+Mitochondria Endoplasmic Reticulum Contact Sites). General Golgi 
+ultrastructure can be quantified through their area, length, circularity, 
+and diameter in TEM while 3D EM can additionally allow for analysis of 
+3D EM (Fig. 6H) Additionally, Golgi apparatus cisternae can be 
+measured by similar methods as measurement of cristae (Fig. 6I). 
+Similar to magnifications for MERCs, to quantify Golgi apparatus within 
+a cell, the surface area and length characteristics should be measured at 
+a magnification of 235 pixels/µm (8.70 µm by 8.70 µm) and 93.9 
+pixels/µm (21.81 µm by 21.81 µm), respectively (Fig. 1). Specifically, 
+the inter-cristae spacing, or distance between cisternae, can be measured 
+through TEM or 3D distance between them can be rendered. Since 
+sorting can be relevant for a variety of processes, measuring the ratio of 
+cisternae area to budding area can provide information about how 
+active cellular processes are (Fig. 6I). To properly observe all these 
+smaller internal details, a magnification of 470 pixels/µm (4.4 by 
+4.4 µm) to 750 pixels/µm (2.73 µm by 2.73 µm) may be necessary. 
+Beyond this, confocal quantification techniques can be used. For 
+example, the speed and direction of membrane movement and exocy­
+tosis can be measured using fluorescence microscopy or total internal 
+reflection fluorescence microscopy (TIRF) (Burchfield et al., 2010). 
+Otherwise, fluorescence labeling can also be used to quantify Golgi 
+apparatus (Mukherjee et al., 2007). PLA can also be employed to mea­
+sure the co-localization of Golgi proteins with other organelles using 
+quantitative co-localization analysis. However, to our knowledge, a lack 
+of techniques has been developed to quantify the contact between the 
+Golgi apparatus and mitochondria, underscoring the need for greater 
+development in the future that considers these often neglected contact 
+sites. 
+13. Automated 2D and 3D techniques 
+Automated quantification of mitochondrial parameters from TEM 
+images has been a rapidly growing field in recent years. The use of 
+machine learning algorithms, through machine deep-learning or con­
+volutional neural networks (CNNs), has been shown to be a promising 
+approach to achieve high-throughput and objective quantification of 
+mitochondrial ultrastructure (Marshall et al., 2023c). In the context of 
+TEM analysis of mitochondria, CNNs can be trained to identify and 
+segment mitochondrial membranes, cristae, and other structures of in­
+terest (Segawa et al., 2020; Fogo et al., 2021; Conrad and Narayan, 
+2022). Once trained, these algorithms can be applied to large datasets of 
+TEM images to perform automated quantification of mitochondrial pa­
+rameters. Recently, CNN-based methods have been developed to 
+segment mitochondrial cristae and measure their volume and surface 
+area (Suga et al., 2021). Other studies have focused on combining 
+CNN-based segmentation with other computational tools to perform 
+automated quantification of mitochondrial parameters. For instance, 
+Place and colleagues developed a pipeline that combined CNN-based 
+segmentation with a machine-learning algorithm to classify mitochon­
+drial morphologies (Place et al., 2023). Their pipeline was able to 
+identify distinct mitochondrial phenotypes in Toxoplasma gondii cysts, 
+K. Neikirk et al.                                                                                                                                                                                                                                 
+European Journal of Cell Biology 102 (2023) 151365
+12
+demonstrating the potential of automated quantification for automated 
+mitochondrial identification studies. CNN-based techniques can also 
+allow for rapid reconstruction of large quantities of organelle with their 
+spatial distribution considered (Heinrich et al., 2021; Liu et al., 2022; de 
+Teresa-Trueba et al., 2023). Overall, the development of automated 
+methods for mitochondrial quantification from TEM, 3D EM, and other 
+techniques has the potential to greatly expedite quantifications in dis­
+ease states, but greater development is necessary for many methods. 
+Importantly, automated methods can also expedite the creation of entire 
+cellular connectomes which allow for visualization of the gross organ­
+elle morphology across the cell as well as the organelle interactions 
+(Jiang et al., 2021). 
+14. Future outlook 
+While we have principally focused on TEM measurements and the 
+functional context of these measurements, similar considerations must 
+be made for FIB-SEM or SBF-SEM. Advances in FIB-SEM have increased 
+the volumes able to be milled for, exemplified by recent whole-cell 
+imaging techniques (Fogo et al., 2021; Xu et al., 2021; Lee et al., 
+2023). Yet, as 3D reconstruction becomes commonplace as a mechanism 
+to measure mitochondria and other organelles (Vue et al., 2023a), future 
+studies must similarly standardize quantification metrics for it (Bleck 
+et al., 2018; Vincent et al., 2019; Zhou et al., 2020). Notably, while TEM 
+standards have increasingly been elucidated, these standards remain 
+poorly defined for 3D EM. Specifically, while 10 cells/ROIs is common in 
+TEM analysis (Lam et al., 2021), there is no consensus for FIB-SEM or 
+SBF-SEM measurement quantities or standardized workflows. Given 
+that 3D EM techniques can involve incredibly large volumes which have 
+associated high costs and time requirements, often only a single cell is 
+utilized (Lee et al., 2023), but results may be validated by correlating 3D 
+EM with additional fluorescence imaging. In our past studies in SBF-SEM 
+(Crabtree et al., 2023; Vue et al., 2023a, 2023b), we have found that 3 
+ROIs, each from separate animals, measuring around 250 mitochondria 
+for each experimental condition offer adequate statistical power and 
+insight into morphological changes. Other seminal literature in SBF-SEM 
+has shown that measuring 3–8 ROIs, coming from distinct specimens, or 
+18–24 cells with approximately 150 mitochondria per ROI allows for 
+analysis across different mitochondrial subpopulations (Vincent et al., 
+2019). For FIB-SEM, past analyses have utilized 8 separate ROIs from 4 
+animals (Glancy et al., 2015) or approximately 60 mitochondria from 3 
+different animals (Zhou et al., 2020). Notably, many of these studies 
+differ in the number of mitochondria per ROI analyzed and number of 
+ROIs analyzed, while there is controversy if ROIs should come from 
+separate specimens and if separate specimens are statistically considered 
+as biological replicates or if total mitochondria across all ROIs are 
+considered for analysis. Therefore there is a need to explicitly state ROIs 
+per cell, the number of cells, total volume of area rendered, and the 
+histogram distribution of organelles measured. Standard workflows are 
+also necessary to illustrate orthoslices, demonstrate how organelle 
+identification is performed, and show the accuracy of automation 
+techniques, if any. Finally, there is a necessity for increased transparency 
+by making data sets and machine learning techniques, if utilized, openly 
+available on repositories, such as GitHub (Xu et al., 2021). In the future, 
+as we have done here with TEM, standardization of 3D EM presentation 
+and quantification is of paramount importance. 
+15. Conclusion 
+Mitochondria are well understood to be engaged in a variety of 
+disease states, yet, often, their quantification in these disease states and 
+the quantification of organelles related to them, is neglected. Here, we 
+highlighted some current ideas in the field of mitochondria quantifica­
+tion, especially in the context of working microscopy. When selecting a 
+method to use to measure mitochondria or related organelles, several 
+aspects should be considered. In general, the total mitochondria may be 
+a limiting quantification, and 3D reconstruction can limit the number of 
+mitochondria quantified due to the associated time it takes. Therefore, 
+in addition to 2D imaging, we suggest using FIB-SEM (Palade, 1953; 
+Arborgh et al., 1976; Nation, 1983; Schwerzmann et al., 1989; Chaffey, 
+2001; Desmet, 2009; Whelan and Bell, 2015; Hekmatshoar et al., 2018; 
+Tsushima et al., 2018) or confocal analysis (Parra et al., 2014) to 
+determine mitochondrial volume. To measure the entire cell, we 
+recommend 3D reconstruction, which describes the whole cell and a 
+reasonable overview of the mitochondrial number. 
+Using these quantifications, investigators should be able to accu­
+rately and reproducibly quantify ultrastructural changes in cells and 
+tissues using TEM techniques. However, there are additional consider­
+ations that may be valuable for future 3D EM or CLEM imaging tech­
+niques. Increasingly, EM is understood to be important, yet clear 
+guidelines and standardization in the field are still limited and are a 
+fundamental future avenue. 
+CRediT authorship contribution statement 
+Kit Neikirk: Investigation, Methodology, Visualization, Writing – 
+original draft, Writing – review & editing. Edgar-Garza Lopez: Inves­
+tigation, Methodology, Visualization, Writing – original draft, Writing – 
+review & editing. Andrea G. Marshall: Investigation, Methodology, 
+Visualization, Writing – original draft, Writing – review & editing. 
+Ahmad Alghanem: Visualization. Evan Krystofiak: Writing – original 
+draft, Writing – review & editing. Bartosz Kula: Writing – review & 
+editing. Nathan Smith: Writing – review & editing. Jianqiang Shao: 
+Conceptualization, Methodology, Writing – original draft, Writing – 
+review & editing. Prasanna Katti: Conceptualization, Investigation, 
+Methodology, Project administration, Supervision, Writing – review & 
+editing. Antentor Hinton, Jr.: Conceptualization, Funding acquisition, 
+Investigation, Methodology, Project administration, Resources, Super­
+vision, Writing – review & editing. 
+Declaration of Competing Interest 
+The authors declare that they have no known competing financial 
+interests or personal relationships that could have appeared to influence 
+the work reported in this paper. 
+Data Availability 
+No data was used for the research described in the article. 
+Acknowledgments 
+The UNCF/Bristol-Myers Squibb E.E. Just Faculty Fund, Career 
+Award at the Scientific Interface (CASI Award) from Burroughs 
+Welcome Fund (BWF) ID # 1021868.01, BWF Ad-hoc Award, NIH Small 
+Research Pilot Subaward to 5R25HL106365-12 from the National In­
+stitutes of Health PRIDE Program, DK020593, Vanderbilt Diabetes and 
+Research Training Center for DRTC Alzheimer’s Disease Pilot & Feasi­
+bility Program and CZI Science Diversity Leadership grant number 
+2022- 253529 from the Chan Zuckerberg Initiative DAF, an advised fund 
+of the Silicon Valley Community Foundation (AHJ). This work was 
+supported by the National Institutes of Health Grant K01NS110981 to N. 
+A.S. and the National Science Foundation NSF1926781 to N.A.S. The 
+funder had no role in the study design, data collection and analysis, 
+decision to publish, or preparation of the manuscript. 
+References 
+Afzal, N., Lederer, W.J., Jafri, M.S., Mannella, C.A., 2021. Effect of crista morphology on 
+mitochondrial ATP output: A computational study. Current Research in Physiology. 
+Ainbinder, A., Boncompagni, S., Protasi, F., Dirksen, R.T., 2015. Role of Mitofusin-2 in 
+mitochondrial localization and calcium uptake in skeletal muscle. Cell Calcium 57, 
+14–24. https://doi.org/10.1016/j.ceca.2014.11.002. 
+K. Neikirk et al.                                                                                                                                                                                                                                 
+European Journal of Cell Biology 102 (2023) 151365
+13
+Alston, C.L., Rocha, M.C., Lax, N.Z., Turnbull, D.M., Taylor, R.W., 2017. The genetics and 
+pathology of mitochondrial disease. J. Pathol. 241, 236–250. https://doi.org/ 
+10.1002/path.4809. 
+Anastasia, I., Ilacqua, N., Raimondi, A., Lemieux, P., Ghandehari-Alavijeh, R., Faure, G., 
+et al., 2021. Mitochondria-rough-ER contacts in the liver regulate systemic lipid 
+homeostasis. Cell Rep. 34, 108873 https://doi.org/10.1016/j.celrep.2021.108873. 
+Arborgh, B., Bell, P., Brunk, U., Collins, V., 1976. The osmotic effect of glutaraldehyde 
+during fixation. A transmission electron microscopy, scanning electron microscopy 
+and cytochemical study. J. Ultrastruct. Res. 56, 339–350. 
+Ayache, J., Beaunier, L., Boumendil, J., Ehret, G., and Laub, D. (2010). “Artifacts in 
+Transmission Electron Microscopy,” in Sample Preparation Handbook for 
+Transmission Electron Microscopy: Methodology, eds. J. Ayache, L. Beaunier, J. 
+Boumendil, G. Ehret, and D. Laub (New York, NY: Springer), 125–170. doi: 10.1007/ 
+978–0-387–98182-6_6. 
+Barton, K., Mathur, N., Mathur, J., 2013. Simultaneous live-imaging of peroxisomes and 
+the ER in plant cells suggests contiguity but no luminal continuity between the two 
+organelles. Front. Physiol. 4. 〈https://www.frontiersin.org/articles/10.3389/fphys. 
+2013.00196〉[Accessed April 10, 2023].  
+Basse, A.L., Agerholm, M., Farup, J., Dalbram, E., Nielsen, J., Ørtenblad, N., et al., 2021. 
+Nampt controls skeletal muscle development by maintaining Ca2+ homeostasis and 
+mitochondrial integrity. Mol. Metab. 53, 101271 https://doi.org/10.1016/j. 
+molmet.2021.101271. 
+Benhammouda, S., Vishwakarma, A., Gatti, P., Germain, M., 2021. Mitochondria 
+endoplasmic reticulum contact sites (MERCs): proximity ligation assay as a tool to 
+study organelle interaction. Front Cell Dev. Biol. 9, 789959 https://doi.org/ 
+10.3389/fcell.2021.789959. 
+Bhattacharya, A., Mukherjee, R., Kuncha, S.K., Brunstein, M.E., Rathore, R., Junek, S., 
+et al., 2023. A lysosome membrane regeneration pathway depends on TBC1D15 and 
+autophagic lysosomal reformation proteins. Nat. Cell Biol. 1–14. https://doi.org/ 
+10.1038/s41556-023-01125-9. 
+Bleck, C.K., Kim, Y., Willingham, T.B., Glancy, B., 2018. Subcellular connectomic 
+analyses of energy networks in striated muscle. Nat. Commun. 9 (1), 11. 
+Brown, D.A., Perry, J.B., Allen, M.E., Sabbah, H.N., Stauffer, B.L., Shaikh, S.R., et al., 
+2017. Mitochondrial function as a therapeutic target in heart failure. Nat. Rev. 
+Cardiol. 14, 238–250. https://doi.org/10.1038/nrcardio.2016.203. 
+Buckman, J.F., Hern´andez, H., Kress, G.J., Votyakova, T.V., Pal, S., Reynolds, I.J., 2001. 
+MitoTracker labeling in primary neuronal and astrocytic cultures: influence of 
+mitochondrial membrane potential and oxidants. J. Neurosci. Methods 104, 
+165–176. https://doi.org/10.1016/S0165-0270(00)00340-X. 
+Burchfield, J.G., Lopez, J.A., Mele, K., Vallotton, P., Hughes, W.E., 2010. Exocytotic 
+Vesicle Behaviour Assessed by Total Internal Reflection Fluorescence Microscopy. 
+Traffic 11, 429–439. https://doi.org/10.1111/j.1600-0854.2010.01039.x. 
+Bustos, G., Cruz, P., Lovy, A., C´ardenas, C., 2017. Endoplasmic reticulum–mitochondria 
+calcium communication and the regulation of mitochondrial metabolism in cancer: a 
+novel potential target. Front. Oncol. 7, 199. 
+Carreras-Sureda, A., Ja˜na, F., Urra, H., Durand, S., Mortenson, D.E., Sagredo, A., et al., 
+2019. Non-canonical function of IRE1α determines mitochondria-associated 
+endoplasmic reticulum composition to control calcium transfer and bioenergetics. 
+Nat. Cell Biol. 21, 755–767. https://doi.org/10.1038/s41556-019-0329-y. 
+Castro-Sepulveda, M., Tu˜n´on-Su´arez, M., Rosales-Soto, G., Vargas-Foitzick, R., 
+Deldicque, L., and Zbinden-Foncea, H. (2023). Regulation of mitochondrial 
+morphology and cristae architecture by the TLR4 pathway in human skeletal muscle. 
+Frontiers in Cell and Developmental Biology 11. Available at: https://www. 
+frontiersin.org/articles/10.3389/fcell.2023.1212779 [Accessed August 15, 2023]. 
+Cataldo, A.M., McPhie, D.L., Lange, N.T., Punzell, S., Elmiligy, S., Ye, N.Z., et al., 2010. 
+Abnormalities in mitochondrial structure in cells from patients with bipolar disorder. 
+Am. J. Pathol. 177, 575–585. https://doi.org/10.2353/ajpath.2010.081068. 
+Chaanine, A.H., Joyce, L.D., Stulak, J.M., Maltais, S., Joyce, D.L., Dearani, J.A., et al., 
+2019. Mitochondrial morphology, dynamics, and function in human pressure 
+overload or ischemic heart disease with preserved or reduced ejection fraction. Circ.: 
+Heart Fail. 12, e005131 https://doi.org/10.1161/ 
+CIRCHEARTFAILURE.118.005131. 
+Chaffey, N. (2001). Principles and techniques of electron microscopy: biological 
+applications. 4th edn. 
+Cogliati, S., Enriquez, J.A., Scorrano, L., 2016. Mitochondrial cristae: where beauty 
+meets functionality. Trends Biochem. Sci. 41, 261–273. 
+Conrad, R., and Narayan, K. (2022). Instance segmentation of mitochondria in electron 
+microscopy images with a generalist deep learning model. 2022.03.17.484806. doi: 
+10.1101/2022.03.17.484806. 
+Cook, K.L., Soto-Pantoja, D.R., Abu-Asab, M., Clarke, P.A., Roberts, D.D., Clarke, R., 
+2014. Mitochondria directly donate their membrane to form autophagosomes during 
+a novel mechanism of parkin-associated mitophagy. Cell Biosci. 4, 16. https://doi. 
+org/10.1186/2045-3701-4-16. 
+Crabtree, A., Neikirk, K., Marshall, A.G., Vang, L., Whiteside, A.J., Williams, Q., et al., 
+2023. Defining mitochondrial cristae morphology changes induced by aging in 
+brown adipose tissue. Adv. Biol. (Weinh. ), e2300186. https://doi.org/10.1002/ 
+adbi.202300186. 
+Csord´as, G., Weaver, D., Hajn´oczky, G., 2018. Endoplasmic reticulum–mitochondrial 
+contactology: structure and signaling functions. Trends Cell Biol. 28, 523–540. 
+https://doi.org/10.1016/j.tcb.2018.02.009. 
+Curry, A., Appleton, H., Dowsett, B., 2006. Application of transmission electron 
+microscopy to the clinical study of viral and bacterial infections: Present and future. 
+Micron 37, 91–106. https://doi.org/10.1016/j.micron.2005.10.001. 
+Desmet, V.J., 2009. The amazing universe of hepatic microstructure. Hepatology 50, 
+333–344. 
+Dolman, N.J., Gerasimenko, J.V., Gerasimenko, O.V., Voronina, S.G., Petersen, O.H., 
+Tepikin, A.V., 2005. Stable Golgi-mitochondria complexes and formation of Golgi Ca 
+(2+) gradients in pancreatic acinar cells. J. Biol. Chem. 280, 15794–15799. https:// 
+doi.org/10.1074/jbc.M412694200. 
+Eisner, V., Cupo, R.R., Gao, E., Csord´as, G., Slovinsky, W.S., Paillard, M., et al., 2017. 
+Mitochondrial fusion dynamics is robust in the heart and depends on calcium 
+oscillations and contractile activity. Proc. Natl. Acad. Sci. USA 114, E859–E868. 
+https://doi.org/10.1073/pnas.1617288114. 
+Eskelinen, E.-L., 2008. To be or not to be? Examples of incorrect identification of 
+autophagic compartments in conventional transmission electron microscopy of 
+mammalian cells. Autophagy 4, 257–260. 
+Eskelinen, E.-L., Reggiori, F., Baba, M., Kov´acs, A.L., Seglen, P.O., 2011. Seeing is 
+believing: the impact of electron microscopy on autophagy research. Autophagy 7, 
+935–956. 
+Falk, J., Konopacki, F.A., Zivraj, K.H., Holt, C.E., 2014. Rab5 and Rab4 regulate axon 
+elongation in the xenopus visual system. J. Neurosci. 34, 373–391. https://doi.org/ 
+10.1523/JNEUROSCI.0876-13.2014. 
+Filadi, R., Greotti, E., Turacchio, G., Luini, A., Pozzan, T., Pizzo, P., 2015a. Mitofusin 2 
+ablation increases endoplasmic reticulum–mitochondria coupling. Proc. Natl. Acad. 
+Sci. 112, E2174–E2181. 
+Filadi, R., Greotti, E., Turacchio, G., Luini, A., Pozzan, T., Pizzo, P., 2015b. Mitofusin 2 
+ablation increases endoplasmic reticulum–mitochondria coupling. Proc. Natl. Acad. 
+Sci. USA 112, E2174–E2181. https://doi.org/10.1073/pnas.1504880112. 
+Fogo, G.M., Anzell, A.R., Maheras, K.J., Raghunayakula, S., Wider, J.M., Emaus, K.J., 
+et al., 2021. Machine learning-based classification of mitochondrial morphology in 
+primary neurons and brain. Sci. Rep. 11, 5133 https://doi.org/10.1038/s41598-021- 
+84528-8. 
+Frezza, C., Cipolat, S., De Brito, O.M., Micaroni, M., Beznoussenko, G.V., Rudka, T., et al., 
+2006. OPA1 controls apoptotic cristae remodeling independently from 
+mitochondrial fusion. Cell 126, 177–189. 
+Galmes, R., Houcine, A., Vliet, A.R., Agostinis, P., Jackson, C.L., Giordano, F., 2016. 
+ORP5/ORP8 localize to endoplasmic reticulum–mitochondria contacts and are 
+involved in mitochondrial function. EMBO Rep. 17, 800–810. https://doi.org/ 
+10.15252/embr.201541108. 
+Garza-Lopez, E., Vue, Z., Katti, P., Neikirk, K., Biete, M., Lam, J., et al., 2022. Protocols 
+for generating surfaces and measuring 3d organelle morphology using amira. Cells 
+11, 65. https://doi.org/10.3390/cells11010065. 
+Gӧbel, J., Engelhardt, E., Pelzer, P., Sakthivelu, V., Jahn, H.M., Jevtic, M., et al., 2020. 
+Mitochondria-endoplasmic reticulum contacts in reactive astrocytes promote 
+vascular remodeling. Cell Metab. 31, 791–808.e8. https://doi.org/10.1016/j. 
+cmet.2020.03.005. 
+Giacomello, M., Pellegrini, L., 2016. The coming of age of the mitochondria–ER contact: 
+a matter of thickness. Cell Death Differ. 23, 1417–1427. https://doi.org/10.1038/ 
+cdd.2016.52. 
+Giamogante, F., Barazzuol, L., Brini, M., Calì, T., 2020. ER–mitochondria contact sites 
+reporters: strengths and weaknesses of the available approaches. Int J. Mol. Sci. 21, 
+8157. https://doi.org/10.3390/ijms21218157. 
+Glancy, B., 2020. Visualizing mitochondrial form and function within the cell. Trends 
+Mol. Med. 26, 58–70. 
+Glancy, B., Hartnell, L.M., Malide, D., Yu, Z.-X., Combs, C.A., Connelly, P.S., et al., 2015. 
+Mitochondrial reticulum for cellular energy distribution in muscle. Nature 523, 
+617–620. https://doi.org/10.1038/nature14614. 
+Grabenbauer, M., S¨atzler, K., Baumgart, E., Fahimi, H.D., 2000. Three-dimensional 
+ultrastructural analysis of peroxisomes in HepG2 cells. Cell Biochem Biophys. 32, 
+37–49. https://doi.org/10.1385/CBB:32:1-3:37. 
+Gronemeyer, T., Wiese, S., Ofman, R., Bunse, C., Pawlas, M., Hayen, H., et al., 2013. The 
+proteome of human liver peroxisomes: identification of five new peroxisomal 
+constituents by a label-free quantitative proteomics survey. PLOS ONE 8, e57395. 
+https://doi.org/10.1371/journal.pone.0057395. 
+Gu, N.-H., Zhao, W.-L., Wang, G.-S., Sun, F., 2019. Comparative analysis of mammalian 
+sperm ultrastructure reveals relationships between sperm morphology, 
+mitochondrial functions and motility. Reprod. Biol. Endocrinol. 17, 66 https://doi. 
+org/10.1186/s12958-019-0510-y. 
+Harner, M.E., Unger, A.-K., Geerts, W.J., Mari, M., Izawa, T., Stenger, M., et al., 2016. An 
+evidence based hypothesis on the existence of two pathways of mitochondrial crista 
+formation. eLife 5, e18853. https://doi.org/10.7554/eLife.18853. 
+Heinrich, L., Bennett, D., Ackerman, D., Park, W., Bogovic, J., Eckstein, N., et al., 2021. 
+Whole-cell organelle segmentation in volume electron microscopy. Nature 599, 
+141–146. https://doi.org/10.1038/s41586-021-03977-3. 
+Heinze, M., Reichelt, R., Kleff, S., Eising, R., 2000. High resolution scanning electron 
+microscopy of protein inclusions (cores) purified from peroxisomes of sunflower 
+(Helianthus annuus L.) cotyledons. Cryst. Res. Technol. 35, 877–886. https://doi. 
+org/10.1002/1521-4079(200007)35:6/7<877::AID-CRAT877>3.0.CO;2-S. 
+Hekmatshoar, Y., Nakhle, J., Galloni, M., Vignais, M.-L., 2018. The role of metabolism 
+and tunneling nanotube-mediated intercellular mitochondria exchange in cancer 
+drug resistance. Biochem. J. 475, 2305–2328. 
+Henry, A.G., Aghamohammadzadeh, S., Samaroo, H., Chen, Y., Mou, K., Needle, E., et al., 
+2015. Pathogenic LRRK2 mutations, through increased kinase activity, produce 
+enlarged lysosomes with reduced degradative capacity and increase ATP13A2 
+expression. Hum. Mol. Genet. 24, 6013–6028. https://doi.org/10.1093/hmg/ 
+ddv314. 
+Herrera-Cruz, M.S., Simmen, T., 2017. Over six decades of discovery and 
+characterization of the architecture at mitochondria-associated membranes (MAMs). 
+Adv. Exp. Med Biol. 13–31. https://doi.org/10.1007/978-981-10-4567-7_2. 
+Hess, M.W., Pfaller, K., Ebner, H.L., Beer, B., Hekl, D., Seppi, T., 2010. Chapter 27 - 3D 
+versus 2D cell culture: implications for electron microscopy. In: Müller-Reichert, T. 
+K. Neikirk et al.                                                                                                                                                                                                                                 
+European Journal of Cell Biology 102 (2023) 151365
+14
+(Ed.), Methods in Cell Biology Electron Microscopy of Model Systems. Academic Press, 
+pp. 649–670. https://doi.org/10.1016/S0091-679X(10)96027-5. 
+Hinton, A., Katti, P., Christensen, T.A., Mungai, M., Shao, J., Zhang, L., et al., 2023. 
+A comprehensive approach to sample preparation for electron microscopy and the 
+assessment of mitochondrial morphology in tissue and cultured cells. Adv. Biol. 
+(Weinh. ), e2200202. https://doi.org/10.1002/adbi.202200202. 
+Hirabayashi, Y., Kwon, S.-K., Paek, H., Pernice, W.M., Paul, M.A., Lee, J., et al., 2017. ER- 
+mitochondria tethering by PDZD8 regulates Ca 2+ dynamics in mammalian neurons. 
+Science 358, 623–630. https://doi.org/10.1126/science.aan6009. 
+Hogan, K.A., Zeidler, J.D., Beasley, H.K., Alsaadi, A.I., Alshaheeb, A.A., Chang, Y.-C., 
+et al., 2023. Using mass spectrometry imaging to visualize age-related subcellular 
+disruption. Front. Mol. Biosci. 10. Available at: https://www.frontiersin.org/ 
+articles/10.3389/fmolb.2023.906606 [Accessed April 8, 2023].  
+Ilacqua, N., Anastasia, I., Raimondi, A., Lemieux, P., de Aguiar Vallim, T.Q., Toth, K., 
+et al., 2021. A three-organelle complex made by wrappER contacts with peroxisomes 
+and mitochondria responds to liver lipid flux changes. J. Cell Sci. 135, jcs259091. 
+https://doi.org/10.1242/jcs.259091. 
+Islinger, M., Voelkl, A., Fahimi, H.D., Schrader, M., 2018. The peroxisome: an update on 
+mysteries 2.0. Histochem Cell Biol. 150, 443–471. https://doi.org/10.1007/s00418- 
+018-1722-5. 
+Jakobs, S., Wurm, C.A., 2014. Super-resolution microscopy of mitochondria. Curr. Opin. 
+Chem. Biol. 20, 9–15. https://doi.org/10.1016/j.cbpa.2014.03.019. 
+Jarc, E., Petan, T., 2019. Lipid droplets and the management of cellular stress. Yale J. 
+Biol. Med 92, 435–452. 
+Jiang, Y., Li, L., Chen, X., Liu, J., Yuan, J., Xie, Q., et al. (2021). Three-dimensional 
+ATUM-SEM reconstruction and analysis of hepatic endoplasmic 
+reticulum–organelle interactions. Journal of Molecular Cell Biology 13, 636–645. 
+doi: 10.1093/jmcb/mjab032. 
+Kamat, P.K., Kalani, A., Kyles, P., Tyagi, S.C., Tyagi, N., 2014. Autophagy of 
+mitochondria: a promising therapeutic target for neurodegenerative disease. Cell 
+Biochem Biophys. 70, 707–719. https://doi.org/10.1007/s12013-014-0006-5. 
+Kendall, B.E., 1992. Disorders of lysosomes, peroxisomes, and mitochondria. AJNR Am. 
+J. Neuroradiol. 13, 621–653. 
+Kim, S.Y., Strucinska, K., Osei, B., Han, K., Kwon, S.-K., Lewis, T.L., 2022. Neuronal 
+mitochondrial morphology is significantly affected by both fixative and oxygen level 
+during perfusion. Front. Mol. Neurosci. 15. 〈https://www.frontiersin.org/articles 
+/10.3389/fnmol.2022.1042616〉[Accessed September 30, 2023].  
+Klecker, T., B¨ockler, S., Westermann, B., 2014. Making connections: interorganelle 
+contacts orchestrate mitochondrial behavior. Trends Cell Biol. 24, 537–545. https:// 
+doi.org/10.1016/j.tcb.2014.04.004. 
+Klier, P.E.Z., Roo, R., Miller, E.W., 2022. Fluorescent indicators for imaging membrane 
+potential of organelles. Curr. Opin. Chem. Biol. 71, 102203 https://doi.org/ 
+10.1016/j.cbpa.2022.102203. 
+Klionsky, D.J., Cuervo, A.M., Seglen, P.O., 2007. Methods for monitoring autophagy 
+from yeast to human. Autophagy 3, 181–206. https://doi.org/10.4161/auto.3678. 
+Klionsky, D.J., Abeliovich, H., Agostinis, P., Agrawal, D.K., Aliev, G., Askew, D.S., et al., 
+2008. Guidelines for the use and interpretation of assays for monitoring autophagy 
+in higher eukaryotes. Autophagy 4, 151–175. 
+Kondadi, A.K., Anand, R., Reichert, A.S., 2020. Cristae membrane dynamics – a paradigm 
+change. Trends Cell Biol. 30, 923–936. https://doi.org/10.1016/j.tcb.2020.08.008. 
+Kowaltowski, A.J., Menezes-Filho, S.L., Assali, E.A., Gonçalves, I.G., Cabral-Costa, J.V., 
+Abreu, P., et al., 2019. Mitochondrial morphology regulates organellar Ca2+ uptake 
+and changes cellular Ca2+ homeostasis. FASEB J. 33, 13176–13188. https://doi. 
+org/10.1096/fj.201901136R. 
+Lam, J., Katti, P., Biete, M., Mungai, M., AshShareef, S., Neikirk, K., et al., 2021. 
+A universal approach to analyzing transmission electron microscopy with ImageJ. 
+Cells 10, 2177. https://doi.org/10.3390/cells10092177. 
+Larsen, S., Nielsen, J., Hansen, C.N., Nielsen, L.B., Wibrand, F., Stride, N., et al., 2012. 
+Biomarkers of mitochondrial content in skeletal muscle of healthy young human 
+subjects. J. Physiol. 590, 3349–3360. https://doi.org/10.1113/ 
+jphysiol.2012.230185. 
+Leal, N.S., Dentoni, G., Schreiner, B., Naia, L., Piras, A., Graff, C., et al., 2020. Amyloid 
+β-peptide increases mitochondria-endoplasmic reticulum contact altering 
+mitochondrial function and autophagosome formation in Alzheimer’s disease- 
+related models. Cells 9, 2552. https://doi.org/10.3390/cells9122552. 
+Lee, R., Rudler, D., Raven, S., Peng, L., Chopin, A., Moh, E.S.X., et al., 2023. Quantitative 
+subcellular reconstruction reveals a lipid mediated inter-organelle biogenesis 
+network. Nat. Cell Biol. 
+Liang, F.-X., Petzold, C., Dancel-Manning, K., Sall, J., Ren, P.H., Zhou, C., 2021. 
+Challenges facing an EM core laboratory: mitochondria structural preservation and 
+3DEM data presentation. Microsc. Today 29, 18–23. https://doi.org/10.1017/ 
+S1551929520001777. 
+Liu, J., Qi, J., Chen, X., Li, Z., Hong, B., Ma, H., et al., 2022. Fear memory-associated 
+synaptic and mitochondrial changes revealed by deep learning-based processing of 
+electron microscopy data. Cell Rep. 40, 111151 https://doi.org/10.1016/j. 
+celrep.2022.111151. 
+Lowe, M., 2011. Structural organization of the Golgi apparatus. Curr. Opin. Cell Biol. 23, 
+85–93. https://doi.org/10.1016/j.ceb.2010.10.004. 
+Lucas, M.S., Günthert, M., Gasser, P., Lucas, F., Wepf, R., 2012. Bridging microscopes: 3D 
+correlative light and scanning electron microscopy of complex biological structures. 
+Methods Cell Biol. 111, 325–356. https://doi.org/10.1016/B978-0-12-416026- 
+2.00017-0. 
+Ma, Y., Colin, C., Descamps, J., Arbault, S., Sojic, N., 2021. Shadow 
+electrochemiluminescence microscopy of single mitochondria. Angew. Chem. 133, 
+18890–18897. https://doi.org/10.1002/ange.202105867. 
+Mannella, C.A., 2006. Structure and dynamics of the mitochondrial inner membrane 
+cristae. Biochim. Et. Biophys. Acta (BBA) - Mol. Cell Res. 1763, 542–548. https:// 
+doi.org/10.1016/j.bbamcr.2006.04.006. 
+Mannella, C.A. (2020). Consequences of Folding the Mitochondrial Inner Membrane. 
+Frontiers in Physiology 11. Available at: https://www.frontiersin.org/article/ 
+10.3389/fphys.2020.00536 [Accessed April 22, 2022]. 
+Marshall, A.G., Damo, S.M., Hinton, A., 2023a. Revisiting focused ion beam scanning 
+electron microcopy. Trends Biochem. Sci. 0 https://doi.org/10.1016/j. 
+tibs.2023.02.005. 
+Marshall, A.G., Krystofiak, E., Damo, S.M., Hinton, A., 2023b. Correlative light-electron 
+microscopy: integrating dynamics to structure, 00127-5 Trends Biochem Sci. 
+S0968–0004 (23). https://doi.org/10.1016/j.tibs.2023.05.003. 
+Marshall, A.G., Neikirk, K., Stephens, D.C., Vang, L., Vue, Z., Beasley, H.K., et al., 2023c. 
+Serial block face-scanning electron microscopy as a burgeoning technology. Adv. 
+Biol. (Weinh. ), e2300139. https://doi.org/10.1002/adbi.202300139. 
+Martinet, W., Timmermans, J.-P., De Meyer, G.R., 2014. Methods to assess autophagy in 
+situ—transmission electron microscopy versus immunohistochemistry. Methods 
+Enzymol. 543, 89–114. 
+McMillan, J.D., Eisenback, M.A., 2018. Transmission electron microscopy for analysis of 
+mitochondria in mouse skeletal muscle. Bio-Protoc. 8 e2455–e2455.  
+Midorikawa, K., Tateishi, A., Toyooka, K., Sato, M., Imai, T., Kodama, Y., et al., 2022. 
+Three-dimensional nanoscale analysis of light-dependent organelle changes in 
+Arabidopsis mesophyll cells. PNAS Nexus 1, pgac225. https://doi.org/10.1093/ 
+pnasnexus/pgac225. 
+Missiroli, S., Patergnani, S., Caroccia, N., Pedriali, G., Perrone, M., Previati, M., et al., 
+2018. Mitochondria-associated membranes (MAMs) and inflammation. Cell Death 
+Dis. 9, 1–14. 
+Mukherjee, S., Chiu, R., Leung, S.-M., Shields, D., 2007. Fragmentation of the golgi 
+apparatus: an early apoptotic event independent of the cytoskeleton. Traffic 8, 
+369–378. https://doi.org/10.1111/j.1600-0854.2007.00542.x. 
+Mu˜noz, J.P., Ivanova, S., S´anchez-Wandelmer, J., Martínez-Crist´obal, P., Noguera, E., 
+Sancho, A., et al., 2013. Mfn2 modulates the UPR and mitochondrial function via 
+repression of PERK. EMBO J. 32, 2348–2361. 
+Murley, A., Nunnari, J., 2016. The emerging network of mitochondria-organelle 
+contacts. Mol. Cell 61, 648–653. https://doi.org/10.1016/j.molcel.2016.01.031. 
+Naon, D., Zaninello, M., Giacomello, M., Varanita, T., Grespi, F., Lakshminaranayan, S., 
+et al., 2016. Critical reappraisal confirms that Mitofusin 2 is an endoplasmic 
+reticulum–mitochondria tether. Proc. Natl. Acad. Sci. USA 113, 11249–11254. 
+https://doi.org/10.1073/pnas.1606786113. 
+Nation, J.L., 1983. A new method using hexamethyldisilazane for preparation of soft 
+insect tissues for scanning electron microscopy. Stain Technol. 58, 347–351. 
+Neikirk, K., Marshall, A.G., Kula, B., Smith, B., LeBlanc, S., Hinton, A., 2023a. 
+Mitotracker: a useful tool in need of better alternatives. Eur. J. Cell Biol. 
+Neikirk, K., Vue, Z., Katti, P., Rodriguez, B.I., Omer, S., Shao, J., et al., 2023b. Systematic 
+transmission electron microscopy-based identification and 3D reconstruction of 
+cellular degradation machinery. Adv. Biol. 7, 2200221. https://doi.org/10.1002/ 
+adbi.202200221. 
+Palade, G.E., 1953. An electron microscope study of the mitochondrial structure. 
+J. Histochem. Cytochem. 1, 188–211. 
+P´anek, T., Eli´aˇs, M., Vancov´a, M., Lukeˇs, J., Hashimi, H., 2020. Returning to the fold for 
+lessons in mitochondrial crista diversity and evolution. Curr. Biol. 30, R575–R588. 
+https://doi.org/10.1016/j.cub.2020.02.053. 
+Parra, V., Verdejo, H.E., Iglewski, M., del Campo, A., Troncoso, R., Jones, D., et al., 2014. 
+Insulin stimulates mitochondrial fusion and function in cardiomyocytes via the Akt- 
+mTOR-NF B-Opa-1 signaling pathway. Diabetes 63, 75–88. https://doi.org/ 
+10.2337/db13-0340. 
+Patra, M., Mahata, S.K., Padhan, D.K., Sen, M., 2016. CCN6 (Wnt induced signaling 
+protein – 3) regulates mitochondrial function. J. Cell Sci., jcs.186247 https://doi. 
+org/10.1242/jcs.186247. 
+Phillips, M.A., Harkiolaki, M., Pinto, D.M.S., Parton, R.M., Palanca, A., Garcia- 
+Moreno, M., et al., 2020. CryoSIM: super-resolution 3D structured illumination 
+cryogenic fluorescence microscopy for correlated ultrastructural imaging. Opt, Opt 
+7, 802–812. https://doi.org/10.1364/OPTICA.393203. 
+Place, B.C., Troublefield, C.A., Murphy, R.D., Sinai, A.P., Patwardhan, A.R., 2023. 
+Machine learning based classification of mitochondrial morphologies from 
+fluorescence microscopy images of Toxoplasma gondii cysts. PLOS ONE 18, 
+e0280746. https://doi.org/10.1371/journal.pone.0280746. 
+Prince, F.P., 2002. Lamellar and tubular associations of the mitochondrial cristae: unique 
+forms of the cristae present in steroid-producing cells. Mitochondrion 1, 381–389. 
+https://doi.org/10.1016/S1567-7249(01)00038-1. 
+Prudent, J., McBride, H.M., 2017. The mitochondria–endoplasmic reticulum contact 
+sites: a signalling platform for cell death. Curr. Opin. Cell Biol. 47, 52–63. https:// 
+doi.org/10.1016/j.ceb.2017.03.007. 
+Qiao, Q., Liu, W., Chen, J., Wu, X., Deng, F., Fang, X., et al., 2022. An acid-regulated self- 
+blinking fluorescent probe for resolving whole-cell lysosomes with long-term 
+nanoscopy. Angew. Chem. Int. Ed. 61, e202202961 https://doi.org/10.1002/ 
+anie.202202961. 
+Rasband, W.S. (2011). Imagej, us national institutes of health, bethesda, maryland, usa. 
+http://imagej. nih. gov/ij/. 
+Rashid, H.-O., Yadav, R.K., Kim, H.-R., Chae, H.-J., 2015. ER stress: autophagy induction, 
+inhibition and selection. Autophagy 11, 1956–1977. https://doi.org/10.1080/ 
+15548627.2015.1091141. 
+Rube, D.A., van der Bliek, A.M., 2004. Mitochondrial morphology is dynamic and varied. 
+Mol. Cell Biochem 256, 331–339. https://doi.org/10.1023/B: 
+MCBI.0000009879.01256.f6. 
+K. Neikirk et al.                                                                                                                                                                                                                                 
+European Journal of Cell Biology 102 (2023) 151365
+15
+Ruegsegger, G.N., Vanderboom, P.M., Dasari, S., Klaus, K.A., Kabiraj, P., McCarthy, C.B., 
+et al. (n.d.). Exercise and metformin counteract altered mitochondrial function in the 
+insulin-resistant brain. JCI Insight 4, e130681. doi: 10.1172/jci.insight.130681. 
+Ryter, S.W., Bhatia, D., Choi, M.E., 2019. Autophagy: a lysosome-dependent process with 
+implications in cellular redox homeostasis and human disease. Antioxid. Redox 
+Signal. 30, 138–159. 
+Schneider, C.A., Rasband, W.S., Eliceiri, K.W., 2012. NIH Image to ImageJ: 25 years of 
+image analysis. Nat. Methods 9, 671–675. 
+Schrader, M., Castro, I., Fahimi, H.D., Islinger, M., 2014. Peroxisome morphology in 
+pathologies. In: Brocard, C., Hartig, A. (Eds.), Molecular Machines Involved in 
+Peroxisome Biogenesis and Maintenance. Springer, Vienna, pp. 125–151. https:// 
+doi.org/10.1007/978-3-7091-1788-0_7. 
+Schwerzmann, K., Hoppeler, H., Kayar, S.R., Weibel, E.R., 1989. Oxidative capacity of 
+muscle and mitochondria: correlation of physiological, biochemical, and 
+morphometric characteristics. Proc. Natl. Acad. Sci. 86, 1583–1587. 
+Segawa, Wolf, M., Hultgren, D.M., Williams, N.W., Bliek, D.S., van der, A.M., 
+Shackelford, D.B., et al., 2020. Quantification of cristae architecture reveals time- 
+dependent characteristics of individual mitochondria. Life Sci. Alliance 3. https:// 
+doi.org/10.26508/lsa.201900620. 
+Shai, N., Schuldiner, M., Zalckvar, E., 2016. No peroxisome is an island — Peroxisome 
+contact sites. Biochim. Et. Biophys. Acta (BBA) - Mol. Cell Res. 1863, 1061–1069. 
+https://doi.org/10.1016/j.bbamcr.2015.09.016. 
+Sherratt, H.S., 1991. Mitochondria: structure and function. Rev. Neurol. (Paris) 147, 
+417–430. 
+Smith, J.J., Aitchison, J.D., 2013. Peroxisomes take shape. Nat. Rev. Mol. Cell Biol. 14, 
+803–817. https://doi.org/10.1038/nrm3700. 
+Stephan, T., Brüser, C., Deckers, M., Steyer, A.M., Balzarotti, F., Barbot, M., et al., 2020. 
+MICOS assembly controls mitochondrial inner membrane remodeling and crista 
+junction redistribution to mediate cristae formation. EMBO J. 39, e104105. 
+Su Lim, C., Sun Kim, E., Yeon Kim, J., Taek Hong, S., Jai Chun, H., Eun Kang, D., et al., 
+2015. Measurement of the nucleus area and nucleus/cytoplasm and mitochondria/ 
+nucleus ratios in human colon tissues by dual-colour two-photon microscopy 
+imaging. Sci. Rep. 5, 18521. https://doi.org/10.1038/srep18521. 
+Suga, S., Nakamura, K., Humbel, B.M., Kawai, H., and Hirabayashi, Y. (2021). An 
+interactive deep learning-based approach reveals mitochondrial cristae topologies. 
+Sun, M.G., Williams, J., Munoz-Pinedo, C., Perkins, G.A., Brown, J.M., Ellisman, M.H., 
+et al., 2007. Correlated three-dimensional light and electron microscopy reveals 
+transformation of mitochondria during apoptosis. Nat. Cell Biol. 9, 1057–1065. 
+https://doi.org/10.1038/ncb1630. 
+Taguchi, K., Elias, B.C., Krystofiak, E., Qian, S., Sant, S., Yang, H., et al., 2021. 
+Quantitative super-resolution microscopy reveals promoting mitochondrial 
+interconnectivity protects against AKI. Kidney360 2, 1892–1907. https://doi.org/ 
+10.34067/KID.0001602021. 
+de Teresa-Trueba, I., Goetz, S.K., Mattausch, A., Stojanovska, F., Zimmerli, C.E., Toro- 
+Nahuelpan, M., et al., 2023. Convolutional networks for supervised mining of 
+molecular patterns within cellular context. Nat. Methods 20, 284–294. https://doi. 
+org/10.1038/s41592-022-01746-2. 
+Thoudam, T., Ha, C.-M., Leem, J., Chanda, D., Park, J.-S., Kim, H.-J., et al., 2019. PDK4 
+augments ER–mitochondria contact to dampen skeletal muscle insulin signaling 
+during obesity. Diabetes 68, 571–586. https://doi.org/10.2337/db18-0363. 
+Tsushima, K., Bugger, H., Wende, A.R., Soto, J., Jenson, G.A., Tor, A.R., et al., 2018. 
+Mitochondrial reactive oxygen species in lipotoxic hearts induce post-translational 
+modifications of AKAP121, DRP1, and OPA1 that promote mitochondrial fission. 
+Circ. Res 122, 58–73. https://doi.org/10.1161/CIRCRESAHA.117.311307. 
+Tubbs, E., Chanon, S., Robert, M., Bendridi, N., Bidaux, G., Chauvin, M.-A., et al., 2018. 
+Disruption of mitochondria-associated endoplasmic reticulum membrane (MAM) 
+integrity contributes to muscle insulin resistance in mice and humans. Diabetes 67, 
+636–650. https://doi.org/10.2337/db17-0316. 
+Usuda, N., Yokota, S., Ichikawa, R., Hashimoto, T., Nagata, T., 1991. Immunoelectron 
+microscopic study of a new D-amino acid oxidase-immunoreactive subcompartment 
+in rat liver peroxisomes. J. Histochem. Cytochem.: Off. J. Histochem. Soc. 39, 
+95–102. https://doi.org/10.1177/39.1.1670581. 
+Vaillant-Beuchot, L., Mary, A., Pardossi-Piquard, R., Bourgeois, A., Lauritzen, I., 
+Eysert, F., et al., 2021. Accumulation of amyloid precursor protein C-terminal 
+fragments triggers mitochondrial structure, function, and mitophagy defects in 
+Alzheimer’s disease models and human brains. Acta Neuropathol. 141, 39–65. 
+https://doi.org/10.1007/s00401-020-02234-7. 
+Valm, A.M., Cohen, S., Legant, W.R., Melunis, J., Hershberg, U., Wait, E., et al., 2017. 
+Applying systems-level spectral imaging and analysis to reveal the organelle 
+interactome. Nature 546, 162–167. https://doi.org/10.1038/nature22369. 
+van Rijnsoever, C., Oorschot, V., Klumperman, J., 2008. Correlative light-electron 
+microscopy (CLEM) combining live-cell imaging and immunolabeling of ultrathin 
+cryosections. Nat. Methods 5, 973–980. https://doi.org/10.1038/nmeth.1263. 
+Vidavsky, N., Akiva, A., Kaplan-Ashiri, I., Rechav, K., Addadi, L., Weiner, S., et al., 2016. 
+Cryo-FIB-SEM serial milling and block face imaging: Large volume structural 
+analysis of biological tissues preserved close to their native state. J. Struct. Biol. 196, 
+487–495. https://doi.org/10.1016/j.jsb.2016.09.016. 
+Vincent, A.E., White, K., Davey, T., Philips, J., Ogden, R.T., Lawless, C., et al., 2019. 
+Quantitative 3D mapping of the human skeletal muscle mitochondrial network. Cell 
+Rep. 26, 996–1009.e4. https://doi.org/10.1016/j.celrep.2019.01.010. 
+Vue, Z., Garza-Lopez, E., Neikirk, K., Katti, P., Vang, L., Beasley, H., et al., 2023a. 3D 
+reconstruction of murine mitochondria exhibits changes in structure across aging 
+linked to the MICOS complex. Aging Cell, 2023. 03. 22. 485341., 485341, 2023. 03. 
+22.  
+Vue, Z., Neikirk, K., Vang, L., Garza-Lopez, E., Christensen, T.A., Shao, J., et al., 2023b. 
+Three-dimensional mitochondria reconstructions of murine cardiac muscle changes 
+in size across aging. Am. J. Physiol. -Heart Circ. Physiol. https://doi.org/10.1152/ 
+ajpheart.00202.2023. 
+Walther, P., Ziegler, A., 2002. Freeze substitution of high-pressure frozen samples: the 
+visibility of biological membranes is improved when the substitution medium 
+contains water. J. Microsc. 208, 3–10. https://doi.org/10.1046/j.1365- 
+2818.2002.01064.x. 
+Weibel, E.R., 1979. Stereological methods. Pract. Methods Biol. Morphometry 44–45. 
+Whelan, D.R., Bell, T.D., 2015. Image artifacts in single molecule localization 
+microscopy: why optimization of sample preparation protocols matters. Sci. Rep. 5 
+(1), 10. 
+Wissner, R.F., Steinauer, A., Knox, S.L., Thompson, A.D., Schepartz, A., 2018. 
+FluoreScence Correlation Spectroscopy Reveals Efficient Cytosolic Delivery Of 
+Protein Cargo By Cell-permeant Miniature Proteins. ACS Cent. Sci. 4, 1379–1393. 
+https://doi.org/10.1021/acscentsci.8b00446. 
+Wolf, D.M., Segawa, M., Kondadi, A.K., Anand, R., Bailey, S.T., Reichert, A.S., et al., 
+2019. Individual cristae within the same mitochondrion display different membrane 
+potentials and are functionally independent. EMBO J. 38, e101056 https://doi.org/ 
+10.15252/embj.2018101056. 
+Wolf, D.M., Segawa, M., Shirihai, O.S., Liesa, M., 2020. Chapter 22 - Method for live-cell 
+super-resolution imaging of mitochondrial cristae and quantification of 
+submitochondrial membrane potentials. In: Pon, L.A., Schon, E.A. (Eds.), Methods in 
+Cell Biology Mitochondria, third ed. Academic Press, pp. 545–555. https://doi.org/ 
+10.1016/bs.mcb.2019.12.006. 
+Wright, Z.J., Bartel, B., 2020. Peroxisomes form intralumenal vesicles with roles in fatty 
+acid catabolism and protein compartmentalization in Arabidopsis. Nat. Commun. 11, 
+6221. https://doi.org/10.1038/s41467-020-20099-y. 
+Xu, C.S., Pang, S., Shtengel, G., Müller, A., Ritter, A.T., Hoffman, H.K., et al., 2021. An 
+open-access volume electron microscopy atlas of whole cells and tissues. Nature 599, 
+147–151. https://doi.org/10.1038/s41586-021-03992-4. 
+Yamane, K., Oi, T., Enomoto, S., Nakao, T., Arai, S., Miyake, H., et al., 2018. Three- 
+dimensional ultrastructure of chloroplast pockets formed under salinity stress. Plant, 
+Cell Environ. 41, 563–575. https://doi.org/10.1111/pce.13115. 
+Zhou, Z., Torres, M., Sha, H., Halbrook, C.J., den Bergh, F.V., Reinert, R.B., et al., 2020. 
+Endoplasmic reticulum-associated degradation regulates mitochondrial dynamics in 
+brown adipocytes. Science 368, 54–60. https://doi.org/10.1126/science.aay2494. 
+Zorova, L.D., Popkov, V.A., Plotnikov, E.Y., Silachev, D.N., Pevzner, I.B., Jankauskas, S. 
+S., et al., 2018. Mitochondrial membrane potential. Anal. Biochem. 552, 50–59. 
+https://doi.org/10.1016/j.ab.2017.07.009. 
+K. Neikirk et al.                                                                                                                                                                                                                                 
